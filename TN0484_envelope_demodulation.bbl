@@ -1,0 +1,204 @@
+\begin{thebibliography}{10}
+
+\bibitem{grossman2017}
+Nir Grossman, David Bono, Nina Dedic, Suhasa~B. Kodandaramaiah, Andrii Rudenko,
+  Ho-Jun Suk, Antonino~M. Cassara, Esra Neufeld, Niels Kuster, Li-Huei Tsai,
+  Alvaro Pascual-Leone, and Edward~S. Boyden.
+\newblock Noninvasive deep brain stimulation via temporally interfering
+  electric fields.
+\newblock {\em Cell}, 169(6):1029--1041.e16, 2017.
+
+\bibitem{nahin2001}
+Paul~J. Nahin.
+\newblock {\em The Science of Radio: with MATLAB and Electronics Workbench
+  Demonstrations}.
+\newblock Springer, 2nd edition, 2001.
+
+\bibitem{mirzakhalili2020}
+Ehsan Mirzakhalili, Beatrice Barra, Marco Capogrosso, and Scott~F. Lempka.
+\newblock Biophysics of temporal interference stimulation.
+\newblock {\em Cell Systems}, 11(6):557--572.e5, 2020.
+
+\bibitem{opancar2025}
+Aleksandar Opan{\v c}ar, Petra Ondr{\'a}{\v c}kov{\'a}, David~Samuel Rose, Jan
+  Trajlinek, Vedran {\DJ}erek, and Eric~Daniel G{\l}owacki.
+\newblock The same biophysical mechanism is involved in both temporal
+  interference and direct k{H}z stimulation of peripheral nerves.
+\newblock {\em Nature Communications}, 16:9006, 2025.
+
+\bibitem{peripheral2023}
+Ryan~B. Budde, Michael~T. Williams, and Pedro~P. Irazoqui.
+\newblock Temporal interference current stimulation in peripheral nerves is not
+  driven by envelope extraction.
+\newblock {\em Journal of Neural Engineering}, 20(2):026032, 2023.
+
+\bibitem{vieira2024}
+Pedro~G. Vieira, Matthew~R. Krause, and Christopher~C. Pack.
+\newblock Temporal interference stimulation disrupts spike timing in the
+  primate brain.
+\newblock {\em Nature Communications}, 15:4558, 2024.
+
+\bibitem{caldas2024}
+Sara Caldas-Martinez, Chaitanya Goswami, Mats Forssell, Jiaming Cao, Alison~L.
+  Barth, and Pulkit Grover.
+\newblock Cell-specific effects of temporal interference stimulation on
+  cortical function.
+\newblock {\em Communications Biology}, 7:1076, 2024.
+
+\bibitem{soroushi2025}
+Hossein Soroushi, Sara Abbasi, Yun Du, Ning Ning, and Yuming Lei.
+\newblock Temporal interference stimulation: mechanisms, optimization,
+  validation, and clinical prospects---a comprehensive review.
+\newblock {\em WIREs Computational Statistics}, 17(3):e70031, 2025.
+
+\bibitem{ruffini2025cfc}
+Giulio Ruffini, Edmundo Lopez-Sola, Raul Palma, Roser Sanchez-Todo, Jakub
+  Vohryzek, Francesca Castaldo, and Karl Friston.
+\newblock Cross-frequency coupling as a neural substrate for prediction error
+  evaluation: a laminar neural mass modeling approach.
+\newblock {\em bioRxiv}, 2025.
+\newblock Preprint 2025.03.19.644090.
+
+\bibitem{ruffini2025ham}
+Giulio Ruffini.
+\newblock Neural encoding through hierarchical amplitude modulation.
+\newblock {\em bioRxiv}, 2025.
+\newblock Preprint 2025.11.03.686310.
+
+\bibitem{ruffini2025rosetta}
+Francesca Castaldo, Raul de~Palma~Aristides, Pau Clusella, Jordi Garcia-Ojalvo,
+  and Giulio Ruffini.
+\newblock Rosetta {S}tone of neural mass models.
+\newblock {\em Physics Reports}, 2025.
+\newblock accepted; arXiv:2512.10982.
+
+\bibitem{jansen1995}
+Ben~H. Jansen and Vincent~G. Rit.
+\newblock Electroencephalogram and visual evoked potential generation in a
+  mathematical model of coupled cortical columns.
+\newblock {\em Biological Cybernetics}, 73(4):357--366, 1995.
+
+\bibitem{montbrio2015}
+Ernest Montbri{\'o}, Diego Paz{\'o}, and Alex Roxin.
+\newblock Macroscopic description for networks of spiking neurons.
+\newblock {\em Physical Review X}, 5(2):021028, 2015.
+
+\bibitem{ruffini2021nmm2}
+Giulio Ruffini.
+\newblock Analysis and extension of exact mean-field theory with dynamic
+  synaptic currents.
+\newblock {\em bioRxiv}, 2021.
+\newblock Preprint 2021.09.01.458563 (NMM2).
+
+\bibitem{clusella2023}
+Pau Clusella, Elif K{\"o}ksal-Ers{\"o}z, Jordi Garcia-Ojalvo, and Giulio
+  Ruffini.
+\newblock Comparison between an exact and a heuristic neural mass model with
+  second-order synapses.
+\newblock {\em Biological Cybernetics}, 117(1-2):5--19, 2023.
+
+\bibitem{sanchezTodo2023}
+Roser Sanchez-Todo, Andr{\'e}~M. Bastos, Edmundo Lopez-Sola, et~al.
+\newblock A physical neural mass model framework for the analysis of
+  oscillatory generators from laminar electrophysiological recordings.
+\newblock {\em NeuroImage}, 270:119938, 2023.
+
+\bibitem{barker1991}
+Anthony~T. Barker, C.~W. Garnham, and Ian~L. Freeston.
+\newblock Magnetic nerve stimulation: the effect of waveform on efficiency,
+  determination of neural membrane time constants and the measurement of
+  stimulator output.
+\newblock {\em Electroencephalography and Clinical Neurophysiology Supplement},
+  43:227--237, 1991.
+
+\bibitem{peterchev2013}
+Angel~V. Peterchev, Stefan~M. Goetz, Gregory~G. Westin, Bruce Luber, and
+  Sarah~H. Lisanby.
+\newblock Pulse width dependence of motor threshold and input--output curve
+  characterized with controllable pulse parameter transcranial magnetic
+  stimulation.
+\newblock {\em Clinical Neurophysiology}, 124(7):1364--1372, 2013.
+
+\bibitem{rahman2013}
+Asif Rahman, Davide Reato, Mattia Arlotti, Fernando Gasca, Abhishek Datta,
+  Lucas~C. Parra, and Marom Bikson.
+\newblock Cellular effects of acute direct current stimulation: somatic and
+  synaptic terminal effects.
+\newblock {\em The Journal of Physiology}, 591(10):2563--2578, 2013.
+
+\bibitem{aberra2023}
+Aman~S. Aberra, Ruochen Wang, Warren~M. Grill, and Angel~V. Peterchev.
+\newblock Multi-scale model of axonal and dendritic polarization by
+  transcranial direct current stimulation in realistic head geometry.
+\newblock {\em Brain Stimulation}, 16(6):1776--1791, 2023.
+
+\bibitem{rahman2017}
+Asif Rahman, Belen Lafon, Lucas~C. Parra, and Marom Bikson.
+\newblock Direct current stimulation boosts synaptic gain and cooperativity in
+  vitro.
+\newblock {\em The Journal of Physiology}, 595(11):3535--3547, 2017.
+
+\bibitem{chakraborty2018}
+Darpan Chakraborty, Dennis~Q. Truong, Marom Bikson, and Hanoch Kaphzan.
+\newblock Neuromodulation of axon terminals.
+\newblock {\em Cerebral Cortex}, 28(8):2786--2794, 2018.
+
+\bibitem{reato2010}
+Davide Reato, Asif Rahman, Marom Bikson, and Lucas~C. Parra.
+\newblock Low-intensity electrical stimulation affects network dynamics by
+  modulating population rate and spike timing.
+\newblock {\em Journal of Neuroscience}, 30(45):15067--15079, 2010.
+
+\bibitem{terney2008}
+Daniella Terney, Leila Chaieb, Vera Moliadze, Andrea Antal, and Walter Paulus.
+\newblock Increasing human brain excitability by transcranial high-frequency
+  random noise stimulation.
+\newblock {\em Journal of Neuroscience}, 28(52):14147--14155, 2008.
+
+\bibitem{vandergroen2016}
+Onno van~der Groen and Nicole Wenderoth.
+\newblock Transcranial random noise stimulation of visual cortex: stochastic
+  resonance enhances central mechanisms of perception.
+\newblock {\em Journal of Neuroscience}, 36(19):5289--5298, 2016.
+
+\bibitem{liu2018}
+Anli Liu, Mih{\'a}ly V{\"o}r{\"o}slakos, Greg Kronberg, Simon Henin, Matthew~R.
+  Krause, Yu~Huang, Alexander Opitz, Ashesh Mehta, Christopher~C. Pack, Bart
+  Krekelberg, Antal Ber{\'e}nyi, and Lucas~C. Parra.
+\newblock Immediate neurophysiological effects of transcranial electrical
+  stimulation.
+\newblock {\em Nature Communications}, 9:5092, 2018.
+
+\bibitem{grimbert2006}
+Fran{\c c}ois Grimbert and Olivier Faugeras.
+\newblock Bifurcation analysis of {J}ansen's neural mass model.
+\newblock {\em Neural Computation}, 18(12):3052--3068, 2006.
+
+\bibitem{gordon2019}
+Nathan Gordon, Jakob Hohwy, Matthew~J. Davidson, Jeroen J.~A. van Boxtel, and
+  Naotsugu Tsuchiya.
+\newblock From intermodulation components to visual perception and
+  cognition---a review.
+\newblock {\em NeuroImage}, 199:480--494, 2019.
+
+\bibitem{esmaeilpour2021}
+Zeinab Esmaeilpour, Greg Kronberg, Davide Reato, Lucas~C. Parra, and Marom
+  Bikson.
+\newblock Temporal interference stimulation targets deep brain regions by
+  modulating neural oscillations.
+\newblock {\em Brain Stimulation}, 14(1):55--65, 2021.
+
+\bibitem{violante2023}
+Ines~R. Violante et~al.
+\newblock Non-invasive temporal interference electrical stimulation of the
+  human hippocampus.
+\newblock {\em Nature Neuroscience}, 26, 2023.
+
+\bibitem{wang2023}
+Boshuo Wang, Aman~S. Aberra, Warren~M. Grill, and Angel~V. Peterchev.
+\newblock Responses of model cortical neurons to temporal interference
+  stimulation and related transcranial alternating current stimulation
+  modalities.
+\newblock {\em Journal of Neural Engineering}, 19(6):066047, 2023.
+
+\end{thebibliography}
