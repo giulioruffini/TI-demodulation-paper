@@ -57,27 +57,31 @@ amplitude-modulated (AM) field carries no spectral power at its envelope
 frequency, so no linear element---passive membrane or synaptic kernel---can
 follow it; demodulation requires a nonlinearity, usually attributed to
 single-neuron ion channels. We propose and demonstrate a complementary,
-explicitly \emph{network} mechanism at the mesoscopic scale: in a neural mass
-(a population of $\sim$$10^4$ neurons) the firing-rate sigmoid is a square-law
-demodulator, and a second-order-synapse network near a supercritical Hopf
-bifurcation resonantly amplifies the recovered envelope at its natural frequency.
-The demodulating curvature is inherited from the single neuron's input--output
-nonlinearity, coarse-grained over the population and requiring no specific channel,
-while the sharp, frequency-selective gain is a genuinely emergent network property.
-In the Jansen--Rit model an alpha-free carrier input yields a clean alpha output
-obeying the square law $A_\Omega\simeq\half\Sig''(v^*)\,\varepsilon^2 m$ (recovered
-envelope amplitude $A_\Omega$; sigmoid curvature $\Sig''$ at operating point $v^*$;
-post-coupling polarization $\varepsilon$; modulation depth $m$), with resonant gain
-growing as $1/\gamma$ as the damping $\gamma$---the distance to the Hopf---vanishes,
-carrier independence at fixed polarization (the applied-field threshold rising with
-carrier frequency $f_c$), and a response sign-reversed by the curvature across the
-sigmoid inflection. The two-band laminar model (LaNMM)
-and the exact next-generation mean field (NMM2) confirm it, the latter with the
-demodulating nonlinearity derived rather than postulated. The mechanism is state-dependent through the
-operating point (PEIX) and connects TI to cross-frequency coupling and
-hierarchical amplitude modulation. The message: \emph{wherever a fast-enough
-nonlinearity samples the carrier, the population sigmoid demodulates and the
-network amplifies}, the cortical column acting as a tuned AM receiver amplifier.
+explicitly \emph{network} mechanism at the mesoscopic scale whose two ingredients
+factorize. The population sigmoid \emph{detects}: in a neural mass (a population of
+$\sim$$10^4$ neurons) it is a square-law demodulator,
+$A_\Omega\simeq\half\Sig''(v^*)\,\varepsilon^2 m$ (recovered envelope amplitude
+$A_\Omega$; sigmoid curvature $\Sig''$ at operating point $v^*$; post-coupling
+polarization $\varepsilon$; modulation depth $m$), a curvature inherited from the
+single neuron's input--output nonlinearity and requiring no specific channel. The
+network \emph{amplifies}: a second-order-synapse loop near a supercritical Hopf
+bifurcation resonantly boosts the recovered envelope at its natural frequency, the
+gain growing as $1/\gamma$ as the damping $\gamma$---the distance to the Hopf---vanishes.
+The two are separable: holding detection fixed, this gain is set by the network's
+proximity to criticality and is tuned by the coupling itself, and---being sharply
+frequency-selective---it amplifies the envelope-frequency response (population
+\emph{timing}) far more than the mean firing rate. In a Jansen--Rit column an
+alpha-free carrier input yields a clean alpha output obeying the square law,
+carrier-independent at fixed polarization (the applied-field threshold rising with
+carrier frequency $f_c$) and sign-reversed by the curvature across the sigmoid
+inflection. The two-band laminar model (LaNMM) and the exact next-generation mean
+field (NMM2) confirm it---the latter with the demodulating nonlinearity \emph{and}
+the amplifying coupling both derived rather than postulated. The mechanism is
+state-dependent through the operating point (PEIX) and connects TI to
+cross-frequency coupling and hierarchical amplitude modulation. The message:
+\emph{wherever a fast-enough nonlinearity samples the carrier, the population sigmoid
+demodulates and the network amplifies}---the cortical column acting as a
+tuned AM receiver amplifier.
 
 \smallskip
 \noindent\textbf{Keywords:} temporal interference; transcranial stimulation; neural
@@ -161,21 +165,14 @@ own alpha and gamma loops make the prediction concrete one step closer to cortex
 This work builds on a line of research in which neural-mass models implement
 AM-radio principles \emph{internally}, for the brain's own signals. In our
 cross-frequency-coupling account of predictive coding \cite{ruffini2025cfc}, the
-LaNMM realizes a columnar Comparator through two sigmoid-enabled couplings:
-signal-to-envelope coupling (SEC), in which a slow (prediction) signal modulates
-the envelope of a faster (input) oscillation---akin to phase--amplitude
-coupling---to generate fast prediction-error signals; and envelope-to-envelope
-coupling (EEC), in which a slow envelope modulates a fast one for
-precision-weighting and gating. There, error evaluation is literally demodulation:
-the right (sign-reversed) prediction ``un-modulates'' the carrier, leaving a
-reduced error envelope. The Hierarchical Amplitude Modulation (HAM) framework
-\cite{ruffini2025ham} generalizes this to nested envelopes (multi-layer AM) with
-constant-$Q$ (log-spaced) bands keeping the sidebands separable, a candidate origin
-of $1/f$ spectra---again through the sigmoid's quadratic cross-term. The present
-work turns this machinery outward: the same demodulation, applied to an external AM
-field, recovers the stimulation envelope, which a near-Hopf resonance amplifies. If
-the cortex is an AM transceiver for its own rhythms, it can also be an AM receiver
-for an external carrier.
+LaNMM realizes a columnar Comparator through sigmoid-enabled signal-to-envelope
+(SEC) and envelope-to-envelope (EEC) couplings, where error evaluation is literally
+demodulation---the sign-reversed prediction ``un-modulates'' the carrier. The
+Hierarchical Amplitude Modulation (HAM) framework \cite{ruffini2025ham} generalizes
+this to nested envelopes with constant-$Q$ (log-spaced) bands, a candidate origin of
+$1/f$ spectra---again through the sigmoid's quadratic cross-term. The present work
+turns this machinery outward: if the cortex is an AM transceiver for its own rhythms,
+it can also be an AM receiver for an external carrier.
 
 \begin{figure}[t!]
 \centering
@@ -213,7 +210,7 @@ $\ddot x+2a\dot x+a^2x = Aa\,r(t)$. Second, the PSPs converging on a population 
 to a mean membrane potential $v=\sum_s x_s$, which a static, saturating
 \emph{transfer function}---the sigmoid---turns back into a population firing rate,
 \begin{equation}
-\Sig(v)=\frac{2e_0}{1+e^{\,r(v_0-v)}} ,
+\Sig(v)=\frac{2e_0}{1+e^{\,\rho(v_0-v)}} ,
 \label{eq:sigmoid}
 \end{equation}
 bounded because firing rates are bounded \cite{ruffini2025rosetta}. The sigmoid is
@@ -233,7 +230,7 @@ This becomes exact one rung up the modeling ladder \cite{ruffini2025rosetta}. Fo
 network of all-to-all coupled quadratic integrate-and-fire (QIF) neurons with
 Lorentzian-distributed excitabilities, the Ott--Antonsen ansatz yields a
 \emph{closed, exact} mean field for the population firing rate $r$ and mean
-potential $v$---the next-generation (Montbri\'o--Paz\'o--Roxin) mass
+potential $v$---the next-generation (Montbri\'o--Paz\'o--Roxin, MPR) mass
 \cite{montbrio2015}, completed with the second-order synapses of neural-mass models
 in the exact ``NMM2'' theory \cite{ruffini2021nmm2,clusella2023}:
 \begin{equation}
@@ -275,7 +272,7 @@ Symbol & Meaning & Value\\
 \midrule
 $A,\,B$ & excit./inhib.\ PSP gain & $3.25,\ 22$ mV\\
 $a,\,b$ & synaptic rates & $100,\ 50$ s$^{-1}$\\
-$v_0,\,e_0,\,r$ & sigmoid midpoint, max rate$/2$, slope & $6$ mV, $2.5$ s$^{-1}$, $0.56$ mV$^{-1}$\\
+$v_0,\,e_0,\,\rho$ & sigmoid inflection, max rate$/2$, slope & $6$ mV, $2.5$ s$^{-1}$, $0.56$ mV$^{-1}$\\
 $C$ & global connectivity & $135$\\
 $C_1,C_2,C_3,C_4$ & couplings & $C,\,0.8C,\,0.25C,\,0.25C$\\
 $p$ & external input (bifurcation knob) & $0$--$400$ Hz\\
@@ -362,10 +359,9 @@ consensus. Carrier independence is thus a statement about the recovered envelope
 polarization, not about the applied field.
 
 \subsection{Resonance, carrier independence, and the synaptic band-pass}\label{sec:carrier}
-Equation~\eqref{eq:demod} contains no $\omega_c$: the demodulated amplitude depends
-on the field amplitude, the modulation depth, and the sigmoid curvature, but not on
-the carrier frequency---\emph{at fixed post-coupling polarization} $\varepsilon$ (as a
-function of the applied field it rolls off with $f_c$, \S\ref{sec:khz}). Under the direct coupling \eqref{eq:coupling} the carrier
+Equation~\eqref{eq:demod} contains no $\omega_c$: at fixed post-coupling polarization
+$\varepsilon$ the demodulated amplitude is independent of the carrier (as a function of
+the applied field it rolls off with $f_c$, \S\ref{sec:khz}). Under the direct coupling \eqref{eq:coupling} the carrier
 need only be high enough that the synaptic low-pass suppresses it relative to the
 envelope, and ``inert''---it must not itself fall in, or beat into, the network's
 responsive band, nor engage other carrier-specific mechanisms (the ion-channel/kHz
@@ -401,10 +397,10 @@ Because $A_\Omega\propto\Sig''(v^*)$, demodulation is governed by the curvature 
 the operating point, and in particular by how far $v^*$ sits from the sigmoid
 inflection (Fig.~\ref{fig:opp}). The Population Excitation--Inhibition Index (PEIX)
 of \cite{ruffini2025cfc} is a related but distinct quantity: the sigmoid gain
-$\Sig'(v^*)$ normalized to its maximum $\Sig'(v_0)=e_0 r/2$ at the inflection,
+$\Sig'(v^*)$ normalized to its maximum $\Sig'(v_0)=e_0 \rho/2$ at the inflection,
 \begin{equation}
 \mathrm{PEIX}(v^*)\equiv\frac{\Sig'(v^*)}{\Sig'(v_0)}
-=\operatorname{sech}^2\!\Big[\tfrac{r}{2}\,(v^*-v_0)\Big]\in(0,1],
+=\operatorname{sech}^2\!\Big[\tfrac{\rho}{2}\,(v^*-v_0)\Big]\in(0,1],
 \label{eq:peix}
 \end{equation}
 a dimensionless read-out of where $v^*$ sits, the side given by
@@ -458,12 +454,12 @@ with ion-channel rectification at the node \cite{mirzakhalili2020} but adding ne
 resonance; our direct-coupling demonstration is the $\tau\!\to\!0$ idealization of
 this limit, and a direct kHz-carrier run (Fig.~\ref{fig:khz_direct}) confirms it.
 
-Because tES---and TI, a tES with a kHz carrier---is weak and \emph{modulatory}, the
+Because transcranial electrical stimulation (tES)---and TI, a tES with a kHz carrier---is weak and \emph{modulatory}, the
 fast-element route is a small, sustained bias of the most excitable compartments, not
 ``spiking the AIS at the beat frequency.'' Since the applied field adds to endogenous
 drive, $V(t)=V_0+\delta V_{\mathrm{tES}}(t)+\eta(t)$, there is no strict minimum
 field: near threshold a tiny polarization biases spike probability and timing through
-stochastic resonance, whose inverted-U signature tES and tRNS display
+stochastic resonance, whose inverted-U signature tES and transcranial random-noise stimulation (tRNS) display
 \cite{reato2010,terney2008,vandergroen2016,liu2018}. This maps onto the neural mass,
 whose sigmoid \eqref{eq:sigmoid} is itself a mean-field stochastic-resonance
 device---its smooth slope arises from the spread of thresholds and noise across the
@@ -472,7 +468,8 @@ the demodulated envelope emerges through the curvature $\Sig''$.
 
 Everything here is strongly state-dependent: the demodulation gain scales with
 $\Sig''(v^*)$ and the amplification with $1/\gamma$, both set by neuromodulation,
-attention, arousal and pathology (PEIX), so TI/TMS efficacy should vary with brain
+attention, arousal and pathology (PEIX), so TI and transcranial magnetic stimulation
+(TMS) efficacy should vary with brain
 state rather than being fixed by the stimulus. The $100$~Hz carrier used throughout
 is not merely convenient: there the membrane attenuation is mild for any moderately
 fast element ($|H_m|^2\!\approx\!0.98$ at $\tau=0.2$~ms, $\sim$0.1 at $\tau=5$~ms,
@@ -695,16 +692,11 @@ At fixed post-coupling polarization the demodulated response is flat across the
 carrier band (Fig.~\ref{fig:carrier}, left): the open-loop detector reproduces
 Eq.~\eqref{eq:demod} exactly, and the closed-loop JR near the Hopf adds
 $\sim$60$\times$ resonant gain without introducing any $f_c$ dependence, deviating
-only as $f_c$ approaches the natural band. The second-order-synapse band-pass
-(Fig.~\ref{fig:carrier}, right) passes the $\sim$10~Hz envelope
-($|H|\!\sim\!0.7$) while suppressing the $100$~Hz carrier to $\sim$2.5\%, so the
-carrier is filtered out of the loop after the sigmoid has used it. As a function of
+only as $f_c$ approaches the natural band. As a function of
 the \emph{applied} field, by contrast, the membrane low-pass makes the response roll
 off as $1/f_c^2$ above the corner (Fig.~\ref{fig:khz}): passive somatic demodulation
 is suppressed four to six orders of magnitude at kHz, whereas a fast element
-($\tau\!\approx\!0.2$~ms) retains an appreciable response into the kHz band. Carrier
-independence is thus a statement about the recovered envelope at fixed polarization,
-not about the applied field.
+($\tau\!\approx\!0.2$~ms) retains an appreciable response into the kHz band.
 
 \begin{figure}[t!]
 \centering

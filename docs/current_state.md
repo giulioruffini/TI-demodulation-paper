@@ -1,5 +1,40 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v1.12 — notation collision fixed (r->rho) + intro/carrier compression (latest)
+- Renamed the sigmoid SLOPE r -> \rho (Eq. sigmoid, Table, PEIX Eq. e_0\rho/2 and sech^2[\rho/2(...)]),
+  removing the collision with the MPR firing rate r/r_E. Verified no stray slope-r remains.
+- Compression (high-confidence): Intro SEC/EEC+HAM tail tightened (~15 lines -> ~8); carrier-opening
+  three-item list dropped (dup of the three predictions); earlier removed 2 verbatim Results dups.
+- Compiles clean: 25 pp, 0 undefined refs.
+DELIBERATELY HELD (judgment/risk): deeper prose cuts the audit flagged (state-dependence stated 4x -- the
+sec:khz instance now also carries the TMS expansion, so cutting needs care; op-point Results paragraph
+duplicating its caption; loci-bullet trim; khz numeric litany) and the FIGURE TRIM (~20 graphics ->
+move fig_lanmm_setup + fig_lanmm_map to a supplement, merge the two Arnold-tongue figures). These are the
+remaining levers to reach the audit's ~22-28% reduction. Commit pending (sandbox git blocked; do from Code).
+
+## v1.11 — final Landau/notation pass: audit + safe edits applied (latest)
+Subagent read the whole manuscript. Notation verdict: clean except ONE real defect -- the symbol `r`
+is both the sigmoid slope (Table, Eq. sigmoid) and the firing rate (MPR/NMM2). Spelling uniformly
+American; units consistent; v* vs v_0, f_c/omega_c, gamma, A_Omega, C(=J) all consistent.
+Applied (safe): expanded tES/tRNS/TMS at first use; added (MPR); Table "midpoint"->"inflection";
+deleted two verbatim-duplicate sentences in Results (band-pass dup of Theory; carrier-caveat dup).
+Compiles clean: 25 pp, 0 undefined refs.
+OUTSTANDING DECISIONS (user): (1) the `r` collision -- rename sigmoid slope to rho (breaks JR convention)
+or leave with a note; (2) figure trim -- ~20 graphics; candidates to merge/supplement: fig_lanmm_setup
+(dup of concept), fig_lanmm_map (redundant 3rd map), merge the two Arnold-tongue figs, merge khz/khz_direct;
+(3) deeper prose compression (~22-28% possible): carrier-caveat ~7x, state-dependence 4x, long intro tail,
+Results re-narrating captions. NOTE: keep the abstract amplification/timing clause (user asked for it).
+
+## v1.10 — abstract revised for network-amplification clarity (latest)
+Restructured the abstract around the detection/amplification factorization the paper now proves:
+"the sigmoid \emph{detects}" (square law, inherited curvature) vs "the network \emph{amplifies}"
+(1/gamma near the Hopf). Made the new results explicit: amplification is tuned by the COUPLING at fixed
+detection (J-curve), and being frequency-selective it boosts envelope-frequency TIMING far more than mean
+rate (timing-not-rate). Split the old run-on sentence; NMM2 noted as confirming with "nonlinearity AND
+coupling both derived". Compiles clean: 25 pp, 0 undefined refs. (Applied in Cowork via python string-
+replace; backup /tmp/TN0484.pre_abstract.tex. NOT yet committed -- commit from Code/terminal: sandbox git
+lacks identity/write perms on the Dropbox .git.)
+
 ## v1.9 — Phase 1 #5/#6 + Phase 2 (timing-not-rate, direct-kHz, Discussion reflow) (latest)
 Closed the remaining review items.
 - **#5 timing-not-rate** (new Results \ref{sec:timing} + fig_timing_not_rate): at FIXED detection
