@@ -103,46 +103,6 @@ Roser Sanchez-Todo, Andr{\'e}~M. Bastos, Edmundo Lopez-Sola, et~al.
   oscillatory generators from laminar electrophysiological recordings.
 \newblock {\em NeuroImage}, 270:119938, 2023.
 
-\bibitem{barker1991}
-Anthony~T. Barker, C.~W. Garnham, and Ian~L. Freeston.
-\newblock Magnetic nerve stimulation: the effect of waveform on efficiency,
-  determination of neural membrane time constants and the measurement of
-  stimulator output.
-\newblock {\em Electroencephalography and Clinical Neurophysiology Supplement},
-  43:227--237, 1991.
-
-\bibitem{peterchev2013}
-Angel~V. Peterchev, Stefan~M. Goetz, Gregory~G. Westin, Bruce Luber, and
-  Sarah~H. Lisanby.
-\newblock Pulse width dependence of motor threshold and input--output curve
-  characterized with controllable pulse parameter transcranial magnetic
-  stimulation.
-\newblock {\em Clinical Neurophysiology}, 124(7):1364--1372, 2013.
-
-\bibitem{rahman2013}
-Asif Rahman, Davide Reato, Mattia Arlotti, Fernando Gasca, Abhishek Datta,
-  Lucas~C. Parra, and Marom Bikson.
-\newblock Cellular effects of acute direct current stimulation: somatic and
-  synaptic terminal effects.
-\newblock {\em The Journal of Physiology}, 591(10):2563--2578, 2013.
-
-\bibitem{aberra2023}
-Aman~S. Aberra, Ruochen Wang, Warren~M. Grill, and Angel~V. Peterchev.
-\newblock Multi-scale model of axonal and dendritic polarization by
-  transcranial direct current stimulation in realistic head geometry.
-\newblock {\em Brain Stimulation}, 16(6):1776--1791, 2023.
-
-\bibitem{rahman2017}
-Asif Rahman, Belen Lafon, Lucas~C. Parra, and Marom Bikson.
-\newblock Direct current stimulation boosts synaptic gain and cooperativity in
-  vitro.
-\newblock {\em The Journal of Physiology}, 595(11):3535--3547, 2017.
-
-\bibitem{chakraborty2018}
-Darpan Chakraborty, Dennis~Q. Truong, Marom Bikson, and Hanoch Kaphzan.
-\newblock Neuromodulation of axon terminals.
-\newblock {\em Cerebral Cortex}, 28(8):2786--2794, 2018.
-
 \bibitem{reato2010}
 Davide Reato, Asif Rahman, Marom Bikson, and Lucas~C. Parra.
 \newblock Low-intensity electrical stimulation affects network dynamics by
@@ -174,6 +134,13 @@ Fran{\c c}ois Grimbert and Olivier Faugeras.
 \newblock Bifurcation analysis of {J}ansen's neural mass model.
 \newblock {\em Neural Computation}, 18(12):3052--3068, 2006.
 
+\bibitem{esmaeilpour2020}
+Zeinab Esmaeilpour, Mark Jackson, Greg Kronberg, Tianhe Zhang, Rosana Esteller,
+  Brad Hershey, and Marom Bikson.
+\newblock Limited sensitivity of hippocampal synaptic function or network
+  oscillations to unmodulated kilohertz electric fields.
+\newblock {\em eNeuro}, 7(6):ENEURO.0368--20.2020, 2020.
+
 \bibitem{gordon2019}
 Nathan Gordon, Jakob Hohwy, Matthew~J. Davidson, Jeroen J.~A. van Boxtel, and
   Naotsugu Tsuchiya.
@@ -200,5 +167,39 @@ Boshuo Wang, Aman~S. Aberra, Warren~M. Grill, and Angel~V. Peterchev.
   stimulation and related transcranial alternating current stimulation
   modalities.
 \newblock {\em Journal of Neural Engineering}, 19(6):066047, 2023.
+
+\bibitem{rahman2013}
+Asif Rahman, Davide Reato, Mattia Arlotti, Fernando Gasca, Abhishek Datta,
+  Lucas~C. Parra, and Marom Bikson.
+\newblock Cellular effects of acute direct current stimulation: somatic and
+  synaptic terminal effects.
+\newblock {\em The Journal of Physiology}, 591(10):2563--2578, 2013.
+
+\bibitem{aberra2023}
+Aman~S. Aberra, Ruochen Wang, Warren~M. Grill, and Angel~V. Peterchev.
+\newblock Multi-scale model of axonal and dendritic polarization by
+  transcranial direct current stimulation in realistic head geometry.
+\newblock {\em Brain Stimulation}, 16(6):1776--1791, 2023.
+
+\bibitem{chakraborty2018}
+Darpan Chakraborty, Dennis~Q. Truong, Marom Bikson, and Hanoch Kaphzan.
+\newblock Neuromodulation of axon terminals.
+\newblock {\em Cerebral Cortex}, 28(8):2786--2794, 2018.
+
+\bibitem{barker1991}
+Anthony~T. Barker, C.~W. Garnham, and Ian~L. Freeston.
+\newblock Magnetic nerve stimulation: the effect of waveform on efficiency,
+  determination of neural membrane time constants and the measurement of
+  stimulator output.
+\newblock {\em Electroencephalography and Clinical Neurophysiology Supplement},
+  43:227--237, 1991.
+
+\bibitem{peterchev2013}
+Angel~V. Peterchev, Stefan~M. Goetz, Gregory~G. Westin, Bruce Luber, and
+  Sarah~H. Lisanby.
+\newblock Pulse width dependence of motor threshold and input--output curve
+  characterized with controllable pulse parameter transcranial magnetic
+  stimulation.
+\newblock {\em Clinical Neurophysiology}, 124(7):1364--1372, 2013.
 
 \end{thebibliography}

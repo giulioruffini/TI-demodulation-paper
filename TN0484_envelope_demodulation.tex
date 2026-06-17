@@ -443,57 +443,32 @@ six-order-of-magnitude suppression.
 
 % fig:khz moved to Results (Theory is equations-only)
 
-This is not special to TI: any high-frequency extracellular drive is low-passed by
-the soma. Transcranial magnetic stimulation (TMS) pulses carry kHz spectral
-content (peak $\sim$3.9~kHz for a Magstim
-Rapid $dI/dt$), which a $\tau_m=16$~ms membrane attenuates by
-$|H_m|\!\approx\!2.5\times10^{-3}$ ($\approx-52$~dB); one must therefore not think
-of TMS (or TI) as ``driving the pyramidal soma at kHz.'' TMS works because it
-activates fast excitable elements---axon, axon initial segment (AIS), nodes of
-Ranvier---whose apparent strength--duration (chronaxie) constants are
-$\sim$0.15--0.25~ms \cite{barker1991,peterchev2013}, i.e.\ effective corners near
-$\sim$800~Hz. The same escape rescues TI under our mechanism: if the demodulating
-nonlinearity sits at a fast element ($\tau\!\approx\!0.2$~ms) rather than the soma,
-the carrier is only mildly attenuated in the kHz band ($|H|^2\!\approx\!0.39$ at
-1~kHz, $0.14$ at 2~kHz, still $\sim$$6\times10^{-3}$ at 10~kHz;
-Fig.~\ref{fig:khz}). A square-law nonlinearity there produces a real
-envelope-frequency current, and that low-frequency component is \emph{not}
-attenuated by the membrane---it is exactly what the slow network reads. The
-per-neuron modulation is subtle, but two factors make it count: the envelope sits
-in the band the membrane passes, and the population near a Hopf amplifies it by
-$G\!\sim\!1/\gamma$ (Eq.~\eqref{eq:gain}). Subtle demodulation at fast elements,
-resonantly amplified at the population, is thus a plausible route for TI at
-realistic carriers, consistent with the chronaxie evidence and with ion-channel
-rectification at the node \cite{mirzakhalili2020} but adding network resonance;
-our direct-coupling demonstration is the $\tau\!\to\!0$ idealization of this limit.
+The escape is that the demodulating nonlinearity need not sit at the soma. At a fast
+element (axon, axon initial segment (AIS), node of Ranvier; $\tau\!\approx\!0.2$~ms,
+effective corner $\sim$800~Hz) the carrier is only mildly attenuated in the kHz band
+($|H|^2\!\approx\!0.39$ at 1~kHz, $0.14$ at 2~kHz, still $\sim$$6\times10^{-3}$ at
+10~kHz; Fig.~\ref{fig:khz}). A square-law nonlinearity there produces a real
+envelope-frequency current, and that low-frequency component is \emph{not} attenuated
+by the membrane---it is exactly what the slow network reads. The per-neuron
+modulation is subtle, but two factors make it count: the envelope sits in the band
+the membrane passes, and the population near a Hopf amplifies it by $G\!\sim\!1/\gamma$
+(Eq.~\eqref{eq:gain}). Subtle demodulation at fast elements, resonantly amplified at
+the population, is thus a plausible route for TI at realistic carriers---consistent
+with ion-channel rectification at the node \cite{mirzakhalili2020} but adding network
+resonance; our direct-coupling demonstration is the $\tau\!\to\!0$ idealization of
+this limit, and a direct kHz-carrier run (Fig.~\ref{fig:khz_direct}) confirms it.
 
-Unlike TMS, conventional transcranial electrical stimulation (tES)---and TI,
-which is tES with a kHz carrier---is weak and \emph{modulatory}: it biases ongoing activity rather than forcing spikes. The
-fast-element route should therefore be read not as ``spiking the AIS at the beat
-frequency'' but as a small, sustained bias of the most excitable, geometrically
-sensitive compartments. Two facts make this potent. First, a weak field polarizes
-elongated cables as $\Delta V_m\sim E\,L_{\mathrm{eff}}\cos\theta$, largest at
-terminations, bends and branch points: axon terminals polarize $\sim$2--3$\times$
-more than the soma \cite{rahman2013}, and realistic multiscale models put
-axonal/dendritic terminals up to $\sim$10$\times$ above the cell body
-\cite{aberra2023}, with terminal/presynaptic effects among the best-supported
-non-somatic tES mechanisms \cite{rahman2013,rahman2017,chakraborty2018}; these
-compartments are also faster, so they are exactly the loci that both see the kHz
-carrier and polarize most. Second, because endogenous synaptic drive and the
-applied field add, $V(t)=V_0+\delta V_{\mathrm{tES}}(t)+\eta(t)$, there is no
-strict ``minimum effective field'': near threshold a tiny polarization biases spike
-probability and timing---stochastic resonance. Weak fields modulate spike rate and
-timing and entrain population activity at $\sim$0.2~V/m \cite{reato2010};
-transcranial random noise stimulation (tRNS) shows the inverted-U signature of
-stochastic resonance \cite{terney2008,vandergroen2016};
-and the review of immediate tES effects lists stochastic resonance and temporal
-spike-biasing among the core mechanisms \cite{liu2018}. This maps cleanly onto the
-neural mass, whose sigmoid \eqref{eq:sigmoid} is itself a mean-field
-stochastic-resonance device: its smooth slope arises from the spread of thresholds
-and noise across the population, so a weak bias shifts the mean firing rate through
-$\Sig$ (gain $\Sig'$) and the demodulated envelope emerges through the curvature
-$\Sig''$. Our square-law result is precisely the population read-out of this subtle,
-noise-assisted compartmental bias, resonantly amplified near the Hopf.
+Because tES---and TI, a tES with a kHz carrier---is weak and \emph{modulatory}, the
+fast-element route is a small, sustained bias of the most excitable compartments, not
+``spiking the AIS at the beat frequency.'' Since the applied field adds to endogenous
+drive, $V(t)=V_0+\delta V_{\mathrm{tES}}(t)+\eta(t)$, there is no strict minimum
+field: near threshold a tiny polarization biases spike probability and timing through
+stochastic resonance, whose inverted-U signature tES and tRNS display
+\cite{reato2010,terney2008,vandergroen2016,liu2018}. This maps onto the neural mass,
+whose sigmoid \eqref{eq:sigmoid} is itself a mean-field stochastic-resonance
+device---its smooth slope arises from the spread of thresholds and noise across the
+population---so a weak bias shifts the mean rate through $\Sig$ (gain $\Sig'$) while
+the demodulated envelope emerges through the curvature $\Sig''$.
 
 Everything here is strongly state-dependent: the demodulation gain scales with
 $\Sig''(v^*)$ and the amplification with $1/\gamma$, both set by neuromodulation,
@@ -758,6 +733,35 @@ be thought of as driving the soma at kHz.}
 \label{fig:khz}
 \end{figure}
 
+To pre-empt the objection that the demonstration runs only at $100$~Hz, we drive the
+full recurrent column with a genuine kHz-carrier AM field, passing the field through
+an explicit membrane low-pass (an extra first-order state, time constant $\tau$) for
+each coupling route before it reaches the sigmoid (Fig.~\ref{fig:khz_direct}a). The
+column demodulates and resonates at the recovered alpha well into the kHz band when
+the nonlinearity sits at a fast element ($\tau\!\approx\!0.2$~ms): the closed-loop
+$A_\Omega$ is carrier-independent for direct coupling, follows the fast element into
+the kHz, and collapses as $1/f_c^2$ for the slow soma ($\tau_m\!\approx\!16$~ms),
+exactly as Eq.~\eqref{eq:khz} predicts. A $2$~kHz carrier through the fast element
+yields a clean alpha line synthesized by the column from an input with zero alpha
+power (Fig.~\ref{fig:khz_direct}b). That the bare unmodulated kHz carrier is itself
+weakly effective---the premise of TI's focality---is consistent with the limited
+sensitivity of hippocampal network oscillations to unmodulated kHz fields
+\cite{esmaeilpour2020} (code: \texttt{khz\_direct.py}).
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{fig_khz_direct.pdf}
+\caption{\textbf{Demodulation at a genuine kHz carrier (Jansen--Rit, closed loop).}
+The applied field passes through an explicit membrane filter before the sigmoid.
+\emph{(a)} Closed-loop demodulated $A_\Omega$ at $\Delta f=f_0$ vs.\ carrier $f_c$ for
+three coupling routes: direct ($\tau\!\to\!0$, carrier-independent), fast element
+(axon/AIS/node, $\tau\!\approx\!0.2$~ms; survives into the kHz band), and soma
+($\tau_m\!\approx\!16$~ms; collapses as $1/f_c^2$). \emph{(b)} Output spectrum for a
+$2$~kHz carrier delivered through the fast element: a clean alpha line at $f_0$,
+synthesized by the column although the input carries no alpha power.}
+\label{fig:khz_direct}
+\end{figure}
+
 \subsection{The operating-point law and the $\Sig''$ control}
 Because $A_\Omega\propto\Sig''(v^*)$, the signed (in-phase) open-loop response tracks
 $\half\Sig''(v^*)\varepsilon^2 m$ across the whole operating range, vanishes at the
@@ -946,6 +950,96 @@ state-dependent transfer of NMM2, absent in the static-sigmoid JR and LaNMM.}
 \label{fig:nmm2_map}
 \end{figure}
 
+\subsection{What the mesoscale adds: coupling sets the gain at fixed detection}\label{sec:jcurve}
+The resonance sweeps above drove the column toward the Hopf with the external input
+$p$, but $p$ also shifts the operating point, entangling detection ($\Sig''$) with
+amplification. The sharper, mechanistic statement is that the \emph{network coupling}
+sets the gain on its own. In the JR column we vary the global connectivity $C$---the
+coupling strength $J$---and, for each $C$, solve analytically for the drive $p(C)$ that
+\emph{pins} the operating point $v^*$, so the detection gain $\Sig''(v^*)$ and the
+open-loop detector amplitude $A_{\rm open}=\half\Sig''(v^*)\varepsilon^2 m$ are held
+exactly constant. As $C\!\to\!C^*$ (the Hopf, $C^*\!\approx\!137$) the damping
+$\gamma\!\to\!0$, the demodulated response grows $\sim$$27\times$ and the envelope
+resonance sharpens (Fig.~\ref{fig:jcurve}a,b)---entirely a network effect, since
+detection is frozen and only $\gamma$ changes. The recovered gain
+$A_\Omega/A_{\rm open}$ tracks $1/\gamma$ before saturating near criticality
+(Fig.~\ref{fig:jcurve}c); driving the same column to the Hopf through the input $p$
+rather than the coupling $C$ yields the same gain--$\gamma$ relation, so the
+amplification depends only on the distance to criticality, not on which parameter
+delivers it.
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{fig_jcurve.pdf}
+\caption{\textbf{Coupling controls the amplification at fixed detection (Jansen--Rit).}
+The operating point $v^*$ is pinned by co-solving $p(C)$, so $\Sig''(v^*)$ and
+$A_{\rm open}$ are constant. \emph{(a)} The demodulated $A_\Omega$ diverges as the
+coupling $C\,(=J)$ approaches the Hopf $C^*$. \emph{(b)} The envelope resonance
+sharpens and grows as $C\!\to\!C^*$. \emph{(c)} The network gain
+$A_\Omega/A_{\rm open}$ follows $1/\gamma$ (dashed) and saturates near the
+bifurcation.}
+\label{fig:jcurve}
+\end{figure}
+
+This becomes exact in the next-generation theory. In the NMM2 PING the coupling $C$ is
+the \emph{literal} mean inter-neuron (QIF) synaptic weight $J$, and the demodulating
+nonlinearity is the exact $v_E^2$ term, whose quadratic coefficient is a fixed
+constant---so detection needs no pinning. Sweeping $J$ at fixed background drive
+$\bar\eta$ toward the gamma Hopf $J^*$, the demodulated peak of $r_E$ grows as
+$1/\gamma$ and saturates at criticality (Fig.~\ref{fig:nmm2_jcurve}): the heuristic JR
+result, reproduced with the coupling \emph{and} the rectifier both derived rather than
+assumed, and a direct counterpart of the coupling-controlled weak-field sensitivity of
+QIF networks \cite{clusella2023}. The two columns realize one band-agnostic law in
+their two native bands---alpha (JR) and gamma (NMM2): the single-cell nonlinearity
+detects the envelope (coarse-grained into $\Sig''$, or the exact $v^2$), while the
+sharp, tunable gain is the network's---a resonant amplification set by proximity to the
+Hopf and adjustable through the coupling.
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=0.92\textwidth]{fig_nmm2_jcurve.pdf}
+\caption{\textbf{Coupling controls the amplification in the exact mean field (NMM2
+PING, gamma).} $J\,(=C)$ is the literal inter-QIF synaptic weight; the rectifier is the
+exact $v_E^2$ (fixed quadratic coefficient), so no operating-point pinning is needed.
+\emph{(a)} The peak demodulated response of $r_E$ diverges as $J\!\to\!J^*$ (gamma
+Hopf, $\bar\eta=0$). \emph{(b)} The gain grows as $1/\gamma$ (dashed), saturating near
+criticality---the JR law, now with coupling and rectifier both derived.}
+\label{fig:nmm2_jcurve}
+\end{figure}
+
+\subsection{Timing, not rate: the resonance amplifies the AC envelope, not the mean rate}\label{sec:timing}
+The near-Hopf gain is sharply frequency-selective, and this has a sharp experimental
+consequence. The demodulator feeds the network both a baseband (DC) term and a line at
+the beat $\Omega$ (Eq.~\eqref{eq:taylor}), but the transfer $G(\Omega)$ of
+Eq.~\eqref{eq:gain} treats them very differently: at the resonance
+$G(\omega_0)\propto1/(2\gamma\omega_0)$ diverges as the Hopf is approached, while at
+zero frequency $G(0)\propto1/\omega_0^2$ is flat. Holding detection fixed (pinning
+$v^*$, exactly as in Fig.~\ref{fig:jcurve}) and driving the column toward the Hopf
+through the coupling, the AC lock-in at the resonant beat $\Delta f=f_0$ grows
+$\sim$$17\times$---tracking $1/\gamma$ before saturating near criticality---while the
+DC shift of the mean pyramidal firing rate stays flat at a few mHz, and even changes
+sign, throughout (Fig.~\ref{fig:timing}). Near criticality the recovered envelope
+entrains population \emph{timing} at $\Delta f$ while leaving the mean \emph{rate}
+essentially unchanged. This is the mesoscopic counterpart of the in-vivo observation
+that TI alters spike timing but not firing rate in the primate brain
+\cite{vieira2024}: the network selectively amplifies the envelope-locked AC response,
+not the DC rate, so a near-flat mean rate is the expected signature even where TI is
+acting (code: \texttt{timing\_not\_rate.py}, \texttt{make\_timing\_fig.py}).
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{fig_timing_not_rate.pdf}
+\caption{\textbf{Timing, not rate (Jansen--Rit, detection pinned).} As the column is
+driven toward the Hopf through the coupling at fixed $\Sig''(v^*)$, \emph{(a)} the AC
+lock-in at the resonant beat $\Delta f=f_0$ (blue) is resonantly amplified and tracks
+$1/\gamma$ (dashed), while the DC shift of the mean firing rate (red) stays flat at a
+few mHz. \emph{(b)} Normalized to the far-from-Hopf value (log scale): the AC gain
+follows $1/\gamma$ and saturates near criticality, whereas the DC gain stays
+$\sim$1. The envelope entrains timing, not rate---the population analog of the
+spike-timing-without-rate finding of \cite{vieira2024}.}
+\label{fig:timing}
+\end{figure}
+
 \subsection{Falsifiable predictions and tests}\label{sec:predictions}
 The mechanism makes three sharp predictions, each with a clean experimental handle.
 \begin{enumerate}[leftmargin=*]
@@ -988,26 +1082,32 @@ shape, need only supply a fast nonlinearity that samples the carrier.
 
 This factorization---a fast single-cell nonlinearity samples the carrier, after
 which the population reads out the envelope and the network resonantly amplifies
-it---identifies
-where the carrier-sampling nonlinearity may live, and the TI literature already offers several non-exclusive
-candidates. Fast voltage-gated Na$^+$ at nodes and the AIS rectifies because
-activation outpaces inactivation, giving a net envelope-following current
-\cite{mirzakhalili2020,wang2023}; Na$^+$-inactivation conduction block removes the
-carrier while passing the slow envelope \cite{mirzakhalili2020,opancar2025};
-persistent Na$^+$ is a fast subthreshold rectifier concentrated at the AIS and tied
-to axonal resonance, so it could even set an optimal $\Delta f$; presynaptic
-terminals polarize $\sim$2--10$\times$ more than somata
+it---identifies where the carrier-sampling nonlinearity may live. The TI literature
+points to three best-supported, non-exclusive loci. (i)~\emph{Axonal Na$^+$ channels}
+at nodes and the AIS: fast voltage-gated Na$^+$ rectifies because activation outpaces
+inactivation \cite{mirzakhalili2020,wang2023}, Na$^+$-inactivation conduction block
+passes the slow envelope while removing the carrier
+\cite{mirzakhalili2020,opancar2025}, and persistent Na$^+$---a fast subthreshold
+rectifier tied to axonal resonance---could even set an optimal $\Delta f$.
+(ii)~\emph{Presynaptic terminals}, which polarize $\sim$2--10$\times$ more than somata
 \cite{rahman2013,aberra2023,chakraborty2018} and convert depolarization into
-release through the steeply nonlinear Ca$^{2+}$--release relation; the spike
-threshold itself acts probabilistically (stochastic resonance) wherever activity is
-near threshold \cite{liu2018,reato2010}; and cell-type and geometry matter, with
-fast-spiking interneurons following higher frequencies and bends/branch points
-acting as high-gain polarization loci. In model cortical neurons TI produces block,
-onset and phasic responses depending on geometry and location \cite{wang2023}, and
-in vivo it alters spike timing rather than rate in the primate brain
-\cite{vieira2024}, consistent with a timing/probability bias that the population
-integrates. The catalogue is not exhaustive; the point is that the mesoscopic
-mechanism is agnostic to which fast nonlinearity does the sampling.
+transmitter release through the steeply nonlinear Ca$^{2+}$--release relation.
+(iii)~\emph{Threshold spiking}, where near threshold the spike probability is a smooth
+nonlinearity and a weak bias is rectified through stochastic resonance
+\cite{liu2018,reato2010}. In model cortical neurons TI produces block, onset and
+phasic responses depending on geometry \cite{wang2023}, and in vivo it alters spike
+timing rather than rate in the primate brain \cite{vieira2024}---consistent with the
+timing-not-rate signature of our resonance (\S\ref{sec:timing}). The mesoscopic
+mechanism is agnostic to which of these does the sampling.
+
+The same fast-element logic explains TMS, and underscores that high-frequency drive
+is not somatic. TMS pulses carry kHz spectral content (peak $\sim$3.9~kHz), which a
+$\tau_m\!\approx\!16$~ms soma attenuates by $\sim$50~dB; TMS---like TI---therefore
+cannot be driving the soma at kHz, and works instead through fast excitable elements
+whose chronaxie ($\sim$0.15--0.25~ms) sets an effective corner near $\sim$800~Hz
+\cite{barker1991,peterchev2013}. That the bare unmodulated kHz carrier is itself
+weakly effective on network oscillations \cite{esmaeilpour2020} is the complement of
+the same fact: the carrier matters only where a fast nonlinearity rectifies it.
 
 The mechanism's falsifiable predictions---carrier independence at fixed
 polarization, the PEIX-controlled sign flip, and frequency-selective
@@ -1050,7 +1150,7 @@ population sigmoid demodulates and the network amplifies}.
 The amplification half is not automatic: the gain scales as $1/\gamma$ with the
 distance $\gamma$ to the Hopf, so a large, sharply tuned response appears only near
 criticality (high excitability); far from the bifurcation the envelope is recovered
-but barely amplified. Both halves are thus strongly \textbf{state-dependent}---detection
+but barely amplified. The amplification is therefore not only state- but \emph{coupling}-tunable: holding detection fixed, the demodulated gain grows toward $1/\gamma$ as the network is driven to criticality by its own connectivity (\S\ref{sec:jcurve}), in the heuristic JR column and, with the inter-neuron coupling and the rectifier both derived, in the exact NMM2 mean field. Both halves are thus strongly \textbf{state-dependent}---detection
 through the curvature $\Sig''(v^*)$ (which even changes sign across the inflection),
 amplification through $\gamma$---and both are set by neuromodulation, attention,
 arousal and pathology (PEIX). Under this mechanism TI efficacy is a property of

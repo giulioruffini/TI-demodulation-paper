@@ -161,7 +161,7 @@ clean: 22 pp, 0 undefined refs (`pdflatex` works locally; `.bbl` is committed).
 6. **Figure->script table** for reproducibility.
 
 ### Then Phase 1 writeup + Phase 2
-- Weave both J-curves into a Results subsection "what the mesoscale adds" (detection sigma'' vs amplification
+- [DONE v1.8] Wove both J-curves into Results subsection \ref{sec:jcurve}; originally: "what the mesoscale adds" (detection sigma'' vs amplification
   1/gamma; JR pinned-v*, NMM2 literal-J exact). Add the new figures to the .tex.
 - Still TODO from the review: timing-not-rate result (#5; AC at Delta f amplified ~omega0/2gamma near Hopf vs
   flat DC mean rate -> matches Vieira 2024; NMM2 order parameter), direct-kHz single-column panel (#6).

@@ -1,5 +1,42 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v1.9 — Phase 1 #5/#6 + Phase 2 (timing-not-rate, direct-kHz, Discussion reflow) (latest)
+Closed the remaining review items.
+- **#5 timing-not-rate** (new Results \ref{sec:timing} + fig_timing_not_rate): at FIXED detection
+  (pinned v*, same construction as the J-curve) drive toward the Hopf via coupling; AC lock-in at
+  Df=f0 grows ~17x tracking 1/gamma (saturating), while DC mean-rate shift stays flat at ~3.7 mHz.
+  G(w0)~1/(2 g w0) diverges, G(0)~1/w0^2 flat -> timing entrains, rate doesn't (mesoscale analog of
+  Vieira 2024). Code: `code/timing_not_rate.py` (sim, ~20s) + `code/make_timing_fig.py`.
+- **#6 direct-kHz** (paragraph + fig_khz_direct in the kHz-rolloff subsection): closed-loop JR driven at
+  genuine kHz carriers, field pre-filtered by an explicit membrane LP (extra ODE state) per route. Direct
+  flat (carrier-independent), fast element (tau=0.2ms) survives into kHz, soma (16ms) collapses ~1/f_c^2;
+  2 kHz carrier -> clean alpha line recovered (input alpha power = 0). Pre-empts "demo is only 100 Hz."
+  Code: `code/khz_direct.py` (self-contained, ~90s; p=400 so the high-Q floor doesn't mask the soma rolloff).
+- **Phase 2:** candidate-nonlinearity catalogue compressed 6->**3 loci** (axonal Na+, presynaptic terminals,
+  threshold spiking). **Discussion reflow:** TMS/chronaxie persuasion DEMOTED from 2.5 to Discussion; 2.5
+  tightened to the fast-element physics (Landau). **High-freq-tES claim VERIFIED with a real citation:**
+  added `esmaeilpour2020` (eNeuro 7(6), DOI 10.1523/ENEURO.0368-20.2020 -- "Limited Sensitivity of
+  Hippocampal ... to Unmodulated Kilohertz Electric Fields") supporting the inert-carrier premise; cited in
+  2.5 (#6 paragraph) and Discussion.
+- Compiles clean via pdflatex+bibtex+pdflatex x2: **25 pp, 0 undefined refs, 0 citation warnings**.
+- ENV NOTE: scipy is NOT installed here (PEP 668 blocks pip; venv avoided). `test_jr_demod.py` and the
+  scipy-based J-curve scripts can't run in this session; the two NEW scripts are deliberately scipy-free
+  (pure-numpy bisection) and ran fine.
+
+## v1.8 — Phase 1 writeup: J-curves woven into the paper
+Code had finished Phase 0 #3 (Theory equations-only, PEIX formula, trimmed abstract, deduped slogan,
+consolidated predictions) but the J-curves were still referenced NOWHERE. Added the missing capstone:
+- New Results subsection **\ref{sec:jcurve} "What the mesoscale adds: coupling sets the gain at fixed
+  detection"** (placed before Falsifiable predictions). Presents BOTH J-curves: JR (fig:jcurve, pinned v*
+  -> sigma'' fixed, C->C* x27, gain ~1/gamma; input p and coupling C give the same gain-gamma relation) and
+  NMM2 (fig:nmm2_jcurve, literal inter-QIF J, exact v^2 rectifier, no pinning, 1/gamma to gamma Hopf).
+  Framed band-agnostic: one law in alpha (JR) and gamma (NMM2).
+- Added fig_jcurve.pdf and fig_nmm2_jcurve.pdf to the .tex; Discussion tie-in sentence (amplification is
+  coupling-tunable, not only state-tunable; sec:jcurve).
+- Compiles clean: **24 pp, 0 undefined refs** (two pdflatex passes).
+Remaining: #5 timing-not-rate result+fig, #6 direct-kHz panel, Phase 2 (Discussion reflow, compress
+nonlinearity catalogue to 3 loci, VERIFY the high-freq-tES claim w/ citation, final Landau pass).
+
 ## v1.8 — Phase 0 (#3) structural reorg + PEIX + abstract/slogan/predictions (latest)
 Finished the rest of Phase 0. Theory (§2) is now **equations-only**: the three results figures
 (fig_carrier, fig_khz, fig_operating_point) were moved out of §2.3--2.5 into Results; Theory now
