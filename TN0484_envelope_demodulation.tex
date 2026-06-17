@@ -64,16 +64,13 @@ bifurcation resonantly amplifies the recovered envelope at its natural frequency
 The demodulating curvature is inherited from the single neuron's input--output
 nonlinearity, coarse-grained over the population and requiring no specific channel,
 while the sharp, frequency-selective gain is a genuinely emergent network property.
-In the Jansen--Rit model we obtain a clean alpha output from an alpha-free
-input, square-law scaling $A_\Omega\simeq\half\Sig''(v^*)\varepsilon^2 m$ (a
-$712\times$ collapse when the sigmoid is linearized), resonance growing as
-$1/\gamma$ toward the Hopf on both the forced and entrained sides, carrier
-independence at fixed polarization (the applied-field threshold rising with $f_c$),
-and a gain set by the curvature $\Sig''(v^*)$ (zero, and
-sign-reversing, at the inflection). The two-band laminar model (LaNMM) confirms
-it: deep-alpha and superficial-gamma loops give nonlinear Arnold tongues, and the
-carrier dependence interpolates between a carrier-independent direct limit and a
-doubly resonant fast-loop route. The mechanism is state-dependent through the
+In the Jansen--Rit model an alpha-free carrier input yields a clean alpha output
+obeying the square law $A_\Omega\simeq\half\Sig''(v^*)\varepsilon^2 m$, with
+resonant gain growing as $1/\gamma$ toward the Hopf, carrier independence at fixed
+polarization (the applied-field threshold rising with $f_c$), and a gain set---and
+sign-reversed---by the curvature $\Sig''(v^*)$. The two-band laminar model (LaNMM)
+and the exact next-generation mean field (NMM2) confirm it, the latter with the
+demodulating nonlinearity derived rather than postulated. The mechanism is state-dependent through the
 operating point (PEIX) and connects TI to cross-frequency coupling and
 hierarchical amplitude modulation. The message: \emph{wherever a fast-enough
 nonlinearity samples the carrier, the population sigmoid demodulates and the
@@ -375,17 +372,7 @@ low-pass with corner $a/2\pi\approx16$~Hz. It passes the $\sim$10~Hz envelope
 (Fig.~\ref{fig:carrier}, right), so the carrier is filtered out of the loop
 \emph{after} the sigmoid has used it to demodulate.
 
-\begin{figure}[t!]
-\centering
-\includegraphics[width=\textwidth]{fig_carrier_independence.pdf}
-\caption{\textbf{Carrier independence (Jansen--Rit single column).} \emph{Left:} the demodulated response is
-flat across carrier frequency $f_c=25$--$300$~Hz, both for the open-loop detector
-(exactly, by Eq.~\eqref{eq:demod}) and for the closed-loop JR near the Hopf (which
-adds $\sim$60$\times$ resonant gain); deviations appear only as $f_c$ approaches
-the natural band. \emph{Right:} the second-order-synapse band-pass $|H(\omega)|$
-passes the envelope ($\sim$0.7) and suppresses the $100$~Hz carrier ($\sim$2.5\%).}
-\label{fig:carrier}
-\end{figure}
+% fig:carrier moved to Results (Theory is equations-only)
 
 What turns this recovered envelope into a large, frequency-selective response is
 the network. Linearizing the mass about its fixed point gives eigenvalues
@@ -407,28 +394,25 @@ grows with cycle amplitude.
 Because $A_\Omega\propto\Sig''(v^*)$, demodulation is governed by the curvature at
 the operating point, and in particular by how far $v^*$ sits from the sigmoid
 inflection (Fig.~\ref{fig:opp}). The Population Excitation--Inhibition Index (PEIX)
-of \cite{ruffini2025cfc} is a related but distinct quantity: a normalized
-\emph{slope} index, a dimensionless measure of the sigmoid gain $\Sig'(v^*)$
-relative to its maximum---i.e.\ of where $v^*$ sits and on which side. PEIX thus
-tracks $\Sig'$ (maximal at the inflection $v_0$), whereas the demodulation gain
-tracks $\Sig''$ (zero at $v_0$, peaked on the flanks, and sign-reversing across
-it). PEIX is therefore a convenient, measurable read-out of the operating point and
+of \cite{ruffini2025cfc} is a related but distinct quantity: the sigmoid gain
+$\Sig'(v^*)$ normalized to its maximum $\Sig'(v_0)=e_0 r/2$ at the inflection,
+\begin{equation}
+\mathrm{PEIX}(v^*)\equiv\frac{\Sig'(v^*)}{\Sig'(v_0)}
+=\operatorname{sech}^2\!\Big[\tfrac{r}{2}\,(v^*-v_0)\Big]\in(0,1],
+\label{eq:peix}
+\end{equation}
+a dimensionless read-out of where $v^*$ sits, the side given by
+$\operatorname{sign}(v^*-v_0)$. PEIX thus tracks $\Sig'$ (maximal at the inflection
+$v_0$), whereas the demodulation gain tracks $\Sig''$ (zero at $v_0$, peaked on the
+flanks, and sign-reversing across it): the two are complementary, and PEIX peaks
+exactly where the demodulation gain vanishes. PEIX is therefore a convenient,
+measurable read-out of the operating point and
 hence an indirect predictor of $\Sig''$ and of TI efficacy. The mechanism predicts
 that anything shifting $v^*$---neuromodulation, attention, arousal, or pathology
 (psychedelics, PV interneuron dysfunction in Alzheimer's disease)---should scale,
 and can even flip the sign of, the TI response: a falsifiable handle.
 
-\begin{figure}[t!]
-\centering
-\includegraphics[width=0.74\textwidth]{fig_operating_point.pdf}
-\caption{\textbf{Operating-point law and the $\Sig''$ control (Jansen--Rit).} The measured
-signed (in-phase) open-loop response tracks $\half\Sig''(v^*)\varepsilon^2 m$
-across the whole range, vanishes at the inflection $v_0$, and reverses sign across
-it---a direct verification that demodulation is the sigmoid-curvature term of
-Eq.~\eqref{eq:demod}. The closed-loop JR operating points (dots) sit on the lobe
-where $\Sig''$ is large and negative.}
-\label{fig:opp}
-\end{figure}
+% fig:opp moved to Results (Theory is equations-only)
 
 \subsection{Biophysical realization: carrier frequency, fast elements, and state}\label{sec:khz}
 Carrier independence (at fixed polarization) holds for the direct coupling \eqref{eq:coupling}. Real
@@ -451,20 +435,7 @@ $\sim$10~Hz), so the carrier-power factor $|H_m|^2$ is only $\sim$$10^{-4}$ at
 somatic demodulation is therefore negligible at TI's kHz carriers---a four- to
 six-order-of-magnitude suppression.
 
-\begin{figure}[t!]
-\centering
-\includegraphics[width=0.74\textwidth]{fig_khz.pdf}
-\caption{\textbf{Carrier frequency in the kHz regime (Jansen--Rit, open-loop detector).} Open-loop
-demodulated response (normalized to the $\tau\!\to\!0$ value) vs.\ carrier
-frequency up to $10$~kHz. With direct coupling ($\tau\!\to\!0$) the response is
-flat---carrier-independent. A slow somatic membrane ($\tau_m\!\approx\!16$~ms)
-rolls off as $1/f_c^2$ (dashed guide), killing kHz demodulation; a fast element
-(axon/AIS/node, $\tau\!\approx\!0.2$~ms) retains an appreciable response into the
-kHz band ($\sim$0.14 at 2~kHz, $\sim$0.04 at the TMS peak $3.9$~kHz). The same
-membrane filter attenuates TMS at the soma, which is why neither TMS nor TI should
-be thought of as driving the soma at kHz.}
-\label{fig:khz}
-\end{figure}
+% fig:khz moved to Results (Theory is equations-only)
 
 This is not special to TI: any high-frequency extracellular drive is low-passed by
 the soma. Transcranial magnetic stimulation (TMS) pulses carry kHz spectral
@@ -680,6 +651,13 @@ through the supercritical Hopf at $\bar\eta\!\approx\!1$ ($f_0\!\approx\!55$~Hz)
 \texttt{nmm2\_ping.py} (self-contained).
 
 \section{Results}
+We present the evidence on three rungs of the modeling ladder: the single
+Jansen--Rit column (closed form, analyzable), the laminar LaNMM (two native
+resonances and genuine carrier dependence), and the exact next-generation mean
+field (NMM2, the demodulating nonlinearity derived rather than postulated). Each
+rung shows the same pair---square-law demodulation followed by near-Hopf
+amplification.
+
 \subsection{The Jansen--Rit sigmoid demodulates: an alpha line from a carrier-only input}
 The system is oriented by Fig.~\ref{fig:bif}: a clean supercritical Hopf at
 $p\!\approx\!315$ with $f_0\!\approx\!11.1$~Hz, and a sigmoid whose curvature peaks
@@ -731,11 +709,68 @@ $1/\gamma$ gain of Eq.~\eqref{eq:gain}.}
 \label{fig:map}
 \end{figure}
 
-\subsection{Carrier independence and the sigmoid-curvature (operating-point) law}
-Carrier independence and the operating-point law were shown above
-(Figs.~\ref{fig:carrier},~\ref{fig:opp}): the demodulated response is flat across a
-$25$--$300$~Hz carrier range, and the signed open-loop response follows
-$\half\Sig''(v^*)\varepsilon^2 m$ with a zero and sign reversal at the inflection.
+\subsection{Carrier independence and the kHz roll-off}
+At fixed post-coupling polarization the demodulated response is flat across the
+carrier band (Fig.~\ref{fig:carrier}, left): the open-loop detector reproduces
+Eq.~\eqref{eq:demod} exactly, and the closed-loop JR near the Hopf adds
+$\sim$60$\times$ resonant gain without introducing any $f_c$ dependence, deviating
+only as $f_c$ approaches the natural band. The second-order-synapse band-pass
+(Fig.~\ref{fig:carrier}, right) passes the $\sim$10~Hz envelope
+($|H|\!\sim\!0.7$) while suppressing the $100$~Hz carrier to $\sim$2.5\%, so the
+carrier is filtered out of the loop after the sigmoid has used it. As a function of
+the \emph{applied} field, by contrast, the membrane low-pass makes the response roll
+off as $1/f_c^2$ above the corner (Fig.~\ref{fig:khz}): passive somatic demodulation
+is suppressed four to six orders of magnitude at kHz, whereas a fast element
+($\tau\!\approx\!0.2$~ms) retains an appreciable response into the kHz band. Carrier
+independence is thus a statement about the recovered envelope at fixed polarization,
+not about the applied field.
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{fig_carrier_independence.pdf}
+\caption{\textbf{Carrier independence (Jansen--Rit single column).} \emph{Left:} the demodulated response is
+flat across carrier frequency $f_c=25$--$300$~Hz, both for the open-loop detector
+(exactly, by Eq.~\eqref{eq:demod}) and for the closed-loop JR near the Hopf (which
+adds $\sim$60$\times$ resonant gain); deviations appear only as $f_c$ approaches
+the natural band. \emph{Right:} the second-order-synapse band-pass $|H(\omega)|$
+passes the envelope ($\sim$0.7) and suppresses the $100$~Hz carrier ($\sim$2.5\%).}
+\label{fig:carrier}
+\end{figure}
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=0.74\textwidth]{fig_khz.pdf}
+\caption{\textbf{Carrier frequency in the kHz regime (Jansen--Rit, open-loop detector).} Open-loop
+demodulated response (normalized to the $\tau\!\to\!0$ value) vs.\ carrier
+frequency up to $10$~kHz. With direct coupling ($\tau\!\to\!0$) the response is
+flat---carrier-independent. A slow somatic membrane ($\tau_m\!\approx\!16$~ms)
+rolls off as $1/f_c^2$ (dashed guide), killing kHz demodulation; a fast element
+(axon/AIS/node, $\tau\!\approx\!0.2$~ms) retains an appreciable response into the
+kHz band ($\sim$0.14 at 2~kHz, $\sim$0.04 at the TMS peak $3.9$~kHz). The same
+membrane filter attenuates TMS at the soma, which is why neither TMS nor TI should
+be thought of as driving the soma at kHz.}
+\label{fig:khz}
+\end{figure}
+
+\subsection{The operating-point law and the $\Sig''$ control}
+Because $A_\Omega\propto\Sig''(v^*)$, the signed (in-phase) open-loop response tracks
+$\half\Sig''(v^*)\varepsilon^2 m$ across the whole operating range, vanishes at the
+inflection $v_0$, and reverses sign across it (Fig.~\ref{fig:opp})---a direct
+verification that demodulation is the sigmoid-curvature term of
+Eq.~\eqref{eq:demod}. The closed-loop JR operating points sit on the lobe where
+$\Sig''$ is large and negative.
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=0.74\textwidth]{fig_operating_point.pdf}
+\caption{\textbf{Operating-point law and the $\Sig''$ control (Jansen--Rit).} The measured
+signed (in-phase) open-loop response tracks $\half\Sig''(v^*)\varepsilon^2 m$
+across the whole range, vanishes at the inflection $v_0$, and reverses sign across
+it---a direct verification that demodulation is the sigmoid-curvature term of
+Eq.~\eqref{eq:demod}. The closed-loop JR operating points (dots) sit on the lobe
+where $\Sig''$ is large and negative.}
+\label{fig:opp}
+\end{figure}
 
 \subsection{The nonlinearity is the detector: square-law scaling and a linearization control}
 Fig.~\ref{fig:ver} closes the argument: the response scales as
@@ -905,6 +940,31 @@ state-dependent transfer of NMM2, absent in the static-sigmoid JR and LaNMM.}
 \label{fig:nmm2_map}
 \end{figure}
 
+\subsection{Falsifiable predictions and tests}\label{sec:predictions}
+The mechanism makes three sharp predictions, each with a clean experimental handle.
+\begin{enumerate}[leftmargin=*]
+\item \textbf{Carrier independence at fixed polarization.} Once the post-coupling
+polarization $\varepsilon=\kappa(f_c)E_0$ is matched, the envelope response no longer
+depends on $f_c$, even though the \emph{applied}-field threshold rises with $f_c$
+through the membrane roll-off (Eq.~\eqref{eq:khz})---as single-neuron accounts also
+predict \cite{opancar2025,mirzakhalili2020}. \emph{Test:} hold the in-zone
+polarization fixed (raising $E_0$ to compensate the measured $\kappa(f_c)$) while
+sweeping $f_c$; the network signature is a flat envelope response.
+\item \textbf{Operating-point (PEIX) control and sign flip.} Because
+$A_\Omega\propto\Sig''(v^*)$, the response scales with the curvature at the operating
+point and \emph{reverses sign} across the inflection, vanishing at $v_0$ where the
+gain $\Sig'$ (PEIX, Eq.~\eqref{eq:peix}) peaks. \emph{Test:} shift $v^*$ with tonic
+drive, neuromodulation, or task state and read out the predicted scaling and sign
+reversal of the TI response.
+\item \textbf{Frequency selectivity and state-dependence.} The response is largest
+when $\Delta f$ matches a region's resonant rhythm and is amplified as $1/\gamma$ near
+a bifurcation, so manipulations that move the operating point or the distance to the
+Hopf---psychedelics, PV-interneuron dysfunction, attention, arousal---should scale,
+and can abolish or sign-reverse, TI efficacy \cite{ruffini2025cfc}. \emph{Test:}
+sweep $\Delta f$ through a region's intrinsic band across brain states and track the
+resonant peak and its width.
+\end{enumerate}
+
 \section{Discussion}
 We have given a mesoscopic, population-level account of TI demodulation in which
 the firing-rate sigmoid is a square-law detector and proximity to a Hopf
@@ -921,7 +981,8 @@ ensemble---while the amplification (the near-Hopf resonance) is the emergent
 shape, need only supply a fast nonlinearity that samples the carrier.
 
 This factorization---a fast single-cell nonlinearity samples the carrier, after
-which the population sigmoid demodulates and the network amplifies---identifies
+which the population reads out the envelope and the network resonantly amplifies
+it---identifies
 where the carrier-sampling nonlinearity may live, and the TI literature already offers several non-exclusive
 candidates. Fast voltage-gated Na$^+$ at nodes and the AIS rectifies because
 activation outpaces inactivation, giving a net envelope-following current
@@ -940,22 +1001,13 @@ onset and phasic responses depending on geometry and location \cite{wang2023}, a
 in vivo it alters spike timing rather than rate in the primate brain
 \cite{vieira2024}, consistent with a timing/probability bias that the population
 integrates. The catalogue is not exhaustive; the point is that the mesoscopic
-mechanism is agnostic to which fast nonlinearity does the sampling. Wherever a
-fast-enough nonlinearity sees the carrier, the population sigmoid demodulates and
-the network amplifies.
+mechanism is agnostic to which fast nonlinearity does the sampling.
 
-The account makes several falsifiable predictions. It should be largely
-\emph{carrier-independent at fixed polarization} provided the carrier is well above the
-target band and otherwise inert---while the \emph{applied}-field threshold still rises with
-$f_c$ through the membrane/coupling roll-off, as single-neuron accounts also predict
-\cite{opancar2025}; the network signature is that, once the polarization is matched, the
-envelope response no longer depends on $f_c$. It should be \emph{frequency-selective}, most effective
-when $\Delta f$ matches a region's resonant rhythm and dramatically amplified when
-that region operates near a bifurcation. And it should be \emph{state-dependent}:
-because the gain scales with $\Sig''(v^*)$, manipulations that move the operating
-point---psychedelics, PV dysfunction, attention---should scale, and can flip the
-sign of, TI efficacy, and could be read out in the same models already applied to
-Alzheimer's disease and psychedelics \cite{ruffini2025cfc}. The two-band LaNMM
+The mechanism's falsifiable predictions---carrier independence at fixed
+polarization, the PEIX-controlled sign flip, and frequency-selective
+state-dependence---are consolidated with their tests in \S\ref{sec:predictions};
+they could be read out in the same models already applied to Alzheimer's disease and
+psychedelics \cite{ruffini2025cfc}. The two-band LaNMM
 results (\S\ref{sec:lanmm-results}) bear this out: its JR (alpha) and PING (gamma)
 subcircuits give the same sigmoid demodulation two native resonances, with the
 beat frequency selecting the band; this embeds TI demodulation in the HAM read-out

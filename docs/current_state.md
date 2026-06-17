@@ -1,6 +1,29 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.7 — Phase 0 (a): carrier claim corrected throughout (latest)
+## v1.8 — Phase 0 (#3) structural reorg + PEIX + abstract/slogan/predictions (latest)
+Finished the rest of Phase 0. Theory (§2) is now **equations-only**: the three results figures
+(fig_carrier, fig_khz, fig_operating_point) were moved out of §2.3--2.5 into Results; Theory now
+forward-references them. The dead §4.3 stub ("...shown above") is replaced by two real Results
+subsections, "Carrier independence and the kHz roll-off" (hosts fig_carrier + fig_khz) and "The
+operating-point law and the Σ″ control" (hosts fig_operating_point). Added a Results opening topic
+sentence naming the JR→LaNMM→NMM2 progression. **PEIX defined** with the actual normalized-slope
+formula in §2.4: PEIX(v*) ≡ Σ′(v*)/Σ′(v0) = sech²[(r/2)(v*−v0)] ∈ (0,1] (Eq. eq:peix), maximal at
+the inflection where the demod gain ∝Σ″ vanishes; side from sign(v*−v0). **Abstract trimmed** (dropped
+the 712× parenthetical and the Arnold-tongue/interpolation result-dump; now ends on the square law +
+LaNMM/NMM2 confirmation). **Slogan deduped to exactly two** full "wherever a fast-enough nonlinearity…"
+occurrences (abstract "samples" + conclusion "sees"); the Discussion's third copy removed and the
+factorization sentence reworded so the verbatim tail isn't echoed. **Predictions consolidated** into a
+new Results subsection §4.8 "Falsifiable predictions and tests" (carrier@fixed-pol, PEIX/sign-flip,
+frequency-selectivity+state-dependence — each with a one-line experimental test); the Discussion
+predictions paragraph is now a pointer to §sec:predictions. Author line was already filled (not a
+placeholder). Compiles clean: **23 pp** (was 22; +1 from the PEIX eq + predictions list), 0 undefined
+refs, 0 citation warnings. Native Edit works on the Dropbox path in Claude Code. Backup at
+/tmp/TN0484_prePhase0_3.bak.tex. **Repo now on GitHub (private): github.com/giulioruffini/TI-demodulation-paper.**
+Remaining Phase 0: figure→script table (#6). Then Phase 1 writeup (weave J-curves into "what the
+mesoscale adds"; timing-not-rate; direct-kHz panel) and Phase 2 (Discussion reflow, catalogue compress,
+verify high-freq-tES citation, final Landau pass).
+
+## v1.7 — Phase 0 (a): carrier claim corrected throughout
 Reframed "carrier independence" as **independence at fixed post-coupling polarization epsilon**, with the
 applied-field threshold rising with f_c via epsilon=kappa(f_c)E_0 (reconciles with the experimental
 consensus; the network signature is f_c-independence once polarization is matched). Edited 6 spots:
