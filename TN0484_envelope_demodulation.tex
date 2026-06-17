@@ -65,10 +65,13 @@ The demodulating curvature is inherited from the single neuron's input--output
 nonlinearity, coarse-grained over the population and requiring no specific channel,
 while the sharp, frequency-selective gain is a genuinely emergent network property.
 In the Jansen--Rit model an alpha-free carrier input yields a clean alpha output
-obeying the square law $A_\Omega\simeq\half\Sig''(v^*)\varepsilon^2 m$, with
-resonant gain growing as $1/\gamma$ toward the Hopf, carrier independence at fixed
-polarization (the applied-field threshold rising with $f_c$), and a gain set---and
-sign-reversed---by the curvature $\Sig''(v^*)$. The two-band laminar model (LaNMM)
+obeying the square law $A_\Omega\simeq\half\Sig''(v^*)\,\varepsilon^2 m$ (recovered
+envelope amplitude $A_\Omega$; sigmoid curvature $\Sig''$ at operating point $v^*$;
+post-coupling polarization $\varepsilon$; modulation depth $m$), with resonant gain
+growing as $1/\gamma$ as the damping $\gamma$---the distance to the Hopf---vanishes,
+carrier independence at fixed polarization (the applied-field threshold rising with
+carrier frequency $f_c$), and a response sign-reversed by the curvature across the
+sigmoid inflection. The two-band laminar model (LaNMM)
 and the exact next-generation mean field (NMM2) confirm it, the latter with the
 demodulating nonlinearity derived rather than postulated. The mechanism is state-dependent through the
 operating point (PEIX) and connects TI to cross-frequency coupling and
@@ -100,7 +103,10 @@ s(t)=\varepsilon\,[\,1+m\cos(\Omega t)\,]\cos(\omega_c t),\qquad
 \omega_c=2\pi f_c,\quad \Omega=2\pi\,\Delta f ,
 \label{eq:am}
 \end{equation}
-its spectrum has support \emph{only} at $\omega_c$ and $\omega_c\pm\Omega$
+where $m$ is the modulation depth, $\Delta f$ the envelope (beat) frequency, $f_c$
+the carrier frequency, and $\varepsilon$ the field amplitude (refined to the
+post-coupling polarization in \S\ref{sec:coupling}). Its spectrum has support
+\emph{only} at $\omega_c$ and $\omega_c\pm\Omega$
 (Fig.~\ref{fig:demod}): there is no energy at the envelope frequency $\Omega$. A
 linear, time-invariant (LTI) system maps a sinusoid to a sinusoid of the same
 frequency; it can attenuate or phase-shift the three carrier lines but can
