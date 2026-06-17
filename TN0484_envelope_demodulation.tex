@@ -44,8 +44,7 @@ envelope demodulation: sigmoid curvature and near-Hopf amplification}\\[10pt]
 \textbf{Author:} & Giulio Ruffini, Raul de Palma, Borja Mercadal, Alex Just, \\ 
 & Ricardo Salvador and Francesca Castaldo \\
 \textbf{Affiliation:} & Neuroelectrics\,/\,Starlab\,/\,BCOM \\
-\textbf{Date:} & 2026-06-03 \qquad \textbf{Version:} 0.6 \\
-%\textbf{Code:} & \texttt{ti\_demod\_demo/} (jr\_demod.py, analyses\_v2.py, figures\_v2.py, khz\_analysis.py, lanmm\_arnold\_tongues.py)\\
+\textbf{Date:} & 2026-06-17 \qquad \textbf{Version:} 0.7 \\
 \end{tabular}\\[4pt]
 {\color{neblue}\rule{\textwidth}{1pt}}
 \end{flushleft}
@@ -102,7 +101,7 @@ spatial: the envelope amplitude peaks in a focal, steerable region at depth,
 while superficial tissue sees only the (putatively inert) kHz carrier---a promise
 of non-invasive, focal, deep stimulation that explains the intense interest.
 
-The difficulty is conceptual rather than technological. Writing the field as
+The difficulty is conceptual rather than technological. Write the field as
 \begin{equation}
 s(t)=\varepsilon\,[\,1+m\cos(\Omega t)\,]\cos(\omega_c t),\qquad
 \omega_c=2\pi f_c,\quad \Omega=2\pi\,\Delta f ,
@@ -110,7 +109,7 @@ s(t)=\varepsilon\,[\,1+m\cos(\Omega t)\,]\cos(\omega_c t),\qquad
 \end{equation}
 where $m$ is the modulation depth, $\Delta f$ the envelope (beat) frequency, $f_c$
 the carrier frequency, and $\varepsilon$ the field amplitude (refined to the
-post-coupling polarization in \S\ref{sec:coupling}). Its spectrum has support
+post-coupling polarization in \S\ref{sec:coupling}); its spectrum has support
 \emph{only} at $\omega_c$ and $\omega_c\pm\Omega$
 (Fig.~\ref{fig:demod}): there is no energy at the envelope frequency $\Omega$. A
 linear, time-invariant (LTI) system maps a sinusoid to a sinusoid of the same
@@ -118,7 +117,7 @@ frequency; it can attenuate or phase-shift the three carrier lines but can
 \emph{never} synthesize a new line at $\Omega$. The membrane's passive RC
 low-pass---often invoked as ``the neuron follows the slow envelope''---therefore
 cannot by itself demodulate TI. Demodulation requires a nonlinearity. This is
-precisely the founding lesson of AM radio \cite{nahin2001}: a receiver cannot
+the founding lesson of AM radio \cite{nahin2001}: a receiver cannot
 recover the message with linear components alone; it needs a nonlinear element (a
 square-law device or a diode) to shift spectral energy back to baseband, followed
 by a tuned filter to select the station and a low-pass to read the envelope.
@@ -302,7 +301,7 @@ E(t)=E_0\,[\,1+m\cos\Omega t\,]\cos\omega_c t\;}
 \end{equation}
 This is the standard weak-field coupling $\delta V_m=\vec\lambda\!\cdot\!\vec E$
 of transcranial-stimulation modeling \cite{ruffini2025rosetta}, with $\lambda$ a
-lumped polarization length. It is essential to keep three quantities distinct: the applied field $E(t)$, the
+lumped polarization length. Three quantities must be kept distinct: the applied field $E(t)$, the
 induced membrane polarization $\delta V_m(t)$ \emph{after} cable/membrane
 filtering, and the argument of the firing-rate map. The chain is
 \begin{equation}
@@ -374,8 +373,9 @@ low-pass with corner $a/2\pi\approx16$~Hz. It passes the $\sim$10~Hz envelope
 % fig:carrier moved to Results (Theory is equations-only)
 
 What turns this recovered envelope into a large, frequency-selective response is
-the network. Linearizing the mass about its fixed point gives eigenvalues
-$\lambda=-\gamma\pm i\omega_0$. Just below a supercritical Hopf, $\gamma\to0^+$ and
+the network. Linearizing the mass about its fixed point gives a leading eigenvalue pair
+$\lambda=-\gamma\pm i\omega_0$; near the Hopf the response is dominated by this critical
+mode, and the gain below is its one-mode (center-manifold) reduction. Just below a supercritical Hopf, $\gamma\to0^+$ and
 the mass is a weakly damped, high-$Q$ resonator; the demodulated drive
 \eqref{eq:demod} at $\Omega$ excites it with gain
 \begin{equation}
@@ -443,10 +443,10 @@ effective corner $\sim$800~Hz) the carrier is only mildly attenuated in the kHz 
 10~kHz; Fig.~\ref{fig:khz}). A square-law nonlinearity there produces a real
 envelope-frequency current, and that low-frequency component is \emph{not} attenuated
 by the membrane---it is exactly what the slow network reads. The per-neuron
-modulation is subtle, but two factors make it count: the envelope sits in the band
+modulation is small, but two factors make it count: the envelope sits in the band
 the membrane passes, and the population near a Hopf amplifies it by $G\!\sim\!1/\gamma$
-(Eq.~\eqref{eq:gain}). Subtle demodulation at fast elements, resonantly amplified at
-the population, is thus a plausible route for TI at realistic carriers---consistent
+(Eq.~\eqref{eq:gain}). Demodulation at fast elements, resonantly amplified at
+the population, is thus a route for TI at realistic carriers---consistent
 with ion-channel rectification at the node \cite{mirzakhalili2020} but adding network
 resonance; our direct-coupling demonstration is the $\tau\!\to\!0$ idealization of
 this limit, and a direct kHz-carrier run (Fig.~\ref{fig:khz_direct}) confirms it.
@@ -975,8 +975,8 @@ zero frequency $G(0)\propto1/\omega_0^2$ is flat. Holding detection fixed (pinni
 $v^*$, exactly as in Fig.~\ref{fig:jcurve}) and driving the column toward the Hopf
 through the coupling, the AC lock-in at the resonant beat $\Delta f=f_0$ grows
 $\sim$$17\times$---tracking $1/\gamma$ before saturating near criticality---while the
-DC shift of the mean pyramidal firing rate stays flat at a few mHz, and even changes
-sign, throughout (Fig.~\ref{fig:timing}). Near criticality the recovered envelope
+DC shift of the mean pyramidal firing rate stays within a few mHz---consistent with
+zero---throughout (Fig.~\ref{fig:timing}). Near criticality the recovered envelope
 entrains population \emph{timing} at $\Delta f$ while leaving the mean \emph{rate}
 essentially unchanged. This is the mesoscopic counterpart of the in-vivo observation
 that TI alters spike timing but not firing rate in the primate brain

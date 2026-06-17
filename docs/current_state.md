@@ -1,5 +1,19 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v1.17 — acted on Code's editor review (items 1-3 + de-hedge) (latest)
+- FIXED grammar fragment in intro ("Writing the field as ... Its spectrum" -> "Write the field as ...;
+  its spectrum"). Confirmed real.
+- TITLE BLOCK refreshed: Date 2026-06-03/v0.6 -> 2026-06-17/v0.7; removed the commented-out Code: line.
+- RIGOR: added a dominant-mode/center-manifold caveat to Eq.(gain) in sec:carrier; softened the
+  timing-not-rate DC claim ("stays within a few mHz, consistent with zero"; dropped "even changes sign").
+- Verified the DC question by re-running timing_not_rate.py: DC mean-rate shift ~+3.7 mHz for gamma>2,
+  flips to -3.1 mHz ONLY at the extreme gamma=0.08 point (AC there 0.73 mV) -> non-robust (Jensen offset of
+  the large near-Hopf oscillation + hardest settling), not signal. Wording now reflects this.
+- DE-HEDGE: cut "precisely", "it is essential to", "subtle"x2, "plausible". ("genuinely" already absent.)
+- Compiles clean: 24 pp, 0 undefined refs.
+HELD per Giulio: abstract trim (he shaped it), merge of the two Arnold-tongue figures (needs image work),
+deeper state-dependence/1-gamma refrain dedup (taste). Commit pending (sandbox git blocked; do from Code).
+
 ## v1.16 — supplementary appendix moved after references (latest)
 Per Giulio: the \appendix "Supplementary figures" (S1 lanmm_setup, S2 lanmm_map) now follows
 \bibliography{references}, before \end{document}. Cross-refs resolve; 24 pp, 0 undefined refs.
