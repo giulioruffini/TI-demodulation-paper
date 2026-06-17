@@ -1,5 +1,6 @@
 \documentclass[11pt,a4paper]{article}
 \usepackage[margin=2.3cm]{geometry}
+\usepackage{lmodern}        % classic Computer Modern look, vectorized (T1)
 \usepackage[T1]{fontenc}
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
@@ -149,16 +150,13 @@ already in standard cortical models: a static firing-rate \emph{sigmoid}, whose
 nonzero curvature $\Sig''$ makes it a square-law demodulator, and a
 \emph{second-order-synapse network} near a \emph{Hopf bifurcation}, which both
 filters the carrier away and resonantly amplifies the recovered envelope at the
-network's natural frequency. Where existing accounts locate the nonlinearity in
-cellular excitability, ours is that the mesoscopic population transfer function
-already suffices. The sigmoid is not independent of single-cell physics---it is a
-coarse-grained summary of a population's input--output curves, thresholds, noise,
-and synaptic background---but once coarse-grained it is a \emph{distinct mesoscopic
-nonlinearity} with enough curvature to detect envelopes, whatever microscopic
-mechanism supplies it. This is naturally consistent with the ``network
-phenomenon'' finding \cite{caldas2024}: we give a minimal neural-mass
-implementation of such a population demodulator, in addition carrier-independent
-(at fixed polarization) and frequency-selective. We develop it first in a single Jansen--Rit column,
+network's natural frequency. Where existing accounts locate the nonlinearity in cellular excitability, ours reads
+it out at the mesoscopic scale: the sigmoid is a coarse-grained summary of the
+population's single-cell input--output curves, but once coarse-grained it is a
+\emph{distinct mesoscopic nonlinearity} with enough curvature to detect envelopes,
+whatever microscopic mechanism supplies it. This realizes the ``network phenomenon''
+of \cite{caldas2024} as a minimal neural-mass demodulator---carrier-independent (at
+fixed polarization) and frequency-selective. We develop it first in a single Jansen--Rit column,
 analyzable in closed form, then in the laminar neural mass model (LaNMM), whose
 own alpha and gamma loops make the prediction concrete one step closer to cortex.
 
@@ -220,11 +218,10 @@ the single neuron's own input--output nonlinearity: $\Sig$ is the mean-field
 (ensemble) average of single-neuron transfer curves over a heterogeneous, noisy
 population, so $\Sig''$ is inherited from single cells and only reshaped---smoothed
 and broadened---by the spread of states, thresholds and noise. It is not
-manufactured by the network; what the recurrent network adds is the resonant
-\emph{amplification} (\S\ref{sec:carrier}). Our claim is thus not that the
-nonlinearity is non-cellular, but that demodulation is read out at the population
-level by the generic sigmoid---whatever microscopic mix produces it, and without any
-specific channel.
+manufactured by the network, which adds only the resonant \emph{amplification}
+(\S\ref{sec:carrier}). The nonlinearity is cellular in origin; our claim is only that
+its demodulation is read out at the population level by the generic sigmoid, without
+any specific channel.
 
 This becomes exact one rung up the modeling ladder \cite{ruffini2025rosetta}. For a
 network of all-to-all coupled quadratic integrate-and-fire (QIF) neurons with
@@ -457,28 +454,21 @@ this limit, and a direct kHz-carrier run (Fig.~\ref{fig:khz_direct}) confirms it
 Because transcranial electrical stimulation (tES)---and TI, a tES with a kHz carrier---is weak and \emph{modulatory}, the
 fast-element route is a small, sustained bias of the most excitable compartments, not
 ``spiking the AIS at the beat frequency.'' Since the applied field adds to endogenous
-drive, $V(t)=V_0+\delta V_{\mathrm{tES}}(t)+\eta(t)$, there is no strict minimum
-field: near threshold a tiny polarization biases spike probability and timing through
-stochastic resonance, whose inverted-U signature tES and transcranial random-noise stimulation (tRNS) display
-\cite{reato2010,terney2008,vandergroen2016,liu2018}. This maps onto the neural mass,
-whose sigmoid \eqref{eq:sigmoid} is itself a mean-field stochastic-resonance
-device---its smooth slope arises from the spread of thresholds and noise across the
-population---so a weak bias shifts the mean rate through $\Sig$ (gain $\Sig'$) while
-the demodulated envelope emerges through the curvature $\Sig''$.
+drive, a weak bias near threshold shifts spike probability and timing through
+stochastic resonance \cite{reato2010,liu2018}. The population sigmoid \eqref{eq:sigmoid}
+is itself a mean-field stochastic-resonance device---its smooth slope is the spread of
+thresholds and noise across the population---so the bias shifts the mean rate through
+$\Sig'$ while the demodulated envelope emerges through the curvature $\Sig''$.
 
-Everything here is strongly state-dependent: the demodulation gain scales with
-$\Sig''(v^*)$ and the amplification with $1/\gamma$, both set by neuromodulation,
-attention, arousal and pathology (PEIX), so TI and transcranial magnetic stimulation
-(TMS) efficacy should vary with brain
-state rather than being fixed by the stimulus. The $100$~Hz carrier used throughout
-is not merely convenient: there the membrane attenuation is mild for any moderately
-fast element ($|H_m|^2\!\approx\!0.98$ at $\tau=0.2$~ms, $\sim$0.1 at $\tau=5$~ms,
-the fast-spiking-interneuron range), so demodulation does not need the fastest nodal
-channels, and a protocol with $f_c\!\sim\!100$~Hz and $\Delta f$ swept through a
-region's resonant band is a clean near-term test. The trade-off is spatial---a
-$100$~Hz carrier is less inert outside the interference zone than a kHz one (kHz
-carriers being subthreshold there, the source of TI's focality)---so $100$~Hz probes
-the mechanism most cleanly while kHz optimizes selectivity.
+Both halves are state-dependent---detection through $\Sig''(v^*)$, amplification
+through $1/\gamma$---so TI and transcranial magnetic stimulation (TMS) efficacy should
+track brain state, not the stimulus alone. The $100$~Hz carrier used throughout
+is not merely convenient: the membrane attenuation is mild even for moderately fast
+elements ($|H_m|^2\!\approx\!0.98$ at $\tau=0.2$~ms, $\sim$0.1 at $\tau=5$~ms), so a
+protocol with $f_c\!\sim\!100$~Hz and $\Delta f$ swept through a region's band is a clean
+near-term test. The trade-off is spatial: a $100$~Hz carrier is less inert off-target
+than a kHz one (whose subthreshold carrier is the source of TI's focality), so $100$~Hz
+probes the mechanism while kHz optimizes selectivity.
 
 \section{Methods}
 We integrate the single-column JR model of \S\ref{sec:nmm}
@@ -580,19 +570,6 @@ alpha resonance of Figs.~\ref{fig:lanmm_res},~\ref{fig:lanmm_map} we instead dri
 the deep $P_1$ loop directly and sweep its input against $\Delta f$, reading the
 lock-in (Eq.~\eqref{eq:lockin}) of $v_{P_1}$ at $\Delta f$ (self-contained
 \texttt{lanmm\_resonance.py}).
-
-\begin{figure}[t!]
-\centering
-\includegraphics[width=0.85\textwidth]{fig_lanmm_setup.png}
-\caption{\textbf{Stimulation setup in a LaNMM column.} The column couples a
-superficial PING subcircuit (pyramidal $P_2$ + PV; gamma) and a deep JR
-subcircuit (pyramidal $P_1$ + SS + SST; alpha). \emph{(a)} the AM input drives
-$P_2$ while $P_1$ receives a flat drive; \emph{(b)} the AM input drives $P_1$
-while $P_2$ is flat. Through the sigmoid nonlinearities and $P_1$--$P_2$ coupling,
-the slow envelope is transferred to the column: $P_2$ carries the modulated fast
-carrier, while $P_1$ exposes the recovered low-frequency envelope (right traces).}
-\label{fig:lanmm_setup}
-\end{figure}
 
 Finally, we test the mechanism in the exact next-generation mean field (NMM2,
 \S\ref{sec:nmm}), where the firing-rate nonlinearity is the derived MPR dynamics of
@@ -819,17 +796,6 @@ an AM field (carrier $100$~Hz) with its input as bifurcation parameter. \emph{Le
 is approached. \emph{Right (limit cycle, low drive):} entrainment of the autonomous
 alpha. Directly parallel to the JR single column (Fig.~\ref{fig:res}).}
 \label{fig:lanmm_res}
-\end{figure}
-
-\begin{figure}[t!]
-\centering
-\includegraphics[width=0.72\textwidth]{fig_lanmm_map.pdf}
-\caption{\textbf{LaNMM alpha resonance map (NMM1, laminar).} Demodulated $P_1$ response
-(log scale) over the (envelope frequency $\Delta f$, $P_1$ drive) plane: a ridge at the
-alpha natural frequency ($\sim$10~Hz) that intensifies through the supercritical Hopf
-(dashed line). The analog of the JR map (Fig.~\ref{fig:map}) and the NMM2 map
-(Fig.~\ref{fig:nmm2_map}).}
-\label{fig:lanmm_map}
 \end{figure}
 
 Sweeping the modulation amplitude $A$ and beat frequency $\Delta f$ at a fixed
@@ -1140,19 +1106,48 @@ tank---so that \emph{wherever a fast-enough nonlinearity sees the carrier, the
 population sigmoid demodulates and the network amplifies}.
 
 The amplification half is not automatic: the gain scales as $1/\gamma$ with the
-distance $\gamma$ to the Hopf, so a large, sharply tuned response appears only near
-criticality (high excitability); far from the bifurcation the envelope is recovered
-but barely amplified. The amplification is therefore not only state- but \emph{coupling}-tunable: holding detection fixed, the demodulated gain grows toward $1/\gamma$ as the network is driven to criticality by its own connectivity (\S\ref{sec:jcurve}), in the heuristic JR column and, with the inter-neuron coupling and the rectifier both derived, in the exact NMM2 mean field. Both halves are thus strongly \textbf{state-dependent}---detection
-through the curvature $\Sig''(v^*)$ (which even changes sign across the inflection),
-amplification through $\gamma$---and both are set by neuromodulation, attention,
-arousal and pathology (PEIX). Under this mechanism TI efficacy is a property of
-\emph{brain state} as much as of the stimulus: largest in near-critical regimes,
-and tunable---even abolished or sign-reversed---by shifting the operating point.
-This gives a concrete, carrier-independent, state-dependent mesoscopic mechanism
-for TI, complementary to single-neuron rectification, tying TI to cross-frequency
-coupling and hierarchical amplitude modulation.
+distance to the Hopf, so a large, sharply tuned response appears only near criticality.
+It is tunable both by brain state and by the coupling itself---holding detection fixed,
+the demodulated gain grows toward $1/\gamma$ as the network is driven to criticality by
+its own connectivity (\S\ref{sec:jcurve}), in the heuristic JR column and, with coupling
+and rectifier both derived, in the exact NMM2 mean field. Both halves are thus
+\textbf{state-dependent}---detection through $\Sig''(v^*)$ (which changes sign across the
+inflection), amplification through $\gamma$---set by neuromodulation, attention, arousal
+and pathology (PEIX). TI efficacy is then as much a property of \emph{brain state} as of
+the stimulus: largest near criticality, and tunable---even abolished or
+sign-reversed---by shifting the operating point.
 
 \bibliographystyle{unsrt}
 \bibliography{references}
+
+\appendix
+\section{Supplementary figures}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\setcounter{figure}{0}
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=0.85\textwidth]{fig_lanmm_setup.png}
+\caption{\textbf{Stimulation setup in a LaNMM column.} The column couples a
+superficial PING subcircuit (pyramidal $P_2$ + PV; gamma) and a deep JR
+subcircuit (pyramidal $P_1$ + SS + SST; alpha). \emph{(a)} the AM input drives
+$P_2$ while $P_1$ receives a flat drive; \emph{(b)} the AM input drives $P_1$
+while $P_2$ is flat. Through the sigmoid nonlinearities and $P_1$--$P_2$ coupling,
+the slow envelope is transferred to the column: $P_2$ carries the modulated fast
+carrier, while $P_1$ exposes the recovered low-frequency envelope (right traces).}
+\label{fig:lanmm_setup}
+\end{figure}
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=0.72\textwidth]{fig_lanmm_map.pdf}
+\caption{\textbf{LaNMM alpha resonance map (NMM1, laminar).} Demodulated $P_1$ response
+(log scale) over the (envelope frequency $\Delta f$, $P_1$ drive) plane: a ridge at the
+alpha natural frequency ($\sim$10~Hz) that intensifies through the supercritical Hopf
+(dashed line). The analog of the JR map (Fig.~\ref{fig:map}) and the NMM2 map
+(Fig.~\ref{fig:nmm2_map}).}
+\label{fig:lanmm_map}
+\end{figure}
+
 
 \end{document}

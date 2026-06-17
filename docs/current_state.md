@@ -1,5 +1,36 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v1.16 — supplementary appendix moved after references (latest)
+Per Giulio: the \appendix "Supplementary figures" (S1 lanmm_setup, S2 lanmm_map) now follows
+\bibliography{references}, before \end{document}. Cross-refs resolve; 24 pp, 0 undefined refs.
+
+## v1.15 — Rosetta Stone citation updated to published version (latest)
+ruffini2025rosetta (cited ~8x for the NMM/JR/MPR math) updated from "accepted, 2025" to the PUBLISHED
+record: Castaldo, de Palma, Clusella, Garcia-Ojalvo, Ruffini, "Rosetta Stone of neural mass models",
+Physics Reports 1189:1-49 (2026), doi:10.1016/j.physrep.2026.05.004 (PII S0370157326002139; verified via
+Crossref). Kept the citation key unchanged so all \cite calls resolve. Renders in bbl as "Physics Reports,
+1189:1--49, 2026." Rebuilt bibtex+pdflatex; clean. (unsrt style doesn't print DOI; it's in the .bib note/doi
+field if a doi-aware style is later used.) Backup /tmp/references.bak.bib.
+
+## v1.14 — Landau streamline pass #2 (latest)
+Full read-through + disciplined compression (6 block edits, each verified): trimmed the Intro single-cell
+hedge (dup of Theory); tightened the Theory "claim" sentence; cut the stochastic-resonance digression in
+sec:khz (dropped the V(t) eq + tRNS aside, 2 now-unused refs terney2008/vandergroen2016); trimmed the
+state-dependence sentence in sec:khz (full version kept in Conclusion) and the 100-Hz justification;
+de-duplicated the Conclusion (was "state-dependent" 3x + a redundant closing sentence). Body 8093 -> 7832
+words; 25 -> 24 pp. Rebuilt bibtex; compiles clean, 0 undefined refs, 0 bibtex warnings. Backup
+/tmp/TN0484.pre_landau2.tex. Commit pending (sandbox git blocked; do from Code).
+
+## v1.13 — classic font fix (lmodern) + figures to appendix (latest)
+- FONT: the bare [T1]{fontenc} with no font package was substituting an odd CM variant (SFRM/SFBX) for
+  text while math stayed plain CM -- the "awful"/mismatched look. Added \usepackage{lmodern} before
+  fontenc: text+math now uniform Latin Modern (the classic Computer Modern look, vectorized/crisp). pdffonts
+  confirms LMRoman/LMMath throughout.
+- FIGURES: moved fig_lanmm_setup (schematic, overlaps concept) and fig_lanmm_map (redundant 3rd resonance
+  map) to a new \appendix "Supplementary figures" with S-numbering (S1, S2); body refs auto-resolve.
+  Kept the Arnold-tongue result figures in Results (didn't risk an image merge).
+- Compiles clean: 25 pp, 0 undefined refs. Commit pending (sandbox git blocked; do from Code).
+
 ## v1.12 — notation collision fixed (r->rho) + intro/carrier compression (latest)
 - Renamed the sigmoid SLOPE r -> \rho (Eq. sigmoid, Table, PEIX Eq. e_0\rho/2 and sech^2[\rho/2(...)]),
   removing the collision with the MPR firing rate r/r_E. Verified no stray slope-r remains.
