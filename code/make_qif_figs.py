@@ -26,6 +26,33 @@ def env(t, df):
     return 0.5 * (1 + np.cos(2 * np.pi * df / 1000.0 * t))
 
 
+def cycle_avg(re_t, ts, df, nbin=20):
+    """Population rate folded onto the TI-beat (Df) phase over the measure window.
+    Flat for a free/asynchronous network; a clear bump when timing locks to the beat."""
+    m = ts >= t0; t = ts[m]; re = re_t[m]
+    ph = (df / 1000.0 * t) % 1.0
+    bins = np.linspace(0, 1, nbin + 1); idx = np.clip(np.digitize(ph, bins) - 1, 0, nbin - 1)
+    out = np.array([re[idx == k].mean() if (idx == k).any() else np.nan for k in range(nbin)])
+    ker = np.array([1.0, 2.0, 1.0]); ker /= ker.sum()        # light circular smooth
+    out = np.convolve(np.r_[out[-1], out, out[0]], ker, mode="same")[1:-1]
+    return 0.5 * (bins[:-1] + bins[1:]), out
+
+
+def beat_inset(ax, off_key, on_key):
+    """Inset: r_E folded on the Df beat phase, TI off (flat) vs on (bump)."""
+    df = conds[on_key]["q"]["df"]
+    iax = ax.inset_axes([0.605, 0.57, 0.375, 0.40])
+    for k, col in ((off_key, GR), (on_key, NEBLUE)):
+        q = conds[k]["q"]; ctr, ca = cycle_avg(q["re_t"], q["ts"], df)
+        iax.plot(np.r_[ctr, ctr + 1], np.r_[ca, ca], color=col, lw=1.4)
+    iax.set_xticks([0, 1, 2]); iax.set_xticklabels([]); iax.set_yticks([])
+    iax.tick_params(length=2)
+    iax.set_title(r"$r_E$ folded on $\Delta f$", fontsize=6.2, pad=2)
+    iax.set_xlabel("beat phase (off: gray, on: blue)", fontsize=5.6, labelpad=1)
+    iax.patch.set_alpha(0.92)
+    return iax
+
+
 def raster_panel(ax, key, title, show_env, annot=None):
     c = conds[key]; q = c["q"]; df = q["df"]; nrec = q["nrec"]
     st = q["spk_t"]; si = q["spk_id"]
@@ -69,6 +96,8 @@ def fig_raster():
                  f"(d) Entrained, TI ON ($\\Delta f$={conds['entrain_on']['q']['df']:.0f} Hz):"
                  " gamma bursts gate to the TI beat",
                  True, annot=f"$\\Delta f$ lock-in: {fold_e:.0f}$\\times$ off$\\to$on")
+    beat_inset(axs[0, 1], "forced_off", "forced_on")
+    beat_inset(axs[1, 1], "entrain_off", "entrain_on")
     for ax in axs[:, 0]:
         ax.set_ylabel("E neuron #")
     for ax in axs[1, :]:
