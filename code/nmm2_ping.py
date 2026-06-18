@@ -151,6 +151,7 @@ def make_figures(A=8.0, fc_Hz=300.0):
     # ---- Fig.: resonance map (log scale: entrainment >> stable-focus forced response) ----
     fig, ax = plt.subplots(figsize=(6.4, 4.6))
     im = ax.imshow(M, origin="lower", aspect="auto", cmap="viridis",
+                   interpolation="bilinear",
                    norm=LogNorm(vmin=max(M.max()*1e-3, 1e-5), vmax=M.max()),
                    extent=[dfgrid[0], dfgrid[-1], etagrid[0], etagrid[-1]])
     if np.isfinite(eta_hopf):
@@ -161,7 +162,7 @@ def make_figures(A=8.0, fc_Hz=300.0):
     ax.set_title("NMM2 PING: demodulated response over $(\\Delta f,\\,\\bar\\eta)$", fontsize=10)
     plt.colorbar(im, ax=ax, label=r"lock-in response at $\Delta f$ (a.u.)")
     fig.tight_layout()
-    fig.savefig(os.path.join(FIGDIR, "fig_nmm2_map.png"), dpi=150)
+    fig.savefig(os.path.join(FIGDIR, "fig_nmm2_map.png"), dpi=300)
     fig.savefig(os.path.join(FIGDIR, "fig_nmm2_map.pdf")); plt.close(fig)
 
     # ---- Fig.: resonance curves (stable side | limit-cycle side) ----

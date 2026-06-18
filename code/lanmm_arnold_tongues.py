@@ -131,7 +131,7 @@ def carrier_map(intrinsic, driving, f_slow=np.linspace(5, 15, 41),
 # plotting -> 4-panel figure (matches fig_lanmm_arnold_*)
 # ============================================================
 def _imshow(ax, M, x, y, title, ylabel):
-    im = ax.imshow(M, origin="lower", aspect="auto",
+    im = ax.imshow(M, origin="lower", aspect="auto", interpolation="bilinear",
                    extent=[x[0], x[-1], y[0], y[-1]], cmap="viridis")
     ax.axvline(10.0, color="w", ls="--", lw=1)
     ax.set_title(title, fontsize=10)
@@ -151,7 +151,7 @@ def make_figure(intrinsic, driving, drive_target="P2", A_for_carrier=250.0):
     fig.tight_layout(rect=[0, 0, 1, 0.97])
     out = f"fig_lanmm_arnold_{'p2' if drive_target=='P2' else 'p1'}"
     os.makedirs(FIGDIR, exist_ok=True)
-    fig.savefig(os.path.join(FIGDIR, out+".png"), dpi=150)
+    fig.savefig(os.path.join(FIGDIR, out+".png"), dpi=300)
     fig.savefig(os.path.join(FIGDIR, out+".pdf"))
     print("wrote", out)
 

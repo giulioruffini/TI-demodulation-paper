@@ -1,6 +1,22 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.33 — Fig 13 (d) relabeled: gating/PAC, NOT entrainment (Giulio's dynamical-systems catch) (latest)
+## v1.34 — Q2 raster resolution: bilinear heatmaps + 300 dpi; Q3 main/supp audit (latest)
+- Q2: root cause of "grainy" heatmaps = imshow(interpolation="nearest") -> blocky cells. Switched all
+  four map generators to interpolation="bilinear" + dpi 300 (nmm2_ping, lanmm_resonance,
+  lanmm_arnold_tongues, figures_v2). Regenerated the two self-contained ones: fig_nmm2_map (S11) and
+  fig_lanmm_map (S3) -- now smooth (speckle gone, ridges clean). figures_v2/fig_resonance_map (S6) and
+  lanmm_arnold p1/p2 (S10 + main Fig 8) got the code fix but NOT regenerated: resonance_map needs
+  analyses_v2.npz (uncommitted), and the arnold tongues need external lanmmv11 (absent) -> ASKED Giulio
+  to provide lanmmv11.py. fig_nmm2_resonance (main Fig 9) + fig_lanmm_resonance (S9) re-rendered as a
+  side effect, identical content (deterministic, line plots).
+- Q3 main/supp audit: split is 13 main + 11 supp (S1-S11). Main recommendation: fig_qif_timing (S1, the
+  QUANTITATIVE 14x/22x timing-not-rate proof) is in supp while its qualitative raster (fig_qif_raster,
+  Fig 13) is in main -> backwards; promote/merge. Also fig_lanmm_arnold_p2 (Fig 8) is the lone grainy
+  main raster (blocked on lanmmv11) -- if uncleanable, swap LaNMM's main representative to the cleaner
+  map/resonance and move tongues to supp. Rest of the split is well-judged. [pending Giulio's decision]
+Build clean: 30 pp, 0 undefined refs.
+
+## v1.33 — Fig 13 (d) relabeled: gating/PAC, NOT entrainment (Giulio's dynamical-systems catch)
 Giulio's precise critique: QIF panel (d) is NOT entrainment in the dynamical-systems sense -- the
 ~54 Hz gamma is NOT frequency-pulled to 42 Hz (still ~8 bursts/150ms, not ~6); it persists and is
 amplitude-GATED at the 42 Hz beat. The 12 Hz detuning is OUTSIDE the 1:1 Arnold tongue, so by
@@ -17,9 +33,8 @@ lock) -- same word, two jobs, a referee magnet. Fix (his option 1, the stronger/
   no oscillator to entrain below the Hopf).
 - Fixed two now-stale code cites exposed by the archiving: dropped jr_analysis.py (Methods) and
   make_timing_fig.py (sec:timing). Build clean: 30 pp (gating explanation added a page), 0 undefined refs.
-Still TODO (Giulio's Q2/Q3): raster-figure resolution; main-vs-supplementary figure placement audit.
 
-## v1.32 — Results §4+§5 merged; dead/dup scripts archived (latest)
+## v1.32 — Results §4+§5 merged; dead/dup scripts archived
 - Merged Results §4 (operating-point Sigma'' law) and §5 (square-law + linearization control)
   into one subsection "The nonlinearity is the detector: the Sigma'' curvature law and its
   controls" -- saves a heading, tightens the JR-verification block (fig:opp then fig:ver flow

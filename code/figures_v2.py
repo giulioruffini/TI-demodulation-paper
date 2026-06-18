@@ -95,7 +95,7 @@ def resonance_map():
     fig, ax = plt.subplots(figsize=(7.2,4.3))
     fmap=d["f_map"]; pmap=d["p_map"]; Amap=d["A_map"]
     ext=[fmap[0],fmap[-1],pmap[0],pmap[-1]]
-    im=ax.imshow(Amap, origin="lower", aspect="auto", extent=ext, cmap="viridis")
+    im=ax.imshow(Amap, origin="lower", aspect="auto", extent=ext, cmap="viridis", interpolation="bilinear")
     ax.axvline(11.1, color="white", ls=":", lw=1)
     ax.annotate("near Hopf\n(high Q)", xy=(8.7, 320), color="white", fontsize=8.5, va="bottom")
     ax.annotate("far from Hopf", xy=(8.7, 396), color="white", fontsize=8.5, va="top")

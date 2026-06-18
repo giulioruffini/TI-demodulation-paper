@@ -79,6 +79,7 @@ def make_figures():
     # ---- map (log scale: limit-cycle entrainment >> stable-focus forced response) ----
     fig, ax = plt.subplots(figsize=(6.4, 4.6))
     im = ax.imshow(M, origin="lower", aspect="auto", cmap="viridis",
+                   interpolation="bilinear",
                    norm=LogNorm(vmin=2e-3, vmax=M.max()),
                    extent=[DF[0], DF[-1], MU[0], MU[-1]])
     ax.axhline(I_HOPF, color="w", ls="--", lw=1)
@@ -88,7 +89,7 @@ def make_figures():
     ax.set_title(r"LaNMM: demodulated $P_1$ response over $(\Delta f,\,$drive$)$", fontsize=10)
     plt.colorbar(im, ax=ax, label=r"lock-in response at $\Delta f$ (mV)")
     fig.tight_layout()
-    fig.savefig(os.path.join(FIGDIR, "fig_lanmm_map.png"), dpi=150)
+    fig.savefig(os.path.join(FIGDIR, "fig_lanmm_map.png"), dpi=300)
     fig.savefig(os.path.join(FIGDIR, "fig_lanmm_map.pdf")); plt.close(fig)
     # ---- resonance curves ----
     fig, (a1, a2) = plt.subplots(1, 2, figsize=(11, 4.2))
