@@ -1,5 +1,22 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v1.31 — Fig 13 entrainment inset + gamma-band Df clarified; Track B reassessed (latest)
+- Fig 13 (qif_raster): per Giulio, the entrained raster (c)/(d) did not make the locking
+  visually obvious (gamma ~54 Hz and beat 42 Hz are close -> amplitude-gating, not a frequency
+  shift). Added a beat-phase-folded inset to each TI-ON panel (b,d): r_E folded on the Df cycle,
+  FLAT off (gray) vs a clear BUMP on (blue) -- the textbook "is timing locked?" view. Caption +
+  methods updated; Df kept as the beat, detuning (Df-f0 ~ 12 Hz) stated as a distinct quantity.
+- Discussion: added the explicit, testable band-targeting prediction -- optimal Df tracks the
+  target's intrinsic rhythm (~10 Hz alpha, ~40-55 Hz gamma/PING), so TI's Df should follow
+  regional spectral anatomy (justifies the large Df in the NMM2/QIF figures).
+- TRACK B REASSESSED (figures already publication-grade): fig_demodulation and all vector PDFs
+  are crisp at in-document size -- the earlier "cramped" critique was a low-res PNG-preview
+  artifact, not a real issue. The only raster PNGs (fig_lanmm_arnold_p1/p2) are ALREADY ~300 dpi;
+  their "graininess" is genuine heatmap DATA noise (would need re-running with lanmmv11, absent, to
+  de-speckle). fig_lanmm_setup is a 175-dpi hand-drawn schematic (acceptable). => the moving-notes
+  "re-render at 300 dpi" worry is already satisfied; Track B is effectively done/blocked.
+Build clean: 29 pp, 0 undefined refs.
+
 ## v1.30 — Landau pass: de-echo (caption<->body) + cut repeated explanations (latest)
 First Landau-style tightening pass (subagent-audited the whole tex for repetition/echo).
 Highest-value cuts made (all verbatim/near-verbatim restatements, not term-reuse):
