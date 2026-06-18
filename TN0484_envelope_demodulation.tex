@@ -972,16 +972,25 @@ App.~\ref{app:qif}).
 \begin{figure}[t!]
 \centering
 \includegraphics[width=\textwidth]{fig_qif_raster.pdf}
-\caption{\textbf{QIF spiking network (microscale of NMM2 PING): TI realigns spike
-timing, not mean rate.} $N=2000$ excitatory and inhibitory QIF neurons; black ticks are
-$E$ spikes (120 neurons shown), blue is the population rate $r_E(t)$, red is the TI
-envelope. \emph{(a)} Forced ($\bar\eta<\bar\eta_{\rm Hopf}$), TI off: asynchronous
-firing, flat rate. \emph{(b)} Forced, TI on ($\Delta f=55$~Hz): spikes bunch into the
-envelope. \emph{(c)} Entrained ($\bar\eta>\bar\eta_{\rm Hopf}$), TI off: free-running
-gamma, no $\Delta f$ lock-in. \emph{(d)} Entrained, TI on ($\Delta f=42$~Hz): gamma
+\caption{\textbf{QIF spiking network (microscale of the NMM2 PING \emph{gamma}
+generator): TI realigns spike timing, not mean rate.} $N=2000$ excitatory and inhibitory
+quadratic integrate-and-fire neurons whose exact mean field is the NMM2 PING circuit
+(Eq.~\eqref{eq:nmm2-ping}). This circuit's intrinsic rhythm is \emph{gamma}
+($\sim$54~Hz), so---as in the alpha figures, but one band up---the TI beat $\Delta f$ is
+set in the gamma range (here much larger than the $\Delta f\!\sim\!11$~Hz of the
+Jansen--Rit alpha column; carrier $f_c=300$~Hz). Black ticks are $E$ spikes (120 of
+2000 shown), blue the population rate $r_E(t)$, red the TI envelope; the boxed value is
+the timing lock-in at $\Delta f$, off$\to$on. The bifurcation parameter is the common
+background drive $\bar\eta$ (gamma Hopf at $\bar\eta_{\rm Hopf}\!\approx\!1.1$).
+\emph{(a)}~Forced ($\bar\eta=0.85$, just below the Hopf---a damped gamma resonator), TI
+off: asynchronous firing, flat rate. \emph{(b)}~Forced, TI on, driven \emph{at} the
+gamma resonance ($\Delta f=55$~Hz): spikes bunch into the envelope. \emph{(c)}~Entrained
+($\bar\eta=1.5$, above the Hopf---an autonomous $\sim$54~Hz gamma cycle), TI off:
+free-running gamma, no $\Delta f$ lock-in. \emph{(d)}~Entrained, TI on, driven
+\emph{detuned} ($\Delta f=42$~Hz, deliberately $\ne$ the autonomous $54$~Hz): the gamma
 bursts gate to the TI beat---the population rate gains a $\Delta f$-locked component
-($\sim$22$\times$), while the intrinsic gamma persists. Boxed: lock-in at $\Delta f$,
-off$\to$on.}
+($\sim$22$\times$), while the intrinsic gamma persists. The detuning is what makes this
+genuine entrainment rather than coincidence.}
 \label{fig:qif_raster}
 \end{figure}
 
@@ -1154,6 +1163,15 @@ identical to the PING mean field (Eq.~\eqref{eq:nmm2-ping}), excitabilities
 $\eta_j\sim$ Lorentzian$(\bar\eta,\Delta)$ sampled by deterministic quantiles,
 second-order synapses driven by the empirical population rates, and the AM field
 entering the excitatory membranes---and ask what TI does to the \emph{spikes}.
+The bifurcation parameter is the common background drive $\bar\eta$, with a gamma Hopf at
+$\bar\eta_{\rm Hopf}\!\approx\!1.1$ (autonomous $f_0\!\approx\!54$~Hz); the carrier is
+$f_c=300$~Hz and the field amplitude $A_f=35$. Because this is a \emph{gamma} circuit,
+the TI beat $\Delta f$ is chosen in the gamma band, not the alpha band of the JR figures:
+$\Delta f=55$~Hz \emph{at} the forced gamma resonance ($\bar\eta=0.85$, below the Hopf),
+and $\Delta f=42$~Hz \emph{detuned} from the autonomous $54$~Hz in the entrained regime
+($\bar\eta=1.5$, above the Hopf)---the detuning distinguishing true entrainment from
+mere frequency coincidence. Timing is quantified by the quadrature lock-in of $r_E(t)$
+at $\Delta f$ over the measurement window.
 
 The mesoscale result of \S\ref{sec:timing} makes a sharp microscale prediction: TI
 should bunch spike \emph{times} into the recovered envelope---a population-rate
