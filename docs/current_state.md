@@ -1,6 +1,14 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.37 — Fig 14a QIF<->NMM2 validation: use autonomous gamma (peaks now match) (latest)
+## v1.38 — Fig 8 (lanmm_arnold_p2, main) re-rendered smooth; P1/S10 still computing (latest)
+The LaNMM Arnold-tongue Python re-run (with cloned lanmmv11 + bilinear/300dpi) is so slow (~7000
+solve_ivp, no npz cache) it took >1 h. It does P2 then P1: fig_lanmm_arnold_p2 (MAIN text Fig 8 --
+the one grainy main raster) finished and is now SMOOTH (speckle/streak gone, alpha tongue at ~10 Hz
+a clean band). Committed it. fig_lanmm_arnold_p1 (supp S10) is still computing (~45 min more) -- will
+commit when it lands. Reproduction note: needs PYTHONPATH=<LaNMM repo>/python and pip tqdm. [The
+Julia LaNMM engine would make this seconds -- see memory.]
+
+## v1.37 — Fig 14a QIF<->NMM2 validation: use autonomous gamma (peaks now match)
 Giulio spotted that in Fig 14a the QIF peak (~53 Hz) sat ~13% ABOVE the NMM2 mean-field peak
 (~47 Hz), contradicting "matched gamma spectrum". Diagnosed: QIF and MF match EXACTLY (53.3 Hz)
 in every condition EXCEPT forced_on -- and the panel was built from forced_on. Cause is NOT a bug
