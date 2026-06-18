@@ -1,6 +1,17 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.44 — readability/pedagogy pass (symbols defined, math intuition, consistency) (latest)
+## v1.45 — Notation/symbol/units table in appendix; notation disambiguated (latest)
+Added App.~A "Notation and units" (\usepackage{longtable}, Table~\ref{tab:notation}): a full
+symbol glossary grouped by category (sigmoid; Jansen-Rit; applied TI field & coupling; network
+dynamics/response/bifurcation; LaNMM; NMM2/MPR & QIF), with meaning + nominal units for ~50 symbols.
+Disambiguation handled in the head note + by context: A = excitatory PSP gain (JR/LaNMM synapses)
+vs the field modulation amplitude (LaNMM drive e(t), and A_f in NMM2/QIF) = the counterpart of the
+single-column eps; C = JR connectivity constant vs NMM2 global synaptic gain C(=J). The field-amplitude
+family eps/A/A_f is listed on one row as the same physical role per model. Referenced from Methods.
+(Did NOT rename A in the LaNMM drive -- the arnold figure axis shows "A" and re-rendering needs the
+~2 h lanmmv11 recompute; the table + context is the clean fix.) Build clean: 31 pp, 0 undefined refs.
+
+## v1.44 — readability/pedagogy pass (symbols defined, math intuition, consistency)
 Subagent-audited the whole tex for symbols/pedagogy/refs/consistency. Applied the high-value fixes:
 - Defined sigmoid params in prose at first use (2e0 max rate, inflection v0, slope rho) -- were only
   in Table 1, ~60 lines later.

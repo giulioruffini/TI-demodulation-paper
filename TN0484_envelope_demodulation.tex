@@ -7,6 +7,7 @@
 \graphicspath{{figures/}}
 \usepackage{xcolor}
 \usepackage{booktabs}
+\usepackage{longtable}
 \usepackage{fancyhdr}
 \usepackage{titlesec}
 \usepackage[hidelinks]{hyperref}
@@ -471,7 +472,8 @@ probes the mechanism while kHz optimizes selectivity.
 \section{Methods}
 
 \subsection{Single-column Jansen--Rit: integration, lock-in, and controls}
-We integrate the single-column JR model of \S\ref{sec:nmm}
+(All symbols and units are collected in App.~\ref{app:notation},
+Table~\ref{tab:notation}.) We integrate the single-column JR model of \S\ref{sec:nmm}
 (Eqs.~\eqref{eq:jr0}, parameters in Table~\ref{tab:params}) as six first-order
 ODEs. The TI field enters only the pyramidal output sigmoid, Eq.~\eqref{eq:jr0},
 as $s(t)$; the read-out $v=y_1-y_2$ is \emph{not} fed the field directly, so any
@@ -1203,6 +1205,83 @@ sign-reversed---by shifting the operating point.
 \appendix
 \renewcommand{\thefigure}{S\arabic{figure}}
 \setcounter{figure}{0}
+
+\section{Notation and units}\label{app:notation}
+These neural-mass models are phenomenological: potentials are in mV, firing rates in
+s$^{-1}$ ($\equiv$Hz), time constants in ms, and frequencies in Hz, unless noted; a
+``--'' marks a dimensionless quantity. A few glyphs are reused across the four models
+(JR, LaNMM, NMM2/MPR, QIF) by long-standing convention; these are disambiguated by
+context and flagged below. In particular, $A$ is the excitatory PSP \emph{gain} in the
+JR/LaNMM synapses, while in the LaNMM \emph{drive} $e(t)$ and (as $A_f$) in the
+NMM2/QIF field it is the applied-field modulation \emph{amplitude}---the counterpart of
+the single-column $\varepsilon$. Likewise $C$ is the JR connectivity constant and the
+NMM2 global synaptic gain $C\,(\equiv J)$.
+
+\renewcommand{\arraystretch}{1.18}
+\begin{longtable}{@{}p{0.16\textwidth} p{0.62\textwidth} p{0.16\textwidth}@{}}
+\toprule
+\textbf{Symbol} & \textbf{Meaning} & \textbf{Units} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Symbol} & \textbf{Meaning} & \textbf{Units} \\
+\midrule
+\endhead
+\midrule \multicolumn{3}{@{}l}{\textit{Firing-rate nonlinearity (sigmoid)}} \\*
+$\Sig(v)$ & population firing-rate transfer function & s$^{-1}$ \\
+$\Sig'(v),\,\Sig''(v)$ & sigmoid slope and curvature; $\Sig''$ sets the demodulation gain & s$^{-1}$mV$^{-1,-2}$ \\
+$e_0$ & half the maximal firing rate ($\Sig\!\to\!2e_0$ as $v\!\to\!\infty$) & s$^{-1}$ \\
+$v_0$ & sigmoid inflection (half-maximal) potential & mV \\
+$\rho$ & sigmoid slope parameter & mV$^{-1}$ \\
+$v^{*}$ & operating point (field-free fixed point of $v$) & mV \\
+$v=y_1-y_2$ & net pyramidal membrane potential (LFP proxy) & mV \\
+PEIX & point of excitatory inflection (a $\Sig'$-based brain-state index) & -- \\
+\midrule \multicolumn{3}{@{}l}{\textit{Single-column Jansen--Rit}} \\*
+$A,\,B$ & excitatory, inhibitory PSP gains & mV \\
+$a,\,b$ & excitatory, inhibitory synaptic rates (inverse time constants) & s$^{-1}$ \\
+$y_1,\,y_2$ & excitatory, inhibitory post-synaptic potentials & mV \\
+$C,\,C_1\!-\!C_4$ & intracolumn connectivity constants & -- \\
+$p$ & external input rate; JR bifurcation parameter & s$^{-1}$ \\
+\midrule \multicolumn{3}{@{}l}{\textit{Applied TI field and coupling}} \\*
+$s(t),\,e(t)$ & applied AM field perturbation (JR; LaNMM) & mV \\
+$\varepsilon$ \,/\, $A$ \,/\, $A_f$ & field modulation amplitude (JR / LaNMM drive / NMM2--QIF) & mV \\
+$m$ & modulation depth & -- \\
+$f_c,\ \omega_c\!=\!2\pi f_c$ & carrier frequency & Hz, rad\,s$^{-1}$ \\
+$f_1,f_2$ & the two applied carrier tones ($f_c\!=\!(f_1\!+\!f_2)/2$) & Hz \\
+$\Delta f,\ \Omega\!=\!2\pi\Delta f$ & envelope (beat) frequency, $\Delta f\!=\!f_2\!-\!f_1$ & Hz, rad\,s$^{-1}$ \\
+$E(t),\ \delta V(t)\!=\!\lambda E$ & applied field; induced membrane perturbation & V\,m$^{-1}$; mV \\
+$\kappa(f_c)$ & applied-field-to-polarization coupling & mV\,/\,(V\,m$^{-1}$) \\
+$H_m(\omega),\ \tau_m$ & somatic membrane low-pass and its time constant & --; ms \\
+$\tau$ & fast-element (node/AIS/terminal) time constant & ms \\
+\midrule \multicolumn{3}{@{}l}{\textit{Network dynamics, response, and bifurcation}} \\*
+$\lambda=-\gamma\pm i\omega_0$ & leading Jacobian eigenvalue pair & s$^{-1}$ \\
+$\gamma$ & damping of the critical mode ($\propto$ distance to the Hopf) & s$^{-1}$ \\
+$\omega_0,\ f_0\!=\!\omega_0/2\pi$ & natural (Hopf) frequency & rad\,s$^{-1}$, Hz \\
+$G(\Omega)$ & network resonance gain (Lorentzian, $\propto\!1/\gamma$ at $\omega_0$) & -- \\
+$A_\Omega$ & demodulated response: lock-in amplitude at $\Omega$ & mV (or s$^{-1}$) \\
+$A_{\rm open}$ & open-loop (detector-only, no recurrence) response & mV (or s$^{-1}$) \\
+$I,\,Q$ & in-phase, quadrature lock-in components & mV \\
+$C^{*},\,J^{*}$ & coupling at the Hopf (criticality) & -- \\
+\midrule \multicolumn{3}{@{}l}{\textit{Laminar model (LaNMM)}} \\*
+$P_1,\,P_2$ & deep (alpha) and superficial (gamma) pyramidal populations & -- \\
+PV,\,SS,\,SST & parvalbumin, stellate, somatostatin interneurons & -- \\
+$I_0$ & flat (DC) drive offset in $e(t)$ & mV \\
+\midrule \multicolumn{3}{@{}l}{\textit{Exact mean field (NMM2 / MPR) and QIF network}} \\*
+$r_E,\,r_I$ & population firing rates (E, I) & s$^{-1}$ \\
+$v_E,\,v_I$ & mean membrane potentials (E, I) & mV \\
+$\eta_j,\ \bar\eta$ & per-neuron excitability; mean excitability (= common drive, bifurcation param.) & -- \\
+$\Delta$ & Lorentzian half-width of $\eta_j$ (excitability heterogeneity) & -- \\
+$\tau_E,\tau_I,\tau_a,\tau_g$ & E, I membrane and AMPA, GABA synaptic time constants & ms \\
+$C\,(\equiv J)$ & global synaptic coupling (inter-population gain) & -- \\
+$A_{ee},A_{ei},A_{ie},A_{ii}$ & synaptic weight matrix $(1,1,1,2)$ & -- \\
+$s_E,\,s_I$ & second-order synaptic activations; $\hat K_a,\hat K_g$ their operators & s$^{-1}$ \\
+$V_j,\ V_{\rm peak}$ & QIF neuron potential; spike/reset threshold & mV \\
+$N$ & neurons per population (QIF; $N=8000$) & -- \\
+$A_\Omega/\langle r_E\rangle$ & $\Delta f$ modulation depth (envelope-locked timing metric) & -- \\
+\bottomrule
+\caption{Symbols, meanings, and (nominal) units. Reused glyphs are disambiguated by
+context; see the head note on $A$ and $C$.}\label{tab:notation}
+\end{longtable}
 
 \section{Microscale: spike-timing realignment in the QIF network}\label{app:qif}
 NMM2 (Eq.~\eqref{eq:mpr}) is the \emph{exact} mean field of an all-to-all network of
