@@ -103,6 +103,18 @@ Roser Sanchez-Todo, Andr{\'e}~M. Bastos, Edmundo Lopez-Sola, et~al.
   oscillatory generators from laminar electrophysiological recordings.
 \newblock {\em NeuroImage}, 270:119938, 2023.
 
+\bibitem{deitcher2017}
+Yair Deitcher, Guy Eyal, Lida Kanari, et~al.
+\newblock Comprehensive morpho-electrotonic analysis shows 2 distinct classes
+  of {L2} and {L3} pyramidal neurons in human temporal cortex.
+\newblock {\em Cerebral Cortex}, 27(11):5398--5414, 2017.
+
+\bibitem{eyal2016}
+Guy Eyal, Matthijs~B. Verhoog, Guilherme Testa-Silva, et~al.
+\newblock Unique membrane properties and enhanced signal processing in human
+  neocortical neurons.
+\newblock {\em eLife}, 5:e16553, 2016.
+
 \bibitem{reato2010}
 Davide Reato, Asif Rahman, Marom Bikson, and Lucas~C. Parra.
 \newblock Low-intensity electrical stimulation affects network dynamics by
@@ -121,6 +133,28 @@ Anli Liu, Mih{\'a}ly V{\"o}r{\"o}slakos, Greg Kronberg, Simon Henin, Matthew~R.
 Fran{\c c}ois Grimbert and Olivier Faugeras.
 \newblock Bifurcation analysis of {J}ansen's neural mass model.
 \newblock {\em Neural Computation}, 18(12):3052--3068, 2006.
+
+\bibitem{pikovsky2001}
+Arkady Pikovsky, Michael Rosenblum, and J{\"u}rgen Kurths.
+\newblock {\em Synchronization: A Universal Concept in Nonlinear Sciences}.
+\newblock Cambridge University Press, 2001.
+
+\bibitem{lachaux1999}
+Jean-Philippe Lachaux, Eugenio Rodriguez, Jacques Martinerie, and Francisco~J.
+  Varela.
+\newblock Measuring phase synchrony in brain signals.
+\newblock {\em Human Brain Mapping}, 8(4):194--208, 1999.
+
+\bibitem{canolty2010}
+Ryan~T. Canolty and Robert~T. Knight.
+\newblock The functional role of cross-frequency coupling.
+\newblock {\em Trends in Cognitive Sciences}, 14(11):506--515, 2010.
+
+\bibitem{tort2010}
+Adriano B.~L. Tort, Robert Komorowski, Howard Eichenbaum, and Nancy Kopell.
+\newblock Measuring phase-amplitude coupling between neuronal oscillations of
+  different frequencies.
+\newblock {\em Journal of Neurophysiology}, 104(2):1195--1210, 2010.
 
 \bibitem{esmaeilpour2020}
 Zeinab Esmaeilpour, Mark Jackson, Greg Kronberg, Tianhe Zhang, Rosana Esteller,

@@ -1,6 +1,20 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.46 — Fig 12 finer sampling + FIX: restored its real plotter (make_timing_fig) (latest)
+## v1.47 — membrane-tau citation (Eyal/Deitcher) + entrainment-vocabulary Methods paragraph (latest)
+- Membrane time constant (the load-bearing kHz-roll-off number): Giulio supplied the real primary
+  sources. Cited Deitcher 2017 (tau_m~12 ms human L2/3) + Eyal 2016; softened the claim to "~12 ms;
+  we adopt ~16 ms for the soma" and DROPPED the unsupported ~22 ms upper end. 6 new bib entries.
+- NEW Methods subsection "Forced response, entrainment, and gating: vocabulary and metrics"
+  (sec:vocab): fixes the overloaded "entrainment" by mapping three distinct senses to three metrics --
+  (i) forced response = lock-in/susceptibility (below Hopf: J-curve/timing/tACS); (ii) frequency
+  entrainment = dominant-freq f_out pulled to Df, Arnold tongue (S5; f_out vs PLV justified);
+  (iii) gating/PAC = Df-locked amplitude of a persisting rhythm (QIF panel d). Reserves "entrainment"
+  for (ii), "gating" for (iii) -- self-consistent with the panel-(d) relabel done earlier. Merged the
+  old entrainment-construction paragraph in (no duplication). Cites pikovsky2001, lachaux1999,
+  canolty2010, tort2010. Build clean (full bibtex): 32 pp, 0 undefined.
+NEXT: Landau logic review of Methods + Results (in progress).
+
+## v1.46 — Fig 12 finer sampling + FIX: restored its real plotter (make_timing_fig)
 Giulio: Fig 12 (timing_not_rate) needs more sampling too. While fixing it, found+fixed a bug I had
 introduced: make_timing_fig.py is the ONLY plotter for fig_timing_not_rate (timing_not_rate.py writes
 the .npz but does NOT self-plot) -- I had wrongly archived it in v1.32 on a bad audit, leaving Fig 12

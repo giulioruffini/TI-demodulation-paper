@@ -427,8 +427,8 @@ A_\Omega(0)\,\frac{1}{(\omega_c\tau_m)^2}.
 \end{equation}
 The demodulated response rolls off as $1/f_c^2$ above the membrane corner
 (Fig.~\ref{fig:khz}). For a pyramidal soma/dendrite the passive time constant is
-$\tau_m\!\sim\!10$--$30$~ms (human L2/3 $\sim$12--22~ms, mean $\sim$16~ms; corner
-$\sim$10~Hz), so the carrier-power factor $|H_m|^2$ is only $\sim$$10^{-4}$ at
+$\tau_m\!\sim\!10$--$30$~ms (human L2/3 pyramidal cells $\sim$12~ms
+\cite{deitcher2017,eyal2016}; we adopt $\sim$16~ms for the soma, corner $\sim$10~Hz), so the carrier-power factor $|H_m|^2$ is only $\sim$$10^{-4}$ at
 1~kHz, $\sim$$2.5\times10^{-5}$ at 2~kHz and $\sim$$10^{-6}$ at 10~kHz. Passive
 somatic demodulation is therefore negligible at TI's kHz carriers---a four- to
 six-order-of-magnitude suppression.
@@ -629,32 +629,51 @@ rate for Fig.~\ref{fig:timing}) or a direct in-band sinusoid $s(t)=\varepsilon\c
 lock-in of $v$ at $\Delta f$. Code: \texttt{jr\_jsweep\_engine.py},
 \texttt{timing\_not\_rate.py}, \texttt{tacs\_jsweep.py} (self-contained).
 
-\subsection{Entrainment above the Hopf (Jansen--Rit)}
-The entrainment analysis (Fig.~\ref{fig:entrain}) requires a different read-out:
-there the column oscillates autonomously, and the lock-in amplitude at $\Delta f$ no
-longer isolates a driven response. We place the column on the limit-cycle side---input
-$p$ between the SNIC ($p\!\approx\!115$) and the Hopf ($p\!\approx\!315$), where it
-free-runs at $f_0(p)$---and drive it with a direct in-band sinusoid
-$s(t)=\varepsilon\cos\Omega t$. After discarding transients we take the \emph{dominant
-output frequency} $f_{\rm out}$ as the largest non-DC peak of the Hann-windowed FFT of
-$v$ over the measurement window (evaluated on a decimated buffer), and call the column
-$1{:}1$ \emph{locked} when $|f_{\rm out}-\Delta f|<0.3$~Hz. The Arnold tongue
-(Fig.~\ref{fig:entrain}a) shows the $\Delta f$ lock-in amplitude over the
-$(\Delta f,\varepsilon)$ grid at fixed $p$, with the $1{:}1$-locked set outlined; the
-locking plateau (Fig.~\ref{fig:entrain}b) is $f_{\rm out}$ vs $\Delta f$ at
-fixed $\varepsilon$---equal to $\Delta f$ inside the tongue, snapping back to $f_0$
-outside. For the criticality panel (Fig.~\ref{fig:entrain}c) we fix $\varepsilon$ and
-sweep $p$ toward the Hopf; for each $p$ the \emph{locking range} is the width of the
-locked $\Delta f$ interval (number of locked points $\times$ grid spacing) on a $\Delta
-f$ grid centered on $f_0(p)$, and the autonomous cycle amplitude is the field-free
-$\max-\min$ of $v$. Two subtleties matter. (i)~The $\Delta f$ window
-($f_0\pm12$~Hz) is set wide enough that the near-Hopf locking ranges---where the tongue
-is widest---are resolved rather than grid-clipped (any point whose locked band still
-reaches a window edge is flagged in Fig.~\ref{fig:entrain}c); a fixed tolerance/grid sets
-the absolute scale, not the trend. (ii)~As onset is approached the cycle amplitude $\to0$ and the
-entrainment tongue merges into the forced-resonance bandwidth, so the supercritical
-``locking range'' and the subcritical $1/\gamma$ susceptibility coincide there by
-construction---which is precisely why responsiveness peaks at criticality on both sides.
+\subsection{Forced response, entrainment, and gating: vocabulary and metrics}\label{sec:vocab}
+``Entrainment'' is used in several senses, and our system can exhibit more than one, so
+we fix the vocabulary. We reserve \emph{entrainment} for its dynamical-systems
+meaning---frequency/phase locking of a \emph{self-sustained} oscillator to an external
+rhythm, confined to an Arnold tongue \cite{pikovsky2001}---and distinguish it from two
+related read-outs.
+\emph{(i) Forced response.} Below the Hopf the column does not oscillate on its own; the
+field elicits a driven response whose strength we quantify by the lock-in amplitude of
+the read-out at the beat $\Delta f$ (Eq.~\eqref{eq:lockin})---its susceptibility---and
+there is no autonomous rhythm to entrain (J-curve, timing, tACS).
+\emph{(ii) Frequency entrainment.} Above the Hopf the column free-runs at $f_0$; genuine
+entrainment means its dominant frequency is \emph{pulled} to $\Delta f$. We test this with
+the dominant output frequency $f_{\rm out}$ (largest non-DC FFT peak) and the $1{:}1$
+criterion $|f_{\rm out}-\Delta f|<0.3$~Hz, mapping the Arnold tongue and locking range
+(Fig.~\ref{fig:entrain}); we use $f_{\rm out}$ rather than a phase-locking value
+\cite{lachaux1999} because, when an autonomous rhythm and a driven component coexist,
+instantaneous-phase estimates conflate them whereas the dominant-frequency test isolates
+true frequency capture.
+\emph{(iii) Envelope locking / gating.} A periodic drive can instead modulate the
+\emph{amplitude} of a persisting rhythm at the beat without capturing its
+frequency---phase--amplitude coupling \cite{canolty2010,tort2010}. We quantify this by
+the $\Delta f$-locked component of the population rate (lock-in of $r_E$ at $\Delta f$,
+equivalently the rate folded on the $\Delta f$ beat phase), which isolates the driven
+envelope from the intrinsic rhythm. The distinction is load-bearing: the same word would
+otherwise denote a frequency capture (ii) and an amplitude gating (iii) that are
+dynamically different---so we label frequency capture \emph{entrainment} and amplitude
+modulation of a persisting rhythm \emph{gating}, reporting the metric appropriate to each
+(the above-Hopf QIF panel, with its $\sim$12~Hz detuning, is a case of gating, not
+entrainment).
+
+Concretely for the JR entrainment analysis (Fig.~\ref{fig:entrain}): we place the column
+on the limit-cycle side---input $p$ between the SNIC ($p\!\approx\!115$) and the Hopf
+($p\!\approx\!315$), where it free-runs at $f_0(p)$---and drive it with
+$s(t)=\varepsilon\cos\Omega t$. The Arnold tongue (Fig.~\ref{fig:entrain}a) is the
+$\Delta f$ lock-in over the $(\Delta f,\varepsilon)$ grid at fixed $p$ with the
+$1{:}1$-locked set outlined; the locking plateau (b) is $f_{\rm out}$ vs $\Delta f$ (equal
+to $\Delta f$ inside the tongue, snapping back to $f_0$ outside); the criticality panel
+(c) fixes $\varepsilon$ and sweeps $p$ toward the Hopf, reporting the locking range
+(locked-$\Delta f$ width on a grid centered on $f_0(p)$) and the field-free cycle
+amplitude ($\max-\min$ of $v$). Two subtleties: (i)~the $\Delta f$ window ($f_0\pm12$~Hz)
+is wide enough that near-Hopf locking ranges are resolved rather than grid-clipped
+(clipped points are flagged in Fig.~\ref{fig:entrain}c); (ii)~as onset is approached the
+cycle amplitude $\to0$ and the tongue merges into the forced-resonance bandwidth, so the
+supercritical locking range and the subcritical $1/\gamma$ susceptibility coincide there
+by construction---why responsiveness peaks at criticality on both sides.
 Code: \texttt{entrain.py}, \texttt{entrain\_crit.py} (self-contained).
 
 \section{Results}
