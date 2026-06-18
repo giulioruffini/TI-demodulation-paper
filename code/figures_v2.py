@@ -6,11 +6,11 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
 from jr_demod import Sigm, Sigm1, Sigm2, A, a, v0, e0, r
-import os
+import os, figstyle; figstyle.apply()
 FIGS = os.environ.get("TN_FIGDIR") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "figures")
 os.makedirs(FIGS, exist_ok=True)
 
-NEB="#0a4f8c"; NEB2="#2f7ec4"; NEL="#9ec9e8"; NER="#b3361f"; GR="#555555"
+NEB=figstyle.NEBLUE; NEB2="#2f7ec4"; NEL=figstyle.NEBLUE_L; NER=figstyle.NERED; GR=figstyle.NEGRAY
 d = np.load("analyses_v2.npz")
 
 # ============================================================== FIG 1: concept
@@ -52,7 +52,7 @@ def concept():
         axx.plot(tt,s,color=NEB,lw=1.0); axx.margins(y=0.15)
         axx.set_title(tag, fontsize=7.5, color=GR, pad=1)
     wav(12,"am","AM field"); wav(38,"rect","rectified"); wav(64,"ripple","filtered"); wav(90,"sine","envelope @ $\\Omega$")
-    fig.savefig(f"{FIGS}/fig_concept.png",dpi=150); fig.savefig(f"{FIGS}/fig_concept.pdf")
+    fig.savefig(f"{FIGS}/fig_concept.png",dpi=300); fig.savefig(f"{FIGS}/fig_concept.pdf")
     print("wrote fig_concept")
 
 # ============================================ FIG 2: bifurcation + sigmoid/sigma''
@@ -61,14 +61,22 @@ def bifurcation_sigmoid():
     pb=d["p_bif"]; vmin=d["vmin"]; vmax=d["vmax"]; vmean=d["vmean"]
     ax[0].fill_between(pb, vmin, vmax, color=NEL, alpha=0.7, label="oscillation range (min–max)")
     ax[0].plot(pb, vmean, color=NEB, lw=1.3, label="mean / fixed point")
-    ax[0].axvline(315, color=NER, ls="--", lw=1.3); ax[0].text(318,ax[0].get_ylim()[1]*0.8,
-        "Hopf\n$p\\approx315$\n$f_0\\approx11.1$ Hz", color=NER, fontsize=8)
-    for p,c,lab in [(330,NEB,"focus (below)"),(395,NEB2,""),(290,NER,"limit cycle (above)")]:
-        ax[0].axvline(p, color=c, ls=":", lw=1)
+    # mark only the two real boundaries: the SNIC (cycle onset) and the Hopf;
+    # shade/label the alpha-cycle band between them. (Stray operating-point lines removed.)
+    osc = (vmax - vmin) > 0.2
+    p_snic = float(pb[osc][0]) if osc.any() else 115.0
+    y0, y1 = ax[0].get_ylim()
+    ax[0].axvspan(p_snic, 315, color=NEL, alpha=0.18, lw=0)
+    for pc in (p_snic, 315):
+        ax[0].axvline(pc, color=NER, ls="--", lw=1.2, alpha=0.85)
+    ax[0].text(p_snic+4, y0+(y1-y0)*0.40, f"SNIC\n$p\\approx{p_snic:.0f}$", color=NER, fontsize=8, ha="left", va="center")
+    ax[0].text(318, y1*0.92, "Hopf\n$p\\approx315$\n$f_0\\approx11.1$ Hz", color=NER, fontsize=8, va="top")
+    ax[0].text((p_snic+315)/2, y0+0.5, "alpha limit cycle", color=NEB, fontsize=8.5, ha="center", style="italic")
+    ax[0].text(360, y0+0.5, "stable focus\n(resonator)", color=GR, fontsize=8.5, ha="center", style="italic")
     ax[0].set_xlabel("external input  $p$  (Hz)"); ax[0].set_ylabel("LFP $v=y_1-y_2$ (mV)")
-    ax[0].set_title("JR bifurcation diagram", fontsize=11)
-    ax[0].legend(fontsize=8, frameon=False, loc="lower right")
-    ax[0].spines[["top","right"]].set_visible(False)
+    ax[0].set_title("JR bifurcation diagram")
+    ax[0].legend(loc="upper left", fontsize=8)
+    figstyle.panel(ax[0], "a")
 
     vv=np.linspace(-2,16,400)
     axb=ax[1]; axt=axb.twinx()
@@ -86,8 +94,9 @@ def bifurcation_sigmoid():
     axb.set_title("Sigmoid and its curvature $\\sigma''$", fontsize=11)
     l1,la1=axb.get_legend_handles_labels(); l2,la2=axt.get_legend_handles_labels()
     axb.legend(l1+l2, la1+la2, fontsize=8, frameon=False, loc="upper left")
-    for s in ["top"]: axb.spines[s].set_visible(False)
-    fig.tight_layout(); fig.savefig(f"{FIGS}/fig_bifurcation_sigmoid.png",dpi=150)
+    axb.set_title("Sigmoid $\\sigma(v)$ and its curvature $\\sigma''$")
+    figstyle.panel(axb, "b")
+    fig.tight_layout(); fig.savefig(f"{FIGS}/fig_bifurcation_sigmoid.png",dpi=300)
     fig.savefig(f"{FIGS}/fig_bifurcation_sigmoid.pdf"); print("wrote fig_bifurcation_sigmoid")
 
 # ===================================================== FIG 3: 2-D resonance map
@@ -103,7 +112,7 @@ def resonance_map():
     ax.set_ylabel("external input  $p$  (Hz)  $\\rightarrow$ toward Hopf")
     ax.set_title("Demodulated response @ $\\Omega$  (mV): resonance ridge sharpens near Hopf", fontsize=10)
     fig.colorbar(im, label="response @ $\\Omega$ (mV)")
-    fig.tight_layout(); fig.savefig(f"{FIGS}/fig_resonance_map.png",dpi=150)
+    fig.tight_layout(); fig.savefig(f"{FIGS}/fig_resonance_map.png",dpi=300)
     fig.savefig(f"{FIGS}/fig_resonance_map.pdf"); print("wrote fig_resonance_map")
 
 # ====================================== FIG 4: carrier independence + synapse TF
@@ -130,8 +139,8 @@ def carrier_independence():
     ax[1].axvline(100, color=NEB2, ls="--", lw=1); ax[1].text(105,2e-3,"carrier 100 Hz",fontsize=8,color=NEB2)
     ax[1].set_xlabel("frequency (Hz)"); ax[1].set_ylabel("$|H(\\omega)|$ (norm.)")
     ax[1].set_title("2nd-order synapse band-pass:\ncarrier suppressed, envelope passed", fontsize=10)
-    ax[1].spines[["top","right"]].set_visible(False)
-    fig.tight_layout(); fig.savefig(f"{FIGS}/fig_carrier_independence.png",dpi=150)
+    figstyle.panel(ax[0], "a"); figstyle.panel(ax[1], "b")
+    fig.tight_layout(); fig.savefig(f"{FIGS}/fig_carrier_independence.png",dpi=300)
     fig.savefig(f"{FIGS}/fig_carrier_independence.pdf"); print("wrote fig_carrier_independence")
 
 # ================================================ FIG 5: operating-point law (signed)
@@ -152,7 +161,7 @@ def operating_point():
     ax.set_title("Demodulation gain $=\\frac{1}{2}\\sigma''(v^*)\\varepsilon^2 m$: curvature law, "
                  "incl. sign reversal", fontsize=10)
     ax.legend(fontsize=8.5, frameon=False, loc="upper right"); ax.spines[["top","right"]].set_visible(False)
-    fig.tight_layout(); fig.savefig(f"{FIGS}/fig_operating_point.png",dpi=150)
+    fig.tight_layout(); fig.savefig(f"{FIGS}/fig_operating_point.png",dpi=300)
     fig.savefig(f"{FIGS}/fig_operating_point.pdf"); print("wrote fig_operating_point")
 
 if __name__=="__main__":

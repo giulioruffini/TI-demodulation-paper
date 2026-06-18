@@ -1,6 +1,18 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.39 — artistic pass begins: house style (figstyle.py) + fig_demodulation/verification restyled (latest)
+## v1.40 — figstyle rolled into figures_v2 (5 main figs) + bifurcation declutter (#4) (latest)
+Applied figstyle + house palette to figures_v2.py: fig_concept, fig_bifurcation_sigmoid,
+fig_resonance_map, fig_carrier_independence, fig_operating_point. All 300 dpi, (a)/(b) panel labels
+on the 2-panel figs, consistent type/spines.
+- #4 DONE: fig_bifurcation_sigmoid (a) decluttered -- removed the 3 stray unlabeled vertical lines
+  (incl. the mystery ~p=395); now marks only the two real boundaries SNIC (~120) + Hopf (315),
+  shades the alpha-limit-cycle band between them, labels both regions ("alpha limit cycle" /
+  "stable focus (resonator)"), legend moved upper-left to avoid collisions. Much cleaner.
+Build clean: 30 pp, 0 undefined refs.
+Still queued behind arnold (P1, >2h!): QIF N->8k (#1); figstyle on the heavy generators
+(nmm2_ping, lanmm_resonance, rerun_resonance, khz_*) + the npz-backed ones (qif/jcurve/entrain/tacs).
+
+## v1.39 — artistic pass begins: house style (figstyle.py) + fig_demodulation/verification restyled
 Giulio asked for a picky/artistic figure pass (resolution, more neurons, aesthetics). Critique: palette
 inconsistent (fig_demodulation/verification were off-palette #1b3a6b/#c44/#888), the keystone
 fig_demodulation cramped + unlabeled, panel-label/typography drift across the 24-fig set, QIF figs run
