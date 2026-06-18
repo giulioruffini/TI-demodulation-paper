@@ -12,7 +12,13 @@
   for (ii), "gating" for (iii) -- self-consistent with the panel-(d) relabel done earlier. Merged the
   old entrainment-construction paragraph in (no duplication). Cites pikovsky2001, lachaux1999,
   canolty2010, tort2010. Build clean (full bibtex): 32 pp, 0 undefined.
-NEXT: Landau logic review of Methods + Results (in progress).
+- LANDAU logic review of Methods + Results: VERDICT = sound and well-built. The three-rung ladder
+  (JR analyze -> LaNMM confirm -> NMM2 derive) is explicit; the J-curve transition names+resolves the
+  p-entangles-detection-with-amplification confound; timing-not-rate rests on the G(w0)~1/g vs
+  G(0)~1/w0^2 transfer asymmetry (mechanism, not assertion); Methods order matches Results, no orphan
+  method/result. One improvement applied: the Results roadmap now previews the two distinctive mesoscale
+  payoffs (coupling-sets-gain J-curve, timing-not-rate) instead of only "demodulation + amplification".
+  No risky restructure (the argument is well-constructed). Build clean: 32 pp, 0 undefined.
 
 ## v1.46 — Fig 12 finer sampling + FIX: restored its real plotter (make_timing_fig)
 Giulio: Fig 12 (timing_not_rate) needs more sampling too. While fixing it, found+fixed a bug I had
