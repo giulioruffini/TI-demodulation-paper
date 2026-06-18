@@ -12,8 +12,10 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-FIGS = os.path.join(os.path.dirname(HERE), "figures")
+FIGS = os.environ.get("TN_FIGDIR") or os.path.join(os.path.dirname(HERE), "figures")
+os.makedirs(FIGS, exist_ok=True)
 NEBLUE = "#0a4f8c"; NERED = "#b3361f"; NEGREEN = "#1a9850"; GR = "#555555"
+
 
 d = np.load(os.path.join(HERE, "qif_raster.npz"), allow_pickle=True)
 meta = d["meta"].item(); conds = d["conds"].item()
@@ -24,7 +26,7 @@ def env(t, df):
     return 0.5 * (1 + np.cos(2 * np.pi * df / 1000.0 * t))
 
 
-def raster_panel(ax, key, title, show_env):
+def raster_panel(ax, key, title, show_env, annot=None):
     c = conds[key]; q = c["q"]; df = q["df"]; nrec = q["nrec"]
     st = q["spk_t"]; si = q["spk_id"]
     # smoothed population rate r_E(t) (right axis), drawn first (behind)
@@ -43,24 +45,37 @@ def raster_panel(ax, key, title, show_env):
     ax.plot(st - t0, si, "|", color="k", ms=2.6, mew=0.5, alpha=0.85, zorder=5)
     ax.set_xlim(0, tmeas); ax.set_ylim(-2, nrec + 2); ax.set_zorder(axr.get_zorder() + 1)
     ax.patch.set_visible(False)
+    if annot:                                     # quantify the envelope-locked timing
+        ax.text(0.025, 0.96, annot, transform=ax.transAxes, fontsize=7.6, va="top",
+                color=NEGREEN, fontweight="bold",
+                bbox=dict(fc="white", ec=NEGREEN, lw=0.6, alpha=0.85, pad=1.6))
     ax.set_title(title, fontsize=9)
     return axr
 
 
 def fig_raster():
     fig, axs = plt.subplots(2, 2, figsize=(10, 6), sharex=True)
+    ac = {k: conds[k]["q"]["AC"] for k in ("forced_off", "forced_on", "entrain_off", "entrain_on")}
+    fold_f = ac["forced_on"] / max(ac["forced_off"], 1e-6)
+    fold_e = ac["entrain_on"] / max(ac["entrain_off"], 1e-6)
     raster_panel(axs[0, 0], "forced_off", "(a) Forced (below Hopf), TI OFF: asynchronous", False)
     raster_panel(axs[0, 1], "forced_on",
-                 f"(b) Forced, TI ON ($\\Delta f$={conds['forced_on']['q']['df']:.0f} Hz): timing bunched", True)
-    raster_panel(axs[1, 0], "entrain_off", "(c) Entrained (above Hopf), TI OFF: free gamma", False)
+                 f"(b) Forced, TI ON ($\\Delta f$={conds['forced_on']['q']['df']:.0f} Hz): timing bunched",
+                 True, annot=f"$\\Delta f$ lock-in: {fold_f:.0f}$\\times$ off$\\to$on")
+    raster_panel(axs[1, 0], "entrain_off",
+                 "(c) Entrained (above Hopf), TI OFF: free gamma", False,
+                 annot="free-running:\nno $\\Delta f$ lock-in")
     raster_panel(axs[1, 1], "entrain_on",
-                 f"(d) Entrained, TI ON ($\\Delta f$={conds['entrain_on']['q']['df']:.0f} Hz): re-timed to TI", True)
+                 f"(d) Entrained, TI ON ($\\Delta f$={conds['entrain_on']['q']['df']:.0f} Hz):"
+                 " gamma bursts gate to the TI beat",
+                 True, annot=f"$\\Delta f$ lock-in: {fold_e:.0f}$\\times$ off$\\to$on")
     for ax in axs[:, 0]:
         ax.set_ylabel("E neuron #")
     for ax in axs[1, :]:
         ax.set_xlabel("time (ms)")
     fig.suptitle("QIF spiking network (microscale of NMM2 PING): TI realigns spike timing, "
-                 "not mean rate\n(black: E spikes; blue: population rate $r_E(t)$; red: TI envelope)",
+                 "not mean rate\n(black: E spikes; blue: population rate $r_E(t)$; red: TI envelope; "
+                 "boxed: envelope-locked timing, lock-in at $\\Delta f$)",
                  fontsize=10)
     fig.tight_layout(rect=[0, 0, 1, 0.95])
     for ext in ("pdf", "png"):

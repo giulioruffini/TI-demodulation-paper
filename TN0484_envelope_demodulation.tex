@@ -989,8 +989,10 @@ $E$ spikes (120 neurons shown), blue is the population rate $r_E(t)$, red is the
 envelope. \emph{(a)} Forced ($\bar\eta<\bar\eta_{\rm Hopf}$), TI off: asynchronous
 firing, flat rate. \emph{(b)} Forced, TI on ($\Delta f=55$~Hz): spikes bunch into the
 envelope. \emph{(c)} Entrained ($\bar\eta>\bar\eta_{\rm Hopf}$), TI off: free-running
-gamma. \emph{(d)} Entrained, TI on ($\Delta f=42$~Hz): the rhythm is re-timed to the TI
-beat.}
+gamma, no $\Delta f$ lock-in. \emph{(d)} Entrained, TI on ($\Delta f=42$~Hz): gamma
+bursts gate to the TI beat---the population rate gains a $\Delta f$-locked component
+($\sim$22$\times$), while the intrinsic gamma persists. Boxed: lock-in at $\Delta f$,
+off$\to$on.}
 \label{fig:qif_raster}
 \end{figure}
 
@@ -1172,8 +1174,9 @@ oscillation at $\Delta f$---without changing the time-averaged rate $\langle r_E
 Figure~\ref{fig:qif_raster} confirms it on both sides of the gamma Hopf. Below the Hopf
 (forced) the field-free network fires asynchronously at a flat rate; with TI on, spikes
 condense into envelope-locked bands (Fig.~\ref{fig:qif_raster}a,b). Above the Hopf
-(entrained) the free-running gamma is \emph{re-timed} to the TI beat---bands at the
-autonomous $\sim$54~Hz realign to a detuned $\Delta f=42$~Hz envelope
+(entrained) the free-running gamma is \emph{gated} by the TI beat: its bursts group
+into the detuned $\Delta f=42$~Hz envelope---adding a $\Delta f$-locked component to
+the population rate---while the intrinsic $\sim$54~Hz gamma persists
 (Fig.~\ref{fig:qif_raster}c,d). The spiking network reproduces the exact NMM2 mean field
 (matched gamma spectrum and mean rate, Fig.~\ref{fig:qif_timing}a), and across both
 regimes the mean rate is essentially unchanged ($\sim$1.1$\times$) while the
