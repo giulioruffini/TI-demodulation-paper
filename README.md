@@ -103,16 +103,16 @@ to `figures/` and runs from committed inputs; **gap** = no working generator.
 | fig_qif_raster | `make_qif_figs.py` | qif_raster.npz ‡ | – | OK |
 | fig_qif_timing | `make_qif_figs.py` | qif_raster.npz ‡ | – | OK |
 | fig_tacs_jcurve | `tacs_jsweep.py` | (inline) | – | OK |
+| fig_nmm2_jcurve | `make_nmm2_jfig.py` | nmm2_jcD.npz ‡ | – | OK |
 | fig_lanmm_setup | — | — | – | **gap**: hand-drawn schematic |
-| fig_nmm2_jcurve | — (data: nmm2_jcurve.npz ‡) | — | – | **gap**: plotter missing |
 | fig_entrainment | — (data: entrain*.npz, not committed) | — | – | **gap**: plotter + data missing |
 
 † `analyses_v2.npz` is **not** committed — `run_all.py` regenerates it via `analyses_v2.py` first.
 ‡ committed `.npz` (figure rebuildable without re-running the sweep).
 
-The three **gaps** are tracked in `docs/current_state.md`:
-`fig_lanmm_setup` is intentionally hand-drawn; `fig_nmm2_jcurve` has its data committed
-but its plotting script was never committed; `fig_entrainment` has neither.
+The remaining **gaps** are tracked in `docs/current_state.md`:
+`fig_lanmm_setup` is intentionally hand-drawn; `fig_entrainment` has neither a plotter
+nor committed data (and is flagged for redesign).
 
 ### Engines & helpers (not figure generators)
 

@@ -17,13 +17,14 @@ Fixed:
   `--list/--figdir/--only`, auto-skips lanmm_arnold if lanmmv11 absent).
 - Rewrote top-level README.md (was stale: pre-move `paper/` layout, 18pp/v0.6): venv setup, root-level
   build, verified figure->script table, artifact-policy note.
-THREE REPRODUCIBILITY GAPS remain (no working generator):
+TWO REPRODUCIBILITY GAPS remain (no working generator):
   (1) fig_lanmm_setup -- hand-drawn schematic, by design.
-  (2) fig_nmm2_jcurve -- data committed (nmm2_jcurve.npz) but PLOTTER never committed; recoverable.
-  (3) fig_entrainment -- neither plotter nor data (entrain*.npz) committed; AND flagged as scientifically
+  (2) fig_entrainment -- neither plotter nor data (entrain*.npz) committed; AND flagged as scientifically
       weak (coarse binary tongue, discontinuous/asymmetric locking curve, non-monotonic grid-clipped
       panel c) -> redesign candidate, not just reconstruction.
   Plus lanmm_arnold_tongues needs external lanmmv11 (LaNMM repo) to run.
+  [correction: fig_nmm2_jcurve is NOT a gap -- make_nmm2_jfig.py exists (audit missed it); now
+  TN_FIGDIR-aware and wired into run_all via nmm2_jcA/jcD data producers.]
 Pending decisions for Giulio: write the nmm2_jcurve plotter? redesign fig_entrainment? archive dead/
 dup scripts (jr_analysis dead; nmm2_jc/jcD vs jcA; make_timing_fig vs timing_not_rate)? No figures were
 regenerated (that's task B); paper build untouched.

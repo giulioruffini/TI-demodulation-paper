@@ -42,7 +42,8 @@ STEPS = [
     ("data: run_jcurve",    "run_jcurve.py",    [],        [], "-> jcurve_main.npz (feeds make_jfig)"),
     ("data: run_res",       "run_res.py",       [],        [], "-> jcurve_res.npz  (feeds make_jfig)"),
     ("data: qif_raster",    "qif_raster.py",    [],        [], "-> qif_raster.npz  (feeds make_qif_figs)"),
-    ("data: nmm2_jc",       "nmm2_jc.py",       [],        [], "-> nmm2_jcurve.npz (for fig_nmm2_jcurve, plotter TBD)"),
+    ("data: nmm2_jcA",      "nmm2_jcA.py",      [],        [], "-> nmm2_jcA.npz (engine)"),
+    ("data: nmm2_jcD",      "nmm2_jcD.py",      [],        [], "-> nmm2_jcD.npz (feeds make_nmm2_jfig)"),
 
     # --- figure generators (write to FIGDIR) ---
     ("figures_v2",  "figures_v2.py", [], [
@@ -61,6 +62,7 @@ STEPS = [
         "NEEDS external lanmmv11; auto-skipped if absent"),
     ("make_jfig",        "make_jfig.py",       [], ["fig_jcurve"], "needs jcurve_main/res.npz"),
     ("tacs_jsweep",      "tacs_jsweep.py",     [], ["fig_tacs_jcurve"], "pure numpy"),
+    ("make_nmm2_jfig",   "make_nmm2_jfig.py",  [], ["fig_nmm2_jcurve"], "needs nmm2_jcD.npz"),
     ("timing_not_rate",  "timing_not_rate.py", [], ["fig_timing_not_rate"], "self-plots + writes npz"),
     ("make_qif_figs",    "make_qif_figs.py",   [], ["fig_qif_raster", "fig_qif_timing"], "needs qif_raster.npz"),
 ]
@@ -68,7 +70,6 @@ STEPS = [
 # Figures with no producing script (documented gaps).
 GAPS = {
     "fig_lanmm_setup":  "hand-drawn schematic (not generated)",
-    "fig_nmm2_jcurve":  "data committed (nmm2_jcurve.npz); PLOTTER MISSING",
     "fig_entrainment":  "no plotter and no committed data (entrain*.npz)",
 }
 
