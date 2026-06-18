@@ -1,6 +1,21 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.38 — Fig 8 (lanmm_arnold_p2, main) re-rendered smooth; P1/S10 still computing (latest)
+## v1.39 — artistic pass begins: house style (figstyle.py) + fig_demodulation/verification restyled (latest)
+Giulio asked for a picky/artistic figure pass (resolution, more neurons, aesthetics). Critique: palette
+inconsistent (fig_demodulation/verification were off-palette #1b3a6b/#c44/#888), the keystone
+fig_demodulation cramped + unlabeled, panel-label/typography drift across the 24-fig set, QIF figs run
+N=2000 (visible shot noise -> N=6-8k would clean), heatmap grids coarse.
+- NEW code/figstyle.py: house palette (NEBLUE/NERED/NEGREEN/NEGRAY/...) + apply() rcParams (type sizes,
+  300 dpi, clean spines, frameless legends, color cycle) + panel(ax,'a') bold-label helper. Opt-in import.
+- Pilot: fig_demodulation + fig_verification restyled to house style -- big lift: house colors, bold
+  (a)-(d) labels, breathing room, annotations ("alpha band empty", "demodulated alpha line", "712x
+  smaller"). The keystone existence-proof figure now looks publication-grade. Build clean: 30 pp.
+PENDING artistic items (mostly need recompute -> queued behind the busy arnold CPU):
+  (i) roll figstyle across the remaining generators; (ii) MORE NEURONS for QIF (N=2000->6-8k) for
+  cleaner Fig 13/14; (iii) finer heatmap grids; (iv) declutter fig_bifurcation_sigmoid (unlabeled
+  ~p=395 line). Awaiting Giulio's pick on scope/compute.
+
+## v1.38 — Fig 8 (lanmm_arnold_p2, main) re-rendered smooth; P1/S10 still computing
 The LaNMM Arnold-tongue Python re-run (with cloned lanmmv11 + bilinear/300dpi) is so slow (~7000
 solve_ivp, no npz cache) it took >1 h. It does P2 then P1: fig_lanmm_arnold_p2 (MAIN text Fig 8 --
 the one grainy main raster) finished and is now SMOOTH (speckle/streak gone, alpha tongue at ~10 Hz
