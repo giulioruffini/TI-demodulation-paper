@@ -1,6 +1,16 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.40 — figstyle rolled into figures_v2 (5 main figs) + bifurcation declutter (#4) (latest)
+## v1.41 — #1 QIF more neurons: N=2000 -> 8000 (cleaner Fig 13/14) (latest)
+Giulio's "more neurons" ask. Bumped qif_raster.py N=2000->8000 (ran in just 41 s -- numpy vectorizes
+over neurons, no scipy). Cleaner rate traces + crisper raster; qif figs now 300 dpi. Re-rendered
+fig_qif_raster + fig_qif_timing, recommitted qif_raster.npz. Fold-changes shifted (the off-baseline
+lock-in sits near the noise floor, so the on/off ratio is realization-sensitive): timing now 15-26x
+(forced 26, oscillatory 15; was 14-22), mean rate still flat (1.05-1.10x). Updated tex consistently:
+N=2000->8000 (x5), 14-22x -> 15-26x (x3), Fig 13(d) ~22x -> ~15x. NOTE: the fold-change metric is
+inherently noisy at this precision (tiny off-baseline); the robust claim is timing up >order-of-mag,
+rate flat. Build clean: 29 pp, 0 undefined refs.
+
+## v1.40 — figstyle rolled into figures_v2 (5 main figs) + bifurcation declutter (#4)
 Applied figstyle + house palette to figures_v2.py: fig_concept, fig_bifurcation_sigmoid,
 fig_resonance_map, fig_carrier_independence, fig_operating_point. All 300 dpi, (a)/(b) panel labels
 on the 2-panel figs, consistent type/spines.

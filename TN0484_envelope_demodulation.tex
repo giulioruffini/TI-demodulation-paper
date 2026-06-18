@@ -970,25 +970,25 @@ spike-timing-without-rate finding of \cite{vieira2024}.}
 \label{fig:timing}
 \end{figure}
 
-The same holds at the spiking level. Integrating the underlying QIF network---$N=2000$
+The same holds at the spiking level. Integrating the underlying QIF network---$N=8000$
 neurons per population, of which NMM2 is the exact mean field---shows TI bunching spike
 \emph{times} into the recovered envelope without changing the mean rate, on both sides
 of the gamma Hopf (Fig.~\ref{fig:qif_raster}). The spiking network reproduces the exact
 NMM2 mean field, and the mean rate stays flat ($\sim$1.1$\times$) while the
-envelope-locked timing grows $14$--$22\times$ (Fig.~\ref{fig:qif_timing}); the full
+envelope-locked timing grows $15$--$26\times$ (Fig.~\ref{fig:qif_timing}); the full
 microscale analysis is in App.~\ref{app:qif}.
 
 \begin{figure}[t!]
 \centering
 \includegraphics[width=\textwidth]{fig_qif_raster.pdf}
 \caption{\textbf{QIF spiking network (microscale of the NMM2 PING \emph{gamma}
-generator): TI realigns spike timing, not mean rate.} $N=2000$ excitatory and inhibitory
+generator): TI realigns spike timing, not mean rate.} $N=8000$ excitatory and inhibitory
 quadratic integrate-and-fire neurons whose exact mean field is the NMM2 PING circuit
 (Eq.~\eqref{eq:nmm2-ping}). This circuit's intrinsic rhythm is \emph{gamma}
 ($\sim$54~Hz), so---as in the alpha figures, but one band up---the TI beat $\Delta f$ is
 set in the gamma range (here much larger than the $\Delta f\!\sim\!11$~Hz of the
 Jansen--Rit alpha column; carrier $f_c=300$~Hz). Black ticks are $E$ spikes (120 of
-2000 shown), blue the population rate $r_E(t)$, red the TI envelope; the boxed value is
+8000 shown), blue the population rate $r_E(t)$, red the TI envelope; the boxed value is
 the timing lock-in at $\Delta f$, off$\to$on. The bifurcation parameter is the common
 background drive $\bar\eta$ (gamma Hopf at $\bar\eta_{\rm Hopf}\!\approx\!1.1$).
 \emph{(a)}~Forced ($\bar\eta=0.85$, just below the Hopf---a damped gamma resonator), TI
@@ -998,7 +998,7 @@ gamma resonance ($\Delta f=55$~Hz): spikes bunch into the envelope. \emph{(c)}~O
 free-running gamma, no $\Delta f$ lock-in. \emph{(d)}~Oscillatory, TI on, with the beat set
 \emph{below} the autonomous gamma (beat $\Delta f=42$~Hz, a detuning of $\approx$12~Hz
 from $f_0\!\approx\!54$~Hz): the TI beat \emph{gates} the gamma---the population rate
-gains a $\Delta f$-locked component ($\sim$22$\times$) while the intrinsic $\sim$54~Hz
+gains a $\Delta f$-locked component ($\sim$15$\times$) while the intrinsic $\sim$54~Hz
 gamma persists. This is forced cross-frequency \emph{gating} (PAC), \emph{not} frequency
 entrainment: the $\sim$12~Hz detuning places the beat outside the $1{:}1$ Arnold tongue
 (contrast the genuine frequency locking of Fig.~\ref{fig:entrain}), so the gamma is
@@ -1014,12 +1014,12 @@ envelope-locked timing direct where the raster alone leaves it subtle.}
 \centering
 \includegraphics[width=\textwidth]{fig_qif_timing.pdf}
 \caption{\textbf{Timing, not rate, in the QIF network.} \emph{(a)} Power spectrum of
-$r_E(t)$ in the field-free (autonomous) state: the spiking network ($N=2000$) matches the
+$r_E(t)$ in the field-free (autonomous) state: the spiking network ($N=8000$) matches the
 exact NMM2 mean field in the gamma rhythm (both $\sim$53~Hz) and in mean rate
 $\langle r_E\rangle$. \emph{(b)} Fold change of the mean rate
 $\langle r_E\rangle$ and of the envelope-locked timing (lock-in of $r_E$ at $\Delta f$)
 from TI off to on: the mean rate is flat ($\sim$1.1$\times$) while the timing grows
-$14$--$22\times$, in both the forced and oscillatory regimes.}
+$15$--$26\times$, in both the forced and oscillatory regimes.}
 \label{fig:qif_timing}
 \end{figure}
 
@@ -1192,7 +1192,7 @@ sign-reversed---by shifting the operating point.
 NMM2 (Eq.~\eqref{eq:mpr}) is the \emph{exact} mean field of an all-to-all network of
 quadratic integrate-and-fire (QIF) neurons with Lorentzian-distributed excitabilities
 \cite{montbrio2015,ruffini2025rosetta,clusella2023}. We can therefore integrate that
-underlying spiking network directly---$N=2000$ QIF neurons per population, parameters
+underlying spiking network directly---$N=8000$ QIF neurons per population, parameters
 identical to the PING mean field (Eq.~\eqref{eq:nmm2-ping}), excitabilities
 $\eta_j\sim$ Lorentzian$(\bar\eta,\Delta)$ sampled by deterministic quantiles,
 second-order synapses driven by the empirical population rates, and the AM field
@@ -1226,7 +1226,7 @@ intrinsic $\sim$54~Hz gamma persists
 (Fig.~\ref{fig:qif_raster}c,d). The spiking network reproduces the exact NMM2 mean field
 (matched gamma spectrum and mean rate, Fig.~\ref{fig:qif_timing}a), and across both
 regimes the mean rate is essentially unchanged ($\sim$1.1$\times$) while the
-envelope-locked component of the population rate grows $14$--$22\times$
+envelope-locked component of the population rate grows $15$--$26\times$
 (Fig.~\ref{fig:qif_timing}b): TI realigns timing, not rate---the spiking-level
 counterpart of \S\ref{sec:timing} and a direct microscale analog of the in-vivo
 spike-timing-without-rate finding \cite{vieira2024} (code: \texttt{qif\_raster.py},

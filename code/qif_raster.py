@@ -115,7 +115,7 @@ def lockin(ts, x, df, kmeas):
 
 if __name__ == "__main__":
     quick = "--quick" in sys.argv
-    Ne = Ni = 400 if quick else 2000
+    Ne = Ni = 400 if quick else 8000
     dt = 0.005 if quick else 0.0025
     T = 250.0 if quick else 420.0
     t_meas = 150.0
