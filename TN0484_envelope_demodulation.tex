@@ -965,8 +965,10 @@ spike-timing-without-rate finding of \cite{vieira2024}.}
 The same holds at the spiking level. Integrating the underlying QIF network---$N=2000$
 neurons per population, of which NMM2 is the exact mean field---shows TI bunching spike
 \emph{times} into the recovered envelope without changing the mean rate, on both sides
-of the gamma Hopf (Fig.~\ref{fig:qif_raster}; full microscale analysis in
-App.~\ref{app:qif}).
+of the gamma Hopf (Fig.~\ref{fig:qif_raster}). The spiking network reproduces the exact
+NMM2 mean field, and the mean rate stays flat ($\sim$1.1$\times$) while the
+envelope-locked timing grows $14$--$22\times$ (Fig.~\ref{fig:qif_timing}); the full
+microscale analysis is in App.~\ref{app:qif}.
 
 \begin{figure}[t!]
 \centering
@@ -998,6 +1000,18 @@ $\Delta f$-locked component as a real driven effect rather than coincidence. \em
 phase---flat with TI off (gray), a clear bump with TI on (blue)---making the
 envelope-locked timing direct where the raster alone leaves it subtle.}
 \label{fig:qif_raster}
+\end{figure}
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{fig_qif_timing.pdf}
+\caption{\textbf{Timing, not rate, in the QIF network.} \emph{(a)} Power spectrum of
+$r_E(t)$: the spiking network ($N=2000$) matches the exact NMM2 mean field in the gamma
+band and in mean rate $\langle r_E\rangle$. \emph{(b)} Fold change of the mean rate
+$\langle r_E\rangle$ and of the envelope-locked timing (lock-in of $r_E$ at $\Delta f$)
+from TI off to on: the mean rate is flat ($\sim$1.1$\times$) while the timing grows
+$14$--$22\times$, in both the forced and oscillatory regimes.}
+\label{fig:qif_timing}
 \end{figure}
 
 \subsection{Falsifiable predictions and tests}\label{sec:predictions}
@@ -1208,18 +1222,6 @@ envelope-locked component of the population rate grows $14$--$22\times$
 counterpart of \S\ref{sec:timing} and a direct microscale analog of the in-vivo
 spike-timing-without-rate finding \cite{vieira2024} (code: \texttt{qif\_raster.py},
 \texttt{make\_qif\_figs.py}).
-
-\begin{figure}[t!]
-\centering
-\includegraphics[width=\textwidth]{fig_qif_timing.pdf}
-\caption{\textbf{Timing, not rate, in the QIF network.} \emph{(a)} Power spectrum of
-$r_E(t)$: the spiking network ($N=2000$) matches the exact NMM2 mean field in the gamma
-band and in mean rate $\langle r_E\rangle$. \emph{(b)} Fold change of the mean rate
-$\langle r_E\rangle$ and of the envelope-locked timing (lock-in of $r_E$ at $\Delta f$)
-from TI off to on: the mean rate is flat ($\sim$1.1$\times$) while the timing grows
-$14$--$22\times$, in both the forced and oscillatory regimes.}
-\label{fig:qif_timing}
-\end{figure}
 
 \section{Supplementary figures}
 

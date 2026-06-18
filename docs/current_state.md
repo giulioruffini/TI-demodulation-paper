@@ -1,6 +1,16 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.34 — Q2 raster resolution: bilinear heatmaps + 300 dpi; Q3 main/supp audit (latest)
+## v1.35 — Q3: promoted fig_qif_timing to main; cloned LaNMM for arnold re-render (latest)
+- Q3 (Giulio agreed): promoted fig_qif_timing from supp (S1) to MAIN (now Fig 14, right after the
+  qif_raster Fig 13) -- the quantitative 14x/22x timing-not-rate proof belongs in main with its raster,
+  not buried. Added a main-text reference in sec:timing; removed the block from app:qif (which still
+  references both QIF figures). All other appendix figures shift down one S-number. Build clean: 30 pp,
+  0 undefined refs.
+- Q2 follow-through: cloned github.com/giulioruffini/LaNMM_predictive_coding_paper to /tmp, pip-installed
+  tqdm (lanmmv11 dep), regenerating fig_lanmm_arnold_p1/p2 with PYTHONPATH=.../python -- the bilinear+300
+  dpi fix now applies to the main-text grainy raster (Fig 8) too. [arnold re-render in progress]
+
+## v1.34 — Q2 raster resolution: bilinear heatmaps + 300 dpi; Q3 main/supp audit
 - Q2: root cause of "grainy" heatmaps = imshow(interpolation="nearest") -> blocky cells. Switched all
   four map generators to interpolation="bilinear" + dpi 300 (nmm2_ping, lanmm_resonance,
   lanmm_arnold_tongues, figures_v2). Regenerated the two self-contained ones: fig_nmm2_map (S11) and
