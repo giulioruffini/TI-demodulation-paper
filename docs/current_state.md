@@ -1,5 +1,24 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v1.33 — Fig 13 (d) relabeled: gating/PAC, NOT entrainment (Giulio's dynamical-systems catch) (latest)
+Giulio's precise critique: QIF panel (d) is NOT entrainment in the dynamical-systems sense -- the
+~54 Hz gamma is NOT frequency-pulled to 42 Hz (still ~8 bursts/150ms, not ~6); it persists and is
+amplitude-GATED at the 42 Hz beat. The 12 Hz detuning is OUTSIDE the 1:1 Arnold tongue, so by
+construction you get forced cross-frequency gating (PAC), not frequency locking. Worse, the paper used
+"entrained" for BOTH this (amplitude lock) AND the S5 fig_entrainment (genuine Arnold-tongue FREQUENCY
+lock) -- same word, two jobs, a referee magnet. Fix (his option 1, the stronger/more-novel framing):
+- Relabeled the QIF above-Hopf regime "Entrained" -> "Oscillatory" (panels c/d, caption, methods,
+  qif_timing caption, body). Effect now "the TI beat gates the gamma (Df-PAC)", explicitly "forced
+  cross-frequency gating (PAC), not frequency entrainment", contrasted with the genuine locking of
+  fig_entrainment (S5). Demodulation surviving above the Hopf as envelope-to-rhythm coupling -- ties to
+  the HAM/CFC story.
+- Reserved "entrainment" for genuine frequency locking (S5 + JR/LaNMM/NMM2 limit-cycle resonance panels).
+  Changed the loose "entrains timing" -> "locks timing" in the abstract and sec:timing (forced Df-locking,
+  no oscillator to entrain below the Hopf).
+- Fixed two now-stale code cites exposed by the archiving: dropped jr_analysis.py (Methods) and
+  make_timing_fig.py (sec:timing). Build clean: 30 pp (gating explanation added a page), 0 undefined refs.
+Still TODO (Giulio's Q2/Q3): raster-figure resolution; main-vs-supplementary figure placement audit.
+
 ## v1.32 — Results §4+§5 merged; dead/dup scripts archived (latest)
 - Merged Results §4 (operating-point Sigma'' law) and §5 (square-law + linearization control)
   into one subsection "The nonlinearity is the detector: the Sigma'' curvature law and its

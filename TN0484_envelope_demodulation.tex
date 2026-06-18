@@ -68,7 +68,7 @@ criticality, and tunable by its own connectivity. Demonstrated in a heuristic co
 column and in an exact next-generation mean field, the mechanism reproduces TI's known
 behavior: it is independent of the carrier once the membrane polarization is matched,
 largest when the beat matches a region's intrinsic rhythm, and---because the resonance
-amplifies oscillatory timing far more than mean rate---entrains spike timing without
+amplifies oscillatory timing far more than mean rate---locks spike timing without
 changing firing rate, as observed in vivo. Because the gain depends on brain state, TI
 efficacy should be as much a property of the brain as of the device: the cortical
 column behaves as a tuned AM radio receiver.
@@ -537,7 +537,7 @@ square law ($A_\Omega$ vs.\ $\varepsilon$ on a well-damped focus, expecting a
 log--log slope of $2$); a linearization control (replacing $\Sig$ in
 Eq.~\eqref{eq:jr0} by its tangent at $v^*$, which must abolish the $\Omega$
 response); and a check of $\Sig',\Sig''$ against finite differences. All code is
-provided (\texttt{jr\_demod.py}, \texttt{jr\_analysis.py}, \texttt{make\_figures.py},
+provided (\texttt{jr\_demod.py}, \texttt{make\_figures.py},
 \texttt{analyses\_v2.py}, \texttt{figures\_v2.py}, \texttt{khz\_analysis.py}; see
 \texttt{README\_Code.md}).
 
@@ -939,12 +939,12 @@ through the coupling, the AC lock-in at the resonant beat $\Delta f=f_0$ grows
 $\sim$$17\times$---tracking $1/\gamma$ before saturating near criticality---while the
 DC shift of the mean pyramidal firing rate stays within a few mHz---consistent with
 zero---throughout (Fig.~\ref{fig:timing}). Near criticality the recovered envelope
-entrains population \emph{timing} at $\Delta f$ while leaving the mean \emph{rate}
+locks population \emph{timing} at $\Delta f$ while leaving the mean \emph{rate}
 essentially unchanged. This is the mesoscopic counterpart of the in-vivo observation
 that TI alters spike timing but not firing rate in the primate brain
 \cite{vieira2024}: the network selectively amplifies the envelope-locked AC response,
 not the DC rate, so a near-flat mean rate is the expected signature even where TI is
-acting (code: \texttt{timing\_not\_rate.py}, \texttt{make\_timing\_fig.py}). The same
+acting (code: \texttt{timing\_not\_rate.py}). The same
 effect appears directly in the spikes of the underlying QIF network
 (Appendix~\ref{app:qif}).
 
@@ -957,7 +957,7 @@ lock-in at the resonant beat $\Delta f=f_0$ (blue) is resonantly amplified and t
 $1/\gamma$ (dashed), while the DC shift of the mean firing rate (red) stays flat at a
 few mHz. \emph{(b)} Normalized to the far-from-Hopf value (log scale): the AC gain
 follows $1/\gamma$ and saturates near criticality, whereas the DC gain stays
-$\sim$1. The envelope entrains timing, not rate---the population analog of the
+$\sim$1. The envelope locks timing, not rate---the population analog of the
 spike-timing-without-rate finding of \cite{vieira2024}.}
 \label{fig:timing}
 \end{figure}
@@ -983,14 +983,18 @@ the timing lock-in at $\Delta f$, off$\to$on. The bifurcation parameter is the c
 background drive $\bar\eta$ (gamma Hopf at $\bar\eta_{\rm Hopf}\!\approx\!1.1$).
 \emph{(a)}~Forced ($\bar\eta=0.85$, just below the Hopf---a damped gamma resonator), TI
 off: asynchronous firing, flat rate. \emph{(b)}~Forced, TI on, driven \emph{at} the
-gamma resonance ($\Delta f=55$~Hz): spikes bunch into the envelope. \emph{(c)}~Entrained
+gamma resonance ($\Delta f=55$~Hz): spikes bunch into the envelope. \emph{(c)}~Oscillatory
 ($\bar\eta=1.5$, above the Hopf---an autonomous $\sim$54~Hz gamma cycle), TI off:
-free-running gamma, no $\Delta f$ lock-in. \emph{(d)}~Entrained, TI on, with the beat set
+free-running gamma, no $\Delta f$ lock-in. \emph{(d)}~Oscillatory, TI on, with the beat set
 \emph{below} the autonomous gamma (beat $\Delta f=42$~Hz, a detuning of $\approx$12~Hz
-from $f_0\!\approx\!54$~Hz): the gamma bursts gate to the TI beat---the population rate
-gains a $\Delta f$-locked component ($\sim$22$\times$), while the intrinsic gamma
-persists. Placing the beat away from $f_0$ is what makes this genuine entrainment rather
-than coincidence. \emph{Insets (b,d):} the population rate folded onto the $\Delta f$ beat
+from $f_0\!\approx\!54$~Hz): the TI beat \emph{gates} the gamma---the population rate
+gains a $\Delta f$-locked component ($\sim$22$\times$) while the intrinsic $\sim$54~Hz
+gamma persists. This is forced cross-frequency \emph{gating} (PAC), \emph{not} frequency
+entrainment: the $\sim$12~Hz detuning places the beat outside the $1{:}1$ Arnold tongue
+(contrast the genuine frequency locking of Fig.~\ref{fig:entrain}), so the gamma is
+amplitude-modulated at $\Delta f$ rather than pulled to it---demodulation surviving above
+the Hopf as envelope-to-rhythm coupling. The detuning is what certifies the
+$\Delta f$-locked component as a real driven effect rather than coincidence. \emph{Insets (b,d):} the population rate folded onto the $\Delta f$ beat
 phase---flat with TI off (gray), a clear bump with TI on (blue)---making the
 envelope-locked timing direct where the raster alone leaves it subtle.}
 \label{fig:qif_raster}
@@ -1175,11 +1179,14 @@ $\bar\eta_{\rm Hopf}\!\approx\!1.1$ (autonomous $f_0\!\approx\!54$~Hz); the carr
 $f_c=300$~Hz and the field amplitude $A_f=35$. Because this is a \emph{gamma} circuit,
 the TI beat $\Delta f$ is chosen in the gamma band, not the alpha band of the JR figures:
 $\Delta f=55$~Hz \emph{at} the forced gamma resonance ($\bar\eta=0.85$, below the Hopf),
-and $\Delta f=42$~Hz in the entrained regime ($\bar\eta=1.5$, above the Hopf)---a
+and $\Delta f=42$~Hz in the oscillatory regime ($\bar\eta=1.5$, above the Hopf)---a
 detuning of $\approx$12~Hz below the autonomous $f_0\!\approx\!54$~Hz. ($\Delta f$ is the
 beat frequency, i.e.\ the difference between the two TI carriers; the detuning $\Delta
-f-f_0$ is a distinct quantity.) Placing the beat away from $f_0$ distinguishes true
-entrainment from mere frequency coincidence. Timing is quantified by the quadrature
+f-f_0$ is a distinct quantity.) This detuning lies outside the $1{:}1$ Arnold tongue, so
+above the Hopf the beat \emph{gates} the gamma---a forced $\Delta f$-locked cross-frequency
+modulation (PAC)---rather than entraining its frequency; placing $\Delta f$ away from
+$f_0$ also certifies the $\Delta f$-locked component as a real driven effect, not
+coincidence. Timing is quantified by the quadrature
 lock-in of $r_E(t)$ at $\Delta f$ over the measurement window.
 
 The mesoscale result of \S\ref{sec:timing} makes a sharp microscale prediction: TI
@@ -1188,9 +1195,10 @@ oscillation at $\Delta f$---without changing the time-averaged rate $\langle r_E
 Figure~\ref{fig:qif_raster} confirms it on both sides of the gamma Hopf. Below the Hopf
 (forced) the field-free network fires asynchronously at a flat rate; with TI on, spikes
 condense into envelope-locked bands (Fig.~\ref{fig:qif_raster}a,b). Above the Hopf
-(entrained) the free-running gamma is \emph{gated} by the TI beat: its bursts group
-into the $\Delta f=42$~Hz envelope (a beat set $\approx$12~Hz below the intrinsic
-gamma)---adding a $\Delta f$-locked component to the population rate---while the
+(oscillatory) the free-running gamma is \emph{gated} by the TI beat---forced
+cross-frequency modulation (PAC), not frequency entrainment, since the $\approx$12~Hz
+detuning lies outside the $1{:}1$ tongue: its bursts group into the $\Delta f=42$~Hz
+envelope, adding a $\Delta f$-locked component to the population rate, while the
 intrinsic $\sim$54~Hz gamma persists
 (Fig.~\ref{fig:qif_raster}c,d). The spiking network reproduces the exact NMM2 mean field
 (matched gamma spectrum and mean rate, Fig.~\ref{fig:qif_timing}a), and across both
@@ -1209,7 +1217,7 @@ $r_E(t)$: the spiking network ($N=2000$) matches the exact NMM2 mean field in th
 band and in mean rate $\langle r_E\rangle$. \emph{(b)} Fold change of the mean rate
 $\langle r_E\rangle$ and of the envelope-locked timing (lock-in of $r_E$ at $\Delta f$)
 from TI off to on: the mean rate is flat ($\sim$1.1$\times$) while the timing grows
-$14$--$22\times$, in both the forced and entrained regimes.}
+$14$--$22\times$, in both the forced and oscillatory regimes.}
 \label{fig:qif_timing}
 \end{figure}
 

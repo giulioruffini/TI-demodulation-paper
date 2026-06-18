@@ -90,11 +90,11 @@ def fig_raster():
                  f"(b) Forced, TI ON ($\\Delta f$={conds['forced_on']['q']['df']:.0f} Hz): timing bunched",
                  True, annot=f"$\\Delta f$ lock-in: {fold_f:.0f}$\\times$ off$\\to$on")
     raster_panel(axs[1, 0], "entrain_off",
-                 "(c) Entrained (above Hopf), TI OFF: free gamma", False,
+                 "(c) Oscillatory (above Hopf), TI OFF: free-running gamma", False,
                  annot="free-running:\nno $\\Delta f$ lock-in")
     raster_panel(axs[1, 1], "entrain_on",
-                 f"(d) Entrained, TI ON ($\\Delta f$={conds['entrain_on']['q']['df']:.0f} Hz):"
-                 " gamma bursts gate to the TI beat",
+                 f"(d) Oscillatory, TI ON ($\\Delta f$={conds['entrain_on']['q']['df']:.0f} Hz):"
+                 " TI beat gates the gamma ($\\Delta f$-PAC)",
                  True, annot=f"$\\Delta f$ lock-in: {fold_e:.0f}$\\times$ off$\\to$on")
     beat_inset(axs[0, 1], "forced_off", "forced_on")
     beat_inset(axs[1, 1], "entrain_off", "entrain_on")
