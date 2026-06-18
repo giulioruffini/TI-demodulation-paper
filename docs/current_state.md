@@ -1,5 +1,68 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v1.22 — QIF microscale: spike-timing realignment (new appendix) (latest)
+Built the spiking-network ground truth beneath NMM2: TI realigns spike TIMING, not mean rate.
+- **New Appendix** (`app:qif`) + 2 figures (fig_qif_raster, fig_qif_timing). Compiles clean: 27 pp,
+  0 undefined refs (pdflatex+bibtex+pdflatex x2). Cross-ref added from sec:timing.
+- **QIF network from scratch** (`code/qif_raster.py`, pure numpy): N=2000 E + 2000 I QIF neurons,
+  tau_a V' = V^2 + eta_j + [F on E] + tau_a C(A.s); eta_j ~ Lorentzian(etabar,1) via deterministic
+  quantiles; 2nd-order synapses driven by empirical rates; hard threshold/reset Vpeak=100. Params
+  IDENTICAL to nmm2_ping.py. Validated: field-free <r_e> QIF=0.052 vs mean-field 0.050; matched gamma PSD.
+- **Both regimes (per Giulio):** FORCED (etabar=0.85, just below the gamma Hopf ~1.1, df=55): off async/flat,
+  on spikes bunch into the envelope -> timing AC@df x13.8, <r_e> x1.10. ENTRAINED (etabar=1.5, autonomous
+  f0=54, df=42 DETUNED): off free gamma, on re-timed to the 42 Hz TI beat -> AC@42 x22, <r_e> x1.07.
+  Timing up 14-22x, mean rate ~flat -> microscale analog of sec:timing and Vieira 2024.
+- Figs via `code/make_qif_figs.py`: fig_qif_raster (4-panel raster + r_E(t) + envelope), fig_qif_timing
+  (a: QIF-vs-NMM2 PSD validation + mean-rate match; b: fold-change bars rate vs timing).
+- NOTE: heavy parallel Cowork work (v1.13-v1.21: new title, lmodern, Nature abstract/intro, tACS
+  shares-the-amplifier extension) was uncommitted in the working tree; this commit bundles it with the QIF work.
+
+## v1.21 — metrics note + subcritical clarifications + S3 Methods fix (latest)
+- Clarified the sweeps are SUBCRITICAL (stable focus, gamma>0; approach the supercritical Hopf from below)
+  in the jcurve/nmm2_jcurve/tacs/timing captions and a sentence in sec:jcurve, with the above-Hopf
+  (entrainment/Arnold-tongue) regime named.
+- Added the METRICS note: below the Hopf the observable is the driven lock-in (1/gamma susceptibility);
+  above it, amplification must be read as entrainment (tongue width, phase-locking) + oscillation-amplitude
+  modulation -- distinct metrics coinciding only at onset; weak demodulated drive biases phase (timing)
+  there too, matching timing-not-rate.
+- FIXED missing methods for Fig. S3 (tACS): new Methods paragraph covering all coupling sweeps (pinned-v*
+  p(C) construction, Jacobian gamma/omega0, AM vs direct-sinusoid drive) + code cites jr_jsweep_engine.py,
+  timing_not_rate.py, tacs_jsweep.py; S3 caption now cites tacs_jsweep.py.
+- Compiles clean: 25 pp, 0 undefined refs.
+OPEN: (a) optional supplementary figure for the OSCILLATORY (above-Hopf) side -- entrainment tongue +
+amplitude modulation in the JR column, to substantiate the metrics note; (b) LaNMM Arnold-tongue figure
+improvement/merge using github.com/giulioruffini/LaNMM_predictive_coding_paper (lanmmv11.py) -- best in Code.
+
+## v1.20 — Nature figure pass + tACS shares-the-amplifier extension (latest)
+- FIGURE PASS: declarative figure TITLES (carrier, kHz, map, demod, resonance now state the finding);
+  trimmed the operating-point Results body that echoed fig:opp's caption.
+- tACS EXTENSION (Giulio's idea): new supplementary sim code/tacs_jsweep.py (pure numpy) -> appendix
+  Fig.~S3 (fig:tacs, figures/fig_tacs_jcurve). A DIRECT Delta f (tACS) drive skips demodulation but feeds
+  the SAME near-Hopf resonator: pinning v* and sweeping coupling C(=J) toward the alpha Hopf, the tACS
+  lock-in grows ~9x (gamma 10.7->0.12) as 1/gamma and the resonance sharpens -- identical network
+  amplification to TI, but LINEAR in the field (vs square-law). Added a Discussion paragraph: TI = tACS +
+  a sigmoid demodulation front-end; downstream both share the criticality/coupling-controlled amplifier;
+  matched for effective in-band drive they should entrain alike (cites clusella2023).
+- Compiles clean: 25 pp, 0 undefined refs. Backups in /tmp.
+
+## v1.19 — Nature-editor pass: new title + intro hook/contribution/roadmap (latest)
+- TITLE -> "The cortical column as a tuned receiver: a network mechanism for temporal-interference
+  stimulation" (was "A neural-mass mechanism ... sigmoid curvature and near-Hopf amplification").
+- INTRO: added a broad opening hook ("Reaching a deep brain target without stimulating the tissue above
+  it..."); recast the contribution as "Here we show that a population-scale mechanism ... suffices";
+  completed the model roadmap to all three rungs (JR -> LaNMM -> exact next-generation mean field).
+- Compiles clean, 24 pp. Backup /tmp/TN0484.pre_title.tex.
+Next available editor pass: declarative figure TITLES + self-contained captions (several still echo body).
+
+## v1.18 — Nature-style abstract rewrite (latest)
+Reframed the abstract for a broad readership: significance -> puzzle -> population answer ->
+detection/amplification factorization -> consequences (carrier-independence, frequency-selectivity,
+timing-not-rate in vivo) -> brain-state implication -> AM-radio metaphor. Removed ALL notation from the
+abstract (dropped the A_Omega=1/2 Sig'' eps^2 m formula + symbol glossary, and the PEIX/CFC/HAM/LaNMM
+name-drops -> these live in the body). ~252 words (offer to cut to ~180 for a hard Nature limit). Compiles
+clean, 24 pp. Backup /tmp/TN0484.pre_nature.tex. Next editor passes available: intro hook + one-line
+contribution; declarative figure titles + self-contained captions; results topic sentences.
+
 ## v1.17 — acted on Code's editor review (items 1-3 + de-hedge) (latest)
 - FIXED grammar fragment in intro ("Writing the field as ... Its spectrum" -> "Write the field as ...;
   its spectrum"). Confirmed real.

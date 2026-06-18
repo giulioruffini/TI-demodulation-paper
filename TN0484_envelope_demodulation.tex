@@ -37,8 +37,8 @@
 
 \begin{flushleft}
 {\color{neblue}\rule{\textwidth}{2pt}}\\[4pt]
-{\LARGE\bfseries A neural-mass mechanism for temporal-interference\\[2pt]
-envelope demodulation: sigmoid curvature and near-Hopf amplification}\\[10pt]
+{\LARGE\bfseries The cortical column as a tuned receiver:\\[2pt]
+a network mechanism for temporal-interference stimulation}\\[10pt]
 \begin{tabular}{@{}ll@{}}
 \textbf{Document:} & TN0484 \\
 \textbf{Author:} & Giulio Ruffini, Raul de Palma, Borja Mercadal, Alex Just, \\ 
@@ -51,37 +51,27 @@ envelope demodulation: sigmoid curvature and near-Hopf amplification}\\[10pt]
 
 \section*{Abstract}
 \noindent
-Temporal-interference (TI) stimulation delivers a high-frequency carrier whose
-amplitude envelope beats at a low (e.g.\ alpha or gamma) frequency. An
-amplitude-modulated (AM) field carries no spectral power at its envelope
-frequency, so no linear element---passive membrane or synaptic kernel---can
-follow it; demodulation requires a nonlinearity, usually attributed to
-single-neuron ion channels. We propose and demonstrate a complementary,
-explicitly \emph{network} mechanism at the mesoscopic scale whose two ingredients
-factorize. The population sigmoid \emph{detects}: in a neural mass (a population of
-$\sim$$10^4$ neurons) it is a square-law demodulator,
-$A_\Omega\simeq\half\Sig''(v^*)\,\varepsilon^2 m$ (recovered envelope amplitude
-$A_\Omega$; sigmoid curvature $\Sig''$ at operating point $v^*$; post-coupling
-polarization $\varepsilon$; modulation depth $m$), a curvature inherited from the
-single neuron's input--output nonlinearity and requiring no specific channel. The
-network \emph{amplifies}: a second-order-synapse loop near a supercritical Hopf
-bifurcation resonantly boosts the recovered envelope at its natural frequency, the
-gain growing as $1/\gamma$ as the damping $\gamma$---the distance to the Hopf---vanishes.
-The two are separable: holding detection fixed, this gain is set by the network's
-proximity to criticality and is tuned by the coupling itself, and---being sharply
-frequency-selective---it amplifies the envelope-frequency response (population
-\emph{timing}) far more than the mean firing rate. In a Jansen--Rit column an
-alpha-free carrier input yields a clean alpha output obeying the square law,
-carrier-independent at fixed polarization (the applied-field threshold rising with
-carrier frequency $f_c$) and sign-reversed by the curvature across the sigmoid
-inflection. The two-band laminar model (LaNMM) and the exact next-generation mean
-field (NMM2) confirm it---the latter with the demodulating nonlinearity \emph{and}
-the amplifying coupling both derived rather than postulated. The mechanism is
-state-dependent through the operating point (PEIX) and connects TI to
-cross-frequency coupling and hierarchical amplitude modulation. The message:
-\emph{wherever a fast-enough nonlinearity samples the carrier, the population sigmoid
-demodulates and the network amplifies}---the cortical column acting as a
-tuned AM receiver amplifier.
+Temporal-interference (TI) stimulation promises what other non-invasive methods
+cannot: focal, steerable stimulation deep in the brain, produced where two
+high-frequency currents overlap and their amplitudes beat at a low difference
+frequency. Yet a puzzle sits at its core. An amplitude-modulated field carries no
+power at that beat frequency, so no passive, linear part of a neuron can follow it;
+recovering the beat requires a nonlinearity, usually sought in single-cell ion
+channels. Here we show that the recovery, and its tuning, are properties of the neural
+\emph{population} rather than the single cell. In a neural mass---the
+$\sim$$10^4$-neuron unit that generates the EEG---the firing-rate nonlinearity acts as
+a square-law detector that demodulates the beat, while the recurrent synaptic network,
+poised near a Hopf bifurcation, resonantly amplifies the recovered rhythm at its own
+natural frequency. Detection is inherited from the single neuron; the sharp,
+frequency-selective amplification is emergent---set by how near the network sits to
+criticality, and tunable by its own connectivity. Demonstrated in a heuristic cortical
+column and in an exact next-generation mean field, the mechanism reproduces TI's known
+behavior: it is independent of the carrier once the membrane polarization is matched,
+largest when the beat matches a region's intrinsic rhythm, and---because the resonance
+amplifies oscillatory timing far more than mean rate---entrains spike timing without
+changing firing rate, as observed in vivo. Because the gain depends on brain state, TI
+efficacy should be as much a property of the brain as of the device: the cortical
+column behaves as a tuned AM radio receiver.
 
 \smallskip
 \noindent\textbf{Keywords:} temporal interference; transcranial stimulation; neural
@@ -92,7 +82,9 @@ Jansen--Rit; LaNMM.
 \clearpage
 
 \section{Introduction}
-Temporal-interference stimulation \cite{grossman2017} applies two sinusoids at
+Reaching a deep brain target without stimulating the tissue above it is a long-standing
+goal of non-invasive neuromodulation, and temporal-interference (TI) stimulation
+\cite{grossman2017} is its most striking recent proposal. TI applies two sinusoids at
 $f_1$ and $f_2=f_1+\Delta f$ through separate electrode pairs (typically
 $f_1\!\sim\!1$--$2$~kHz, $\Delta f\!\sim\!1$--$100$~Hz). Where the two fields
 overlap, their superposition is an AM signal whose carrier is near $f_1$ and
@@ -144,8 +136,8 @@ leading Caldas-Martinez et al.\ to conclude that TI is ``largely a network
 phenomenon'' \cite{caldas2024}; computational network models point the same way
 \cite{soroushi2025}.
 
-We add a mechanism at the population (neural-mass) scale, from two ingredients
-already in standard cortical models: a static firing-rate \emph{sigmoid}, whose
+Here we show that a population-scale mechanism, built from two ingredients already in
+standard cortical models, suffices: a static firing-rate \emph{sigmoid}, whose
 nonzero curvature $\Sig''$ makes it a square-law demodulator, and a
 \emph{second-order-synapse network} near a \emph{Hopf bifurcation}, which both
 filters the carrier away and resonantly amplifies the recovered envelope at the
@@ -156,8 +148,9 @@ population's single-cell input--output curves, but once coarse-grained it is a
 whatever microscopic mechanism supplies it. This realizes the ``network phenomenon''
 of \cite{caldas2024} as a minimal neural-mass demodulator---carrier-independent (at
 fixed polarization) and frequency-selective. We develop it first in a single Jansen--Rit column,
-analyzable in closed form, then in the laminar neural mass model (LaNMM), whose
-own alpha and gamma loops make the prediction concrete one step closer to cortex.
+analyzable in closed form, then in the two-band laminar model (LaNMM), whose own alpha
+and gamma loops bring it closer to cortex, and finally in an exact next-generation mean
+field, where the demodulating nonlinearity is derived rather than assumed.
 
 This work builds on a line of research in which neural-mass models implement
 AM-radio principles \emph{internally}, for the brain's own signals. In our
@@ -605,6 +598,17 @@ $C=15$, $\tau_E=15$, $\tau_I=7.5$, $\tau_a=10$, $\tau_g=2.5$~ms, with $\bar\eta$
 through the supercritical Hopf at $\bar\eta\!\approx\!1$ ($f_0\!\approx\!55$~Hz). Code:
 \texttt{nmm2\_ping.py} (self-contained).
 
+The coupling sweeps (Figs.~\ref{fig:jcurve},~\ref{fig:timing} and the tACS control,
+Fig.~\ref{fig:tacs}) use the single JR column with the operating point $v^*$ pinned: for
+each global connectivity $C$ we solve the field-free fixed-point relation analytically
+for the external drive $p(C)$ that holds $v^*$ (hence $\Sig''(v^*)$) fixed, vary $C\,(=J)$
+toward the alpha Hopf, and read $\gamma,\omega_0$ from the $6\times6$ Jacobian. The field
+is the AM drive of Eq.~\eqref{eq:am} for TI (Fig.~\ref{fig:jcurve}; AC lock-in vs DC mean
+rate for Fig.~\ref{fig:timing}) or a direct in-band sinusoid $s(t)=\varepsilon\cos\Omega t$
+($\varepsilon=0.1$~mV) for the tACS control (Fig.~\ref{fig:tacs}), each read out by the
+lock-in of $v$ at $\Delta f$. Code: \texttt{jr\_jsweep\_engine.py},
+\texttt{timing\_not\_rate.py}, \texttt{tacs\_jsweep.py} (self-contained).
+
 \section{Results}
 We present the evidence on three rungs of the modeling ladder: the single
 Jansen--Rit column (closed form, analyzable), the laminar LaNMM (two native
@@ -625,7 +629,7 @@ the output spectrum that is entirely synthesized by the nonlinearity.
 \begin{figure}[t!]
 \centering
 \includegraphics[width=\textwidth]{fig_demodulation.pdf}
-\caption{\textbf{Demodulation in the Jansen--Rit column (proof of concept).} \emph{Top left:} the AM field
+\caption{\textbf{An alpha rhythm is synthesized from a carrier-only input (Jansen--Rit).} \emph{Top left:} the AM field
 $s(t)$ and its envelope. \emph{Top right:} the input spectrum has lines only at
 $f_c$ and $f_c\pm\Delta f$ (89, 100, 111~Hz); the alpha band (shaded) is empty.
 \emph{Bottom left:} the output $v=y_1-y_2$ oscillates at the envelope frequency.
@@ -646,7 +650,7 @@ sharpens and intensifies toward the bifurcation.
 \begin{figure}[t!]
 \centering
 \includegraphics[width=\textwidth]{fig_resonance.pdf}
-\caption{\textbf{Resonance near vs.\ far from the Hopf (Jansen--Rit).} Lock-in response at
+\caption{\textbf{The recovered envelope drives a resonance that sharpens toward the Hopf (Jansen--Rit).} Lock-in response at
 $\Omega$ vs.\ envelope frequency ($\varepsilon=0.3$~mV). \emph{Left (stable focus,
 $p>315$):} forced resonance at $f_0\!\approx\!11.1$~Hz; the peak grows
 monotonically as $p\!\to\!315$, i.e.\ gain $\propto1/\gamma$. \emph{Right (limit
@@ -657,7 +661,7 @@ cycle, $p<315$):} the demodulated drive entrains the autonomous alpha rhythm.}
 \begin{figure}[t!]
 \centering
 \includegraphics[width=0.74\textwidth]{fig_resonance_map.pdf}
-\caption{\textbf{Resonance map (Jansen--Rit).} Demodulated response $A_\Omega$ over the
+\caption{\textbf{The resonance ridge sharpens and intensifies toward the Hopf (Jansen--Rit).} Demodulated response $A_\Omega$ over the
 (envelope frequency, input $p$) plane. The ridge at $f_0\!\approx\!11.1$~Hz
 sharpens and intensifies as $p$ approaches the Hopf from above, visualizing the
 $1/\gamma$ gain of Eq.~\eqref{eq:gain}.}
@@ -678,7 +682,7 @@ is suppressed four to six orders of magnitude at kHz, whereas a fast element
 \begin{figure}[t!]
 \centering
 \includegraphics[width=\textwidth]{fig_carrier_independence.pdf}
-\caption{\textbf{Carrier independence (Jansen--Rit single column).} \emph{Left:} the demodulated response is
+\caption{\textbf{The demodulated response is carrier-independent at fixed polarization (Jansen--Rit).} \emph{Left:} the demodulated response is
 flat across carrier frequency $f_c=25$--$300$~Hz, both for the open-loop detector
 (exactly, by Eq.~\eqref{eq:demod}) and for the closed-loop JR near the Hopf (which
 adds $\sim$60$\times$ resonant gain); deviations appear only as $f_c$ approaches
@@ -690,7 +694,7 @@ passes the envelope ($\sim$0.7) and suppresses the $100$~Hz carrier ($\sim$2.5\%
 \begin{figure}[t!]
 \centering
 \includegraphics[width=0.74\textwidth]{fig_khz.pdf}
-\caption{\textbf{Carrier frequency in the kHz regime (Jansen--Rit, open-loop detector).} Open-loop
+\caption{\textbf{Somatic demodulation dies at kHz, but a fast element survives (Jansen--Rit, open-loop detector).} Open-loop
 demodulated response (normalized to the $\tau\!\to\!0$ value) vs.\ carrier
 frequency up to $10$~kHz. With direct coupling ($\tau\!\to\!0$) the response is
 flat---carrier-independent. A slow somatic membrane ($\tau_m\!\approx\!16$~ms)
@@ -732,12 +736,11 @@ synthesized by the column although the input carries no alpha power.}
 \end{figure}
 
 \subsection{The operating-point law and the $\Sig''$ control}
-Because $A_\Omega\propto\Sig''(v^*)$, the signed (in-phase) open-loop response tracks
-$\half\Sig''(v^*)\varepsilon^2 m$ across the whole operating range, vanishes at the
-inflection $v_0$, and reverses sign across it (Fig.~\ref{fig:opp})---a direct
-verification that demodulation is the sigmoid-curvature term of
-Eq.~\eqref{eq:demod}. The closed-loop JR operating points sit on the lobe where
-$\Sig''$ is large and negative.
+The signed open-loop response tracks $\half\Sig''(v^*)\varepsilon^2 m$ across the
+operating range, vanishing and reversing sign at the inflection $v_0$
+(Fig.~\ref{fig:opp})---demodulation is the sigmoid-curvature term of
+Eq.~\eqref{eq:demod}, and the closed-loop operating points sit where $\Sig''$ is large
+and negative.
 
 \begin{figure}[t!]
 \centering
@@ -924,15 +927,27 @@ $A_\Omega/A_{\rm open}$ tracks $1/\gamma$ before saturating near criticality
 (Fig.~\ref{fig:jcurve}c); driving the same column to the Hopf through the input $p$
 rather than the coupling $C$ yields the same gain--$\gamma$ relation, so the
 amplification depends only on the distance to criticality, not on which parameter
-delivers it.
+delivers it. All these sweeps stay on the stable-focus side ($\gamma>0$), approaching
+the supercritical Hopf from below: the $1/\gamma$ growth is the forced-resonance
+susceptibility of a damped network, not entrainment of an autonomous cycle. On the
+other side of the bifurcation the column oscillates on its own, and the demodulated
+drive instead phase-locks that limit cycle within an Arnold tongue---the entrainment
+regime of Fig.~\ref{fig:res} and the LaNMM and NMM2 maps---where the response is set by
+the cycle amplitude and the locking range, not by a diverging $1/\gamma$ gain.
+Quantifying that regime therefore calls for different metrics---entrainment
+(Arnold-tongue width, phase-locking) and modulation of the oscillation amplitude,
+rather than the forced-response lock-in used here, the two coinciding only at onset.
+Because the demodulated drive is weak, on the autonomous side it biases phase (timing)
+more than amplitude, consistent with the timing-not-rate signature
+(\S\ref{sec:timing}).
 
 \begin{figure}[t!]
 \centering
 \includegraphics[width=\textwidth]{fig_jcurve.pdf}
 \caption{\textbf{Coupling controls the amplification at fixed detection (Jansen--Rit).}
 The operating point $v^*$ is pinned by co-solving $p(C)$, so $\Sig''(v^*)$ and
-$A_{\rm open}$ are constant. \emph{(a)} The demodulated $A_\Omega$ diverges as the
-coupling $C\,(=J)$ approaches the Hopf $C^*$. \emph{(b)} The envelope resonance
+$A_{\rm open}$ are constant. \emph{(a)} The demodulated $A_\Omega$ grows as the
+coupling $C\,(=J)$ approaches the Hopf $C^*$ from the stable-focus side ($\gamma>0$). \emph{(b)} The envelope resonance
 sharpens and grows as $C\!\to\!C^*$. \emph{(c)} The network gain
 $A_\Omega/A_{\rm open}$ follows $1/\gamma$ (dashed) and saturates near the
 bifurcation.}
@@ -959,8 +974,8 @@ Hopf and adjustable through the coupling.
 \caption{\textbf{Coupling controls the amplification in the exact mean field (NMM2
 PING, gamma).} $J\,(=C)$ is the literal inter-QIF synaptic weight; the rectifier is the
 exact $v_E^2$ (fixed quadratic coefficient), so no operating-point pinning is needed.
-\emph{(a)} The peak demodulated response of $r_E$ diverges as $J\!\to\!J^*$ (gamma
-Hopf, $\bar\eta=0$). \emph{(b)} The gain grows as $1/\gamma$ (dashed), saturating near
+\emph{(a)} The peak demodulated response of $r_E$ grows as $J\!\to\!J^*$ (gamma
+Hopf, $\bar\eta=0$; stable focus, $\gamma>0$). \emph{(b)} The gain grows as $1/\gamma$ (dashed), saturating near
 criticality---the JR law, now with coupling and rectifier both derived.}
 \label{fig:nmm2_jcurve}
 \end{figure}
@@ -982,13 +997,15 @@ essentially unchanged. This is the mesoscopic counterpart of the in-vivo observa
 that TI alters spike timing but not firing rate in the primate brain
 \cite{vieira2024}: the network selectively amplifies the envelope-locked AC response,
 not the DC rate, so a near-flat mean rate is the expected signature even where TI is
-acting (code: \texttt{timing\_not\_rate.py}, \texttt{make\_timing\_fig.py}).
+acting (code: \texttt{timing\_not\_rate.py}, \texttt{make\_timing\_fig.py}). The same
+effect appears directly in the spikes of the underlying QIF network
+(Appendix~\ref{app:qif}).
 
 \begin{figure}[t!]
 \centering
 \includegraphics[width=\textwidth]{fig_timing_not_rate.pdf}
 \caption{\textbf{Timing, not rate (Jansen--Rit, detection pinned).} As the column is
-driven toward the Hopf through the coupling at fixed $\Sig''(v^*)$, \emph{(a)} the AC
+driven toward the Hopf (from the stable side, $\gamma>0$) through the coupling at fixed $\Sig''(v^*)$, \emph{(a)} the AC
 lock-in at the resonant beat $\Delta f=f_0$ (blue) is resonantly amplified and tracks
 $1/\gamma$ (dashed), while the DC shift of the mean firing rate (red) stays flat at a
 few mHz. \emph{(b)} Normalized to the far-from-Hopf value (log scale): the AC gain
@@ -1067,6 +1084,20 @@ whose chronaxie ($\sim$0.15--0.25~ms) sets an effective corner near $\sim$800~Hz
 weakly effective on network oscillations \cite{esmaeilpour2020} is the complement of
 the same fact: the carrier matters only where a fast nonlinearity rectifies it.
 
+The amplification half is not specific to TI. A conventional tACS field oscillates in
+the envelope band directly, so it needs no demodulation---but it drives the same
+near-Hopf resonator and should inherit the same network gain: a tACS rhythm at $\Delta
+f$ near a region's natural frequency is resonantly boosted as the network approaches
+criticality ($\propto1/\gamma$) and as its coupling $J$ grows, the Arnold-tongue picture
+of weak-field stimulation \cite{clusella2023}. We confirm this in the JR column
+(Fig.~\ref{fig:tacs}): a direct $\Delta f$ drive, swept in coupling toward the alpha Hopf
+at fixed operating point, reproduces the same $1/\gamma$ growth and resonance sharpening
+as the demodulated TI drive, but linear in the field rather than square-law. TI thus
+differs from tACS only by a sigmoid demodulation front-end that turns a kHz carrier's
+envelope into an effective in-band drive; downstream, both share the criticality- and
+coupling-controlled amplifier, so---matched for effective in-band drive---TI and tACS
+should entrain alike and show the same state- and coupling-dependence.
+
 The mechanism's falsifiable predictions---carrier independence at fixed
 polarization, the PEIX-controlled sign flip, and frequency-selective
 state-dependence---are consolidated with their tests in \S\ref{sec:predictions};
@@ -1121,9 +1152,63 @@ sign-reversed---by shifting the operating point.
 \bibliography{references}
 
 \appendix
-\section{Supplementary figures}
 \renewcommand{\thefigure}{S\arabic{figure}}
 \setcounter{figure}{0}
+
+\section{Microscale: spike-timing realignment in the QIF network}\label{app:qif}
+NMM2 (Eq.~\eqref{eq:mpr}) is the \emph{exact} mean field of an all-to-all network of
+quadratic integrate-and-fire (QIF) neurons with Lorentzian-distributed excitabilities
+\cite{montbrio2015,ruffini2025rosetta,clusella2023}. We can therefore integrate that
+underlying spiking network directly---$N=2000$ QIF neurons per population, parameters
+identical to the PING mean field (Eq.~\eqref{eq:nmm2-ping}), excitabilities
+$\eta_j\sim$ Lorentzian$(\bar\eta,\Delta)$ sampled by deterministic quantiles,
+second-order synapses driven by the empirical population rates, and the AM field
+entering the excitatory membranes---and ask what TI does to the \emph{spikes}.
+
+The mesoscale result of \S\ref{sec:timing} makes a sharp microscale prediction: TI
+should bunch spike \emph{times} into the recovered envelope---a population-rate
+oscillation at $\Delta f$---without changing the time-averaged rate $\langle r_E\rangle$.
+Figure~\ref{fig:qif_raster} confirms it on both sides of the gamma Hopf. Below the Hopf
+(forced) the field-free network fires asynchronously at a flat rate; with TI on, spikes
+condense into envelope-locked bands (Fig.~\ref{fig:qif_raster}a,b). Above the Hopf
+(entrained) the free-running gamma is \emph{re-timed} to the TI beat---bands at the
+autonomous $\sim$54~Hz realign to a detuned $\Delta f=42$~Hz envelope
+(Fig.~\ref{fig:qif_raster}c,d). The spiking network reproduces the exact NMM2 mean field
+(matched gamma spectrum and mean rate, Fig.~\ref{fig:qif_timing}a), and across both
+regimes the mean rate is essentially unchanged ($\sim$1.1$\times$) while the
+envelope-locked component of the population rate grows $14$--$22\times$
+(Fig.~\ref{fig:qif_timing}b): TI realigns timing, not rate---the spiking-level
+counterpart of \S\ref{sec:timing} and a direct microscale analog of the in-vivo
+spike-timing-without-rate finding \cite{vieira2024} (code: \texttt{qif\_raster.py},
+\texttt{make\_qif\_figs.py}).
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{fig_qif_raster.pdf}
+\caption{\textbf{QIF spiking network (microscale of NMM2 PING): TI realigns spike
+timing, not mean rate.} $N=2000$ excitatory and inhibitory QIF neurons; black ticks are
+$E$ spikes (120 neurons shown), blue is the population rate $r_E(t)$, red is the TI
+envelope. \emph{(a)} Forced ($\bar\eta<\bar\eta_{\rm Hopf}$), TI off: asynchronous
+firing, flat rate. \emph{(b)} Forced, TI on ($\Delta f=55$~Hz): spikes bunch into the
+envelope. \emph{(c)} Entrained ($\bar\eta>\bar\eta_{\rm Hopf}$), TI off: free-running
+gamma. \emph{(d)} Entrained, TI on ($\Delta f=42$~Hz): the rhythm is re-timed to the TI
+beat.}
+\label{fig:qif_raster}
+\end{figure}
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{fig_qif_timing.pdf}
+\caption{\textbf{Timing, not rate, in the QIF network.} \emph{(a)} Power spectrum of
+$r_E(t)$: the spiking network ($N=2000$) matches the exact NMM2 mean field in the gamma
+band and in mean rate $\langle r_E\rangle$. \emph{(b)} Fold change of the mean rate
+$\langle r_E\rangle$ and of the envelope-locked timing (lock-in of $r_E$ at $\Delta f$)
+from TI off to on: the mean rate is flat ($\sim$1.1$\times$) while the timing grows
+$14$--$22\times$, in both the forced and entrained regimes.}
+\label{fig:qif_timing}
+\end{figure}
+
+\section{Supplementary figures}
 
 \begin{figure}[t!]
 \centering
@@ -1149,5 +1234,19 @@ alpha natural frequency ($\sim$10~Hz) that intensifies through the supercritical
 \label{fig:lanmm_map}
 \end{figure}
 
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=0.92\textwidth]{fig_tacs_jcurve.pdf}
+\caption{\textbf{tACS shares the network amplifier (Jansen--Rit).} A direct
+low-frequency (tACS) drive at $\Delta f$ enters the column without a carrier, so it
+needs no demodulation, but feeds the same near-Hopf resonator. With the operating point
+pinned, sweeping the coupling $C\,(=J)$ toward the alpha Hopf: \emph{(a)} the lock-in
+resonance at $\Delta f$ sharpens and grows as $C\!\to\!C^*$; \emph{(b)} the response
+grows as $1/\gamma$ (dashed) and saturates near criticality---the same network
+amplification as the demodulated TI drive (Fig.~\ref{fig:jcurve}), but linear in the
+field rather than square-law. Throughout, the column is a stable focus ($\gamma>0$). Code: \texttt{tacs\_jsweep.py}.}
+\label{fig:tacs}
+\end{figure}
 
 \end{document}
