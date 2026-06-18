@@ -1,5 +1,23 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v1.30 — Landau pass: de-echo (caption<->body) + cut repeated explanations (latest)
+First Landau-style tightening pass (subagent-audited the whole tex for repetition/echo).
+Highest-value cuts made (all verbatim/near-verbatim restatements, not term-reuse):
+- sec:jcurve: the "stable-side 1/gamma vs autonomous-side entrainment" contrast was stated
+  ~4x in one paragraph -> compressed to one clean statement + the timing-not-rate pointer.
+- Discussion: dropped the factorization appositive (the sentence before already spelled it out).
+- fig:entrain caption: cut the duplicated "entrainment enhanced near criticality" sentence.
+- Body<->caption de-echo: trimmed fig:carrier, fig:khz_direct, fig:demod body sentences that
+  restated their self-contained captions (the "+60x / three kHz routes / synthesized" details
+  now live only in the captions).
+- sec:nmm: collapsed the 3-way restatement of "curvature is cellular, network only amplifies"
+  to one sentence; sec:carrier: carrier-independence re-derivation -> back-ref to sec:coupling.
+Counts: "fixed polarization" 4, "inert" 4, "state-depend" 6, "1/gamma" 29->28 (bare token; the
+real win is fewer repeated EXPLANATIONS). Abstract ~250 words (fine for most venues; a ~180-word
+cut available if a strict limit applies). Framing "complementary not alternative" is clean (2x,
+stated once sharply). Build clean: 29 pp, 0 undefined refs. Deferred (lower priority): minor
+vieira/lanmm-opening near-repeats (audit line refs were stale); a deeper spine/flow pass.
+
 ## v1.29 — figure persuasiveness audit + rebuilt the two weak (entrainment) figures (latest)
 Reviewed all 24 figures against the claim each carries. Verdict: the below-Hopf forcing
 story (1/gamma amplification) is airtight everywhere (operating_point is the standout --

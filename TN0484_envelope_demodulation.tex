@@ -209,11 +209,10 @@ the only nonlinearity in the model, and---as we show---it is what makes
 the single neuron's own input--output nonlinearity: $\Sig$ is the mean-field
 (ensemble) average of single-neuron transfer curves over a heterogeneous, noisy
 population, so $\Sig''$ is inherited from single cells and only reshaped---smoothed
-and broadened---by the spread of states, thresholds and noise. It is not
-manufactured by the network, which adds only the resonant \emph{amplification}
-(\S\ref{sec:carrier}). The nonlinearity is cellular in origin; our claim is only that
-its demodulation is read out at the population level by the generic sigmoid, without
-any specific channel.
+and broadened---by the spread of states, thresholds and noise: the curvature is
+cellular in origin, but its demodulation is read out at the population level by the
+generic sigmoid, while the network adds only the resonant \emph{amplification}
+(\S\ref{sec:carrier}).
 
 This becomes exact one rung up the modeling ladder \cite{ruffini2025rosetta}. For a
 network of all-to-all coupled quadratic integrate-and-fire (QIF) neurons with
@@ -348,9 +347,8 @@ consensus. Carrier independence is thus a statement about the recovered envelope
 polarization, not about the applied field.
 
 \subsection{Resonance, carrier independence, and the synaptic band-pass}\label{sec:carrier}
-Equation~\eqref{eq:demod} contains no $\omega_c$: at fixed post-coupling polarization
-$\varepsilon$ the demodulated amplitude is independent of the carrier (as a function of
-the applied field it rolls off with $f_c$, \S\ref{sec:khz}). Under the direct coupling \eqref{eq:coupling} the carrier
+Equation~\eqref{eq:demod} contains no $\omega_c$: the demodulated amplitude is
+carrier-independent at fixed polarization (\S\ref{sec:coupling}). Under the direct coupling \eqref{eq:coupling} the carrier
 need only be high enough that the synaptic low-pass suppresses it relative to the
 envelope, and ``inert''---it must not itself fall in, or beat into, the network's
 responsive band, nor engage other carrier-specific mechanisms (the ion-channel/kHz
@@ -651,7 +649,7 @@ well off the inflection, so the closed-loop operating points sit where $\Sig''$ 
 large. The core result is Fig.~\ref{fig:demod}: an input with no spectral power in
 the alpha band (lines only at $f_c$ and $f_c\pm\Delta f$) produces a clean
 $\sim$11~Hz output oscillation locked to the envelope, with a strong alpha peak in
-the output spectrum that is entirely synthesized by the nonlinearity.
+the output spectrum absent from the input.
 
 \begin{figure}[t!]
 \centering
@@ -687,10 +685,8 @@ cycle, $p<315$):} the demodulated drive entrains the autonomous alpha rhythm.}
 
 \subsection{Carrier independence and the kHz roll-off}
 At fixed post-coupling polarization the demodulated response is flat across the
-carrier band (Fig.~\ref{fig:carrier}, left): the open-loop detector reproduces
-Eq.~\eqref{eq:demod} exactly, and the closed-loop JR near the Hopf adds
-$\sim$60$\times$ resonant gain without introducing any $f_c$ dependence, deviating
-only as $f_c$ approaches the natural band. As a function of
+carrier band, for both the open-loop detector and the closed-loop column near the Hopf
+(Fig.~\ref{fig:carrier}). As a function of
 the \emph{applied} field, by contrast, the membrane low-pass makes the response roll
 off as $1/f_c^2$ above the corner (Fig.~\ref{fig:khz}): passive somatic demodulation
 is suppressed four to six orders of magnitude at kHz, whereas a fast element
@@ -713,10 +709,8 @@ full recurrent column with a genuine kHz-carrier AM field, passing the field thr
 an explicit membrane low-pass (an extra first-order state, time constant $\tau$) for
 each coupling route before it reaches the sigmoid (Fig.~\ref{fig:khz_direct}a). The
 column demodulates and resonates at the recovered alpha well into the kHz band when
-the nonlinearity sits at a fast element ($\tau\!\approx\!0.2$~ms): the closed-loop
-$A_\Omega$ is carrier-independent for direct coupling, follows the fast element into
-the kHz, and collapses as $1/f_c^2$ for the slow soma ($\tau_m\!\approx\!16$~ms),
-exactly as Eq.~\eqref{eq:khz} predicts. A $2$~kHz carrier through the fast element
+the nonlinearity sits at a fast element ($\tau\!\approx\!0.2$~ms), exactly as
+Eq.~\eqref{eq:khz} predicts (Fig.~\ref{fig:khz_direct}a). A $2$~kHz carrier through the fast element
 yields a clean alpha line synthesized by the column from an input with zero alpha
 power (Fig.~\ref{fig:khz_direct}b). That the bare unmodulated kHz carrier is itself
 weakly effective---the premise of TI's focality---is consistent with the limited
@@ -887,18 +881,13 @@ delivers it. All these sweeps stay on the stable-focus side ($\gamma>0$), approa
 the supercritical Hopf from below: the $1/\gamma$ growth is the forced-resonance
 susceptibility of a damped network, not entrainment of an autonomous cycle. On the
 other side of the bifurcation the column oscillates on its own, and the demodulated
-drive instead phase-locks that limit cycle within an Arnold tongue---the entrainment
-regime of Fig.~\ref{fig:res} and the LaNMM and NMM2 maps---where the response is set by
-the cycle amplitude and the locking range, not by a diverging $1/\gamma$ gain.
-Quantifying that regime therefore calls for different metrics---entrainment
-(Arnold-tongue width, phase-locking) and modulation of the oscillation amplitude,
-rather than the forced-response lock-in used here, the two coinciding only at onset.
-Because the demodulated drive is weak, on the autonomous side it biases phase (timing)
-more than amplitude, consistent with the timing-not-rate signature
-(\S\ref{sec:timing}). We show this regime directly above the Hopf in
-Fig.~\ref{fig:entrain}: a direct drive into the autonomous JR alpha cycle locks it
-within an Arnold tongue ($1{:}1$ frequency capture over a band that widens with drive),
-phase entrainment quantified by the locking range rather than a $1/\gamma$ amplitude gain.
+drive instead phase-locks that limit cycle within an Arnold tongue
+(Fig.~\ref{fig:entrain}; also the entrainment side of Fig.~\ref{fig:res} and the LaNMM
+and NMM2 maps)---$1{:}1$ frequency capture over a band that widens with drive,
+quantified by the locking range rather than a diverging $1/\gamma$ gain, the two
+coinciding only at onset. Because the drive is weak, on the autonomous side it biases
+phase (timing) more than amplitude, consistent with the timing-not-rate signature
+(\S\ref{sec:timing}).
 
 \begin{figure}[t!]
 \centering
@@ -1036,9 +1025,7 @@ ensemble---while the amplification (the near-Hopf resonance) is the emergent
 \emph{network} property; the single cell, beyond contributing to the sigmoid's
 shape, need only supply a fast nonlinearity that samples the carrier.
 
-This factorization---a fast single-cell nonlinearity samples the carrier, after
-which the population reads out the envelope and the network resonantly amplifies
-it---identifies where the carrier-sampling nonlinearity may live. The TI literature
+This factorization identifies where the carrier-sampling nonlinearity may live. The TI literature
 points to three best-supported, non-exclusive loci. (i)~\emph{Axonal Na$^+$ channels}
 at nodes and the AIS: fast voltage-gated Na$^+$ rectifies because activation outpaces
 inactivation \cite{mirzakhalili2020,wang2023}, Na$^+$-inactivation conduction block
@@ -1250,7 +1237,9 @@ dominant output frequency locks to $\Delta f$---is a wedge anchored at $f_0$ tha
 with drive amplitude. \emph{(b)} Frequency locking at fixed drive: inside the tongue the
 output follows $\Delta f$ (diagonal); outside, it falls back to the autonomous $f_0$. \emph{(c)} Sweeping the operating point toward the Hopf at fixed drive, the locking range (tongue width) grows as the autonomous cycle amplitude $\to0$: entrainment is easiest near criticality---the supercritical counterpart of the $1/\gamma$ forced gain.
 Here amplification is read as entrainment (tongue width, locking range), not as the
-diverging $1/\gamma$ gain of the stable-focus side (Fig.~\ref{fig:jcurve}). Like that gain, entrainment is enhanced near criticality---the tongue widens as the Hopf is approached and the autonomous cycle weakens---so the column is most responsive near the critical point, to forcing below the Hopf and to entrainment above. Code:
+diverging $1/\gamma$ gain of the stable-focus side (Fig.~\ref{fig:jcurve})---so the
+column is most responsive near criticality on both sides of the Hopf: to forcing below,
+to entrainment above. Code:
 \texttt{entrain.py}, \texttt{entrain\_crit.py}, \texttt{make\_entrain\_fig.py}.}
 \label{fig:entrain}
 \end{figure}
