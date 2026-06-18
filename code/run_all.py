@@ -44,6 +44,8 @@ STEPS = [
     ("data: qif_raster",    "qif_raster.py",    [],        [], "-> qif_raster.npz  (feeds make_qif_figs)"),
     ("data: nmm2_jcA",      "nmm2_jcA.py",      [],        [], "-> nmm2_jcA.npz (engine)"),
     ("data: nmm2_jcD",      "nmm2_jcD.py",      [],        [], "-> nmm2_jcD.npz (feeds make_nmm2_jfig)"),
+    ("data: entrain",       "entrain.py",       [],        [], "-> entrain.npz, entrain_b.npz (tongue, locking; slow)"),
+    ("data: entrain_crit",  "entrain_crit.py",  [],        [], "-> entrain_crit.npz (criticality sweep; slow)"),
 
     # --- figure generators (write to FIGDIR) ---
     ("figures_v2",  "figures_v2.py", [], [
@@ -63,6 +65,7 @@ STEPS = [
     ("make_jfig",        "make_jfig.py",       [], ["fig_jcurve"], "needs jcurve_main/res.npz"),
     ("tacs_jsweep",      "tacs_jsweep.py",     [], ["fig_tacs_jcurve"], "pure numpy"),
     ("make_nmm2_jfig",   "make_nmm2_jfig.py",  [], ["fig_nmm2_jcurve"], "needs nmm2_jcD.npz"),
+    ("make_entrain_fig", "make_entrain_fig.py", [], ["fig_entrainment"], "needs entrain*.npz"),
     ("timing_not_rate",  "timing_not_rate.py", [], ["fig_timing_not_rate"], "self-plots + writes npz"),
     ("make_qif_figs",    "make_qif_figs.py",   [], ["fig_qif_raster", "fig_qif_timing"], "needs qif_raster.npz"),
 ]
@@ -70,7 +73,6 @@ STEPS = [
 # Figures with no producing script (documented gaps).
 GAPS = {
     "fig_lanmm_setup":  "hand-drawn schematic (not generated)",
-    "fig_entrainment":  "no plotter and no committed data (entrain*.npz)",
 }
 
 

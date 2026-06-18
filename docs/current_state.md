@@ -1,5 +1,27 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v1.29 — figure persuasiveness audit + rebuilt the two weak (entrainment) figures (latest)
+Reviewed all 24 figures against the claim each carries. Verdict: the below-Hopf forcing
+story (1/gamma amplification) is airtight everywhere (operating_point is the standout --
+measured vs 1/2 sigma'' eps^2 m overlap exactly incl. sign flip); the WEAK figures were both
+the above-Hopf ENTRAINMENT (supercritical) side, exactly as Giulio flagged. Rebuilt both:
+- **fig_qif_raster (c)/(d):** the old caption oversold "gamma re-timed to the TI beat", but
+  gamma persists at ~54 Hz and its bursts are amplitude-GATED at the detuned 42 Hz beat (only
+  11 Hz apart -> no clean visual separation exists; a band-pass/Hilbert overlay leaks gamma).
+  Honest fix: drop the misleading overlay, annotate each panel with the Df lock-in fold-change
+  (forced 14x, entrained 22x off->on). Reworded caption + body: "gamma bursts gate to the TI
+  beat ... intrinsic gamma persists" (no more "re-timed/realign").
+- **fig_entrainment (rebuilt from scratch):** was the weakest figure AND the last repro gap
+  (no committed plotter/data). New make_entrain_fig.py + upgraded sims:
+  (a) CONTINUOUS lock-in Arnold tongue (was binary blocks) w/ 1:1-locked white contour;
+  (b) clean SYMMETRIC frequency-locking staircase (old one had an unexplained discontinuity);
+  (c) criticality sweep with a WIDE +-12 Hz Df window so near-Hopf locking ranges are NOT
+  grid-clipped -> now monotonic (locking range 5.3->15 Hz as dist 100->2; cycle amp 2.96->1.06).
+  entrain.py/entrain_crit.py made path-robust + finer grids; entrain*.npz now COMMITTED.
+REPRO STATUS: only ONE gap left -- fig_lanmm_setup (hand-drawn by design). fig_entrainment +
+fig_nmm2_jcurve both resolved. run_all/README updated. Build clean: 29 pp, 0 undefined refs.
+Presentation (B-track) backlog noted: fig_demodulation cramped; lanmm_arnold p1/p2 grainy raster.
+
 ## v1.28 — task C: reproducible repo (figure paths, run_all, verified README) (latest)
 Reproducibility pass. Audited all ~25 code/ scripts and built a VERIFIED figure->script map
 (24 manuscript figures). Findings were worse than the moving-notes draft: **15** figures (not 4)
