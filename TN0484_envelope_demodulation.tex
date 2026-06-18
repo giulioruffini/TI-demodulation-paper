@@ -600,7 +600,8 @@ with second-order synaptic activations $s_E=\hat K_a[r_E]$ (excitatory, time con
 $\tau_a$) and $s_I=\hat K_g[r_I]$ (inhibitory, $\tau_g$), each obeying the same
 critically-damped operator as the JR synapse, $\tau^2\ddot s+2\tau\dot s+s=r$; here $C$
 is the global synaptic gain and the weights $(A_{ee},A_{ei},A_{ie},A_{ii})=(1,1,1,2)$
-set the E and I rows. The common background drive $\bar\eta$---the same in both
+set the E and I rows---i.e.\ the $E$ membrane sees $C\,(s_E-s_I)$ and the $I$ membrane
+$C\,(s_E-2s_I)$, the only asymmetry being the doubled $I\!\to\!I$ weight $A_{ii}=2$. The common background drive $\bar\eta$---the same in both
 populations, with no separate input current---is the bifurcation parameter: raising it
 past a supercritical Hopf at $\bar\eta\!\approx\!1$ opens a gamma limit cycle (the gamma
 counterpart of the JR alpha Hopf). The applied field enters the excitatory membrane
