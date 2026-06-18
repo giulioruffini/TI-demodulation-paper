@@ -94,9 +94,18 @@ if __name__ == "__main__":
     vstar = 8.30; m = 1.0; fc = 100.0; eps = 0.3
     dt = 2e-4; t_set = 18.0; t_meas = 20.0
     quick = "--quick" in sys.argv
-    Cs = np.linspace(120.0, 136.4, 4 if quick else 12)
     if quick:
         t_set = 8.0; t_meas = 8.0
+    # locate the alpha Hopf C* (gamma=0) by bisection (scipy-free), then sample C
+    # geometrically toward it so the steep 1/gamma rise -- and the noisier near-Hopf DC
+    # behaviour -- are well resolved (was a sparse linear grid).
+    lo, hi = 130.0, 137.0
+    for _ in range(60):
+        mid = 0.5 * (lo + hi)
+        if jac_eig(p_of_C(vstar, mid), mid)[1] > 0: lo = mid
+        else: hi = mid
+    Chopf = 0.5 * (lo + hi)
+    Cs = np.sort(Chopf - np.geomspace(0.25, Chopf - 120.0, 6 if quick else 26))
     ps = np.array([p_of_C(vstar, C) for C in Cs])
     gam = np.zeros_like(Cs); om = np.zeros_like(Cs)
     for i, C in enumerate(Cs):

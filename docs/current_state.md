@@ -1,6 +1,19 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.45 — Notation/symbol/units table in appendix; notation disambiguated (latest)
+## v1.46 — Fig 12 finer sampling + FIX: restored its real plotter (make_timing_fig) (latest)
+Giulio: Fig 12 (timing_not_rate) needs more sampling too. While fixing it, found+fixed a bug I had
+introduced: make_timing_fig.py is the ONLY plotter for fig_timing_not_rate (timing_not_rate.py writes
+the .npz but does NOT self-plot) -- I had wrongly archived it in v1.32 on a bad audit, leaving Fig 12
+unreproducible AND the one main figure missing figstyle.
+- Restored make_timing_fig.py to code/ (git mv from archive), modernized: figstyle + house palette +
+  300 dpi + TN_FIGDIR.
+- Finer sampling: timing_not_rate.py C-grid linear(12) -> GEOMETRIC-toward-Hopf(26) via scipy-free
+  bisection for C* (same fix as Figs 10/11). Re-ran -> timing_not_rate.npz; Fig 12 now smooth (AC~1/g
+  clean; the near-Hopf DC sign-change is resolved, not a sparse jump).
+- Fixed the wiring the bad archiving broke: run_all (timing_not_rate=data producer, make_timing_fig=
+  plotter), archive/README, main README engine note + figure table. Build clean: 31 pp, 0 undefined.
+
+## v1.45 — Notation/symbol/units table in appendix; notation disambiguated
 Added App.~A "Notation and units" (\usepackage{longtable}, Table~\ref{tab:notation}): a full
 symbol glossary grouped by category (sigmoid; Jansen-Rit; applied TI field & coupling; network
 dynamics/response/bifurcation; LaNMM; NMM2/MPR & QIF), with meaning + nominal units for ~50 symbols.

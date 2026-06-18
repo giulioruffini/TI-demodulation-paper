@@ -101,7 +101,7 @@ to `figures/` and runs from committed inputs; **gap** = no working generator.
 | fig_lanmm_resonance | `lanmm_resonance.py` | (inline grid) | – | OK |
 | fig_lanmm_arnold_p1 | `lanmm_arnold_tongues.py` | needs **lanmmv11** (external) | yes | needs ext. module |
 | fig_lanmm_arnold_p2 | `lanmm_arnold_tongues.py` | needs **lanmmv11** (external) | yes | needs ext. module |
-| fig_timing_not_rate | `timing_not_rate.py` | (inline) | – | OK |
+| fig_timing_not_rate | `make_timing_fig.py` | timing_not_rate.npz ‡ | – | OK |
 | fig_qif_raster | `make_qif_figs.py` | qif_raster.npz ‡ | – | OK |
 | fig_qif_timing | `make_qif_figs.py` | qif_raster.npz ‡ | – | OK |
 | fig_tacs_jcurve | `tacs_jsweep.py` | (inline) | – | OK |
@@ -125,8 +125,9 @@ The only remaining **gap** is `fig_lanmm_setup`, an intentionally hand-drawn sch
   lock-in, open-loop detector, Hopf helpers). Imported by the JR pipeline.
 - `jr_jsweep_engine.py` — J-curve engine; imported by `run_jcurve/run_res/make_jfig`.
 - `nmm2_jcA.py` — NMM2 J-curve engine (imported by `nmm2_jcD.py`).
-- `timing_not_rate.py`, `qif_raster.py` — data producers (also self-plot where noted).
-  `qif_raster.py` integrates the **N=8000** QIF network (per population).
+- `timing_not_rate.py` — data producer for `fig_timing_not_rate` (writes the `.npz`;
+  the figure is drawn by `make_timing_fig.py`). `qif_raster.py` integrates the
+  **N=8000** QIF network and feeds `make_qif_figs.py`.
 - `test_jr_demod.py` — self-checks (derivatives, fixed point, square law, control).
 
 ## Verified

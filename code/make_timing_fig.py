@@ -1,21 +1,26 @@
-"""Figure for 'timing, not rate': AC envelope-locked response is resonantly
-amplified ~1/gamma toward the Hopf while the DC mean-rate shift stays flat.
-Reads timing_not_rate.npz (run timing_not_rate.py first)."""
+"""Plotter for fig_timing_not_rate ('timing, not rate', Jansen-Rit): the AC
+envelope-locked response is resonantly amplified ~1/gamma toward the Hopf while the DC
+mean-rate shift stays flat. Reads timing_not_rate.npz (run timing_not_rate.py first).
+
+  python3 timing_not_rate.py   # -> timing_not_rate.npz  (the C-sweep data)
+  python3 make_timing_fig.py   # -> ../figures/fig_timing_not_rate.{png,pdf}
+"""
 import numpy as np, os
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+import figstyle; figstyle.apply()
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-FIGS = os.path.join(os.path.dirname(HERE), "figures")
+FIGS = os.environ.get("TN_FIGDIR") or os.path.join(os.path.dirname(HERE), "figures")
+os.makedirs(FIGS, exist_ok=True)
 d = np.load(os.path.join(HERE, "timing_not_rate.npz"))
 g = d["gam"]; AC = d["AC"]; DC = d["DC"]*1e3   # DC in mHz
 o = np.argsort(g)[::-1]                          # far-from-Hopf -> Hopf
 g, AC, DC = g[o], AC[o], DC[o]
 
-NEBLUE = "#0a4f8c"; NERED = "#b3361f"
-plt.rcParams.update({"font.size": 9, "axes.labelsize": 9, "legend.fontsize": 8})
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(9.2, 3.5))
+NEBLUE = figstyle.NEBLUE; NERED = figstyle.NERED
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(9.4, 3.6))
 
 # --- Panel a: raw AC (log) and DC (linear, twin) vs damping gamma ---
 ax1.semilogy(g, AC, "o-", color=NEBLUE, lw=1.6, ms=4, label=r"AC at $\Delta f=f_0$")
@@ -47,7 +52,7 @@ ax2.legend(loc="upper left", frameon=False)
 
 fig.tight_layout()
 for ext in ("pdf", "png"):
-    fig.savefig(os.path.join(FIGS, f"fig_timing_not_rate.{ext}"), dpi=150, bbox_inches="tight")
+    fig.savefig(os.path.join(FIGS, f"fig_timing_not_rate.{ext}"), dpi=300, bbox_inches="tight")
 print("wrote fig_timing_not_rate.pdf / .png")
 print(f"  AC grows {AC[-1]/AC[0]:.1f}x; DC stays within "
       f"[{DC.min():.2f}, {DC.max():.2f}] mHz over gamma {g[0]:.2f}->{g[-1]:.3f}")
