@@ -2,8 +2,10 @@
 (lock-in/beat resolution) + finer Omega grid near the peak.
 Usage:  python3 rerun_resonance.py {stable|cycle|plot}
 Split into stable/cycle calls to keep each run short."""
-import sys, numpy as np
+import sys, os, numpy as np
 from jr_demod import integrate
+FIGS = os.environ.get("TN_FIGDIR") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "figures")
+os.makedirs(FIGS, exist_ok=True)
 
 F0=11.1; fc=100.0; m=1.0; eps=0.3; dt=2e-4
 T_SET, T_MEA = 10.0, 20.0                     # 10 s settle, 20 s measure (long lock-in)
@@ -45,8 +47,8 @@ elif mode=="plot":
     fig.suptitle("Envelope demodulation $\\rightarrow$ alpha resonance in Jansen-Rit "
                  "(carrier $f_c=100$ Hz, AM input has NO power at $\\Omega$)",fontsize=11)
     fig.tight_layout(rect=[0,0,1,0.95])
-    fig.savefig("../paper/figures/fig_resonance.png",dpi=150)
-    fig.savefig("../paper/figures/fig_resonance.pdf")
+    fig.savefig(f"{FIGS}/fig_resonance.png",dpi=150)
+    fig.savefig(f"{FIGS}/fig_resonance.pdf")
     print("STABLE peaks:", [f"{rs[i].max():.3f}" for i in range(len(ps))])
     print("CYCLE  peaks:", [f"{rc[i].max():.3f}" for i in range(len(pc))])
     print("wrote fig_resonance")

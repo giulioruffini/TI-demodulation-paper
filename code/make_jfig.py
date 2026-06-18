@@ -1,6 +1,9 @@
-import numpy as np, matplotlib
+import os, numpy as np, matplotlib
 matplotlib.use("Agg"); import matplotlib.pyplot as plt
-M=np.load("jcurve_main.npz"); R=np.load("jcurve_res.npz")
+HERE=os.path.dirname(os.path.abspath(__file__))
+FIGS=os.environ.get("TN_FIGDIR") or os.path.join(HERE, "..", "figures")
+os.makedirs(FIGS, exist_ok=True)
+M=np.load(os.path.join(HERE,"jcurve_main.npz")); R=np.load(os.path.join(HERE,"jcurve_res.npz"))
 Cs,gam,w0,Acl,Aop,gain=M["C"],M["gamma"],M["w0"],M["Acl"],M["Aop"],M["gain"]
 Chopf=float(M["Chopf"]); sig2=float(M["sig2"]); vstar=float(M["vstar"])
 fdf=R["fdf"]; Csel=R["Csel"]
@@ -28,5 +31,7 @@ xg=np.array([1/gam.max(),1/gam.min()]); k=gain[3]*gam[3]
 ax[2].loglog(xg,k*xg,'k--',lw=1,label=r'$\propto 1/\gamma$')
 ax[2].set_xlabel(r'$1/\gamma$  (closeness to Hopf)'); ax[2].set_ylabel(r'network gain $A_\Omega/A_{\rm open}$')
 ax[2].set_title(r'(c) gain $\propto 1/\gamma$, then saturates'); ax[2].legend(fontsize=8); ax[2].grid(alpha=.3,which='both')
-plt.tight_layout(); plt.savefig("jcurve.png",dpi=135)
-print("saved jcurve.png")
+plt.tight_layout()
+plt.savefig(os.path.join(FIGS,"fig_jcurve.pdf"))
+plt.savefig(os.path.join(FIGS,"fig_jcurve.png"),dpi=150)
+print(f"saved fig_jcurve.{{pdf,png}} to {FIGS}")

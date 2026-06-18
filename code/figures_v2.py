@@ -6,6 +6,9 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
 from jr_demod import Sigm, Sigm1, Sigm2, A, a, v0, e0, r
+import os
+FIGS = os.environ.get("TN_FIGDIR") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "figures")
+os.makedirs(FIGS, exist_ok=True)
 
 NEB="#0a4f8c"; NEB2="#2f7ec4"; NEL="#9ec9e8"; NER="#b3361f"; GR="#555555"
 d = np.load("analyses_v2.npz")
@@ -49,7 +52,7 @@ def concept():
         axx.plot(tt,s,color=NEB,lw=1.0); axx.margins(y=0.15)
         axx.set_title(tag, fontsize=7.5, color=GR, pad=1)
     wav(12,"am","AM field"); wav(38,"rect","rectified"); wav(64,"ripple","filtered"); wav(90,"sine","envelope @ $\\Omega$")
-    fig.savefig("../paper/figures/fig_concept.png",dpi=150); fig.savefig("../paper/figures/fig_concept.pdf")
+    fig.savefig(f"{FIGS}/fig_concept.png",dpi=150); fig.savefig(f"{FIGS}/fig_concept.pdf")
     print("wrote fig_concept")
 
 # ============================================ FIG 2: bifurcation + sigmoid/sigma''
@@ -84,8 +87,8 @@ def bifurcation_sigmoid():
     l1,la1=axb.get_legend_handles_labels(); l2,la2=axt.get_legend_handles_labels()
     axb.legend(l1+l2, la1+la2, fontsize=8, frameon=False, loc="upper left")
     for s in ["top"]: axb.spines[s].set_visible(False)
-    fig.tight_layout(); fig.savefig("../paper/figures/fig_bifurcation_sigmoid.png",dpi=150)
-    fig.savefig("../paper/figures/fig_bifurcation_sigmoid.pdf"); print("wrote fig_bifurcation_sigmoid")
+    fig.tight_layout(); fig.savefig(f"{FIGS}/fig_bifurcation_sigmoid.png",dpi=150)
+    fig.savefig(f"{FIGS}/fig_bifurcation_sigmoid.pdf"); print("wrote fig_bifurcation_sigmoid")
 
 # ===================================================== FIG 3: 2-D resonance map
 def resonance_map():
@@ -100,8 +103,8 @@ def resonance_map():
     ax.set_ylabel("external input  $p$  (Hz)  $\\rightarrow$ toward Hopf")
     ax.set_title("Demodulated response @ $\\Omega$  (mV): resonance ridge sharpens near Hopf", fontsize=10)
     fig.colorbar(im, label="response @ $\\Omega$ (mV)")
-    fig.tight_layout(); fig.savefig("../paper/figures/fig_resonance_map.png",dpi=150)
-    fig.savefig("../paper/figures/fig_resonance_map.pdf"); print("wrote fig_resonance_map")
+    fig.tight_layout(); fig.savefig(f"{FIGS}/fig_resonance_map.png",dpi=150)
+    fig.savefig(f"{FIGS}/fig_resonance_map.pdf"); print("wrote fig_resonance_map")
 
 # ====================================== FIG 4: carrier independence + synapse TF
 def carrier_independence():
@@ -128,8 +131,8 @@ def carrier_independence():
     ax[1].set_xlabel("frequency (Hz)"); ax[1].set_ylabel("$|H(\\omega)|$ (norm.)")
     ax[1].set_title("2nd-order synapse band-pass:\ncarrier suppressed, envelope passed", fontsize=10)
     ax[1].spines[["top","right"]].set_visible(False)
-    fig.tight_layout(); fig.savefig("../paper/figures/fig_carrier_independence.png",dpi=150)
-    fig.savefig("../paper/figures/fig_carrier_independence.pdf"); print("wrote fig_carrier_independence")
+    fig.tight_layout(); fig.savefig(f"{FIGS}/fig_carrier_independence.png",dpi=150)
+    fig.savefig(f"{FIGS}/fig_carrier_independence.pdf"); print("wrote fig_carrier_independence")
 
 # ================================================ FIG 5: operating-point law (signed)
 def operating_point():
@@ -149,8 +152,8 @@ def operating_point():
     ax.set_title("Demodulation gain $=\\frac{1}{2}\\sigma''(v^*)\\varepsilon^2 m$: curvature law, "
                  "incl. sign reversal", fontsize=10)
     ax.legend(fontsize=8.5, frameon=False, loc="upper right"); ax.spines[["top","right"]].set_visible(False)
-    fig.tight_layout(); fig.savefig("../paper/figures/fig_operating_point.png",dpi=150)
-    fig.savefig("../paper/figures/fig_operating_point.pdf"); print("wrote fig_operating_point")
+    fig.tight_layout(); fig.savefig(f"{FIGS}/fig_operating_point.png",dpi=150)
+    fig.savefig(f"{FIGS}/fig_operating_point.pdf"); print("wrote fig_operating_point")
 
 if __name__=="__main__":
     concept(); bifurcation_sigmoid(); resonance_map()

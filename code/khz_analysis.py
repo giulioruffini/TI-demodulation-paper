@@ -9,6 +9,9 @@ import numpy as np
 from scipy.signal import lfilter
 import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 from jr_demod import Sigm, steady_v
+import os
+FIGS = os.environ.get("TN_FIGDIR") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "figures")
+os.makedirs(FIGS, exist_ok=True)
 
 NEB="#0a4f8c"; NEB2="#2f7ec4"; NER="#b3361f"; GR="#555555"
 F0=11.1; m=1.0; eps=0.5
@@ -52,7 +55,7 @@ ax.set_xlabel("carrier frequency  $f_c$  (Hz)")
 ax.set_ylabel("demodulated response @ $\\Omega$  (normalized to $\\tau\\!\\to\\!0$)")
 ax.set_title("Where the nonlinearity sits decides kHz coupling (TI and TMS alike)", fontsize=10.5)
 ax.legend(fontsize=8, frameon=False, loc="lower left"); ax.spines[["top","right"]].set_visible(False)
-fig.tight_layout(); fig.savefig("../paper/figures/fig_khz.png",dpi=150); fig.savefig("../paper/figures/fig_khz.pdf")
+fig.tight_layout(); fig.savefig(f"{FIGS}/fig_khz.png",dpi=150); fig.savefig(f"{FIGS}/fig_khz.pdf")
 
 # print the suppression numbers (carrier-power -> demod amplitude factor |H|^2)
 def supp(tau,f): return 1.0/(1.0+(2*np.pi*f*tau)**2)

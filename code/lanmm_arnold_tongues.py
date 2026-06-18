@@ -49,7 +49,7 @@ except ImportError:                    # allow import/inspection without the dep
     lanmm = None
     _HAVE_LANMM = False
 
-FIGDIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "paper", "figures")
+FIGDIR = os.environ.get("TN_FIGDIR") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "figures")
 ALPHA_BAND = (8.0, 12.0)               # Hz, read-out band (deep P1 alpha)
 
 

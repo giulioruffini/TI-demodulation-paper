@@ -3,7 +3,9 @@ drive at Delta f skips demodulation (it is already in-band) but feeds the SAME
 near-Hopf resonator. Pinning v* and sweeping the coupling C(=J) toward the JR alpha
 Hopf, the tACS lock-in grows as 1/gamma and the resonance sharpens -- the amplification
 half of the TI mechanism, with no carrier. (pure numpy.)"""
-import numpy as np, matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
+import os, numpy as np, matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
+FIGS=os.environ.get("TN_FIGDIR") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "figures")
+os.makedirs(FIGS, exist_ok=True)
 A,B=3.25,22.0; a,b=100.0,50.0; v0,e0,rr=6.0,2.5,0.56
 def Sigm(v): return 2*e0/(1+np.exp(rr*(v0-v)))
 def p_of_C(vs,C):
@@ -80,5 +82,7 @@ xg=np.array([1/gam.max(),1/gam.min()]);k=A_tacs[5]*gam[5]
 ax[1].loglog(xg,k*xg,'k--',lw=1,label=r'$\propto 1/\gamma$')
 ax[1].set_xlabel(r'$1/\gamma$ (closeness to Hopf)'); ax[1].set_ylabel(r'$A_\Omega$ (mV)')
 ax[1].set_title(r'(b) same $1/\gamma$ amplification as TI'); ax[1].legend(fontsize=8); ax[1].grid(alpha=.3,which='both')
-plt.tight_layout(); plt.savefig("tacs_jsweep.png",dpi=135); plt.savefig("tacs_jsweep.pdf")
-print("saved")
+plt.tight_layout()
+plt.savefig(os.path.join(FIGS,"fig_tacs_jcurve.pdf"))
+plt.savefig(os.path.join(FIGS,"fig_tacs_jcurve.png"),dpi=150)
+print(f"saved fig_tacs_jcurve.{{pdf,png}} to {FIGS}")

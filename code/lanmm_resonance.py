@@ -10,7 +10,7 @@ github.com/giulioruffini/LaNMM_predictive_coding_paper); it needs only numpy +
 matplotlib, and integrates the whole (Delta f, drive) grid in one pass. The
 Arnold-tongue / carrier analysis lives separately in lanmm_arnold_tongues.py.
 
-Outputs: fig_lanmm_resonance.{png,pdf}, fig_lanmm_map.{png,pdf} in paper/figures.
+Outputs: fig_lanmm_resonance.{png,pdf}, fig_lanmm_map.{png,pdf} in figures/.
 """
 import os
 import numpy as np
@@ -19,7 +19,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.colors import LogNorm
 
-FIGDIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "paper", "figures")
+FIGDIR = os.environ.get("TN_FIGDIR") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "figures")
 PI = np.pi
 # 14 synapses (s=1..14): rates a, gains A, connectivities C
 aS = np.array([100,50,100,100,100,100,220,100,100,220,100,100,100,100], float)

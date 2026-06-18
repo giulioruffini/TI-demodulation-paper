@@ -1,5 +1,33 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v1.28 — task C: reproducible repo (figure paths, run_all, verified README) (latest)
+Reproducibility pass. Audited all ~25 code/ scripts and built a VERIFIED figure->script map
+(24 manuscript figures). Findings were worse than the moving-notes draft: **15** figures (not 4)
+were generated to the dead `../paper/figures` dir, and 2 more (fig_jcurve, fig_tacs_jcurve) were
+written under bare CWD names then renamed by hand (make_jfig emitted NO pdf at all).
+Fixed:
+- 7 scripts redirected from `../paper/figures` -> `figures/` via the house pattern
+  `FIGS = os.environ.get("TN_FIGDIR") or .../../figures` (env-overridable for safe dry-runs):
+  figures_v2, make_figures, rerun_resonance, khz_analysis, nmm2_ping, lanmm_resonance,
+  lanmm_arnold_tongues.
+- make_jfig.py now emits fig_jcurve.{pdf,png} to figures/ (was bare jcurve.png, dpi 135, no pdf);
+  tacs_jsweep.py now emits fig_tacs_jcurve.{pdf,png} (was bare tacs_jsweep.*). Both load committed
+  npz, so runnable. Smoke-tested all fixes into a scratch TN_FIGDIR; committed figures untouched.
+- NEW `code/run_all.py`: one-command reproduce (dependency order, per-step subprocess + summary,
+  `--list/--figdir/--only`, auto-skips lanmm_arnold if lanmmv11 absent).
+- Rewrote top-level README.md (was stale: pre-move `paper/` layout, 18pp/v0.6): venv setup, root-level
+  build, verified figure->script table, artifact-policy note.
+THREE REPRODUCIBILITY GAPS remain (no working generator):
+  (1) fig_lanmm_setup -- hand-drawn schematic, by design.
+  (2) fig_nmm2_jcurve -- data committed (nmm2_jcurve.npz) but PLOTTER never committed; recoverable.
+  (3) fig_entrainment -- neither plotter nor data (entrain*.npz) committed; AND flagged as scientifically
+      weak (coarse binary tongue, discontinuous/asymmetric locking curve, non-monotonic grid-clipped
+      panel c) -> redesign candidate, not just reconstruction.
+  Plus lanmm_arnold_tongues needs external lanmmv11 (LaNMM repo) to run.
+Pending decisions for Giulio: write the nmm2_jcurve plotter? redesign fig_entrainment? archive dead/
+dup scripts (jr_analysis dead; nmm2_jc/jcD vs jcA; make_timing_fig vs timing_not_rate)? No figures were
+regenerated (that's task B); paper build untouched.
+
 ## v1.27 — removed WP0070 citations (internal doc), kept the criticality paragraph (latest)
 WP0070 is internal/non-citable. Removed both \cite{ruffini2026criticality} from the tex and the bib entry.
 The Discussion criticality paragraph stays intact, now supported only by public refs already cited

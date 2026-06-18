@@ -48,7 +48,7 @@ A_EE, A_EI, A_IE, A_II = 1.0, 1.0, 1.0, 2.0      # synaptic weights A=(1,1,1,2)
 C = 15.0                                          # global coupling
 DEL = 1.0                                         # Delta (half-width)
 PI = np.pi
-FIGDIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "paper", "figures")
+FIGDIR = os.environ.get("TN_FIGDIR") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "figures")
 
 
 def _rhs(y, t, eta, A, wO, wc):

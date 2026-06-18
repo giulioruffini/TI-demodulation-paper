@@ -4,6 +4,9 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from jr_demod import integrate, steady_v, Sigm
+import os
+FIGS = os.environ.get("TN_FIGDIR") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "figures")
+os.makedirs(FIGS, exist_ok=True)
 
 F0 = 11.1                      # natural (Hopf) frequency, Hz
 fc, m, dt = 100.0, 1.0, 2e-4
@@ -47,7 +50,7 @@ ax[1,1].set_xlim(0,130); ax[1,1].set_ylim(1e-4, None)
 ax[1,1].axvspan(8,13, color="#c44", alpha=0.12)
 ax[1,1].set_title("Output spectrum: strong peak at $\\Omega\\approx11$ Hz (demodulated)", fontsize=10)
 ax[1,1].set_xlabel("Hz")
-fig2.tight_layout(); fig2.savefig("../paper/figures/fig_demodulation.png", dpi=150); fig2.savefig("../paper/figures/fig_demodulation.pdf")
+fig2.tight_layout(); fig2.savefig(f"{FIGS}/fig_demodulation.png", dpi=150); fig2.savefig(f"{FIGS}/fig_demodulation.pdf")
 print("wrote fig_demodulation")
 
 # ---------- Verification ----------
@@ -81,5 +84,5 @@ ax3[1].bar(["nonlinear\nsigmoid","linearized\nsigmoid"], [r_nl, r_li],
 ax3[1].set_ylabel("response @ $\\Omega$ (mV)")
 ax3[1].set_title("Nonlinearity is essential\n(linearized sigmoid: no demodulation)", fontsize=10)
 ax3[1].spines[["top","right"]].set_visible(False)
-fig3.tight_layout(); fig3.savefig("../paper/figures/fig_verification.png", dpi=150); fig3.savefig("../paper/figures/fig_verification.pdf")
+fig3.tight_layout(); fig3.savefig(f"{FIGS}/fig_verification.png", dpi=150); fig3.savefig(f"{FIGS}/fig_verification.pdf")
 print("wrote fig_verification")

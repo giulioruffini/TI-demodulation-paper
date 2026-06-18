@@ -5,97 +5,134 @@ for temporal-interference (TI) stimulation. An amplitude-modulated (AM) field
 carries no spectral power at its envelope frequency, so demodulation requires a
 nonlinearity. We show that the population firing-rate **sigmoid** of a neural mass
 is a square-law demodulator, and that a second-order-synapse network **near a Hopf
-bifurcation** resonantly amplifies the recovered envelope.
+bifurcation** resonantly amplifies the recovered envelope. The ladder runs from the
+heuristic single-column Jansen–Rit (JR) model, through the laminar **LaNMM** (two
+bands), to the exact mean-field **NMM2** (derived rectifier), down to a spiking
+**QIF** network, and out to a **tACS** corollary that shares the same amplifier.
 
 > **Key message:** *wherever a fast-enough nonlinearity samples the carrier, the
 > population sigmoid demodulates and the network amplifies* — the single-cell entry
-> point (fast channels at nodes/AIS/terminals) supplies the carrier sampling, while
-> the demodulation read-out and resonant gain are network properties.
+> point supplies the carrier sampling, while the demodulation read-out and resonant
+> gain are network properties.
 
-![concept](paper/figures/fig_concept.png)
-![resonance](paper/figures/fig_resonance.png)
+![concept](figures/fig_concept.png)
+![resonance](figures/fig_resonance.png)
 
 ## Repository layout
 
 ```
 .
-├── README.md                     # this file
-├── paper/
-│   ├── TN0484_envelope_demodulation.tex   # the Technical Note (\graphicspath{{figures/}})
-│   ├── TN0484_envelope_demodulation.pdf
-│   ├── references.bib            # BibTeX source for all references
-│   └── figures/                  # fig_*.pdf (paper) + fig_*.png (preview)
-├── code/                         # all simulation/analysis code (run from here)
-│   ├── jr_demod.py               # core engine: JR model, sigmoid+derivatives,
-│   │                             #   vectorized RK4, AM field injection, lock-in,
-│   │                             #   open-loop detector, bifurcation helpers
-│   ├── jr_analysis.py            # Hopf locator (fixed point + Jacobian eigenvalues)
-│   ├── make_figures.py           # demodulation + verification figures
-│   ├── rerun_resonance.py        # resonance curves (long 20 s lock-in window)
-│   ├── analyses_v2.py            # operating-point, carrier, 2-D map (10/8 s), bifurcation
-│   ├── figures_v2.py             # concept, bifurcation+sigmoid, map, carrier, op-point
-│   ├── khz_analysis.py           # carrier sweep to 10 kHz (membrane low-pass)
-│   ├── lanmm_arnold_tongues.py   # LaNMM Arnold tongues (needs lanmmv11.py — see note)
-│   ├── lanmm_resonance.py        # LaNMM alpha resonance curve + map (self-contained, vectorized)
-│   ├── nmm2_ping.py              # exact mean-field NMM2 PING (gamma): resonance curve + map (self-contained)
-│   └── test_jr_demod.py          # self-checks (derivatives, fixed point, square law, control)
-├── docs/
-│   ├── README_Code.md            # detailed code documentation
-│   └── current_state.md          # project state / changelog / next steps
-└── archive/                      # superseded v1 of the note
+├── README.md                              # this file
+├── TN0484_envelope_demodulation.tex       # the manuscript (\graphicspath{{figures/}})
+├── TN0484_envelope_demodulation.pdf       # last good build (29 pp)
+├── TN0484_envelope_demodulation.bbl       # committed so a single pdflatex works w/o bibtex
+├── references.bib                         # BibTeX source for all references
+├── requirements.txt                       # pinned Python deps (numpy/scipy/matplotlib + ...)
+├── figures/                               # fig_*.pdf (used by LaTeX) + fig_*.png (preview)
+├── code/                                  # all simulation/analysis code
+│   ├── run_all.py                         # ONE-COMMAND reproduce of every figure
+│   └── ...                                # generators + engines (see table below)
+└── docs/
+    ├── current_state.md                   # running changelog (newest on top — read first)
+    ├── plan.md, HANDOFF.md, README_Code.md
+    └── ...
 ```
 
-## Reproduce
+## Setup
 
-Requirements: Python 3.10+, `numpy`, `scipy`, `matplotlib`; a LaTeX install with
-`pdflatex` for the paper.
+```bash
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt          # numpy, scipy, matplotlib (+ deps)
+```
+
+## Build the paper
+
+From the repo root (the `.tex` is at the root; `\graphicspath{{figures/}}`):
+
+```bash
+pdflatex TN0484_envelope_demodulation
+bibtex   TN0484_envelope_demodulation
+pdflatex TN0484_envelope_demodulation
+pdflatex TN0484_envelope_demodulation
+```
+
+Last known good: **29 pp, 0 undefined refs, 0 citation warnings.** The `.bbl` is
+committed, so a single `pdflatex` rebuilds the PDF when references are unchanged.
+
+## Reproduce the figures
+
+One command regenerates everything, in dependency order, into `figures/`:
 
 ```bash
 cd code
-python3 jr_analysis.py             # (optional) locate the Hopf: p~315 Hz, f0~11.1 Hz
-python3 analyses_v2.py             # -> analyses_v2.npz  (carrier, 2-D map, bifurcation)
-python3 figures_v2.py              # concept, bifurcation+sigmoid, 2-D map, carrier, op-point
-python3 make_figures.py            # demodulation + verification figures
-python3 rerun_resonance.py stable  # resonance sweep, stable side   (10 s settle / 20 s measure)
-python3 rerun_resonance.py cycle   # resonance sweep, limit-cycle side
-python3 rerun_resonance.py plot    # -> fig_resonance
-python3 khz_analysis.py            # carrier sweep to 10 kHz
-python3 test_jr_demod.py           # ALL TESTS PASSED
-
-# jr_demod.py is the shared engine (imported by all of the above), not run directly.
-
-cd ../paper
-pdflatex TN0484_envelope_demodulation.tex
-bibtex   TN0484_envelope_demodulation        # references from references.bib
-pdflatex TN0484_envelope_demodulation.tex
-pdflatex TN0484_envelope_demodulation.tex
+python run_all.py                  # full reproduce -> ../figures/ (heavy; overwrites)
+python run_all.py --figdir /tmp/f  # preview into a scratch dir (figures/ untouched)
+python run_all.py --list           # print the figure->script map and exit
+python run_all.py --only fig_jcurve,fig_khz   # rebuild a subset
 ```
 
-References live in `paper/references.bib` (BibTeX, `unsrt` style) and are portable
-to any other document or reference manager.
+Every generator honors the `TN_FIGDIR` env var (or `--figdir`) and defaults to
+`../figures/`. Data producers write `.npz` into `code/`; six of these are committed
+so the dependent figures can be rebuilt without re-running the (slow) sweeps.
 
-Figure scripts write both `.pdf` and `.png` into `paper/figures/`. Intermediate
-`.npz` files are written in `code/` and are git-ignored (regenerated on demand).
+### Figure → script table (verified)
 
-The LaNMM Arnold-tongue figures (`fig_lanmm_*`) come from `code/lanmm_arnold_tongues.py`,
-which needs the LaNMM model module `lanmmv11.py` from
-[LaNMM_predictive_coding_paper](https://github.com/giulioruffini/LaNMM_predictive_coding_paper)
-(`python/lanmmv11.py`, not bundled here) on the `PYTHONPATH`. Alpha-band power is
-computed inline, so no other LaNMM module is required. The figures themselves are
-already in `paper/figures/`.
+24 figures are included by the manuscript. Status legend: **OK** = generator writes
+to `figures/` and runs from committed inputs; **gap** = no working generator.
+
+| figure | script | data dep. | scipy | status |
+|---|---|---|---|---|
+| fig_concept | `figures_v2.py` | analyses_v2.npz† | – | OK |
+| fig_bifurcation_sigmoid | `figures_v2.py` | analyses_v2.npz† | – | OK |
+| fig_resonance_map | `figures_v2.py` | analyses_v2.npz† | – | OK |
+| fig_carrier_independence | `figures_v2.py` | analyses_v2.npz† | – | OK |
+| fig_operating_point | `figures_v2.py` | analyses_v2.npz† | – | OK |
+| fig_demodulation | `make_figures.py` | (inline) | – | OK |
+| fig_verification | `make_figures.py` | (inline) | – | OK |
+| fig_resonance | `rerun_resonance.py` (stable/cycle/plot) | (inline, long lock-in) | – | OK |
+| fig_khz | `khz_analysis.py` | (inline) | yes | OK |
+| fig_khz_direct | `khz_direct.py` (imports `timing_not_rate`) | (inline) | – | OK |
+| fig_jcurve | `make_jfig.py` | jcurve_main.npz, jcurve_res.npz ‡ | (engine) | OK |
+| fig_nmm2_map | `nmm2_ping.py` | (inline grid) | – | OK |
+| fig_nmm2_resonance | `nmm2_ping.py` | (inline grid) | – | OK |
+| fig_lanmm_map | `lanmm_resonance.py` | (inline grid) | – | OK |
+| fig_lanmm_resonance | `lanmm_resonance.py` | (inline grid) | – | OK |
+| fig_lanmm_arnold_p1 | `lanmm_arnold_tongues.py` | needs **lanmmv11** (external) | yes | needs ext. module |
+| fig_lanmm_arnold_p2 | `lanmm_arnold_tongues.py` | needs **lanmmv11** (external) | yes | needs ext. module |
+| fig_timing_not_rate | `timing_not_rate.py` | (inline) | – | OK |
+| fig_qif_raster | `make_qif_figs.py` | qif_raster.npz ‡ | – | OK |
+| fig_qif_timing | `make_qif_figs.py` | qif_raster.npz ‡ | – | OK |
+| fig_tacs_jcurve | `tacs_jsweep.py` | (inline) | – | OK |
+| fig_lanmm_setup | — | — | – | **gap**: hand-drawn schematic |
+| fig_nmm2_jcurve | — (data: nmm2_jcurve.npz ‡) | — | – | **gap**: plotter missing |
+| fig_entrainment | — (data: entrain*.npz, not committed) | — | – | **gap**: plotter + data missing |
+
+† `analyses_v2.npz` is **not** committed — `run_all.py` regenerates it via `analyses_v2.py` first.
+‡ committed `.npz` (figure rebuildable without re-running the sweep).
+
+The three **gaps** are tracked in `docs/current_state.md`:
+`fig_lanmm_setup` is intentionally hand-drawn; `fig_nmm2_jcurve` has its data committed
+but its plotting script was never committed; `fig_entrainment` has neither.
+
+### Engines & helpers (not figure generators)
+
+- `jr_demod.py` — core JR engine (sigmoid + derivatives, vectorized RK4, AM field,
+  lock-in, open-loop detector, Hopf helpers). Imported by the old JR pipeline.
+- `jr_jsweep_engine.py` — J-curve engine; imported by `run_jcurve/run_res/make_jfig`.
+- `nmm2_jcA.py` — NMM2 J-curve engine (imported by `nmm2_jcD.py`).
+- `timing_not_rate.py`, `qif_raster.py` — data producers (also self-plot where noted).
+- `test_jr_demod.py` — self-checks (derivatives, fixed point, square law, control).
 
 ## Verified
 
-`test_jr_demod.py`: sigmoid derivatives match finite differences (and σ''(v₀)=0);
+`test_jr_demod.py`: sigmoid derivatives match finite differences (and σ″(v₀)=0);
 the field-free fixed point is an equilibrium; square-law slope ≈ 1.99 (theory 2);
-linearizing the field-receiving sigmoid collapses the response ~712×.
+linearizing the field-receiving sigmoid collapses the response ≈712×. (Needs scipy.)
 
-## Status
+## Notes on artifacts
 
-Preprint draft (v0.6, 18 pp). Single integrated paper: the minimal Jansen–Rit
-column carries the analysis, and the two-band **LaNMM** is woven in as a second
-model — introduced in Theory §2.1, its drive/protocol/setup in Methods §4, and the
-Arnold-tongue results in Results §5.1 (no standalone section). Compiles clean
-(no undefined refs). **Author line in the `.tex` is still a placeholder
-("Giulio Ruffini and ....") — fill before circulation.** Natural next step: a
-realistic field-to-nonlinearity coupling κ(f_c) and coupled, noisy columns.
+Currently committed: the rendered `.pdf` (~5 MB, re-committed each build), the `.bbl`
+(so collaborators need not run bibtex), and six `.npz` data files. LaTeX build
+junk (`.aux/.log/.out/.toc/.blg`), `__pycache__`, and `.venv/` are git-ignored.
+Whether to keep committing the `.pdf` and `.npz` is an open policy question (see
+`readme_moving_notes.md`).
