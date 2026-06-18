@@ -939,7 +939,10 @@ Quantifying that regime therefore calls for different metrics---entrainment
 rather than the forced-response lock-in used here, the two coinciding only at onset.
 Because the demodulated drive is weak, on the autonomous side it biases phase (timing)
 more than amplitude, consistent with the timing-not-rate signature
-(\S\ref{sec:timing}).
+(\S\ref{sec:timing}). We show this regime directly above the Hopf in
+Fig.~\ref{fig:entrain}: a direct drive into the autonomous JR alpha cycle locks it
+within an Arnold tongue ($1{:}1$ frequency capture over a band that widens with drive),
+phase entrainment quantified by the locking range rather than a $1/\gamma$ amplitude gain.
 
 \begin{figure}[t!]
 \centering
@@ -1247,6 +1250,22 @@ grows as $1/\gamma$ (dashed) and saturates near criticality---the same network
 amplification as the demodulated TI drive (Fig.~\ref{fig:jcurve}), but linear in the
 field rather than square-law. Throughout, the column is a stable focus ($\gamma>0$). Code: \texttt{tacs\_jsweep.py}.}
 \label{fig:tacs}
+\end{figure}
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{fig_entrainment.pdf}
+\caption{\textbf{Above the Hopf: entrainment, not $1/\gamma$ amplification (Jansen--Rit).}
+The column is set in its autonomous alpha limit cycle (input $p=250$, below the input
+Hopf; $f_0\!\approx\!11$~Hz) and driven by a direct in-band sinusoid at $\Delta f$.
+\emph{(a)} The $1{:}1$ Arnold tongue---the region of $(\Delta f,\varepsilon)$ where the
+dominant output frequency locks to $\Delta f$---is a wedge anchored at $f_0$ that widens
+with drive amplitude. \emph{(b)} Frequency locking at fixed drive: inside the tongue the
+output follows $\Delta f$ (diagonal); outside, it falls back to the autonomous $f_0$.
+Here amplification is read as entrainment (tongue width, locking range), not as the
+diverging $1/\gamma$ gain of the stable-focus side (Fig.~\ref{fig:jcurve}). Code:
+\texttt{entrain.py}.}
+\label{fig:entrain}
 \end{figure}
 
 \end{document}

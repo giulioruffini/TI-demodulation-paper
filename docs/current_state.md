@@ -1,5 +1,14 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v1.22 — above-Hopf entrainment figure (S4) (latest)
+Built the oscillatory-side companion to substantiate the metrics note. code/entrain.py (pure numpy):
+JR column set in its autonomous alpha limit cycle (p=250, below the input Hopf, f0~11 Hz), driven by a
+direct in-band sinusoid. Fig.~S4 (fig:entrain, figures/fig_entrainment): (a) the 1:1 Arnold tongue -- a
+wedge anchored at f0 widening with drive amplitude; (b) frequency locking -- output rides Delta f inside the
+tongue, snaps back to f0 outside. Referenced from the sec:jcurve metrics note. Demonstrates: above the Hopf,
+amplification = entrainment (tongue width, locking range), NOT the 1/gamma amplitude gain of the stable
+side. Compiles clean: 27 pp, 0 undefined refs.
+
 ## v1.22 — QIF microscale: spike-timing realignment (new appendix) (latest)
 Built the spiking-network ground truth beneath NMM2: TI realigns spike TIMING, not mean rate.
 - **New Appendix** (`app:qif`) + 2 figures (fig_qif_raster, fig_qif_timing). Compiles clean: 27 pp,
