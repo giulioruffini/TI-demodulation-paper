@@ -141,7 +141,7 @@ standard cortical models, suffices: a static firing-rate \emph{sigmoid}, whose
 nonzero curvature $\Sig''$ makes it a square-law demodulator, and a
 \emph{second-order-synapse network} near a \emph{Hopf bifurcation}, which both
 filters the carrier away and resonantly amplifies the recovered envelope at the
-network's natural frequency. Where existing accounts locate the nonlinearity in cellular excitability, ours reads
+network's natural frequency (Fig.~\ref{fig:concept}). Where existing accounts locate the nonlinearity in cellular excitability, ours reads
 it out at the mesoscopic scale: the sigmoid is a coarse-grained summary of the
 population's single-cell input--output curves, but once coarse-grained it is a
 \emph{distinct mesoscopic nonlinearity} with enough curvature to detect envelopes,
@@ -526,9 +526,11 @@ analysis (\S\ref{sec:khz}). The signed in-phase component $I$ alone recovers
 $\half\Sig''(v^*)\varepsilon^2 m$ including its sign, which we use to verify the
 curvature law (Fig.~\ref{fig:opp}).
 
-Three auxiliary constructions support the main results. An \emph{open-loop
-detector} passes the AM field through $\Sig$ at a fixed operating point $v^*$ (no
-feedback) and applies Eq.~\eqref{eq:lockin}, isolating the pure demodulation law
+Three auxiliary constructions support the main results. Throughout we contrast the
+\emph{open-loop detector}---the firing-rate sigmoid alone at a fixed operating point
+$v^*$, with no recurrence---against the \emph{closed-loop} column, the full recurrent
+Jansen--Rit with its feedback. The open-loop detector passes the AM field through
+$\Sig$ at $v^*$ and applies Eq.~\eqref{eq:lockin}, isolating the pure demodulation law
 (Figs.~\ref{fig:carrier},~\ref{fig:opp},~\ref{fig:khz}). The \emph{bifurcation
 diagram} records the field-free min/max of $v$ vs.\ $p$, each run initialized at
 its fixed point plus a small kick. The \emph{two-dimensional map} evaluates
@@ -609,6 +611,31 @@ rate for Fig.~\ref{fig:timing}) or a direct in-band sinusoid $s(t)=\varepsilon\c
 lock-in of $v$ at $\Delta f$. Code: \texttt{jr\_jsweep\_engine.py},
 \texttt{timing\_not\_rate.py}, \texttt{tacs\_jsweep.py} (self-contained).
 
+\emph{Entrainment above the Hopf} (Fig.~\ref{fig:entrain}) requires a different read-out:
+there the column oscillates autonomously, and the lock-in amplitude at $\Delta f$ no
+longer isolates a driven response. We place the column on the limit-cycle side---input
+$p$ between the SNIC ($p\!\approx\!115$) and the Hopf ($p\!\approx\!315$), where it
+free-runs at $f_0(p)$---and drive it with a direct in-band sinusoid
+$s(t)=\varepsilon\cos\Omega t$. After discarding transients we take the \emph{dominant
+output frequency} $f_{\rm out}$ as the largest non-DC peak of the Hann-windowed FFT of
+$v$ over the measurement window (evaluated on a decimated buffer), and call the column
+$1{:}1$ \emph{locked} when $|f_{\rm out}-\Delta f|<0.3$~Hz. The Arnold tongue
+(Fig.~\ref{fig:entrain}a) is the locked set over the $(\Delta f,\varepsilon)$ grid at
+fixed $p$; the locking plateau (Fig.~\ref{fig:entrain}b) is $f_{\rm out}$ vs $\Delta f$ at
+fixed $\varepsilon$---equal to $\Delta f$ inside the tongue, snapping back to $f_0$
+outside. For the criticality panel (Fig.~\ref{fig:entrain}c) we fix $\varepsilon$ and
+sweep $p$ toward the Hopf; for each $p$ the \emph{locking range} is the width of the
+locked $\Delta f$ interval (number of locked points $\times$ grid spacing) on a $\Delta
+f$ grid centered on $f_0(p)$, and the autonomous cycle amplitude is the field-free
+$\max-\min$ of $v$. Two subtleties matter. (i)~The $\Delta f$ window is finite
+($f_0\pm5$~Hz), so the locking ranges \emph{nearest} the Hopf---where the tongue is
+widest---are lower bounds (grid-clipped), and a fixed tolerance/grid sets the absolute
+scale, not the trend. (ii)~As onset is approached the cycle amplitude $\to0$ and the
+entrainment tongue merges into the forced-resonance bandwidth, so the supercritical
+``locking range'' and the subcritical $1/\gamma$ susceptibility coincide there by
+construction---which is precisely why responsiveness peaks at criticality on both sides.
+Code: \texttt{entrain.py}, \texttt{entrain\_crit.py} (self-contained).
+
 \section{Results}
 We present the evidence on three rungs of the modeling ladder: the single
 Jansen--Rit column (closed form, analyzable), the laminar LaNMM (two native
@@ -658,16 +685,6 @@ cycle, $p<315$):} the demodulated drive entrains the autonomous alpha rhythm.}
 \label{fig:res}
 \end{figure}
 
-\begin{figure}[t!]
-\centering
-\includegraphics[width=0.74\textwidth]{fig_resonance_map.pdf}
-\caption{\textbf{The resonance ridge sharpens and intensifies toward the Hopf (Jansen--Rit).} Demodulated response $A_\Omega$ over the
-(envelope frequency, input $p$) plane. The ridge at $f_0\!\approx\!11.1$~Hz
-sharpens and intensifies as $p$ approaches the Hopf from above, visualizing the
-$1/\gamma$ gain of Eq.~\eqref{eq:gain}.}
-\label{fig:map}
-\end{figure}
-
 \subsection{Carrier independence and the kHz roll-off}
 At fixed post-coupling polarization the demodulated response is flat across the
 carrier band (Fig.~\ref{fig:carrier}, left): the open-loop detector reproduces
@@ -689,21 +706,6 @@ adds $\sim$60$\times$ resonant gain); deviations appear only as $f_c$ approaches
 the natural band. \emph{Right:} the second-order-synapse band-pass $|H(\omega)|$
 passes the envelope ($\sim$0.7) and suppresses the $100$~Hz carrier ($\sim$2.5\%).}
 \label{fig:carrier}
-\end{figure}
-
-\begin{figure}[t!]
-\centering
-\includegraphics[width=0.74\textwidth]{fig_khz.pdf}
-\caption{\textbf{Somatic demodulation dies at kHz, but a fast element survives (Jansen--Rit, open-loop detector).} Open-loop
-demodulated response (normalized to the $\tau\!\to\!0$ value) vs.\ carrier
-frequency up to $10$~kHz. With direct coupling ($\tau\!\to\!0$) the response is
-flat---carrier-independent. A slow somatic membrane ($\tau_m\!\approx\!16$~ms)
-rolls off as $1/f_c^2$ (dashed guide), killing kHz demodulation; a fast element
-(axon/AIS/node, $\tau\!\approx\!0.2$~ms) retains an appreciable response into the
-kHz band ($\sim$0.14 at 2~kHz, $\sim$0.04 at the TMS peak $3.9$~kHz). The same
-membrane filter attenuates TMS at the soma, which is why neither TMS nor TI should
-be thought of as driving the soma at kHz.}
-\label{fig:khz}
 \end{figure}
 
 To pre-empt the objection that the demonstration runs only at $100$~Hz, we drive the
@@ -761,16 +763,6 @@ predicted $2$), and replacing the field-receiving sigmoid by its linearization
 collapses the response by $712\times$ ($1.40\!\to\!0.0020$~mV): the nonlinearity is
 the detector.
 
-\begin{figure}[t!]
-\centering
-\includegraphics[width=0.92\textwidth]{fig_verification.pdf}
-\caption{\textbf{Verification (Jansen--Rit): square-law scaling and the linearization control.} \emph{Left:} response vs.\ field amplitude;
-small-drive log--log slope $=1.99$ (theory $2$). \emph{Right:} linearizing the
-field-receiving sigmoid collapses the response $712\times$
-($1.40\!\to\!0.0020$~mV)---the nonlinearity is the demodulator.}
-\label{fig:ver}
-\end{figure}
-
 \subsection{Two native resonances and nonlinear Arnold tongues in the LaNMM}\label{sec:lanmm-results}
 The single JR column isolates and lets us analyze the mechanism; the laminar model
 (LaNMM, \S\ref{sec:nmm}) confirms it in a cortical column with its \emph{own} two
@@ -788,18 +780,6 @@ limit-cycle side (low drive) entrains the autonomous alpha---the same
 stable-focus/limit-cycle pair as the JR column (Fig.~\ref{fig:res}), now read out as
 the deep-pyramidal alpha lock-in. The heuristic laminar model thus shows the JR
 resonance \emph{and}, in addition, the carrier-dependent Arnold tongues that follow.
-
-\begin{figure}[t!]
-\centering
-\includegraphics[width=\textwidth]{fig_lanmm_resonance.pdf}
-\caption{\textbf{LaNMM alpha resonance (NMM1, laminar).} Lock-in response of the deep
-pyramidal $P_1$ at the envelope frequency $\Delta f$, the $P_1$ (alpha) loop driven by
-an AM field (carrier $100$~Hz) with its input as bifurcation parameter. \emph{Left
-(stable focus, high drive):} forced alpha resonance at $\sim$10~Hz growing as the Hopf
-is approached. \emph{Right (limit cycle, low drive):} entrainment of the autonomous
-alpha. Directly parallel to the JR single column (Fig.~\ref{fig:res}).}
-\label{fig:lanmm_res}
-\end{figure}
 
 Sweeping the modulation amplitude $A$ and beat frequency $\Delta f$ at a fixed
 carrier produces \emph{nonlinear Arnold tongues}: alpha power in $P_1$ is maximal
@@ -839,18 +819,6 @@ power vs.\ carrier frequency and $\Delta f$ at $A=250$: $P_1$ demodulation requi
 \emph{both} a carrier $\approx$$40$~Hz ($P_2$ gamma) and $\Delta f\approx$$10$~Hz
 ($P_1$ alpha)---a double resonance.}
 \label{fig:lanmm_p2}
-\end{figure}
-
-\begin{figure}[t!]
-\centering
-\includegraphics[width=0.86\textwidth]{fig_lanmm_arnold_p1.png}
-\caption{\textbf{LaNMM Arnold tongues: AM input delivered directly to the deep
-$P_1$ (alpha) loop.} \emph{(a,b)} Alpha power of $P_1$ and $P_2$ vs.\ amplitude $A$ and
-$\Delta f$. \emph{(c,d)} Alpha power vs.\ carrier frequency and $\Delta f$: $P_1$
-responds across a \emph{broad} carrier band (a vertical ridge at
-$\Delta f\!\approx\!10$~Hz)---carrier-independent, the direct-coupling limit of
-Eq.~\eqref{eq:demod}.}
-\label{fig:lanmm_p1}
 \end{figure}
 
 Concretely the LaNMM predicts that TI efficacy should (i) peak when $\Delta f$
@@ -897,18 +865,6 @@ approached ($1/\gamma$ gain), with the resonant frequency rising with $\bar\eta$
 entrainment of the autonomous gamma. The input carries no power at $\Delta f$; the
 response is synthesized by the exact quadratic $v^2$ nonlinearity.}
 \label{fig:nmm2_res}
-\end{figure}
-
-\begin{figure}[t!]
-\centering
-\includegraphics[width=0.72\textwidth]{fig_nmm2_map.pdf}
-\caption{\textbf{NMM2 PING resonance map (exact mean field).} Demodulated response
-over the (envelope frequency $\Delta f$, background drive $\bar\eta$) plane (log color
-scale: entrainment far exceeds the stable-focus forced response). The ridge follows the
-gamma natural frequency $f_0(\bar\eta)$ and intensifies through the supercritical Hopf
-(dashed line); its diagonal slope---$f_0$ rising with $\bar\eta$---reflects the
-state-dependent transfer of NMM2, absent in the static-sigmoid JR and LaNMM.}
-\label{fig:nmm2_map}
 \end{figure}
 
 \subsection{What the mesoscale adds: coupling sets the gain at fixed detection}\label{sec:jcurve}
@@ -1018,6 +974,26 @@ spike-timing-without-rate finding of \cite{vieira2024}.}
 \label{fig:timing}
 \end{figure}
 
+The same holds at the spiking level. Integrating the underlying QIF network---$N=2000$
+neurons per population, of which NMM2 is the exact mean field---shows TI bunching spike
+\emph{times} into the recovered envelope without changing the mean rate, on both sides
+of the gamma Hopf (Fig.~\ref{fig:qif_raster}; full microscale analysis in
+App.~\ref{app:qif}).
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{fig_qif_raster.pdf}
+\caption{\textbf{QIF spiking network (microscale of NMM2 PING): TI realigns spike
+timing, not mean rate.} $N=2000$ excitatory and inhibitory QIF neurons; black ticks are
+$E$ spikes (120 neurons shown), blue is the population rate $r_E(t)$, red is the TI
+envelope. \emph{(a)} Forced ($\bar\eta<\bar\eta_{\rm Hopf}$), TI off: asynchronous
+firing, flat rate. \emph{(b)} Forced, TI on ($\Delta f=55$~Hz): spikes bunch into the
+envelope. \emph{(c)} Entrained ($\bar\eta>\bar\eta_{\rm Hopf}$), TI off: free-running
+gamma. \emph{(d)} Entrained, TI on ($\Delta f=42$~Hz): the rhythm is re-timed to the TI
+beat.}
+\label{fig:qif_raster}
+\end{figure}
+
 \subsection{Falsifiable predictions and tests}\label{sec:predictions}
 The mechanism makes three sharp predictions, each with a clean experimental handle.
 \begin{enumerate}[leftmargin=*]
@@ -1112,6 +1088,28 @@ beat frequency selecting the band; this embeds TI demodulation in the HAM read-o
 hierarchy \cite{ruffini2025ham}, where envelope extraction is the inverse of the
 amplitude-modulation encoding used for prediction-error evaluation.
 
+\textbf{Amplification is critical slowing---and what kind of criticality.} The network
+effect at the heart of this work---gain $\propto1/\gamma$ as the damping $\gamma$ (the
+leading Jacobian eigenvalue) vanishes at the Hopf---is the dynamical signature of
+\emph{critical slowing}: a susceptibility that diverges as a system approaches a
+bifurcation. Whether that warrants the word ``criticality'' depends on the model. In the
+heuristic Jansen--Rit and LaNMM columns the Hopf is a bifurcation of a
+finite-dimensional, fitted ODE---a near-bifurcation statement, not a phase transition. In
+the exact next-generation mean field (NMM2/MPR) it is sharper: the reduction from the
+spiking QIF population is exact in the thermodynamic limit, and the dynamical variables
+$(r,v)$ are genuine \emph{order parameters}---conformally related to the Kuramoto--Daido
+order parameter through the Ott--Antonsen ansatz \cite{ott2008,montbrio2015}---so the
+Hopf is a true macroscopic transition of the underlying many-body system and our
+$1/\gamma$ gain is its diverging susceptibility. One
+qualifier keeps this honest: because the reduction assumes all-to-all coupling, it is a
+\emph{mean-field} critical point---it delivers temporal critical slowing but no diverging
+\emph{spatial} correlation length, so the column realizes the temporal-susceptibility
+face of criticality, not the scale-free spatial one. With
+the inter-neuron coupling $J$ as the control parameter (Fig.~\ref{fig:nmm2_jcurve}), TI
+then drives a population toward---and reads out the susceptibility of---a genuine, if
+mean-field, critical point, and its efficacy is largest exactly where the network sits
+closest to that transition.
+
 Several limitations should be kept in view. The field enters the population sigmoid
 directly; we treat the field-to-nonlinearity coupling $\kappa(f_c)$
 phenomenologically (Eq.~\eqref{eq:bridge}) rather than modeling channel kinetics,
@@ -1187,20 +1185,6 @@ spike-timing-without-rate finding \cite{vieira2024} (code: \texttt{qif\_raster.p
 
 \begin{figure}[t!]
 \centering
-\includegraphics[width=\textwidth]{fig_qif_raster.pdf}
-\caption{\textbf{QIF spiking network (microscale of NMM2 PING): TI realigns spike
-timing, not mean rate.} $N=2000$ excitatory and inhibitory QIF neurons; black ticks are
-$E$ spikes (120 neurons shown), blue is the population rate $r_E(t)$, red is the TI
-envelope. \emph{(a)} Forced ($\bar\eta<\bar\eta_{\rm Hopf}$), TI off: asynchronous
-firing, flat rate. \emph{(b)} Forced, TI on ($\Delta f=55$~Hz): spikes bunch into the
-envelope. \emph{(c)} Entrained ($\bar\eta>\bar\eta_{\rm Hopf}$), TI off: free-running
-gamma. \emph{(d)} Entrained, TI on ($\Delta f=42$~Hz): the rhythm is re-timed to the TI
-beat.}
-\label{fig:qif_raster}
-\end{figure}
-
-\begin{figure}[t!]
-\centering
 \includegraphics[width=\textwidth]{fig_qif_timing.pdf}
 \caption{\textbf{Timing, not rate, in the QIF network.} \emph{(a)} Power spectrum of
 $r_E(t)$: the spiking network ($N=2000$) matches the exact NMM2 mean field in the gamma
@@ -1261,11 +1245,77 @@ Hopf; $f_0\!\approx\!11$~Hz) and driven by a direct in-band sinusoid at $\Delta 
 \emph{(a)} The $1{:}1$ Arnold tongue---the region of $(\Delta f,\varepsilon)$ where the
 dominant output frequency locks to $\Delta f$---is a wedge anchored at $f_0$ that widens
 with drive amplitude. \emph{(b)} Frequency locking at fixed drive: inside the tongue the
-output follows $\Delta f$ (diagonal); outside, it falls back to the autonomous $f_0$.
+output follows $\Delta f$ (diagonal); outside, it falls back to the autonomous $f_0$. \emph{(c)} Sweeping the operating point toward the Hopf at fixed drive, the locking range (tongue width) grows as the autonomous cycle amplitude $\to0$: entrainment is easiest near criticality---the supercritical counterpart of the $1/\gamma$ forced gain.
 Here amplification is read as entrainment (tongue width, locking range), not as the
-diverging $1/\gamma$ gain of the stable-focus side (Fig.~\ref{fig:jcurve}). Code:
-\texttt{entrain.py}.}
+diverging $1/\gamma$ gain of the stable-focus side (Fig.~\ref{fig:jcurve}). Like that gain, entrainment is enhanced near criticality---the tongue widens as the Hopf is approached and the autonomous cycle weakens---so the column is most responsive near the critical point, to forcing below the Hopf and to entrainment above. Code:
+\texttt{entrain.py}, \texttt{entrain\_crit.py}.}
 \label{fig:entrain}
+\end{figure}
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=0.74\textwidth]{fig_resonance_map.pdf}
+\caption{\textbf{The resonance ridge sharpens and intensifies toward the Hopf (Jansen--Rit).} Demodulated response $A_\Omega$ over the
+(envelope frequency, input $p$) plane. The ridge at $f_0\!\approx\!11.1$~Hz
+sharpens and intensifies as $p$ approaches the Hopf from above, visualizing the
+$1/\gamma$ gain of Eq.~\eqref{eq:gain}.}
+\label{fig:map}
+\end{figure}
+\begin{figure}[t!]
+\centering
+\includegraphics[width=0.74\textwidth]{fig_khz.pdf}
+\caption{\textbf{Somatic demodulation dies at kHz, but a fast element survives (Jansen--Rit, open-loop detector).} Open-loop
+demodulated response (normalized to the $\tau\!\to\!0$ value) vs.\ carrier
+frequency up to $10$~kHz. With direct coupling ($\tau\!\to\!0$) the response is
+flat---carrier-independent. A slow somatic membrane ($\tau_m\!\approx\!16$~ms)
+rolls off as $1/f_c^2$ (dashed guide), killing kHz demodulation; a fast element
+(axon/AIS/node, $\tau\!\approx\!0.2$~ms) retains an appreciable response into the
+kHz band ($\sim$0.14 at 2~kHz, $\sim$0.04 at the TMS peak $3.9$~kHz). The same
+membrane filter attenuates TMS at the soma, which is why neither TMS nor TI should
+be thought of as driving the soma at kHz.}
+\label{fig:khz}
+\end{figure}
+\begin{figure}[t!]
+\centering
+\includegraphics[width=0.92\textwidth]{fig_verification.pdf}
+\caption{\textbf{Verification (Jansen--Rit): square-law scaling and the linearization control.} \emph{Left:} response vs.\ field amplitude;
+small-drive log--log slope $=1.99$ (theory $2$). \emph{Right:} linearizing the
+field-receiving sigmoid collapses the response $712\times$
+($1.40\!\to\!0.0020$~mV)---the nonlinearity is the demodulator.}
+\label{fig:ver}
+\end{figure}
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{fig_lanmm_resonance.pdf}
+\caption{\textbf{LaNMM alpha resonance (NMM1, laminar).} Lock-in response of the deep
+pyramidal $P_1$ at the envelope frequency $\Delta f$, the $P_1$ (alpha) loop driven by
+an AM field (carrier $100$~Hz) with its input as bifurcation parameter. \emph{Left
+(stable focus, high drive):} forced alpha resonance at $\sim$10~Hz growing as the Hopf
+is approached. \emph{Right (limit cycle, low drive):} entrainment of the autonomous
+alpha. Directly parallel to the JR single column (Fig.~\ref{fig:res}).}
+\label{fig:lanmm_res}
+\end{figure}
+\begin{figure}[t!]
+\centering
+\includegraphics[width=0.86\textwidth]{fig_lanmm_arnold_p1.png}
+\caption{\textbf{LaNMM Arnold tongues: AM input delivered directly to the deep
+$P_1$ (alpha) loop.} \emph{(a,b)} Alpha power of $P_1$ and $P_2$ vs.\ amplitude $A$ and
+$\Delta f$. \emph{(c,d)} Alpha power vs.\ carrier frequency and $\Delta f$: $P_1$
+responds across a \emph{broad} carrier band (a vertical ridge at
+$\Delta f\!\approx\!10$~Hz)---carrier-independent, the direct-coupling limit of
+Eq.~\eqref{eq:demod}.}
+\label{fig:lanmm_p1}
+\end{figure}
+\begin{figure}[t!]
+\centering
+\includegraphics[width=0.72\textwidth]{fig_nmm2_map.pdf}
+\caption{\textbf{NMM2 PING resonance map (exact mean field).} Demodulated response
+over the (envelope frequency $\Delta f$, background drive $\bar\eta$) plane (log color
+scale: entrainment far exceeds the stable-focus forced response). The ridge follows the
+gamma natural frequency $f_0(\bar\eta)$ and intensifies through the supercritical Hopf
+(dashed line); its diagonal slope---$f_0$ rising with $\bar\eta$---reflects the
+state-dependent transfer of NMM2, absent in the static-sigmoid JR and LaNMM.}
+\label{fig:nmm2_map}
 \end{figure}
 
 \end{document}

@@ -1,5 +1,57 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v1.27 — removed WP0070 citations (internal doc), kept the criticality paragraph (latest)
+WP0070 is internal/non-citable. Removed both \cite{ruffini2026criticality} from the tex and the bib entry.
+The Discussion criticality paragraph stays intact, now supported only by public refs already cited
+(ott2008 Ott-Antonsen, montbrio2015, clusella2023): order-parameter bridge + exact reduction are
+Montbrio/OA results; mean-field caveat is textbook stat-mech. ott2008 retained as a real public citation.
+Compiles clean: 29 pp, 0 undefined refs, 0 bibtex warnings; no WP0070 trace in the manuscript.
+
+## v1.26 — WP0070 criticality connection woven into Discussion (latest)
+Giulio uploaded WP0070 ("ODE Bifurcations Are Not Critical Phenomena", Ruffini & Vohryzek 2026). Added a
+Discussion paragraph ("Amplification is critical slowing---and what kind of criticality") + 2 bib entries
+(ruffini2026criticality WP0070; ott2008 Ott-Antonsen). Argument: our 1/gamma amplification = critical
+slowing / diverging susceptibility as the leading Jacobian eigenvalue -> 0 at the Hopf. JR/LaNMM Hopf is an
+ODE near-bifurcation; but in the EXACT NMM2/MPR reduction (r,v) are genuine order parameters (conformal map
+to Kuramoto-Daido via Ott-Antonsen), so the Hopf is a true macroscopic transition and the 1/gamma gain is
+its diverging susceptibility, with J the control parameter -> legitimizes "near criticality" precisely AND
+shields against the "Hopf != criticality" referee. Honest caveat stated: mean-field critical point
+(all-to-all) -> temporal critical slowing but NO diverging spatial correlation length (temporal-
+susceptibility face, not scale-free spatial). Compiles clean: 29 pp, 0 undefined refs, 0 bibtex warnings.
+
+## v1.25 — Methods paragraph for the entrainment/Arnold-tongue analysis (latest)
+Added a Methods paragraph documenting the S5 construction and its subtleties: limit-cycle regime
+(SNIC~115 < p < Hopf~315), direct in-band drive, dominant output frequency via Hann-windowed FFT on a
+decimated buffer, 1:1 locking tolerance |f_out-Df|<0.3 Hz, definitions of the tongue / locking plateau /
+locking range (width = locked points x grid spacing, grid centered on f0(p)), cycle amplitude = field-free
+max-min of v. Two caveats stated: (i) finite Df window (f0+-5 Hz) -> near-Hopf locking ranges are
+grid-clipped lower bounds (trend robust, absolute scale grid/tolerance-set); (ii) at onset the tongue
+merges into the forced-resonance bandwidth, so supercritical locking range and subcritical 1/gamma
+susceptibility coincide by construction. Code cite: entrain.py, entrain_crit.py. Compiles clean: 29 pp.
+
+## v1.24 — S5 entrainment figure now has distance-to-Hopf as a coordinate (latest)
+Giulio's point: the old S5 panels were both at a single distance to the Hopf -> nothing showed the
+"near criticality" dependence. Added panel (c) (code/entrain_crit.py): sweep the autonomous operating
+point p across the limit-cycle range toward the Hopf (p_Hopf~315) at fixed drive; plot LOCKING RANGE
+(tongue width, Hz) vs DISTANCE TO HOPF (p_Hopf-p), with autonomous cycle amplitude on the twin axis.
+Result: as distance 155->4, cycle amplitude halves (2.76->1.15 mV) and locking range ~doubles
+(5.4->10.3 Hz, near-Hopf points grid-clipped lower bounds) -- entrainment is easiest near criticality,
+the supercritical counterpart of the 1/gamma forced gain. S5 is now 3 panels (tongue, frequency locking,
+criticality). Caption + code cite updated. Compiles clean: 28 pp, 0 undefined refs.
+
+## v1.23 — figure triage: 18 -> 13 main; raster promoted; open/closed-loop def (latest)
+- Moved 6 figures main -> Supplementary appendix: resonance_map, khz (open-loop roll-off), verification,
+  lanmm_resonance, lanmm_arnold_p1, nmm2_map. All keep their body \ref (now Fig. S#).
+- PROMOTED fig_qif_raster (QIF spiking, TI realigns spike timing) into the main sec:timing with an intro
+  sentence; quantitative qif_timing stays in app:qif. Main text now 13 figs, appendix 11.
+- DEFINED open-loop vs closed-loop explicitly in Methods (sigmoid alone at fixed v* vs full recurrent JR).
+- Added fig:concept reference (was orphaned).
+- S6/entrainment: added the criticality statement -- entrainment, like the 1/gamma gain, is enhanced near
+  the critical point (tongue widens approaching the Hopf); the column is most responsive near criticality on
+  BOTH sides (forcing below, entrainment above). [Statement added; a demonstrating panel = tongue width vs
+  distance-to-Hopf is still optional/offered.]
+- Compiles clean: 28 pp, 0 undefined refs. Backup /tmp/TN0484.pre_figmove.tex.
+
 ## v1.22 — above-Hopf entrainment figure (S4) (latest)
 Built the oscillatory-side companion to substantiate the metrics note. code/entrain.py (pure numpy):
 JR column set in its autonomous alpha limit cycle (p=250, below the input Hopf, f0~11 Hz), driven by a
