@@ -1,5 +1,15 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v1.32 — Results §4+§5 merged; dead/dup scripts archived (latest)
+- Merged Results §4 (operating-point Sigma'' law) and §5 (square-law + linearization control)
+  into one subsection "The nonlinearity is the detector: the Sigma'' curvature law and its
+  controls" -- saves a heading, tightens the JR-verification block (fig:opp then fig:ver flow
+  as one argument). Build clean: 29 pp, 0 undefined refs.
+- Archived (git mv, not deleted) to code/archive/ with a README: jr_analysis.py (dead, prints
+  only), nmm2_jc.py (superseded by nmm2_jcA/jcD), make_timing_fig.py (redundant with
+  timing_not_rate.py). None imported or in run_all. Orphaned nmm2_jcurve.npz left in code/
+  (harmless; live fig_nmm2_jcurve uses nmm2_jcD.npz).
+
 ## v1.31 — Fig 13 entrainment inset + gamma-band Df clarified; Track B reassessed (latest)
 - Fig 13 (qif_raster): per Giulio, the entrained raster (c)/(d) did not make the locking
   visually obvious (gamma ~54 Hz and beat 42 Hz are close -> amplitude-gating, not a frequency
