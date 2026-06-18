@@ -114,8 +114,11 @@ def fig_raster():
 
 def fig_timing():
     fig, (axA, axB) = plt.subplots(1, 2, figsize=(10, 3.8))
-    # (a) validation: power spectrum of r_E(t), QIF network vs exact NMM2 mean field
-    c = conds["forced_on"]; q = c["q"]; dt = meta["dt"]
+    # (a) validation: power spectrum of r_E(t), QIF network vs exact NMM2 mean field.
+    # Use the field-free autonomous gamma (entrain_off): a single clean peak in both, so the
+    # QIF<->NMM2 match is unambiguous. (Under strong TI forcing the forced spectrum is multi-
+    # peak and the "dominant" peak is window-sensitive -- a poor validation condition.)
+    c = conds["entrain_off"]; q = c["q"]; dt = meta["dt"]
     m = q["ts"] >= t0; x = q["re_t"][m] - q["re_t"][m].mean()
     fr = np.fft.rfftfreq(len(x), dt / 1000.0); Px = np.abs(np.fft.rfft(x * np.hanning(len(x)))) ** 2
     mm = c["mf_t"] >= t0; y = c["mf_re"][mm] - c["mf_re"][mm].mean()
@@ -123,14 +126,14 @@ def fig_timing():
     axA.plot(fr, Px / Px.max(), color=NEBLUE, lw=1.1, label=r"QIF network ($N=%d$)" % meta["Ne"])
     axA.plot(fy, Py / Py.max(), color=NERED, lw=1.4, ls="--", label="NMM2 mean field (exact)")
     axA.set_xlim(0, 130); axA.set_xlabel("frequency (Hz)"); axA.set_ylabel("power (norm.)")
-    axA.set_title("(a) QIF $\\to$ NMM2: matched gamma spectrum\n"
+    axA.set_title("(a) QIF $\\to$ NMM2: matched autonomous gamma\n"
                   r"($\langle r_E\rangle$: %.3f QIF vs %.3f mean field)"
                   % (q["rmean"], c["mf_re"][mm].mean()), fontsize=9)
     axA.legend(fontsize=7.5, frameon=False, loc="upper right")
     axA.spines[["top", "right"]].set_visible(False)
 
     # (b) fold-change off->on: mean rate vs envelope-locked timing
-    regimes = [("forced", "Forced"), ("entrain", "Entrained")]
+    regimes = [("forced", "Forced"), ("entrain", "Oscillatory")]
     rate_fc = []; tim_fc = []
     for reg, _ in regimes:
         qo = conds[f"{reg}_off"]["q"]; qn = conds[f"{reg}_on"]["q"]

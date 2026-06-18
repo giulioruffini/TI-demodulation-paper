@@ -1,6 +1,19 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.36 — Methods subsections + MPR-equation spacing fix + explicit Rosetta cite (latest)
+## v1.37 — Fig 14a QIF<->NMM2 validation: use autonomous gamma (peaks now match) (latest)
+Giulio spotted that in Fig 14a the QIF peak (~53 Hz) sat ~13% ABOVE the NMM2 mean-field peak
+(~47 Hz), contradicting "matched gamma spectrum". Diagnosed: QIF and MF match EXACTLY (53.3 Hz)
+in every condition EXCEPT forced_on -- and the panel was built from forced_on. Cause is NOT a bug
+or numerics (a fresh mf_run of forced_on gives 53.3 Hz at every dt incl. the coarse 0.05 ms in
+nmm2_ping): forced_on is below the Hopf + strong fast drive -> a multi-peak FORCED spectrum where
+the "dominant" peak is window-sensitive and QIF/MF can disagree on which peak wins. Fix: validate in
+the field-free AUTONOMOUS condition (entrain_off), a single clean gamma in both -> peaks now overlap
+at ~53 Hz (fundamental + ~107 Hz harmonic), mean rate 0.052/0.052. Updated panel-a title ("matched
+autonomous gamma"), the Fig 14 caption ("field-free (autonomous) state ... both ~53 Hz"), and the
+panel-b regime label "Entrained"->"Oscillatory" (consistency). No science changed; the validation is
+now honest and tight. Build clean: 30 pp, 0 undefined refs.
+
+## v1.36 — Methods subsections + MPR-equation spacing fix + explicit Rosetta cite
 - Methods now has 5 subsections separating the models/methods (was one undivided wall):
   Single-column Jansen--Rit (integration, lock-in, controls); Laminar two-band (LaNMM); Exact
   next-generation mean field (NMM2 PING); Coupling sweeps/timing/tACS (JR); Entrainment above the
