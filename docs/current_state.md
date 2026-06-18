@@ -1,6 +1,19 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.35 — Q3: promoted fig_qif_timing to main; cloned LaNMM for arnold re-render (latest)
+## v1.36 — Methods subsections + MPR-equation spacing fix + explicit Rosetta cite (latest)
+- Methods now has 5 subsections separating the models/methods (was one undivided wall):
+  Single-column Jansen--Rit (integration, lock-in, controls); Laminar two-band (LaNMM); Exact
+  next-generation mean field (NMM2 PING); Coupling sweeps/timing/tACS (JR); Entrainment above the
+  Hopf (JR).
+- MPR equation (eq:nmm2-ping) "weird spacing" diagnosed + fixed: (i) the \tfrac{\Delta}{\pi\tau}
+  fractions rendered shrunken/text-style next to full-size display terms -> switched to inline
+  \Delta/(\pi\tau_E); (ii) the two-column layout had a wide uneven mid-gap from \qquad -> tightened
+  to \quad + \\[2pt] row spacing. Now clean.
+- NMM2 methods now explicitly attributes the formulation to the Rosetta Stone paper
+  \cite{ruffini2025rosetta} (+ Montbrio-Pazo-Roxin \cite{montbrio2015}) up front.
+Build clean: 30 pp, 0 undefined refs.
+
+## v1.35 — Q3: promoted fig_qif_timing to main; cloned LaNMM for arnold re-render
 - Q3 (Giulio agreed): promoted fig_qif_timing from supp (S1) to MAIN (now Fig 14, right after the
   qif_raster Fig 13) -- the quantitative 14x/22x timing-not-rate proof belongs in main with its raster,
   not buried. Added a main-text reference in sec:timing; removed the block from app:qif (which still

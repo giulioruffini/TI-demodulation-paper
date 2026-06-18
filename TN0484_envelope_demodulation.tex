@@ -462,6 +462,8 @@ than a kHz one (whose subthreshold carrier is the source of TI's focality), so $
 probes the mechanism while kHz optimizes selectivity.
 
 \section{Methods}
+
+\subsection{Single-column Jansen--Rit: integration, lock-in, and controls}
 We integrate the single-column JR model of \S\ref{sec:nmm}
 (Eqs.~\eqref{eq:jr0}, parameters in Table~\ref{tab:params}) as six first-order
 ODEs. The TI field enters only the pyramidal output sigmoid, Eq.~\eqref{eq:jr0},
@@ -541,6 +543,7 @@ provided (\texttt{jr\_demod.py}, \texttt{make\_figures.py},
 \texttt{analyses\_v2.py}, \texttt{figures\_v2.py}, \texttt{khz\_analysis.py}; see
 \texttt{README\_Code.md}).
 
+\subsection{Laminar two-band model (LaNMM)}
 We complement the single-column analysis with simulations of the laminar neural
 mass model (LaNMM) of \S\ref{sec:nmm}. We integrate the full 28-variable column
 \cite{ruffini2025cfc,sanchezTodo2023}, driving a single population with an AM input
@@ -564,18 +567,21 @@ the deep $P_1$ loop directly and sweep its input against $\Delta f$, reading the
 lock-in (Eq.~\eqref{eq:lockin}) of $v_{P_1}$ at $\Delta f$ (self-contained
 \texttt{lanmm\_resonance.py}).
 
-Finally, we test the mechanism in the exact next-generation mean field (NMM2,
-\S\ref{sec:nmm}), where the firing-rate nonlinearity is the derived MPR dynamics of
-Eq.~\eqref{eq:mpr} rather than a postulated sigmoid. We use a two-population
+\subsection{Exact next-generation mean field (NMM2 PING)}
+We test the mechanism in the exact next-generation mean field (NMM2, \S\ref{sec:nmm}),
+following the Rosetta Stone formulation of \cite{ruffini2025rosetta} (which places the
+Montbri\'o--Paz\'o--Roxin reduction \cite{montbrio2015} on a common footing with the JR
+and LaNMM models used here), where the firing-rate nonlinearity is the derived MPR
+dynamics of Eq.~\eqref{eq:mpr} rather than a postulated sigmoid. We use a two-population
 excitatory--inhibitory (PING) motif \cite{ruffini2021nmm2,clusella2023,ruffini2025rosetta}:
 each population $\alpha\in\{E,I\}$ is an MPR mean field (firing rate $r_\alpha$, mean
 potential $v_\alpha$) with membrane time $\tau_\alpha$, coupled through second-order
 synapses,
 \begin{equation}
 \begin{aligned}
-\tau_E\dot r_E&=\tfrac{\Delta}{\pi\tau_E}+2r_Ev_E, &\qquad
-\tau_E\dot v_E&=v_E^2+\bar\eta-(\pi\tau_E r_E)^2+\tau_E C\,(s_E-s_I)+\delta V(t),\\
-\tau_I\dot r_I&=\tfrac{\Delta}{\pi\tau_I}+2r_Iv_I, &\qquad
+\tau_E\dot r_E&=\Delta/(\pi\tau_E)+2r_Ev_E, &\quad
+\tau_E\dot v_E&=v_E^2+\bar\eta-(\pi\tau_E r_E)^2+\tau_E C\,(s_E-s_I)+\delta V(t),\\[2pt]
+\tau_I\dot r_I&=\Delta/(\pi\tau_I)+2r_Iv_I, &\quad
 \tau_I\dot v_I&=v_I^2+\bar\eta-(\pi\tau_I r_I)^2+\tau_I C\,(s_E-2s_I),
 \end{aligned}
 \label{eq:nmm2-ping}
@@ -598,6 +604,7 @@ $C=15$, $\tau_E=15$, $\tau_I=7.5$, $\tau_a=10$, $\tau_g=2.5$~ms, with $\bar\eta$
 through the supercritical Hopf at $\bar\eta\!\approx\!1$ ($f_0\!\approx\!55$~Hz). Code:
 \texttt{nmm2\_ping.py} (self-contained).
 
+\subsection{Coupling sweeps, timing, and the tACS control (Jansen--Rit)}
 The coupling sweeps (Figs.~\ref{fig:jcurve},~\ref{fig:timing} and the tACS control,
 Fig.~\ref{fig:tacs}) use the single JR column with the operating point $v^*$ pinned: for
 each global connectivity $C$ we solve the field-free fixed-point relation analytically
@@ -609,7 +616,8 @@ rate for Fig.~\ref{fig:timing}) or a direct in-band sinusoid $s(t)=\varepsilon\c
 lock-in of $v$ at $\Delta f$. Code: \texttt{jr\_jsweep\_engine.py},
 \texttt{timing\_not\_rate.py}, \texttt{tacs\_jsweep.py} (self-contained).
 
-\emph{Entrainment above the Hopf} (Fig.~\ref{fig:entrain}) requires a different read-out:
+\subsection{Entrainment above the Hopf (Jansen--Rit)}
+The entrainment analysis (Fig.~\ref{fig:entrain}) requires a different read-out:
 there the column oscillates autonomously, and the lock-in amplitude at $\Delta f$ no
 longer isolates a driven response. We place the column on the limit-cycle side---input
 $p$ between the SNIC ($p\!\approx\!115$) and the Hopf ($p\!\approx\!315$), where it
