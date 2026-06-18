@@ -976,9 +976,9 @@ The same holds at the spiking level. Integrating the underlying QIF network---$N
 neurons per population, of which NMM2 is the exact mean field---shows TI bunching spike
 \emph{times} into the recovered envelope without changing the mean rate, on both sides
 of the gamma Hopf (Fig.~\ref{fig:qif_raster}). The spiking network reproduces the exact
-NMM2 mean field, and the mean rate stays flat ($\sim$1.1$\times$) while the
-envelope-locked timing grows $15$--$26\times$ (Fig.~\ref{fig:qif_timing}); the full
-microscale analysis is in App.~\ref{app:qif}.
+NMM2 mean field, and the mean rate stays flat ($\times1.05$--$1.10$) while the $\Delta f$
+modulation depth of the rate jumps from near zero to $0.19$--$0.76$
+(Fig.~\ref{fig:qif_timing}); the full microscale analysis is in App.~\ref{app:qif}.
 
 \begin{figure}[t!]
 \centering
@@ -1000,7 +1000,7 @@ gamma resonance ($\Delta f=55$~Hz): spikes bunch into the envelope. \emph{(c)}~O
 free-running gamma, no $\Delta f$ lock-in. \emph{(d)}~Oscillatory, TI on, with the beat set
 \emph{below} the autonomous gamma (beat $\Delta f=42$~Hz, a detuning of $\approx$12~Hz
 from $f_0\!\approx\!54$~Hz): the TI beat \emph{gates} the gamma---the population rate
-gains a $\Delta f$-locked component ($\sim$15$\times$) while the intrinsic $\sim$54~Hz
+gains a $\Delta f$-locked component (modulation depth $0.19$) while the intrinsic $\sim$54~Hz
 gamma persists. This is forced cross-frequency \emph{gating} (PAC), \emph{not} frequency
 entrainment: the $\sim$12~Hz detuning places the beat outside the $1{:}1$ Arnold tongue
 (contrast the genuine frequency locking of Fig.~\ref{fig:entrain}), so the gamma is
@@ -1018,10 +1018,13 @@ envelope-locked timing direct where the raster alone leaves it subtle.}
 \caption{\textbf{Timing, not rate, in the QIF network.} \emph{(a)} Power spectrum of
 $r_E(t)$ in the field-free (autonomous) state: the spiking network ($N=8000$) matches the
 exact NMM2 mean field in the gamma rhythm (both $\sim$53~Hz) and in mean rate
-$\langle r_E\rangle$. \emph{(b)} Fold change of the mean rate
-$\langle r_E\rangle$ and of the envelope-locked timing (lock-in of $r_E$ at $\Delta f$)
-from TI off to on: the mean rate is flat ($\sim$1.1$\times$) while the timing grows
-$15$--$26\times$, in both the forced and oscillatory regimes.}
+$\langle r_E\rangle$. \emph{(b)} The $\Delta f$ \emph{modulation depth}
+$A_\Omega/\langle r_E\rangle$---the amplitude of the $\Delta f$-locked rate oscillation
+as a fraction of the mean rate---off vs.\ on: near zero with TI off ($0.01$--$0.03$),
+large with TI on ($0.19$ oscillatory, $0.76$ forced), while the mean rate stays flat
+($\times1.05$--$1.10$). We report the modulation depth rather than the off$\to$on lock-in
+\emph{ratio} because the latter divides by the near-zero field-free baseline and is
+realization-noisy; the depth uses two well-estimated quantities and is stable.}
 \label{fig:qif_timing}
 \end{figure}
 
@@ -1211,8 +1214,11 @@ f-f_0$ is a distinct quantity.) This detuning lies outside the $1{:}1$ Arnold to
 above the Hopf the beat \emph{gates} the gamma---a forced $\Delta f$-locked cross-frequency
 modulation (PAC)---rather than entraining its frequency; placing $\Delta f$ away from
 $f_0$ also certifies the $\Delta f$-locked component as a real driven effect, not
-coincidence. Timing is quantified by the quadrature
-lock-in of $r_E(t)$ at $\Delta f$ over the measurement window.
+coincidence. Envelope-locked timing is quantified by the quadrature
+lock-in $A_\Omega$ of $r_E(t)$ at $\Delta f$ over the measurement window, reported as the
+\emph{modulation depth} $A_\Omega/\langle r_E\rangle$ (the fractional amplitude of the
+$\Delta f$-locked rate oscillation)---a stable measure, unlike the off$\to$on lock-in
+ratio, whose field-free denominator sits at the noise floor.
 
 The mesoscale result of \S\ref{sec:timing} makes a sharp microscale prediction: TI
 should bunch spike \emph{times} into the recovered envelope---a population-rate
@@ -1227,8 +1233,8 @@ envelope, adding a $\Delta f$-locked component to the population rate, while the
 intrinsic $\sim$54~Hz gamma persists
 (Fig.~\ref{fig:qif_raster}c,d). The spiking network reproduces the exact NMM2 mean field
 (matched gamma spectrum and mean rate, Fig.~\ref{fig:qif_timing}a), and across both
-regimes the mean rate is essentially unchanged ($\sim$1.1$\times$) while the
-envelope-locked component of the population rate grows $15$--$26\times$
+regimes the mean rate is essentially unchanged ($\times1.05$--$1.10$) while the $\Delta f$
+modulation depth of the population rate rises from near zero to $0.19$--$0.76$
 (Fig.~\ref{fig:qif_timing}b): TI realigns timing, not rate---the spiking-level
 counterpart of \S\ref{sec:timing} and a direct microscale analog of the in-vivo
 spike-timing-without-rate finding \cite{vieira2024} (code: \texttt{qif\_raster.py},

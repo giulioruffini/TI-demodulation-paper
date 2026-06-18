@@ -82,20 +82,20 @@ def raster_panel(ax, key, title, show_env, annot=None):
 
 def fig_raster():
     fig, axs = plt.subplots(2, 2, figsize=(10, 6), sharex=True)
-    ac = {k: conds[k]["q"]["AC"] for k in ("forced_off", "forced_on", "entrain_off", "entrain_on")}
-    fold_f = ac["forced_on"] / max(ac["forced_off"], 1e-6)
-    fold_e = ac["entrain_on"] / max(ac["entrain_off"], 1e-6)
-    raster_panel(axs[0, 0], "forced_off", "(a) Forced (below Hopf), TI OFF: asynchronous", False)
+    depth = {k: conds[k]["q"]["AC"] / conds[k]["q"]["rmean"]
+             for k in ("forced_off", "forced_on", "entrain_off", "entrain_on")}
+    raster_panel(axs[0, 0], "forced_off", "(a) Forced (below Hopf), TI OFF: asynchronous", False,
+                 annot="no $\\Delta f$ lock-in\n(depth %.2f)" % depth["forced_off"])
     raster_panel(axs[0, 1], "forced_on",
                  f"(b) Forced, TI ON ($\\Delta f$={conds['forced_on']['q']['df']:.0f} Hz): timing bunched",
-                 True, annot=f"$\\Delta f$ lock-in: {fold_f:.0f}$\\times$ off$\\to$on")
+                 True, annot="$\\Delta f$ modulation\ndepth %.2f" % depth["forced_on"])
     raster_panel(axs[1, 0], "entrain_off",
                  "(c) Oscillatory (above Hopf), TI OFF: free-running gamma", False,
-                 annot="free-running:\nno $\\Delta f$ lock-in")
+                 annot="no $\\Delta f$ lock-in\n(depth %.2f)" % depth["entrain_off"])
     raster_panel(axs[1, 1], "entrain_on",
                  f"(d) Oscillatory, TI ON ($\\Delta f$={conds['entrain_on']['q']['df']:.0f} Hz):"
                  " TI beat gates the gamma ($\\Delta f$-PAC)",
-                 True, annot=f"$\\Delta f$ lock-in: {fold_e:.0f}$\\times$ off$\\to$on")
+                 True, annot="$\\Delta f$ modulation\ndepth %.2f" % depth["entrain_on"])
     beat_inset(axs[0, 1], "forced_off", "forced_on")
     beat_inset(axs[1, 1], "entrain_off", "entrain_on")
     for ax in axs[:, 0]:
@@ -104,7 +104,7 @@ def fig_raster():
         ax.set_xlabel("time (ms)")
     fig.suptitle("QIF spiking network (microscale of NMM2 PING): TI realigns spike timing, "
                  "not mean rate\n(black: E spikes; blue: population rate $r_E(t)$; red: TI envelope; "
-                 "boxed: envelope-locked timing, lock-in at $\\Delta f$)",
+                 "boxed: $\\Delta f$ modulation depth $A_\\Omega/\\langle r_E\\rangle$)",
                  fontsize=10)
     fig.tight_layout(rect=[0, 0, 1, 0.95])
     for ext in ("pdf", "png"):
@@ -132,24 +132,31 @@ def fig_timing():
     axA.legend(fontsize=7.5, frameon=False, loc="upper right")
     axA.spines[["top", "right"]].set_visible(False)
 
-    # (b) fold-change off->on: mean rate vs envelope-locked timing
+    # (b) Df modulation depth = AC(Df)/<r_E> -- a STABLE off->on metric: the amplitude
+    # of the Df-locked rate oscillation as a fraction of the mean rate. Both quantities
+    # are well-estimated, unlike the off/on lock-in RATIO whose denominator sits at the
+    # near-zero noise floor (and so is realization-noisy). Mean rate flatness shown as text.
     regimes = [("forced", "Forced"), ("entrain", "Oscillatory")]
-    rate_fc = []; tim_fc = []
+    depth_off = []; depth_on = []; rate_fc = []
     for reg, _ in regimes:
         qo = conds[f"{reg}_off"]["q"]; qn = conds[f"{reg}_on"]["q"]
+        depth_off.append(qo["AC"] / qo["rmean"])
+        depth_on.append(qn["AC"] / qn["rmean"])
         rate_fc.append(qn["rmean"] / qo["rmean"])
-        tim_fc.append(qn["AC"] / max(qo["AC"], 1e-6))
     x = np.arange(len(regimes)); bw = 0.36
-    axB.bar(x - bw / 2, rate_fc, bw, color=GR, label=r"mean rate $\langle r_E\rangle$")
-    axB.bar(x + bw / 2, tim_fc, bw, color=NEGREEN, label=r"timing: AC at $\Delta f$")
-    axB.axhline(1.0, color="k", lw=0.8, ls=":")
-    for xi, (r, t) in enumerate(zip(rate_fc, tim_fc)):
-        axB.text(xi - bw / 2, r + 0.05, f"${r:.2f}\\times$", ha="center", fontsize=7.5)
-        axB.text(xi + bw / 2, t + 0.05, f"${t:.1f}\\times$", ha="center", fontsize=7.5)
+    axB.bar(x - bw / 2, depth_off, bw, color=GR, label="TI off")
+    axB.bar(x + bw / 2, depth_on, bw, color=NEGREEN, label="TI on")
+    for xi in range(len(regimes)):
+        axB.text(xi - bw / 2, depth_off[xi] + 0.012, f"{depth_off[xi]:.2f}", ha="center", fontsize=7.5)
+        axB.text(xi + bw / 2, depth_on[xi] + 0.012, f"{depth_on[xi]:.2f}", ha="center", fontsize=7.5,
+                 color=NEGREEN, fontweight="bold")
+    axB.text(0.5, 0.90, r"mean rate $\langle r_E\rangle$ flat (off$\to$on $\times$%.2f, $\times$%.2f)"
+             % (rate_fc[0], rate_fc[1]), transform=axB.transAxes, ha="center", fontsize=8, color=GR)
     axB.set_xticks(x); axB.set_xticklabels([n for _, n in regimes])
-    axB.set_ylabel("fold change, TI off $\\to$ on")
-    axB.set_title("(b) TI multiplies envelope-locked timing,\nnot the mean rate", fontsize=9)
+    axB.set_ylabel(r"$\Delta f$ modulation depth  ($A_\Omega/\langle r_E\rangle$)")
+    axB.set_title("(b) TI imposes $\\Delta f$-locked timing, not rate", fontsize=9)
     axB.legend(fontsize=7.5, frameon=False, loc="upper left")
+    axB.set_ylim(0, max(depth_on) * 1.18)
     axB.spines[["top", "right"]].set_visible(False)
 
     fig.tight_layout()

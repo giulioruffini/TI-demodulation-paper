@@ -2,7 +2,9 @@ import numpy as np, jr_jsweep_engine as E
 from scipy.optimize import brentq
 eps,m,fc=0.3,1.0,100.0; dt=2e-4; VSTAR=8.30; sig2=E.Sigm2(VSTAR)
 Chopf=brentq(lambda C: E.jac_eig(E.p_of_C(VSTAR,C),C)[1], 120,140)
-Cs=np.linspace(110, Chopf-0.7, 14)
+# concentrate sampling toward the Hopf (distance-to-Hopf geometric) so the steep
+# 1/gamma rise is well resolved; 28 points, closest at Chopf-0.3 (numerically safe).
+Cs=np.sort(Chopf - np.geomspace(0.3, Chopf-110.0, 28))
 ps=np.array([E.p_of_C(VSTAR,C) for C in Cs])
 gam=np.zeros(len(Cs)); w0=np.zeros(len(Cs))
 for i,C in enumerate(Cs): _,gam[i],w0[i],_=E.jac_eig(ps[i],C)

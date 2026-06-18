@@ -15,7 +15,7 @@ def lockin_grid(Cvals,dfHz,Amp,fc_Hz,t_set=600.0,t_meas=1200.0,dt=0.05):
     vb=av/w.sum();c=ac-vb*awc;s=as_-vb*aws
     return (2/w.sum()*np.sqrt(c**2+s**2)).reshape(CC.shape)
 Chopf=brentq(lambda C: gam_w(fp(C)[0],C)[0],15.0,18.0)
-Cg=np.linspace(13.0,Chopf-0.07,16)
+Cg=np.sort(Chopf - np.geomspace(0.07, Chopf-13.0, 28))   # geometric toward Hopf: resolve the steep rise
 dfHz=np.linspace(40.0,58.0,13)
 gam=np.zeros(len(Cg)); g=(0.05,0.05)
 for i,C in enumerate(Cg):

@@ -1,6 +1,18 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.42 — figstyle rolled across ALL generators; Methods updated for new params; tidy repo (latest)
+## v1.43 — Figs 10/11 finer sampling; STABLE QIF metric (modulation depth) (latest)
+- #1: Figs 10 (jcurve) + 11 (nmm2_jcurve) were kinky -- the steep near-Hopf rise was linearly
+  under-sampled. Switched both coupling grids to GEOMETRIC-toward-Hopf (28 points, distance-to-Hopf
+  geomspace; jcurve closest Chopf-0.3, nmm2 Chopf-0.07). Re-ran run_jcurve + nmm2_jcD; both J-curves
+  and their 1/gamma panels are now smooth.
+- #2: replaced the realization-noisy off->on lock-in RATIO (was 15-26x, unstable because the
+  field-free denominator sits at the lock-in noise floor) with the STABLE Df MODULATION DEPTH
+  A_Omega/<r_E> (fractional amplitude of the Df-locked rate oscillation): off 0.01-0.03, on 0.19
+  (oscillatory) / 0.76 (forced); mean rate flat x1.05-1.10. Redesigned Fig 14b (off/on depth bars +
+  rate annotation), Fig 13 panel annotations (depth), and updated all captions/body + the methods
+  metric definition. Build clean: 29 pp, 0 undefined refs.
+
+## v1.42 — figstyle rolled across ALL generators; Methods updated for new params; tidy repo
 Completed the artistic pass (#2) + Giulio's "well-organized/documented + Methods updated" ask.
 - figstyle.apply() + 300 dpi now in ALL 9 remaining generators (make_jfig, make_nmm2_jfig,
   make_entrain_fig, tacs_jsweep, nmm2_ping, lanmm_resonance, rerun_resonance, khz_analysis,
