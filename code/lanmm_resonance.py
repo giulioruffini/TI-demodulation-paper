@@ -17,6 +17,7 @@ import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+import figstyle; figstyle.apply()
 from matplotlib.colors import LogNorm
 
 FIGDIR = os.environ.get("TN_FIGDIR") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "figures")
@@ -105,7 +106,7 @@ def make_figures():
     a2.set_xlabel(r"envelope frequency $\Delta f$ (Hz)"); a2.legend(fontsize=8)
     fig.suptitle(r"LaNMM alpha resonance, $P_1$ driven (carrier $f_c=100$ Hz)", fontsize=11)
     fig.tight_layout(rect=[0, 0, 1, 0.96])
-    fig.savefig(os.path.join(FIGDIR, "fig_lanmm_resonance.png"), dpi=150)
+    fig.savefig(os.path.join(FIGDIR, "fig_lanmm_resonance.png"), dpi=300)
     fig.savefig(os.path.join(FIGDIR, "fig_lanmm_resonance.pdf")); plt.close(fig)
     print("wrote fig_lanmm_resonance + fig_lanmm_map (peak near alpha ~10 Hz)")
 

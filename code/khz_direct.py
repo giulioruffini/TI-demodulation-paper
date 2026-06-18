@@ -14,6 +14,7 @@ Self-contained (pure numpy; no scipy). JR constants/operating point match the re
 of the repo; the 100 Hz demo is jr_demod.py / Fig. demodulation."""
 import numpy as np, os, sys
 import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
+import figstyle; figstyle.apply()
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from timing_not_rate import A, a, B, b, v0, e0, rr, Sigm, jac_eig, _fp_v
 
@@ -127,5 +128,5 @@ if __name__ == "__main__":
 
     fig.tight_layout()
     for ext in ("pdf", "png"):
-        fig.savefig(os.path.join(FIGS, f"fig_khz_direct.{ext}"), dpi=150, bbox_inches="tight")
+        fig.savefig(os.path.join(FIGS, f"fig_khz_direct.{ext}"), dpi=300, bbox_inches="tight")
     print("wrote fig_khz_direct.pdf / .png")

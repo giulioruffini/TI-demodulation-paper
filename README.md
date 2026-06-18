@@ -31,6 +31,8 @@ bands), to the exact mean-field **NMM2** (derived rectifier), down to a spiking
 ├── figures/                               # fig_*.pdf (used by LaTeX) + fig_*.png (preview)
 ├── code/                                  # all simulation/analysis code
 │   ├── run_all.py                         # ONE-COMMAND reproduce of every figure
+│   ├── figstyle.py                        # shared house style (palette + apply() + panel())
+│   ├── archive/                           # superseded/dead scripts (not in the live pipeline)
 │   └── ...                                # generators + engines (see table below)
 └── docs/
     ├── current_state.md                   # running changelog (newest on top — read first)
@@ -115,11 +117,16 @@ The only remaining **gap** is `fig_lanmm_setup`, an intentionally hand-drawn sch
 
 ### Engines & helpers (not figure generators)
 
+- `figstyle.py` — shared **house figure style**: the Neuroelectrics palette
+  (`NEBLUE/NERED/NEGREEN/...`), an `apply()` that sets consistent type sizes / 300-dpi
+  output / clean spines, and a `panel(ax,'a')` bold-label helper. Figure scripts opt in
+  with `import figstyle; figstyle.apply()`.
 - `jr_demod.py` — core JR engine (sigmoid + derivatives, vectorized RK4, AM field,
-  lock-in, open-loop detector, Hopf helpers). Imported by the old JR pipeline.
+  lock-in, open-loop detector, Hopf helpers). Imported by the JR pipeline.
 - `jr_jsweep_engine.py` — J-curve engine; imported by `run_jcurve/run_res/make_jfig`.
 - `nmm2_jcA.py` — NMM2 J-curve engine (imported by `nmm2_jcD.py`).
 - `timing_not_rate.py`, `qif_raster.py` — data producers (also self-plot where noted).
+  `qif_raster.py` integrates the **N=8000** QIF network (per population).
 - `test_jr_demod.py` — self-checks (derivatives, fixed point, square law, control).
 
 ## Verified

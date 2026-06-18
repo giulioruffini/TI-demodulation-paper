@@ -1,5 +1,6 @@
 import os, numpy as np, matplotlib
 matplotlib.use("Agg"); import matplotlib.pyplot as plt
+import figstyle; figstyle.apply()
 HERE=os.path.dirname(os.path.abspath(__file__))
 FIGS=os.environ.get("TN_FIGDIR") or os.path.join(HERE, "..", "figures")
 os.makedirs(FIGS, exist_ok=True)
@@ -33,5 +34,5 @@ ax[2].set_xlabel(r'$1/\gamma$  (closeness to Hopf)'); ax[2].set_ylabel(r'network
 ax[2].set_title(r'(c) gain $\propto 1/\gamma$, then saturates'); ax[2].legend(fontsize=8); ax[2].grid(alpha=.3,which='both')
 plt.tight_layout()
 plt.savefig(os.path.join(FIGS,"fig_jcurve.pdf"))
-plt.savefig(os.path.join(FIGS,"fig_jcurve.png"),dpi=150)
+plt.savefig(os.path.join(FIGS,"fig_jcurve.png"),dpi=300)
 print(f"saved fig_jcurve.{{pdf,png}} to {FIGS}")

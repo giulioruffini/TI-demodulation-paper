@@ -1,6 +1,20 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.41 — #1 QIF more neurons: N=2000 -> 8000 (cleaner Fig 13/14) (latest)
+## v1.42 — figstyle rolled across ALL generators; Methods updated for new params; tidy repo (latest)
+Completed the artistic pass (#2) + Giulio's "well-organized/documented + Methods updated" ask.
+- figstyle.apply() + 300 dpi now in ALL 9 remaining generators (make_jfig, make_nmm2_jfig,
+  make_entrain_fig, tacs_jsweep, nmm2_ping, lanmm_resonance, rerun_resonance, khz_analysis,
+  khz_direct). Re-rendered every figure to figures/; montage-checked -- no breakage, consistent
+  type/spines/palette across the whole 24-figure set. test_jr_demod: ALL TESTS PASSED.
+- METHODS updated for the new sim parameters: QIF N=2000->8000 (done v1.41); entrainment window
+  f0+-5 -> f0+-12 Hz with the near-Hopf locking ranges now RESOLVED (not grid-clipped; clipped
+  points flagged in the figure); the Arnold-tongue panel description updated to the continuous
+  lock-in heatmap + outlined locked set.
+- DOCS/tidy: README now documents figstyle.py + code/archive/ + the N=8000 QIF; .gitignore now
+  excludes regenerable intermediates (analyses_v2/sweep_hi_*/tacs_jsweep .npz) and non-manuscript
+  byproducts (fig_lanmm_checker, arnold .pdf). Build clean: 29 pp, 0 undefined refs.
+
+## v1.41 — #1 QIF more neurons: N=2000 -> 8000 (cleaner Fig 13/14)
 Giulio's "more neurons" ask. Bumped qif_raster.py N=2000->8000 (ran in just 41 s -- numpy vectorizes
 over neurons, no scipy). Cleaner rate traces + crisper raster; qif figs now 300 dpi. Re-rendered
 fig_qif_raster + fig_qif_timing, recommitted qif_raster.npz. Fold-changes shifted (the off-baseline

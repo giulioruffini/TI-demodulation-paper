@@ -4,6 +4,7 @@ near-Hopf resonator. Pinning v* and sweeping the coupling C(=J) toward the JR al
 Hopf, the tACS lock-in grows as 1/gamma and the resonance sharpens -- the amplification
 half of the TI mechanism, with no carrier. (pure numpy.)"""
 import os, numpy as np, matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
+import figstyle; figstyle.apply()
 FIGS=os.environ.get("TN_FIGDIR") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "figures")
 os.makedirs(FIGS, exist_ok=True)
 A,B=3.25,22.0; a,b=100.0,50.0; v0,e0,rr=6.0,2.5,0.56
@@ -84,5 +85,5 @@ ax[1].set_xlabel(r'$1/\gamma$ (closeness to Hopf)'); ax[1].set_ylabel(r'$A_\Omeg
 ax[1].set_title(r'(b) same $1/\gamma$ amplification as TI'); ax[1].legend(fontsize=8); ax[1].grid(alpha=.3,which='both')
 plt.tight_layout()
 plt.savefig(os.path.join(FIGS,"fig_tacs_jcurve.pdf"))
-plt.savefig(os.path.join(FIGS,"fig_tacs_jcurve.png"),dpi=150)
+plt.savefig(os.path.join(FIGS,"fig_tacs_jcurve.png"),dpi=300)
 print(f"saved fig_tacs_jcurve.{{pdf,png}} to {FIGS}")

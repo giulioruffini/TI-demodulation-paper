@@ -40,6 +40,7 @@ import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+import figstyle; figstyle.apply()
 from matplotlib.colors import LogNorm
 
 # --- NMM2-PING parameters (Raul Palma AUTO model qifnmm.f90 / ping_nmm2.py) ---
@@ -183,7 +184,7 @@ def make_figures(A=8.0, fc_Hz=300.0):
     a2.legend(fontsize=8)
     fig.suptitle(f"NMM2 PING gamma resonance (carrier $f_c={fc_Hz:.0f}$ Hz)", fontsize=11)
     fig.tight_layout(rect=[0, 0, 1, 0.96])
-    fig.savefig(os.path.join(FIGDIR, "fig_nmm2_resonance.png"), dpi=150)
+    fig.savefig(os.path.join(FIGDIR, "fig_nmm2_resonance.png"), dpi=300)
     fig.savefig(os.path.join(FIGDIR, "fig_nmm2_resonance.pdf")); plt.close(fig)
     print("wrote fig_nmm2_resonance and fig_nmm2_map")
     return eta_hopf, f_onset

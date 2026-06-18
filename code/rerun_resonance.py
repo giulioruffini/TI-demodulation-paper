@@ -30,6 +30,7 @@ elif mode=="cycle":
     print("cycle side:");  np.savez("sweep_hi_cycle.npz",  f_om=f_om, rc=sweep(P_CYCLE),  p=P_CYCLE)
 elif mode=="plot":
     import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
+    import figstyle; figstyle.apply()
     S=np.load("sweep_hi_stable.npz"); C=np.load("sweep_hi_cycle.npz")
     f=S["f_om"]; rs=S["rs"]; rc=C["rc"]; ps=S["p"]; pc=C["p"]
     NEB="#1b3a6b"; cols=["#1b3a6b","#2f7ec4","#9ec9e8"]; cols2=["#7a1f1f","#c44","#e8a0a0"]
@@ -47,7 +48,7 @@ elif mode=="plot":
     fig.suptitle("Envelope demodulation $\\rightarrow$ alpha resonance in Jansen-Rit "
                  "(carrier $f_c=100$ Hz, AM input has NO power at $\\Omega$)",fontsize=11)
     fig.tight_layout(rect=[0,0,1,0.95])
-    fig.savefig(f"{FIGS}/fig_resonance.png",dpi=150)
+    fig.savefig(f"{FIGS}/fig_resonance.png",dpi=300)
     fig.savefig(f"{FIGS}/fig_resonance.pdf")
     print("STABLE peaks:", [f"{rs[i].max():.3f}" for i in range(len(ps))])
     print("CYCLE  peaks:", [f"{rc[i].max():.3f}" for i in range(len(pc))])

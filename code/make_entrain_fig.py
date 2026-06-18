@@ -20,6 +20,7 @@ import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+import figstyle; figstyle.apply()
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 FIGS = os.environ.get("TN_FIGDIR") or os.path.join(os.path.dirname(HERE), "figures")
@@ -90,5 +91,5 @@ ax[2].legend(fontsize=7.5, frameon=False, loc="upper left")
 
 fig.tight_layout()
 for ext in ("pdf", "png"):
-    fig.savefig(os.path.join(FIGS, f"fig_entrainment.{ext}"), dpi=150, bbox_inches="tight")
+    fig.savefig(os.path.join(FIGS, f"fig_entrainment.{ext}"), dpi=300, bbox_inches="tight")
 print("wrote fig_entrainment.{pdf,png} to", FIGS)

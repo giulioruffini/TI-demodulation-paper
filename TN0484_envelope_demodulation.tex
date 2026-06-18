@@ -626,17 +626,19 @@ $s(t)=\varepsilon\cos\Omega t$. After discarding transients we take the \emph{do
 output frequency} $f_{\rm out}$ as the largest non-DC peak of the Hann-windowed FFT of
 $v$ over the measurement window (evaluated on a decimated buffer), and call the column
 $1{:}1$ \emph{locked} when $|f_{\rm out}-\Delta f|<0.3$~Hz. The Arnold tongue
-(Fig.~\ref{fig:entrain}a) is the locked set over the $(\Delta f,\varepsilon)$ grid at
-fixed $p$; the locking plateau (Fig.~\ref{fig:entrain}b) is $f_{\rm out}$ vs $\Delta f$ at
+(Fig.~\ref{fig:entrain}a) shows the $\Delta f$ lock-in amplitude over the
+$(\Delta f,\varepsilon)$ grid at fixed $p$, with the $1{:}1$-locked set outlined; the
+locking plateau (Fig.~\ref{fig:entrain}b) is $f_{\rm out}$ vs $\Delta f$ at
 fixed $\varepsilon$---equal to $\Delta f$ inside the tongue, snapping back to $f_0$
 outside. For the criticality panel (Fig.~\ref{fig:entrain}c) we fix $\varepsilon$ and
 sweep $p$ toward the Hopf; for each $p$ the \emph{locking range} is the width of the
 locked $\Delta f$ interval (number of locked points $\times$ grid spacing) on a $\Delta
 f$ grid centered on $f_0(p)$, and the autonomous cycle amplitude is the field-free
-$\max-\min$ of $v$. Two subtleties matter. (i)~The $\Delta f$ window is finite
-($f_0\pm5$~Hz), so the locking ranges \emph{nearest} the Hopf---where the tongue is
-widest---are lower bounds (grid-clipped), and a fixed tolerance/grid sets the absolute
-scale, not the trend. (ii)~As onset is approached the cycle amplitude $\to0$ and the
+$\max-\min$ of $v$. Two subtleties matter. (i)~The $\Delta f$ window
+($f_0\pm12$~Hz) is set wide enough that the near-Hopf locking ranges---where the tongue
+is widest---are resolved rather than grid-clipped (any point whose locked band still
+reaches a window edge is flagged in Fig.~\ref{fig:entrain}c); a fixed tolerance/grid sets
+the absolute scale, not the trend. (ii)~As onset is approached the cycle amplitude $\to0$ and the
 entrainment tongue merges into the forced-resonance bandwidth, so the supercritical
 ``locking range'' and the subcritical $1/\gamma$ susceptibility coincide there by
 construction---which is precisely why responsiveness peaks at criticality on both sides.

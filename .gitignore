@@ -17,3 +17,15 @@ __pycache__/
 
 # Python venv
 .venv/
+
+# Regenerable intermediate data (NOT part of the committed figure-data set;
+# run_all.py / the generators recreate these on demand)
+code/analyses_v2.npz
+code/sweep_hi_stable.npz
+code/sweep_hi_cycle.npz
+code/tacs_jsweep.npz
+
+# Non-manuscript diagnostic outputs and raster-figure PDF byproducts
+figures/fig_lanmm_checker.*
+figures/fig_lanmm_arnold_p1.pdf
+figures/fig_lanmm_arnold_p2.pdf

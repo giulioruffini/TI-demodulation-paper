@@ -9,6 +9,7 @@ fig_nmm2_jcurve.{png,pdf} into ../figures/. Run from the code/ directory:
 Companion to make_jfig.py (the Jansen-Rit J-curve plotter)."""
 import os, numpy as np, matplotlib
 matplotlib.use("Agg"); import matplotlib.pyplot as plt
+import figstyle; figstyle.apply()
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 NPZ  = os.path.join(HERE, "nmm2_jcD.npz")
@@ -43,6 +44,6 @@ ax[1].set_title(r'(b) amplification $\propto 1/\gamma$, saturating')
 ax[1].legend(fontsize=8); ax[1].grid(alpha=.3, which='both')
 
 plt.tight_layout()
-plt.savefig(os.path.join(FIGDIR, "fig_nmm2_jcurve.png"), dpi=135)
+plt.savefig(os.path.join(FIGDIR, "fig_nmm2_jcurve.png"), dpi=300)
 plt.savefig(os.path.join(FIGDIR, "fig_nmm2_jcurve.pdf"))
 print("wrote", os.path.join(FIGDIR, "fig_nmm2_jcurve.{png,pdf}"))
