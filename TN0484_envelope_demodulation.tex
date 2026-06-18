@@ -100,8 +100,9 @@ s(t)=\varepsilon\,[\,1+m\cos(\Omega t)\,]\cos(\omega_c t),\qquad
 \label{eq:am}
 \end{equation}
 where $m$ is the modulation depth, $\Delta f$ the envelope (beat) frequency, $f_c$
-the carrier frequency, and $\varepsilon$ the field amplitude (refined to the
-post-coupling polarization in \S\ref{sec:coupling}); its spectrum has support
+the carrier frequency (the mean $(f_1+f_2)/2$ of the two applied tones, the envelope
+beating at their difference $\Delta f=f_2-f_1$), and $\varepsilon$ the field amplitude
+(refined to the post-coupling polarization in \S\ref{sec:coupling}); its spectrum has support
 \emph{only} at $\omega_c$ and $\omega_c\pm\Omega$
 (Fig.~\ref{fig:demod}): there is no energy at the envelope frequency $\Omega$. A
 linear, time-invariant (LTI) system maps a sinusoid to a sinusoid of the same
@@ -203,7 +204,8 @@ to a mean membrane potential $v=\sum_s x_s$, which a static, saturating
 \Sig(v)=\frac{2e_0}{1+e^{\,\rho(v_0-v)}} ,
 \label{eq:sigmoid}
 \end{equation}
-bounded because firing rates are bounded \cite{ruffini2025rosetta}. The sigmoid is
+with maximal firing rate $2e_0$, half-maximal at the inflection $v_0$, and slope set by
+$\rho$; it saturates because firing rates are bounded \cite{ruffini2025rosetta}. The sigmoid is
 the only nonlinearity in the model, and---as we show---it is what makes
 (de)modulation possible. Its curvature, which does the demodulating, originates in
 the single neuron's own input--output nonlinearity: $\Sig$ is the mean-field
@@ -317,6 +319,9 @@ shows that the carrier dependence enters quadratically, $A_\Omega\propto|H_m(f_c
 Expanding $\Sig$ about an operating point $v^*$ (a Volterra/Taylor expansion, as
 in \cite{ruffini2025ham}) gives
 $\Sig(v^*+s)\approx\Sig(v^*)+\Sig'(v^*)\,s+\half\Sig''(v^*)\,s^2+\dots$
+Intuitively, the quadratic term squares the AM field, multiplying the fast carrier by
+itself; since $\cos^2$ has a constant (DC) part, this rectification drags the slow
+envelope down to baseband---exactly what a diode does in an AM radio.
 The linear term reproduces only the carrier sidebands. The quadratic term
 rectifies the AM field; keeping the baseband part of
 $s^2=\varepsilon^2(1+m\cos\Omega t)^2\cos^2\omega_c t$ (with
@@ -366,9 +371,11 @@ low-pass with corner $a/2\pi\approx16$~Hz. It passes the $\sim$10~Hz envelope
 What turns this recovered envelope into a large, frequency-selective response is
 the network. Linearizing the mass about its fixed point gives a leading eigenvalue pair
 $\lambda=-\gamma\pm i\omega_0$; near the Hopf the response is dominated by this critical
-mode, and the gain below is its one-mode (center-manifold) reduction. Just below a supercritical Hopf, $\gamma\to0^+$ and
-the mass is a weakly damped, high-$Q$ resonator; the demodulated drive
-\eqref{eq:demod} at $\Omega$ excites it with gain
+mode, so the whole network behaves as a single weakly damped harmonic oscillator with
+damping $\gamma$ and natural frequency $\omega_0$ (the gain below is its one-mode,
+center-manifold reduction). Just below a supercritical Hopf, $\gamma\to0^+$ and
+the mass is a high-$Q$ resonator; driving it with the demodulated envelope
+\eqref{eq:demod} at $\Omega$ gives the textbook resonance gain
 \begin{equation}
 G(\Omega)\propto\big[(\omega_0^2-\Omega^2)^2+(2\gamma\Omega)^2\big]^{-1/2},
 \qquad G(\omega_0)\propto\frac{1}{2\gamma\omega_0},
@@ -502,7 +509,10 @@ the closed-loop model for the $p$ values used here.}
 \end{figure}
 
 The response at the envelope frequency is read out with a software lock-in
-amplifier referenced to $\Omega$. We multiply $v(t)$ by quadrature references and
+amplifier referenced to $\Omega$---a standard way to isolate the component of a signal
+at one chosen frequency: multiply by sine and cosine at $\Omega$ and average, so
+everything \emph{not} at $\Omega$ cancels and only the envelope-locked amplitude
+survives. Concretely we multiply $v(t)$ by quadrature references and
 integrate over a Hann-windowed measurement window to obtain the in-phase ($I$) and
 quadrature ($Q$) components,
 \begin{equation}
@@ -1203,7 +1213,9 @@ $\eta_j\sim$ Lorentzian$(\bar\eta,\Delta)$ sampled by deterministic quantiles,
 second-order synapses driven by the empirical population rates, and the AM field
 entering the excitatory membranes---and ask what TI does to the \emph{spikes}.
 The bifurcation parameter is the common background drive $\bar\eta$, with a gamma Hopf at
-$\bar\eta_{\rm Hopf}\!\approx\!1.1$ (autonomous $f_0\!\approx\!54$~Hz); the carrier is
+$\bar\eta_{\rm Hopf}\!\approx\!1.1$ (autonomous $f_0\!\approx\!54$~Hz; these finite-$N$
+values sit just above the exact mean-field Hopf $\bar\eta\!\approx\!1$, $f_0\!\approx\!55$~Hz,
+the small offset being a finite-size effect); the carrier is
 $f_c=300$~Hz and the field amplitude $A_f=35$. Because this is a \emph{gamma} circuit,
 the TI beat $\Delta f$ is chosen in the gamma band, not the alpha band of the JR figures:
 $\Delta f=55$~Hz \emph{at} the forced gamma resonance ($\bar\eta=0.85$, below the Hopf),

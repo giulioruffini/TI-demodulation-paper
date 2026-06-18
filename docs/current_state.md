@@ -1,6 +1,21 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.43 — Figs 10/11 finer sampling; STABLE QIF metric (modulation depth) (latest)
+## v1.44 — readability/pedagogy pass (symbols defined, math intuition, consistency) (latest)
+Subagent-audited the whole tex for symbols/pedagogy/refs/consistency. Applied the high-value fixes:
+- Defined sigmoid params in prose at first use (2e0 max rate, inflection v0, slope rho) -- were only
+  in Table 1, ~60 lines later.
+- Added intuition to the heaviest math: sigma'' square-law expansion ("squaring multiplies the carrier
+  by itself; cos^2 has a DC part -> rectification, like a diode in an AM radio"); the Hopf gain ("near
+  the Hopf the network behaves as a single weakly damped harmonic oscillator... textbook resonance
+  gain"); the lock-in ("isolates one frequency: multiply by sin/cos and average").
+- Beat identity bridge: fc = (f1+f2)/2, Df = f2-f1 (the two-carriers -> AM step was implicit).
+- Reconciled the gamma-Hopf numbers: QIF finite-N (eta_Hopf~1.1, f0~54) vs exact mean field (~1, ~55)
+  -- now stated as a finite-size offset (was a silent inconsistency).
+Build clean: 29 pp, 0 undefined refs. DEFERRED (need Giulio): a primary citation for the human L2/3
+membrane time constant (~16 ms) -- none in the bib, won't fabricate; overloaded glyph A (PSP gain vs
+drive amplitude) -- left as-is (each locally labeled) to avoid rename risk.
+
+## v1.43 — Figs 10/11 finer sampling; STABLE QIF metric (modulation depth)
 - #1: Figs 10 (jcurve) + 11 (nmm2_jcurve) were kinky -- the steep near-Hopf rise was linearly
   under-sampled. Switched both coupling grids to GEOMETRIC-toward-Hopf (28 points, distance-to-Hopf
   geomspace; jcurve closest Chopf-0.3, nmm2 Chopf-0.07). Re-ran run_jcurve + nmm2_jcD; both J-curves
