@@ -1,6 +1,15 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.47 — membrane-tau citation (Eyal/Deitcher) + entrainment-vocabulary Methods paragraph (latest)
+## v1.48 — strengthened the Conclusion (forward-looking close); abstract judged strong (latest)
+Reviewed abstract + conclusion. Abstract = strong/near-great (clear hook, problem, population thesis,
+known-behavior checklist, state-dependence + AM-radio close) -- left as-is. Conclusion was good but
+mostly RESTATED and ended on a mechanism statement; added an elevating third paragraph: testable
+(falsifiable predictions, sec:predictions), actionable (dose TI to brain state, not open-loop),
+the unifying vision (column as AM transceiver for endogenous CFC -> TI drives it as a receiver,
+bookending the intro; cites ruffini2025cfc/ham), and the next steps (realistic kappa(fc), coupled
+noisy columns). Build clean: 32 pp, 0 undefined.
+
+## v1.47 — membrane-tau citation (Eyal/Deitcher) + entrainment-vocabulary Methods paragraph
 - Membrane time constant (the load-bearing kHz-roll-off number): Giulio supplied the real primary
   sources. Cited Deitcher 2017 (tau_m~12 ms human L2/3) + Eyal 2016; softened the claim to "~12 ms;
   we adopt ~16 ms for the soma" and DROPPED the unsupported ~22 ms upper end. 6 new bib entries.
