@@ -24,7 +24,7 @@
 \titleformat{\subsection}{\normalsize\bfseries\color{negray}}{\thesubsection}{0.6em}{}
 
 \pagestyle{fancy}\fancyhf{}
-\lhead{\textcolor{neblue}{\textbf{NEUROELECTRICS}}\ \textcolor{negray}{\small Technical Note}}
+\lhead{\textcolor{neblue}{\textbf{NEUROELECTRICS/BCOM}}\ \textcolor{negray}{\small Technical Note}}
 \rhead{\textcolor{negray}{\small TN0484\,/\,WP0185}}
 \lfoot{\textcolor{negray}{\scriptsize Neuroelectrics / Starlab / BCOM --- Preprint}}
 \rfoot{\textcolor{negray}{\scriptsize \thepage}}
@@ -42,7 +42,7 @@
 a network mechanism for temporal-interference stimulation}\\[10pt]
 \begin{tabular}{@{}ll@{}}
 \textbf{Document:} & TN0484 (Neuroelectrics TN)\,/\,WP0185 (BCOM WP) \\
-\textbf{Author:} & Giulio Ruffini, Raul de Palma, Borja Mercadal, Alex Just, \\ 
+\textbf{Author:} & Giulio Ruffini, Borja Mercadal, Raul de Palma, Alex Just, \\ 
 & Ricardo Salvador and Francesca Castaldo \\
 \textbf{Affiliation:} & Neuroelectrics\,/\,Starlab\,/\,BCOM \\
 \textbf{Date:} & 2026-06-17 \qquad \textbf{Version:} 0.7 \\
@@ -617,6 +617,29 @@ $C=15$, $\tau_E=15$, $\tau_I=7.5$, $\tau_a=10$, $\tau_g=2.5$~ms, with $\bar\eta$
 through the supercritical Hopf at $\bar\eta\!\approx\!1$ ($f_0\!\approx\!55$~Hz). Code:
 \texttt{nmm2\_ping.py} (self-contained).
 
+\subsection{QIF spiking network (microscale of NMM2)}\label{sec:qif-methods}
+NMM2 is the exact mean field of an all-to-all network of QIF neurons
+\cite{montbrio2015,ruffini2025rosetta,clusella2023}, so we integrate that network directly
+to test the prediction at the spike level (\S\ref{sec:qif}): $N=8000$ QIF neurons per
+population, parameters identical to the PING mean field (Eq.~\eqref{eq:nmm2-ping}),
+excitabilities $\eta_j\sim$ Lorentzian$(\bar\eta,\Delta)$ sampled by deterministic
+quantiles, second-order synapses driven by the empirical population rates, and the AM
+field entering the excitatory membranes. The bifurcation parameter is the common
+background drive $\bar\eta$, with a gamma Hopf at $\bar\eta_{\rm Hopf}\!\approx\!1.1$
+(autonomous $f_0\!\approx\!54$~Hz; these finite-$N$ values sit just above the exact
+mean-field Hopf $\bar\eta\!\approx\!1$, $f_0\!\approx\!55$~Hz, the small offset being a
+finite-size effect); the carrier is $f_c=300$~Hz and the field amplitude $A_f=35$. Because
+this is a \emph{gamma} circuit, the TI beat $\Delta f$ is set in the gamma band:
+$\Delta f=55$~Hz \emph{at} the forced gamma resonance ($\bar\eta=0.85$, below the Hopf) and
+$\Delta f=42$~Hz in the oscillatory regime ($\bar\eta=1.5$, above the Hopf)---a detuning of
+$\approx$12~Hz below the autonomous $f_0\!\approx\!54$~Hz that places the beat outside the
+$1{:}1$ Arnold tongue, so the above-Hopf response is gating, not entrainment
+(\S\ref{sec:vocab}). Envelope-locked timing is quantified by the quadrature lock-in
+$A_\Omega$ of $r_E(t)$ at $\Delta f$, reported as the modulation depth
+$A_\Omega/\langle r_E\rangle$ (a stable measure---the off$\to$on lock-in ratio would divide
+by the near-zero field-free baseline). Code: \texttt{qif\_raster.py},
+\texttt{make\_qif\_figs.py}.
+
 \subsection{Coupling sweeps, timing, and the tACS control (Jansen--Rit)}
 The coupling sweeps (Figs.~\ref{fig:jcurve},~\ref{fig:timing} and the tACS control,
 Fig.~\ref{fig:tacs}) use the single JR column with the operating point $v^*$ pinned: for
@@ -990,9 +1013,7 @@ essentially unchanged. This is the mesoscopic counterpart of the in-vivo observa
 that TI alters spike timing but not firing rate in the primate brain
 \cite{vieira2024}: the network selectively amplifies the envelope-locked AC response,
 not the DC rate, so a near-flat mean rate is the expected signature even where TI is
-acting (code: \texttt{timing\_not\_rate.py}). The same
-effect appears directly in the spikes of the underlying QIF network
-(Appendix~\ref{app:qif}).
+acting (code: \texttt{timing\_not\_rate.py}).
 
 \begin{figure}[t!]
 \centering
@@ -1008,13 +1029,27 @@ spike-timing-without-rate finding of \cite{vieira2024}.}
 \label{fig:timing}
 \end{figure}
 
-The same holds at the spiking level. Integrating the underlying QIF network---$N=8000$
-neurons per population, of which NMM2 is the exact mean field---shows TI bunching spike
-\emph{times} into the recovered envelope without changing the mean rate, on both sides
-of the gamma Hopf (Fig.~\ref{fig:qif_raster}). The spiking network reproduces the exact
-NMM2 mean field, and the mean rate stays flat ($\times1.05$--$1.10$) while the $\Delta f$
-modulation depth of the rate jumps from near zero to $0.19$--$0.76$
-(Fig.~\ref{fig:qif_timing}); the full microscale analysis is in App.~\ref{app:qif}.
+\subsection{Microscale confirmation: TI realigns spike timing in the QIF network}\label{sec:qif}
+The mesoscale prediction has a direct microscale test, since NMM2 is the \emph{exact} mean
+field of an all-to-all network of quadratic integrate-and-fire (QIF) neurons with
+Lorentzian-distributed excitabilities
+\cite{montbrio2015,ruffini2025rosetta,clusella2023}. Integrating that spiking network
+($N=8000$ neurons per population, parameters identical to the PING mean field; Methods)
+shows TI bunching spike \emph{times} into the recovered envelope without changing the mean
+rate, on both sides of the gamma Hopf (Fig.~\ref{fig:qif_raster}). Below the Hopf (forced)
+the field-free network fires asynchronously at a flat rate; with TI on, spikes condense
+into envelope-locked bands (Fig.~\ref{fig:qif_raster}a,b). Above the Hopf (oscillatory) the
+free-running gamma is \emph{gated} by the TI beat---forced cross-frequency modulation
+(PAC), not frequency entrainment, since the $\approx$12~Hz detuning lies outside the
+$1{:}1$ tongue: its bursts group into the $\Delta f=42$~Hz envelope while the intrinsic
+$\sim$54~Hz gamma persists (Fig.~\ref{fig:qif_raster}c,d). The spiking network reproduces
+the exact NMM2 mean field (matched gamma spectrum and mean rate,
+Fig.~\ref{fig:qif_timing}a), and across both regimes the mean rate is essentially unchanged
+($\times1.05$--$1.10$) while the $\Delta f$ modulation depth of the population rate rises
+from near zero to $0.19$--$0.76$ (Fig.~\ref{fig:qif_timing}b): TI realigns timing, not
+rate---the spiking-level counterpart of \S\ref{sec:timing} and a direct microscale analog
+of the in-vivo spike-timing-without-rate finding \cite{vieira2024} (code:
+\texttt{qif\_raster.py}, \texttt{make\_qif\_figs.py}).
 
 \begin{figure}[t!]
 \centering
@@ -1317,55 +1352,6 @@ $A_\Omega/\langle r_E\rangle$ & $\Delta f$ modulation depth (envelope-locked tim
 \caption{Symbols, meanings, and (nominal) units. Reused glyphs are disambiguated by
 context; see the head note on $A$ and $C$.}\label{tab:notation}
 \end{longtable}
-
-\section{Microscale: spike-timing realignment in the QIF network}\label{app:qif}
-NMM2 (Eq.~\eqref{eq:mpr}) is the \emph{exact} mean field of an all-to-all network of
-quadratic integrate-and-fire (QIF) neurons with Lorentzian-distributed excitabilities
-\cite{montbrio2015,ruffini2025rosetta,clusella2023}. We can therefore integrate that
-underlying spiking network directly---$N=8000$ QIF neurons per population, parameters
-identical to the PING mean field (Eq.~\eqref{eq:nmm2-ping}), excitabilities
-$\eta_j\sim$ Lorentzian$(\bar\eta,\Delta)$ sampled by deterministic quantiles,
-second-order synapses driven by the empirical population rates, and the AM field
-entering the excitatory membranes---and ask what TI does to the \emph{spikes}.
-The bifurcation parameter is the common background drive $\bar\eta$, with a gamma Hopf at
-$\bar\eta_{\rm Hopf}\!\approx\!1.1$ (autonomous $f_0\!\approx\!54$~Hz; these finite-$N$
-values sit just above the exact mean-field Hopf $\bar\eta\!\approx\!1$, $f_0\!\approx\!55$~Hz,
-the small offset being a finite-size effect); the carrier is
-$f_c=300$~Hz and the field amplitude $A_f=35$. Because this is a \emph{gamma} circuit,
-the TI beat $\Delta f$ is chosen in the gamma band, not the alpha band of the JR figures:
-$\Delta f=55$~Hz \emph{at} the forced gamma resonance ($\bar\eta=0.85$, below the Hopf),
-and $\Delta f=42$~Hz in the oscillatory regime ($\bar\eta=1.5$, above the Hopf)---a
-detuning of $\approx$12~Hz below the autonomous $f_0\!\approx\!54$~Hz. ($\Delta f$ is the
-beat frequency, i.e.\ the difference between the two TI carriers; the detuning $\Delta
-f-f_0$ is a distinct quantity.) This detuning lies outside the $1{:}1$ Arnold tongue, so
-above the Hopf the beat \emph{gates} the gamma---a forced $\Delta f$-locked cross-frequency
-modulation (PAC)---rather than entraining its frequency; placing $\Delta f$ away from
-$f_0$ also certifies the $\Delta f$-locked component as a real driven effect, not
-coincidence. Envelope-locked timing is quantified by the quadrature
-lock-in $A_\Omega$ of $r_E(t)$ at $\Delta f$ over the measurement window, reported as the
-\emph{modulation depth} $A_\Omega/\langle r_E\rangle$ (the fractional amplitude of the
-$\Delta f$-locked rate oscillation)---a stable measure, unlike the off$\to$on lock-in
-ratio, whose field-free denominator sits at the noise floor.
-
-The mesoscale result of \S\ref{sec:timing} makes a sharp microscale prediction: TI
-should bunch spike \emph{times} into the recovered envelope---a population-rate
-oscillation at $\Delta f$---without changing the time-averaged rate $\langle r_E\rangle$.
-Figure~\ref{fig:qif_raster} confirms it on both sides of the gamma Hopf. Below the Hopf
-(forced) the field-free network fires asynchronously at a flat rate; with TI on, spikes
-condense into envelope-locked bands (Fig.~\ref{fig:qif_raster}a,b). Above the Hopf
-(oscillatory) the free-running gamma is \emph{gated} by the TI beat---forced
-cross-frequency modulation (PAC), not frequency entrainment, since the $\approx$12~Hz
-detuning lies outside the $1{:}1$ tongue: its bursts group into the $\Delta f=42$~Hz
-envelope, adding a $\Delta f$-locked component to the population rate, while the
-intrinsic $\sim$54~Hz gamma persists
-(Fig.~\ref{fig:qif_raster}c,d). The spiking network reproduces the exact NMM2 mean field
-(matched gamma spectrum and mean rate, Fig.~\ref{fig:qif_timing}a), and across both
-regimes the mean rate is essentially unchanged ($\times1.05$--$1.10$) while the $\Delta f$
-modulation depth of the population rate rises from near zero to $0.19$--$0.76$
-(Fig.~\ref{fig:qif_timing}b): TI realigns timing, not rate---the spiking-level
-counterpart of \S\ref{sec:timing} and a direct microscale analog of the in-vivo
-spike-timing-without-rate finding \cite{vieira2024} (code: \texttt{qif\_raster.py},
-\texttt{make\_qif\_figs.py}).
 
 \section{TI requires detection: the Stuart--Landau normal form amplifies but cannot demodulate}\label{app:sl}
 The two ingredients of the mechanism---near-Hopf \emph{amplification} and square-law

@@ -1,6 +1,18 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.49 — NEW appendix: Stuart-Landau dissociation (amplifies but cannot demodulate) (latest)
+## v1.50 — promoted QIF to a main Results subsection (resolved the appendix straddle) (latest)
+Editorial review flagged that QIF straddled -- its figures (13,14) were main but its section/analysis
+were in the appendix. Target venue is PLOS Comp Biol / J Neural Eng (modeling-friendly: thoroughness +
+figure count are appropriate, no cutting needed). Fix:
+- NEW main Results subsection "Microscale confirmation: TI realigns spike timing in the QIF network"
+  (sec:qif), after sec:timing -- the full spiking-confirmation analysis (was appendix prose).
+- NEW Methods subsection "QIF spiking network (microscale of NMM2)" (sec:qif-methods), after the NMM2
+  PING methods -- the network setup/params/metric definition (was appendix prose).
+- DELETED the appendix QIF section. Appendix is now cleanly Notation -> Stuart-Landau -> Supplementary
+  figures. No dangling app:qif refs. Figs 13/14 unchanged (already main).
+Full build (pdflatex x2 + bibtex): 33 pp, 0 undefined, 0 LaTeX/bibtex warnings.
+
+## v1.49 — NEW appendix: Stuart-Landau dissociation (amplifies but cannot demodulate)
 Added a tight (~half page + 1 S-figure) appendix "TI requires detection: the Stuart-Landau normal
 form amplifies but cannot demodulate" (app:sl). DETECTION ONLY -- no BOLD/FC/readout (separate TN).
 - Claim+proof: SL zdot=(a+iw0)z-|z|^2 z+F, AM field, stable a<0. Carrier-harmonic PARITY argument:
