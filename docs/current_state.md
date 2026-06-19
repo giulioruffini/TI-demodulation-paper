@@ -1,6 +1,19 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.51 — predictions-vs-evidence table (honest data confrontation) (latest)
+## v1.52 — NMM2 two-knob criticality clarified in Methods; SL proof made explicit (latest)
+- Giulio: Methods only stated eta-bar but Fig 11 shows the role of coupling J. Resolved: NMM2 has TWO
+  criticality knobs (like JR's p and C) -- eta-bar (background drive, for the resonance map) and J=C
+  (coupling, for the J-curve). Added the J-sweep method to the NMM2 Methods: sweep J at fixed eta-bar to
+  the gamma Hopf J* (bisection on the leading eigenvalue), read the r_E lock-in peak; NO operating-point
+  pinning needed because the v_E^2 rectifier coefficient is fixed by construction -> sweeping J changes
+  only gamma. (The Results already explained this; the gap was Methods-only.) Code: nmm2_jcA/jcD.
+- SL appendix proof made EXPLICIT (was a verbal parity argument): plugged in the carrier-harmonic ansatz
+  z=sum Z_k e^{i k wc t} (slow envelopes), derived the mode equation Zdot_k=[a+i(w0-k wc)]Z_k - cubic + F_k,
+  and showed the odd-k subspace is invariant+attracting (even-k modes have no source -> decay at gamma),
+  so z tracks the forcing's Fourier structure (odd harmonics only) and the baseband k=0 component Z_0=0 ->
+  zero weight at Df. Contrast: square-law (even) gives a k=0 term. Build clean: 34 pp, 0 undefined.
+
+## v1.51 — predictions-vs-evidence table (honest data confrontation)
 #3 (data confrontation), feasible+honest version: added Table tab:predictions to sec:predictions
 mapping each prediction -> existing evidence (cited) -> sharp test. Two rows are ALREADY SUPPORTED
 qualitatively: timing-not-rate (Vieira 2024, in vivo) and network-not-single-cell read-out (Caldas

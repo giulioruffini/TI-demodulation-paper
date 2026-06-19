@@ -622,6 +622,17 @@ $C=15$, $\tau_E=15$, $\tau_I=7.5$, $\tau_a=10$, $\tau_g=2.5$~ms, with $\bar\eta$
 through the supercritical Hopf at $\bar\eta\!\approx\!1$ ($f_0\!\approx\!55$~Hz). Code:
 \texttt{nmm2\_ping.py} (self-contained).
 
+Two parameters reach this gamma Hopf, and we use both as criticality knobs---just as the
+external drive $p$ and the coupling $C$ both reach the JR alpha Hopf. The background drive
+$\bar\eta$ (above) is swept for the resonance map (Fig.~\ref{fig:nmm2_map}); the global
+coupling $C\,(\equiv J)$ is swept for the J-curve (Fig.~\ref{fig:nmm2_jcurve}): we vary
+$J$ at fixed $\bar\eta$ toward the gamma Hopf $J^*$ (located by bisection on the leading
+Jacobian eigenvalue) and read the lock-in peak of $r_E$ over $\Delta f$. Unlike the JR
+J-curve, \emph{no operating-point pinning is needed}, because here the rectifier is the
+exact $v_E^2$ term, whose quadratic coefficient is fixed by construction; sweeping $J$
+therefore changes only the damping $\gamma$, isolating the amplification cleanly. Code:
+\texttt{nmm2\_jcA.py} (engine), \texttt{nmm2\_jcD.py}.
+
 \subsection{QIF spiking network (microscale of NMM2)}\label{sec:qif-methods}
 NMM2 is the exact mean field of an all-to-all network of QIF neurons
 \cite{montbrio2015,ruffini2025rosetta,clusella2023}, so we integrate that network directly
@@ -1408,14 +1419,34 @@ sharp. The Stuart--Landau (SL) equation \cite{pikovsky2001} is
 with the AM field $F(t)=\varepsilon[1+m\cos\Omega t]\cos\omega_c t$. Does $z$ acquire any
 power at the beat $\Omega$ (i.e.\ at $\Delta f$)?
 
-\emph{Parity argument.} Index Fourier components by the carrier harmonic $k$ (frequency
-near $k\omega_c$). The field forces only at \emph{odd} $k=\pm1$; the linear operator
-$(a+i\omega_0)$ preserves $k$; and the cubic $|z|^2z=z\bar z z$ maps
-$\text{odd}\times\text{odd}\times\text{odd}\to\text{odd}$. Hence $z$ has support only at
-odd $k$ to all orders in $\varepsilon$, and its weight at the beat ($k=0$, even) is
-identically zero. Equivalently, demodulation is the $O(\varepsilon^2)$ \emph{square-law}
-term $\half\Sig''\varepsilon^2 m$ (Eq.~\eqref{eq:demod}); the SL normal form has \emph{no}
-even-order term, so that contribution vanishes. \textbf{The SL resonator amplifies
+\emph{Proof (carrier-harmonic ansatz).} Expand $z$ in harmonics of the carrier with
+slowly varying envelopes,
+\begin{equation}
+z(t)=\sum_{k\in\mathbb{Z}} Z_k(t)\,e^{ik\omega_c t},
+\label{eq:sl-ansatz}
+\end{equation}
+the $Z_k$ varying on the slow envelope scale $\Omega\ll\omega_c$. The field forces only
+the $k=\pm1$ harmonics,
+$F=\tfrac{\varepsilon}{2}(1+m\cos\Omega t)\,(e^{i\omega_c t}+e^{-i\omega_c t})$, and the
+cubic is $|z|^2z=\sum_{l,p,q}Z_l\bar Z_p Z_q\,e^{i(l-p+q)\omega_c t}$, feeding carrier index
+$k=l-p+q$. Substituting Eq.~\eqref{eq:sl-ansatz} into Eq.~\eqref{eq:sl} and matching each
+$e^{ik\omega_c t}$,
+\begin{equation}
+\dot Z_k=\big[a+i(\omega_0-k\omega_c)\big]Z_k\;-\!\!\sum_{l-p+q=k}\!\!Z_l\bar Z_p Z_q\;+F_k .
+\label{eq:sl-modes}
+\end{equation}
+The \emph{odd-$k$ subspace is invariant and attracting}: suppose $Z_k=0$ for every even
+$k$. Then for even $k$ both sources vanish---$F_k=0$, and the cubic would need $l-p+q=k$
+even with $l,p,q$ odd, which is impossible---leaving $\dot Z_k=[a+i(\omega_0-k\omega_c)]Z_k$,
+a linear mode that decays at rate $-a=\gamma>0$. So the solution tracks the Fourier
+structure of the forcing: $z$ lives only on \emph{odd} carrier harmonics (with sidebands at
+$k\omega_c\pm n\Omega$), to all orders in $\varepsilon$. The demodulated line at the beat is
+a \emph{baseband} signal---it would sit in the $k=0$ component---but $Z_0\equiv0$, so $z$
+has identically zero weight at $\Delta f$. A square-law (\emph{even}) nonlinearity instead
+produces a nonzero $k=0$ term (from $\cos^2\omega_c t\to\half$) that oscillates at
+$\Omega$---the demodulated line the odd cubic cannot make. Equivalently, demodulation is
+the $O(\varepsilon^2)$ term $\half\Sig''\varepsilon^2 m$ (Eq.~\eqref{eq:demod}); the SL
+normal form has \emph{no} even-order term. \textbf{The SL resonator amplifies
 ($\sim1/\gamma$) but does not detect.}
 
 \emph{Numerical confirmation} (Fig.~\ref{fig:sl}; $a=-0.5$, $f_0=10$, $f_c=100$,
