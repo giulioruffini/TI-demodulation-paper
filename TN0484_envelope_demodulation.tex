@@ -113,8 +113,9 @@ low-pass---often invoked as ``the neuron follows the slow envelope''---therefore
 cannot by itself demodulate TI. Demodulation requires a nonlinearity. This is
 the founding lesson of AM radio \cite{nahin2001}: a receiver cannot
 recover the message with linear components alone; it needs a nonlinear element (a
-square-law device or a diode) to shift spectral energy back to baseband, followed
-by a tuned filter to select the station and a low-pass to read the envelope.
+square-law device or a diode) to shift spectral energy down to \emph{baseband}---the
+low-frequency band near $0$~Hz where the message lives---followed by a tuned filter to
+select the station and a low-pass to read the envelope.
 
 Where, then, is the nonlinearity in the brain? The original passive-filtering
 intuition is now widely regarded as insufficient, since a linear filter cannot
@@ -320,13 +321,17 @@ shows that the carrier dependence enters quadratically, $A_\Omega\propto|H_m(f_c
 Expanding $\Sig$ about an operating point $v^*$ (a Volterra/Taylor expansion, as
 in \cite{ruffini2025ham}) gives
 $\Sig(v^*+s)\approx\Sig(v^*)+\Sig'(v^*)\,s+\half\Sig''(v^*)\,s^2+\dots$
-Intuitively, the quadratic term squares the AM field, multiplying the fast carrier by
-itself; since $\cos^2$ has a constant (DC) part, this rectification drags the slow
-envelope down to baseband---exactly what a diode does in an AM radio.
-The linear term reproduces only the carrier sidebands. The quadratic term
-rectifies the AM field; keeping the baseband part of
-$s^2=\varepsilon^2(1+m\cos\Omega t)^2\cos^2\omega_c t$ (with
-$\cos^2\omega_c t\to\half$),
+Intuitively, the difficulty is that the field carries power only near the carrier
+$\omega_c$, far from the slow envelope frequency $\Omega$, so some operation must move
+power down to $\Omega$. The \emph{linear} term cannot: it passes the input lines straight
+through, reproducing the carrier and its two flanking \emph{sidebands} (the lines at
+$\omega_c\pm\Omega$ created by the modulation), but still nothing at $\Omega$. The
+\emph{quadratic} term can: squaring the field multiplies the fast carrier by itself, and
+because $\cos^2$ has a constant (zero-frequency) part, the squaring folds power down to
+\emph{baseband}---the low-frequency band near $0$~Hz, where the slow envelope lives. This
+is \emph{rectification}, exactly what a diode does in an AM radio. Keeping the baseband
+(low-frequency) part of $s^2=\varepsilon^2(1+m\cos\Omega t)^2\cos^2\omega_c t$ (the fast
+$\cos^2\omega_c t$ averages to its mean $\half$),
 \begin{equation}
 \half\Sig''\,s^2\big|_{\mathrm{LF}}
 =\tfrac14\Sig''\varepsilon^2\Big[\big(1+\tfrac{m^2}{2}\big)+2m\cos\Omega t
