@@ -67,6 +67,7 @@ STEPS = [
     ("tacs_jsweep",      "tacs_jsweep.py",     [], ["fig_tacs_jcurve"], "pure numpy"),
     ("make_nmm2_jfig",   "make_nmm2_jfig.py",  [], ["fig_nmm2_jcurve"], "needs nmm2_jcD.npz"),
     ("make_entrain_fig", "make_entrain_fig.py", [], ["fig_entrainment"], "needs entrain*.npz"),
+    ("sl_dissociation",  "sl_dissociation.py", [], ["fig_sl_dissociation"], "Stuart-Landau control (pure numpy)"),
     ("make_timing_fig",  "make_timing_fig.py", [], ["fig_timing_not_rate"], "needs timing_not_rate.npz"),
     ("make_qif_figs",    "make_qif_figs.py",   [], ["fig_qif_raster", "fig_qif_timing"], "needs qif_raster.npz"),
 ]

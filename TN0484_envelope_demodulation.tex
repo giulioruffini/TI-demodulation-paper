@@ -1367,6 +1367,57 @@ counterpart of \S\ref{sec:timing} and a direct microscale analog of the in-vivo
 spike-timing-without-rate finding \cite{vieira2024} (code: \texttt{qif\_raster.py},
 \texttt{make\_qif\_figs.py}).
 
+\section{TI requires detection: the Stuart--Landau normal form amplifies but cannot demodulate}\label{app:sl}
+The two ingredients of the mechanism---near-Hopf \emph{amplification} and square-law
+\emph{detection}---are separable, and the universal Hopf normal form makes the separation
+sharp. The Stuart--Landau (SL) equation \cite{pikovsky2001} is
+\begin{equation}
+\dot z=(a+i\omega_0)z-|z|^2z+F(t),\qquad \gamma\equiv-a>0\ \ (\text{stable side}),
+\label{eq:sl}
+\end{equation}
+with the AM field $F(t)=\varepsilon[1+m\cos\Omega t]\cos\omega_c t$. Does $z$ acquire any
+power at the beat $\Omega$ (i.e.\ at $\Delta f$)?
+
+\emph{Parity argument.} Index Fourier components by the carrier harmonic $k$ (frequency
+near $k\omega_c$). The field forces only at \emph{odd} $k=\pm1$; the linear operator
+$(a+i\omega_0)$ preserves $k$; and the cubic $|z|^2z=z\bar z z$ maps
+$\text{odd}\times\text{odd}\times\text{odd}\to\text{odd}$. Hence $z$ has support only at
+odd $k$ to all orders in $\varepsilon$, and its weight at the beat ($k=0$, even) is
+identically zero. Equivalently, demodulation is the $O(\varepsilon^2)$ \emph{square-law}
+term $\half\Sig''\varepsilon^2 m$ (Eq.~\eqref{eq:demod}); the SL normal form has \emph{no}
+even-order term, so that contribution vanishes. \textbf{The SL resonator amplifies
+($\sim1/\gamma$) but does not detect.}
+
+\emph{Numerical confirmation} (Fig.~\ref{fig:sl}; $a=-0.5$, $f_0=10$, $f_c=100$,
+$\Delta f=10$~Hz, $\varepsilon=0.5$, $m=1$): a square-law detector on the same field gives
+a $\Delta f$ lock-in of $F^2|_{\Delta f}=2.5\times10^{-1}$, whereas the SL state
+$\mathrm{Re}\,z$ has only $\sim$$2\times10^{-8}$ at $\Delta f$---at the numerical floor,
+$\sim$$10^{7}\times$ smaller. Driven instead \emph{directly} in band (a tACS-like drive at
+$\Delta f$, no carrier), the same SL gives a forced lock-in that grows as $1/\gamma$ toward
+the Hopf (Fig.~\ref{fig:sl}a).
+
+\emph{The dissociation.} The SL thus responds to tACS (a direct in-band drive feeds the
+universal near-Hopf susceptibility, $\propto1/\gamma$) but is blind to TI (it has no
+square-law to demodulate the carrier). This isolates the paper's two ingredients:
+\emph{amplification} is the model-independent near-Hopf susceptibility, shared with tACS
+and with any normal-form resonator; \emph{detection} is the model-\emph{specific}
+square-law that the SL normal form lacks. It also sharpens the founding point of
+\S\ref{sec:coupling}: a critical resonator alone cannot demodulate---TI requires a detector.
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=0.84\textwidth]{fig_sl_dissociation.pdf}
+\caption{\textbf{Stuart--Landau dissociation: amplification without detection.} SL normal
+form (Eq.~\eqref{eq:sl}). \emph{(a)} Driven directly in band at $\Delta f$ (tACS-like; weak
+drive, linear regime), the forced lock-in of $\mathrm{Re}\,z$ grows as $1/\gamma$ toward
+the Hopf---the universal near-Hopf amplification. \emph{(b)} Under the AM \emph{carrier}
+(TI), the $\Delta f$ line in $\mathrm{Re}\,z$ sits at the numerical floor
+($\sim$$2\times10^{-8}$), while a square-law detector $F^2$ recovers it
+($2.5\times10^{-1}$)---a $\sim$$10^{7}\times$ gap. The normal form amplifies but cannot
+demodulate. Code: \texttt{sl\_dissociation.py} (self-contained).}
+\label{fig:sl}
+\end{figure}
+
 \section{Supplementary figures}
 
 \begin{figure}[t!]

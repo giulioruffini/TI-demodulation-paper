@@ -1,6 +1,22 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.48 — strengthened the Conclusion (forward-looking close); abstract judged strong (latest)
+## v1.49 — NEW appendix: Stuart-Landau dissociation (amplifies but cannot demodulate) (latest)
+Added a tight (~half page + 1 S-figure) appendix "TI requires detection: the Stuart-Landau normal
+form amplifies but cannot demodulate" (app:sl). DETECTION ONLY -- no BOLD/FC/readout (separate TN).
+- Claim+proof: SL zdot=(a+iw0)z-|z|^2 z+F, AM field, stable a<0. Carrier-harmonic PARITY argument:
+  field forces odd k=+-1; cubic z|z|^2 maps odd->odd; linear preserves k => z lives only at odd k,
+  zero weight at Df (k=0) to all orders. Corollary: demod is the O(eps^2) square-law (1/2)sigma'' eps^2 m;
+  SL has no even-order term => identically zero. SL amplifies ~1/gamma but does not detect.
+- NEW code/sl_dissociation.py (pure numpy + figstyle): (a) SL forced in-band -> lock-in ~1/gamma (tACS
+  works; weak drive for clean 1/gamma); (b) SL under AM carrier -> Df line at floor (~2e-8) vs square-law
+  F^2 control = 0.25 -> ~1e7x gap. fig_sl_dissociation (S-numbered). Confirmed numbers: F^2@Df=2.5e-1
+  (matches spec exactly), SL Re(z)@Df~2e-8.
+- The dissociation isolates the paper's two ingredients: amplification = universal near-Hopf
+  susceptibility (shared w/ tACS); detection = model-specific square-law SL lacks. Reinforces sec:coupling.
+- Cites pikovsky2001 (already in bib). Main text UNTOUCHED. Full build (pdflatex x2 + bibtex):
+  33 pp, 0 undefined, 0 LaTeX warnings, 0 bibtex warnings.
+
+## v1.48 — strengthened the Conclusion (forward-looking close); abstract judged strong
 Reviewed abstract + conclusion. Abstract = strong/near-great (clear hook, problem, population thesis,
 known-behavior checklist, state-dependence + AM-radio close) -- left as-is. Conclusion was good but
 mostly RESTATED and ended on a mechanism statement; added an elevating third paragraph: testable

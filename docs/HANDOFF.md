@@ -1,22 +1,18 @@
 # HANDOFF — TN0484 (what's left)
 
-Living handoff between the Cowork session and Claude Code (and Giulio).
-Full chronological detail is in `docs/current_state.md` (newest on top, now v1.21).
-Last manuscript state: **25 pp, compiles clean (pdflatex x2 + bibtex), 0 undefined refs,
-0 bibtex warnings.** Latin Modern (classic) font; supplementary figures appendix AFTER
-the bibliography.
+Living handoff. Full chronological detail is in `docs/current_state.md` (newest on top,
+now **v1.49**). The repo is migrated to GitHub (`giulioruffini/TI-demodulation-paper`)
+and all work is committed & pushed; the sections below are historical.
 
-## 0. DO THIS FIRST — commit & push
-The entire Cowork session's edits are ON DISK but **NOT committed** (the Cowork sandbox
-git is blocked on the Dropbox `.git`; all edits were made via verified python
-string-replace, with backups in `/tmp/TN0484.*.tex`). From Code/terminal:
+Last manuscript state: **33 pp, compiles clean (pdflatex x2 + bibtex), 0 undefined refs,
+0 LaTeX warnings, 0 bibtex warnings.** Latin Modern font; house figure style
+(`code/figstyle.py`) across the 24-figure set; appendices: Notation/units table, QIF
+microscale, **Stuart--Landau dissociation (amplifies but cannot demodulate)**, and
+supplementary figures.
 
-    git add -A
-    git commit -m "Session: Nature-style abstract+title, tACS supplement (Fig S3), metrics/subcritical notes, Rosetta cite, Landau pass"
-    git push
-
-GitHub currently has only up to `246afa9` (pre this session). Push before migrating
-(see section 4) or work will be stranded in the Dropbox copy.
+## 0. Status — committed & pushed
+The migration is done and the working tree is clean; nothing is stranded. (Historical:
+an earlier Cowork session's edits had to be hand-committed after the Dropbox→GitHub move.)
 
 ## 1. Open tasks (priority order)
 

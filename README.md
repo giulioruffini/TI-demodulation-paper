@@ -107,6 +107,7 @@ to `figures/` and runs from committed inputs; **gap** = no working generator.
 | fig_tacs_jcurve | `tacs_jsweep.py` | (inline) | – | OK |
 | fig_nmm2_jcurve | `make_nmm2_jfig.py` | nmm2_jcD.npz ‡ | – | OK |
 | fig_entrainment | `make_entrain_fig.py` | entrain*.npz ‡ | – | OK |
+| fig_sl_dissociation | `sl_dissociation.py` | (inline) | – | OK |
 | fig_lanmm_setup | — | — | – | **gap**: hand-drawn schematic |
 
 † `analyses_v2.npz` is **not** committed — `run_all.py` regenerates it via `analyses_v2.py` first.
