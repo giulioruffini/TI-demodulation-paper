@@ -1124,6 +1124,45 @@ sweep $\Delta f$ through a region's intrinsic band across brain states and track
 resonant peak and its width.
 \end{enumerate}
 
+Table~\ref{tab:predictions} confronts these predictions---together with two corollaries
+the mechanism already shares with published observations---against existing evidence.
+Two are, in qualitative form, \emph{already supported}: TI alters spike timing but not
+firing rate in vivo \cite{vieira2024} (our $G(\omega_0)\!\gg\!G(0)$ asymmetry,
+\S\ref{sec:timing}--\ref{sec:qif}), and most pyramidal TI responses vanish when synaptic
+transmission is blocked \cite{caldas2024} (a network, not single-cell, read-out). A
+quantitative reanalysis of these datasets against the model is a natural next step.
+
+\begin{table}[h]
+\centering\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}p{0.27\textwidth} p{0.35\textwidth} p{0.30\textwidth}@{}}
+\toprule
+\textbf{Prediction (model basis)} & \textbf{Existing evidence} & \textbf{Sharp test} \\
+\midrule
+Timing, not rate: TI amplifies the envelope-locked AC, not the DC mean rate
+($G(\omega_0)\!\gg\!G(0)$) & \emph{Supported in vivo}: TI alters spike timing but not
+firing rate, primate \cite{vieira2024} & Lock-in of spike timing at $\Delta f$ vs.\ the
+mean-rate change \\
+Network, not single-cell, read-out (population sigmoid + synaptic recurrence) &
+\emph{Supported in vitro}: most pyramidal TI responses vanish under synaptic block
+\cite{caldas2024} & Synaptic block should abolish the demodulated response \\
+Carrier independence at fixed polarization (no $\omega_c$ in $A_\Omega$) & TI thresholds
+inherit the carrier's $f_c$-dependence \cite{opancar2025,peripheral2023}; bare kHz weakly
+effective \cite{esmaeilpour2020} & Fix in-zone polarization, sweep $f_c\!\to$ flat envelope
+response \\
+Operating-point ($\Sig''$) control and sign reversal across $v_0$ & Cell-type-specific TI
+responses (PV vs.\ pyramidal) \cite{caldas2024} & Shift $v^*$ (neuromodulation/state)
+$\to$ scaling and sign flip \\
+Frequency selectivity, sharpened $\sim1/\gamma$ near criticality & --- (a sharp new
+prediction; largely untested) & Sweep $\Delta f$ through a region's band across brain
+states \\
+\bottomrule
+\end{tabular}
+\caption{The mechanism's predictions confronted with existing in-vivo / in-vitro evidence.
+Entries cite documented qualitative findings; quantitative reanalysis is left to future
+work.}\label{tab:predictions}
+\end{table}
+
 \section{Discussion}
 We have given a mesoscopic, population-level account of TI demodulation in which
 the firing-rate sigmoid is a square-law detector and proximity to a Hopf

@@ -1,6 +1,17 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.50 — promoted QIF to a main Results subsection (resolved the appendix straddle) (latest)
+## v1.51 — predictions-vs-evidence table (honest data confrontation) (latest)
+#3 (data confrontation), feasible+honest version: added Table tab:predictions to sec:predictions
+mapping each prediction -> existing evidence (cited) -> sharp test. Two rows are ALREADY SUPPORTED
+qualitatively: timing-not-rate (Vieira 2024, in vivo) and network-not-single-cell read-out (Caldas
+2024, synaptic block in vitro); carrier-independence (opancar/peripheral/esmaeilpour) + operating-point
+sign-flip (Caldas cell-type) partially supported; frequency-selectivity flagged as a new untested
+prediction. Caption notes quantitative reanalysis is future work. NO fabricated data -- a real
+quantitative overlay (model curve on digitized published points) would need Giulio to supply the
+digitized values (e.g. Vieira fold-changes). Build clean (pdflatex x2 + bibtex): 33 pp, 0 undefined,
+0 LaTeX warnings (one pre-existing 2pt overfull in the notation table, negligible).
+
+## v1.50 — promoted QIF to a main Results subsection (resolved the appendix straddle)
 Editorial review flagged that QIF straddled -- its figures (13,14) were main but its section/analysis
 were in the appendix. Target venue is PLOS Comp Biol / J Neural Eng (modeling-friendly: thoroughness +
 figure count are appropriate, no cutting needed). Fix:
