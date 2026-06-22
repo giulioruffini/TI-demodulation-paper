@@ -1,6 +1,19 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.53 — QIF raster: denser sample so spike "bunching" is visible by eye (latest)
+## v1.54 — QIF panel (d) inset: proper gamma-amplitude PAC (was an unconvincing raw-rate fold) (latest)
+Giulio flagged the (d) "r_E folded on Df" inset as unconvincing -- the blue (on) curve showed messy
+gamma wiggles, not a clean Df-locked gating bump. Diagnosis: gamma(~54) and beat(42) are near 9:7
+COMMENSURATE, so the gamma sits at fixed phases vs the beat and folding the raw rate preserves the
+gamma residual no matter how long you average (averaging-more does NOT help). Fix in make_qif_figs.py:
+new gamma_amp_fold() -- FFT band-pass r_E around gamma (45-70 Hz), take the Hilbert AMPLITUDE envelope
+(numpy-only analytic signal), fold THAT on the beat phase. Taking the amplitude discards the gamma
+carrier -> immune to the commensurability. Normalized to the mean (compare modulation depth, not level)
+over a longer window (t_start=40 ms). Panel (d) now uses mode='gamma' (PAC); panel (b) keeps the raw
+rate fold (forced response IS at Df). Result: (d) blue = sharp beat-phase-locked gamma-amplitude peak
+(gating), gray = flat. Caption updated to describe both insets + WHY (d) uses amplitude. Build clean:
+34 pp, 0 undefined.
+
+## v1.53 — QIF raster: denser sample so spike "bunching" is visible by eye
 Giulio: the QIF raster's blue rate bunched clearly but the black SPIKES read as a uniform cloud.
 Cause: only 120 of 8000 neurons shown -> bursts too sparse to form visible bands. Fix in qif_raster.py:
 nrec 120 -> 400 (representative random sample, kept eta-UNSORTED). [Tried eta-sorting first; it

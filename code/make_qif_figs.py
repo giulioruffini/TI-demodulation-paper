@@ -38,16 +38,49 @@ def cycle_avg(re_t, ts, df, nbin=20):
     return 0.5 * (bins[:-1] + bins[1:]), out
 
 
-def beat_inset(ax, off_key, on_key):
-    """Inset: r_E folded on the Df beat phase, TI off (flat) vs on (bump)."""
-    df = conds[on_key]["q"]["df"]
+def gamma_amp_fold(re_t, ts, df, dt, band=(45.0, 70.0), nbin=24, t_start=40.0):
+    """Fold the GAMMA-band amplitude envelope of r_E on the Df beat phase (proper PAC).
+    Taking the gamma *amplitude* discards the gamma carrier, so the curve is immune to the
+    near-9:7 commensurability of gamma(~54~Hz) and beat(42~Hz) that contaminates a raw r_E
+    fold. Flat across beat phase for a free gamma (off); a clear Df-locked bump when the
+    beat gates the gamma amplitude (on)."""
+    m = ts >= t_start; t = ts[m]; x = re_t[m] - re_t[m].mean()
+    n = len(x); fs = 1000.0 / dt                              # dt in ms -> sample rate (Hz)
+    X = np.fft.rfft(x); f = np.fft.rfftfreq(n, 1.0 / fs)      # FFT band-pass around gamma
+    X[(f < band[0]) | (f > band[1])] = 0.0
+    xb = np.fft.irfft(X, n)
+    Xa = np.fft.fft(xb); H = np.zeros(n); H[0] = 1.0          # analytic signal (Hilbert via FFT)
+    if n % 2 == 0:
+        H[n // 2] = 1.0; H[1:n // 2] = 2.0
+    else:
+        H[1:(n + 1) // 2] = 2.0
+    amp = np.abs(np.fft.ifft(Xa * H))                         # gamma amplitude envelope
+    ph = (df / 1000.0 * t) % 1.0                              # beat phase
+    bins = np.linspace(0, 1, nbin + 1); idx = np.clip(np.digitize(ph, bins) - 1, 0, nbin - 1)
+    out = np.array([amp[idx == k].mean() if (idx == k).any() else np.nan for k in range(nbin)])
+    ker = np.array([1.0, 2.0, 1.0]); ker /= ker.sum()
+    out = np.convolve(np.r_[out[-1], out, out[0]], ker, mode="same")[1:-1]
+    return 0.5 * (bins[:-1] + bins[1:]), out
+
+
+def beat_inset(ax, off_key, on_key, mode="rate"):
+    """Inset folded on the Df beat phase, TI off (flat) vs on (bump). mode='rate' folds the
+    raw r_E (forced case: the response is at Df); mode='gamma' folds the gamma-amplitude
+    envelope (gating case: PAC of the persisting gamma)."""
+    df = conds[on_key]["q"]["df"]; dt = meta["dt"]
     iax = ax.inset_axes([0.605, 0.57, 0.375, 0.40])
     for k, col in ((off_key, GR), (on_key, NEBLUE)):
-        q = conds[k]["q"]; ctr, ca = cycle_avg(q["re_t"], q["ts"], df)
+        q = conds[k]["q"]
+        if mode == "gamma":
+            ctr, ca = gamma_amp_fold(q["re_t"], q["ts"], df, dt)
+            ca = ca / ca.mean()                              # normalize: compare modulation depth, not level
+        else:
+            ctr, ca = cycle_avg(q["re_t"], q["ts"], df)
         iax.plot(np.r_[ctr, ctr + 1], np.r_[ca, ca], color=col, lw=1.4)
     iax.set_xticks([0, 1, 2]); iax.set_xticklabels([]); iax.set_yticks([])
     iax.tick_params(length=2)
-    iax.set_title(r"$r_E$ folded on $\Delta f$", fontsize=6.2, pad=2)
+    title = r"$\gamma$ amp.\ vs $\Delta f$ phase" if mode == "gamma" else r"$r_E$ folded on $\Delta f$"
+    iax.set_title(title, fontsize=6.2, pad=2)
     iax.set_xlabel("beat phase (off: gray, on: blue)", fontsize=5.6, labelpad=1)
     iax.patch.set_alpha(0.92)
     return iax
@@ -96,8 +129,8 @@ def fig_raster():
                  f"(d) Oscillatory, TI ON ($\\Delta f$={conds['entrain_on']['q']['df']:.0f} Hz):"
                  " TI beat gates the gamma ($\\Delta f$-PAC)",
                  True, annot="$\\Delta f$ modulation\ndepth %.2f" % depth["entrain_on"])
-    beat_inset(axs[0, 1], "forced_off", "forced_on")
-    beat_inset(axs[1, 1], "entrain_off", "entrain_on")
+    beat_inset(axs[0, 1], "forced_off", "forced_on")                    # forced: rate folded on Df
+    beat_inset(axs[1, 1], "entrain_off", "entrain_on", mode="gamma")    # gating: gamma amp vs Df phase (PAC)
     for ax in axs[:, 0]:
         ax.set_ylabel("E neuron #")
     for ax in axs[1, :]:
