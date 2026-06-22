@@ -1,6 +1,17 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.52 — NMM2 two-knob criticality clarified in Methods; SL proof made explicit (latest)
+## v1.53 — QIF raster: denser sample so spike "bunching" is visible by eye (latest)
+Giulio: the QIF raster's blue rate bunched clearly but the black SPIKES read as a uniform cloud.
+Cause: only 120 of 8000 neurons shown -> bursts too sparse to form visible bands. Fix in qif_raster.py:
+nrec 120 -> 400 (representative random sample, kept eta-UNSORTED). [Tried eta-sorting first; it
+backfired -- intrinsic eta-tonic firing makes diagonal stripes even in the OFF panels, muddying the
+asynchronous-vs-bunched contrast. Reverted to representative sampling.] make_qif_figs: finer ticks
+(ms 2.6->1.7, mew 0.5->0.35, alpha 0.85->0.7). Result: (a) OFF = uniform structureless cloud; (b) ON =
+clear vertical spike columns under each envelope peak. Physics identical (same sim; AC/VS/depths
+unchanged: forced depth 0.76, gating 0.19). Caption updated 120->400. Regenerated qif_raster.npz.
+Build clean: 34 pp, 0 undefined.
+
+## v1.52 — NMM2 two-knob criticality clarified in Methods; SL proof made explicit
 - Giulio: Methods only stated eta-bar but Fig 11 shows the role of coupling J. Resolved: NMM2 has TWO
   criticality knobs (like JR's p and C) -- eta-bar (background drive, for the resonance map) and J=C
   (coupling, for the J-curve). Added the J-sweep method to the NMM2 Methods: sweep J at fixed eta-bar to

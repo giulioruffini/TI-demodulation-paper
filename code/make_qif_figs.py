@@ -69,7 +69,7 @@ def raster_panel(ax, key, title, show_env, annot=None):
         axr.plot(x, 0.5 * axr.get_ylim()[1] * 2 * env(x + t0, df), color=NERED,
                  lw=1.3, alpha=0.55, zorder=3)
     # raster on top
-    ax.plot(st - t0, si, "|", color="k", ms=2.6, mew=0.5, alpha=0.85, zorder=5)
+    ax.plot(st - t0, si, "|", color="k", ms=1.7, mew=0.35, alpha=0.7, zorder=5)
     ax.set_xlim(0, tmeas); ax.set_ylim(-2, nrec + 2); ax.set_zorder(axr.get_zorder() + 1)
     ax.patch.set_visible(False)
     if annot:                                     # quantify the envelope-locked timing

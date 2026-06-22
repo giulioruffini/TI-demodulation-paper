@@ -59,11 +59,11 @@ def mf_run(eta, Af, fc, df, T, dt):
 
 
 # ---- QIF spiking network (Euler; vectorized over neurons) ----
-def qif_run(etabar, Af, fc, df, Ne, Ni, T, dt, t_meas, nrec=120, seed=1):
+def qif_run(etabar, Af, fc, df, Ne, Ni, T, dt, t_meas, nrec=400, seed=1):
     wc = 2 * PI * fc / 1000.0; wO = 2 * PI * df / 1000.0
     rng = np.random.default_rng(seed)
-    eta_e = rng.permutation(lorentz_eta(Ne, etabar))   # permute so the recorded
-    eta_i = rng.permutation(lorentz_eta(Ni, etabar))   # subset is representative
+    eta_e = rng.permutation(lorentz_eta(Ne, etabar))   # permute so the recorded nrec are a
+    eta_i = rng.permutation(lorentz_eta(Ni, etabar))   # representative (eta-unsorted) sample
     Ve = -2.0 + np.zeros(Ne); Vi = -2.0 + np.zeros(Ni)
     s_e = 0.05; z_e = 0.0; s_i = 0.05; z_i = 0.0
     nstep = int(T / dt); kmeas = int((T - t_meas) / dt)
@@ -86,7 +86,7 @@ def qif_run(etabar, Af, fc, df, Ne, Ni, T, dt, t_meas, nrec=120, seed=1):
         s_i = s_i + dt * z_i / TAU_G; z_i = z_i + dt * (r_i_emp - 2 * z_i - s_i) / TAU_G
         ts[k] = t; re_t[k] = r_e_emp
         if k >= kmeas:
-            # raster for the first nrec E neurons
+            # raster for the first nrec E neurons (a representative random sample)
             fired = np.nonzero(se[:nrec])[0]
             if fired.size:
                 spk_t.extend([t] * fired.size); spk_id.extend(fired.tolist())
