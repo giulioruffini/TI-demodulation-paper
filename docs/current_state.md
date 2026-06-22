@@ -1,6 +1,20 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.54 — QIF panel (d) inset: proper gamma-amplitude PAC (was an unconvincing raw-rate fold) (latest)
+## v1.55 — QIF figure/caption/text consistency audit (latest)
+Audited Fig 13 (qif_raster) + caption + main-text prose (sec:qif, sec:qif-methods, vocab) for
+consistency. Fixes:
+- Caption "boxed value is the timing lock-in at Df, off->on" -> "Df modulation depth A_Omega/<r_E>"
+  (matches the in-figure suptitle + the boxes; was mislabeled).
+- Added panel (b)'s depth (0.76) to its caption sentence (was asymmetric -- only (d) stated 0.19).
+- CROSS-FIGURE FIX: autonomous gamma was written ~54 Hz in Fig 13 caption + text but Fig 14a (and the
+  data) give 53.3 Hz. Reconciled ALL autonomous-gamma mentions 54->53 Hz and detuning 12->11 Hz
+  (53-42). Kept mean-field-Hopf 55 Hz and forced-drive Df=55 (distinct quantities; finite-size note
+  explains the offset). Softened forced drive "at" -> "near" the resonance (drive 55, resonance ~53).
+- Verified: depths 0.76(b)/0.19(d), 400-of-8000, Df=55/42, mean rate x1.05-1.10 all consistent across
+  figure, caption, Fig 14, and prose. grep confirms no residual 54/12 in QIF context.
+Build clean: 34 pp, 0 undefined.
+
+## v1.54 — QIF panel (d) inset: proper gamma-amplitude PAC (was an unconvincing raw-rate fold)
 Giulio flagged the (d) "r_E folded on Df" inset as unconvincing -- the blue (on) curve showed messy
 gamma wiggles, not a clean Df-locked gating bump. Diagnosis: gamma(~54) and beat(42) are near 9:7
 COMMENSURATE, so the gamma sits at fixed phases vs the beat and folding the raw rate preserves the

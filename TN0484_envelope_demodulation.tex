@@ -642,13 +642,13 @@ excitabilities $\eta_j\sim$ Lorentzian$(\bar\eta,\Delta)$ sampled by determinist
 quantiles, second-order synapses driven by the empirical population rates, and the AM
 field entering the excitatory membranes. The bifurcation parameter is the common
 background drive $\bar\eta$, with a gamma Hopf at $\bar\eta_{\rm Hopf}\!\approx\!1.1$
-(autonomous $f_0\!\approx\!54$~Hz; these finite-$N$ values sit just above the exact
+(autonomous $f_0\!\approx\!53$~Hz; these finite-$N$ values sit just above the exact
 mean-field Hopf $\bar\eta\!\approx\!1$, $f_0\!\approx\!55$~Hz, the small offset being a
 finite-size effect); the carrier is $f_c=300$~Hz and the field amplitude $A_f=35$. Because
 this is a \emph{gamma} circuit, the TI beat $\Delta f$ is set in the gamma band:
-$\Delta f=55$~Hz \emph{at} the forced gamma resonance ($\bar\eta=0.85$, below the Hopf) and
+$\Delta f=55$~Hz \emph{near} the forced gamma resonance ($\bar\eta=0.85$, below the Hopf) and
 $\Delta f=42$~Hz in the oscillatory regime ($\bar\eta=1.5$, above the Hopf)---a detuning of
-$\approx$12~Hz below the autonomous $f_0\!\approx\!54$~Hz that places the beat outside the
+$\approx$11~Hz below the autonomous $f_0\!\approx\!53$~Hz that places the beat outside the
 $1{:}1$ Arnold tongue, so the above-Hopf response is gating, not entrainment
 (\S\ref{sec:vocab}). Envelope-locked timing is quantified by the quadrature lock-in
 $A_\Omega$ of $r_E(t)$ at $\Delta f$, reported as the modulation depth
@@ -695,7 +695,7 @@ envelope from the intrinsic rhythm. The distinction is load-bearing: the same wo
 otherwise denote a frequency capture (ii) and an amplitude gating (iii) that are
 dynamically different---so we label frequency capture \emph{entrainment} and amplitude
 modulation of a persisting rhythm \emph{gating}, reporting the metric appropriate to each
-(the above-Hopf QIF panel, with its $\sim$12~Hz detuning, is a case of gating, not
+(the above-Hopf QIF panel, with its $\sim$11~Hz detuning, is a case of gating, not
 entrainment).
 
 Concretely for the JR entrainment analysis (Fig.~\ref{fig:entrain}): we place the column
@@ -1056,9 +1056,9 @@ rate, on both sides of the gamma Hopf (Fig.~\ref{fig:qif_raster}). Below the Hop
 the field-free network fires asynchronously at a flat rate; with TI on, spikes condense
 into envelope-locked bands (Fig.~\ref{fig:qif_raster}a,b). Above the Hopf (oscillatory) the
 free-running gamma is \emph{gated} by the TI beat---forced cross-frequency modulation
-(PAC), not frequency entrainment, since the $\approx$12~Hz detuning lies outside the
+(PAC), not frequency entrainment, since the $\approx$11~Hz detuning lies outside the
 $1{:}1$ tongue: its bursts group into the $\Delta f=42$~Hz envelope while the intrinsic
-$\sim$54~Hz gamma persists (Fig.~\ref{fig:qif_raster}c,d). The spiking network reproduces
+$\sim$53~Hz gamma persists (Fig.~\ref{fig:qif_raster}c,d). The spiking network reproduces
 the exact NMM2 mean field (matched gamma spectrum and mean rate,
 Fig.~\ref{fig:qif_timing}a), and across both regimes the mean rate is essentially unchanged
 ($\times1.05$--$1.10$) while the $\Delta f$ modulation depth of the population rate rises
@@ -1074,22 +1074,22 @@ of the in-vivo spike-timing-without-rate finding \cite{vieira2024} (code:
 generator): TI realigns spike timing, not mean rate.} $N=8000$ excitatory and inhibitory
 quadratic integrate-and-fire neurons whose exact mean field is the NMM2 PING circuit
 (Eq.~\eqref{eq:nmm2-ping}). This circuit's intrinsic rhythm is \emph{gamma}
-($\sim$54~Hz), so---as in the alpha figures, but one band up---the TI beat $\Delta f$ is
+($\sim$53~Hz), so---as in the alpha figures, but one band up---the TI beat $\Delta f$ is
 set in the gamma range (here much larger than the $\Delta f\!\sim\!11$~Hz of the
 Jansen--Rit alpha column; carrier $f_c=300$~Hz). Black ticks are $E$ spikes (400 of
-8000, a representative sample), blue the population rate $r_E(t)$, red the TI envelope; the boxed value is
-the timing lock-in at $\Delta f$, off$\to$on. The bifurcation parameter is the common
+8000, a representative sample), blue the population rate $r_E(t)$, red the TI envelope; the boxed value
+is the $\Delta f$ modulation depth $A_\Omega/\langle r_E\rangle$ of the rate (near zero off, large on). The bifurcation parameter is the common
 background drive $\bar\eta$ (gamma Hopf at $\bar\eta_{\rm Hopf}\!\approx\!1.1$).
 \emph{(a)}~Forced ($\bar\eta=0.85$, just below the Hopf---a damped gamma resonator), TI
-off: asynchronous firing, flat rate. \emph{(b)}~Forced, TI on, driven \emph{at} the
-gamma resonance ($\Delta f=55$~Hz): spikes bunch into the envelope. \emph{(c)}~Oscillatory
-($\bar\eta=1.5$, above the Hopf---an autonomous $\sim$54~Hz gamma cycle), TI off:
+off: asynchronous firing, flat rate. \emph{(b)}~Forced, TI on, driven \emph{near} the
+gamma resonance ($\Delta f=55$~Hz): spikes bunch into the envelope (modulation depth $0.76$). \emph{(c)}~Oscillatory
+($\bar\eta=1.5$, above the Hopf---an autonomous $\sim$53~Hz gamma cycle), TI off:
 free-running gamma, no $\Delta f$ lock-in. \emph{(d)}~Oscillatory, TI on, with the beat set
-\emph{below} the autonomous gamma (beat $\Delta f=42$~Hz, a detuning of $\approx$12~Hz
-from $f_0\!\approx\!54$~Hz): the TI beat \emph{gates} the gamma---the population rate
-gains a $\Delta f$-locked component (modulation depth $0.19$) while the intrinsic $\sim$54~Hz
+\emph{below} the autonomous gamma (beat $\Delta f=42$~Hz, a detuning of $\approx$11~Hz
+from $f_0\!\approx\!53$~Hz): the TI beat \emph{gates} the gamma---the population rate
+gains a $\Delta f$-locked component (modulation depth $0.19$) while the intrinsic $\sim$53~Hz
 gamma persists. This is forced cross-frequency \emph{gating} (PAC), \emph{not} frequency
-entrainment: the $\sim$12~Hz detuning places the beat outside the $1{:}1$ Arnold tongue
+entrainment: the $\sim$11~Hz detuning places the beat outside the $1{:}1$ Arnold tongue
 (contrast the genuine frequency locking of Fig.~\ref{fig:entrain}), so the gamma is
 amplitude-modulated at $\Delta f$ rather than pulled to it---demodulation surviving above
 the Hopf as envelope-to-rhythm coupling. The detuning is what certifies the
