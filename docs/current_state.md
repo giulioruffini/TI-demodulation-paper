@@ -1,6 +1,17 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.56 — Fig 4 / Fig 13-14 revision, Landau pass, repo cleanup for Zenodo (latest)
+## v1.57 — Clarify what the transfer functions represent (Kaiti's comment) (latest)
+Added a short consolidating paragraph after the model definitions ("What the transfer
+functions represent"): the demodulating object is a POPULATION input-output map, not a
+passive somatic membrane element -- the JR/LaNMM sigmoid (effective transfer, PSP in /
+rate out) and the NMM2 exact MPR quadratic play the same role; its curvature is the
+mesoscopic trace of cellular nonlinearities, so using Sigma'' (or the derived v^2 term)
+as a square-law detector is legitimate at this scale. The membrane low-pass bears on
+ACCESS (which fast compartment lets a kHz carrier reach the nonlinear transfer, sec:khz),
+not on the legitimacy of the detector. Directly answers the likely reviewer objection
+("the membrane low-passes kHz, so how can the sigmoid demodulate?"). Build clean: 34 pp.
+
+## v1.56 — Fig 4 / Fig 13-14 revision, Landau pass, repo cleanup for Zenodo
 Figures:
 - Fig 4 (fig:res): dropped the misleading above-Hopf lock-in panel (lock-in @ Omega conflates
   the autonomous cycle with the driven response). Now a single fixed-point forced-resonance panel
