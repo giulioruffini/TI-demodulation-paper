@@ -10,6 +10,7 @@ import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from matplotlib.ticker import MaxNLocator
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 FIGS = os.environ.get("TN_FIGDIR") or os.path.join(os.path.dirname(HERE), "figures")
@@ -41,7 +42,7 @@ def cycle_avg(re_t, ts, df, nbin=20):
 def gamma_amp_fold(re_t, ts, df, dt, band=(45.0, 70.0), nbin=24, t_start=40.0):
     """Fold the GAMMA-band amplitude envelope of r_E on the Df beat phase (proper PAC).
     Taking the gamma *amplitude* discards the gamma carrier, so the curve is immune to the
-    near-9:7 commensurability of gamma(~54~Hz) and beat(42~Hz) that contaminates a raw r_E
+    near-commensurability of gamma(~53~Hz) and beat(42~Hz) that contaminates a raw r_E
     fold. Flat across beat phase for a free gamma (off); a clear Df-locked bump when the
     beat gates the gamma amplitude (on)."""
     m = ts >= t_start; t = ts[m]; x = re_t[m] - re_t[m].mean()
@@ -66,22 +67,27 @@ def gamma_amp_fold(re_t, ts, df, dt, band=(45.0, 70.0), nbin=24, t_start=40.0):
 def beat_inset(ax, off_key, on_key, mode="rate"):
     """Inset folded on the Df beat phase, TI off (flat) vs on (bump). mode='rate' folds the
     raw r_E (forced case: the response is at Df); mode='gamma' folds the gamma-amplitude
-    envelope (gating case: PAC of the persisting gamma)."""
+    envelope (gating case: PAC of the persisting gamma). Both curves are normalized to their
+    own mean, so the y-axis reads the relative (depth) modulation -- dimensionless and
+    directly comparable to the boxed Df modulation depth."""
     df = conds[on_key]["q"]["df"]; dt = meta["dt"]
-    iax = ax.inset_axes([0.605, 0.57, 0.375, 0.40])
-    for k, col in ((off_key, GR), (on_key, NEBLUE)):
+    iax = ax.inset_axes([0.605, 0.55, 0.375, 0.42])
+    for k, col, lab in ((off_key, GR, "off"), (on_key, NEBLUE, "on")):
         q = conds[k]["q"]
         if mode == "gamma":
             ctr, ca = gamma_amp_fold(q["re_t"], q["ts"], df, dt)
-            ca = ca / ca.mean()                              # normalize: compare modulation depth, not level
         else:
             ctr, ca = cycle_avg(q["re_t"], q["ts"], df)
-        iax.plot(np.r_[ctr, ctr + 1], np.r_[ca, ca], color=col, lw=1.4)
-    iax.set_xticks([0, 1, 2]); iax.set_xticklabels([]); iax.set_yticks([])
-    iax.tick_params(length=2)
-    title = r"$\gamma$ amp.\ vs $\Delta f$ phase" if mode == "gamma" else r"$r_E$ folded on $\Delta f$"
-    iax.set_title(title, fontsize=6.2, pad=2)
-    iax.set_xlabel("beat phase (off: gray, on: blue)", fontsize=5.6, labelpad=1)
+        ca = ca / ca.mean()                                  # normalize -> relative modulation
+        iax.plot(np.r_[ctr, ctr + 1], np.r_[ca, ca], color=col, lw=1.4, label=lab)
+    iax.set_xticks([0, 1, 2]); iax.set_xticklabels(["0", "1", "2"])
+    iax.set_xlabel(r"$\Delta f$ phase (cycles)", fontsize=6.0, labelpad=1)
+    ylab = r"$\gamma$ amp. (norm.)" if mode == "gamma" else r"$r_E$ (norm.)"
+    iax.set_ylabel(ylab, fontsize=6.0, labelpad=1)
+    iax.yaxis.set_major_locator(MaxNLocator(3))
+    iax.tick_params(length=2, pad=1, labelsize=5.4)
+    iax.legend(fontsize=5.2, frameon=False, loc="upper right", ncol=2,
+               handlelength=0.9, columnspacing=0.8, handletextpad=0.4, borderpad=0.1)
     iax.patch.set_alpha(0.92)
     return iax
 
@@ -145,8 +151,16 @@ def fig_raster():
     plt.close(fig)
 
 
+def _rate_spectrum(re_t, ts, dt, t_start=60.0):
+    """Hann-windowed power spectrum of r_E(t) over the post-settle tail."""
+    m = ts >= t_start; x = re_t[m] - re_t[m].mean()
+    f = np.fft.rfftfreq(len(x), dt / 1000.0)
+    P = np.abs(np.fft.rfft(x * np.hanning(len(x)))) ** 2
+    return f, P / P.max()
+
+
 def fig_timing():
-    fig, (axA, axB) = plt.subplots(1, 2, figsize=(10, 3.8))
+    fig, (axA, axC, axB) = plt.subplots(1, 3, figsize=(13.6, 3.7))
     # (a) validation: power spectrum of r_E(t), QIF network vs exact NMM2 mean field.
     # Use the field-free autonomous gamma (entrain_off): a single clean peak in both, so the
     # QIF<->NMM2 match is unambiguous. (Under strong TI forcing the forced spectrum is multi-
@@ -165,7 +179,28 @@ def fig_timing():
     axA.legend(fontsize=7.5, frameon=False, loc="upper right")
     axA.spines[["top", "right"]].set_visible(False)
 
-    # (b) Df modulation depth = AC(Df)/<r_E> -- a STABLE off->on metric: the amplitude
+    # (b) intermodulation: oscillatory regime, TI off vs on. The nonlinearity mixes the
+    # imposed Df=42 Hz beat with the intrinsic ~53 Hz gamma -> sidebands. TI-on lights up
+    # the direct Df line (42) and the SUM 53+42=95; the difference 53-42=11 is weak. This is
+    # the spiking-network view of the macroscale frequency mixing (sideband = gating).
+    dfb = conds["entrain_on"]["q"]["df"]; fg = 53.0
+    for key, col, lab in (("entrain_off", GR, "TI off"), ("entrain_on", NEBLUE, "TI on")):
+        qq = conds[key]["q"]; fS, PS = _rate_spectrum(qq["re_t"], qq["ts"], dt)
+        axC.semilogy(fS, PS, color=col, lw=1.2, label=lab)
+    # Mark only the lines the figure can stand behind: the direct Df line and the SUM
+    # sideband. The difference tone f0-Df sits at the noise floor (its small amplitude is
+    # set by the network transfer function, not the mixer), so we do not flag it.
+    for fr, txt in ((dfb, r"$\Delta f$"), (fg, r"$f_0$"), (fg + dfb, r"$f_0{+}\Delta f$")):
+        axC.axvline(fr, ls=":", color=NERED, lw=0.8, alpha=0.7)
+        axC.text(fr, 1.5, txt, rotation=90, fontsize=7, color=NERED, ha="right", va="bottom")
+    axC.set_xlim(0, 120); axC.set_ylim(1e-4, 4)
+    axC.set_xlabel("frequency (Hz)"); axC.set_ylabel("power of $r_E$ (norm.)")
+    axC.set_title("(b) Oscillatory: nonlinear mixing of\n"
+                  r"$\Delta f$ and $f_0$ $\to$ intermodulation sidebands", fontsize=9)
+    axC.legend(fontsize=7.5, frameon=False, loc="lower right")
+    axC.spines[["top", "right"]].set_visible(False)
+
+    # (c) Df modulation depth = AC(Df)/<r_E> -- a STABLE off->on metric: the amplitude
     # of the Df-locked rate oscillation as a fraction of the mean rate. Both quantities
     # are well-estimated, unlike the off/on lock-in RATIO whose denominator sits at the
     # near-zero noise floor (and so is realization-noisy). Mean rate flatness shown as text.
@@ -187,7 +222,7 @@ def fig_timing():
              % (rate_fc[0], rate_fc[1]), transform=axB.transAxes, ha="center", fontsize=8, color=GR)
     axB.set_xticks(x); axB.set_xticklabels([n for _, n in regimes])
     axB.set_ylabel(r"$\Delta f$ modulation depth  ($A_\Omega/\langle r_E\rangle$)")
-    axB.set_title("(b) TI imposes $\\Delta f$-locked timing, not rate", fontsize=9)
+    axB.set_title("(c) TI imposes $\\Delta f$-locked timing, not rate", fontsize=9)
     axB.legend(fontsize=7.5, frameon=False, loc="upper left")
     axB.set_ylim(0, max(depth_on) * 1.18)
     axB.spines[["top", "right"]].set_visible(False)
