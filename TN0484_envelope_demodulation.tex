@@ -42,7 +42,8 @@
 a network mechanism for temporal-interference stimulation}\\[10pt]
 \begin{tabular}{@{}ll@{}}
 \textbf{Document:} & TN0484 (Neuroelectrics TN)\,/\,WP0185 (BCOM WP) \\
-\textbf{Author:} & Giulio Ruffini, Borja Mercadal, and Alex Just \\ 
+\textbf{Author:} & Giulio Ruffini, Borja Mercadal, Alex Just, \\
+& Raul Palma and Francesca Castaldo\\ 
 \textbf{Affiliation:} & Neuroelectrics\,/\,Starlab\,/\,BCOM \\
 \textbf{Date:} & 2026-06-17 \qquad \textbf{Version:} 0.7 \\
 \textbf{DOI:} & \href{https://doi.org/10.5281/zenodo.20844275}{10.5281/zenodo.20844275} \\
@@ -563,9 +564,7 @@ square law ($A_\Omega$ vs.\ $\varepsilon$ on a well-damped focus, expecting a
 log--log slope of $2$); a linearization control (replacing $\Sig$ in
 Eq.~\eqref{eq:jr0} by its tangent at $v^*$, which must abolish the $\Omega$
 response); and a check of $\Sig',\Sig''$ against finite differences. All code is
-provided (\texttt{jr\_demod.py}, \texttt{make\_figures.py},
-\texttt{analyses\_v2.py}, \texttt{figures\_v2.py}, \texttt{khz\_analysis.py}; see
-\texttt{README\_Code.md}).
+openly available (see \emph{Code and data availability}).
 
 \subsection{Laminar two-band model (LaNMM)}
 We complement the single-column analysis with simulations of the laminar neural
@@ -584,12 +583,10 @@ Hilbert envelope over a post-transient window---a phase-robust measure suited to
 the entrainment regime, where lock-in phase slips would otherwise complicate the
 read-out. Two sweeps probe the column: an amplitude--beat sweep over
 $(A,\Delta f)$ at fixed carrier (the Arnold tongue), and a carrier--beat sweep over
-$(f_c,\Delta f)$ at fixed $A$. This code is in \texttt{lanmm\_arnold\_tongues.py},
-built on the LaNMM module \texttt{lanmmv11.py} of \cite{ruffini2025cfc}. For the
+$(f_c,\Delta f)$ at fixed $A$, built on the LaNMM module of \cite{ruffini2025cfc}. For the
 alpha resonance of Figs.~\ref{fig:lanmm_res},~\ref{fig:lanmm_map} we instead drive
 the deep $P_1$ loop directly and sweep its input against $\Delta f$, reading the
-lock-in (Eq.~\eqref{eq:lockin}) of $v_{P_1}$ at $\Delta f$ (self-contained
-\texttt{lanmm\_resonance.py}).
+lock-in (Eq.~\eqref{eq:lockin}) of $v_{P_1}$ at $\Delta f$.
 
 \subsection{Exact next-generation mean field (NMM2 PING)}
 We test the mechanism in the exact next-generation mean field (NMM2, \S\ref{sec:nmm}),
@@ -626,8 +623,7 @@ integrate with fixed-step RK4 ($\Delta t=0.05$~ms) and read out the lock-in
 (Eq.~\eqref{eq:lockin}) of $r_E$ at $\Delta f$ over the $(\Delta f, \bar\eta)$ plane.
 Parameters (Rosetta Stone PING \cite{ruffini2025rosetta}): $\Delta=1$, global coupling
 $C=15$, $\tau_E=15$, $\tau_I=7.5$, $\tau_a=10$, $\tau_g=2.5$~ms, with $\bar\eta$ swept
-through the supercritical Hopf at $\bar\eta\!\approx\!1$ ($f_0\!\approx\!55$~Hz). Code:
-\texttt{nmm2\_ping.py} (self-contained).
+through the supercritical Hopf at $\bar\eta\!\approx\!1$ ($f_0\!\approx\!55$~Hz).
 
 Two parameters reach this gamma Hopf, and we use both as criticality knobs---just as the
 external drive $p$ and the coupling $C$ both reach the JR alpha Hopf. The background drive
@@ -637,8 +633,7 @@ $J$ at fixed $\bar\eta$ toward the gamma Hopf $J^*$ (located by bisection on the
 Jacobian eigenvalue) and read the lock-in peak of $r_E$ over $\Delta f$. Unlike the JR
 J-curve, \emph{no operating-point pinning is needed}, because here the rectifier is the
 exact $v_E^2$ term, whose quadratic coefficient is fixed by construction; sweeping $J$
-therefore changes only the damping $\gamma$, isolating the amplification cleanly. Code:
-\texttt{nmm2\_jcA.py} (engine), \texttt{nmm2\_jcD.py}.
+therefore changes only the damping $\gamma$, isolating the amplification cleanly.
 
 \subsection{QIF spiking network (microscale of NMM2)}\label{sec:qif-methods}
 NMM2 is the exact mean field of an all-to-all network of QIF neurons
@@ -660,8 +655,7 @@ $1{:}1$ Arnold tongue, so the above-Hopf response is gating, not entrainment
 (\S\ref{sec:vocab}). Envelope-locked timing is quantified by the quadrature lock-in
 $A_\Omega$ of $r_E(t)$ at $\Delta f$, reported as the modulation depth
 $A_\Omega/\langle r_E\rangle$ (a stable measure---the off$\to$on lock-in ratio would divide
-by the near-zero field-free baseline). Code: \texttt{qif\_raster.py},
-\texttt{make\_qif\_figs.py}.
+by the near-zero field-free baseline).
 
 \subsection{Coupling sweeps, timing, and the tACS control (Jansen--Rit)}
 The coupling sweeps (Figs.~\ref{fig:jcurve},~\ref{fig:timing} and the tACS control,
@@ -672,8 +666,7 @@ toward the alpha Hopf, and read $\gamma,\omega_0$ from the $6\times6$ Jacobian. 
 is the AM drive of Eq.~\eqref{eq:am} for TI (Fig.~\ref{fig:jcurve}; AC lock-in vs DC mean
 rate for Fig.~\ref{fig:timing}) or a direct in-band sinusoid $s(t)=\varepsilon\cos\Omega t$
 ($\varepsilon=0.1$~mV) for the tACS control (Fig.~\ref{fig:tacs}), each read out by the
-lock-in of $v$ at $\Delta f$. Code: \texttt{jr\_jsweep\_engine.py},
-\texttt{timing\_not\_rate.py}, \texttt{tacs\_jsweep.py} (self-contained).
+lock-in of $v$ at $\Delta f$.
 
 \subsection{Forced response, entrainment, and gating: vocabulary and metrics}\label{sec:vocab}
 ``Entrainment'' is used in several senses, and our system can exhibit more than one, so
@@ -721,7 +714,6 @@ is wide enough that near-Hopf locking ranges are resolved rather than grid-clipp
 cycle amplitude $\to0$ and the tongue merges into the forced-resonance bandwidth, so the
 supercritical locking range and the subcritical $1/\gamma$ susceptibility coincide there
 by construction---why responsiveness peaks at criticality on both sides.
-Code: \texttt{entrain.py}, \texttt{entrain\_crit.py} (self-contained).
 
 \section{Results}
 We present the evidence on three rungs of the modeling ladder: the single
@@ -819,7 +811,7 @@ yields a clean alpha line synthesized by the column from an input with zero alph
 power (Fig.~\ref{fig:khz_direct}b). That the bare unmodulated kHz carrier is itself
 weakly effective---the premise of TI's focality---is consistent with the limited
 sensitivity of hippocampal network oscillations to unmodulated kHz fields
-\cite{esmaeilpour2020} (code: \texttt{khz\_direct.py}).
+\cite{esmaeilpour2020}.
 
 \begin{figure}[t!]
 \centering
@@ -953,7 +945,7 @@ point}---the ridge is diagonal, not vertical---a direct signature of the dynamic
 state-dependent transfer of the exact theory \cite{clusella2023}. That the same
 demodulation-and-near-Hopf-resonance mechanism appears with the nonlinearity
 \emph{derived} from QIF spiking dynamics, rather than assumed, shows it is not an
-artifact of the heuristic sigmoid (code: \texttt{nmm2\_ping.py}, self-contained).
+artifact of the heuristic sigmoid.
 
 \begin{figure}[t!]
 \centering
@@ -1053,7 +1045,7 @@ essentially unchanged. This is the mesoscopic counterpart of the in-vivo observa
 that TI alters spike timing but not firing rate in the primate brain
 \cite{vieira2024}: the network selectively amplifies the envelope-locked AC response,
 not the DC rate, so a near-flat mean rate is the expected signature even where TI is
-acting (code: \texttt{timing\_not\_rate.py}).
+acting.
 
 \begin{figure}[t!]
 \centering
@@ -1094,8 +1086,7 @@ Fig.~\ref{fig:qif_timing}a), and across both regimes the mean rate is essentiall
 ($\times1.05$--$1.10$) while the $\Delta f$ modulation depth of the population rate rises
 from near zero to $0.19$--$0.76$ (Fig.~\ref{fig:qif_timing}c): TI realigns timing, not
 rate---the spiking-level counterpart of \S\ref{sec:timing} and a direct microscale analog
-of the in-vivo spike-timing-without-rate finding \cite{vieira2024} (code:
-\texttt{qif\_raster.py}, \texttt{make\_qif\_figs.py}).
+of the in-vivo spike-timing-without-rate finding \cite{vieira2024}.
 
 \begin{figure}[t!]
 \centering
@@ -1368,6 +1359,15 @@ external carrier. The natural next steps---a realistic field-to-nonlinearity cou
 $\kappa(f_c)$ and coupled, noisy columns---point toward a quantitative, state-aware account
 of who responds to TI, and when.
 
+\section*{Code and data availability}
+All simulation and figure-generation code, the committed datasets, and a one-command
+reproduce script (\texttt{run\_all.py}) are openly available at
+\url{https://github.com/giulioruffini/TI-demodulation-paper}, archived at
+\href{https://doi.org/10.5281/zenodo.20844275}{Zenodo (doi:10.5281/zenodo.20844275)}.
+The repository \texttt{README} documents the per-figure script mapping (a
+figure$\rightarrow$script table) and the dependency order, so every figure in this note can
+be regenerated from the committed inputs. The code is released under CC-BY-4.0.
+
 \bibliographystyle{unsrt}
 \bibliography{references}
 
@@ -1519,7 +1519,7 @@ the Hopf---the universal near-Hopf amplification. \emph{(b)} Under the AM \emph{
 (TI), the $\Delta f$ line in $\mathrm{Re}\,z$ sits at the numerical floor
 ($\sim$$2\times10^{-8}$), while a square-law detector $F^2$ recovers it
 ($2.5\times10^{-1}$)---a $\sim$$10^{7}\times$ gap. The normal form amplifies but cannot
-demodulate. Code: \texttt{sl\_dissociation.py} (self-contained).}
+demodulate.}
 \label{fig:sl}
 \end{figure}
 
@@ -1560,7 +1560,7 @@ pinned, sweeping the coupling $C\,(=J)$ toward the alpha Hopf: \emph{(a)} the lo
 resonance at $\Delta f$ sharpens and grows as $C\!\to\!C^*$; \emph{(b)} the response
 grows as $1/\gamma$ (dashed) and saturates near criticality---the same network
 amplification as the demodulated TI drive (Fig.~\ref{fig:jcurve}), but linear in the
-field rather than square-law. Throughout, the column is a stable focus ($\gamma>0$). Code: \texttt{tacs\_jsweep.py}.}
+field rather than square-law. Throughout, the column is a stable focus ($\gamma>0$).}
 \label{fig:tacs}
 \end{figure}
 
@@ -1577,8 +1577,7 @@ output follows $\Delta f$ (diagonal); outside, it falls back to the autonomous $
 Here amplification is read as entrainment (tongue width, locking range), not as the
 diverging $1/\gamma$ gain of the stable-focus side (Fig.~\ref{fig:jcurve})---so the
 column is most responsive near criticality on both sides of the Hopf: to forcing below,
-to entrainment above. Code:
-\texttt{entrain.py}, \texttt{entrain\_crit.py}, \texttt{make\_entrain\_fig.py}.}
+to entrainment above.}
 \label{fig:entrain}
 \end{figure}
 

@@ -1,5 +1,14 @@
 # TN0484 — A neural-mass mechanism for temporal-interference envelope demodulation
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20844275.svg)](https://doi.org/10.5281/zenodo.20844275)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+
+**Paper:** *The cortical column as a tuned receiver: a network mechanism for
+temporal-interference stimulation* — G. Ruffini, B. Mercadal, A. Just, R. Palma,
+F. Castaldo. Archived at Zenodo: **[doi:10.5281/zenodo.20844275](https://doi.org/10.5281/zenodo.20844275)**.
+Licensed **CC-BY-4.0** (see [`LICENSE`](LICENSE)); machine-readable citation in
+[`CITATION.cff`](CITATION.cff).
+
 Sigmoid curvature + near-Hopf amplification as a **mesoscopic, network** mechanism
 for temporal-interference (TI) stimulation. An amplitude-modulated (AM) field
 carries no spectral power at its envelope frequency, so demodulation requires a
@@ -23,8 +32,10 @@ bands), to the exact mean-field **NMM2** (derived rectifier), down to a spiking
 ```
 .
 ├── README.md                              # this file
+├── LICENSE                                # CC-BY-4.0
+├── CITATION.cff                           # machine-readable citation (DOI, authors)
 ├── TN0484_envelope_demodulation.tex       # the manuscript (\graphicspath{{figures/}})
-├── TN0484_envelope_demodulation.pdf       # last good build (29 pp)
+├── TN0484_envelope_demodulation.pdf       # last good build (34 pp)
 ├── TN0484_envelope_demodulation.bbl       # committed so a single pdflatex works w/o bibtex
 ├── references.bib                         # BibTeX source for all references
 ├── requirements.txt                       # pinned Python deps (numpy/scipy/matplotlib + ...)
@@ -36,8 +47,8 @@ bands), to the exact mean-field **NMM2** (derived rectifier), down to a spiking
 │   └── ...                                # generators + engines (see table below)
 └── docs/
     ├── current_state.md                   # running changelog (newest on top — read first)
-    ├── plan.md, HANDOFF.md, README_Code.md
-    └── ...
+    ├── plan.md                            # planning / roadmap
+    └── README_Code.md                     # code-level notes
 ```
 
 ## Setup
@@ -58,7 +69,7 @@ pdflatex TN0484_envelope_demodulation
 pdflatex TN0484_envelope_demodulation
 ```
 
-Last known good: **29 pp, 0 undefined refs, 0 citation warnings.** The `.bbl` is
+Last known good: **34 pp, 0 undefined refs, 0 citation warnings.** The `.bbl` is
 committed, so a single `pdflatex` rebuilds the PDF when references are unchanged.
 
 ## Reproduce the figures
@@ -139,8 +150,8 @@ linearizing the field-receiving sigmoid collapses the response ≈712×. (Needs 
 
 ## Notes on artifacts
 
-Currently committed: the rendered `.pdf` (~5 MB, re-committed each build), the `.bbl`
-(so collaborators need not run bibtex), and six `.npz` data files. LaTeX build
-junk (`.aux/.log/.out/.toc/.blg`), `__pycache__`, and `.venv/` are git-ignored.
-Whether to keep committing the `.pdf` and `.npz` is an open policy question (see
-`readme_moving_notes.md`).
+Currently committed: the rendered `.pdf` (re-committed each build), the `.bbl`
+(so collaborators need not run bibtex), and the committed `.npz` data files so the
+dependent figures rebuild without re-running the slow sweeps. LaTeX build junk
+(`.aux/.log/.out/.toc/.blg`), `__pycache__`, `.venv/`, and a few regenerable
+intermediate `.npz` are git-ignored.

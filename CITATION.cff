@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it using the metadata below."
+title: "The cortical column as a tuned receiver: a network mechanism for temporal-interference stimulation"
+abstract: >-
+  A mesoscopic, network mechanism for temporal-interference (TI) stimulation: the
+  population firing-rate sigmoid of a neural mass acts as a square-law demodulator of
+  an amplitude-modulated field, and a second-order-synapse network near a Hopf
+  bifurcation resonantly amplifies the recovered envelope. Demonstrated across a
+  modeling ladder (Jansen-Rit, laminar LaNMM, exact NMM2 mean field, QIF spiking
+  network) with a tACS corollary.
+type: software
+authors:
+  - family-names: Ruffini
+    given-names: Giulio
+    affiliation: "Neuroelectrics / Starlab / BCOM"
+  - family-names: Mercadal
+    given-names: Borja
+    affiliation: "Neuroelectrics"
+  - family-names: Just
+    given-names: Alex
+    affiliation: "Neuroelectrics"
+  - family-names: Palma
+    given-names: Raul
+    affiliation: "Neuroelectrics / Starlab"
+  - family-names: Castaldo
+    given-names: Francesca
+    affiliation: "Neuroelectrics / Starlab"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.20844275
+    description: "Zenodo archive of this repository"
+repository-code: "https://github.com/giulioruffini/TI-demodulation-paper"
+license: CC-BY-4.0
+version: "0.7"
+date-released: "2026-06-17"
+keywords:
+  - temporal interference
+  - transcranial stimulation
+  - neural mass model
+  - envelope demodulation
+  - Hopf bifurcation
+  - cross-frequency coupling

@@ -29,3 +29,6 @@ code/tacs_jsweep.npz
 figures/fig_lanmm_checker.*
 figures/fig_lanmm_arnold_p1.pdf
 figures/fig_lanmm_arnold_p2.pdf
+
+# Internal working notes / correspondence (excluded from the public archive)
+_private/

@@ -1,6 +1,31 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.55 — QIF figure/caption/text consistency audit (latest)
+## v1.56 — Fig 4 / Fig 13-14 revision, Landau pass, repo cleanup for Zenodo (latest)
+Figures:
+- Fig 4 (fig:res): dropped the misleading above-Hopf lock-in panel (lock-in @ Omega conflates
+  the autonomous cycle with the driven response). Now a single fixed-point forced-resonance panel
+  + a 1/gamma peak-vs-distance companion. The entrainment story stays in fig:entrain (f_out).
+- Fig 13 (fig:qif_raster): beat-fold insets now have proper x/y labels + ticks + off/on legend;
+  both folds normalized to their own mean (relative modulation).
+- Fig 14 (fig:qif_timing): NEW panel (b) intermodulation spectrum (TI off/on, oscillatory):
+  TI-on lights up the direct Df line and the SUM sideband f0+Df~95 Hz; difference ~11 Hz at floor
+  (set by the network transfer function, not the mixer). Depth panel renumbered (b)->(c).
+Text:
+- Defined "fold" at first use (vocab). Unified demodulation as the difference-frequency
+  intermodulation product (one quadratic mixer, cascaded: carriers->Df, then Df x f0 -> f0+-Df).
+- Clarified the negative-Sigma'' regime is where the JR resting point sits, not a constraint
+  (mechanism is sign-agnostic; positive lobe already spanned open-loop in fig:opp).
+- Replaced ~14 scattered inline (code: foo.py) mentions with a single "Code and data availability"
+  section pointing to the public GitHub repo + Zenodo DOI (repo README has the figure->script map).
+- DOI added to title block; author list extended (Palma, Castaldo).
+Repo (Zenodo prep):
+- Added LICENSE (CC-BY-4.0) and CITATION.cff (DOI, authors, version).
+- README: DOI/license badges, citation block, page count 29->34, layout updated.
+- Moved internal working notes (HANDOFF.md, stale current_status.md, NMM2_question_for_Raul.*,
+  readme_moving_notes.md) to a gitignored _private/ (excluded from the public archive).
+Build clean: 34 pp, 0 undefined.
+
+## v1.55 — QIF figure/caption/text consistency audit
 Audited Fig 13 (qif_raster) + caption + main-text prose (sec:qif, sec:qif-methods, vocab) for
 consistency. Fixes:
 - Caption "boxed value is the timing lock-in at Df, off->on" -> "Df modulation depth A_Omega/<r_E>"
