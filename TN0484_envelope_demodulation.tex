@@ -441,7 +441,9 @@ and can even flip the sign of, the TI response: a falsifiable handle.
 \subsection{Biophysical realization: carrier frequency, fast elements, and state}\label{sec:khz}
 Carrier independence (at fixed polarization) holds for the direct coupling \eqref{eq:coupling}. Real
 somata are not direct: the membrane (and dendritic cable) low-passes the field
-before the spike nonlinearity. Modeling this as a first-order filter
+before the spike nonlinearity. (The demodulating $\Sig''$ is the \emph{population}
+transfer; the membrane filter is the upstream \emph{access} stage---this section asks
+only whether the carrier survives to it.) Modeling this as a first-order filter
 $H_m(\omega)=1/(1+i\omega\tau_m)$, the carrier amplitude reaching the detector is
 $\varepsilon_{\mathrm{eff}}(f_c)=\varepsilon/\sqrt{1+(\omega_c\tau_m)^2}$, and
 since $\Omega\ll\omega_c$ the three AM lines are attenuated almost equally, so
