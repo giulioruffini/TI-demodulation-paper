@@ -516,25 +516,31 @@ $3$--$20$~s measurement window; the resonance sweeps use a $20$~s window so the
 lock-in averages the limit-cycle beating on the entrainment side. Parameter
 sweeps are vectorized: the state is an
 $(N,6)$ array advanced simultaneously for all $N$ parameter combinations, so a full
-resonance map runs in seconds. The bifurcation structure (Fig.~\ref{fig:bif}) is
-located by solving, for each $p$, the self-consistent scalar equation for the
-resting fixed point $v=y_1-y_2$, forming the $6\times6$ Jacobian numerically, and
-diagonalizing it; the supercritical Hopf is the $p$ at which the leading eigenvalue
-pair crosses the imaginary axis with $\mathrm{Im}\,\lambda$ in the alpha band. This
-gives $p\approx315$~Hz and $f_0=\mathrm{Im}\,\lambda/2\pi\approx11.1$~Hz, in line
-with the JR bifurcation analysis of \cite{grimbert2006}; for $p>315$ the fixed
-point is a stable focus (resonator) and for $p<315$ an alpha limit cycle.
+resonance map runs in seconds. The full bifurcation diagram (Fig.~\ref{fig:bif}) is computed by numerical continuation of
+the fixed-point and limit-cycle branches. We independently locate the operating
+supercritical Hopf by solving, for each $p$, the self-consistent scalar equation for the
+resting fixed point $v=y_1-y_2$, forming the $6\times6$ Jacobian numerically and
+diagonalizing it: the Hopf is the $p$ at which the leading eigenvalue pair crosses the
+imaginary axis with $\mathrm{Im}\,\lambda$ in the alpha band. This gives $p\approx315$~Hz
+and $f_0=\mathrm{Im}\,\lambda/2\pi\approx11.1$~Hz---consistent with the continuation and
+with the JR bifurcation analysis of \cite{grimbert2006}. For $p>315$ the fixed point is a
+stable focus (resonator); between the SNIC ($p\!\approx\!114$) and the Hopf the column
+free-runs on the alpha limit cycle.
 
 \begin{figure}[t!]
 \centering
 \includegraphics[width=\textwidth]{fig_bifurcation_sigmoid.pdf}
-\caption{\textbf{The Jansen--Rit operating regime: bifurcation and sigmoid curvature.} \emph{Left:} JR bifurcation diagram---LFP
-range vs.\ external input $p$. A limit cycle (alpha) exists between a saddle-node-on-invariant-circle (SNIC)
-bifurcation near $p\!\approx\!115$ and the supercritical Hopf at $p\!\approx\!315$; above the Hopf
-the fixed point is a stable focus, $f_0\!\approx\!11.1$~Hz. \emph{Right:} the
-sigmoid $\Sig(v)$ and its curvature $\Sig''(v)$, which sets the demodulation gain
-and vanishes at the inflection $v_0$. Dots mark the operating points reached by
-the closed-loop model for the $p$ values used here.}
+\caption{\textbf{The Jansen--Rit operating regime: bifurcation and sigmoid curvature.}
+\emph{Left:} JR bifurcation diagram from numerical continuation---the LFP $v=y_1-y_2$ along
+the fixed-point branch (blue) and the min/max of the limit-cycle branches (red) vs.\
+external input $p$, with \emph{solid} stable and \emph{faded} unstable. The alpha limit
+cycle (shaded) is bounded by a saddle-node-on-invariant-circle (SNIC, $p\!\approx\!114$)
+and the supercritical Hopf ($p\!\approx\!315$, $f_0\!\approx\!11.1$~Hz); beyond the Hopf the
+fixed point is a stable focus---the near-critical resonator regime used throughout. Further
+codim-1 points are marked (saddle-node SN, Hopf HB$^{\pm}$, saddle-node of limit cycles
+SNLC). \emph{Right:} the sigmoid $\Sig(v)$ and its curvature $\Sig''(v)$, which sets the
+demodulation gain and vanishes at the inflection $v_0$. Dots mark the operating points
+reached by the closed-loop model for the $p$ values used here.}
 \label{fig:bif}
 \end{figure}
 
@@ -715,7 +721,7 @@ modulation of a persisting rhythm \emph{gating}, reporting the metric appropriat
 entrainment).
 
 Concretely for the JR entrainment analysis (Fig.~\ref{fig:entrain}): we place the column
-on the limit-cycle side---input $p$ between the SNIC ($p\!\approx\!115$) and the Hopf
+on the limit-cycle side---input $p$ between the SNIC ($p\!\approx\!114$) and the Hopf
 ($p\!\approx\!315$), where it free-runs at $f_0(p)$---and drive it with
 $s(t)=\varepsilon\cos\Omega t$. The Arnold tongue (Fig.~\ref{fig:entrain}a) is the
 $\Delta f$ lock-in over the $(\Delta f,\varepsilon)$ grid at fixed $p$ with the

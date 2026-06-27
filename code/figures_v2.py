@@ -58,24 +58,34 @@ def concept():
 # ============================================ FIG 2: bifurcation + sigmoid/sigma''
 def bifurcation_sigmoid():
     fig, ax = plt.subplots(1, 2, figsize=(11, 4.0))
-    pb=d["p_bif"]; vmin=d["vmin"]; vmax=d["vmax"]; vmean=d["vmean"]
-    ax[0].fill_between(pb, vmin, vmax, color=NEL, alpha=0.7, label="oscillation range (min–max)")
-    ax[0].plot(pb, vmean, color=NEB, lw=1.3, label="mean / fixed point")
-    # mark only the two real boundaries: the SNIC (cycle onset) and the Hopf;
-    # shade/label the alpha-cycle band between them. (Stray operating-point lines removed.)
-    osc = (vmax - vmin) > 0.2
-    p_snic = float(pb[osc][0]) if osc.any() else 115.0
-    y0, y1 = ax[0].get_ylim()
-    ax[0].axvspan(p_snic, 315, color=NEL, alpha=0.18, lw=0)
-    for pc in (p_snic, 315):
-        ax[0].axvline(pc, color=NER, ls="--", lw=1.2, alpha=0.85)
-    ax[0].text(p_snic+4, y0+(y1-y0)*0.40, f"SNIC\n$p\\approx{p_snic:.0f}$", color=NER, fontsize=8, ha="left", va="center")
-    ax[0].text(318, y1*0.92, "Hopf\n$p\\approx315$\n$f_0\\approx11.1$ Hz", color=NER, fontsize=8, va="top")
-    ax[0].text((p_snic+315)/2, y0+0.5, "alpha limit cycle", color=NEB, fontsize=8.5, ha="center", style="italic")
-    ax[0].text(360, y0+0.5, "stable focus\n(resonator)", color=GR, fontsize=8.5, ha="center", style="italic")
+    # --- (a) full Jansen-Rit continuation (AUTO), data from Raul de Palma ---
+    # fixed-point and limit-cycle branches with codim-1 bifurcations; solid = stable,
+    # faded = unstable. Sign convention v = y1 - y2 (paper LFP), as in panel (b).
+    b = np.load(os.path.join(os.path.dirname(os.path.abspath(__file__)), "jr_bifurcation.npz"),
+                allow_pickle=True)
+    def _branch(p, y, stable, color, label=None):
+        ax[0].scatter(p[stable],  y[stable],  s=2.2, color=color, edgecolors="none", zorder=3, label=label)
+        ax[0].scatter(p[~stable], y[~stable], s=2.2, color=color, edgecolors="none", zorder=2, alpha=0.28)
+    ax[0].axvspan(113.6, 315.7, color=NEL, alpha=0.14, lw=0, zorder=0)   # alpha-cycle region
+    _branch(b["fp_p"], b["fp_v"], b["fp_stable"], NEB, "fixed point")
+    lc_lab = "limit cycle (min/max)"
+    for pre in ("lc1", "lc2"):
+        st = b[f"{pre}_stable"]
+        for ext in ("min", "max"):
+            _branch(b[f"{pre}_p"], b[f"{pre}_{ext}"], st, NER, lc_lab); lc_lab = None
+    for lab, val in zip(b["bif_label"], b["bif_value"]):    # bifurcation markers + rotated labels
+        if not (-70 < val < 345):
+            continue
+        ax[0].axvline(val, color=GR, ls="--", lw=0.8, alpha=0.55, zorder=1)
+        ax[0].text(val + 3.5, -5.2, str(lab), rotation=90, fontsize=7, va="bottom", color=GR)
+    ax[0].text((113.6 + 315.7) / 2, -3.0, "alpha limit cycle", color=NEB, fontsize=8.3,
+               ha="center", style="italic")
+    ax[0].text(322, 2.4, "stable focus\n(resonator)\n$f_0\\approx11.1$ Hz", color=GR,
+               fontsize=7.3, ha="left", va="center", style="italic")
+    ax[0].set_xlim(-70, 345); ax[0].set_ylim(-5.7, 12.5)
     ax[0].set_xlabel("external input  $p$  (Hz)"); ax[0].set_ylabel("LFP $v=y_1-y_2$ (mV)")
-    ax[0].set_title("JR bifurcation diagram")
-    ax[0].legend(loc="upper left", fontsize=8)
+    ax[0].set_title("JR bifurcation diagram (numerical continuation)")
+    ax[0].legend(loc="upper left", fontsize=7.5, markerscale=2.8, handletextpad=0.3)
     figstyle.panel(ax[0], "a")
 
     vv=np.linspace(-2,16,400)

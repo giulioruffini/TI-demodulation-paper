@@ -96,7 +96,7 @@ to `figures/` and runs from committed inputs; **gap** = no working generator.
 | figure | script | data dep. | scipy | status |
 |---|---|---|---|---|
 | fig_concept | `figures_v2.py` | analyses_v2.npz† | – | OK |
-| fig_bifurcation_sigmoid | `figures_v2.py` | analyses_v2.npz† | – | OK |
+| fig_bifurcation_sigmoid | `figures_v2.py` | analyses_v2.npz†, jr_bifurcation.npz‡ | – | OK |
 | fig_resonance_map | `figures_v2.py` | analyses_v2.npz† | – | OK |
 | fig_carrier_independence | `figures_v2.py` | analyses_v2.npz† | – | OK |
 | fig_operating_point | `figures_v2.py` | analyses_v2.npz† | – | OK |

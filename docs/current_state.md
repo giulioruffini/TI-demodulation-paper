@@ -1,6 +1,24 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.57 — Clarify what the transfer functions represent (Kaiti's comment) (latest)
+## v1.58 — Fig 2(a): replaced with Raul's full JR numerical-continuation bifurcation diagram (latest)
+Raul de Palma (co-author) provided AUTO continuation output for the Jansen-Rit model
+(code/jrnmm_plot/: fp/lc1/lc2 pandas pickles + bfp/blc csvs). Replaced the hand-shaded
+oscillation-envelope panel Fig 2(a) with the real continuation:
+- code/jrnmm_plot/convert_to_npz.py converts the pkl/csv -> committed code/jr_bifurcation.npz
+  (numpy-only; pandas needed ONLY for this one-time conversion, NOT a runtime dep).
+- figures_v2.py bifurcation_sigmoid() panel (a) rewritten: fixed-point branch (blue) + limit-cycle
+  min/max branches (red), solid=stable / faded=unstable (PT<0), all six codim-1 bifurcations marked
+  (SN -41, HB- -12, HB+ 90, SNIC 113.6, SNLC 137, HB+ 315.7). Sign v=y1-y2 (paper LFP, matches panel b;
+  Raul's script mislabeled the axis y2-y1 but plots y1-y2). Alpha-cycle region shaded; stable-focus
+  resonator annotated. Panel (b) sigmoid unchanged.
+- Text: Fig 2 caption rewritten (continuation; stable/unstable; bifurcations). Methods (sec around
+  l.519) now credits continuation for the full diagram + keeps the Jacobian-eigenvalue method as
+  independent Hopf confirmation; fixed "p<315 => cycle" -> "between SNIC and Hopf". SNIC ~115 -> ~114
+  (continuation gives 113.6) in caption + entrainment methods. Hopf kept ~315 (315.7).
+- jrnmm_plot/ raw data + convert script committed for provenance; README figure-table dep updated.
+Build clean: 34 pp, 0 undefined.
+
+## v1.57 — Clarify what the transfer functions represent (Kaiti's comment)
 Added a short consolidating paragraph after the model definitions ("What the transfer
 functions represent"): the demodulating object is a POPULATION input-output map, not a
 passive somatic membrane element -- the JR/LaNMM sigmoid (effective transfer, PSP in /
