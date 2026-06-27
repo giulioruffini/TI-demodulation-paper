@@ -1,6 +1,22 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.58 — Fig 2(a): replaced with Raul's full JR numerical-continuation bifurcation diagram (latest)
+## v1.59 — Address Raul's Overleaf review comments (round 1, six comments) (latest)
+Giulio relayed Raul de Palma's Overleaf comments; applied all six in one pass:
+1+5+6 (focus, not Hopf): the resonance is the property of a weakly-damped STABLE FOCUS, not the Hopf
+  specifically; the column resonates near BOTH the SNIC (slower) and the Hopf (alpha). Reworded the
+  intro mechanism summary (synapses filter / focus amplifies + criticality-near-both-bifs clause) and
+  added the same point to the Fig 2 caption.
+2 (Caldas): dropped "realizes the network phenomenon of Caldas" -> "complementary to the disinhibitory
+  (PV-interneuron silencing) network effect of caldas2024" (her mechanism is PV-silencing, not ours).
+3 (Wilson-Cowan): cited wilsoncowan1972 at the firing-rate sigmoid/transfer function. (Skipped Raul's
+  Cowan-1971 entry -- empty title / "in press"; needs a real title.)
+4 (cellular vs network resonance): softened "network adds ONLY the resonant amplification" -> "supplies
+  the amplification we use here"; added that resonance can be cellular (Ih/IM, hutcheonyarom2000) but we
+  locate it in the network, which resonates even when cells do not (brunelhakim1999, brunelwang2003).
++4 bib entries. Full build (pdflatex x2 + bibtex): 35 pp, 0 undefined, 0 bibtex warnings.
+NOTE: Overleaf holds Giulio's Friday version; GitHub is ahead (Fig 2a + these). Re-sync Overleaf<-GitHub.
+
+## v1.58 — Fig 2(a): replaced with Raul's full JR numerical-continuation bifurcation diagram
 Raul de Palma (co-author) provided AUTO continuation output for the Jansen-Rit model
 (code/jrnmm_plot/: fp/lc1/lc2 pandas pickles + bfp/blc csvs). Replaced the hand-shaded
 oscillation-envelope panel Fig 2(a) with the real continuation:

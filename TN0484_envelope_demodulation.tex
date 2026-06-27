@@ -143,15 +143,20 @@ phenomenon'' \cite{caldas2024}; computational network models point the same way
 Here we show that a population-scale mechanism, built from two ingredients already in
 standard cortical models, suffices: a static firing-rate \emph{sigmoid}, whose
 nonzero curvature $\Sig''$ makes it a square-law demodulator, and a
-\emph{second-order-synapse network} near a \emph{Hopf bifurcation}, which both
-filters the carrier away and resonantly amplifies the recovered envelope at the
-network's natural frequency (Fig.~\ref{fig:concept}). Where existing accounts locate the nonlinearity in cellular excitability, ours reads
+\emph{second-order-synapse network} whose synaptic kinetics filter the carrier away
+while a weakly-damped \emph{stable focus} resonantly amplifies the recovered envelope at
+the network's natural frequency (Fig.~\ref{fig:concept}). The amplification is a property
+of the focus, not of the Hopf specifically: it sharpens as the focus nears criticality,
+which the column approaches near \emph{both} the SNIC (a slower rhythm) and the Hopf
+(alpha). Where existing accounts locate the nonlinearity in cellular excitability, ours reads
 it out at the mesoscopic scale: the sigmoid is a coarse-grained summary of the
 population's single-cell input--output curves, but once coarse-grained it is a
 \emph{distinct mesoscopic nonlinearity} with enough curvature to detect envelopes,
-whatever microscopic mechanism supplies it. This realizes the ``network phenomenon''
-of \cite{caldas2024} as a minimal neural-mass demodulator---carrier-independent (at
-fixed polarization) and frequency-selective. We develop it first in a single Jansen--Rit column,
+whatever microscopic mechanism supplies it. This is a network-level mechanism for TI
+demodulation---carrier-independent (at fixed polarization) and
+frequency-selective---complementary to the disinhibitory network effect
+(PV-interneuron silencing) reported by \cite{caldas2024}; both place TI's action in the
+population rather than the single cell. We develop it first in a single Jansen--Rit column,
 analyzable in closed form, then in the two-band laminar model (LaNMM), whose own alpha
 and gamma loops bring it closer to cortex, and finally in an exact next-generation mean
 field, where the demodulating nonlinearity is derived rather than assumed.
@@ -202,7 +207,8 @@ synapse), i.e.\ the second-order operator
 $\hat L=(Aa)^{-1}(\mathrm{d}/\mathrm{d}t+a)^2$, so each PSP obeys
 $\ddot x+2a\dot x+a^2x = Aa\,r(t)$. Second, the PSPs converging on a population sum
 to a mean membrane potential $v=\sum_s x_s$, which a static, saturating
-\emph{transfer function}---the sigmoid---turns back into a population firing rate,
+\emph{transfer function}---the sigmoid---turns back into a population firing rate
+\cite{wilsoncowan1972},
 \begin{equation}
 \Sig(v)=\frac{2e_0}{1+e^{\,\rho(v_0-v)}} ,
 \label{eq:sigmoid}
@@ -216,8 +222,11 @@ the single neuron's own input--output nonlinearity: $\Sig$ is the mean-field
 population, so $\Sig''$ is inherited from single cells and only reshaped---smoothed
 and broadened---by the spread of states, thresholds and noise: the curvature is
 cellular in origin, but its demodulation is read out at the population level by the
-generic sigmoid, while the network adds only the resonant \emph{amplification}
-(\S\ref{sec:carrier}).
+generic sigmoid, while the network supplies the resonant \emph{amplification} we use here
+(\S\ref{sec:carrier}). Frequency-selective resonance can also be intrinsic to single cells
+(e.g.\ $I_h$ and $I_M$ currents \cite{hutcheonyarom2000}); we locate it instead in the
+network, where second-order synapses near criticality generate it even when the cells do
+not \cite{brunelhakim1999,brunelwang2003}.
 
 This becomes exact one rung up the modeling ladder \cite{ruffini2025rosetta}. For a
 network of all-to-all coupled quadratic integrate-and-fire (QIF) neurons with
@@ -536,7 +545,9 @@ the fixed-point branch (blue) and the min/max of the limit-cycle branches (red) 
 external input $p$, with \emph{solid} stable and \emph{faded} unstable. The alpha limit
 cycle (shaded) is bounded by a saddle-node-on-invariant-circle (SNIC, $p\!\approx\!114$)
 and the supercritical Hopf ($p\!\approx\!315$, $f_0\!\approx\!11.1$~Hz); beyond the Hopf the
-fixed point is a stable focus---the near-critical resonator regime used throughout. Further
+fixed point is a stable focus---the near-critical resonator regime used throughout. The
+column is a weakly-damped focus near \emph{both} bifurcations, so it resonates on either
+approach---more slowly near the SNIC. Further
 codim-1 points are marked (saddle-node SN, Hopf HB$^{\pm}$, saddle-node of limit cycles
 SNLC). \emph{Right:} the sigmoid $\Sig(v)$ and its curvature $\Sig''(v)$, which sets the
 demodulation gain and vanishes at the inflection $v_0$. Dots mark the operating points

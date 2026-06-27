@@ -78,6 +78,31 @@ Ben~H. Jansen and Vincent~G. Rit.
   mathematical model of coupled cortical columns.
 \newblock {\em Biological Cybernetics}, 73(4):357--366, 1995.
 
+\bibitem{wilsoncowan1972}
+Hugh~R. Wilson and Jack~D. Cowan.
+\newblock Excitatory and inhibitory interactions in localized populations of
+  model neurons.
+\newblock {\em Biophysical Journal}, 12(1):1--24, 1972.
+
+\bibitem{hutcheonyarom2000}
+Bruce Hutcheon and Yosef Yarom.
+\newblock Resonance, oscillation and the intrinsic frequency preferences of
+  neurons.
+\newblock {\em Trends in Neurosciences}, 23(5):216--222, 2000.
+
+\bibitem{brunelhakim1999}
+Nicolas Brunel and Vincent Hakim.
+\newblock Fast global oscillations in networks of integrate-and-fire neurons
+  with low firing rates.
+\newblock {\em Neural Computation}, 11(7):1621--1671, 1999.
+
+\bibitem{brunelwang2003}
+Nicolas Brunel and Xiao-Jing Wang.
+\newblock What determines the frequency of fast network oscillations with
+  irregular neural discharges? {I}. synaptic dynamics and
+  excitation--inhibition balance.
+\newblock {\em Journal of Neurophysiology}, 90(1):415--430, 2003.
+
 \bibitem{montbrio2015}
 Ernest Montbri{\'o}, Diego Paz{\'o}, and Alex Roxin.
 \newblock Macroscopic description for networks of spiking neurons.
