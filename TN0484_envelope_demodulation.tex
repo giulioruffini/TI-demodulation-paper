@@ -110,7 +110,8 @@ instead properties of the neural population.
 $\sim$$10^4$-neuron unit that generates the EEG, as an amplitude detector, and its recurrent
 synaptic network poised near a Hopf bifurcation as a resonant amplifier. The account is
 tested across a modeling ladder: a heuristic Jansen--Rit column (JR), a laminar model (LaNMM), an
-exact next-generation mean field (NMM2), and the QIF spiking network underlying it.
+exact next-generation mean field (NMM2), and the quadratic integrate-and-fire spiking
+network underlying it.
 \textbf{Main results.} Population transfer function (sigmoid in JR) curvature acts as a square-law detector that recovers the
 beat, and the network amplifies it resonantly at its own natural frequency. Detection is
 inherited from the single neuron; the sharp frequency selectivity is emergent, set by
@@ -222,7 +223,8 @@ nonzero curvature $\Sig''$ makes it a square-law demodulator, and a
 while a weakly-damped \emph{stable focus} resonantly amplifies the recovered envelope at
 the network's natural frequency (Fig.~\ref{fig:concept}). The amplification is a property
 of the focus, not of the Hopf specifically: it sharpens as the focus nears criticality,
-which the column approaches near \emph{both} the SNIC (a slower rhythm) and the Hopf
+which the column approaches near \emph{both} the saddle-node on an invariant circle
+(SNIC, a slower rhythm) and the Hopf
 (alpha). Where existing accounts locate the nonlinearity in cellular excitability, ours reads
 it out at the mesoscopic scale: the sigmoid is a coarse-grained summary of the
 population's single-cell input--output curves, but once coarse-grained it is a
@@ -257,8 +259,10 @@ it can also be an AM receiver for an external carrier.
 (carrier $f_c$, envelope $\Omega$) reaches a nonlinear detector (the firing-rate
 sigmoid, curvature $\Sig''$), whose output passes through a tuned resonator (the
 second-order-synapse network near a Hopf, natural frequency $f_0$), recovering
-the envelope as an oscillation at $\Omega$. The stages map onto the RF front end,
-square-law/diode detector, RLC tank, and audio output of a classic AM receiver
+the envelope as an oscillation at $\Omega$. The stages map onto the radio-frequency (RF)
+front end, square-law/diode detector, resonant RLC tank (the tuned
+resistor--inductor--capacitor circuit that selects one station), and audio output of a
+classic AM receiver
 \cite{nahin2001}. The firing-rate sigmoid plays the role of the detector; the
 second-order-synapse network near a Hopf is the tuned tank that selects and
 amplifies a particular envelope frequency, so TI ``broadcasts'' to whichever
@@ -778,8 +782,9 @@ $A_\Omega/\langle r_E\rangle$ (a stable measure---the off$\to$on lock-in ratio w
 by the near-zero field-free baseline).
 
 \subsection{Coupling sweeps, timing, and the tACS control (Jansen--Rit)}
-The coupling sweeps (Figs.~\ref{fig:jcurve},~\ref{fig:timing} and the tACS control,
-Fig.~\ref{fig:tacs}) use the single JR column with the operating point $v^*$ pinned: for
+The coupling sweeps of Figs.~\ref{fig:jcurve} and~\ref{fig:timing}, and the transcranial
+alternating-current stimulation (tACS) control of Fig.~\ref{fig:tacs}, use the single JR
+column with the operating point $v^*$ pinned: for
 each global connectivity $C$ we solve the field-free fixed-point relation analytically
 for the external drive $p(C)$ that holds $v^*$ (hence $\Sig''(v^*)$) fixed, vary $C\,(=J)$
 toward the alpha Hopf, and read $\gamma,\omega_0$ from the $6\times6$ Jacobian. The field
@@ -1400,7 +1405,7 @@ full sigmoid rather than its quadratic term gives a drive ratio of order $10^4$,
 extrapolating the square law would predict $10^6$. The rodent experiment is therefore not
 the human experiment scaled down: the mouse is driven into saturation, while the human, at
 $\varepsilon\!\sim\!0.02$~mV, sits deep in the perturbative regime where the quadratic
-penalty is worst. A network model finding that tTIS needs $\sim$$100\times$ the tACS
+penalty is worst. A network model finding that TI needs $\sim$$100\times$ the tACS
 amplitude \cite{karimi2024} is consistent with a nonlinear detector operating there.
 
 What survives is the mechanism, not a solution to the dose problem. It explains TI's
@@ -1422,7 +1427,7 @@ single, deterministic, noiseless column with a phenomenological field coupling;
 coupled noisy columns and an explicit, realistic $\kappa(f_c)$ remain natural next
 steps. The human evidence is also not uniformly positive: a controlled study found
 peripheral but no central effects \cite{iszak2023}, and a systematic review reports that
-occipito-parietal tTIS did not modulate alpha power \cite{mansourinezhad2025}. The
+occipito-parietal TI did not modulate alpha power \cite{mansourinezhad2025}. The
 narrowband prediction above turns the second into a design question, namely whether
 $\Delta f$ tracked individual alpha closely enough to stay inside a $\sim$$1$~Hz response
 band; that is a prediction to be tested, not an explanation to be assumed.
