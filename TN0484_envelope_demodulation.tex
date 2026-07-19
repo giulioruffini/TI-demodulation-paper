@@ -541,8 +541,9 @@ A_\Omega(0)\,\frac{1}{(\omega_c\tau_m)^2}.
 \end{equation}
 The demodulated response rolls off as $1/f_c^2$ above the membrane corner
 (Fig.~\ref{fig:khz}). For a pyramidal soma/dendrite the passive time constant is
-$\tau_m\!\sim\!10$--$30$~ms (human L2/3 pyramidal cells $\sim$12~ms
-\cite{deitcher2017,eyal2016}; we adopt $\sim$16~ms for the soma, corner $\sim$10~Hz), so the carrier-power factor $|H_m|^2$ is only $\sim$$10^{-4}$ at
+$\tau_m\!\sim\!10$--$30$~ms (human L2/3 pyramidal cells: $\sim$12~ms
+\cite{deitcher2017} and $16.5\pm3.7$~ms \cite{eyal2016}, which bracket the
+$\sim$16~ms we adopt for the soma, corner $\sim$10~Hz), so the carrier-power factor $|H_m|^2$ is only $\sim$$10^{-4}$ at
 1~kHz, $\sim$$2.5\times10^{-5}$ at 2~kHz and $\sim$$10^{-6}$ at 10~kHz. Passive
 somatic demodulation is therefore negligible at TI's kHz carriers---a four- to
 six-order-of-magnitude suppression.
@@ -1348,7 +1349,14 @@ passes the slow envelope while removing the carrier
 rectifier tied to axonal resonance---could even set an optimal $\Delta f$.
 (ii)~\emph{Presynaptic terminals}, which polarize $\sim$2--10$\times$ more than somata
 \cite{rahman2013,aberra2023,chakraborty2018} and convert depolarization into
-transmitter release through the steeply nonlinear Ca$^{2+}$--release relation.
+transmitter release through the steeply nonlinear Ca$^{2+}$--release relation. Sensitivity
+is not speed, however. For an isopotential compartment $\tau_m=R_mC_m$ with both quantities
+taken per unit area, so the membrane time constant does not shrink with compartment size:
+a small bouton has a small capacitance and a correspondingly large input resistance. A
+terminal therefore tracks a kHz carrier no better than a soma does, and the short time
+constants available in axons come from high-conductance nodal and myelinated membrane
+rather than from small size. Terminals are thus the \emph{sensitive} locus, not the fast
+one, and the carrier sampling the factorization requires is supplied by~(i).
 (iii)~\emph{Threshold spiking}, where near threshold the spike probability is a smooth
 nonlinearity and a weak bias is rectified through stochastic resonance
 \cite{liu2018,reato2010}. In model cortical neurons TI produces block, onset and
