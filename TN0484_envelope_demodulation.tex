@@ -1329,8 +1329,8 @@ one. With the inter-neuron coupling $J$ as the control parameter
 critical point and reads out its susceptibility, and its efficacy is largest where the
 network sits closest to that transition.
 
-\textbf{Relation to prior network accounts.} That a network rather than a single cell may
-supply the operative nonlinearity is not new. Large-scale simulations attribute tACS
+\textbf{Prior work already places the operative nonlinearity in the network.}
+Large-scale simulations attribute tACS
 entrainment to the recurrent excitatory coupling of pyramidal cells and recover an Arnold
 tongue from it \cite{ali2013}; the dynamical transfer function of an E--I network,
 computed for both rate and spiking models, shows a resonance whose position depends on
@@ -1342,8 +1342,8 @@ explicitly \cite{krause2023}. What we add is the specific pair of factors: $\Sig
 square-law detector, with the demodulated amplitude in closed form, and $1/\gamma$ as the
 amplification, with its size tied to a measurable relaxation time.
 
-\textbf{An amplitude budget, and what it does not close.} Two distinct gaps separate an
-applied field from a response at $\Delta f$, and they are worth keeping apart. The first is
+\textbf{The amplitude budget does not close at human field strengths.} Two gaps separate an
+applied field from a response at $\Delta f$. The first is
 the ordinary weak-field problem, shared with tACS: the measured coupling is
 $\lambda\!\approx\!0.12$--$0.21$~mV per V/m for hippocampal somata
 \cite{bikson2004,deans2007}, rising to $\sim$$0.5$~mV per V/m for cortical L5/6 pyramidal
@@ -1352,11 +1352,11 @@ cells \cite{radman2009}, so a corrected in-vivo human field of $\sim$$0.8$~V/m a
 $\sim$$23$~mV separating rest from threshold \cite{koga2010}, and scalp shunting removes
 most of the applied current before it arrives \cite{voroslakos2018}. The second gap is
 specific to TI: the field carries no power at $\Delta f$, so something must create it. The
-near-Hopf resonance answers the weak-field gap; $\Sig''$ is what creates the line at
+near-Hopf resonance answers the weak-field gap; $\Sig''$ creates the line at
 $\Delta f$. The two are not interchangeable, because the resonance multiplies the TI and
 tACS baseband drives alike and cancels in their ratio.
 
-For the first, write the reverberation time of the weakly damped focus as $\tau=1/\gamma$.
+For the weak-field gap, write the reverberation time of the weakly damped focus as $\tau=1/\gamma$.
 The gain at resonance relative to the static response of the same circuit is then
 $Q=\omega_0/2\gamma=\pi f_0\tau$, or $\pi$ times the number of cycles the ringing survives.
 In-vivo cortical population activity relaxes with an aggregate timescale of a few hundred
@@ -1367,7 +1367,7 @@ magnitude of $Q$ and not its value. High $Q$ is also narrowband: the half-width 
 $1/(\pi\tau)$, of order $1$~Hz, which predicts that a $\Delta f$ held at a group-mean alpha
 will drift out of the response band within a session.
 
-For the second, with per-carrier polarizations $\varepsilon_{1,2}$ the demodulated drive is
+For the demodulation gap, with per-carrier polarizations $\varepsilon_{1,2}$ the demodulated drive is
 $\half\Sig''\varepsilon_1\varepsilon_2$, so its efficiency relative to direct drive at the
 same peak polarization is $\eta=\Sig''\varepsilon/4\Sig'$, \emph{proportional to amplitude}.
 Break-even needs $\varepsilon\approx4\Sig'/\Sig''\approx7$~mV, comparable to the distance to
@@ -1382,13 +1382,12 @@ reach $\sim$$0.24$--$0.57$~V/m at depth against $\sim$$383$~V/m in the mouse
 \cite{rampersad2019}, a field ratio of $\sim$$770$; since the demodulated drive goes as the
 square, the drive ratio is $\sim$$6\times10^5$. The mouse operates where the sigmoid is
 strongly driven and the small-signal expansion no longer holds, the human deep in the
-perturbative regime where the quadratic penalty bites hardest. We therefore do not claim
-the budget closes at human field strengths---on these numbers it does not, and the
-network-model estimate that tTIS needs $\sim$$100\times$ the tACS amplitude
-\cite{karimi2024} is what a quadratic detector predicts. What the account supplies is the
-mechanism setting TI's phenomenology, an explanation for the rodent-to-human collapse, and
-the three terms that would have to improve: the carrier's access to a fast compartment,
-the operating point through $\Sig''$, and proximity to the bifurcation through $Q$.
+perturbative regime where the quadratic penalty bites hardest. The network-model estimate
+that tTIS needs $\sim$$100\times$ the tACS amplitude \cite{karimi2024} is what a quadratic
+detector predicts. What the account supplies is the mechanism setting TI's phenomenology,
+an explanation for the rodent-to-human collapse, and the terms that would have to improve:
+the carrier's access to a fast compartment, the operating point through $\Sig''$, and
+proximity to the bifurcation through $Q$.
 
 Several limitations should be kept in view. The field enters the population sigmoid
 directly; we treat the field-to-nonlinearity coupling $\kappa(f_c)$
