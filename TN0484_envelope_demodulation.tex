@@ -16,26 +16,69 @@
 \captionsetup{font=small,labelfont=bf}
 \usepackage{parskip}
 
+% ---------------------------------------------------------------------------
+% Build switch. \jnefalse -> Neuroelectrics/BCOM Technical Note (TN0484/WP0185).
+%                \jnetrue  -> Journal of Neural Engineering manuscript.
+% One source, two outputs: the TN keeps its branding and the full appendices;
+% the JNE build strips the house furniture and uses the structured abstract.
+% Never fork this file -- switch the flag.
+%
+% Default is the TN. Select the JNE build from the command line, without
+% editing this file, via ./build.sh jne  (which invokes pdflatex as
+%   pdflatex -jobname=TN0484_jne "\def\jnebuild{}\input{<this file>}" ).
+% ---------------------------------------------------------------------------
+\newif\ifjne
+\jnefalse
+\ifdefined\jnebuild\jnetrue\fi
+
 \definecolor{neblue}{RGB}{10,79,140}
 \definecolor{negray}{RGB}{85,85,85}
 \definecolor{nered}{RGB}{179,54,31}
 
-\titleformat{\section}{\large\bfseries\color{neblue}}{\thesection}{0.6em}{}
-\titleformat{\subsection}{\normalsize\bfseries\color{negray}}{\thesubsection}{0.6em}{}
-
-\pagestyle{fancy}\fancyhf{}
-\lhead{\textcolor{neblue}{\textbf{NEUROELECTRICS/BCOM}}\ \textcolor{negray}{\small Technical Note}}
-\rhead{\textcolor{negray}{\small TN0484\,/\,WP0185}}
-\lfoot{\textcolor{negray}{\scriptsize Neuroelectrics / Starlab / BCOM --- Preprint}}
-\rfoot{\textcolor{negray}{\scriptsize \thepage}}
-\renewcommand{\headrulewidth}{0.8pt}
-\renewcommand{\footrulewidth}{0.4pt}
+\ifjne
+  % Plain black headings; IOP typesets its own styling at production.
+  \titleformat{\section}{\large\bfseries}{\thesection}{0.6em}{}
+  \titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.6em}{}
+  \pagestyle{plain}
+\else
+  \titleformat{\section}{\large\bfseries\color{neblue}}{\thesection}{0.6em}{}
+  \titleformat{\subsection}{\normalsize\bfseries\color{negray}}{\thesubsection}{0.6em}{}
+  \pagestyle{fancy}\fancyhf{}
+  \lhead{\textcolor{neblue}{\textbf{NEUROELECTRICS/BCOM}}\ \textcolor{negray}{\small Technical Note}}
+  \rhead{\textcolor{negray}{\small TN0484\,/\,WP0185}}
+  \lfoot{\textcolor{negray}{\scriptsize Neuroelectrics / BCOM --- Preprint}}
+  \rfoot{\textcolor{negray}{\scriptsize \thepage}}
+  \renewcommand{\headrulewidth}{0.8pt}
+  \renewcommand{\footrulewidth}{0.4pt}
+\fi
 
 \newcommand{\Sig}{\sigma}
 \newcommand{\half}{\tfrac{1}{2}}
 
 \begin{document}
 
+\ifjne
+% ---------------------------------------------------------------------------
+% TODO before submission: ORCIDs for all seven authors; confirm affiliations 3
+% and 4 with Canals and Mirasso (reconstructed from the Overleaf edit plus the
+% Zenodo deposit, not yet checked by them); confirm corresponding-author email.
+% ---------------------------------------------------------------------------
+\begin{center}
+{\LARGE\bfseries The cortical column as a tuned receiver:\\[4pt]
+a network mechanism for temporal-interference stimulation}\\[16pt]
+{\large Giulio Ruffini$^{1,2}$, Borja Mercadal$^{1}$, Alex Just$^{1}$,
+Raul de Palma Aristides$^{2}$,\\[2pt]
+Francesca Castaldo$^{1,2}$, Santiago Canals$^{2,4}$, and Claudio Mirasso$^{2,3}$}\\[12pt]
+\begin{minipage}{0.86\textwidth}\centering\small
+$^{1}$Neuroelectrics, Barcelona, Spain\\
+$^{2}$BCOM, Barcelona, Spain\\
+$^{3}$IFISC (UIB-CSIC), Palma de Mallorca, Spain\\
+$^{4}$Instituto de Neurociencias (UMH-CSIC), Sant Joan d'Alacant, Spain\\[6pt]
+E-mail: \texttt{giulio.ruffini@neuroelectrics.com}
+\end{minipage}
+\end{center}
+\vspace{6pt}
+\else
 \begin{flushleft}
 {\color{neblue}\rule{\textwidth}{2pt}}\\[4pt]
 {\LARGE\bfseries The cortical column as a tuned receiver:\\[2pt]
@@ -50,8 +93,38 @@ a network mechanism for temporal-interference stimulation}\\[10pt]
 \end{tabular}\\[4pt]
 {\color{neblue}\rule{\textwidth}{1pt}}
 \end{flushleft}
+\fi
 
 \section*{Abstract}
+\ifjne
+% JNE structured abstract: Objective / Approach / Main results / Significance,
+% bold run-in headings, 300-word cap. Currently 292 -- any addition needs a cut.
+\noindent
+\textbf{Objective.} Temporal-interference (TI) stimulation applies two high-frequency
+currents whose amplitudes beat at a low difference frequency, offering focal, steerable
+stimulation deep in the brain. A puzzle sits at its core: an amplitude-modulated field
+carries no spectral power at the beat frequency, so no passive, linear element of a neuron
+can follow it. Recovering the beat requires a nonlinearity, which has generally been sought
+in single-cell ion channels. We ask whether demodulation and its frequency tuning are
+instead properties of the neural population.
+\textbf{Approach.} We treat the firing-rate nonlinearity of a neural mass, the
+$\sim$$10^4$-neuron unit that generates the EEG, as an amplitude detector, and its recurrent
+synaptic network poised near a Hopf bifurcation as a resonant amplifier. The account is
+tested across a modeling ladder: a heuristic Jansen--Rit column, a laminar model (LaNMM), an
+exact next-generation mean field (NMM2), and the QIF spiking network underlying it.
+\textbf{Main results.} Sigmoid curvature acts as a square-law detector that recovers the
+beat, and the network amplifies it resonantly at its own natural frequency. Detection is
+inherited from the single neuron; the sharp frequency selectivity is emergent, set by
+proximity to criticality and tunable by connectivity. The mechanism reproduces TI's known
+behavior: independence of the carrier once membrane polarization is matched, largest
+response when the beat matches a region's intrinsic rhythm, and, because the resonance
+amplifies oscillatory timing far more than mean rate, realignment of spike timing without a
+change in firing rate, as observed in vivo.
+\textbf{Significance.} TI efficacy should be as much a property of the brain as of the
+device, depending on brain state and regional connectivity. The cortical column behaves as a
+tuned AM radio receiver, which reframes dose optimization around the target's dynamics and
+yields falsifiable predictions listed in the paper.
+\else
 \noindent
 Temporal-interference (TI) stimulation promises what other non-invasive methods
 cannot: focal, steerable stimulation deep in the brain, produced where two
@@ -74,14 +147,18 @@ amplifies oscillatory timing far more than mean rate---locks spike timing withou
 changing firing rate, as observed in vivo. Because the gain depends on brain state, TI
 efficacy should be as much a property of the brain as of the device: the cortical
 column behaves as a tuned AM radio receiver.
+\fi
 
 \smallskip
-\noindent\textbf{Keywords:} temporal interference; transcranial stimulation; neural
-mass model; amplitude demodulation; Hopf bifurcation; cross-frequency coupling;
-Jansen--Rit; LaNMM.
+\noindent\textbf{Keywords:} temporal interference; non-invasive neuromodulation;
+transcranial stimulation; neural mass model; amplitude demodulation; Hopf bifurcation;
+cross-frequency coupling; criticality.
+
+\ifjne\else
 \clearpage
 \tableofcontents
 \clearpage
+\fi
 
 \section{Introduction}
 Reaching a deep brain target without stimulating the tissue above it is a long-standing
@@ -1404,13 +1481,33 @@ be regenerated from the committed inputs. The code is released under CC-BY-4.0.
 GR, BM, AJ and FC have received funding from the European Research Council (ERC) under the
 European Union's Horizon 2020 research and innovation programme (grant agreement No 855109,
 GALVANI).
+% TODO before submission: funding for SC (IN, UMH-CSIC) and CM (IFISC, UIB-CSIC).
+% IOP requires the funding agency AND grant number disclosed for all support.
+
+\ifjne
+\section*{Competing interests}
+% ---------------------------------------------------------------------------
+% DRAFT -- must be confirmed by all seven authors before submission. IOP treats
+% this as mandatory and asks for financial and non-financial interests alike.
+% The text below is inferred from affiliations and has been checked by nobody.
+% ---------------------------------------------------------------------------
+GR is Chief Scientific and Technology Officer of Neuroelectrics, which develops and
+commercializes transcranial stimulation devices. BM, AJ and FC are affiliated with
+Neuroelectrics. The remaining authors declare no competing interests.
+
+\section*{Author contributions}
+% TODO: CRediT statement. Optional at IOP, but absent one all co-authors are
+% taken to share full responsibility for the entire paper.
+\fi
 
 \section*{Declaration of generative AI and AI-assisted technologies in the manuscript
 preparation process}
-During the preparation of this work the author(s) used Claude and ChatGPT in order to
-streamline the narrative. After using this tool/service, the author(s) reviewed and edited
-the content as needed and take(s) full responsibility for the content of the published
-article.
+% IOP asks for the tool name and version, and expects prior drafts and prompts
+% to be retained. TODO: pin the versions actually used before submission.
+During the preparation of this work the authors used Anthropic Claude and OpenAI ChatGPT to
+streamline the narrative and to assist with code and figure generation from data the authors
+produced. The authors reviewed and edited all resulting content and take full responsibility
+for the content of the published article.
 
 \bibliographystyle{unsrt}
 \bibliography{references}
