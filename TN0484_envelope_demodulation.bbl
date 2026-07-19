@@ -257,6 +257,112 @@ Edward Ott and Thomas~M. Antonsen.
   oscillators.
 \newblock {\em Chaos}, 18(3):037113, 2008.
 
+\bibitem{ali2013}
+M.~M. Ali, K.~K. Sellers, and F.~Frohlich.
+\newblock Transcranial alternating current stimulation modulates large-scale
+  cortical network activity by network resonance.
+\newblock {\em Journal of Neuroscience}, 33(27):11262–11275, 2013.
+
+\bibitem{ledoux2011}
+Erwan Ledoux and Nicolas Brunel.
+\newblock Dynamics of networks of excitatory and inhibitory neurons in response
+  to time-dependent inputs.
+\newblock {\em Frontiers in Computational Neuroscience}, 5, 2011.
+
+\bibitem{negahbani2018}
+Ehsan Negahbani, Florian~H. Kasten, Christoph~S. Herrmann, and Flavio
+  Fröhlich.
+\newblock Targeting alpha-band oscillations in a cortical model with
+  amplitude-modulated high-frequency transcranial electric stimulation.
+\newblock {\em NeuroImage}, 173:3–12, 2018.
+
+\bibitem{krause2023}
+Matthew~R. Krause, Pedro~G. Vieira, and Christopher~C. Pack.
+\newblock Transcranial electrical stimulation: How can a simple conductor
+  orchestrate complex brain activity?
+\newblock {\em PLOS Biology}, 21(1):e3001973, January 2023.
+
+\bibitem{bikson2004}
+Marom Bikson, Masashi Inoue, Hiroki Akiyama, Jackie~K. Deans, John~E. Fox,
+  Hiroyoshi Miyakawa, and John G.~R. Jefferys.
+\newblock Effects of uniform extracellular dc electric fields on excitability
+  in rat hippocampal slices in vitro.
+\newblock {\em The Journal of Physiology}, 557(1):175–190, May 2004.
+
+\bibitem{deans2007}
+Jacqueline~K. Deans, Andrew~D. Powell, and John G.~R. Jefferys.
+\newblock Sensitivity of coherent oscillations in rat hippocampus to ac
+  electric fields.
+\newblock {\em The Journal of Physiology}, 583(2):555–565, August 2007.
+
+\bibitem{radman2009}
+Thomas Radman, Raddy~L. Ramos, Joshua~C. Brumberg, and Marom Bikson.
+\newblock Role of cortical cell type and morphology in subthreshold and
+  suprathreshold uniform electric field stimulation in vitro.
+\newblock {\em Brain Stimulation}, 2(4):215–228.e3, October 2009.
+
+\bibitem{huang2017}
+Yu~Huang, Anli~A Liu, Belen Lafon, Daniel Friedman, Michael Dayan, Xiuyuan
+  Wang, Marom Bikson, Werner~K Doyle, Orrin Devinsky, and Lucas~C Parra.
+\newblock Measurements and models of electric fields in the in vivo human brain
+  during transcranial electric stimulation.
+\newblock {\em eLife}, 6, February 2017.
+
+\bibitem{huang2017corr}
+Yu~Huang, Anli~A Liu, Belen Lafon, Daniel Friedman, Michael Dayan, Xiuyuan
+  Wang, Marom Bikson, Werner~K Doyle, Orrin Devinsky, and Lucas~C Parra.
+\newblock Correction: measurements and models of electric fields in the in
+  vivo human brain during transcranial electric stimulation.
+\newblock {\em eLife}, 7, February 2018.
+
+\bibitem{koga2010}
+Kohei Koga, Xiangyao Li, Tao Chen, Hendrik~W Steenland, Giannina Descalzi, and
+  Min Zhuo.
+\newblock In vivo whole-cell patch-clamp recording of sensory synaptic
+  responses of cingulate pyramidal neurons to noxious mechanical stimuli in
+  adult mice.
+\newblock {\em Molecular Pain}, 6, January 2010.
+
+\bibitem{voroslakos2018}
+Mihály Vöröslakos, Yuichi Takeuchi, Kitti Brinyiczki, Tamás Zombori,
+  Azahara Oliva, Antonio Fernández-Ruiz, Gábor Kozák, Zsigmond~Tamás
+  Kincses, Béla Iványi, György Buzsáki, and Antal Berényi.
+\newblock Direct effects of transcranial electric stimulation on brain circuits
+  in rats and humans.
+\newblock {\em Nature Communications}, 9(1), February 2018.
+
+\bibitem{wilting2018}
+Jens Wilting and Viola Priesemann.
+\newblock Inferring collective dynamical states from widely unobserved systems.
+\newblock {\em Nature Communications}, 9(1), 2018.
+
+\bibitem{rampersad2019}
+Sumientra Rampersad, Biel Roig-Solvas, Mathew Yarossi, Praveen~P. Kulkarni,
+  Emiliano Santarnecchi, Alan~D. Dorval, and Dana~H. Brooks.
+\newblock Prospects for transcranial temporal interference stimulation in
+  humans: A computational study.
+\newblock {\em NeuroImage}, 202:116124, November 2019.
+
+\bibitem{karimi2024}
+Nafiseh Karimi, Rassoul Amirfattahi, and Abolghasem Zeidaabadi~Nezhad.
+\newblock Neuromodulation effect of temporal interference stimulation based on
+  network computational model.
+\newblock {\em Frontiers in Human Neuroscience}, 18, 2024.
+
+\bibitem{iszak2023}
+Krisztián Iszak, Simon~Mathies Gronemann, Stefanie Meyer, Alexander Hunold,
+  Jana Zschüntzsch, Mathias Bähr, Walter Paulus, and Andrea Antal.
+\newblock Why temporal inference stimulation may fail in the human brain: A
+  pilot research study.
+\newblock {\em Biomedicines}, 11(7):1813, 2023.
+
+\bibitem{mansourinezhad2025}
+Paria Mansourinezhad, Rob M~C Mestrom, Debby C~W Klooster, Mathieu Sprengers,
+  Paul A J~M Boon, and Margarethus~M Paulides.
+\newblock Systematic review of experimental studies in humans on transcranial
+  temporal interference stimulation.
+\newblock {\em Journal of Neural Engineering}, 22(5):051001, 2025.
+
 \bibitem{lachaux1999}
 Jean-Philippe Lachaux, Eugenio Rodriguez, Jacques Martinerie, and Francisco~J.
   Varela.
