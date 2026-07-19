@@ -1,11 +1,12 @@
 # TN0484 — A neural-mass mechanism for temporal-interference envelope demodulation
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20844275.svg)](https://doi.org/10.5281/zenodo.20844275)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21009618.svg)](https://doi.org/10.5281/zenodo.21009618)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
 **Paper:** *The cortical column as a tuned receiver: a network mechanism for
-temporal-interference stimulation* — G. Ruffini, B. Mercadal, A. Just, R. Palma,
-F. Castaldo. Archived at Zenodo: **[doi:10.5281/zenodo.20844275](https://doi.org/10.5281/zenodo.20844275)**.
+temporal-interference stimulation* — G. Ruffini, B. Mercadal, A. Just,
+R. de Palma Aristides, F. Castaldo, S. Canals, C. Mirasso.
+Archived at Zenodo: **[doi:10.5281/zenodo.21009618](https://doi.org/10.5281/zenodo.21009618)**.
 Licensed **CC-BY-4.0** (see [`LICENSE`](LICENSE)); machine-readable citation in
 [`CITATION.cff`](CITATION.cff).
 

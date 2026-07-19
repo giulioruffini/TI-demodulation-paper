@@ -12,27 +12,33 @@ type: software
 authors:
   - family-names: Ruffini
     given-names: Giulio
-    affiliation: "Neuroelectrics / Starlab / BCOM"
+    affiliation: "Neuroelectrics / BCOM"
   - family-names: Mercadal
     given-names: Borja
     affiliation: "Neuroelectrics"
   - family-names: Just
     given-names: Alex
     affiliation: "Neuroelectrics"
-  - family-names: Palma
+  - family-names: de Palma Aristides
     given-names: Raul
-    affiliation: "Neuroelectrics / Starlab"
+    affiliation: "BCOM"
   - family-names: Castaldo
     given-names: Francesca
-    affiliation: "Neuroelectrics / Starlab"
+    affiliation: "Neuroelectrics / BCOM"
+  - family-names: Canals
+    given-names: Santiago
+    affiliation: "Instituto de Neurociencias (UMH-CSIC) / BCOM"
+  - family-names: Mirasso
+    given-names: Claudio
+    affiliation: "IFISC (UIB-CSIC) / BCOM"
 identifiers:
   - type: doi
-    value: 10.5281/zenodo.20844275
-    description: "Zenodo archive of this repository"
+    value: 10.5281/zenodo.21009618
+    description: "Zenodo archive of this repository (concept DOI, resolves to latest version)"
 repository-code: "https://github.com/giulioruffini/TI-demodulation-paper"
 license: CC-BY-4.0
-version: "0.7"
-date-released: "2026-06-17"
+version: "0.11.0"
+date-released: "2026-07-11"
 keywords:
   - temporal interference
   - transcranial stimulation
