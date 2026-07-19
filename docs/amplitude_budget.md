@@ -139,21 +139,37 @@ question.
 This falls out of $\eta \propto \varepsilon$, and I think it is the most useful thing here.
 
 Rampersad et al. give 383 V/m in mouse at 0.776 mA against 0.24–0.57 V/m in optimized human
-montages — a field ratio of roughly **770×**. Because the detector is quadratic, demodulated
-drive scales as $E^2$, so that becomes
+montages — a field ratio of order $10^3$.
 
-$$\left(\frac{383}{0.5}\right)^2 \approx 5.9\times10^{5}.$$
+**Correction, 2026-07-19.** An earlier version of this note said the quadratic detector turns
+that into a ~590,000× advantage in demodulated drive, by extrapolating $E^2$ across the whole
+range. That is wrong, and it was caught by asking what the mouse polarization actually is.
+At 383 V/m the per-carrier polarization reaching the detector is $\varepsilon \approx 18$ mV,
+roughly 80% of the ~23 mV from rest to threshold. The sigmoid is saturating there, so the
+small-signal expansion $\tfrac12\Sigma''\varepsilon^2$ does not apply, and extrapolating it
+is exactly the error the note warns about elsewhere.
 
-**A ~770× field advantage becomes a ~590,000× advantage in demodulated drive.** Concretely:
-in mouse $\varepsilon \approx 18$ mV, above the 7.1 mV break-even, so $\eta \approx 2.5$ and
-the detector runs at unity efficiency or better. In humans $\varepsilon \approx 0.023$ mV,
-so $\eta \approx 0.003$ and it is 305× lossy. The mouse is not a scaled-down human here; it
-is operating in a different regime of the same nonlinearity.
+Evaluating the **full sigmoid** numerically instead of its quadratic term:
 
-That is a quantitative, mechanism-derived account of why TI translates poorly from rodent to
-human — derived from *our own* model, which is what makes it worth leading with rather than
-burying. Rampersad's "currents over 500 mA per electrode pair would be required" is the
-linear version of the same statement; ours says the true penalty is the square of theirs.
+| operating point $v^*$ | exact drive ratio | quadratic law overstates by |
+|---|---|---|
+| 0 mV | $5.1\times10^4$ | 12× |
+| 2 mV | $1.6\times10^4$ | 36× |
+| 4 mV | $6.7\times10^3$ | 88× |
+
+So the true ratio is **of order $10^4$**, not $10^6$ — the quadratic extrapolation overstates
+the mouse advantage by one to two orders of magnitude, depending on operating point. The
+human case is unaffected: at $\varepsilon \approx 0.023$ mV the exact and quadratic results
+agree to four figures, confirming it sits deep in the perturbative regime.
+
+The qualitative conclusion survives and is arguably cleaner. A field ratio of $\sim$$10^3$
+becomes a drive ratio of $\sim$$10^4$, so the disparity is amplified by a further factor of
+~10 rather than preserved. The mouse is not a scaled-down human: it is driven into
+saturation while the human sits deep in the perturbative regime where the quadratic penalty
+is worst. What does *not* survive is the headline 590,000× figure, and the claim that the
+mouse operates "above break-even where demodulation is efficient" — break-even was derived
+from the expansion, so using it to describe a regime where the expansion has failed was
+circular.
 
 ## Consequences for the paper
 

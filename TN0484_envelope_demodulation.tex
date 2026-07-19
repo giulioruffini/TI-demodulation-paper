@@ -1378,8 +1378,10 @@ carrier, and that conversion is inefficient. With per-carrier polarizations
 $\varepsilon_{1,2}$ the demodulated drive is $\half\Sig''\varepsilon_1\varepsilon_2$,
 against $2\Sig'\varepsilon$ for tACS at the same peak polarization. Their ratio,
 $\eta=\Sig''\varepsilon/4\Sig'$, is proportional to $\varepsilon$: a square-law detector
-gets \emph{less} efficient as the signal gets weaker. Matching tACS would take
-$\varepsilon\approx7$~mV, the same order as the distance to threshold. At $1$~V/m with a
+gets \emph{less} efficient as the signal gets weaker. Formally $\eta$ reaches unity at
+$\varepsilon\approx7$~mV, but that is the same order as the distance to threshold and lies
+outside the range where the expansion itself holds, so parity with tACS is not reachable by
+this route rather than merely expensive. At $1$~V/m with a
 $1$~kHz carrier, TI comes out $\sim$$300\times$ weaker than tACS if the carrier reaches a
 fast nodal compartment, and $\sim$$10^6\times$ weaker if it reaches only the soma. The
 resonance does not make this back, because it multiplies both equally.
@@ -1387,15 +1389,19 @@ resonance does not make this back, because it multiplies both equally.
 What TI buys for that price is targeting: a field applied directly at $\Delta f$ cannot be
 steered to a deep structure, whereas two kHz beams can.
 
-The same square law explains why TI works in rodents and disappoints in humans. A mouse
+The same nonlinearity explains why TI works in rodents and disappoints in humans. A mouse
 brain sees $\sim$$383$~V/m from a TI montage, while optimized human montages reach
-$0.24$--$0.57$~V/m at depth \cite{rampersad2019}: the field is $\sim$$770$ times larger in
-the mouse. Because the demodulated drive goes as the \emph{square} of the field, the drive
-is $770^2\!\approx\!6\times10^5$ times larger. The rodent experiment is therefore not the
-human experiment scaled down. At $\sim$$18$~mV of polarization the mouse sits above the
-$7$~mV break-even point, where demodulation is efficient; the human, at $\sim$$0.02$~mV,
-sits far below it. This is also why a network model finds that tTIS needs $\sim$$100\times$
-the tACS amplitude \cite{karimi2024}: that is the penalty a quadratic detector imposes.
+$0.24$--$0.57$~V/m at depth \cite{rampersad2019}, a field ratio of order $10^3$. A nonlinear
+detector amplifies that disparity rather than preserving it, but not by the full square. At
+mouse field strengths the per-carrier polarization arriving at the detector is
+$\varepsilon\!\sim\!18$~mV, roughly $80\%$ of the way from rest to threshold, so the sigmoid
+saturates and the small-signal expansion \eqref{eq:demod} no longer holds. Evaluating the
+full sigmoid rather than its quadratic term gives a drive ratio of order $10^4$, where
+extrapolating the square law would predict $10^6$. The rodent experiment is therefore not
+the human experiment scaled down: the mouse is driven into saturation, while the human, at
+$\varepsilon\!\sim\!0.02$~mV, sits deep in the perturbative regime where the quadratic
+penalty is worst. A network model finding that tTIS needs $\sim$$100\times$ the tACS
+amplitude \cite{karimi2024} is consistent with a nonlinear detector operating there.
 
 What survives is the mechanism, not a solution to the dose problem. It explains TI's
 phenomenology and the rodent-to-human collapse, and names the three quantities worth
