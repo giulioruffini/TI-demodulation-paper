@@ -102,9 +102,8 @@ a network mechanism for temporal-interference stimulation}\\[10pt]
 \noindent
 \textbf{Objective.} Temporal-interference (TI) stimulation applies two high-frequency
 currents whose amplitudes beat at a low difference frequency, offering focal, steerable
-stimulation deep in the brain. A puzzle sits at its core: an amplitude-modulated field
-carries no spectral power at the beat frequency, so no passive, linear element of a neuron
-can follow it. Recovering the beat requires a nonlinearity, which has generally been sought
+stimulation deep in the brain. Yet an amplitude-modulated field carries no spectral power
+at the beat frequency, so no passive, linear element of a neuron can follow it. Recovering the beat requires a nonlinearity, which has generally been sought
 in single-cell ion channels. We ask whether demodulation and its frequency tuning are
 instead properties of the neural population.
 \textbf{Approach.} We treat the firing-rate nonlinearity of a neural mass, the
@@ -129,7 +128,7 @@ yields falsifiable predictions listed in the paper.
 Temporal-interference (TI) stimulation promises what other non-invasive methods
 cannot: focal, steerable stimulation deep in the brain, produced where two
 high-frequency currents overlap and their amplitudes beat at a low difference
-frequency. Yet a puzzle sits at its core. An amplitude-modulated field carries no
+frequency. Yet an amplitude-modulated field carries no
 power at that beat frequency, so no passive, linear part of a neuron can follow it;
 recovering the beat requires a nonlinearity, usually sought in single-cell ion
 channels. Here we show that the recovery, and its tuning, are properties of the neural
@@ -163,7 +162,7 @@ cross-frequency coupling; criticality.
 \section{Introduction}
 Reaching a deep brain target without stimulating the tissue above it is a long-standing
 goal of non-invasive neuromodulation, and temporal-interference (TI) stimulation
-\cite{grossman2017} is its most striking recent proposal. TI applies two sinusoids at
+\cite{grossman2017} is its most prominent recent proposal. TI applies two sinusoids at
 $f_1$ and $f_2=f_1+\Delta f$ through separate electrode pairs (typically
 $f_1\!\sim\!1$--$2$~kHz, $\Delta f\!\sim\!1$--$100$~Hz). Where the two fields
 overlap, their superposition is an AM signal whose carrier is near $f_1$ and
@@ -789,13 +788,13 @@ lock-in of $v$ at $\Delta f$.
 \subsection{Forced response, entrainment, and gating: vocabulary and metrics}\label{sec:vocab}
 ``Entrainment'' is used in several senses, and our system can exhibit more than one, so
 we fix the vocabulary. We reserve \emph{entrainment} for its dynamical-systems
-meaning---frequency/phase locking of a \emph{self-sustained} oscillator to an external
-rhythm, confined to an Arnold tongue \cite{pikovsky2001}---and distinguish it from two
+meaning, frequency/phase locking of a \emph{self-sustained} oscillator to an external
+rhythm confined to an Arnold tongue \cite{pikovsky2001}, and distinguish it from two
 related read-outs.
 \emph{(i) Forced response.} Below the Hopf the column does not oscillate on its own; the
-field elicits a driven response whose strength we quantify by the lock-in amplitude of
-the read-out at the beat $\Delta f$ (Eq.~\eqref{eq:lockin})---its susceptibility---and
-there is no autonomous rhythm to entrain (J-curve, timing, tACS).
+field elicits a driven response whose susceptibility we quantify by the lock-in amplitude
+of the read-out at the beat $\Delta f$ (Eq.~\eqref{eq:lockin}), and there is no autonomous
+rhythm to entrain (J-curve, timing, tACS).
 \emph{(ii) Frequency entrainment.} Above the Hopf the column free-runs at $f_0$; genuine
 entrainment means its dominant frequency is \emph{pulled} to $\Delta f$. We test this with
 the dominant output frequency $f_{\rm out}$ (largest non-DC FFT peak) and the $1{:}1$
@@ -1121,24 +1120,18 @@ detects the envelope (coarse-grained into $\Sig''$, or the exact $v^2$), while t
 sharp, tunable gain is the network's---a resonant amplification set by proximity to the
 Hopf and adjustable through the coupling.
 
-\subsection{Timing, not rate: the resonance amplifies the AC envelope, not the mean rate}\label{sec:timing}
-The near-Hopf gain is sharply frequency-selective, and this has a sharp experimental
-consequence. The demodulator feeds the network both a baseband (DC) term and a line at
-the beat $\Omega$ (Eq.~\eqref{eq:taylor}), but the transfer $G(\Omega)$ of
-Eq.~\eqref{eq:gain} treats them very differently: at the resonance
-$G(\omega_0)\propto1/(2\gamma\omega_0)$ diverges as the Hopf is approached, while at
-zero frequency $G(0)\propto1/\omega_0^2$ is flat. Holding detection fixed (pinning
-$v^*$, exactly as in Fig.~\ref{fig:jcurve}) and driving the column toward the Hopf
-through the coupling, the AC lock-in at the resonant beat $\Delta f=f_0$ grows
-$\sim$$17\times$---tracking $1/\gamma$ before saturating near criticality---while the
-DC shift of the mean pyramidal firing rate stays within a few mHz---consistent with
-zero---throughout (Fig.~\ref{fig:timing}). Near criticality the recovered envelope
-locks population \emph{timing} at $\Delta f$ while leaving the mean \emph{rate}
-essentially unchanged. This is the mesoscopic counterpart of the in-vivo observation
-that TI alters spike timing but not firing rate in the primate brain
-\cite{vieira2024}: the network selectively amplifies the envelope-locked AC response,
-not the DC rate, so a near-flat mean rate is the expected signature even where TI is
-acting.
+\subsection{The resonance amplifies envelope timing, not the mean rate}\label{sec:timing}
+The demodulator feeds the network a baseband term and a line at the beat $\Omega$
+(Eq.~\eqref{eq:taylor}), and the transfer $G(\Omega)$ of Eq.~\eqref{eq:gain} treats them
+differently: $G(\omega_0)\propto1/(2\gamma\omega_0)$ diverges as the Hopf is approached,
+while $G(0)\propto1/\omega_0^2$ stays flat. Pinning $v^*$ to hold detection fixed, as in
+Fig.~\ref{fig:jcurve}, and driving the column toward the Hopf through the coupling, the AC
+lock-in at the resonant beat $\Delta f=f_0$ grows $\sim$$17\times$, tracking $1/\gamma$
+before saturating near criticality, while the DC shift of the mean pyramidal firing rate
+stays within a few mHz of zero (Fig.~\ref{fig:timing}). The network amplifies the
+envelope-locked AC response and not the DC rate, so a flat mean rate is the expected
+signature even where TI is acting---the mesoscopic counterpart of the observation that TI
+alters spike timing but not firing rate in the primate brain \cite{vieira2024}.
 
 \subsection{Microscale confirmation: TI realigns spike timing in the QIF network}\label{sec:qif}
 The mesoscale prediction has a direct microscale test, since NMM2 is the \emph{exact} mean
@@ -1161,7 +1154,7 @@ the spiking-network fingerprint of the same nonlinear frequency mixing that oper
 macroscale, and it is the sideband signature of \emph{gating} rather than the frequency
 pulling of entrainment. The spiking network reproduces
 the exact NMM2 mean field (matched gamma spectrum and mean rate,
-Fig.~\ref{fig:qif_timing}a), and across both regimes the mean rate is essentially unchanged
+Fig.~\ref{fig:qif_timing}a), and across both regimes the mean rate is unchanged
 ($\times1.05$--$1.10$) while the $\Delta f$ modulation depth of the population rate rises
 from near zero to $0.19$--$0.76$ (Fig.~\ref{fig:qif_timing}c): TI realigns timing, not
 rate---the spiking-level counterpart of \S\ref{sec:timing} and a direct microscale analog
@@ -1174,7 +1167,7 @@ of the in-vivo spike-timing-without-rate finding \cite{vieira2024}.
 generator): TI realigns spike timing, not mean rate.} $N=8000$ excitatory and inhibitory
 quadratic integrate-and-fire neurons whose exact mean field is the NMM2 PING circuit
 (Eq.~\eqref{eq:nmm2-ping}). This circuit's intrinsic rhythm is \emph{gamma}
-($\sim$53~Hz), so---as in the alpha figures, but one band up---the TI beat $\Delta f$ is
+($\sim$53~Hz), so, as in the alpha figures but one band up, the TI beat $\Delta f$ is
 set in the gamma range (here much larger than the $\Delta f\!\sim\!11$~Hz of the
 Jansen--Rit alpha column; carrier $f_c=300$~Hz). Black ticks are $E$ spikes (400 of
 8000, a representative sample), blue the population rate $r_E(t)$, red the TI envelope; the boxed value
@@ -1348,27 +1341,26 @@ NMM2/QIF figures---so TI's optimal $\Delta f$ is a testable function of regional
 anatomy rather than a single universal value, and gamma-band targets call for
 correspondingly higher beat frequencies.
 
-\textbf{Amplification is critical slowing---and what kind of criticality.} The network
-effect at the heart of this work---gain $\propto1/\gamma$ as the damping $\gamma$ (the
-leading Jacobian eigenvalue) vanishes at the Hopf---is the dynamical signature of
-\emph{critical slowing}: a susceptibility that diverges as a system approaches a
-bifurcation. Whether that warrants the word ``criticality'' depends on the model. In the
-heuristic Jansen--Rit and LaNMM columns the Hopf is a bifurcation of a
-finite-dimensional, fitted ODE---a near-bifurcation statement, not a phase transition. In
-the exact next-generation mean field (NMM2/MPR) it is sharper: the reduction from the
-spiking QIF population is exact in the thermodynamic limit, and the dynamical variables
-$(r,v)$ are genuine \emph{order parameters}---conformally related to the Kuramoto--Daido
-order parameter through the Ott--Antonsen ansatz \cite{ott2008,montbrio2015}---so the
-Hopf is a true macroscopic transition of the underlying many-body system and our
-$1/\gamma$ gain is its diverging susceptibility. One
-qualifier keeps this honest: because the reduction assumes all-to-all coupling, it is a
-\emph{mean-field} critical point---it delivers temporal critical slowing but no diverging
-\emph{spatial} correlation length, so the column realizes the temporal-susceptibility
-face of criticality, not the scale-free spatial one. With
-the inter-neuron coupling $J$ as the control parameter (Fig.~\ref{fig:nmm2_jcurve}), TI
-then drives a population toward---and reads out the susceptibility of---a genuine, if
-mean-field, critical point, and its efficacy is largest exactly where the network sits
-closest to that transition.
+\textbf{Amplification is critical slowing, of a mean-field kind.} The network effect at
+the heart of this work, gain $\propto1/\gamma$ as the damping $\gamma$ (the leading
+Jacobian eigenvalue) vanishes at the Hopf, is the dynamical signature of \emph{critical
+slowing}: a susceptibility that diverges as a system approaches a bifurcation. Whether
+that warrants the word ``criticality'' depends on the model. In the heuristic Jansen--Rit
+and LaNMM columns the Hopf is a bifurcation of a finite-dimensional, fitted ODE, a
+near-bifurcation statement rather than a phase transition. In the exact next-generation
+mean field (NMM2/MPR) it is sharper: the reduction from the spiking QIF population is
+exact in the thermodynamic limit, and the dynamical variables $(r,v)$ are genuine
+\emph{order parameters}, conformally related to the Kuramoto--Daido order parameter
+through the Ott--Antonsen ansatz \cite{ott2008,montbrio2015}, so the Hopf is a true
+macroscopic transition of the underlying many-body system and the $1/\gamma$ gain is its
+diverging susceptibility. One qualifier keeps this honest. Because the reduction assumes
+all-to-all coupling, the critical point is \emph{mean-field}: it delivers temporal
+critical slowing but no diverging \emph{spatial} correlation length, so the column
+realizes the temporal-susceptibility face of criticality and not the scale-free spatial
+one. With the inter-neuron coupling $J$ as the control parameter
+(Fig.~\ref{fig:nmm2_jcurve}), TI drives a population toward a genuine, if mean-field,
+critical point and reads out its susceptibility, and its efficacy is largest where the
+network sits closest to that transition.
 
 Several limitations should be kept in view. The field enters the population sigmoid
 directly; we treat the field-to-nonlinearity coupling $\kappa(f_c)$
