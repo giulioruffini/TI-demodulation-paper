@@ -391,8 +391,8 @@ means we neglect electromagnetic propagation and induction (wavelengths $\gg$
 head, frequencies far below tissue relaxation), so the field acts as an
 instantaneous polarization; taking it to add directly inside the sigmoid argument,
 \begin{equation}
-\boxed{\;\varphi(t)=\Sig\!\big(v(t)+\lambda\,E(t)\big),\qquad
-E(t)=E_0\,[\,1+m\cos\Omega t\,]\cos\omega_c t\;}
+\varphi(t)=\Sig\!\big(v(t)+\lambda\,E(t)\big),\qquad
+E(t)=E_0\,[\,1+m\cos\Omega t\,]\cos\omega_c t
 \label{eq:coupling}
 \end{equation}
 This is the standard weak-field coupling $\delta V_m=\vec\lambda\!\cdot\!\vec E$
@@ -440,9 +440,17 @@ $\cos^2\omega_c t$ averages to its mean $\half$),
 \end{equation}
 so a line appears at exactly the envelope frequency $\Omega$, with amplitude
 \begin{equation}
-\boxed{\,A_\Omega\simeq\half\,\Sig''(v^*)\,\varepsilon^2\,m\,}.
+A_\Omega\simeq\half\,\Sig''(v^*)\,\varepsilon^2\,m .
 \label{eq:demod}
 \end{equation}
+Physical TI applies two tones rather than a modulated carrier. Writing their
+post-coupling polarizations as $\varepsilon_1$ and $\varepsilon_2$, the same expansion
+gives $A_\Omega=\half\Sig''(v^*)\,\varepsilon_1\varepsilon_2$, so the effective amplitude
+is the geometric mean $\sqrt{\varepsilon_1\varepsilon_2}$ and, at fixed total, the drive
+peaks where the two beams are matched---the origin of TI's focality. Once the synaptic
+low-pass removes the carrier the two descriptions coincide, so we use the
+modulated-carrier form throughout.
+
 In the language of \cite{ruffini2025ham}, the quadratic cross-term
 $\kappa_2\,s_1 s_2$ between a slow and a fast input implements amplitude
 modulation/demodulation and the associated intermodulation lines.
