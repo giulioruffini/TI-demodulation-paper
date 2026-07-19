@@ -315,14 +315,6 @@ Yu~Huang, Anli~A Liu, Belen Lafon, Daniel Friedman, Michael Dayan, Xiuyuan
   vivo human brain during transcranial electric stimulation.
 \newblock {\em eLife}, 7, February 2018.
 
-\bibitem{koga2010}
-Kohei Koga, Xiangyao Li, Tao Chen, Hendrik~W Steenland, Giannina Descalzi, and
-  Min Zhuo.
-\newblock In vivo whole-cell patch-clamp recording of sensory synaptic
-  responses of cingulate pyramidal neurons to noxious mechanical stimuli in
-  adult mice.
-\newblock {\em Molecular Pain}, 6, January 2010.
-
 \bibitem{voroslakos2018}
 Mihály Vöröslakos, Yuichi Takeuchi, Kitti Brinyiczki, Tamás Zombori,
   Azahara Oliva, Antonio Fernández-Ruiz, Gábor Kozák, Zsigmond~Tamás
@@ -330,6 +322,14 @@ Mihály Vöröslakos, Yuichi Takeuchi, Kitti Brinyiczki, Tamás Zombori,
 \newblock Direct effects of transcranial electric stimulation on brain circuits
   in rats and humans.
 \newblock {\em Nature Communications}, 9(1), February 2018.
+
+\bibitem{koga2010}
+Kohei Koga, Xiangyao Li, Tao Chen, Hendrik~W Steenland, Giannina Descalzi, and
+  Min Zhuo.
+\newblock In vivo whole-cell patch-clamp recording of sensory synaptic
+  responses of cingulate pyramidal neurons to noxious mechanical stimuli in
+  adult mice.
+\newblock {\em Molecular Pain}, 6, January 2010.
 
 \bibitem{wilting2018}
 Jens Wilting and Viola Priesemann.

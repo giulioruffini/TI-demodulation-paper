@@ -1342,52 +1342,59 @@ explicitly \cite{krause2023}. What we add is the specific pair of factors: $\Sig
 square-law detector, with the demodulated amplitude in closed form, and $1/\gamma$ as the
 amplification, with its size tied to a measurable relaxation time.
 
-\textbf{The amplitude budget does not close at human field strengths.} Two gaps separate an
-applied field from a response at $\Delta f$. The first is
-the ordinary weak-field problem, shared with tACS: the measured coupling is
-$\lambda\!\approx\!0.12$--$0.21$~mV per V/m for hippocampal somata
-\cite{bikson2004,deans2007}, rising to $\sim$$0.5$~mV per V/m for cortical L5/6 pyramidal
-cells \cite{radman2009}, so a corrected in-vivo human field of $\sim$$0.8$~V/m at 2~mA
-\cite{huang2017,huang2017corr} polarizes a soma by $\sim$$0.1$--$0.4$~mV against the
-$\sim$$23$~mV separating rest from threshold \cite{koga2010}, and scalp shunting removes
-most of the applied current before it arrives \cite{voroslakos2018}. The second gap is
-specific to TI: the field carries no power at $\Delta f$, so something must create it. The
-near-Hopf resonance answers the weak-field gap; $\Sig''$ creates the line at
-$\Delta f$. The two are not interchangeable, because the resonance multiplies the TI and
-tACS baseband drives alike and cancels in their ratio.
+\textbf{The amplitude budget does not close at human field strengths.} A transcranial field
+must clear two hurdles before it can produce a response at $\Delta f$. They are different
+problems and they need different answers.
 
-For the weak-field gap, write the reverberation time of the weakly damped focus as $\tau=1/\gamma$.
-The gain at resonance relative to the static response of the same circuit is then
-$Q=\omega_0/2\gamma=\pi f_0\tau$, or $\pi$ times the number of cycles the ringing survives.
-In-vivo cortical population activity relaxes with an aggregate timescale of a few hundred
-milliseconds \cite{wilting2018}, putting $Q$ at $f_0=10$~Hz somewhere between $3$ and $60$,
-of order $10$. That timescale is a wideband, mode-agnostic measure of proximity to
-instability rather than the damping of an alpha-band mode, so it fixes the order of
-magnitude of $Q$ and not its value. High $Q$ is also narrowband: the half-width is
-$1/(\pi\tau)$, of order $1$~Hz, which predicts that a $\Delta f$ held at a group-mean alpha
-will drift out of the response band within a session.
+The first hurdle is that weak fields barely move a membrane. Measured coupling is
+$0.12$--$0.21$~mV of somatic polarization per V/m in hippocampus
+\cite{bikson2004,deans2007}, and up to $\sim$$0.5$~mV per V/m for cortical L5/6 pyramidal
+cells \cite{radman2009}. Human cortex sees about $0.8$~V/m at 2~mA
+\cite{huang2017,huang2017corr}, and most of the applied current is shunted through scalp
+and skull before it arrives \cite{voroslakos2018}. So the field shifts a soma by a few
+tenths of a millivolt, against the $\sim$$23$~mV that separates rest from threshold
+\cite{koga2010}. No cell fires because of the field alone. This is as true of tACS as of TI.
 
-For the demodulation gap, with per-carrier polarizations $\varepsilon_{1,2}$ the demodulated drive is
-$\half\Sig''\varepsilon_1\varepsilon_2$, so its efficiency relative to direct drive at the
-same peak polarization is $\eta=\Sig''\varepsilon/4\Sig'$, \emph{proportional to amplitude}.
-Break-even needs $\varepsilon\approx4\Sig'/\Sig''\approx7$~mV, comparable to the distance to
-threshold, so in the weak-field regime the detector is always lossy and the loss deepens as
-the field weakens. At $1$~V/m with a $1$~kHz carrier, TI delivers a drive $\sim$$300\times$
-smaller than tACS at $\Delta f$ even when the carrier reaches a fast nodal compartment, and
-$\sim$$10^6\times$ smaller at the soma. Because $Q$ cancels, the resonance cannot recover
-this.
+The second hurdle belongs to TI alone. Its field carries no power at $\Delta f$, so the
+response there has to be manufactured, and that is what $\Sig''$ does.
 
-The same quadratic scaling accounts for TI's poor translation. Optimized human montages
-reach $\sim$$0.24$--$0.57$~V/m at depth against $\sim$$383$~V/m in the mouse
-\cite{rampersad2019}, a field ratio of $\sim$$770$; since the demodulated drive goes as the
-square, the drive ratio is $\sim$$6\times10^5$. The mouse operates where the sigmoid is
-strongly driven and the small-signal expansion no longer holds, the human deep in the
-perturbative regime where the quadratic penalty bites hardest. The network-model estimate
-that tTIS needs $\sim$$100\times$ the tACS amplitude \cite{karimi2024} is what a quadratic
-detector predicts. What the account supplies is the mechanism setting TI's phenomenology,
-an explanation for the rodent-to-human collapse, and the terms that would have to improve:
-the carrier's access to a fast compartment, the operating point through $\Sig''$, and
-proximity to the bifurcation through $Q$.
+The two answers do not substitute for each other. The resonance clears the first hurdle: a
+population near its own bifurcation responds to a weak push far more strongly than an
+isolated cell does. It cannot clear the second, because it amplifies TI and tACS by the
+same factor and therefore cancels whenever the two are compared.
+
+The resonance buys a factor of order ten. Write the reverberation time of the weakly damped
+focus as $\tau=1/\gamma$. The gain at resonance, relative to the same circuit's response to
+a steady input, is $Q=\omega_0/2\gamma=\pi f_0\tau$: $\pi$ times the number of cycles the
+ringing survives. Cortical population activity in vivo relaxes over a few hundred
+milliseconds \cite{wilting2018}, which at $f_0=10$~Hz gives $Q$ of order $10$. That measured
+timescale is wideband rather than alpha-specific, so it sets the order of magnitude and not
+the value. Gain also costs bandwidth: the resonance is $1/(\pi\tau)$ wide, about $1$~Hz, so
+a $\Delta f$ fixed at a group-mean alpha will drift outside it during a session.
+
+Demodulation costs far more than that. With per-carrier polarizations $\varepsilon_{1,2}$
+the demodulated drive is $\half\Sig''\varepsilon_1\varepsilon_2$. Compared with driving the
+same population directly at $\Delta f$, its efficiency is $\eta=\Sig''\varepsilon/4\Sig'$,
+which is proportional to $\varepsilon$. A square-law detector therefore gets \emph{less}
+efficient as the signal gets weaker. Break-even needs $\varepsilon\approx7$~mV, the same
+order as the distance to threshold, so at transcranial field strengths the detector always
+loses. At $1$~V/m with a $1$~kHz carrier, TI drives the population $\sim$$300\times$ more
+weakly than tACS at $\Delta f$ if the carrier reaches a fast nodal compartment, and
+$\sim$$10^6\times$ more weakly if it reaches only the soma. The resonance cannot make this
+back, because it cancels.
+
+The same scaling explains why TI works in rodents and disappoints in humans. Optimized human
+montages reach $0.24$--$0.57$~V/m at depth, while the mouse sees $\sim$$383$~V/m
+\cite{rampersad2019}. That is a field ratio of $\sim$$770$, but the drive goes as the square,
+so the ratio in demodulated drive is $\sim$$6\times10^5$. The mouse is driven hard enough
+that the sigmoid has left its small-signal regime; the human sits far inside it, where the
+quadratic penalty is worst. A network model finding that tTIS needs $\sim$$100\times$ the
+tACS amplitude \cite{karimi2024} is what a quadratic detector should produce.
+
+What survives is the mechanism, not a solution to the dose problem. The account explains
+TI's phenomenology and the rodent-to-human collapse, and it names the three quantities worth
+improving: the carrier's access to a fast compartment, the operating point through
+$\Sig''$, and the network's proximity to its bifurcation through $Q$.
 
 Several limitations should be kept in view. The field enters the population sigmoid
 directly; we treat the field-to-nonlinearity coupling $\kappa(f_c)$
