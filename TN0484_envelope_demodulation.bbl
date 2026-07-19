@@ -30,7 +30,7 @@ Aleksandar Opan{\v c}ar, Petra Ondr{\'a}{\v c}kov{\'a}, David~Samuel Rose, Jan
 Ryan~B. Budde, Michael~T. Williams, and Pedro~P. Irazoqui.
 \newblock Temporal interference current stimulation in peripheral nerves is not
   driven by envelope extraction.
-\newblock {\em Journal of Neural Engineering}, 20(2):026032, 2023.
+\newblock {\em Journal of Neural Engineering}, 20(2):026041, 2023.
 
 \bibitem{vieira2024}
 Pedro~G. Vieira, Matthew~R. Krause, and Christopher~C. Pack.
@@ -123,19 +123,24 @@ Pau Clusella, Elif K{\"o}ksal-Ers{\"o}z, Jordi Garcia-Ojalvo, and Giulio
 \newblock {\em Biological Cybernetics}, 117(1-2):5--19, 2023.
 
 \bibitem{sanchezTodo2023}
-Roser Sanchez-Todo, Andr{\'e}~M. Bastos, Edmundo Lopez-Sola, et~al.
+Roser Sanchez-Todo, Andr{\'e}~M. Bastos, Edmundo Lopez-Sola, Borja Mercadal,
+  Emiliano Santarnecchi, Earl~K. Miller, Gustavo Deco, and Giulio Ruffini.
 \newblock A physical neural mass model framework for the analysis of
   oscillatory generators from laminar electrophysiological recordings.
 \newblock {\em NeuroImage}, 270:119938, 2023.
 
 \bibitem{deitcher2017}
-Yair Deitcher, Guy Eyal, Lida Kanari, et~al.
+Yair Deitcher, Guy Eyal, Lida Kanari, Matthijs~B. Verhoog, Guy~Antoine
+  Atenekeng~Kahou, Huibert~D. Mansvelder, Christiaan P.~J. de~Kock, and Idan
+  Segev.
 \newblock Comprehensive morpho-electrotonic analysis shows 2 distinct classes
   of {L2} and {L3} pyramidal neurons in human temporal cortex.
 \newblock {\em Cerebral Cortex}, 27(11):5398--5414, 2017.
 
 \bibitem{eyal2016}
-Guy Eyal, Matthijs~B. Verhoog, Guilherme Testa-Silva, et~al.
+Guy Eyal, Matthijs~B. Verhoog, Guilherme Testa-Silva, Yair Deitcher,
+  Johannes~C. Lodder, Ruth Benavides-Piccione, Juan Morales, Javier DeFelipe,
+  Christiaan P.~J. de~Kock, Huibert~D. Mansvelder, and Idan Segev.
 \newblock Unique membrane properties and enhanced signal processing in human
   neocortical neurons.
 \newblock {\em eLife}, 5:e16553, 2016.
@@ -203,17 +208,20 @@ Zeinab Esmaeilpour, Greg Kronberg, Davide Reato, Lucas~C. Parra, and Marom
 \newblock {\em Brain Stimulation}, 14(1):55--65, 2021.
 
 \bibitem{violante2023}
-Ines~R. Violante et~al.
+Ines~R. Violante, Ketevan Alania, Antonino~M. Cassar{\`a}, Esra Neufeld, Emma
+  Acerbo, Romain Carron, Adam Williamson, Danielle~L. Kurtin, Edward Rhodes,
+  Adam Hampshire, Niels Kuster, Edward~S. Boyden, Alvaro Pascual-Leone, and Nir
+  Grossman.
 \newblock Non-invasive temporal interference electrical stimulation of the
   human hippocampus.
-\newblock {\em Nature Neuroscience}, 26, 2023.
+\newblock {\em Nature Neuroscience}, 26(11):1994--2004, 2023.
 
 \bibitem{wang2023}
 Boshuo Wang, Aman~S. Aberra, Warren~M. Grill, and Angel~V. Peterchev.
 \newblock Responses of model cortical neurons to temporal interference
   stimulation and related transcranial alternating current stimulation
   modalities.
-\newblock {\em Journal of Neural Engineering}, 19(6):066047, 2023.
+\newblock {\em Journal of Neural Engineering}, 19(6):066047, 2022.
 
 \bibitem{rahman2013}
 Asif Rahman, Davide Reato, Mattia Arlotti, Fernando Gasca, Abhishek Datta,

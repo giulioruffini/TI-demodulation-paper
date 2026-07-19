@@ -28,7 +28,7 @@
 %   pdflatex -jobname=TN0484_jne "\def\jnebuild{}\input{<this file>}" ).
 % ---------------------------------------------------------------------------
 \newif\ifjne
-\jnefalse
+\jnetrue
 \ifdefined\jnebuild\jnetrue\fi
 
 \definecolor{neblue}{RGB}{10,79,140}
@@ -936,7 +936,8 @@ synthesized by the column although the input carries no alpha power.}
 \label{fig:khz_direct}
 \end{figure}
 
-\subsection{The nonlinearity is the detector: the $\Sig''$ curvature law and its controls}
+\subsection{The nonlinearity is the detector: the
+\texorpdfstring{$\Sig''$}{sigma''} curvature law and its controls}
 The signed open-loop response tracks $\half\Sig''(v^*)\varepsilon^2 m$ across the
 operating range, vanishing and reversing sign at the inflection $v_0$
 (Fig.~\ref{fig:opp})---demodulation is the sigmoid-curvature term of
