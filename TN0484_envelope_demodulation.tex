@@ -1343,8 +1343,8 @@ square-law detector, with the demodulated amplitude in closed form, and $1/\gamm
 amplification, with its size tied to a measurable relaxation time.
 
 \textbf{The amplitude budget does not close at human field strengths.} A transcranial field
-must clear two hurdles before it can produce a response at $\Delta f$. They are different
-problems and they need different answers.
+must clear two hurdles before it can produce a response at $\Delta f$, and they need
+different answers.
 
 The first hurdle is that weak fields barely move a membrane. Measured coupling is
 $0.12$--$0.21$~mV of somatic polarization per V/m in hippocampus
@@ -1360,41 +1360,47 @@ response there has to be manufactured, and that is what $\Sig''$ does.
 
 The two answers do not substitute for each other. The resonance clears the first hurdle: a
 population near its own bifurcation responds to a weak push far more strongly than an
-isolated cell does. It cannot clear the second, because it amplifies TI and tACS by the
-same factor and therefore cancels whenever the two are compared.
+isolated cell. It cannot clear the second, because it amplifies TI and tACS alike and
+cancels when the two are compared.
 
-The resonance buys a factor of order ten. Write the reverberation time of the weakly damped
-focus as $\tau=1/\gamma$. The gain at resonance, relative to the same circuit's response to
-a steady input, is $Q=\omega_0/2\gamma=\pi f_0\tau$: $\pi$ times the number of cycles the
-ringing survives. Cortical population activity in vivo relaxes over a few hundred
+The resonance buys a factor of order ten. Writing the reverberation time of the weakly
+damped focus as $\tau=1/\gamma$, the gain at resonance relative to the same circuit's
+response to a steady input is $Q=\omega_0/2\gamma=\pi f_0\tau$: $\pi$ times the number of
+cycles the ringing survives. Cortical population activity in vivo relaxes over a few hundred
 milliseconds \cite{wilting2018}, which at $f_0=10$~Hz gives $Q$ of order $10$. That measured
 timescale is wideband rather than alpha-specific, so it sets the order of magnitude and not
 the value. Gain also costs bandwidth: the resonance is $1/(\pi\tau)$ wide, about $1$~Hz, so
 a $\Delta f$ fixed at a group-mean alpha will drift outside it during a session.
 
-Demodulation costs far more than that. With per-carrier polarizations $\varepsilon_{1,2}$
-the demodulated drive is $\half\Sig''\varepsilon_1\varepsilon_2$. Compared with driving the
-same population directly at $\Delta f$, its efficiency is $\eta=\Sig''\varepsilon/4\Sig'$,
-which is proportional to $\varepsilon$. A square-law detector therefore gets \emph{less}
-efficient as the signal gets weaker. Break-even needs $\varepsilon\approx7$~mV, the same
-order as the distance to threshold, so at transcranial field strengths the detector always
-loses. At $1$~V/m with a $1$~kHz carrier, TI drives the population $\sim$$300\times$ more
-weakly than tACS at $\Delta f$ if the carrier reaches a fast nodal compartment, and
-$\sim$$10^6\times$ more weakly if it reaches only the soma. The resonance cannot make this
-back, because it cancels.
+At equal field strength, TI is far weaker than tACS. A tACS field oscillating at $\Delta f$
+drives the population directly. TI must first manufacture its $\Delta f$ signal out of a kHz
+carrier, and that conversion is inefficient. With per-carrier polarizations
+$\varepsilon_{1,2}$ the demodulated drive is $\half\Sig''\varepsilon_1\varepsilon_2$,
+against $2\Sig'\varepsilon$ for tACS at the same peak polarization. Their ratio,
+$\eta=\Sig''\varepsilon/4\Sig'$, is proportional to $\varepsilon$: a square-law detector
+gets \emph{less} efficient as the signal gets weaker. Matching tACS would take
+$\varepsilon\approx7$~mV, the same order as the distance to threshold. At $1$~V/m with a
+$1$~kHz carrier, TI comes out $\sim$$300\times$ weaker than tACS if the carrier reaches a
+fast nodal compartment, and $\sim$$10^6\times$ weaker if it reaches only the soma. The
+resonance does not make this back, because it multiplies both equally.
 
-The same scaling explains why TI works in rodents and disappoints in humans. Optimized human
-montages reach $0.24$--$0.57$~V/m at depth, while the mouse sees $\sim$$383$~V/m
-\cite{rampersad2019}. That is a field ratio of $\sim$$770$, but the drive goes as the square,
-so the ratio in demodulated drive is $\sim$$6\times10^5$. The mouse is driven hard enough
-that the sigmoid has left its small-signal regime; the human sits far inside it, where the
-quadratic penalty is worst. A network model finding that tTIS needs $\sim$$100\times$ the
-tACS amplitude \cite{karimi2024} is what a quadratic detector should produce.
+What TI buys for that price is targeting: a field applied directly at $\Delta f$ cannot be
+steered to a deep structure, whereas two kHz beams can.
 
-What survives is the mechanism, not a solution to the dose problem. The account explains
-TI's phenomenology and the rodent-to-human collapse, and it names the three quantities worth
+The same square law explains why TI works in rodents and disappoints in humans. A mouse
+brain sees $\sim$$383$~V/m from a TI montage, while optimized human montages reach
+$0.24$--$0.57$~V/m at depth \cite{rampersad2019}: the field is $\sim$$770$ times larger in
+the mouse. Because the demodulated drive goes as the \emph{square} of the field, the drive
+is $770^2\!\approx\!6\times10^5$ times larger. The rodent experiment is therefore not the
+human experiment scaled down. At $\sim$$18$~mV of polarization the mouse sits above the
+$7$~mV break-even point, where demodulation is efficient; the human, at $\sim$$0.02$~mV,
+sits far below it. This is also why a network model finds that tTIS needs $\sim$$100\times$
+the tACS amplitude \cite{karimi2024}: that is the penalty a quadratic detector imposes.
+
+What survives is the mechanism, not a solution to the dose problem. It explains TI's
+phenomenology and the rodent-to-human collapse, and names the three quantities worth
 improving: the carrier's access to a fast compartment, the operating point through
-$\Sig''$, and the network's proximity to its bifurcation through $Q$.
+$\Sig''$, and proximity to the bifurcation through $Q$.
 
 Several limitations should be kept in view. The field enters the population sigmoid
 directly; we treat the field-to-nonlinearity coupling $\kappa(f_c)$
