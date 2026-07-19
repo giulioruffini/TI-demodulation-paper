@@ -132,17 +132,17 @@ frequency. Yet an amplitude-modulated field carries no
 power at that beat frequency, so no passive, linear part of a neuron can follow it;
 recovering the beat requires a nonlinearity, usually sought in single-cell ion
 channels. Here we show that the recovery, and its tuning, are properties of the neural
-\emph{population} rather than the single cell. In a neural mass---the
-$\sim$$10^4$-neuron unit that generates the EEG---the firing-rate nonlinearity acts as
+\emph{population} rather than the single cell. In a neural mass, the
+$\sim$$10^4$-neuron unit that generates the EEG, the firing-rate nonlinearity acts as
 a square-law detector that demodulates the beat, while the recurrent synaptic network,
 poised near a Hopf bifurcation, resonantly amplifies the recovered rhythm at its own
 natural frequency. Detection is inherited from the single neuron; the sharp,
-frequency-selective amplification is emergent---set by how near the network sits to
-criticality, and tunable by its own connectivity. Demonstrated in a heuristic cortical
+frequency-selective amplification is emergent, set by how near the network sits to
+criticality and tunable by its own connectivity. Demonstrated in a heuristic cortical
 column and in an exact next-generation mean field, the mechanism reproduces TI's known
 behavior: it is independent of the carrier once the membrane polarization is matched,
-largest when the beat matches a region's intrinsic rhythm, and---because the resonance
-amplifies oscillatory timing far more than mean rate---locks spike timing without
+largest when the beat matches a region's intrinsic rhythm, and, because the resonance
+amplifies oscillatory timing far more than mean rate, it locks spike timing without
 changing firing rate, as observed in vivo. Because the gain depends on brain state, TI
 efficacy should be as much a property of the brain as of the device: the cortical
 column behaves as a tuned AM radio receiver.
@@ -327,15 +327,15 @@ Arnold tongues that sharpen with self-coupling \cite{clusella2023,ruffini2021nmm
 the near-Hopf amplification we exploit below.
 
 \emph{What the transfer functions represent.} In every model the demodulating object is a
-\emph{population} input--output map---not a passive somatic membrane element. In JR/LaNMM it
+\emph{population} input--output map rather than a passive somatic membrane element. In JR/LaNMM it
 is the sigmoid \eqref{eq:sigmoid}, the effective transfer of an excitable neuronal ensemble
 (mean PSP in, population firing rate out); in NMM2 the same role is played by the exact MPR
 quadratic \eqref{eq:mpr}. Its curvature is the mesoscopic trace of cellular nonlinearities
 (thresholds, spike generation, refractoriness, noise, saturation), so reading the
-demodulation off $\Sig''$---or off the derived $v^2$ term---is legitimate at this scale. The
+demodulation off $\Sig''$, or off the derived $v^2$ term, is legitimate at this scale. The
 membrane low-pass does not contradict this: it bears on \emph{access}, not legitimacy. The
-open biophysical question is which fast compartment---axon initial segment, node, terminal,
-or channel---lets a kHz carrier reach that nonlinear transfer (\S\ref{sec:khz}); once the
+open biophysical question is which fast compartment (axon initial segment, node, terminal,
+or channel) lets a kHz carrier reach that nonlinear transfer (\S\ref{sec:khz}); once the
 carrier is sampled there, the neural mass describes the population-level demodulation and
 near-Hopf amplification of the recovered envelope.
 
@@ -1233,7 +1233,7 @@ work.}\label{tab:predictions}
 We have given a mesoscopic, population-level account of TI demodulation in which
 the firing-rate sigmoid is a square-law detector and proximity to a Hopf
 bifurcation turns the recovered envelope into a sharp, frequency-selective
-response. This is complementary to---not in competition with---the single-neuron
+response. This complements rather than competes with the single-neuron
 ion-channel rectification account \cite{mirzakhalili2020}: both are
 rectify-then-filter demodulation, but ours needs no specific channel, lives at the
 scale of the EEG-generating population, and inherits the brain's own resonances, so
@@ -1292,9 +1292,9 @@ envelope into an effective in-band drive; downstream, both share the criticality
 coupling-controlled amplifier, so---matched for effective in-band drive---TI and tACS
 should entrain alike and show the same state- and coupling-dependence.
 
-The mechanism's falsifiable predictions---carrier independence at fixed
+The mechanism's falsifiable predictions (carrier independence at fixed
 polarization, the PEIX-controlled sign flip, and frequency-selective
-state-dependence---are consolidated with their tests in \S\ref{sec:predictions};
+state-dependence) are consolidated with their tests in \S\ref{sec:predictions};
 they could be read out in the same models already applied to Alzheimer's disease and
 psychedelics \cite{ruffini2025cfc}. The two-band LaNMM
 results (\S\ref{sec:lanmm-results}) bear this out: its JR (alpha) and PING (gamma)
@@ -1352,9 +1352,9 @@ cells \cite{radman2009}, so a corrected in-vivo human field of $\sim$$0.8$~V/m a
 $\sim$$23$~mV separating rest from threshold \cite{koga2010}, and scalp shunting removes
 most of the applied current before it arrives \cite{voroslakos2018}. The second gap is
 specific to TI: the field carries no power at $\Delta f$, so something must create it. The
-near-Hopf resonance addresses the first and $\Sig''$ addresses the second. They are not
-interchangeable, because the resonance multiplies the TI and tACS baseband drives alike and
-cancels in their ratio.
+near-Hopf resonance answers the weak-field gap; $\Sig''$ is what creates the line at
+$\Delta f$. The two are not interchangeable, because the resonance multiplies the TI and
+tACS baseband drives alike and cancels in their ratio.
 
 For the first, write the reverberation time of the weakly damped focus as $\tau=1/\gamma$.
 The gain at resonance relative to the static response of the same circuit is then
@@ -1414,8 +1414,8 @@ A population sigmoid and a second-order-synapse network near a Hopf bifurcation
 suffice to demodulate a temporal-interference field and resonate at the recovered
 envelope frequency. The sigmoid's curvature is inherited from single-neuron
 nonlinearity, coarse-grained over the $\sim$$10^4$ neurons of the mass; what is
-emergent is that demodulation is read out at the \emph{population} level---needing
-no specific channel---and that the resonant amplification is a \emph{network}
+emergent is that demodulation is read out at the \emph{population} level, needing
+no specific channel, and that the resonant amplification is a \emph{network}
 property. A fast single-cell nonlinearity (Na$^+$ at nodes/AIS, persistent Na$^+$,
 presynaptic terminals) need only sample the carrier. The column then
 behaves as a tuned AM receiver---a nonlinear detector followed by a resonant
@@ -1599,14 +1599,14 @@ $e^{ik\omega_c t}$,
 \label{eq:sl-modes}
 \end{equation}
 The \emph{odd-$k$ subspace is invariant and attracting}: suppose $Z_k=0$ for every even
-$k$. Then for even $k$ both sources vanish---$F_k=0$, and the cubic would need $l-p+q=k$
-even with $l,p,q$ odd, which is impossible---leaving $\dot Z_k=[a+i(\omega_0-k\omega_c)]Z_k$,
+$k$. Then for even $k$ both sources vanish ($F_k=0$, and the cubic would need $l-p+q=k$
+even with $l,p,q$ odd, which is impossible), leaving $\dot Z_k=[a+i(\omega_0-k\omega_c)]Z_k$,
 a linear mode that decays at rate $-a=\gamma>0$. So the solution tracks the Fourier
 structure of the forcing: $z$ lives only on \emph{odd} carrier harmonics (with sidebands at
 $k\omega_c\pm n\Omega$), to all orders in $\varepsilon$. The demodulated line at the beat is
-a \emph{baseband} signal---it would sit in the $k=0$ component---but $Z_0\equiv0$, so $z$
+a \emph{baseband} signal, so it would sit in the $k=0$ component; but $Z_0\equiv0$, so $z$
 has identically zero weight at $\Delta f$. A square-law (\emph{even}) nonlinearity instead
-produces a nonzero $k=0$ term (from $\cos^2\omega_c t\to\half$) that oscillates at
+produces a nonzero $k=0$ term (from $\cos^2\omega_c t\to\half$) oscillating at
 $\Omega$---the demodulated line the odd cubic cannot make. Equivalently, demodulation is
 the $O(\varepsilon^2)$ term $\half\Sig''\varepsilon^2 m$ (Eq.~\eqref{eq:demod}); the SL
 normal form has \emph{no} even-order term. \textbf{The SL resonator amplifies
