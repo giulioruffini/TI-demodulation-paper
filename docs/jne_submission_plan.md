@@ -15,7 +15,7 @@ decoding/classifier papers, not to mechanistic modeling, so it does not bite her
 
 | # | Requirement | Status | Action |
 |---|---|---|---|
-| 1 | Paper ≤ 12,000 words (≈14 journal pages) | **Over** — 13,252 | Cut ~1,500–2,000, or justify length |
+| 1 | Paper ≤ 12,000 words (≈14 journal pages) | **Under** — main text 11,162 | Designate appendices as supplementary (see below) |
 | 2 | Structured abstract: Objective / Approach / Main results / Significance, ≤300 w | **Missing structure** — 270 w of continuous prose | Rewrite under the four headings |
 | 3 | Section order: Intro → Method → Results → Discussion → Conclusion | **Deviates** — a `Theory` section sits between Intro and Methods | Decide: fold, or keep and justify |
 | 4 | Competing-interests statement (**mandatory**, in Acknowledgements) | **Absent** | Add; needs input from all seven authors |
@@ -27,9 +27,33 @@ decoding/classifier papers, not to mechanistic modeling, so it does not bite her
 | 10 | Ethics statement | **Not applicable** — no human or animal data | State N/A if asked |
 | 11 | Data availability | Present and strong (repo + Zenodo concept DOI) | Keep; not mandatory at IOP but helps |
 
-## The two real problems
+## Correction on length, 2026-07-19
 
-Everything in the table above is mechanical except items 1 and 3, which interact.
+An earlier version of this document said the paper was over the word limit and needed a
+1,500–2,000 word cut. That was wrong, and the error was measuring the whole `.tex` file
+with `texcount` rather than the main text. The real split:
+
+| | words |
+|---|---|
+| Main text, through the Conclusion and declarations | **11,162** |
+| Appendices A–D (notation, Stuart–Landau, vocabulary, supplementary figures) | 2,729 |
+| Whole file | 13,891 |
+
+Main text is comfortably under 12,000, with ~840 words of headroom — which is roughly what
+the Discussion needs in order to absorb the amplitude budget.
+
+The remaining question is whether the appendices count. For IOP an appendix is part of the
+article, whereas supplementary material hosted as a separate file is not. **Designating
+Appendices A–D as supplementary material is therefore the whole solution**, and no further
+cutting is required. JNE accepts supplementary files up to 50 MB.
+
+Cuts made before this was noticed (§3.6 moved to Appendix C behind a stub, prose trims) are
+still worth keeping — they tightened the paper — but they were not necessary and further
+cutting should stop.
+
+## The remaining real problem
+
+Item 3 below. Item 1 is resolved by the paragraph above.
 
 **Figure load.** 14 main-text figures against ~14 journal pages is roughly double what the
 format carries; JNE papers typically run 6–10. The supplementary apparatus already exists

@@ -169,12 +169,6 @@ Arkady Pikovsky, Michael Rosenblum, and J{\"u}rgen Kurths.
 \newblock {\em Synchronization: A Universal Concept in Nonlinear Sciences}.
 \newblock Cambridge University Press, 2001.
 
-\bibitem{lachaux1999}
-Jean-Philippe Lachaux, Eugenio Rodriguez, Jacques Martinerie, and Francisco~J.
-  Varela.
-\newblock Measuring phase synchrony in brain signals.
-\newblock {\em Human Brain Mapping}, 8(4):194--208, 1999.
-
 \bibitem{canolty2010}
 Ryan~T. Canolty and Robert~T. Knight.
 \newblock The functional role of cross-frequency coupling.
@@ -262,5 +256,11 @@ Edward Ott and Thomas~M. Antonsen.
 \newblock Low dimensional behavior of large systems of globally coupled
   oscillators.
 \newblock {\em Chaos}, 18(3):037113, 2008.
+
+\bibitem{lachaux1999}
+Jean-Philippe Lachaux, Eugenio Rodriguez, Jacques Martinerie, and Francisco~J.
+  Varela.
+\newblock Measuring phase synchrony in brain signals.
+\newblock {\em Human Brain Mapping}, 8(4):194--208, 1999.
 
 \end{thebibliography}
