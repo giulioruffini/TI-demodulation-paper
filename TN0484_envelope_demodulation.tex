@@ -423,6 +423,12 @@ shows that the carrier dependence enters quadratically, $A_\Omega\propto|H_m(f_c
 Expanding $\Sig$ about an operating point $v^*$ (a Volterra/Taylor expansion, as
 in \cite{ruffini2025ham}) gives
 $\Sig(v^*+s)\approx\Sig(v^*)+\Sig'(v^*)\,s+\half\Sig''(v^*)\,s^2+\dots$
+The truncation holds only while $|s|$ is small against the sigmoid's voltage scale
+$1/\rho\approx1.8$~mV. Human TI polarizations are $\sim$$10^{-2}$~mV, three orders below
+that, so the quadratic term is the leading nonlinearity throughout the regime this paper
+treats. Rodent TI is not in that regime: the fields are $\sim$$10^3$ times larger, the
+sigmoid saturates, and the expansion fails. \S\ref{sec:discussion} returns to what that
+costs when rodent results are scaled to humans.
 Intuitively, the difficulty is that the field carries power only near the carrier
 $\omega_c$, far from the slow envelope frequency $\Omega$, so some operation must move
 power down to $\Omega$. The \emph{linear} term cannot: it passes the input lines straight
@@ -1241,7 +1247,7 @@ Entries cite documented qualitative findings; quantitative reanalysis is left to
 work.}\label{tab:predictions}
 \end{table}
 
-\section{Discussion}
+\section{Discussion}\label{sec:discussion}
 We have given a mesoscopic, population-level account of TI demodulation in which
 the firing-rate sigmoid is a square-law detector and proximity to a Hopf
 bifurcation turns the recovered envelope into a sharp, frequency-selective

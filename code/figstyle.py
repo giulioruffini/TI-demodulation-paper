@@ -57,7 +57,7 @@ def apply():
     })
 
 
-def scale_text(fig, placed_frac=1.0, target_min_pt=8.5, max_scale=2.2, verbose=False):
+def scale_text(fig, placed_frac=1.0, target_min_pt=7.5, max_scale=1.9, verbose=False):
     """Pre-enlarge every text object so it prints at journal size.
 
     Call once, immediately before savefig. `placed_frac` is the fraction of

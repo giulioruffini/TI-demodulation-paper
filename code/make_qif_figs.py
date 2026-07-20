@@ -124,17 +124,16 @@ def fig_raster():
     fig, axs = plt.subplots(2, 2, figsize=(10, 6), sharex=True)
     depth = {k: conds[k]["q"]["AC"] / conds[k]["q"]["rmean"]
              for k in ("forced_off", "forced_on", "entrain_off", "entrain_on")}
-    raster_panel(axs[0, 0], "forced_off", "(a) Forced (below Hopf), TI OFF: asynchronous", False,
+    raster_panel(axs[0, 0], "forced_off", "(a)", False,
                  annot="no $\\Delta f$ lock-in\n(depth %.2f)" % depth["forced_off"])
     raster_panel(axs[0, 1], "forced_on",
-                 f"(b) Forced, TI ON ($\\Delta f$={conds['forced_on']['q']['df']:.0f} Hz): timing bunched",
+                 "(b)",
                  True, annot="$\\Delta f$ modulation\ndepth %.2f" % depth["forced_on"])
     raster_panel(axs[1, 0], "entrain_off",
-                 "(c) Oscillatory (above Hopf), TI OFF: free-running gamma", False,
+                 "(c)", False,
                  annot="no $\\Delta f$ lock-in\n(depth %.2f)" % depth["entrain_off"])
     raster_panel(axs[1, 1], "entrain_on",
-                 f"(d) Oscillatory, TI ON ($\\Delta f$={conds['entrain_on']['q']['df']:.0f} Hz):"
-                 " TI beat gates the gamma ($\\Delta f$-PAC)",
+                 "(d)",
                  True, annot="$\\Delta f$ modulation\ndepth %.2f" % depth["entrain_on"])
     beat_inset(axs[0, 1], "forced_off", "forced_on")                    # forced: rate folded on Df
     beat_inset(axs[1, 1], "entrain_off", "entrain_on", mode="gamma")    # gating: gamma amp vs Df phase (PAC)
@@ -142,11 +141,7 @@ def fig_raster():
         ax.set_ylabel("E neuron #")
     for ax in axs[1, :]:
         ax.set_xlabel("time (ms)")
-    fig.suptitle("QIF spiking network (microscale of NMM2 PING): TI realigns spike timing, "
-                 "not mean rate\n(black: E spikes; blue: population rate $r_E(t)$; red: TI envelope; "
-                 "boxed: $\\Delta f$ modulation depth $A_\\Omega/\\langle r_E\\rangle$)",
-                 fontsize=10)
-    fig.tight_layout(rect=[0, 0, 1, 0.95])
+    fig.tight_layout()
     for ext in ("pdf", "png"):
         figstyle.scale_text(fig, placed_frac=1)
         fig.savefig(os.path.join(FIGS, f"fig_qif_raster.{ext}"), dpi=300, bbox_inches="tight")

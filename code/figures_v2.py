@@ -104,7 +104,13 @@ def bifurcation_sigmoid():
     l1,la1=axb.get_legend_handles_labels(); l2,la2=axt.get_legend_handles_labels()
     axb.legend(l1+l2, la1+la2, fontsize=8, frameon=False, loc="upper left")
     figstyle.panel(axb, "b")
-    fig.tight_layout()
+    # enlarged type makes dense ticks collide; thin them instead of shrinking it
+    from matplotlib.ticker import MaxNLocator
+    ax[0].xaxis.set_major_locator(MaxNLocator(5))
+    axb.xaxis.set_major_locator(MaxNLocator(5))
+    axb.yaxis.set_major_locator(MaxNLocator(5))
+    axt.yaxis.set_major_locator(MaxNLocator(5))
+    fig.tight_layout(w_pad=6.0)     # keep panel (b)'s y-labels off panel (a)
     figstyle.scale_text(fig, placed_frac=1)
     fig.savefig(f"{FIGS}/fig_bifurcation_sigmoid.png",dpi=300)
     fig.savefig(f"{FIGS}/fig_bifurcation_sigmoid.pdf"); print("wrote fig_bifurcation_sigmoid")
