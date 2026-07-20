@@ -57,7 +57,7 @@ def apply():
     })
 
 
-def scale_text(fig, placed_frac=1.0, target_min_pt=8.5, verbose=False):
+def scale_text(fig, placed_frac=1.0, target_min_pt=8.5, max_scale=2.2, verbose=False):
     """Pre-enlarge every text object so it prints at journal size.
 
     Call once, immediately before savefig. `placed_frac` is the fraction of
@@ -93,9 +93,21 @@ def scale_text(fig, placed_frac=1.0, target_min_pt=8.5, verbose=False):
         if smallest_printed >= target_min_pt:
             break
         step = min(target_min_pt / smallest_printed, 1.35)   # damped
+        if total * step > max_scale:                         # refuse to run away
+            step = max(max_scale / total, 1.0)
+            if step <= 1.0:
+                break
         for t in texts:
             t.set_fontsize(t.get_fontsize() * step)
         total *= step
+        if total >= max_scale:
+            break
+    if smallest_printed < target_min_pt:
+        # Not a settings problem: the figure holds more lettering than the text
+        # block can carry, and growing type only grows the bounding box with it.
+        print(f"  figstyle WARNING: smallest type still prints at "
+              f"{smallest_printed:.1f} pt (target {target_min_pt}); this figure "
+              f"needs content removed, not larger type.")
     if verbose:
         print(f"  figstyle: type scaled x{total:.2f} "
               f"-> smallest prints at {smallest_printed:.1f} pt")

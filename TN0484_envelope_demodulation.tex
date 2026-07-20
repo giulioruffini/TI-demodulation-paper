@@ -935,7 +935,7 @@ predicted $2$), and replacing the field-receiving sigmoid by its linearization
 collapses the response by $712\times$ ($1.40\!\to\!0.0020$~mV)---the nonlinearity is
 the detector, and its curvature is the gain.
 
-\subsection{Two native resonances and carrier-dependent envelope resonance in the LaNMM}\label{sec:lanmm-results}
+\subsection{Two native resonances and nonlinear Arnold tongues in the LaNMM}\label{sec:lanmm-results}
 The single JR column isolates and lets us analyze the mechanism; the laminar model
 (LaNMM, \S\ref{sec:nmm}) confirms it in a cortical column with its \emph{own} two
 resonances. Driving one population with the AM input of Eq.~\eqref{eq:lanmm_drive}
@@ -951,10 +951,10 @@ resonance at $\sim$10~Hz that grows as the alpha Hopf is approached, while the
 limit-cycle side (low drive) entrains the autonomous alpha---the same
 stable-focus/limit-cycle pair as the JR column (Fig.~\ref{fig:res}), now read out as
 the deep-pyramidal alpha lock-in. The heuristic laminar model thus shows the JR
-resonance \emph{and}, in addition, the carrier-dependent envelope resonance that follows.
+resonance \emph{and}, in addition, the carrier-dependent Arnold tongues that follow.
 
 Sweeping the modulation amplitude $A$ and beat frequency $\Delta f$ at a fixed
-carrier produces a \emph{nonlinear envelope resonance}: alpha power in $P_1$ is maximal
+carrier produces \emph{nonlinear Arnold tongues}: alpha power in $P_1$ is maximal
 when $\Delta f$ matches the deep alpha ($\sim$10~Hz) and grows with $A$
 (Figs.~\ref{fig:lanmm_p2}a,b and~\ref{fig:lanmm_p1}a,b)---envelope resonance and
 phase locking of the slow generator to the recovered envelope, exactly as in the
@@ -983,14 +983,15 @@ choice matter, consistent with frequency-tagging/intermodulation paradigms
 \begin{figure}[t!]
 \centering
 \includegraphics[width=0.86\textwidth]{fig_lanmm_arnold_p2.png}
-\caption{\textbf{LaNMM envelope-resonance maps: AM input to the superficial $P_2$
-(gamma) loop.}
-\emph{(a,b)} Alpha-band power of $P_1$ and $P_2$ vs.\ modulation amplitude $A$ and
-beat frequency $\Delta f$ (carrier $40$~Hz): a band of elevated power around the
-$P_1$ alpha ($\sim$10~Hz, dashed line) that strengthens with $A$. Band power is a
-gating measure, so this map does not test frequency capture; the $1{:}1$ criterion is
-applied where the dominant output frequency is available
-(Figs.~\ref{fig:entrain},~\ref{fig:nmm2_map}). \emph{(c,d)} Alpha
+\caption{\textbf{LaNMM Arnold tongues: AM input to the superficial $P_2$ (gamma) loop.}
+\emph{(a,b)} Alpha-band power of $P_1$ and $P_2$ vs.\ modulation amplitude $A$ and beat
+frequency $\Delta f$ (carrier $40$~Hz), with elevated power around the $P_1$ alpha
+($\sim$10~Hz, dashed line). White contour in \emph{(a)}: the $1{:}1$ frequency-captured
+set, $|f_{\rm out}-\Delta f|<0.3$~Hz (Appendix~\ref{sec:vocab}), which is what defines
+the tongue. Band power alone cannot separate capture from a forced response, since both
+place power at $\Delta f$; the captured set is therefore computed from the dominant output
+frequency and drawn explicitly. Its width grows monotonically with drive, from $0.55$~Hz at
+$A\!\to\!0$ (the tolerance-limited tip, $2\times0.3$~Hz) to $1.75$~Hz at $A=300$. \emph{(c,d)} Alpha
 power vs.\ carrier frequency and $\Delta f$ at $A=250$: $P_1$ demodulation requires
 \emph{both} a carrier $\approx$$40$~Hz ($P_2$ gamma) and $\Delta f\approx$$10$~Hz
 ($P_1$ alpha)---a double resonance.}
@@ -1822,7 +1823,7 @@ alpha. Directly parallel to the JR single column (Fig.~\ref{fig:res}).}
 \begin{figure}[t!]
 \centering
 \includegraphics[width=0.86\textwidth]{fig_lanmm_arnold_p1.png}
-\caption{\textbf{LaNMM envelope-resonance maps: AM input delivered directly to the deep
+\caption{\textbf{LaNMM Arnold tongues: AM input delivered directly to the deep
 $P_1$ (alpha) loop.} \emph{(a,b)} Alpha power of $P_1$ and $P_2$ vs.\ amplitude $A$ and
 $\Delta f$. \emph{(c,d)} Alpha power vs.\ carrier frequency and $\Delta f$: $P_1$
 responds across a \emph{broad} carrier band (a vertical ridge at
