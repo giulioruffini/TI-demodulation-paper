@@ -21,6 +21,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import figstyle; figstyle.apply()
+import overlap
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 FIGS = os.environ.get("TN_FIGDIR") or os.path.join(os.path.dirname(HERE), "figures")
@@ -48,7 +49,7 @@ ax[0].text(0.03, 0.95, "1:1 locked\n(white contour)", transform=ax[0].transAxes,
            color="w", fontsize=8.5, va="top")
 ax[0].set_xlabel(r"drive frequency $\Delta f$ (Hz)")
 ax[0].set_ylabel(r"drive amplitude $\varepsilon$ (mV)")
-ax[0].set_title("(a)", loc="left", fontweight="bold")
+figstyle.panel(ax[0], "a")
 cb = fig.colorbar(pm, ax=ax[0]); cb.set_label(r"$A_\Omega$ (mV)")
 
 # ---- (b) frequency locking ---------------------------------------------------
@@ -62,7 +63,7 @@ ax[1].plot(dfb[~locked_b], fd[~locked_b], "o", mfc="none", mec=NEBLUE, ms=4.5, z
            label="unlocked")
 ax[1].set_xlabel(r"drive frequency $\Delta f$ (Hz)")
 ax[1].set_ylabel(r"$f_{\rm out}$ (Hz)")
-ax[1].set_title("(b)", loc="left", fontweight="bold")
+figstyle.panel(ax[1], "b")
 ax[1].legend(fontsize=7.5, frameon=False, loc="upper left")
 
 # ---- (c) entrainment grows toward criticality --------------------------------
@@ -79,7 +80,7 @@ ax[2].set_xlabel(r"distance to Hopf  $p_{\rm Hopf}-p$")
 ax[2].set_ylabel(r"locking range (Hz)", color=NEBLUE)
 ax[2].tick_params(axis="y", labelcolor=NEBLUE)
 ax[2].invert_xaxis()                            # Hopf (criticality) to the right
-ax[2].set_title("(c)", loc="left", fontweight="bold")
+figstyle.panel(ax[2], "c")
 ax[2].annotate("toward Hopf", xy=(0.97, 0.06), xytext=(0.55, 0.06),
                xycoords="axes fraction", fontsize=8, color="0.4",
                arrowprops=dict(arrowstyle="->", color="0.4"))
@@ -92,5 +93,6 @@ ax[2].legend(fontsize=7.5, frameon=False, loc="upper left")
 fig.tight_layout(w_pad=6.0)
 for ext in ("pdf", "png"):
     figstyle.scale_text(fig, placed_frac=1)
+    overlap.check(fig, placed_frac=1, name="make_entrain_fig.py")
     fig.savefig(os.path.join(FIGS, f"fig_entrainment.{ext}"), dpi=300, bbox_inches="tight")
 print("wrote fig_entrainment.{pdf,png} to", FIGS)

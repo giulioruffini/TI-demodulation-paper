@@ -5,6 +5,7 @@ Hopf, the tACS lock-in grows as 1/gamma and the resonance sharpens -- the amplif
 half of the TI mechanism, with no carrier. (pure numpy.)"""
 import os, numpy as np, matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 import figstyle; figstyle.apply()
+import overlap
 FIGS=os.environ.get("TN_FIGDIR") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "figures")
 os.makedirs(FIGS, exist_ok=True)
 A,B=3.25,22.0; a,b=100.0,50.0; v0,e0,rr=6.0,2.5,0.56
@@ -77,12 +78,12 @@ for C,c in zip(Csel,cols):
     g=jac_eig(p_of_C(vstar,C),C)[1]
     ax[0].plot(fdf,res[C],color=c,lw=1.9,label=f"$C$={C:.0f} ($\\gamma$={g:.1f})")
 ax[0].set_xlabel(r'drive frequency $\Delta f$ (Hz)'); ax[0].set_ylabel(r'lock-in $A_\Omega$ (mV)')
-ax[0].set_title("(a)", loc="left", fontweight="bold"); ax[0].legend(fontsize=8); ax[0].grid(alpha=.3)
+figstyle.panel(ax[0], "a"); ax[0].legend(fontsize=8); ax[0].grid(alpha=.3)
 ax[1].loglog(1/gam,A_tacs,'o-',color='#0a4f8c',lw=2,label='tACS (direct $\\Delta f$ drive)')
 xg=np.array([1/gam.max(),1/gam.min()]);k=A_tacs[5]*gam[5]
 ax[1].loglog(xg,k*xg,'k--',lw=1,label=r'$\propto 1/\gamma$')
 ax[1].set_xlabel(r'$1/\gamma$ (closeness to Hopf)'); ax[1].set_ylabel(r'$A_\Omega$ (mV)')
-ax[1].set_title("(b)", loc="left", fontweight="bold"); ax[1].legend(fontsize=8); ax[1].grid(alpha=.3,which='both')
+figstyle.panel(ax[1], "b"); ax[1].legend(fontsize=8); ax[1].grid(alpha=.3,which='both')
 plt.tight_layout()
 figstyle.scale_text(plt.gcf(), placed_frac=0.92)
 plt.savefig(os.path.join(FIGS,"fig_tacs_jcurve.pdf"))

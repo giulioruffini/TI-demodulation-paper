@@ -18,6 +18,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import figstyle; figstyle.apply()
+import overlap
 from matplotlib.colors import LogNorm
 
 FIGDIR = os.environ.get("TN_FIGDIR") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "figures")
@@ -91,22 +92,24 @@ def make_figures():
     plt.colorbar(im, ax=ax, label=r"lock-in response at $\Delta f$ (mV)")
     fig.tight_layout()
     figstyle.scale_text(fig, placed_frac=0.72)
+    overlap.check(fig, placed_frac=0.72, name="lanmm_resonance.py")
     fig.savefig(os.path.join(FIGDIR, "fig_lanmm_map.png"), dpi=300)
     fig.savefig(os.path.join(FIGDIR, "fig_lanmm_map.pdf")); plt.close(fig)
     # ---- resonance curves ----
     fig, (a1, a2) = plt.subplots(1, 2, figsize=(11, 4.2))
     for m in [600, 500, 430]:
         j = nearest(m); a1.plot(DF, M[j], label=f"drive$={MU[j]:.0f}$")
-    a1.set_title("(a)", loc="left", fontweight="bold")
+    figstyle.panel(a1, "a")
     a1.set_xlabel(r"envelope frequency $\Delta f$ (Hz)")
     a1.set_ylabel(r"lock-in response at $\Delta f$ (mV)")
     a1.legend(fontsize=8, title="approaching Hopf")
     for m in [340, 270, 210]:
         j = nearest(m); a2.plot(DF, M[j], label=f"drive$={MU[j]:.0f}$")
-    a2.set_title("(b)", loc="left", fontweight="bold")
+    figstyle.panel(a2, "b")
     a2.set_xlabel(r"envelope frequency $\Delta f$ (Hz)"); a2.legend(fontsize=8)
     fig.tight_layout(rect=[0, 0, 1, 0.96])
     figstyle.scale_text(fig, placed_frac=1)
+    overlap.check(fig, placed_frac=1, name="lanmm_resonance.py")
     fig.savefig(os.path.join(FIGDIR, "fig_lanmm_resonance.png"), dpi=300)
     fig.savefig(os.path.join(FIGDIR, "fig_lanmm_resonance.pdf")); plt.close(fig)
     print("wrote fig_lanmm_resonance + fig_lanmm_map (peak near alpha ~10 Hz)")

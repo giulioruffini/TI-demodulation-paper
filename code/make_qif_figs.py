@@ -11,6 +11,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import figstyle
+import overlap
 from matplotlib.ticker import MaxNLocator
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -82,12 +83,12 @@ def beat_inset(ax, off_key, on_key, mode="rate"):
         ca = ca / ca.mean()                                  # normalize -> relative modulation
         iax.plot(np.r_[ctr, ctr + 1], np.r_[ca, ca], color=col, lw=1.4, label=lab)
     iax.set_xticks([0, 1, 2]); iax.set_xticklabels(["0", "1", "2"])
-    iax.set_xlabel(r"$\Delta f$ phase (cycles)", fontsize=6.0, labelpad=1)
+    iax.set_xlabel(r"$\Delta f$ phase (cycles)", fontsize=7.5, labelpad=1)
     ylab = r"$\gamma$ amp. (norm.)" if mode == "gamma" else r"$r_E$ (norm.)"
-    iax.set_ylabel(ylab, fontsize=6.0, labelpad=1)
+    iax.set_ylabel(ylab, fontsize=7.5, labelpad=1)
     iax.yaxis.set_major_locator(MaxNLocator(3))
-    iax.tick_params(length=2, pad=1, labelsize=5.4)
-    iax.legend(fontsize=5.2, frameon=False, loc="upper right", ncol=2,
+    iax.tick_params(length=2, pad=1, labelsize=7.0)
+    iax.legend(fontsize=6.8, frameon=False, loc="upper right", ncol=2,
                handlelength=0.9, columnspacing=0.8, handletextpad=0.4, borderpad=0.1)
     iax.patch.set_alpha(0.92)
     return iax
@@ -116,7 +117,7 @@ def raster_panel(ax, key, title, show_env, annot=None):
         ax.text(0.025, 0.96, annot, transform=ax.transAxes, fontsize=7.6, va="top",
                 color=NEGREEN, fontweight="bold",
                 bbox=dict(fc="white", ec=NEGREEN, lw=0.6, alpha=0.85, pad=1.6))
-    ax.set_title(title, loc="left", fontweight="bold")
+    figstyle.panel(ax, title.strip("()"))
     return axr
 
 
@@ -143,7 +144,9 @@ def fig_raster():
         ax.set_xlabel("time (ms)")
     fig.tight_layout()
     for ext in ("pdf", "png"):
+        figstyle.thin_ticks(fig)
         figstyle.scale_text(fig, placed_frac=1)
+        overlap.check(fig, placed_frac=1, name="make_qif_figs.py")
         fig.savefig(os.path.join(FIGS, f"fig_qif_raster.{ext}"), dpi=300, bbox_inches="tight")
     plt.close(fig)
 
@@ -170,7 +173,7 @@ def fig_timing():
     axA.plot(fr, Px / Px.max(), color=NEBLUE, lw=1.1, label=r"QIF network ($N=%d$)" % meta["Ne"])
     axA.plot(fy, Py / Py.max(), color=NERED, lw=1.4, ls="--", label="NMM2 mean field (exact)")
     axA.set_xlim(0, 130); axA.set_xlabel("frequency (Hz)"); axA.set_ylabel("power (norm.)")
-    axA.set_title("(a)", loc="left", fontweight="bold")
+    figstyle.panel(axA, "a")
     axA.legend(fontsize=7.5, frameon=False, loc="upper right")
     axA.spines[["top", "right"]].set_visible(False)
 
@@ -190,7 +193,7 @@ def fig_timing():
         axC.text(fr, 1.5, txt, rotation=90, fontsize=7, color=NERED, ha="right", va="bottom")
     axC.set_xlim(0, 120); axC.set_ylim(1e-4, 4)
     axC.set_xlabel("frequency (Hz)"); axC.set_ylabel("power of $r_E$ (norm.)")
-    axC.set_title("(b)", loc="left", fontweight="bold")
+    figstyle.panel(axC, "b")
     axC.legend(fontsize=7.5, frameon=False, loc="lower right")
     axC.spines[["top", "right"]].set_visible(False)
 
@@ -214,13 +217,15 @@ def fig_timing():
                  color=NEGREEN, fontweight="bold")
     axB.set_xticks(x); axB.set_xticklabels([n for _, n in regimes])
     axB.set_ylabel(r"$A_\Omega/\langle r_E\rangle$")
-    axB.set_title("(c)", loc="left", fontweight="bold")
+    figstyle.panel(axB, "c")
     axB.legend(fontsize=7.5, frameon=False, loc="upper left")
     axB.set_ylim(0, max(depth_on) * 1.18)
     axB.spines[["top", "right"]].set_visible(False)
 
     fig.tight_layout(w_pad=3.0)
+    figstyle.thin_ticks(fig)
     figstyle.scale_text(fig, placed_frac=1)
+    overlap.check(fig, placed_frac=1, name="make_qif_figs.py")
     for ext in ("pdf", "png"):
         fig.savefig(os.path.join(FIGS, f"fig_qif_timing.{ext}"), dpi=300, bbox_inches="tight")
     plt.close(fig)

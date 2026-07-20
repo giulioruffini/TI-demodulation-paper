@@ -39,6 +39,7 @@ import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+import figstyle
 from scipy.integrate import solve_ivp
 from scipy.signal import butter, sosfiltfilt, hilbert, welch
 
@@ -159,7 +160,7 @@ def _imshow(ax, M, x, y, title, ylabel):
     im = ax.imshow(M, origin="lower", aspect="auto", interpolation="bilinear",
                    extent=[x[0], x[-1], y[0], y[-1]], cmap="viridis")
     ax.axvline(10.0, color="w", ls="--", lw=1)
-    ax.set_title(title, loc="left", fontweight="bold")
+    figstyle.panel(ax, title.strip("()"))
     ax.set_xlabel("envelope frequency $\\Delta f$ (Hz)"); ax.set_ylabel(ylabel)
     plt.colorbar(im, ax=ax, label="alpha power (8–12 Hz)")
 

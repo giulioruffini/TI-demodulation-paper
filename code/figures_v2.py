@@ -5,6 +5,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import figstyle
+import overlap
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
 from jr_demod import Sigm, Sigm1, Sigm2, A, a, v0, e0, r
 import os, figstyle; figstyle.apply()
@@ -53,6 +54,7 @@ def concept():
         axx.plot(tt,s,color=NEB,lw=1.0); axx.margins(y=0.15)
     wav(12,"am","AM field"); wav(38,"rect","rectified"); wav(64,"ripple","filtered"); wav(90,"sine","envelope @ $\\Omega$")
     figstyle.scale_text(fig, placed_frac=1)
+    overlap.check(fig, placed_frac=1, name="figures_v2.py")
     fig.savefig(f"{FIGS}/fig_concept.png",dpi=300); fig.savefig(f"{FIGS}/fig_concept.pdf")
     print("wrote fig_concept")
 
@@ -79,7 +81,7 @@ def bifurcation_sigmoid():
             continue
         ax[0].axvline(val, color=GR, ls="--", lw=0.8, alpha=0.55, zorder=1)
         ax[0].text(val + 3.5, -5.2, str(lab), rotation=90, fontsize=7, va="bottom", color=GR)
-    ax[0].text((113.6 + 315.7) / 2, -3.0, "alpha limit cycle", color=NEB, fontsize=8.3,
+    ax[0].text((113.6 + 315.7) / 2, 10.8, "alpha limit cycle", color=NEB, fontsize=7.5,
                ha="center", style="italic")
     ax[0].text(322, 2.4, "stable focus\n(resonator)\n$f_0\\approx11.1$ Hz", color=GR,
                fontsize=7.3, ha="left", va="center", style="italic")
@@ -112,6 +114,7 @@ def bifurcation_sigmoid():
     axt.yaxis.set_major_locator(MaxNLocator(5))
     fig.tight_layout(w_pad=6.0)     # keep panel (b)'s y-labels off panel (a)
     figstyle.scale_text(fig, placed_frac=1)
+    overlap.check(fig, placed_frac=1, name="figures_v2.py")
     fig.savefig(f"{FIGS}/fig_bifurcation_sigmoid.png",dpi=300)
     fig.savefig(f"{FIGS}/fig_bifurcation_sigmoid.pdf"); print("wrote fig_bifurcation_sigmoid")
 
@@ -129,6 +132,7 @@ def resonance_map():
     fig.colorbar(im, label="response @ $\\Omega$ (mV)")
     fig.tight_layout()
     figstyle.scale_text(fig, placed_frac=0.74)
+    overlap.check(fig, placed_frac=0.74, name="figures_v2.py")
     fig.savefig(f"{FIGS}/fig_resonance_map.png",dpi=300)
     fig.savefig(f"{FIGS}/fig_resonance_map.pdf"); print("wrote fig_resonance_map")
 
@@ -157,6 +161,7 @@ def carrier_independence():
     figstyle.panel(ax[0], "a"); figstyle.panel(ax[1], "b")
     fig.tight_layout()
     figstyle.scale_text(fig, placed_frac=1)
+    overlap.check(fig, placed_frac=1, name="figures_v2.py")
     fig.savefig(f"{FIGS}/fig_carrier_independence.png",dpi=300)
     fig.savefig(f"{FIGS}/fig_carrier_independence.pdf"); print("wrote fig_carrier_independence")
 
@@ -175,11 +180,10 @@ def operating_point():
     ax.plot(d["v_ref"], yref, "o", color="#1a9850", ms=6, label="JR operating points ($p$=265–395)")
     ax.set_xlabel("operating point  $v^*$  (mV)   [indexed by PEIX]")
     ax.set_ylabel("demodulated response @ $\\Omega$ (mV)")
-    ax.set_title("Demodulation gain $=\\frac{1}{2}\\sigma''(v^*)\\varepsilon^2 m$: curvature law, "
-                 "incl. sign reversal", fontsize=10)
     ax.legend(fontsize=8.5, frameon=False, loc="upper right"); ax.spines[["top","right"]].set_visible(False)
     fig.tight_layout()
     figstyle.scale_text(fig, placed_frac=0.74)
+    overlap.check(fig, placed_frac=0.74, name="figures_v2.py")
     fig.savefig(f"{FIGS}/fig_operating_point.png",dpi=300)
     fig.savefig(f"{FIGS}/fig_operating_point.pdf"); print("wrote fig_operating_point")
 

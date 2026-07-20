@@ -9,6 +9,7 @@ import numpy as np
 from scipy.signal import lfilter
 import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 import figstyle; figstyle.apply()
+import overlap
 from jr_demod import Sigm, steady_v
 import os
 FIGS = os.environ.get("TN_FIGDIR") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "figures")
@@ -58,6 +59,7 @@ ax.set_ylabel(r"$A_\Omega$  (normalized)")
 ax.legend(fontsize=8, frameon=False, loc="lower left"); ax.spines[["top","right"]].set_visible(False)
 fig.tight_layout()
 figstyle.scale_text(fig, placed_frac=0.74)
+overlap.check(fig, placed_frac=0.74, name="khz_analysis.py")
 fig.savefig(f"{FIGS}/fig_khz.png",dpi=300); fig.savefig(f"{FIGS}/fig_khz.pdf")
 
 # print the suppression numbers (carrier-power -> demod amplitude factor |H|^2)

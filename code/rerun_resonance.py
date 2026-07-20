@@ -31,6 +31,7 @@ elif mode=="cycle":
 elif mode=="plot":
     import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
     import figstyle; figstyle.apply()
+    import overlap
     S=np.load("sweep_hi_stable.npz")
     f=S["f_om"]; rs=S["rs"]; ps=S["p"]
     cols=["#1b3a6b","#2f7ec4","#9ec9e8"]
@@ -48,7 +49,7 @@ elif mode=="plot":
     ax[0].axvline(F0,ls=":",c="0.5",lw=1)
     ax[0].set_xlabel("$\\Omega/2\\pi$  (Hz)")
     ax[0].set_ylabel("$A_\\Omega$  (mV)")
-    ax[0].set_title("(a)", loc="left", fontweight="bold")
+    figstyle.panel(ax[0], "a")
     ax[0].legend(fontsize=8.5,frameon=False)
     ax[0].spines[["top","right"]].set_visible(False)
     # companion: peak height vs distance to Hopf -- the 1/gamma growth
@@ -58,11 +59,13 @@ elif mode=="plot":
                        xytext=(6,4),fontsize=8,color="#1b3a6b")
     ax[1].set_xlabel("$p-315$  ($\\propto\\gamma$)")
     ax[1].set_ylabel("peak $A_\\Omega$  (mV)")
-    ax[1].set_title("(b)", loc="left", fontweight="bold")
+    figstyle.panel(ax[1], "b")
     ax[1].spines[["top","right"]].set_visible(False)
     ax[1].set_xlim(0,None); ax[1].set_ylim(0,None)
     fig.tight_layout(rect=[0,0,1,0.95])
+    figstyle.thin_ticks(fig)
     figstyle.scale_text(fig, placed_frac=1)
+    overlap.check(fig, placed_frac=1, name="rerun_resonance.py")
     fig.savefig(f"{FIGS}/fig_resonance.png",dpi=300)
     fig.savefig(f"{FIGS}/fig_resonance.pdf")
     print("STABLE peaks:", [f"{rs[i].max():.3f}" for i in range(len(ps))])

@@ -4,6 +4,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import figstyle
+import overlap
 from jr_demod import integrate, steady_v, Sigm
 import os, figstyle; figstyle.apply()
 NEBLUE, NERED, NEGRAY = figstyle.NEBLUE, figstyle.NERED, figstyle.NEGRAY
@@ -57,7 +58,9 @@ ax[1,1].annotate("demodulated\nalpha line", xy=(11, 1.2), xytext=(40, 0.3), font
                  color=NEBLUE, arrowprops=dict(arrowstyle="->", color=NEBLUE, lw=0.8))
 figstyle.panel(ax[1,1], "d")
 fig2.tight_layout()
+figstyle.thin_ticks(fig2)
 figstyle.scale_text(fig2, placed_frac=1)
+overlap.check(fig2, placed_frac=1, name="make_figures.py")
 fig2.savefig(f"{FIGS}/fig_demodulation.png"); fig2.savefig(f"{FIGS}/fig_demodulation.pdf")
 print("wrote fig_demodulation")
 
@@ -99,6 +102,8 @@ ax3[1].text(1, r_nl*0.04, f"${r_nl/max(r_li,1e-12):.0f}\\times$ smaller", ha="ce
             fontsize=9, color=NERED)
 figstyle.panel(ax3[1], "b")
 fig3.tight_layout()
+figstyle.thin_ticks(fig3)
 figstyle.scale_text(fig3, placed_frac=0.92)
+overlap.check(fig3, placed_frac=0.92, name="make_figures.py")
 fig3.savefig(f"{FIGS}/fig_verification.png"); fig3.savefig(f"{FIGS}/fig_verification.pdf")
 print("wrote fig_verification")

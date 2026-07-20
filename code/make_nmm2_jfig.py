@@ -10,6 +10,7 @@ Companion to make_jfig.py (the Jansen-Rit J-curve plotter)."""
 import os, numpy as np, matplotlib
 matplotlib.use("Agg"); import matplotlib.pyplot as plt
 import figstyle; figstyle.apply()
+import overlap
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 NPZ  = os.path.join(HERE, "nmm2_jcD.npz")
@@ -28,7 +29,7 @@ ax[0].text(Chopf-0.05, peak.max()*1e3*0.5, 'gamma Hopf $J^*$', color='#b3361f',
            ha='right', rotation=90, fontsize=9)
 ax[0].set_xlabel(r'inter-QIF coupling $J\;(=C)$')
 ax[0].set_ylabel(r'peak demodulated $A_\Omega$ ($r_E$, $\times10^{-3}$)')
-ax[0].set_title("(a)", loc="left", fontweight="bold"); ax[0].grid(alpha=.3)
+figstyle.panel(ax[0], "a"); ax[0].grid(alpha=.3)
 ax[0].text(0.04, 0.95,
            "rectifier = exact $v_E^2$\n(quadratic coeff = 2, fixed)\n"
            "$J$ = literal QIF coupling\n$\\bar\\eta=0$, resonance peak",
@@ -40,7 +41,7 @@ xg = np.array([1/gam.max(), 1/gam.min()]); k = (peak[7]*1e3)*gam[7]
 ax[1].loglog(xg, k*xg, 'k--', lw=1, label=r'$\propto 1/\gamma$')
 ax[1].set_xlabel(r'$1/\gamma$  (closeness to gamma Hopf)')
 ax[1].set_ylabel(r'peak $A_\Omega$ ($\times10^{-3}$)')
-ax[1].set_title("(b)", loc="left", fontweight="bold")
+figstyle.panel(ax[1], "b")
 ax[1].legend(fontsize=8); ax[1].grid(alpha=.3, which='both')
 
 # log minor ticks collide once the type is enlarged: label decades only

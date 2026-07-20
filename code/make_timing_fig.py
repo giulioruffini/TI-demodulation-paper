@@ -10,6 +10,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import figstyle; figstyle.apply()
+import overlap
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 FIGS = os.environ.get("TN_FIGDIR") or os.path.join(os.path.dirname(HERE), "figures")
@@ -35,7 +36,7 @@ axr.plot(g, DC, "s-", color=NERED, lw=1.4, ms=3.5)
 axr.set_ylabel(r"DC mean-rate shift $\Delta\bar r$  (mHz)", color=NERED)
 axr.tick_params(axis="y", labelcolor=NERED)
 axr.set_ylim(-6, 8)
-ax1.set_title("(a)", loc="left", fontweight="bold")
+figstyle.panel(ax1, "a")
 ax1.legend(loc="upper left", frameon=False)
 
 # --- Panel b: gains normalized to the far-from-Hopf value, vs gamma (log-y) ---
@@ -47,11 +48,12 @@ ax2.axhline(1.0, color=NERED, lw=0.8, ls=":", alpha=0.6)
 ax2.set_xlabel(r"damping $\gamma$  (distance to Hopf) $\;\rightarrow$ Hopf")
 ax2.set_ylabel("gain, normalized to far-from-Hopf")
 ax2.invert_xaxis()
-ax2.set_title("(b)", loc="left", fontweight="bold")
+figstyle.panel(ax2, "b")
 ax2.legend(loc="upper left", frameon=False)
 
 fig.tight_layout()
 figstyle.scale_text(fig, placed_frac=1.0)
+overlap.check(fig, placed_frac=1.0, name="make_timing_fig.py")
 for ext in ("pdf", "png"):
     fig.savefig(os.path.join(FIGS, f"fig_timing_not_rate.{ext}"), dpi=300, bbox_inches="tight")
 print("wrote fig_timing_not_rate.pdf / .png")

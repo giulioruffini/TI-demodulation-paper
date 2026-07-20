@@ -41,6 +41,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import figstyle; figstyle.apply()
+import overlap
 from matplotlib.colors import LogNorm
 
 # --- NMM2-PING parameters (Raul Palma AUTO model qifnmm.f90 / ping_nmm2.py) ---
@@ -192,6 +193,7 @@ def make_figures(A=8.0, fc_Hz=300.0):
     plt.colorbar(im, ax=ax, label=r"lock-in at $\Delta f$ (a.u.)")
     fig.tight_layout()
     figstyle.scale_text(fig, placed_frac=0.72)
+    overlap.check(fig, placed_frac=0.72, name="nmm2_ping.py")
     fig.savefig(os.path.join(FIGDIR, "fig_nmm2_map.png"), dpi=300)
     fig.savefig(os.path.join(FIGDIR, "fig_nmm2_map.pdf")); plt.close(fig)
 
@@ -201,17 +203,18 @@ def make_figures(A=8.0, fc_Hz=300.0):
     fig, (a1, a2) = plt.subplots(1, 2, figsize=(11, 4.2), sharey=False)
     for e0 in stable:
         a1.plot(dfgrid, lockin_curve(e0, dfgrid, A=A, fc_Hz=fc_Hz), label=f"$\\bar\\eta={e0:g}$")
-    a1.set_title("(a)", loc="left", fontweight="bold")
+    figstyle.panel(a1, "a")
     a1.set_xlabel(r"envelope frequency $\Delta f$ (Hz)")
     a1.set_ylabel(r"lock-in response at $\Delta f$ (a.u.)")
     a1.legend(fontsize=8, title="approaching Hopf")
     for e0 in cycle:
         a2.plot(dfgrid, lockin_curve(e0, dfgrid, A=A, fc_Hz=fc_Hz), label=f"$\\bar\\eta={e0:g}$")
-    a2.set_title("(b)", loc="left", fontweight="bold")
+    figstyle.panel(a2, "b")
     a2.set_xlabel(r"envelope frequency $\Delta f$ (Hz)")
     a2.legend(fontsize=8)
     fig.tight_layout(rect=[0, 0, 1, 0.96])
     figstyle.scale_text(fig, placed_frac=1)
+    overlap.check(fig, placed_frac=1, name="nmm2_ping.py")
     fig.savefig(os.path.join(FIGDIR, "fig_nmm2_resonance.png"), dpi=300)
     fig.savefig(os.path.join(FIGDIR, "fig_nmm2_resonance.pdf")); plt.close(fig)
     print("wrote fig_nmm2_resonance and fig_nmm2_map")

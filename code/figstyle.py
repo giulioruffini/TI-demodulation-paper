@@ -39,12 +39,12 @@ def apply():
         "savefig.dpi":      300,
         "savefig.bbox":     "tight",
         "font.family":      "sans-serif",
-        "font.size":        11.0,
+        "font.size":        9.5,
         "axes.titlesize":   11.0,
-        "axes.labelsize":   11.0,
-        "xtick.labelsize":  9.5,
-        "ytick.labelsize":  9.5,
-        "legend.fontsize":  9.0,
+        "axes.labelsize":   9.5,
+        "xtick.labelsize":  8.0,
+        "ytick.labelsize":  8.0,
+        "legend.fontsize":  8.0,
         "legend.frameon":   False,
         "axes.linewidth":   0.8,
         "lines.linewidth":  1.7,
@@ -57,7 +57,7 @@ def apply():
     })
 
 
-def scale_text(fig, placed_frac=1.0, target_min_pt=7.5, max_scale=1.9, verbose=False):
+def scale_text(fig, placed_frac=1.0, target_min_pt=6.2, max_scale=1.45, verbose=False):
     """Pre-enlarge every text object so it prints at journal size.
 
     Call once, immediately before savefig. `placed_frac` is the fraction of
@@ -114,7 +114,36 @@ def scale_text(fig, placed_frac=1.0, target_min_pt=7.5, max_scale=1.9, verbose=F
     return total
 
 
-def panel(ax, letter, x=-0.015, y=1.04, fontsize=12.5):
-    """Bold panel label, e.g. panel(ax, 'a') -> '(a)' at the axis top-left."""
+def panel(ax, letter, x=0.0, y=1.03, fontsize=11.0):
+    """Bold panel label, e.g. panel(ax, 'a') -> '(a)' above the axis, left-aligned.
+
+    Anchored at the axes' left edge rather than out in the tick column: at
+    x<0 the label lands on top of the highest y-tick label, which is the most
+    common collision in a multi-panel figure.
+    """
     ax.text(x, y, f"({letter})", transform=ax.transAxes, fontweight="bold",
-            fontsize=fontsize, va="bottom", ha="right")
+            fontsize=fontsize, va="bottom", ha="left")
+
+
+def thin_ticks(fig, n=5):
+    """Cap every axis at ~n major ticks.
+
+    Corner collisions between the last x tick and the first y tick are the
+    commonest residual defect once panel titles are gone: the labels are fine
+    individually and overlap only where the axes meet.
+
+    Only ever reduces. An axis deliberately stripped of ticks (a twinx drawn
+    purely for its scale, say) must stay stripped, so anything already at or
+    below n ticks is left alone.
+    """
+    from matplotlib.ticker import MaxNLocator
+    for ax in fig.get_axes():
+        for axis in (ax.xaxis, ax.yaxis):
+            try:
+                if axis.get_scale() != "linear":
+                    continue
+                if len(axis.get_ticklocs()) <= n:
+                    continue
+                axis.set_major_locator(MaxNLocator(n))
+            except Exception:
+                pass
