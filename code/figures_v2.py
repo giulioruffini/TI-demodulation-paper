@@ -51,7 +51,6 @@ def concept():
         elif kind=="ripple": s=np.cos(2*np.pi*2*tt)+0.16*np.cos(2*np.pi*22*tt)  # post-tank
         else:                s=np.cos(2*np.pi*2*tt)                    # recovered envelope
         axx.plot(tt,s,color=NEB,lw=1.0); axx.margins(y=0.15)
-        axx.set_title(tag, fontsize=7.5, color=GR, pad=1)
     wav(12,"am","AM field"); wav(38,"rect","rectified"); wav(64,"ripple","filtered"); wav(90,"sine","envelope @ $\\Omega$")
     figstyle.scale_text(fig, placed_frac=1)
     fig.savefig(f"{FIGS}/fig_concept.png",dpi=300); fig.savefig(f"{FIGS}/fig_concept.pdf")
@@ -86,7 +85,6 @@ def bifurcation_sigmoid():
                fontsize=7.3, ha="left", va="center", style="italic")
     ax[0].set_xlim(-70, 345); ax[0].set_ylim(-5.7, 12.5)
     ax[0].set_xlabel("external input  $p$  (Hz)"); ax[0].set_ylabel("LFP $v=y_1-y_2$ (mV)")
-    ax[0].set_title("JR bifurcation diagram (numerical continuation)")
     ax[0].legend(loc="upper left", fontsize=7.5, markerscale=2.8, handletextpad=0.3)
     figstyle.panel(ax[0], "a")
 
@@ -103,13 +101,12 @@ def bifurcation_sigmoid():
     axb.set_xlabel("membrane potential $v$ (mV)")
     axb.set_ylabel("$\\sigma(v)$  (s$^{-1}$)", color=NEB)
     axt.set_ylabel("$\\sigma''(v)$", color=NER)
-    axb.set_title("Sigmoid and its curvature $\\sigma''$", fontsize=11)
     l1,la1=axb.get_legend_handles_labels(); l2,la2=axt.get_legend_handles_labels()
     axb.legend(l1+l2, la1+la2, fontsize=8, frameon=False, loc="upper left")
-    axb.set_title("Sigmoid $\\sigma(v)$ and its curvature $\\sigma''$")
     figstyle.panel(axb, "b")
+    fig.tight_layout()
     figstyle.scale_text(fig, placed_frac=1)
-    fig.tight_layout(); fig.savefig(f"{FIGS}/fig_bifurcation_sigmoid.png",dpi=300)
+    fig.savefig(f"{FIGS}/fig_bifurcation_sigmoid.png",dpi=300)
     fig.savefig(f"{FIGS}/fig_bifurcation_sigmoid.pdf"); print("wrote fig_bifurcation_sigmoid")
 
 # ===================================================== FIG 3: 2-D resonance map
@@ -123,10 +120,10 @@ def resonance_map():
     ax.annotate("far from Hopf", xy=(8.7, 396), color="white", fontsize=8.5, va="top")
     ax.set_xlabel("envelope frequency  $\\Omega/2\\pi$  (Hz)")
     ax.set_ylabel("external input  $p$  (Hz)  $\\rightarrow$ toward Hopf")
-    ax.set_title("Demodulated response @ $\\Omega$  (mV): resonance ridge sharpens near Hopf", fontsize=10)
     fig.colorbar(im, label="response @ $\\Omega$ (mV)")
+    fig.tight_layout()
     figstyle.scale_text(fig, placed_frac=0.74)
-    fig.tight_layout(); fig.savefig(f"{FIGS}/fig_resonance_map.png",dpi=300)
+    fig.savefig(f"{FIGS}/fig_resonance_map.png",dpi=300)
     fig.savefig(f"{FIGS}/fig_resonance_map.pdf"); print("wrote fig_resonance_map")
 
 # ====================================== FIG 4: carrier independence + synapse TF
@@ -140,7 +137,6 @@ def carrier_independence():
     ax[0].set_ylim(0, None)
     ax[0].set_xlabel("carrier frequency  $f_c$  (Hz)")
     ax[0].set_ylabel("demodulated response @ $\\Omega$ (mV)")
-    ax[0].set_title("Carrier independence\n($A_\\Omega\\propto\\sigma''\\varepsilon^2 m$, independent of $f_c$)", fontsize=10)
     ax[0].legend(fontsize=8, frameon=False); ax[0].spines[["top","right"]].set_visible(False)
 
     w=2*np.pi*np.logspace(0,3,400)
@@ -152,10 +148,10 @@ def carrier_independence():
     ax[1].axvspan(8,13, color=NER, alpha=0.12); ax[1].text(8.5,2e-3,"envelope",fontsize=8,color=NER)
     ax[1].axvline(100, color=NEB2, ls="--", lw=1); ax[1].text(105,2e-3,"carrier 100 Hz",fontsize=8,color=NEB2)
     ax[1].set_xlabel("frequency (Hz)"); ax[1].set_ylabel("$|H(\\omega)|$ (norm.)")
-    ax[1].set_title("2nd-order synapse band-pass:\ncarrier suppressed, envelope passed", fontsize=10)
     figstyle.panel(ax[0], "a"); figstyle.panel(ax[1], "b")
+    fig.tight_layout()
     figstyle.scale_text(fig, placed_frac=1)
-    fig.tight_layout(); fig.savefig(f"{FIGS}/fig_carrier_independence.png",dpi=300)
+    fig.savefig(f"{FIGS}/fig_carrier_independence.png",dpi=300)
     fig.savefig(f"{FIGS}/fig_carrier_independence.pdf"); print("wrote fig_carrier_independence")
 
 # ================================================ FIG 5: operating-point law (signed)
@@ -176,8 +172,9 @@ def operating_point():
     ax.set_title("Demodulation gain $=\\frac{1}{2}\\sigma''(v^*)\\varepsilon^2 m$: curvature law, "
                  "incl. sign reversal", fontsize=10)
     ax.legend(fontsize=8.5, frameon=False, loc="upper right"); ax.spines[["top","right"]].set_visible(False)
+    fig.tight_layout()
     figstyle.scale_text(fig, placed_frac=0.74)
-    fig.tight_layout(); fig.savefig(f"{FIGS}/fig_operating_point.png",dpi=300)
+    fig.savefig(f"{FIGS}/fig_operating_point.png",dpi=300)
     fig.savefig(f"{FIGS}/fig_operating_point.pdf"); print("wrote fig_operating_point")
 
 if __name__=="__main__":

@@ -65,6 +65,26 @@ def alpha_power(v, dt, band=ALPHA_BAND):
     return float(np.mean(env**2))
 
 
+def dominant_freq(v, dt, fmin=3.0, fmax=20.0, skip=0.25):
+    """Largest spectral peak of v in [fmin, fmax] Hz, discarding the first
+    `skip` fraction as transient.
+
+    This is the observable that tests frequency CAPTURE. Band power cannot:
+    a forced response and an entrained oscillator both put power at the drive
+    frequency. Capture means the dominant output frequency has been pulled to
+    the drive, which is what the 1:1 criterion |f_out - df| < 0.3 Hz measures.
+    """
+    x = np.asarray(v)[int(skip*len(v)):]
+    x = x - x.mean()
+    w = np.hanning(len(x))
+    P = np.abs(np.fft.rfft(x*w))
+    fr = np.fft.rfftfreq(len(x), d=dt)
+    m = (fr >= fmin) & (fr <= fmax)
+    if not m.any():
+        return float("nan")
+    return float(fr[m][np.argmax(P[m])])
+
+
 # ============================================================
 # one simulation under a deterministic AM drive
 # ============================================================
@@ -103,15 +123,20 @@ def simulate_am_drive(intrinsic, driving, A_mod, f_slow, f_fast=40.0, phi=0.0,
 # ============================================================
 def arnold_tongue(intrinsic, driving, f_slow=np.linspace(5, 15, 41),
                   A=np.linspace(0, 300, 31), f_fast=40.0, drive_target="P2", **kw):
-    """(a,b): alpha power of P1,P2 over (A, Δf) at fixed carrier."""
+    """(a,b): alpha power of P1,P2 over (A, Δf) at fixed carrier.
+
+    Also returns F1, the dominant P1 output frequency, so the 1:1 captured set
+    can be outlined on the power map rather than inferred from it."""
     P1 = np.zeros((len(A), len(f_slow))); P2 = np.zeros_like(P1)
+    F1 = np.zeros_like(P1)
     for i, a in enumerate(A):
         for j, fs in enumerate(f_slow):
             t, v1, v2 = simulate_am_drive(intrinsic, driving, a, fs, f_fast,
                                           drive_target=drive_target, **kw)
             dt = t[1]-t[0]
             P1[i, j] = alpha_power(v1, dt); P2[i, j] = alpha_power(v2, dt)
-    return P1, P2, f_slow, A
+            F1[i, j] = dominant_freq(v1, dt)
+    return P1, P2, f_slow, A, F1
 
 def carrier_map(intrinsic, driving, f_slow=np.linspace(5, 15, 41),
                 f_carrier=np.linspace(25, 80, 56), A_mod=250.0, drive_target="P2", **kw):
@@ -139,11 +164,17 @@ def _imshow(ax, M, x, y, title, ylabel):
     plt.colorbar(im, ax=ax, label="alpha power (8–12 Hz)")
 
 def make_figure(intrinsic, driving, drive_target="P2", A_for_carrier=250.0):
-    Pt1, Pt2, fs_t, A = arnold_tongue(intrinsic, driving, drive_target=drive_target)
+    Pt1, Pt2, fs_t, A, F1 = arnold_tongue(intrinsic, driving, drive_target=drive_target)
     Pc1, Pc2, fs_c, fc = carrier_map(intrinsic, driving, A_mod=A_for_carrier,
                                      drive_target=drive_target)
     fig, ax = plt.subplots(2, 2, figsize=(11, 9))
     _imshow(ax[0,0], Pt1, fs_t, A,  "(a) P1 alpha-band power", "modulation amplitude $A$")
+    # 1:1 frequency capture, outlined on the power field: band power alone
+    # cannot separate a forced response from an entrained oscillator.
+    LOCK = (np.abs(F1 - fs_t[None, :]) < 0.3).astype(float)
+    print(f"  1:1 locked fraction of the (A, df) grid: {LOCK.mean():.2%}")
+    if LOCK.any():
+        ax[0,0].contour(fs_t, A, LOCK, levels=[0.5], colors="w", linewidths=1.4)
     _imshow(ax[0,1], Pt2, fs_t, A,  "(b) P2 alpha-band power", "modulation amplitude $A$")
     _imshow(ax[1,0], Pc1, fs_c, fc, "(c) P1 alpha-band power", "carrier frequency $f_c$ (Hz)")
     _imshow(ax[1,1], Pc2, fs_c, fc, "(d) P2 alpha-band power", "carrier frequency $f_c$ (Hz)")
