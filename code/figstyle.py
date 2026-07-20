@@ -11,6 +11,16 @@ that set their own rcParams are unaffected unless they opt in.
 """
 import matplotlib as mpl
 
+# --- page geometry -------------------------------------------------------
+# The manuscript is a4 with margin=2.3cm, so \textwidth = 465.1 pt = 6.46 in.
+# Figures are drawn on canvases much wider than that and then squeezed by
+# \includegraphics, which scales the type down with everything else. A figure
+# drawn 13.5 in wide and placed at \textwidth prints its 9.5 pt ticks at 4.5 pt.
+# IOP requires 8-12 pt at final size, so the type has to be pre-enlarged by the
+# reciprocal of that squeeze. See scale_text().
+TEXTWIDTH_PT = 465.1
+TEXTWIDTH_IN = TEXTWIDTH_PT / 72.0
+
 # --- house palette ---
 NEBLUE   = "#0a4f8c"     # primary
 NERED    = "#b3361f"     # contrast / theory overlay
@@ -45,6 +55,51 @@ def apply():
         "grid.alpha":        0.3,
         "grid.linewidth":    0.6,
     })
+
+
+def scale_text(fig, placed_frac=1.0, target_min_pt=8.5, verbose=False):
+    """Pre-enlarge every text object so it prints at journal size.
+
+    Call once, immediately before savefig. `placed_frac` is the fraction of
+    \\textwidth the figure is placed at in the manuscript, i.e. the number in
+    \\includegraphics[width=0.85\\textwidth]{...}.
+
+    Walks the whole figure, so it catches hardcoded ax.text(fontsize=...) calls
+    as well as anything inherited from rcParams. Returns the factor applied.
+    Never shrinks: a figure already at or below \\textwidth is left alone.
+
+    Idempotent: calling it twice on the same figure does nothing the second
+    time, so a call left inside a save loop cannot compound the scaling.
+
+    Enlarging the type also enlarges the tight bounding box, which increases the
+    squeeze and eats part of the gain, so this iterates against the measured box
+    rather than applying one open-loop factor.
+    """
+    if getattr(fig, "_figstyle_text_scaled", False):
+        return 1.0
+    fig._figstyle_text_scaled = True
+
+    texts = list({id(t): t for t in fig.findobj(mpl.text.Text)}.values())
+    texts = [t for t in texts if t.get_text().strip()]
+    if not texts:
+        return 1.0
+
+    total = 1.0
+    for _ in range(12):
+        fig.canvas.draw()
+        bb = fig.get_tightbbox(fig.canvas.get_renderer())
+        squeeze = (placed_frac * TEXTWIDTH_IN) / bb.width   # <1 when downscaled
+        smallest_printed = min(t.get_fontsize() for t in texts) * squeeze
+        if smallest_printed >= target_min_pt:
+            break
+        step = min(target_min_pt / smallest_printed, 1.35)   # damped
+        for t in texts:
+            t.set_fontsize(t.get_fontsize() * step)
+        total *= step
+    if verbose:
+        print(f"  figstyle: type scaled x{total:.2f} "
+              f"-> smallest prints at {smallest_printed:.1f} pt")
+    return total
 
 
 def panel(ax, letter, x=-0.015, y=1.04, fontsize=12.5):

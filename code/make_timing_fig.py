@@ -51,6 +51,7 @@ ax2.set_title("(b) AC gain $\\sim 1/\\gamma$ (saturating); DC flat", fontsize=9)
 ax2.legend(loc="upper left", frameon=False)
 
 fig.tight_layout()
+figstyle.scale_text(fig, placed_frac=1.0)
 for ext in ("pdf", "png"):
     fig.savefig(os.path.join(FIGS, f"fig_timing_not_rate.{ext}"), dpi=300, bbox_inches="tight")
 print("wrote fig_timing_not_rate.pdf / .png")

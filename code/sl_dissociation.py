@@ -104,6 +104,7 @@ if __name__ == "__main__":
              transform=axB.transAxes, ha="center", fontsize=8, color=NEGRAY)
 
     fig.tight_layout()
+    figstyle.scale_text(fig, placed_frac=0.84)
     for ext in ("pdf", "png"):
         fig.savefig(os.path.join(FIGS, f"fig_sl_dissociation.{ext}"), dpi=300, bbox_inches="tight")
     print("wrote fig_sl_dissociation.{pdf,png} to", FIGS)
