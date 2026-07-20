@@ -30,6 +30,17 @@ def _boxes(fig, renderer):
         seen.add(id(t))
         if not t.get_visible() or not t.get_text().strip():
             continue
+        # tick labels belonging to an axis whose ticks were switched off are
+        # still live Text objects at stale positions; they render nothing
+        ax = getattr(t, "axes", None)
+        if ax is not None:
+            skip = False
+            for axis in (ax.xaxis, ax.yaxis):
+                labs = axis.get_ticklabels()
+                if any(t is l for l in labs) and len(axis.get_ticklocs()) == 0:
+                    skip = True
+            if skip:
+                continue
         try:
             bb = t.get_window_extent(renderer=renderer)
         except Exception:

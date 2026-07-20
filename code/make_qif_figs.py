@@ -142,7 +142,7 @@ def fig_raster():
         ax.set_ylabel("E neuron #")
     for ax in axs[1, :]:
         ax.set_xlabel("time (ms)")
-    fig.tight_layout()
+    fig.tight_layout(w_pad=2.8, h_pad=2.0)
     for ext in ("pdf", "png"):
         figstyle.thin_ticks(fig)
         figstyle.scale_text(fig, placed_frac=1)

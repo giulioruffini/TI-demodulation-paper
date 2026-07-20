@@ -57,7 +57,7 @@ ax[1,1].set_xlabel("frequency (Hz)"); ax[1,1].set_ylabel("power")
 ax[1,1].annotate("demodulated\nalpha line", xy=(11, 1.2), xytext=(40, 0.3), fontsize=8,
                  color=NEBLUE, arrowprops=dict(arrowstyle="->", color=NEBLUE, lw=0.8))
 figstyle.panel(ax[1,1], "d")
-fig2.tight_layout()
+fig2.tight_layout(w_pad=2.5, h_pad=1.8)
 figstyle.thin_ticks(fig2)
 figstyle.scale_text(fig2, placed_frac=1)
 overlap.check(fig2, placed_frac=1, name="make_figures.py")
