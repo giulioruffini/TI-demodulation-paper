@@ -53,8 +53,8 @@ for f,lab in [(1000,"1k"),(2000,"2k"),(3900,"TMS\n3.9k"),(10000,"10k")]:
     ax.axvline(f, color=GR, ls=":", lw=0.7); ax.text(f*1.02, 1.3e-7, lab, fontsize=7.5, color=GR)
 ax.set_ylim(1e-7, 2.0)
 ax.set_xlabel("carrier frequency  $f_c$  (Hz)")
-ax.set_ylabel("demodulated response @ $\\Omega$  (normalized to $\\tau\\!\\to\\!0$)")
-ax.set_title("Where the nonlinearity sits decides kHz coupling (TI and TMS alike)", fontsize=10.5)
+ax.set_ylabel(r"$A_\Omega$  (normalized)")
+# title moved to caption
 ax.legend(fontsize=8, frameon=False, loc="lower left"); ax.spines[["top","right"]].set_visible(False)
 fig.tight_layout()
 figstyle.scale_text(fig, placed_frac=0.74)

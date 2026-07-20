@@ -159,7 +159,7 @@ def _imshow(ax, M, x, y, title, ylabel):
     im = ax.imshow(M, origin="lower", aspect="auto", interpolation="bilinear",
                    extent=[x[0], x[-1], y[0], y[-1]], cmap="viridis")
     ax.axvline(10.0, color="w", ls="--", lw=1)
-    ax.set_title(title, fontsize=10)
+    ax.set_title(title, loc="left", fontweight="bold")
     ax.set_xlabel("envelope frequency $\\Delta f$ (Hz)"); ax.set_ylabel(ylabel)
     plt.colorbar(im, ax=ax, label="alpha power (8–12 Hz)")
 
@@ -178,7 +178,6 @@ def make_figure(intrinsic, driving, drive_target="P2", A_for_carrier=250.0):
     _imshow(ax[0,1], Pt2, fs_t, A,  "(b) P2 alpha-band power", "modulation amplitude $A$")
     _imshow(ax[1,0], Pc1, fs_c, fc, "(c) P1 alpha-band power", "carrier frequency $f_c$ (Hz)")
     _imshow(ax[1,1], Pc2, fs_c, fc, "(d) P2 alpha-band power", "carrier frequency $f_c$ (Hz)")
-    fig.suptitle(f"LaNMM Arnold tongues — AM drive into {drive_target}", fontsize=12)
     fig.tight_layout(rect=[0, 0, 1, 0.97])
     out = f"fig_lanmm_arnold_{'p2' if drive_target=='P2' else 'p1'}"
     os.makedirs(FIGDIR, exist_ok=True)
@@ -198,7 +197,7 @@ def checker(intrinsic, driving, f_slow=10.0, f_fast=40.0, A_mod=250.0,
     w = (t >= t[0]+1) & (t <= t[0]+3)
     ax[0].plot(t[w], v1[w], label="P1"); ax[0].plot(t[w], v2[w], label="P2", alpha=0.7)
     ax[0].plot(t[w], np.cos(2*np.pi*f_slow*t[w]), "k", lw=1, label="envelope")
-    ax[0].set_title("time series"); ax[0].set_xlabel("t (s)"); ax[0].legend(fontsize=8)
+    # title moved to caption
     for a, v, c, lab in ((ax[1], v1, "g", "P1"), (ax[2], v2, "r", "P2")):
         f, p = welch(v, fs=1.0/dt, nperseg=int(4.0/dt))
         a.semilogy(f, p, color=c); a.set_xlim(0, 80); a.set_title(f"{lab} PSD"); a.set_xlabel("Hz")

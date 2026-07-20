@@ -201,17 +201,15 @@ def make_figures(A=8.0, fc_Hz=300.0):
     fig, (a1, a2) = plt.subplots(1, 2, figsize=(11, 4.2), sharey=False)
     for e0 in stable:
         a1.plot(dfgrid, lockin_curve(e0, dfgrid, A=A, fc_Hz=fc_Hz), label=f"$\\bar\\eta={e0:g}$")
-    a1.set_title(f"Stable focus ($\\bar\\eta<\\bar\\eta_{{\\rm Hopf}}\\approx{eta_hopf:.0f}$): forced resonance",
-                 fontsize=10)
+    a1.set_title("(a)", loc="left", fontweight="bold")
     a1.set_xlabel(r"envelope frequency $\Delta f$ (Hz)")
     a1.set_ylabel(r"lock-in response at $\Delta f$ (a.u.)")
     a1.legend(fontsize=8, title="approaching Hopf")
     for e0 in cycle:
         a2.plot(dfgrid, lockin_curve(e0, dfgrid, A=A, fc_Hz=fc_Hz), label=f"$\\bar\\eta={e0:g}$")
-    a2.set_title(r"Limit cycle ($\bar\eta>\bar\eta_{\rm Hopf}$): entrainment of gamma", fontsize=10)
+    a2.set_title("(b)", loc="left", fontweight="bold")
     a2.set_xlabel(r"envelope frequency $\Delta f$ (Hz)")
     a2.legend(fontsize=8)
-    fig.suptitle(f"NMM2 PING gamma resonance (carrier $f_c={fc_Hz:.0f}$ Hz)", fontsize=11)
     fig.tight_layout(rect=[0, 0, 1, 0.96])
     figstyle.scale_text(fig, placed_frac=1)
     fig.savefig(os.path.join(FIGDIR, "fig_nmm2_resonance.png"), dpi=300)

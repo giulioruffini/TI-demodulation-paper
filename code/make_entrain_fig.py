@@ -48,8 +48,8 @@ ax[0].text(0.03, 0.95, "1:1 locked\n(white contour)", transform=ax[0].transAxes,
            color="w", fontsize=8.5, va="top")
 ax[0].set_xlabel(r"drive frequency $\Delta f$ (Hz)")
 ax[0].set_ylabel(r"drive amplitude $\varepsilon$ (mV)")
-ax[0].set_title("(a) 1:1 Arnold tongue (lock-in)")
-cb = fig.colorbar(pm, ax=ax[0]); cb.set_label(r"lock-in $A_\Omega$ at $\Delta f$ (mV)")
+ax[0].set_title("(a)", loc="left", fontweight="bold")
+cb = fig.colorbar(pm, ax=ax[0]); cb.set_label(r"$A_\Omega$ (mV)")
 
 # ---- (b) frequency locking ---------------------------------------------------
 dfb, fd = Bd["dfb"], Bd["fd"]
@@ -61,8 +61,8 @@ ax[1].plot(dfb[locked_b], fd[locked_b], "o", color=NEBLUE, ms=4.5, zorder=3, lab
 ax[1].plot(dfb[~locked_b], fd[~locked_b], "o", mfc="none", mec=NEBLUE, ms=4.5, zorder=3,
            label="unlocked")
 ax[1].set_xlabel(r"drive frequency $\Delta f$ (Hz)")
-ax[1].set_ylabel(r"output frequency $f_{\rm out}$ (Hz)")
-ax[1].set_title(r"(b) frequency locking ($\varepsilon=%.1f$ mV)" % float(Bd["eps_b"]))
+ax[1].set_ylabel(r"$f_{\rm out}$ (Hz)")
+ax[1].set_title("(b)", loc="left", fontweight="bold")
 ax[1].legend(fontsize=7.5, frameon=False, loc="upper left")
 
 # ---- (c) entrainment grows toward criticality --------------------------------
@@ -76,20 +76,20 @@ if clip.any():                                 # honesty: mark grid-clipped lowe
     ax[2].plot(dist[clip], lr[clip], "^", mfc="none", mec=NEBLUE, ms=8, mew=1.5,
                zorder=3, label="clipped (lower bound)")
 ax[2].set_xlabel(r"distance to Hopf  $p_{\rm Hopf}-p$")
-ax[2].set_ylabel(r"1:1 locking range (Hz)", color=NEBLUE)
+ax[2].set_ylabel(r"locking range (Hz)", color=NEBLUE)
 ax[2].tick_params(axis="y", labelcolor=NEBLUE)
 ax[2].invert_xaxis()                            # Hopf (criticality) to the right
-ax[2].set_title("(c) entrainment grows toward criticality")
+ax[2].set_title("(c)", loc="left", fontweight="bold")
 ax[2].annotate("toward Hopf", xy=(0.97, 0.06), xytext=(0.55, 0.06),
                xycoords="axes fraction", fontsize=8, color="0.4",
                arrowprops=dict(arrowstyle="->", color="0.4"))
 axr = ax[2].twinx()
 axr.plot(dist, amp0, "s--", color=NERED, lw=1.4, ms=5, alpha=0.9)
-axr.set_ylabel("autonomous cycle amplitude (mV)", color=NERED)
+axr.set_ylabel("cycle amp. (mV)", color=NERED)
 axr.tick_params(axis="y", labelcolor=NERED)
 ax[2].legend(fontsize=7.5, frameon=False, loc="upper left")
 
-fig.tight_layout()
+fig.tight_layout(w_pad=6.0)
 for ext in ("pdf", "png"):
     figstyle.scale_text(fig, placed_frac=1)
     fig.savefig(os.path.join(FIGS, f"fig_entrainment.{ext}"), dpi=300, bbox_inches="tight")

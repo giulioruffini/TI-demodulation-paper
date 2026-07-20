@@ -61,8 +61,6 @@ elif mode=="plot":
     ax[1].set_title("(b)", loc="left", fontweight="bold")
     ax[1].spines[["top","right"]].set_visible(False)
     ax[1].set_xlim(0,None); ax[1].set_ylim(0,None)
-    fig.suptitle("Envelope demodulation $\\rightarrow$ alpha resonance in Jansen-Rit "
-                 "(carrier $f_c=100$ Hz, AM input has NO power at $\\Omega$)",fontsize=11)
     fig.tight_layout(rect=[0,0,1,0.95])
     figstyle.scale_text(fig, placed_frac=1)
     fig.savefig(f"{FIGS}/fig_resonance.png",dpi=300)

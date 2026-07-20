@@ -116,7 +116,7 @@ def raster_panel(ax, key, title, show_env, annot=None):
         ax.text(0.025, 0.96, annot, transform=ax.transAxes, fontsize=7.6, va="top",
                 color=NEGREEN, fontweight="bold",
                 bbox=dict(fc="white", ec=NEGREEN, lw=0.6, alpha=0.85, pad=1.6))
-    ax.set_title(title, fontsize=9)
+    ax.set_title(title, loc="left", fontweight="bold")
     return axr
 
 
@@ -170,9 +170,7 @@ def fig_timing():
     axA.plot(fr, Px / Px.max(), color=NEBLUE, lw=1.1, label=r"QIF network ($N=%d$)" % meta["Ne"])
     axA.plot(fy, Py / Py.max(), color=NERED, lw=1.4, ls="--", label="NMM2 mean field (exact)")
     axA.set_xlim(0, 130); axA.set_xlabel("frequency (Hz)"); axA.set_ylabel("power (norm.)")
-    axA.set_title("(a) QIF $\\to$ NMM2: matched autonomous gamma\n"
-                  r"($\langle r_E\rangle$: %.3f QIF vs %.3f mean field)"
-                  % (q["rmean"], c["mf_re"][mm].mean()), fontsize=9)
+    axA.set_title("(a)", loc="left", fontweight="bold")
     axA.legend(fontsize=7.5, frameon=False, loc="upper right")
     axA.spines[["top", "right"]].set_visible(False)
 
@@ -192,8 +190,7 @@ def fig_timing():
         axC.text(fr, 1.5, txt, rotation=90, fontsize=7, color=NERED, ha="right", va="bottom")
     axC.set_xlim(0, 120); axC.set_ylim(1e-4, 4)
     axC.set_xlabel("frequency (Hz)"); axC.set_ylabel("power of $r_E$ (norm.)")
-    axC.set_title("(b) Oscillatory: nonlinear mixing of\n"
-                  r"$\Delta f$ and $f_0$ $\to$ intermodulation sidebands", fontsize=9)
+    axC.set_title("(b)", loc="left", fontweight="bold")
     axC.legend(fontsize=7.5, frameon=False, loc="lower right")
     axC.spines[["top", "right"]].set_visible(False)
 
@@ -215,18 +212,16 @@ def fig_timing():
         axB.text(xi - bw / 2, depth_off[xi] + 0.012, f"{depth_off[xi]:.2f}", ha="center", fontsize=7.5)
         axB.text(xi + bw / 2, depth_on[xi] + 0.012, f"{depth_on[xi]:.2f}", ha="center", fontsize=7.5,
                  color=NEGREEN, fontweight="bold")
-    axB.text(0.5, 0.90, r"mean rate $\langle r_E\rangle$ flat (off$\to$on $\times$%.2f, $\times$%.2f)"
-             % (rate_fc[0], rate_fc[1]), transform=axB.transAxes, ha="center", fontsize=8, color=GR)
     axB.set_xticks(x); axB.set_xticklabels([n for _, n in regimes])
-    axB.set_ylabel(r"$\Delta f$ modulation depth  ($A_\Omega/\langle r_E\rangle$)")
-    axB.set_title("(c) TI imposes $\\Delta f$-locked timing, not rate", fontsize=9)
+    axB.set_ylabel(r"$A_\Omega/\langle r_E\rangle$")
+    axB.set_title("(c)", loc="left", fontweight="bold")
     axB.legend(fontsize=7.5, frameon=False, loc="upper left")
     axB.set_ylim(0, max(depth_on) * 1.18)
     axB.spines[["top", "right"]].set_visible(False)
 
-    fig.tight_layout()
+    fig.tight_layout(w_pad=3.0)
+    figstyle.scale_text(fig, placed_frac=1)
     for ext in ("pdf", "png"):
-        figstyle.scale_text(fig, placed_frac=1)
         fig.savefig(os.path.join(FIGS, f"fig_qif_timing.{ext}"), dpi=300, bbox_inches="tight")
     plt.close(fig)
 

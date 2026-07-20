@@ -87,7 +87,7 @@ def make_figures():
     ax.text(DF[-1]-0.3, I_HOPF+10, "alpha Hopf", color="w", ha="right", fontsize=8)
     ax.set_xlabel(r"envelope frequency $\Delta f$ (Hz)")
     ax.set_ylabel(r"$P_1$ drive (bifurcation parameter)")
-    ax.set_title(r"LaNMM: demodulated $P_1$ response over $(\Delta f,\,$drive$)$", fontsize=10)
+    # title moved to caption
     plt.colorbar(im, ax=ax, label=r"lock-in response at $\Delta f$ (mV)")
     fig.tight_layout()
     figstyle.scale_text(fig, placed_frac=0.72)
@@ -97,15 +97,14 @@ def make_figures():
     fig, (a1, a2) = plt.subplots(1, 2, figsize=(11, 4.2))
     for m in [600, 500, 430]:
         j = nearest(m); a1.plot(DF, M[j], label=f"drive$={MU[j]:.0f}$")
-    a1.set_title(r"Stable focus (high drive $>$Hopf): forced alpha resonance", fontsize=10)
+    a1.set_title("(a)", loc="left", fontweight="bold")
     a1.set_xlabel(r"envelope frequency $\Delta f$ (Hz)")
     a1.set_ylabel(r"lock-in response at $\Delta f$ (mV)")
     a1.legend(fontsize=8, title="approaching Hopf")
     for m in [340, 270, 210]:
         j = nearest(m); a2.plot(DF, M[j], label=f"drive$={MU[j]:.0f}$")
-    a2.set_title(r"Limit cycle (low drive $<$Hopf): entrainment of alpha", fontsize=10)
+    a2.set_title("(b)", loc="left", fontweight="bold")
     a2.set_xlabel(r"envelope frequency $\Delta f$ (Hz)"); a2.legend(fontsize=8)
-    fig.suptitle(r"LaNMM alpha resonance, $P_1$ driven (carrier $f_c=100$ Hz)", fontsize=11)
     fig.tight_layout(rect=[0, 0, 1, 0.96])
     figstyle.scale_text(fig, placed_frac=1)
     fig.savefig(os.path.join(FIGDIR, "fig_lanmm_resonance.png"), dpi=300)

@@ -28,7 +28,7 @@ ax[0].text(Chopf-0.05, peak.max()*1e3*0.5, 'gamma Hopf $J^*$', color='#b3361f',
            ha='right', rotation=90, fontsize=9)
 ax[0].set_xlabel(r'inter-QIF coupling $J\;(=C)$')
 ax[0].set_ylabel(r'peak demodulated $A_\Omega$ ($r_E$, $\times10^{-3}$)')
-ax[0].set_title('(a) NMM2 $J$ curve (exact mean field)'); ax[0].grid(alpha=.3)
+ax[0].set_title("(a)", loc="left", fontweight="bold"); ax[0].grid(alpha=.3)
 ax[0].text(0.04, 0.95,
            "rectifier = exact $v_E^2$\n(quadratic coeff = 2, fixed)\n"
            "$J$ = literal QIF coupling\n$\\bar\\eta=0$, resonance peak",
@@ -40,10 +40,16 @@ xg = np.array([1/gam.max(), 1/gam.min()]); k = (peak[7]*1e3)*gam[7]
 ax[1].loglog(xg, k*xg, 'k--', lw=1, label=r'$\propto 1/\gamma$')
 ax[1].set_xlabel(r'$1/\gamma$  (closeness to gamma Hopf)')
 ax[1].set_ylabel(r'peak $A_\Omega$ ($\times10^{-3}$)')
-ax[1].set_title(r'(b) amplification $\propto 1/\gamma$, saturating')
+ax[1].set_title("(b)", loc="left", fontweight="bold")
 ax[1].legend(fontsize=8); ax[1].grid(alpha=.3, which='both')
 
-plt.tight_layout()
+# log minor ticks collide once the type is enlarged: label decades only
+from matplotlib.ticker import LogLocator, NullFormatter, MaxNLocator
+ax[0].xaxis.set_major_locator(MaxNLocator(5))
+for a in (ax[1].xaxis, ax[1].yaxis):
+    a.set_major_locator(LogLocator(base=10.0))
+    a.set_minor_formatter(NullFormatter())
+plt.tight_layout(w_pad=2.5)
 figstyle.scale_text(plt.gcf(), placed_frac=0.92)
 plt.savefig(os.path.join(FIGDIR, "fig_nmm2_jcurve.png"), dpi=300)
 plt.savefig(os.path.join(FIGDIR, "fig_nmm2_jcurve.pdf"))

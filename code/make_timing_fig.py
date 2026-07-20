@@ -35,7 +35,7 @@ axr.plot(g, DC, "s-", color=NERED, lw=1.4, ms=3.5)
 axr.set_ylabel(r"DC mean-rate shift $\Delta\bar r$  (mHz)", color=NERED)
 axr.tick_params(axis="y", labelcolor=NERED)
 axr.set_ylim(-6, 8)
-ax1.set_title("(a) timing entrains, rate does not", fontsize=9)
+ax1.set_title("(a)", loc="left", fontweight="bold")
 ax1.legend(loc="upper left", frameon=False)
 
 # --- Panel b: gains normalized to the far-from-Hopf value, vs gamma (log-y) ---
@@ -47,7 +47,7 @@ ax2.axhline(1.0, color=NERED, lw=0.8, ls=":", alpha=0.6)
 ax2.set_xlabel(r"damping $\gamma$  (distance to Hopf) $\;\rightarrow$ Hopf")
 ax2.set_ylabel("gain, normalized to far-from-Hopf")
 ax2.invert_xaxis()
-ax2.set_title("(b) AC gain $\\sim 1/\\gamma$ (saturating); DC flat", fontsize=9)
+ax2.set_title("(b)", loc="left", fontweight="bold")
 ax2.legend(loc="upper left", frameon=False)
 
 fig.tight_layout()

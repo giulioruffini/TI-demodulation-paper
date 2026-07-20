@@ -110,7 +110,7 @@ if __name__ == "__main__":
         axA.axvline(f, color=GR, ls=":", lw=0.7)
     axA.set_xlabel(r"carrier frequency $f_c$ (Hz)")
     axA.set_ylabel(r"closed-loop demodulated $A_\Omega$ at $\Delta f$ (mV)")
-    axA.set_title("(a) the column demodulates into the kHz band\nvia a fast element", fontsize=9)
+    axA.set_title("(a)", loc="left", fontweight="bold")
     axA.legend(fontsize=7.5, frameon=False, loc="lower left")
     axA.spines[["top", "right"]].set_visible(False)
 

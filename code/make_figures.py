@@ -87,6 +87,11 @@ ax3[0].loglog(epsv, resp[0]*(epsv/epsv[0])**2, "--", color=NEGRAY, lw=1.2, label
 ax3[0].set_xlabel("field amplitude $\\varepsilon$ (mV)"); ax3[0].set_ylabel("response @ $\\Omega$ (mV)")
 ax3[0].legend(loc="upper left")
 figstyle.panel(ax3[0], "a")
+# log minor ticks collide at enlarged type: label decades only
+from matplotlib.ticker import LogLocator, NullFormatter
+for _a in (ax3[0].xaxis, ax3[0].yaxis):
+    _a.set_major_locator(LogLocator(base=10.0))
+    _a.set_minor_formatter(NullFormatter())
 ax3[1].bar(["nonlinear\nsigmoid","linearized\nsigmoid"], [r_nl, r_li],
            color=[NEBLUE, NERED], width=0.6)
 ax3[1].set_ylabel("response @ $\\Omega$ (mV)")

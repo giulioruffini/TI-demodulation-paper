@@ -89,7 +89,7 @@ if __name__ == "__main__":
     axA.loglog(1.0 / gam, kk / gam, "--", color=NEGRAY, lw=1.0, label=r"$\propto 1/\gamma$")
     axA.set_xlabel(r"$1/\gamma$  (closeness to Hopf)")
     axA.set_ylabel(r"lock-in of $\mathrm{Re}\,z$ at $\Delta f$")
-    axA.set_title(r"(a) SL amplifies: forced response $\propto 1/\gamma$ (tACS)")
+    axA.set_title("(a)", loc="left", fontweight="bold")
     axA.legend(loc="upper left")
     # (b)
     bars = [AC_sl, AC_sq]; labs = ["SL state\n$\\mathrm{Re}\\,z$", "square-law\ndetector $F^2$"]
@@ -99,8 +99,8 @@ if __name__ == "__main__":
     axB.set_ylim(min(bars) * 0.3, max(bars) * 3)
     for x, v in zip([0, 1], bars):
         axB.text(x, v * 1.4, f"{v:.1e}", ha="center", fontsize=8)
-    axB.set_title(r"(b) SL cannot demodulate the TI carrier")
-    axB.text(0.5, 0.04, f"$\\sim$%.0e$\\times$ gap" % (AC_sq / max(AC_sl, 1e-12)),
+    axB.set_title("(b)", loc="left", fontweight="bold")
+    axB.text(0.5, 0.55, f"$\\sim$%.0e$\\times$ gap" % (AC_sq / max(AC_sl, 1e-12)),
              transform=axB.transAxes, ha="center", fontsize=8, color=NEGRAY)
 
     fig.tight_layout()
