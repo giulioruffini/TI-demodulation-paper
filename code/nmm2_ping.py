@@ -107,9 +107,16 @@ def bifurcation(etagrid, T=2000.0, dt=0.02, t_meas=500.0):
 # ============================================================
 # AM-driven lock-in over a (Delta f, eta) grid
 # ============================================================
-def lockin_map(etagrid, dfgrid_Hz, A=8.0, fc_Hz=300.0, t_settle=800.0, t_meas=1500.0, dt=0.05):
+def lockin_map(etagrid, dfgrid_Hz, A=8.0, fc_Hz=300.0, t_settle=800.0, t_meas=1500.0, dt=0.05,
+               return_fout=False):
     """Lock-in amplitude of r_e at the envelope frequency, over the outer grid
-    (etagrid x dfgrid). Returns array of shape (len(etagrid), len(dfgrid_Hz))."""
+    (etagrid x dfgrid). Returns array of shape (len(etagrid), len(dfgrid_Hz)).
+
+    With return_fout=True also returns the dominant (largest non-DC) output
+    frequency of r_e in Hz, on the same grid. Lock-in amplitude cannot
+    distinguish a forced response at Delta f from genuine frequency capture,
+    because both put power at Delta f; f_out can, and the 1:1 locked set
+    |f_out - Delta f| < 0.3 Hz is what defines an Arnold tongue."""
     EE, DD = np.meshgrid(etagrid, dfgrid_Hz, indexing="ij")
     eta = EE.ravel().copy(); dfflat = DD.ravel().copy()
     n = eta.size; y = _init(n)
@@ -124,7 +131,15 @@ def lockin_map(etagrid, dfgrid_Hz, A=8.0, fc_Hz=300.0, t_settle=800.0, t_meas=15
     bar = (w*buf).sum(0)/w.sum()
     c = np.cos(wO[None, :]*ts[:, None]); s = np.sin(wO[None, :]*ts[:, None])
     Iq = 2*(w*(buf-bar)*c).sum(0)/w.sum(); Qq = 2*(w*(buf-bar)*s).sum(0)/w.sum()
-    return np.sqrt(Iq**2+Qq**2).reshape(EE.shape)
+    amp = np.sqrt(Iq**2+Qq**2).reshape(EE.shape)
+    if not return_fout:
+        return amp
+    # dominant non-DC line of each trace; t is in ms, so dt/1000 s per sample
+    P = np.abs(np.fft.rfft(w*(buf-bar), axis=0))
+    fr = np.fft.rfftfreq(nmeas, d=dt/1000.0)
+    P[0] = 0.0
+    fout = fr[np.argmax(P, axis=0)].reshape(EE.shape)
+    return amp, fout
 
 
 def lockin_curve(eta0, dfgrid_Hz, A=8.0, fc_Hz=300.0, t_settle=800.0, t_meas=1500.0, dt=0.05):
@@ -138,7 +153,10 @@ def lockin_curve(eta0, dfgrid_Hz, A=8.0, fc_Hz=300.0, t_settle=800.0, t_meas=150
 # ============================================================
 def make_figures(A=8.0, fc_Hz=300.0):
     os.makedirs(FIGDIR, exist_ok=True)
-    etagrid = np.linspace(-5.0, 30.0, 36)
+    # eta cropped to where the physics happens (Hopf near 1.1) and sampled
+    # ~4x finer: the old -5..30 grid at ~1 unit spacing left >40% of the panel
+    # empty and rendered the ridge as disconnected tiles.
+    etagrid = np.linspace(-4.0, 12.0, 65)
     dfgrid = np.linspace(30.0, 110.0, 81)
     # locate Hopf (field-free) in eta
     rmin, rmax, f_onset = bifurcation(etagrid)
@@ -147,7 +165,15 @@ def make_figures(A=8.0, fc_Hz=300.0):
     eta_hopf = etagrid[iH[0]] if len(iH) else np.nan
     print(f"gamma Hopf near eta={eta_hopf:.2f}, onset f0~{f_onset:.0f} Hz")
     # lock-in map
-    M = lockin_map(etagrid, dfgrid, A=A, fc_Hz=fc_Hz)
+    M, FOUT = lockin_map(etagrid, dfgrid, A=A, fc_Hz=fc_Hz, return_fout=True)
+    # 1:1 frequency capture, the criterion the vocabulary section defines.
+    # Only meaningful ABOVE the Hopf: below it there is no autonomous rhythm to
+    # capture, so the dominant output frequency is trivially Delta f and the
+    # criterion would relabel a plain forced response as entrainment.
+    LOCKED = (np.abs(FOUT - dfgrid[None, :]) < 0.3)
+    LOCKED &= (etagrid[:, None] > eta_hopf)
+    LOCKED = LOCKED.astype(float)
+    print(f"  1:1 locked fraction of grid (above Hopf only): {LOCKED.mean():.2%}")
 
     # ---- Fig.: resonance map (log scale: entrainment >> stable-focus forced response) ----
     fig, ax = plt.subplots(figsize=(6.4, 4.6))
@@ -155,14 +181,17 @@ def make_figures(A=8.0, fc_Hz=300.0):
                    interpolation="bilinear",
                    norm=LogNorm(vmin=max(M.max()*1e-3, 1e-5), vmax=M.max()),
                    extent=[dfgrid[0], dfgrid[-1], etagrid[0], etagrid[-1]])
+    # 1:1 locked set outlined: the colour field is the forced/gated response,
+    # the contour is the actual Arnold tongue.
+    ax.contour(dfgrid, etagrid, LOCKED, levels=[0.5], colors="w", linewidths=1.4)
     if np.isfinite(eta_hopf):
         ax.axhline(eta_hopf, color="w", ls="--", lw=1)
-        ax.text(dfgrid[-1]-2, eta_hopf+0.6, "Hopf", color="w", ha="right", fontsize=8)
-    ax.set_xlabel(r"envelope frequency $\Delta f$ (Hz)")
-    ax.set_ylabel(r"background drive $\bar\eta$ (bifurcation parameter)")
-    ax.set_title("NMM2 PING: demodulated response over $(\\Delta f,\\,\\bar\\eta)$", fontsize=10)
-    plt.colorbar(im, ax=ax, label=r"lock-in response at $\Delta f$ (a.u.)")
+        ax.text(dfgrid[-1]-2, eta_hopf+0.4, "Hopf", color="w", ha="right", fontsize=8)
+    ax.set_xlabel(r"$\Delta f$ (Hz)")
+    ax.set_ylabel(r"$\bar\eta$")
+    plt.colorbar(im, ax=ax, label=r"lock-in at $\Delta f$ (a.u.)")
     fig.tight_layout()
+    figstyle.scale_text(fig, placed_frac=0.72)
     fig.savefig(os.path.join(FIGDIR, "fig_nmm2_map.png"), dpi=300)
     fig.savefig(os.path.join(FIGDIR, "fig_nmm2_map.pdf")); plt.close(fig)
 
@@ -184,6 +213,7 @@ def make_figures(A=8.0, fc_Hz=300.0):
     a2.legend(fontsize=8)
     fig.suptitle(f"NMM2 PING gamma resonance (carrier $f_c={fc_Hz:.0f}$ Hz)", fontsize=11)
     fig.tight_layout(rect=[0, 0, 1, 0.96])
+    figstyle.scale_text(fig, placed_frac=1)
     fig.savefig(os.path.join(FIGDIR, "fig_nmm2_resonance.png"), dpi=300)
     fig.savefig(os.path.join(FIGDIR, "fig_nmm2_resonance.pdf")); plt.close(fig)
     print("wrote fig_nmm2_resonance and fig_nmm2_map")

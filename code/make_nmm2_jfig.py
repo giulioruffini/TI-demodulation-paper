@@ -44,6 +44,7 @@ ax[1].set_title(r'(b) amplification $\propto 1/\gamma$, saturating')
 ax[1].legend(fontsize=8); ax[1].grid(alpha=.3, which='both')
 
 plt.tight_layout()
+figstyle.scale_text(plt.gcf(), placed_frac=0.92)
 plt.savefig(os.path.join(FIGDIR, "fig_nmm2_jcurve.png"), dpi=300)
 plt.savefig(os.path.join(FIGDIR, "fig_nmm2_jcurve.pdf"))
 print("wrote", os.path.join(FIGDIR, "fig_nmm2_jcurve.{png,pdf}"))

@@ -128,5 +128,6 @@ if __name__ == "__main__":
 
     fig.tight_layout()
     for ext in ("pdf", "png"):
+        figstyle.scale_text(fig, placed_frac=1)
         fig.savefig(os.path.join(FIGS, f"fig_khz_direct.{ext}"), dpi=300, bbox_inches="tight")
     print("wrote fig_khz_direct.pdf / .png")

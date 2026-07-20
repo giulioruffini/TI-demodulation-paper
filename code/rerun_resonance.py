@@ -46,9 +46,9 @@ elif mode=="plot":
         ax[0].plot(f,rs[i],color=cols[i],lw=2.2,
                    label=f"$p={p:.0f}$  (dist. to Hopf {p-315:.0f})")
     ax[0].axvline(F0,ls=":",c="0.5",lw=1)
-    ax[0].set_xlabel("envelope frequency  $\\Omega/2\\pi$  (Hz)")
-    ax[0].set_ylabel("demodulated response @ $\\Omega$  (mV)")
-    ax[0].set_title("Forced resonance below the Hopf (stable focus)",fontsize=11)
+    ax[0].set_xlabel("$\\Omega/2\\pi$  (Hz)")
+    ax[0].set_ylabel("$A_\\Omega$  (mV)")
+    ax[0].set_title("(a)", loc="left", fontweight="bold")
     ax[0].legend(fontsize=8.5,frameon=False)
     ax[0].spines[["top","right"]].set_visible(False)
     # companion: peak height vs distance to Hopf -- the 1/gamma growth
@@ -56,14 +56,15 @@ elif mode=="plot":
     for d,pk in zip(dist,peaks):
         ax[1].annotate(f"{pk:.2f}",(d,pk),textcoords="offset points",
                        xytext=(6,4),fontsize=8,color="#1b3a6b")
-    ax[1].set_xlabel("distance to Hopf  $p-315$  ($\\propto\\gamma$)")
-    ax[1].set_ylabel("peak response @ $f_0$  (mV)")
-    ax[1].set_title("Peak grows as $p\\!\\to\\!315$",fontsize=11)
+    ax[1].set_xlabel("$p-315$  ($\\propto\\gamma$)")
+    ax[1].set_ylabel("peak $A_\\Omega$  (mV)")
+    ax[1].set_title("(b)", loc="left", fontweight="bold")
     ax[1].spines[["top","right"]].set_visible(False)
     ax[1].set_xlim(0,None); ax[1].set_ylim(0,None)
     fig.suptitle("Envelope demodulation $\\rightarrow$ alpha resonance in Jansen-Rit "
                  "(carrier $f_c=100$ Hz, AM input has NO power at $\\Omega$)",fontsize=11)
     fig.tight_layout(rect=[0,0,1,0.95])
+    figstyle.scale_text(fig, placed_frac=1)
     fig.savefig(f"{FIGS}/fig_resonance.png",dpi=300)
     fig.savefig(f"{FIGS}/fig_resonance.pdf")
     print("STABLE peaks:", [f"{rs[i].max():.3f}" for i in range(len(ps))])

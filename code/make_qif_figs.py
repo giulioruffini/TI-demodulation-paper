@@ -10,6 +10,7 @@ import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+import figstyle
 from matplotlib.ticker import MaxNLocator
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -147,6 +148,7 @@ def fig_raster():
                  fontsize=10)
     fig.tight_layout(rect=[0, 0, 1, 0.95])
     for ext in ("pdf", "png"):
+        figstyle.scale_text(fig, placed_frac=1)
         fig.savefig(os.path.join(FIGS, f"fig_qif_raster.{ext}"), dpi=300, bbox_inches="tight")
     plt.close(fig)
 
@@ -229,6 +231,7 @@ def fig_timing():
 
     fig.tight_layout()
     for ext in ("pdf", "png"):
+        figstyle.scale_text(fig, placed_frac=1)
         fig.savefig(os.path.join(FIGS, f"fig_qif_timing.{ext}"), dpi=300, bbox_inches="tight")
     plt.close(fig)
 

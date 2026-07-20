@@ -90,6 +90,7 @@ def make_figures():
     ax.set_title(r"LaNMM: demodulated $P_1$ response over $(\Delta f,\,$drive$)$", fontsize=10)
     plt.colorbar(im, ax=ax, label=r"lock-in response at $\Delta f$ (mV)")
     fig.tight_layout()
+    figstyle.scale_text(fig, placed_frac=0.72)
     fig.savefig(os.path.join(FIGDIR, "fig_lanmm_map.png"), dpi=300)
     fig.savefig(os.path.join(FIGDIR, "fig_lanmm_map.pdf")); plt.close(fig)
     # ---- resonance curves ----
@@ -106,6 +107,7 @@ def make_figures():
     a2.set_xlabel(r"envelope frequency $\Delta f$ (Hz)"); a2.legend(fontsize=8)
     fig.suptitle(r"LaNMM alpha resonance, $P_1$ driven (carrier $f_c=100$ Hz)", fontsize=11)
     fig.tight_layout(rect=[0, 0, 1, 0.96])
+    figstyle.scale_text(fig, placed_frac=1)
     fig.savefig(os.path.join(FIGDIR, "fig_lanmm_resonance.png"), dpi=300)
     fig.savefig(os.path.join(FIGDIR, "fig_lanmm_resonance.pdf")); plt.close(fig)
     print("wrote fig_lanmm_resonance + fig_lanmm_map (peak near alpha ~10 Hz)")

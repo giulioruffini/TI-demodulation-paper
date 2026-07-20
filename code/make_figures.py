@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+import figstyle
 from jr_demod import integrate, steady_v, Sigm
 import os, figstyle; figstyle.apply()
 NEBLUE, NERED, NEGRAY = figstyle.NEBLUE, figstyle.NERED, figstyle.NEGRAY
@@ -59,6 +60,7 @@ ax[1,1].set_xlabel("frequency (Hz)"); ax[1,1].set_ylabel("power")
 ax[1,1].annotate("demodulated\nalpha line", xy=(11, 1.2), xytext=(40, 0.3), fontsize=8,
                  color=NEBLUE, arrowprops=dict(arrowstyle="->", color=NEBLUE, lw=0.8))
 figstyle.panel(ax[1,1], "d")
+figstyle.scale_text(fig2, placed_frac=1)
 fig2.tight_layout(); fig2.savefig(f"{FIGS}/fig_demodulation.png"); fig2.savefig(f"{FIGS}/fig_demodulation.pdf")
 print("wrote fig_demodulation")
 
@@ -96,5 +98,6 @@ ax3[1].set_title("The nonlinearity is essential")
 ax3[1].text(1, r_nl*0.04, f"${r_nl/max(r_li,1e-12):.0f}\\times$ smaller", ha="center",
             fontsize=9, color=NERED)
 figstyle.panel(ax3[1], "b")
+figstyle.scale_text(fig3, placed_frac=0.92)
 fig3.tight_layout(); fig3.savefig(f"{FIGS}/fig_verification.png"); fig3.savefig(f"{FIGS}/fig_verification.pdf")
 print("wrote fig_verification")

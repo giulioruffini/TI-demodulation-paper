@@ -91,5 +91,6 @@ ax[2].legend(fontsize=7.5, frameon=False, loc="upper left")
 
 fig.tight_layout()
 for ext in ("pdf", "png"):
+    figstyle.scale_text(fig, placed_frac=1)
     fig.savefig(os.path.join(FIGS, f"fig_entrainment.{ext}"), dpi=300, bbox_inches="tight")
 print("wrote fig_entrainment.{pdf,png} to", FIGS)

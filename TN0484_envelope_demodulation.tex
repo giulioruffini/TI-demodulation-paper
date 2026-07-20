@@ -632,7 +632,7 @@ free-runs on the alpha limit cycle.
 \centering
 \includegraphics[width=\textwidth]{fig_bifurcation_sigmoid.pdf}
 \caption{\textbf{The Jansen--Rit operating regime: bifurcation and sigmoid curvature.}
-\emph{Left:} JR bifurcation diagram from numerical continuation---the LFP $v=y_1-y_2$ along
+\emph{(a)} JR bifurcation diagram from numerical continuation---the LFP $v=y_1-y_2$ along
 the fixed-point branch (blue) and the min/max of the limit-cycle branches (red) vs.\
 external input $p$, with \emph{solid} stable and \emph{faded} unstable. The alpha limit
 cycle (shaded) is bounded by a saddle-node-on-invariant-circle (SNIC, $p\!\approx\!114$)
@@ -641,7 +641,7 @@ fixed point is a stable focus---the near-critical resonator regime used througho
 column is a weakly-damped focus near \emph{both} bifurcations, so it resonates on either
 approach---more slowly near the SNIC. Further
 codim-1 points are marked (saddle-node SN, Hopf HB$^{\pm}$, saddle-node of limit cycles
-SNLC). \emph{Right:} the sigmoid $\Sig(v)$ and its curvature $\Sig''(v)$, which sets the
+SNLC). \emph{(b)} The sigmoid $\Sig(v)$ and its curvature $\Sig''(v)$, which sets the
 demodulation gain and vanishes at the inflection $v_0$. Dots mark the operating points
 reached by the closed-loop model for the $p$ values used here.}
 \label{fig:bif}
@@ -828,11 +828,11 @@ the output spectrum absent from the input.
 \begin{figure}[t!]
 \centering
 \includegraphics[width=\textwidth]{fig_demodulation.pdf}
-\caption{\textbf{An alpha rhythm is synthesized from a carrier-only input (Jansen--Rit below Hopf).} \emph{Top left:} the AM field
-$s(t)$ and its envelope. \emph{Top right:} the input spectrum has lines only at
+\caption{\textbf{An alpha rhythm is synthesized from a carrier-only input (Jansen--Rit below Hopf).} \emph{(a)} The AM field
+$s(t)$ and its envelope. \emph{(b)} The input spectrum has lines only at
 $f_c$ and $f_c\pm\Delta f$ (89, 100, 111~Hz); the alpha band (shaded) is empty.
-\emph{Bottom left:} the output $v=y_1-y_2$ oscillates at the envelope frequency.
-\emph{Bottom right:} the output spectrum has a strong peak at $\Omega\approx11$~Hz,
+\emph{(c)} The output $v=y_1-y_2$ oscillates at the envelope frequency.
+\emph{(d)} The output spectrum has a strong peak at $\Omega\approx11$~Hz,
 synthesized by the sigmoid and absent from the input.}
 \label{fig:demod}
 \end{figure}
@@ -856,12 +856,14 @@ output frequency $f_{\rm out}$ rather than the lock-in amplitude (Fig.~\ref{fig:
 \includegraphics[width=\textwidth]{fig_resonance.pdf}
 \caption{\textbf{The recovered envelope drives a resonance that sharpens toward the Hopf (Jansen--Rit).}
 Fixed-point regime ($p>315$, stable focus): lock-in response at $\Omega$ vs.\ envelope
-frequency ($\varepsilon=0.3$~mV). \emph{Left:} the demodulated drive forces a Lorentzian
+frequency ($\varepsilon=0.3$~mV). \emph{(a)} The demodulated drive forces a Lorentzian
 resonance at $f_0\!\approx\!11.1$~Hz whose peak redshifts slightly as the damping grows
 ($\omega_{\rm peak}=\sqrt{\omega_0^2-2\gamma^2}$; $11.08\!\to\!10.93$~Hz across the three
 curves); the response carries no power at $\Omega$ in the absence of drive, so this is
-genuine forced gain. \emph{Right:} the peak height grows monotonically as the Hopf is
-approached ($p\!\to\!315$, distance to Hopf $\to0$), i.e.\ gain $\propto1/\gamma$. The complementary above-Hopf regime, where the demodulated drive
+genuine forced gain. \emph{(b)} The peak height grows as the Hopf is
+approached ($p\!\to\!315$, distance to Hopf $\to0$). Three points cannot establish a power
+law; the $1/\gamma$ scaling is quantified over a decade, together with its saturation, in
+Fig.~\ref{fig:jcurve}(c). The complementary above-Hopf regime, where the demodulated drive
 \emph{entrains} the autonomous alpha within a $1{:}1$ Arnold tongue, is characterized with
 the appropriate observable (output frequency $f_{\rm out}$, not lock-in amplitude) in
 Fig.~\ref{fig:entrain}.}
@@ -880,11 +882,11 @@ is suppressed four to six orders of magnitude at kHz, whereas a fast element
 \begin{figure}[t!]
 \centering
 \includegraphics[width=\textwidth]{fig_carrier_independence.pdf}
-\caption{\textbf{The demodulated response is carrier-independent at fixed polarization (Jansen--Rit).} \emph{Left:} the demodulated response is
+\caption{\textbf{The demodulated response is carrier-independent at fixed polarization (Jansen--Rit).} \emph{(a)} The demodulated response is
 flat across carrier frequency $f_c=25$--$300$~Hz, both for the open-loop detector
 (exactly, by Eq.~\eqref{eq:demod}) and for the closed-loop JR near the Hopf (which
 adds $\sim$60$\times$ resonant gain); deviations appear only as $f_c$ approaches
-the natural band. \emph{Right:} the second-order-synapse band-pass $|H(\omega)|$
+the natural band. \emph{(b)} The second-order-synapse band-pass $|H(\omega)|$
 passes the envelope ($\sim$0.7) and suppresses the $100$~Hz carrier ($\sim$2.5\%).}
 \label{fig:carrier}
 \end{figure}
@@ -933,7 +935,7 @@ predicted $2$), and replacing the field-receiving sigmoid by its linearization
 collapses the response by $712\times$ ($1.40\!\to\!0.0020$~mV)---the nonlinearity is
 the detector, and its curvature is the gain.
 
-\subsection{Two native resonances and nonlinear Arnold tongues in the LaNMM}\label{sec:lanmm-results}
+\subsection{Two native resonances and carrier-dependent envelope resonance in the LaNMM}\label{sec:lanmm-results}
 The single JR column isolates and lets us analyze the mechanism; the laminar model
 (LaNMM, \S\ref{sec:nmm}) confirms it in a cortical column with its \emph{own} two
 resonances. Driving one population with the AM input of Eq.~\eqref{eq:lanmm_drive}
@@ -949,10 +951,10 @@ resonance at $\sim$10~Hz that grows as the alpha Hopf is approached, while the
 limit-cycle side (low drive) entrains the autonomous alpha---the same
 stable-focus/limit-cycle pair as the JR column (Fig.~\ref{fig:res}), now read out as
 the deep-pyramidal alpha lock-in. The heuristic laminar model thus shows the JR
-resonance \emph{and}, in addition, the carrier-dependent Arnold tongues that follow.
+resonance \emph{and}, in addition, the carrier-dependent envelope resonance that follows.
 
 Sweeping the modulation amplitude $A$ and beat frequency $\Delta f$ at a fixed
-carrier produces \emph{nonlinear Arnold tongues}: alpha power in $P_1$ is maximal
+carrier produces a \emph{nonlinear envelope resonance}: alpha power in $P_1$ is maximal
 when $\Delta f$ matches the deep alpha ($\sim$10~Hz) and grows with $A$
 (Figs.~\ref{fig:lanmm_p2}a,b and~\ref{fig:lanmm_p1}a,b)---envelope resonance and
 phase locking of the slow generator to the recovered envelope, exactly as in the
@@ -981,10 +983,14 @@ choice matter, consistent with frequency-tagging/intermodulation paradigms
 \begin{figure}[t!]
 \centering
 \includegraphics[width=0.86\textwidth]{fig_lanmm_arnold_p2.png}
-\caption{\textbf{LaNMM Arnold tongues: AM input to the superficial $P_2$ (gamma) loop.}
+\caption{\textbf{LaNMM envelope-resonance maps: AM input to the superficial $P_2$
+(gamma) loop.}
 \emph{(a,b)} Alpha-band power of $P_1$ and $P_2$ vs.\ modulation amplitude $A$ and
-beat frequency $\Delta f$ (carrier $40$~Hz): a tongue of elevated power around the
-$P_1$ alpha ($\sim$10~Hz, dashed line) that widens with $A$. \emph{(c,d)} Alpha
+beat frequency $\Delta f$ (carrier $40$~Hz): a band of elevated power around the
+$P_1$ alpha ($\sim$10~Hz, dashed line) that strengthens with $A$. Band power is a
+gating measure, so this map does not test frequency capture; the $1{:}1$ criterion is
+applied where the dominant output frequency is available
+(Figs.~\ref{fig:entrain},~\ref{fig:nmm2_map}). \emph{(c,d)} Alpha
 power vs.\ carrier frequency and $\Delta f$ at $A=250$: $P_1$ demodulation requires
 \emph{both} a carrier $\approx$$40$~Hz ($P_2$ gamma) and $\Delta f\approx$$10$~Hz
 ($P_1$ alpha)---a double resonance.}
@@ -1069,8 +1075,8 @@ phase (timing) more than amplitude, consistent with the timing-not-rate signatur
 \centering
 \includegraphics[width=\textwidth]{fig_jcurve.pdf}
 \caption{\textbf{Coupling controls the amplification at fixed detection (Jansen--Rit).}
-The operating point $v^*$ is pinned by co-solving $p(C)$, so $\Sig''(v^*)$ and
-$A_{\rm open}$ are constant. \emph{(a)} The demodulated $A_\Omega$ grows as the
+The operating point $v^*$ is pinned by co-solving $p(C)$, so $\Sig''(v^*)=-0.151$ and
+$A_{\rm open}$ are held constant throughout. \emph{(a)} The demodulated $A_\Omega$ grows as the
 coupling $C\,(=J)$ approaches the Hopf $C^*$ from the stable-focus side ($\gamma>0$). \emph{(b)} The envelope resonance
 sharpens and grows as $C\!\to\!C^*$. \emph{(c)} The network gain
 $A_\Omega/A_{\rm open}$ follows $1/\gamma$ (dashed) and saturates near the
@@ -1796,8 +1802,8 @@ be thought of as driving the soma at kHz.}
 \begin{figure}[t!]
 \centering
 \includegraphics[width=0.92\textwidth]{fig_verification.pdf}
-\caption{\textbf{Verification (Jansen--Rit): square-law scaling and the linearization control.} \emph{Left:} response vs.\ field amplitude;
-small-drive log--log slope $=1.99$ (theory $2$). \emph{Right:} linearizing the
+\caption{\textbf{Verification (Jansen--Rit): square-law scaling and the linearization control.} \emph{(a)} Response vs.\ field amplitude;
+small-drive log--log slope $=1.99$ (theory $2$). \emph{(b)} Linearizing the
 field-receiving sigmoid collapses the response $712\times$
 ($1.40\!\to\!0.0020$~mV)---the nonlinearity is the demodulator.}
 \label{fig:ver}
@@ -1816,7 +1822,7 @@ alpha. Directly parallel to the JR single column (Fig.~\ref{fig:res}).}
 \begin{figure}[t!]
 \centering
 \includegraphics[width=0.86\textwidth]{fig_lanmm_arnold_p1.png}
-\caption{\textbf{LaNMM Arnold tongues: AM input delivered directly to the deep
+\caption{\textbf{LaNMM envelope-resonance maps: AM input delivered directly to the deep
 $P_1$ (alpha) loop.} \emph{(a,b)} Alpha power of $P_1$ and $P_2$ vs.\ amplitude $A$ and
 $\Delta f$. \emph{(c,d)} Alpha power vs.\ carrier frequency and $\Delta f$: $P_1$
 responds across a \emph{broad} carrier band (a vertical ridge at
@@ -1828,11 +1834,16 @@ Eq.~\eqref{eq:demod}.}
 \centering
 \includegraphics[width=0.72\textwidth]{fig_nmm2_map.pdf}
 \caption{\textbf{NMM2 PING resonance map (exact mean field).} Demodulated response
-over the (envelope frequency $\Delta f$, background drive $\bar\eta$) plane (log color
-scale: entrainment far exceeds the stable-focus forced response). The ridge follows the
-gamma natural frequency $f_0(\bar\eta)$ and intensifies through the supercritical Hopf
-(dashed line); its diagonal slope---$f_0$ rising with $\bar\eta$---reflects the
-state-dependent transfer of NMM2, absent in the static-sigmoid JR and LaNMM.}
+over the (envelope frequency $\Delta f$, background drive $\bar\eta$) plane, log color
+scale. The ridge follows the gamma natural frequency $f_0(\bar\eta)$, and its diagonal
+slope, $f_0$ rising with $\bar\eta$, reflects the state-dependent transfer of NMM2,
+absent in the static-sigmoid JR and LaNMM. White markers outline the $1{:}1$
+frequency-captured set, $|f_{\rm out}-\Delta f|<0.3$~Hz
+(Appendix~\ref{sec:vocab}), evaluated only above the Hopf (dashed line) where there is an
+autonomous rhythm to capture: entrainment tracks the ridge there, while the same color
+field below the Hopf is a forced response. Lock-in amplitude alone cannot separate the
+two, since both place power at $\Delta f$, which is why the locked set is drawn
+explicitly rather than inferred from the color.}
 \label{fig:nmm2_map}
 \end{figure}
 
