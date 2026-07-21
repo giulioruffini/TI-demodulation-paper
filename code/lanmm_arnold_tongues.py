@@ -39,7 +39,7 @@ import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-import figstyle
+import figstyle; figstyle.apply()
 from scipy.integrate import solve_ivp
 from scipy.signal import butter, sosfiltfilt, hilbert, welch
 
@@ -156,11 +156,11 @@ def carrier_map(intrinsic, driving, f_slow=np.linspace(5, 15, 41),
 # ============================================================
 # plotting -> 4-panel figure (matches fig_lanmm_arnold_*)
 # ============================================================
-def _imshow(ax, M, x, y, title, ylabel):
+def _imshow(ax, M, x, y, letter, ylabel):
     im = ax.imshow(M, origin="lower", aspect="auto", interpolation="bilinear",
                    extent=[x[0], x[-1], y[0], y[-1]], cmap="viridis")
     ax.axvline(10.0, color="w", ls="--", lw=1)
-    figstyle.panel(ax, title.strip("()"))
+    figstyle.panel(ax, letter)
     ax.set_xlabel("envelope frequency $\\Delta f$ (Hz)"); ax.set_ylabel(ylabel)
     plt.colorbar(im, ax=ax, label="alpha power (8–12 Hz)")
 
@@ -169,19 +169,21 @@ def make_figure(intrinsic, driving, drive_target="P2", A_for_carrier=250.0):
     Pc1, Pc2, fs_c, fc = carrier_map(intrinsic, driving, A_mod=A_for_carrier,
                                      drive_target=drive_target)
     fig, ax = plt.subplots(2, 2, figsize=(11, 9))
-    _imshow(ax[0,0], Pt1, fs_t, A,  "(a) P1 alpha-band power", "modulation amplitude $A$")
+    _imshow(ax[0,0], Pt1, fs_t, A,  "a", "modulation amplitude $A$")
     # 1:1 frequency capture, outlined on the power field: band power alone
     # cannot separate a forced response from an entrained oscillator.
     LOCK = (np.abs(F1 - fs_t[None, :]) < 0.3).astype(float)
     print(f"  1:1 locked fraction of the (A, df) grid: {LOCK.mean():.2%}")
     if LOCK.any():
         ax[0,0].contour(fs_t, A, LOCK, levels=[0.5], colors="w", linewidths=1.4)
-    _imshow(ax[0,1], Pt2, fs_t, A,  "(b) P2 alpha-band power", "modulation amplitude $A$")
-    _imshow(ax[1,0], Pc1, fs_c, fc, "(c) P1 alpha-band power", "carrier frequency $f_c$ (Hz)")
-    _imshow(ax[1,1], Pc2, fs_c, fc, "(d) P2 alpha-band power", "carrier frequency $f_c$ (Hz)")
+    _imshow(ax[0,1], Pt2, fs_t, A,  "b", "modulation amplitude $A$")
+    _imshow(ax[1,0], Pc1, fs_c, fc, "c", "carrier frequency $f_c$ (Hz)")
+    _imshow(ax[1,1], Pc2, fs_c, fc, "d", "carrier frequency $f_c$ (Hz)")
     fig.tight_layout(rect=[0, 0, 1, 0.97])
     out = f"fig_lanmm_arnold_{'p2' if drive_target=='P2' else 'p1'}"
     os.makedirs(FIGDIR, exist_ok=True)
+    fig.tight_layout()
+    figstyle.scale_text(fig, placed_frac=0.86)
     fig.savefig(os.path.join(FIGDIR, out+".png"), dpi=300)
     fig.savefig(os.path.join(FIGDIR, out+".pdf"))
     print("wrote", out)

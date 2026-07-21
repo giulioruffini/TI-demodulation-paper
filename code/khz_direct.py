@@ -120,9 +120,8 @@ if __name__ == "__main__":
     axB.set_xlim(0, 40); axB.set_ylim(0, 1.05)
     axB.set_xlabel("output frequency (Hz)")
     axB.set_ylabel(r"$|V(f)|$ (norm.)")
-    axB.set_title(f"(b) 2 kHz carrier, fast element:\nalpha line at {F0:.0f} Hz, recovered",
-                  fontsize=9)
-    axB.annotate(f"carrier 2 kHz\n(input alpha power = 0)", xy=(F0, 1.0),
+    figstyle.panel(axB, "b")
+    axB.annotate("carrier 2 kHz\n(input alpha power $=0$)", xy=(F0, 1.0),
                  xytext=(20, 0.7), fontsize=7.5, color=GR,
                  arrowprops=dict(arrowstyle="->", color=GR, lw=0.7))
     axB.spines[["top", "right"]].set_visible(False)

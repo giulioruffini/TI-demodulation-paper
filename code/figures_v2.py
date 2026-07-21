@@ -25,7 +25,7 @@ def concept():
         (52, "Tuned\nresonator", "2nd-order synapses\nnear Hopf,  $f_0$", NEB2),
         (77, "Demodulated\noutput @ $\\Omega$", "alpha rhythm\nrecovered", NEL),
     ]
-    w=20; h=13; y=13
+    w=20; h=16; y=11
     for x,title,sub,col in stages:
         ax.add_patch(FancyBboxPatch((x,y),w,h,boxstyle="round,pad=0.4,rounding_size=1.2",
                      fc=col, ec=NEB, lw=1.6, alpha=0.9))
@@ -128,7 +128,7 @@ def resonance_map():
     ax.annotate("near Hopf\n(high Q)", xy=(8.7, 320), color="white", fontsize=8.5, va="bottom")
     ax.annotate("far from Hopf", xy=(8.7, 396), color="white", fontsize=8.5, va="top")
     ax.set_xlabel("envelope frequency  $\\Omega/2\\pi$  (Hz)")
-    ax.set_ylabel("external input  $p$  (Hz)  $\\rightarrow$ toward Hopf")
+    ax.set_ylabel("external input  $p$  (Hz)")
     fig.colorbar(im, label="response @ $\\Omega$ (mV)")
     fig.tight_layout()
     figstyle.scale_text(fig, placed_frac=0.74)
