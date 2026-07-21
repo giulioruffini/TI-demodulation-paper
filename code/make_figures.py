@@ -43,7 +43,6 @@ ax[0,1].axvspan(8,13, color=NERED, alpha=0.13)
 ax[0,1].set_xlabel("frequency (Hz)"); ax[0,1].set_ylabel("power")
 for fline in [fc-F0, fc, fc+F0]:
     ax[0,1].axvline(fline, color=NEGRAY, ls="--", lw=0.6, alpha=0.45)
-ax[0,1].text(10.5, 1.6, "alpha band\nempty", color=NERED, fontsize=8, ha="center", va="top")
 figstyle.panel(ax[0,1], "b")
 # (c) output (time)
 ax[1,0].plot(t[w0]-t[0], v[w0], color=NEBLUE, lw=1.7)

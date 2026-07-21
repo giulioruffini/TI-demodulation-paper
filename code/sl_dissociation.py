@@ -101,8 +101,6 @@ if __name__ == "__main__":
     for x, v in zip([0, 1], bars):
         axB.text(x, v * 1.4, f"{v:.1e}", ha="center", fontsize=8)
     figstyle.panel(axB, "b")
-    axB.text(0.5, 0.55, f"$\\sim$%.0e$\\times$ gap" % (AC_sq / max(AC_sl, 1e-12)),
-             transform=axB.transAxes, ha="center", fontsize=8, color=NEGRAY)
 
     fig.tight_layout()
     figstyle.scale_text(fig, placed_frac=0.84)

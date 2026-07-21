@@ -125,17 +125,13 @@ def fig_raster():
     fig, axs = plt.subplots(2, 2, figsize=(10, 6), sharex=True)
     depth = {k: conds[k]["q"]["AC"] / conds[k]["q"]["rmean"]
              for k in ("forced_off", "forced_on", "entrain_off", "entrain_on")}
-    raster_panel(axs[0, 0], "forced_off", "(a)", False,
-                 annot="no $\\Delta f$ lock-in\n(depth %.2f)" % depth["forced_off"])
+    raster_panel(axs[0, 0], "forced_off", "(a)", False)
     raster_panel(axs[0, 1], "forced_on",
-                 "(b)",
-                 True, annot="$\\Delta f$ modulation\ndepth %.2f" % depth["forced_on"])
+                 "(b)", True)
     raster_panel(axs[1, 0], "entrain_off",
-                 "(c)", False,
-                 annot="no $\\Delta f$ lock-in\n(depth %.2f)" % depth["entrain_off"])
+                 "(c)", False)
     raster_panel(axs[1, 1], "entrain_on",
-                 "(d)",
-                 True, annot="$\\Delta f$ modulation\ndepth %.2f" % depth["entrain_on"])
+                 "(d)", True)
     beat_inset(axs[0, 1], "forced_off", "forced_on")                    # forced: rate folded on Df
     beat_inset(axs[1, 1], "entrain_off", "entrain_on", mode="gamma")    # gating: gamma amp vs Df phase (PAC)
     for ax in axs[:, 0]:

@@ -81,14 +81,10 @@ ax[2].set_ylabel(r"locking range (Hz)", color=NEBLUE)
 ax[2].tick_params(axis="y", labelcolor=NEBLUE)
 ax[2].invert_xaxis()                            # Hopf (criticality) to the right
 figstyle.panel(ax[2], "c")
-ax[2].annotate("toward Hopf", xy=(0.97, 0.06), xytext=(0.55, 0.06),
-               xycoords="axes fraction", fontsize=8, color="0.4",
-               arrowprops=dict(arrowstyle="->", color="0.4"))
 axr = ax[2].twinx()
 axr.plot(dist, amp0, "s--", color=NERED, lw=1.4, ms=5, alpha=0.9)
 axr.set_ylabel("cycle amp. (mV)", color=NERED)
 axr.tick_params(axis="y", labelcolor=NERED)
-ax[2].legend(fontsize=7.5, frameon=False, loc="upper left")
 
 fig.tight_layout(w_pad=6.0)
 for ext in ("pdf", "png"):

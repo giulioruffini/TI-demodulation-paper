@@ -153,10 +153,9 @@ def carrier_independence():
     H=(A*a)/np.abs((1j*w+a)**2)          # excitatory 2nd-order synapse |H(w)|
     H=H/H.max()
     ax[1].loglog(w/(2*np.pi), H, color=NEB, lw=2)
-    ax[1].axvline(a/(2*np.pi), color=GR, ls=":", lw=1); ax[1].text(a/(2*np.pi)*1.1, 0.3,
-        "corner\n$a/2\\pi\\approx16$ Hz", fontsize=8, color=GR)
-    ax[1].axvspan(8,13, color=NER, alpha=0.12); ax[1].text(8.5,2e-3,"envelope",fontsize=8,color=NER)
-    ax[1].axvline(100, color=NEB2, ls="--", lw=1); ax[1].text(105,2e-3,"carrier 100 Hz",fontsize=8,color=NEB2)
+    ax[1].axvline(a/(2*np.pi), color=GR, ls=":", lw=1)
+    ax[1].axvspan(8,13, color=NER, alpha=0.12)
+    ax[1].axvline(100, color=NEB2, ls="--", lw=1)
     ax[1].set_xlabel("frequency (Hz)"); ax[1].set_ylabel("$|H(\\omega)|$ (norm.)")
     figstyle.panel(ax[0], "a"); figstyle.panel(ax[1], "b")
     fig.tight_layout()
