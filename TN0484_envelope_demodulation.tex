@@ -15,7 +15,6 @@
 \usepackage{enumitem}
 \captionsetup{font=small,labelfont=bf}
 \usepackage{parskip}
-\usepackage{needspace}   % keep a heading with what follows it
 
 % ---------------------------------------------------------------------------
 % Build switch. \jnefalse -> Neuroelectrics/BCOM Technical Note (TN0484/WP0185).
@@ -1527,9 +1526,16 @@ for the content of the published article.
 \bibliographystyle{unsrt}
 \bibliography{references}
 
+\clearpage
 \appendix
 \renewcommand{\thefigure}{S\arabic{figure}}
 \setcounter{figure}{0}
+% Appendices are last; each starts on a fresh page (explicit \clearpage before
+% every appendix \section) so no appendix heading is orphaned at a page foot.
+\makeatletter
+\let\ne@stdsection\section
+\renewcommand{\section}{\clearpage\ne@stdsection}
+\makeatother
 
 \section{Notation and units}\label{app:notation}
 These neural-mass models are phenomenological: potentials are in mV, firing rates in
@@ -1726,7 +1732,6 @@ cycle amplitude $\to0$ and the tongue merges into the forced-resonance bandwidth
 supercritical locking range and the subcritical $1/\gamma$ susceptibility coincide there
 by construction---why responsiveness peaks at criticality on both sides.
 
-\needspace{4\baselineskip}
 \section{Supplementary figures}
 
 \begin{figure}[t!]
