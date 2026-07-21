@@ -727,7 +727,10 @@ Hilbert envelope over a post-transient window---a phase-robust measure suited to
 the entrainment regime, where lock-in phase slips would otherwise complicate the
 read-out. Two sweeps probe the column: an amplitude--beat sweep over
 $(A,\Delta f)$ at fixed carrier (the Arnold tongue), and a carrier--beat sweep over
-$(f_c,\Delta f)$ at fixed $A$, built on the LaNMM module of \cite{ruffini2025cfc}. For the
+$(f_c,\Delta f)$ at fixed $A$, built on the LaNMM module of \cite{ruffini2025cfc}. The maps
+(Figs.~\ref{fig:lanmm_p2},~\ref{fig:lanmm_p1}) show the \emph{stimulation-induced} alpha
+enhancement, alpha power minus the unstimulated ($A=0$, no modulation) baseline, which
+removes the per-simulation offset so the resonant structure is visible. For the
 alpha resonance of Figs.~\ref{fig:lanmm_res},~\ref{fig:lanmm_map} we instead drive
 the deep $P_1$ loop directly and sweep its input against $\Delta f$, reading the
 lock-in (Eq.~\eqref{eq:lockin}) of $v_{P_1}$ at $\Delta f$.
@@ -1005,9 +1008,9 @@ choice matter, consistent with frequency-tagging/intermodulation paradigms
 \centering
 \includegraphics[width=0.86\textwidth]{fig_lanmm_arnold_p2.png}
 \caption{\textbf{LaNMM Arnold tongues: AM input to the superficial $P_2$ (gamma) loop.}
-Colour shows alpha-band ($8$--$12$~Hz) power \emph{in excess of each row's off-resonance
-baseline} (median over $|\Delta f-10|>2$~Hz), which removes the per-simulation baseline and
-isolates the resonant enhancement. \emph{(a,b)} $P_1$ and $P_2$ enhancement vs.\ modulation
+Colour shows the \emph{stimulation-induced} alpha-band ($8$--$12$~Hz) enhancement: power
+minus the unstimulated baseline (the autonomous $A=0$ level, no modulation), which removes
+the per-simulation offset and isolates what the drive adds. \emph{(a,b)} $P_1$ and $P_2$ enhancement vs.\ modulation
 amplitude $A$ and beat frequency $\Delta f$ (carrier $40$~Hz), peaking at the $P_1$ alpha
 ($\sim$10~Hz, dashed line). White contour in \emph{(a)}: the $1{:}1$ frequency-captured
 set, $|f_{\rm out}-\Delta f|<0.3$~Hz (Appendix~\ref{sec:vocab}), which is what defines
@@ -1855,8 +1858,8 @@ alpha. Directly parallel to the JR single column (Fig.~\ref{fig:res}).}
 \centering
 \includegraphics[width=0.86\textwidth]{fig_lanmm_arnold_p1.png}
 \caption{\textbf{LaNMM Arnold tongues: AM input delivered directly to the deep
-$P_1$ (alpha) loop.} Colour: alpha-band power in excess of each row's off-resonance baseline
-(median over $|\Delta f-10|>2$~Hz). \emph{(a,b)} $P_1$ and $P_2$ enhancement vs.\ amplitude $A$ and
+$P_1$ (alpha) loop.} Colour: stimulation-induced alpha-band enhancement (power minus the unstimulated $A=0$
+baseline). \emph{(a,b)} $P_1$ and $P_2$ enhancement vs.\ amplitude $A$ and
 $\Delta f$; the white contour in \emph{(a)} outlines the $1{:}1$ frequency-captured set,
 $|f_{\rm out}-\Delta f|<0.3$~Hz (Appendix~\ref{sec:vocab}), computed from the dominant
 output frequency because band power alone cannot separate capture from a forced response.

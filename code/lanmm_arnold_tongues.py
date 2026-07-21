@@ -156,24 +156,21 @@ def carrier_map(intrinsic, driving, f_slow=np.linspace(5, 15, 41),
 # ============================================================
 # plotting -> 4-panel figure (matches fig_lanmm_arnold_*)
 # ============================================================
-def _imshow(ax, M, x, y, letter, ylabel):
-    # Each row (fixed A or f_c) is an independent simulation with its own
-    # off-resonance baseline, which shows up as horizontal streaking and buries
-    # the ~1.5-2x resonant ridge. Subtract the per-row baseline (median over the
-    # off-resonance |Delta f - 10| > 2 Hz columns) and clip at zero: what remains
-    # is the alpha-power ENHANCEMENT at the beat, which is the quantity of
-    # interest and makes the tongue and double-resonance stand out cleanly.
+def _imshow(ax, M, x, y, letter, ylabel, ref):
+    # Colour shows the stimulation-induced enhancement: alpha power minus the
+    # unstimulated (stim-off) baseline `ref`, which is the autonomous alpha power
+    # at A=0 (zero modulation, no drive). Clipping at zero drops the sub-baseline
+    # noise; the raw alpha power is only ~1.5-2x this baseline and, plotted
+    # absolute, leaves the tongue buried under per-simulation streaking.
     x = np.asarray(x)
-    off = np.abs(x - 10.0) > 2.0
-    base = np.median(M[:, off], axis=1, keepdims=True) if off.any() else 0.0
-    Z = np.clip(M - base, 0.0, None)
+    Z = np.clip(M - ref, 0.0, None)
     im = ax.imshow(Z, origin="lower", aspect="auto", interpolation="bilinear",
                    extent=[x[0], x[-1], y[0], y[-1]], cmap="viridis",
                    vmin=0.0, vmax=np.percentile(Z, 99.5))
     ax.axvline(10.0, color="w", ls="--", lw=1)
     figstyle.panel(ax, letter)
     ax.set_xlabel("envelope frequency $\\Delta f$ (Hz)"); ax.set_ylabel(ylabel)
-    plt.colorbar(im, ax=ax, label="alpha enhancement")
+    plt.colorbar(im, ax=ax, label="alpha enhancement (on$-$off)")
 
 def _grids(intrinsic, driving, drive_target, A_for_carrier):
     """Compute (or load) the four alpha-power grids. The grids take ~40 min, so
@@ -196,16 +193,19 @@ def make_figure(intrinsic, driving, drive_target="P2", A_for_carrier=250.0):
     # constrained_layout spaces the four per-panel colorbars without letting a
     # right-column y-label collide with the left-column colorbar label.
     fig, ax = plt.subplots(2, 2, figsize=(11, 9), constrained_layout=True)
-    _imshow(ax[0,0], Pt1, fs_t, A,  "a", "modulation amplitude $A$")
+    # stim-off reference = autonomous alpha power at A=0 (no modulation, no drive);
+    # the same scalar baselines apply to the carrier maps (which are all at A=250).
+    ref1 = float(Pt1[0].mean()); ref2 = float(Pt2[0].mean())
+    _imshow(ax[0,0], Pt1, fs_t, A,  "a", "modulation amplitude $A$", ref1)
     # 1:1 frequency capture, outlined on the power field: band power alone
     # cannot separate a forced response from an entrained oscillator.
     LOCK = (np.abs(F1 - fs_t[None, :]) < 0.3).astype(float)
     print(f"  1:1 locked fraction of the (A, df) grid: {LOCK.mean():.2%}")
     if LOCK.any():
         ax[0,0].contour(fs_t, A, LOCK, levels=[0.5], colors="w", linewidths=1.4)
-    _imshow(ax[0,1], Pt2, fs_t, A,  "b", "modulation amplitude $A$")
-    _imshow(ax[1,0], Pc1, fs_c, fc, "c", "carrier frequency $f_c$ (Hz)")
-    _imshow(ax[1,1], Pc2, fs_c, fc, "d", "carrier frequency $f_c$ (Hz)")
+    _imshow(ax[0,1], Pt2, fs_t, A,  "b", "modulation amplitude $A$", ref2)
+    _imshow(ax[1,0], Pc1, fs_c, fc, "c", "carrier frequency $f_c$ (Hz)", ref1)
+    _imshow(ax[1,1], Pc2, fs_c, fc, "d", "carrier frequency $f_c$ (Hz)", ref2)
     out = f"fig_lanmm_arnold_{'p2' if drive_target=='P2' else 'p1'}"
     os.makedirs(FIGDIR, exist_ok=True)
     figstyle.scale_text(fig, placed_frac=0.86)
