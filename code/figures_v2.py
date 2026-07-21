@@ -20,20 +20,20 @@ def concept():
     fig = plt.figure(figsize=(11.5, 4.4)); ax = fig.add_axes([0,0,1,1]); ax.axis("off")
     ax.set_xlim(0,100); ax.set_ylim(0,44)
     stages = [
-        (4 , "AM field  $s(t)$", "carrier $f_c$\nenvelope $\\Omega$", NEL),
-        (30, "Nonlinear detector", "firing-rate sigmoid\n$\\sigma(v)$,  curvature $\\sigma''$", NEB2),
-        (56, "Tuned resonator", "2nd-order synapses\nnear Hopf,  $f_0$", NEB2),
-        (82, "Demodulated\noutput @ $\\Omega$", "alpha rhythm\nrecovered", NEL),
+        (2 , "AM field  $s(t)$", "carrier $f_c$\nenvelope $\\Omega$", NEL),
+        (27, "Nonlinear\ndetector", "firing-rate sigmoid\n$\\sigma(v)$,  curvature $\\sigma''$", NEB2),
+        (52, "Tuned\nresonator", "2nd-order synapses\nnear Hopf,  $f_0$", NEB2),
+        (77, "Demodulated\noutput @ $\\Omega$", "alpha rhythm\nrecovered", NEL),
     ]
-    w=16; h=12; y=14
+    w=20; h=13; y=13
     for x,title,sub,col in stages:
         ax.add_patch(FancyBboxPatch((x,y),w,h,boxstyle="round,pad=0.4,rounding_size=1.2",
                      fc=col, ec=NEB, lw=1.6, alpha=0.9))
-        ax.text(x+w/2, y+h-3.2, title, ha="center", va="center", fontsize=10.5,
+        ax.text(x+w/2, y+h-2.6, title, ha="center", va="top", fontsize=10,
                 weight="bold", color="white" if col==NEB2 else NEB)
-        ax.text(x+w/2, y+3.4, sub, ha="center", va="center", fontsize=8.2,
+        ax.text(x+w/2, y+2.6, sub, ha="center", va="bottom", fontsize=8.2,
                 color="white" if col==NEB2 else "#0a3050")
-    for x0 in [4+w, 30+w, 56+w]:
+    for x0 in [2+w, 27+w, 52+w]:
         ax.add_patch(FancyArrowPatch((x0+0.4,y+h/2),(x0+3.6,y+h/2),
                      arrowstyle="-|>", mutation_scale=16, lw=2, color=GR))
     # radio analogy strip
@@ -52,7 +52,7 @@ def concept():
         elif kind=="ripple": s=np.cos(2*np.pi*2*tt)+0.16*np.cos(2*np.pi*22*tt)  # post-tank
         else:                s=np.cos(2*np.pi*2*tt)                    # recovered envelope
         axx.plot(tt,s,color=NEB,lw=1.0); axx.margins(y=0.15)
-    wav(12,"am","AM field"); wav(38,"rect","rectified"); wav(64,"ripple","filtered"); wav(90,"sine","envelope @ $\\Omega$")
+    wav(12,"am","AM field"); wav(37,"rect","rectified"); wav(62,"ripple","filtered"); wav(87,"sine","envelope @ $\\Omega$")
     figstyle.scale_text(fig, placed_frac=1)
     overlap.check(fig, placed_frac=1, name="figures_v2.py")
     fig.savefig(f"{FIGS}/fig_concept.png",dpi=300); fig.savefig(f"{FIGS}/fig_concept.pdf")
