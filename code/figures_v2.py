@@ -174,7 +174,8 @@ def operating_point():
     ax.plot(vg, d["A_theory_signed"], "--", color=NER, lw=1.6,
             label="$\\frac{1}{2}\\sigma''(v^*)\\,\\varepsilon^2 m$  (theory)")
     ax.axvline(v0, color=GR, ls=":", lw=1)
-    ax.annotate("inflection $v_0$:\n$\\sigma''=0$, sign flips", xy=(v0,0), xytext=(v0+1.2, ax.get_ylim()[1]*0.55),
+    ax.annotate("inflection $v_0$:\n$\\sigma''=0$, sign flips", xy=(v0,0),
+                xytext=(v0-6.5, ax.get_ylim()[0]*0.55),
                 fontsize=8, color=GR, arrowprops=dict(arrowstyle="->", color=GR, lw=0.8))
     yref=np.interp(d["v_ref"], vg, d["A_ol_signed"])
     ax.plot(d["v_ref"], yref, "o", color="#1a9850", ms=6, label="JR operating points ($p$=265–395)")

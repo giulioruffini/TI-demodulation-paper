@@ -37,8 +37,17 @@ def _boxes(fig, renderer):
             skip = False
             for axis in (ax.xaxis, ax.yaxis):
                 labs = axis.get_ticklabels()
-                if any(t is l for l in labs) and len(axis.get_ticklocs()) == 0:
-                    skip = True
+                if any(t is l for l in labs):
+                    locs = axis.get_ticklocs()
+                    if len(locs) == 0:
+                        skip = True
+                        break
+                    # a tick label outside the axis view limits is not drawn
+                    lo, hi = sorted(axis.get_view_interval())
+                    for loc, lab in zip(locs, labs):
+                        if t is lab and not (lo - 1e-9 <= loc <= hi + 1e-9):
+                            skip = True
+                            break
             if skip:
                 continue
         try:
@@ -51,9 +60,11 @@ def _boxes(fig, renderer):
     return out
 
 
-def _overlap_area(a, b):
-    dx = min(a.x1, b.x1) - max(a.x0, b.x0)
-    dy = min(a.y1, b.y1) - max(a.y0, b.y0)
+def _overlap_area(a, b, pad=1.0):
+    # pad inflates each box by `pad` px per side, so text separated by less than
+    # a couple of pixels -- crowded but not strictly overlapping -- still counts.
+    dx = min(a.x1, b.x1) - max(a.x0, b.x0) + 2 * pad
+    dy = min(a.y1, b.y1) - max(a.y0, b.y0) + 2 * pad
     return dx * dy if (dx > 0 and dy > 0) else 0.0
 
 
