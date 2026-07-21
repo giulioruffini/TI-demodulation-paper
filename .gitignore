@@ -28,10 +28,8 @@ code/sweep_hi_stable.npz
 code/sweep_hi_cycle.npz
 code/tacs_jsweep.npz
 
-# Non-manuscript diagnostic outputs and raster-figure PDF byproducts
+# Non-manuscript diagnostic outputs
 figures/fig_lanmm_checker.*
-figures/fig_lanmm_arnold_p1.pdf
-figures/fig_lanmm_arnold_p2.pdf
 
 # Internal working notes / correspondence (excluded from the public archive)
 _private/
