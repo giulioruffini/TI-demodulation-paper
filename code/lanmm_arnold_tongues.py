@@ -162,13 +162,29 @@ def _imshow(ax, M, x, y, letter, ylabel):
     ax.axvline(10.0, color="w", ls="--", lw=1)
     figstyle.panel(ax, letter)
     ax.set_xlabel("envelope frequency $\\Delta f$ (Hz)"); ax.set_ylabel(ylabel)
-    plt.colorbar(im, ax=ax, label="alpha power (8–12 Hz)")
+    plt.colorbar(im, ax=ax, label="alpha power")
 
-def make_figure(intrinsic, driving, drive_target="P2", A_for_carrier=250.0):
+def _grids(intrinsic, driving, drive_target, A_for_carrier):
+    """Compute (or load) the four alpha-power grids. The grids take ~40 min, so
+    they are cached next to this script; delete the .npz to force a recompute.
+    Layout/style tweaks then re-plot instantly from the cache."""
+    cache = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                         f"lanmm_arnold_{drive_target}.npz")
+    if os.path.exists(cache):
+        d = np.load(cache)
+        return d["Pt1"], d["Pt2"], d["fs_t"], d["A"], d["F1"], d["Pc1"], d["Pc2"], d["fs_c"], d["fc"]
     Pt1, Pt2, fs_t, A, F1 = arnold_tongue(intrinsic, driving, drive_target=drive_target)
     Pc1, Pc2, fs_c, fc = carrier_map(intrinsic, driving, A_mod=A_for_carrier,
                                      drive_target=drive_target)
-    fig, ax = plt.subplots(2, 2, figsize=(11, 9))
+    np.savez(cache, Pt1=Pt1, Pt2=Pt2, fs_t=fs_t, A=A, F1=F1, Pc1=Pc1, Pc2=Pc2, fs_c=fs_c, fc=fc)
+    return Pt1, Pt2, fs_t, A, F1, Pc1, Pc2, fs_c, fc
+
+
+def make_figure(intrinsic, driving, drive_target="P2", A_for_carrier=250.0):
+    Pt1, Pt2, fs_t, A, F1, Pc1, Pc2, fs_c, fc = _grids(intrinsic, driving, drive_target, A_for_carrier)
+    # constrained_layout spaces the four per-panel colorbars without letting a
+    # right-column y-label collide with the left-column colorbar label.
+    fig, ax = plt.subplots(2, 2, figsize=(11, 9), constrained_layout=True)
     _imshow(ax[0,0], Pt1, fs_t, A,  "a", "modulation amplitude $A$")
     # 1:1 frequency capture, outlined on the power field: band power alone
     # cannot separate a forced response from an entrained oscillator.
@@ -179,10 +195,8 @@ def make_figure(intrinsic, driving, drive_target="P2", A_for_carrier=250.0):
     _imshow(ax[0,1], Pt2, fs_t, A,  "b", "modulation amplitude $A$")
     _imshow(ax[1,0], Pc1, fs_c, fc, "c", "carrier frequency $f_c$ (Hz)")
     _imshow(ax[1,1], Pc2, fs_c, fc, "d", "carrier frequency $f_c$ (Hz)")
-    fig.tight_layout(rect=[0, 0, 1, 0.97])
     out = f"fig_lanmm_arnold_{'p2' if drive_target=='P2' else 'p1'}"
     os.makedirs(FIGDIR, exist_ok=True)
-    fig.tight_layout()
     figstyle.scale_text(fig, placed_frac=0.86)
     fig.savefig(os.path.join(FIGDIR, out+".png"), dpi=300)
     fig.savefig(os.path.join(FIGDIR, out+".pdf"))
