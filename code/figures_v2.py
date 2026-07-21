@@ -95,8 +95,8 @@ def bifurcation_sigmoid():
     axb.plot(vv, Sigm(vv), color=NEB, lw=2, label="$\\sigma(v)$ (firing rate)")
     axt.plot(vv, Sigm2(vv), color=NER, lw=1.6, ls="--", label="$\\sigma''(v)$ (demod gain)")
     axt.axhline(0, color=GR, lw=0.6)
-    axb.axvline(v0, color=GR, ls=":", lw=1); axb.text(v0+0.2, 0.3, "inflection $v_0$\n$\\sigma''=0$",
-        fontsize=8, color=GR)
+    axb.axvline(v0, color=GR, ls=":", lw=1)   # marks inflection v0 (sigma''=0); the caption explains it,
+                                              # so no in-plot label -- it collided with the descending sigma'' curve
     # operating points reached by closed-loop JR
     for vop,p in zip(d["v_ref"], d["p_ref"]):
         axb.plot(vop, Sigm(vop), "o", color=NEB2, ms=5)
