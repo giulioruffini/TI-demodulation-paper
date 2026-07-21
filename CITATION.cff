@@ -13,24 +13,31 @@ authors:
   - family-names: Ruffini
     given-names: Giulio
     affiliation: "Neuroelectrics / BCOM"
+    orcid: "https://orcid.org/0000-0003-3084-0177"
   - family-names: Mercadal
     given-names: Borja
     affiliation: "Neuroelectrics"
+    orcid: "https://orcid.org/0000-0002-0941-6796"
   - family-names: Just
     given-names: Alex
     affiliation: "Neuroelectrics"
+    orcid: "https://orcid.org/0009-0006-8794-7425"
   - family-names: de Palma Aristides
     given-names: Raul
     affiliation: "BCOM"
+    orcid: "https://orcid.org/0000-0002-0255-2293"
   - family-names: Castaldo
     given-names: Francesca
     affiliation: "Neuroelectrics / BCOM"
+    orcid: "https://orcid.org/0000-0002-4947-4552"
   - family-names: Canals
     given-names: Santiago
     affiliation: "Instituto de Neurociencias (UMH-CSIC) / BCOM"
+    orcid: "https://orcid.org/0000-0003-2175-8139"
   - family-names: Mirasso
     given-names: Claudio
     affiliation: "IFISC (UIB-CSIC) / BCOM"
+    orcid: "https://orcid.org/0000-0003-2980-7038"
 identifiers:
   - type: doi
     value: 10.5281/zenodo.21009618
