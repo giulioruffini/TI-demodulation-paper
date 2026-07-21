@@ -28,7 +28,7 @@
 %   pdflatex -jobname=TN0484_jne "\def\jnebuild{}\input{<this file>}" ).
 % ---------------------------------------------------------------------------
 \newif\ifjne
-\jnetrue
+\jnefalse
 \ifdefined\jnebuild\jnetrue\fi
 
 \definecolor{neblue}{RGB}{10,79,140}
@@ -319,7 +319,8 @@ in the exact ``NMM2'' theory \cite{ruffini2021nmm2,clusella2023}:
 \dot v=v^2+\bar\eta-\pi^2 r^2+I(t),
 \label{eq:mpr}
 \end{equation}
-with the applied current $I(t)$ entering linearly and the heterogeneity half-width
+with the applied current $I(t)$ entering linearly, the common background excitability
+$\bar\eta$ (the bifurcation parameter), and the heterogeneity half-width
 $\Delta$ setting the smoothing. Here the demodulating nonlinearity is \emph{derived,
 not postulated}: the quadratic $v^2$ term (with the $rv$ coupling) is an exact
 square-law rectifier of the input, inherited directly from the single-neuron QIF
@@ -424,7 +425,7 @@ Expanding $\Sig$ about an operating point $v^*$ (a Volterra/Taylor expansion, as
 in \cite{ruffini2025ham}) gives
 $\Sig(v^*+s)\approx\Sig(v^*)+\Sig'(v^*)\,s+\half\Sig''(v^*)\,s^2+\dots$
 The truncation holds only while $|s|$ is small against the sigmoid's voltage scale
-$1/\rho\approx1.8$~mV. Human TI polarizations are $\sim$$10^{-2}$~mV, three orders below
+$1/\rho\approx1.8$~mV. Human TI polarizations are $\sim$$10^{-2}$~mV, over two orders below
 that, so the quadratic term is the leading nonlinearity throughout the regime this paper
 treats. Rodent TI is not in that regime: the fields are $\sim$$10^3$ times larger, the
 sigmoid saturates, and the expansion fails. \S\ref{sec:discussion} returns to what that
@@ -491,7 +492,7 @@ responsive band, nor engage other carrier-specific mechanisms (the ion-channel/k
 pathway). Within those bounds the response is flat in $f_c$
 (Fig.~\ref{fig:carrier}, left). The synaptic suppression is concrete: each JR
 synapse applies the operator $\hat L_s$ with impulse response $h(t)=Aa\,t\,e^{-at}$,
-i.e.\ transfer function $H(\omega)=Aa/(i\omega+a)^2$, an over-damped second-order
+i.e.\ transfer function $H(\omega)=Aa/(i\omega+a)^2$, a critically-damped second-order
 low-pass with corner $a/2\pi\approx16$~Hz. It passes the $\sim$10~Hz envelope
 ($|H|\!\sim\!0.7$) while suppressing a $100$~Hz carrier to $\sim$2.5\%
 (Fig.~\ref{fig:carrier}, right), so the carrier is filtered out of the loop
@@ -503,11 +504,12 @@ Thus, two distinct mechanisms shape the closed-loop dynamics: the sigmoid extrac
 
 What turns this recovered envelope into a large, frequency-selective response is
 the network. Linearizing the mass about its fixed point gives a leading eigenvalue pair
-$\lambda=-\gamma\pm i\omega_0$; near the Hopf the response is dominated by this critical
+$\lambda_\pm=-\gamma\pm i\omega_0$; near the Hopf the response is dominated by this critical
 mode, so the whole network behaves as a single weakly damped harmonic oscillator with
 damping $\gamma$ and natural frequency $\omega_0$ (the gain below is its one-mode,
 center-manifold reduction). Just below a supercritical Hopf, $\gamma\to0^+$ and
-the mass is a high-$Q$ resonator; driving it with the demodulated envelope
+the mass is a sharply tuned (high quality-factor $\mathcal{Q}=\omega_0/2\gamma$) resonator;
+driving it with the demodulated envelope
 \eqref{eq:demod} at $\Omega$ gives the textbook resonance gain
 \begin{equation}
 G(\Omega)\propto\big[(\omega_0^2-\Omega^2)^2+(2\gamma\Omega)^2\big]^{-1/2},
@@ -628,8 +630,8 @@ the fixed-point and limit-cycle branches. We independently locate the operating
 supercritical Hopf by solving, for each $p$, the self-consistent scalar equation for the
 resting fixed point $v=y_1-y_2$, forming the $6\times6$ Jacobian numerically and
 diagonalizing it: the Hopf is the $p$ at which the leading eigenvalue pair crosses the
-imaginary axis with $\mathrm{Im}\,\lambda$ in the alpha band. This gives $p\approx315$~Hz
-and $f_0=\mathrm{Im}\,\lambda/2\pi\approx11.1$~Hz---consistent with the continuation and
+imaginary axis with $\mathrm{Im}\,\lambda_+$ in the alpha band. This gives $p\approx315$~Hz
+and $f_0=\mathrm{Im}\,\lambda_+/2\pi\approx11.1$~Hz---consistent with the continuation and
 with the JR bifurcation analysis of \cite{grimbert2006}. For $p>315$ the fixed point is a
 stable focus (resonator); between the SNIC ($p\!\approx\!114$) and the Hopf the column
 free-runs on the alpha limit cycle.
@@ -668,7 +670,7 @@ A_\Omega=\sqrt{I^2+Q^2},
 \end{equation}
 with $w$ a Hann window and $\bar v=\sum_k w_k v_k/\sum_k w_k$ the windowed mean.
 For a pure tone $v=A\cos(\Omega t+\phi)$ the product-to-sum identity gives
-$I\to A\cos\phi$ and $Q\to A\sin\phi$, so $A_\Omega\to A$ exactly---the factor
+$I\to A\cos\phi$ and $Q\to -A\sin\phi$, so $A_\Omega\to A$ exactly---the factor
 $2/\sum_k w_k$ is the normalization that returns the physical amplitude, and
 $A_\Omega$ equals twice the magnitude of the windowed Fourier coefficient at
 $\Omega$. The one subtlety is that out-of-band components must not leak into the
@@ -747,7 +749,8 @@ populations, with no separate input current---is the bifurcation parameter: rais
 past a supercritical Hopf at $\bar\eta\!\approx\!1$ opens a gamma limit cycle (the gamma
 counterpart of the JR alpha Hopf). The applied field enters the excitatory membrane
 current as $\delta V(t)=\lambda E(t)$ with the AM form of Eq.~\eqref{eq:am} (carrier
-$f_c=300$~Hz, envelope $\Delta f$ swept through the gamma band), so the carrier is
+$f_c=300$~Hz, envelope $\Delta f$ swept through the gamma band); the polarization is
+expressed in the dimensionless MPR units of $v_E$, so the carrier is
 rectified by the exact quadratic $v_E^2$ term, with no postulated sigmoid. We
 integrate with fixed-step RK4 ($\Delta t=0.05$~ms) and read out the lock-in
 (Eq.~\eqref{eq:lockin}) of $r_E$ at $\Delta f$ over the $(\Delta f, \bar\eta)$ plane.
@@ -996,8 +999,8 @@ frequency $\Delta f$ (carrier $40$~Hz), with elevated power around the $P_1$ alp
 set, $|f_{\rm out}-\Delta f|<0.3$~Hz (Appendix~\ref{sec:vocab}), which is what defines
 the tongue. Band power alone cannot separate capture from a forced response, since both
 place power at $\Delta f$; the captured set is therefore computed from the dominant output
-frequency and drawn explicitly. Its width grows monotonically with drive, from $0.55$~Hz at
-$A\!\to\!0$ (the tolerance-limited tip, $2\times0.3$~Hz) to $1.75$~Hz at $A=300$. \emph{(c,d)} Alpha
+frequency and drawn explicitly. Its width grows monotonically with drive, from $\approx0.6$~Hz at
+$A\!\to\!0$ (the tolerance-limited tip, $2\times0.3=0.6$~Hz) to $1.75$~Hz at $A=300$. \emph{(c,d)} Alpha
 power vs.\ carrier frequency and $\Delta f$ at $A=250$: $P_1$ demodulation requires
 \emph{both} a carrier $\approx$$40$~Hz ($P_2$ gamma) and $\Delta f\approx$$10$~Hz
 ($P_1$ alpha)---a double resonance.}
@@ -1383,9 +1386,9 @@ cancels when the two are compared.
 
 The resonance buys a factor of order ten. Writing the reverberation time of the weakly
 damped focus as $\tau=1/\gamma$, the gain at resonance relative to the same circuit's
-response to a steady input is $Q=\omega_0/2\gamma=\pi f_0\tau$: $\pi$ times the number of
+response to a steady input is $\mathcal{Q}=\omega_0/2\gamma=\pi f_0\tau$: $\pi$ times the number of
 cycles the ringing survives. Cortical population activity in vivo relaxes over a few hundred
-milliseconds \cite{wilting2018}, which at $f_0=10$~Hz gives $Q$ of order $10$. That measured
+milliseconds \cite{wilting2018}, which at $f_0=10$~Hz gives $\mathcal{Q}$ of order $10$. That measured
 timescale is wideband rather than alpha-specific, so it sets the order of magnitude and not
 the value. Gain also costs bandwidth: the resonance is $1/(\pi\tau)$ wide, about $1$~Hz, so
 a $\Delta f$ fixed at a group-mean alpha will drift outside it during a session.
@@ -1424,7 +1427,7 @@ amplitude \cite{karimi2024} is consistent with a nonlinear detector operating th
 What survives is the mechanism, not a solution to the dose problem. It explains TI's
 phenomenology and the rodent-to-human collapse, and names the three quantities worth
 improving: the carrier's access to a fast compartment, the operating point through
-$\Sig''$, and proximity to the bifurcation through $Q$.
+$\Sig''$, and proximity to the bifurcation through $\mathcal{Q}$.
 
 Several limitations should be kept in view. The field enters the population sigmoid
 directly; we treat the field-to-nonlinearity coupling $\kappa(f_c)$
@@ -1432,7 +1435,7 @@ phenomenologically (Eq.~\eqref{eq:bridge}) rather than modeling channel kinetics
 and $\varepsilon$ should be read as the post-coupling polarization, not the applied
 field (\S\ref{sec:coupling}). The population sigmoid is likewise a coarse-grained
 stand-in for distributed single-cell nonlinearities. JR alpha near this Hopf is
-high-$Q$, so the stable-side peaks are narrow and would be broadened by noise and
+high quality-factor, so the stable-side peaks are narrow and would be broadened by noise and
 population heterogeneity. The $100$~Hz carrier is below TI's kHz range, but this is
 a testable regime in its own right (\S\ref{sec:khz}) and the argument depends only
 on a timescale separation. Finally, the LaNMM realization here still treats a
@@ -1566,7 +1569,7 @@ $v_0$ & sigmoid inflection (half-maximal) potential & mV \\
 $\rho$ & sigmoid slope parameter & mV$^{-1}$ \\
 $v^{*}$ & operating point (field-free fixed point of $v$) & mV \\
 $v=y_1-y_2$ & net pyramidal membrane potential (LFP proxy) & mV \\
-PEIX & point of excitatory inflection (a $\Sig'$-based brain-state index) & -- \\
+PEIX & Population Excitation--Inhibition Index (a $\Sig'$-based brain-state index) & -- \\
 \midrule \multicolumn{3}{@{}l}{\textit{Single-column Jansen--Rit}} \\*
 $A,\,B$ & excitatory, inhibitory PSP gains & mV \\
 $a,\,b$ & excitatory, inhibitory synaptic rates (inverse time constants) & s$^{-1}$ \\
@@ -1581,16 +1584,18 @@ $f_c,\ \omega_c\!=\!2\pi f_c$ & carrier frequency & Hz, rad\,s$^{-1}$ \\
 $f_1,f_2$ & the two applied carrier tones ($f_c\!=\!(f_1\!+\!f_2)/2$) & Hz \\
 $\Delta f,\ \Omega\!=\!2\pi\Delta f$ & envelope (beat) frequency, $\Delta f\!=\!f_2\!-\!f_1$ & Hz, rad\,s$^{-1}$ \\
 $E(t),\ \delta V(t)\!=\!\lambda E$ & applied field; induced membrane perturbation & V\,m$^{-1}$; mV \\
+$\lambda$ & lumped (polarization-length) field-to-membrane coupling & mV\,/\,(V\,m$^{-1}$) \\
 $\kappa(f_c)$ & applied-field-to-polarization coupling & mV\,/\,(V\,m$^{-1}$) \\
 $H_m(\omega),\ \tau_m$ & somatic membrane low-pass and its time constant & --; ms \\
 $\tau$ & fast-element (node/AIS/terminal) time constant & ms \\
 \midrule \multicolumn{3}{@{}l}{\textit{Network dynamics, response, and bifurcation}} \\*
-$\lambda=-\gamma\pm i\omega_0$ & leading Jacobian eigenvalue pair & s$^{-1}$ \\
+$\lambda_\pm=-\gamma\pm i\omega_0$ & leading Jacobian eigenvalue pair & s$^{-1}$ \\
 $\gamma$ & damping of the critical mode ($\propto$ distance to the Hopf) & s$^{-1}$ \\
 $\omega_0,\ f_0\!=\!\omega_0/2\pi$ & natural (Hopf) frequency & rad\,s$^{-1}$, Hz \\
+$\mathcal{Q}=\omega_0/2\gamma=\pi f_0\tau$ & resonance quality factor ($\tau=1/\gamma$ the reverberation time) & -- \\
 $G(\Omega)$ & network resonance gain (Lorentzian, $\propto\!1/\gamma$ at $\omega_0$) & -- \\
-$A_\Omega$ & demodulated response: lock-in amplitude at $\Omega$ & mV (or s$^{-1}$) \\
-$A_{\rm open}$ & open-loop (detector-only, no recurrence) response & mV (or s$^{-1}$) \\
+$A_\Omega$ & demodulated response: lock-in amplitude of $v$ at $\Omega$ & mV \\
+$A_{\rm open}$ & same lock-in, open loop (detector only, no recurrence); $A_\Omega/A_{\rm open}$ dimensionless & mV \\
 $I,\,Q$ & in-phase, quadrature lock-in components & mV \\
 $C^{*},\,J^{*}$ & coupling at the Hopf (criticality) & -- \\
 \midrule \multicolumn{3}{@{}l}{\textit{Laminar model (LaNMM)}} \\*
@@ -1599,7 +1604,7 @@ PV,\,SS,\,SST & parvalbumin, stellate, somatostatin interneurons & -- \\
 $I_0$ & flat (DC) drive offset in $e(t)$ & mV \\
 \midrule \multicolumn{3}{@{}l}{\textit{Exact mean field (NMM2 / MPR) and QIF network}} \\*
 $r_E,\,r_I$ & population firing rates (E, I) & s$^{-1}$ \\
-$v_E,\,v_I$ & mean membrane potentials (E, I) & mV \\
+$v_E,\,v_I$ & mean membrane potentials (E, I), in dimensionless MPR units & -- \\
 $\eta_j,\ \bar\eta$ & per-neuron excitability; mean excitability (= common drive, bifurcation param.) & -- \\
 $\Delta$ & Lorentzian half-width of $\eta_j$ (excitability heterogeneity) & -- \\
 $\tau_E,\tau_I,\tau_a,\tau_g$ & E, I membrane and AMPA, GABA synaptic time constants & ms \\
