@@ -157,12 +157,23 @@ def carrier_map(intrinsic, driving, f_slow=np.linspace(5, 15, 41),
 # plotting -> 4-panel figure (matches fig_lanmm_arnold_*)
 # ============================================================
 def _imshow(ax, M, x, y, letter, ylabel):
-    im = ax.imshow(M, origin="lower", aspect="auto", interpolation="bilinear",
-                   extent=[x[0], x[-1], y[0], y[-1]], cmap="viridis")
+    # Each row (fixed A or f_c) is an independent simulation with its own
+    # off-resonance baseline, which shows up as horizontal streaking and buries
+    # the ~1.5-2x resonant ridge. Subtract the per-row baseline (median over the
+    # off-resonance |Delta f - 10| > 2 Hz columns) and clip at zero: what remains
+    # is the alpha-power ENHANCEMENT at the beat, which is the quantity of
+    # interest and makes the tongue and double-resonance stand out cleanly.
+    x = np.asarray(x)
+    off = np.abs(x - 10.0) > 2.0
+    base = np.median(M[:, off], axis=1, keepdims=True) if off.any() else 0.0
+    Z = np.clip(M - base, 0.0, None)
+    im = ax.imshow(Z, origin="lower", aspect="auto", interpolation="bilinear",
+                   extent=[x[0], x[-1], y[0], y[-1]], cmap="viridis",
+                   vmin=0.0, vmax=np.percentile(Z, 99.5))
     ax.axvline(10.0, color="w", ls="--", lw=1)
     figstyle.panel(ax, letter)
     ax.set_xlabel("envelope frequency $\\Delta f$ (Hz)"); ax.set_ylabel(ylabel)
-    plt.colorbar(im, ax=ax, label="alpha power")
+    plt.colorbar(im, ax=ax, label="alpha enhancement")
 
 def _grids(intrinsic, driving, drive_target, A_for_carrier):
     """Compute (or load) the four alpha-power grids. The grids take ~40 min, so
