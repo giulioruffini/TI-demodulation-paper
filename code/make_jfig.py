@@ -12,7 +12,6 @@ fig,ax=plt.subplots(1,3,figsize=(13.5,4.0))
 # (a) THE J CURVE
 ax[0].plot(Cs,Acl,'o-',color='#0a4f8c',lw=2,zorder=3)
 ax[0].axvline(Chopf,ls='--',color='#b3361f',lw=1.3)
-ax[0].text(Chopf-0.25,Acl.max()*0.5,'Hopf $C^*$',color='#b3361f',ha='right',rotation=90,fontsize=9)
 ax[0].set_xlabel(r'coupling $C$'); ax[0].set_ylabel(r'$A_\Omega$ (mV)')
 figstyle.panel(ax[0], "a")
 # (b) resonance families sharpening

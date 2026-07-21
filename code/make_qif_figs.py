@@ -83,14 +83,23 @@ def beat_inset(ax, off_key, on_key, mode="rate"):
         ca = ca / ca.mean()                                  # normalize -> relative modulation
         iax.plot(np.r_[ctr, ctr + 1], np.r_[ca, ca], color=col, lw=1.4, label=lab)
     iax.set_xticks([0, 1, 2]); iax.set_xticklabels(["0", "1", "2"])
-    iax.set_xlabel(r"$\Delta f$ phase (cycles)", fontsize=7.5, labelpad=1)
+    iax.set_xlabel(r"$\Delta f$ phase (cycles)", fontsize=7.5, labelpad=1, fontweight="bold")
     ylab = r"$\gamma$ amp. (norm.)" if mode == "gamma" else r"$r_E$ (norm.)"
-    iax.set_ylabel(ylab, fontsize=7.5, labelpad=1)
+    iax.set_ylabel(ylab, fontsize=7.5, labelpad=1, fontweight="bold")
     iax.yaxis.set_major_locator(MaxNLocator(3))
-    iax.tick_params(length=2, pad=1, labelsize=7.0)
+    iax.tick_params(length=2, pad=1, labelsize=7.0, direction="in")
+    # the inset's tick/axis labels fall on the busy raster; a white halo keeps
+    # them legible without an opaque backing box
+    halo = dict(fc="white", ec="none", alpha=0.85, pad=0.4)
+    for t in list(iax.get_xticklabels()) + list(iax.get_yticklabels()):
+        t.set_fontweight("bold"); t.set_bbox(halo)
+    iax.xaxis.label.set_bbox(halo); iax.yaxis.label.set_bbox(halo)
     iax.legend(fontsize=6.8, frameon=False, loc="upper right", ncol=2,
                handlelength=0.9, columnspacing=0.8, handletextpad=0.4, borderpad=0.1)
-    iax.patch.set_alpha(0.92)
+    iax.patch.set_alpha(1.0); iax.patch.set_facecolor("white")
+    for sp in iax.spines.values():
+        sp.set_zorder(6)
+    iax.set_zorder(6)
     return iax
 
 

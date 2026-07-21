@@ -71,7 +71,7 @@ def bifurcation_sigmoid():
         ax[0].scatter(p[~stable], y[~stable], s=2.2, color=color, edgecolors="none", zorder=2, alpha=0.28)
     ax[0].axvspan(113.6, 315.7, color=NEL, alpha=0.14, lw=0, zorder=0)   # alpha-cycle region
     _branch(b["fp_p"], b["fp_v"], b["fp_stable"], NEB, "fixed point")
-    lc_lab = "limit cycle (min/max)"
+    lc_lab = "limit cycle"
     for pre in ("lc1", "lc2"):
         st = b[f"{pre}_stable"]
         for ext in ("min", "max"):
@@ -92,8 +92,8 @@ def bifurcation_sigmoid():
 
     vv=np.linspace(-2,16,400)
     axb=ax[1]; axt=axb.twinx()
-    axb.plot(vv, Sigm(vv), color=NEB, lw=2, label="$\\sigma(v)$ (firing rate)")
-    axt.plot(vv, Sigm2(vv), color=NER, lw=1.6, ls="--", label="$\\sigma''(v)$ (demod gain)")
+    axb.plot(vv, Sigm(vv), color=NEB, lw=2, label="$\\sigma(v)$")
+    axt.plot(vv, Sigm2(vv), color=NER, lw=1.6, ls="--", label="$\\sigma''(v)$")
     axt.axhline(0, color=GR, lw=0.6)
     axb.axvline(v0, color=GR, ls=":", lw=1)   # marks inflection v0 (sigma''=0); the caption explains it,
                                               # so no in-plot label -- it collided with the descending sigma'' curve
