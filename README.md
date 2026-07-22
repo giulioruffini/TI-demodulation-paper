@@ -91,36 +91,41 @@ so the dependent figures can be rebuilt without re-running the (slow) sweeps.
 
 ### Figure → script table (verified)
 
-24 figures are included by the manuscript. Status legend: **OK** = generator writes
-to `figures/` and runs from committed inputs; **gap** = no working generator.
+21 figures are included by the manuscript; the table below is generated against the
+`\includegraphics` list and is current as of the two-tone conversion. Status legend:
+**OK** = generator writes to `figures/` and runs from committed inputs; **gap** = no
+working generator.
 
 | figure | script | data dep. | scipy | status |
 |---|---|---|---|---|
 | fig_concept | `figures_v2.py` | analyses_v2.npz† | – | OK |
 | fig_bifurcation_sigmoid | `figures_v2.py` | analyses_v2.npz†, jr_bifurcation.npz‡ | – | OK |
-| fig_resonance_map | `figures_v2.py` | analyses_v2.npz† | – | OK |
 | fig_carrier_independence | `figures_v2.py` | analyses_v2.npz† | – | OK |
-| fig_operating_point | `figures_v2.py` | analyses_v2.npz† | – | OK |
-| fig_demodulation | `make_figures.py` | (inline) | – | OK |
-| fig_verification | `make_figures.py` | (inline) | – | OK |
-| fig_resonance | `rerun_resonance.py` (stable/cycle/plot) | (inline, long lock-in) | – | OK |
+| fig_demodulation_twotone | `jr_twotone_figs.py` | (inline) | – | OK |
+| fig_curvature_twotone | `jr_twotone_figs.py` | (inline) | – | OK |
+| fig_resonance | `rerun_resonance.py` (stable/cycle/plot) | sweep_hi_{stable,cycle}.npz | – | OK |
 | fig_khz | `khz_analysis.py` | (inline) | yes | OK |
 | fig_khz_direct | `khz_direct.py` (imports `timing_not_rate`) | (inline) | – | OK |
+| fig_khz_twotone | `make_khz_twotone_fig.py` | khz_twotone.npz ‡ | – | OK |
 | fig_jcurve | `make_jfig.py` | jcurve_main.npz, jcurve_res.npz ‡ | (engine) | OK |
 | fig_nmm2_map | `nmm2_ping.py` | (inline grid) | – | OK |
-| fig_nmm2_resonance | `nmm2_ping.py` | (inline grid) | – | OK |
-| fig_lanmm_map | `lanmm_resonance.py` | (inline grid) | – | OK |
-| fig_lanmm_resonance | `lanmm_resonance.py` | (inline grid) | – | OK |
-| fig_lanmm_arnold_p1 | `lanmm_arnold_tongues.py` | needs **lanmmv11** (external) | yes | needs ext. module |
-| fig_lanmm_arnold_p2 | `lanmm_arnold_tongues.py` | needs **lanmmv11** (external) | yes | needs ext. module |
-| fig_timing_not_rate | `make_timing_fig.py` | timing_not_rate.npz ‡ | – | OK |
-| fig_qif_raster | `make_qif_figs.py` | qif_raster.npz ‡ | – | OK |
-| fig_qif_timing | `make_qif_figs.py` | qif_raster.npz ‡ | – | OK |
-| fig_tacs_jcurve | `tacs_jsweep.py` | (inline) | – | OK |
+| fig_nmm2_resonance_twotone | `make_nmm2_twotone_fig.py` | (inline grid) | – | OK |
 | fig_nmm2_jcurve | `make_nmm2_jfig.py` | nmm2_jcD.npz ‡ | – | OK |
-| fig_entrainment | `make_entrain_fig.py` | entrain*.npz ‡ | – | OK |
-| fig_sl_dissociation | `sl_dissociation.py` | (inline) | – | OK |
+| fig_lanmm_field_p1_twotone | `make_lanmm_field_figs.py` | lanmm_field_P1_twotone.npz ‡ | – | OK |
+| fig_lanmm_field_p2_twotone | `make_lanmm_field_figs.py` | lanmm_field_P2_twotone.npz ‡ | – | OK |
+| fig_timing_not_rate | `make_timing_fig.py` | timing_not_rate.npz ‡ | – | OK |
+| fig_qif_raster_twotone | `make_qif_figs.py` | qif_raster_twotone.npz ‡ | – | OK |
+| fig_qif_timing_twotone | `make_qif_figs.py` | qif_raster_twotone.npz ‡ | – | OK |
+| fig_tacs_jcurve | `tacs_jsweep.py` | tacs_jsweep.npz | – | OK |
+| fig_entrainment | `make_entrain_fig.py` | entrain{,_b,_crit}.npz ‡ | – | OK |
 | fig_lanmm_setup | — | — | – | **gap**: hand-drawn schematic |
+
+Not included by the manuscript, kept in the repository only: `fig_lanmm_resonance` and
+`fig_lanmm_map` (both `lanmm_resonance.py`), archived under `figures/archive/` with a note
+on why; `fig_lanmm_arnold_p1`/`_p2` (`lanmm_arnold_tongues.py`), superseded by the
+`fig_lanmm_field_*_twotone` maps; the `*_am` variants of the two-tone figures, retained so
+the AM-surrogate control of Fig. 4d can be reproduced; and `fig_lanmm_checker.png`, a
+diagnostic (gitignored).
 
 † `analyses_v2.npz` is **not** committed — `run_all.py` regenerates it via `analyses_v2.py` first.
 ‡ committed `.npz` (figure rebuildable without re-running the sweep).
