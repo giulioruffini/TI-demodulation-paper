@@ -159,8 +159,8 @@ S1, S2, \dots
 currents whose amplitudes beat at a low difference frequency, offering focal, steerable
 stimulation deep in the brain. Yet an amplitude-modulated field carries no spectral power
 at the beat frequency, so no passive, linear element of a neuron can follow it. Recovering the beat requires a nonlinearity, which has generally been sought
-in single-cell ion channels. We ask whether demodulation and its frequency tuning are
-instead properties of the neural population.
+in single-cell ion channels. We ask whether demodulation and its frequency tuning could
+instead be properties of the neural population.
 \textbf{Approach.} We treat the firing-rate nonlinearity of a neural mass, the
 $\sim$$10^4$-neuron unit that generates the EEG, as an amplitude detector, and its recurrent
 synaptic network poised near a Hopf bifurcation as a resonant amplifier. The account is
@@ -168,7 +168,11 @@ tested across a modeling ladder: a heuristic Jansen--Rit column (JR), a laminar 
 exact next-generation mean field (NMM2), and the quadratic integrate-and-fire spiking
 network underlying it.
 \textbf{Main results.} Population transfer function (sigmoid in JR) curvature acts as a square-law detector that recovers the
-beat, and the network amplifies it resonantly at its own natural frequency. Detection is
+beat, and the network amplifies it resonantly at its own natural frequency. We give this as a
+\emph{candidate} route rather than the established one: it is the generic weak-field answer
+for any smooth nonlinearity, but the one in-regime primate measurement implies an
+efficiency a sigmoid detector cannot reach at any operating point, and so favors a more
+rectifying transduction. Detection is
 inherited from the single neuron; the sharp frequency selectivity is emergent, set by
 proximity to criticality and tunable by connectivity. The mechanism reproduces TI's known
 behavior: independence of the carrier once membrane polarization is matched, largest
@@ -187,8 +191,8 @@ high-frequency currents overlap and their amplitudes beat at a low difference
 frequency. Yet an amplitude-modulated field carries no
 power at that beat frequency, so no passive, linear part of a neuron can follow it;
 recovering the beat requires a nonlinearity, usually sought in single-cell ion
-channels. Here we show that the recovery, and its tuning, are properties of the neural
-\emph{population} rather than the single cell. In a neural mass, the
+channels. Here we develop a candidate account in which the recovery, and its tuning, are properties of
+the neural \emph{population} rather than the single cell. In a neural mass, the
 $\sim$$10^4$-neuron unit that generates the EEG, the firing-rate nonlinearity acts as
 a square-law detector that demodulates the beat, while the recurrent synaptic network,
 poised near a Hopf bifurcation, resonantly amplifies the recovered rhythm at its own
@@ -271,8 +275,8 @@ leading Caldas-Martinez et al.\ to conclude that TI is ``largely a network
 phenomenon'' \cite{caldas2024}; computational network models point the same way
 \cite{soroushi2025}.
 
-Here we show that a population-scale mechanism, built from two ingredients already in
-standard cortical models, suffices: a static firing-rate \emph{sigmoid}, whose
+Here we ask how far a population-scale mechanism, built from two ingredients already in
+standard cortical models, can go: a static firing-rate \emph{sigmoid}, whose
 nonzero curvature $\Sig''$ makes it a square-law demodulator, and a
 \emph{second-order-synapse network} whose synaptic kinetics filter the carrier away
 while a weakly-damped \emph{stable focus} resonantly amplifies the recovered beat component at
@@ -284,7 +288,7 @@ which the column approaches near \emph{both} the saddle-node on an invariant cir
 it out at the mesoscopic scale: the sigmoid is a coarse-grained summary of the
 population's single-cell input--output curves, but once coarse-grained it is a
 \emph{distinct mesoscopic nonlinearity} with enough curvature to detect envelopes,
-whatever microscopic mechanism supplies it. This is a network-level mechanism for TI
+whatever microscopic mechanism supplies it. This is a candidate network-level route to TI
 demodulation---carrier-independent (at fixed polarization) and
 frequency-selective---complementary to the disinhibitory network effect
 (PV-interneuron silencing) reported by \cite{caldas2024}; both place TI's action in the
@@ -1622,50 +1626,63 @@ distance to threshold and lies outside the expansion's validity, so parity is no
 by this route rather than merely expensive. At $1$~V/m with a $1$~kHz carrier TI comes out
 $\sim$$300\times$ weaker than tACS if the carrier reaches a fast nodal compartment, and
 $\sim$$10^6\times$ weaker if it reaches only the soma. \textbf{The one in-regime measurement contradicts this estimate, and that is informative.}
-Vieira et al.\ deliberately worked at modulation depths of $0.5$--$0.7$~V/m, chosen to
-match human studies rather than the $60$--$383$~V/m of rodent work, and measured TI at
-$0.34$ times the strength of conventional tACS (slope; $95\%$ CI $0.04$--$0.65$), or
-$\sim$$12\%$ per unit current \cite{vieira2024}. Their cleanest comparison drives the same
-neurons with conventional tACS and with an AM waveform at \emph{matched modulation depth},
-and finds demodulation roughly $50\%$ efficient. This is the same regime our estimate
-addresses, so the two can be compared directly---and they disagree. Taking their fields
-with a favorable cortical coupling ($\sim$$0.5$~mV per V/m) through a fast element at
-$2$~kHz gives $\varepsilon\!\approx\!0.1$~mV and hence $\eta\!\approx\!0.7\%$, about
-$70\times$ below what they measure; a somatic route is worse by two further orders.
+Vieira et al.\ worked at modulation depths of $0.5$--$0.62$~V/m, chosen deliberately to
+match human studies rather than the $60$--$383$~V/m of the rodent literature, and report TI
+at $0.34$ times the strength of conventional tACS in absolute terms ($95\%$ CI
+$0.04$--$0.65$) and $\sim$$12\%$ per unit current, i.e.\ $80\%$ weaker overall
+\cite{vieira2024}. Their decisive experiment is cleaner than that ratio. Having measured
+that transcranial current is shunted increasingly with frequency, they compensate for it
+and deliver conventional tACS and an AM waveform \emph{through the same electrodes at
+matched modulation depth}, which isolates demodulation from every other loss. Against a
+baseline PLV of $0.043$, tACS raises the median to $0.20$ and AM-tACS only to $0.10$: a
+demodulation efficiency they quote as $\sim$$50\%$, or $\sim$$0.36$ if the baseline is
+subtracted first.
 
-The discrepancy has a natural reading. Because $\eta\propto\varepsilon$, a weak square-law
-detector cannot be $50\%$ efficient at $0.1$~mV: reaching parity would need $\varepsilon$
-of order $10$~mV, two orders above what these fields deliver. An efficiency that is both
-large and roughly field-independent is instead the signature of a \emph{rectifying}
-transduction, and the measured values sit close to the rectifier constants of
-\S\ref{sec:transduction}---$1/\pi\approx0.32$ for half-wave and $2/\pi\approx0.64$ for
-full-wave detection---though the confidence interval is wide and a phase-locking ratio is
-not a drive ratio. Read that way, the existing in-vivo evidence leans away from square-law
-transduction as the dominant route at human field strengths and toward an effectively
-rectifying one. This does not touch the amplification half of the mechanism, which is
-waveform-agnostic, nor the parity argument, which says only that a \emph{smooth} weak
-nonlinearity must transduce $A^2$. It does mean the transduction class is an open
-empirical question rather than a settled one, and it raises the value of the amplitude
-sweep of \S\ref{sec:transduction}: a slope of $1$ would confirm rectification, a slope of
-$2$ our square law. What TI buys for that price is
-targeting: a field applied directly at $\Delta f$ cannot be steered to a deep structure,
-whereas two kHz beams can.
+Our estimate is far below that. Taking their fields with a favorable cortical coupling
+($\sim$$0.5$~mV per V/m) through a fast element at $2$~kHz gives
+$\varepsilon\!\approx\!0.1$~mV and hence $\eta\!\approx\!0.8\%$, some $50\times$ short of
+what they measure; a somatic route is worse by two further orders.
 
-The same nonlinearity explains why TI works in rodents and disappoints in humans. A mouse
-brain sees $\sim$$383$~V/m from a TI montage while optimized human montages reach
-$0.24$--$0.57$~V/m at depth \cite{rampersad2019}, a field ratio of order $10^3$. A
-nonlinear detector amplifies that disparity, but not by the full square: at mouse field
-strengths the polarization reaching the detector is $\varepsilon\!\sim\!18$~mV, roughly
-$80\%$ of the way to threshold, so the transfer saturates and the small-signal expansion
-fails. Evaluating the full sigmoid gives a drive ratio of order $10^4$ where extrapolating
-the square law would predict $10^6$. The rodent experiment is therefore not the human
-experiment scaled down: the mouse is driven into saturation while the human, at
-$\varepsilon\!\sim\!0.02$~mV, sits deep in the perturbative regime where the quadratic
-penalty is worst. A network model finding that TI needs $\sim$$100\times$ the tACS
-amplitude \cite{karimi2024} is consistent with a nonlinear detector operating there. What
-survives is the mechanism, not a solution to the dose problem---and it names the three
-quantities worth improving: the carrier's access to a fast compartment, the operating point
-through $\Sig''$, and proximity to the bifurcation through $\mathcal{Q}$.
+The obvious escape is the operating point, since both $\Sig''$ and $\Sig'$ depend on it and
+the column might sit somewhere far more favorable. It does not escape. For the logistic
+transfer, writing $s=\Sig/2e_0\in(0,1)$, we have $\Sig'=2e_0\rho\,s(1-s)$ and
+$\Sig''=2e_0\rho^2 s(1-s)(1-2s)$, so $\Sig''/\Sig'=\rho(1-2s)$ and, since
+$\mathrm{PEIX}=4s(1-s)$ gives $(1-2s)^2=1-\mathrm{PEIX}$,
+\begin{equation}
+\eta=\frac{\rho\,\varepsilon}{4}\sqrt{1-\mathrm{PEIX}}\;\le\;\frac{\rho\,\varepsilon}{4}.
+\label{eq:etabound}
+\end{equation}
+The efficiency is therefore state-dependent exactly as the mechanism predicts---maximal
+where the population is saturated and far from the inflection, and vanishing at
+$\mathrm{PEIX}=1$, where the transfer is locally linear and cannot demodulate at all---but
+it is \emph{bounded} by $\rho\varepsilon/4$ whatever the state. At Vieira et al.'s fields
+that ceiling is $1.4\%$, still $26\times$ short of the measured efficiency, and it is
+approached only in deep saturation where $\Sig'\!\to\!0$ and the tACS reference dies with
+it. For human fields at $\varepsilon\!\sim\!0.02$~mV the ceiling is $0.28\%$. No choice of
+brain state rescues a sigmoid-type population detector here, which is what makes the
+comparison decisive rather than a matter of parameter tuning. An efficiency
+that is both large and roughly field-independent is instead the signature of a
+\emph{rectifying} transduction, and the measured values sit close to the rectifier
+constants of \S\ref{sec:transduction}, $1/\pi\approx0.32$ and $2/\pi\approx0.64$. That
+coincidence should not be pressed: the confidence intervals are wide, $N=10$ for the
+matched-depth experiment, and a phase-locking ratio is not a drive ratio. But the direction
+is clear, and Vieira et al.\ read their own data the same way, invoking rectification and
+the radio analogy explicitly and proposing asymmetry between inward Na$^+$ and outward
+K$^+$ channels as the operative nonlinearity---a rectifier, not a smooth curvature. They
+also note that circuit-level frequency dependence could contribute to demodulation, which
+is the mechanism developed here.
+
+We therefore do not claim that square-law transduction is what operates in the human brain
+at safe field strengths. What the parity argument establishes is narrower and still holds:
+\emph{any} smooth weak nonlinearity must transduce $A^2$, so a square-law route exists and
+is generic, and it sets a floor rather than an estimate. The evidence available suggests
+something more rectifying dominates in vivo, in which case the population sigmoid is not
+the detector and the single cell is. The amplification half is unaffected either way, being
+waveform-agnostic: whatever manufactures the beat component, a network near its bifurcation
+amplifies it as $1/\gamma$. Deciding between the two routes is exactly what the amplitude
+sweep of \S\ref{sec:transduction} does, and it is the measurement we would most like to
+see: a slope of $1$ with a harmonic ladder at $1/5$ confirms rectification, a slope of $2$
+with a vanishing ladder confirms the square law.
 
 \textbf{Limitations.} The field enters the population transfer directly; we treat the
 field-to-nonlinearity coupling $\kappa(f_c)$ phenomenologically rather than modeling
