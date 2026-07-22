@@ -1,0 +1,31 @@
+\begin{thebibliography}{1}
+
+\bibitem{pikovsky2001}
+Arkady Pikovsky, Michael Rosenblum, and J{\"u}rgen Kurths.
+\newblock {\em Synchronization: A Universal Concept in Nonlinear Sciences}.
+\newblock Cambridge University Press, 2001.
+
+\bibitem{lachaux1999}
+Jean-Philippe Lachaux, Eugenio Rodriguez, Jacques Martinerie, and Francisco~J.
+  Varela.
+\newblock Measuring phase synchrony in brain signals.
+\newblock {\em Human Brain Mapping}, 8(4):194--208, 1999.
+
+\bibitem{canolty2010}
+Ryan~T. Canolty and Robert~T. Knight.
+\newblock The functional role of cross-frequency coupling.
+\newblock {\em Trends in Cognitive Sciences}, 14(11):506--515, 2010.
+
+\bibitem{tort2010}
+Adriano B.~L. Tort, Robert Komorowski, Howard Eichenbaum, and Nancy Kopell.
+\newblock Measuring phase-amplitude coupling between neuronal oscillations of
+  different frequencies.
+\newblock {\em Journal of Neurophysiology}, 104(2):1195--1210, 2010.
+
+\bibitem{vieira2024}
+Pedro~G. Vieira, Matthew~R. Krause, and Christopher~C. Pack.
+\newblock Temporal interference stimulation disrupts spike timing in the
+  primate brain.
+\newblock {\em Nature Communications}, 15:4558, 2024.
+
+\end{thebibliography}

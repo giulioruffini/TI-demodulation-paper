@@ -11,6 +11,11 @@
 \usepackage{fancyhdr}
 \setlength{\headheight}{14pt}   % silence fancyhdr's headheight warning
 \usepackage{titlesec}
+% Cross-document references for the split JNE build: the article cites
+% supplementary figures and the supplement cites main-text sections and
+% equations. xr-hyper (not xr) is the hyperref-compatible version and must be
+% loaded BEFORE hyperref. `./build.sh all` is run twice so the numbers settle.
+\usepackage{xr-hyper}
 \usepackage[hidelinks]{hyperref}
 \usepackage{caption}
 \usepackage{enumitem}
@@ -31,6 +36,31 @@
 \newif\ifjne
 \jnefalse
 \ifdefined\jnebuild\jnetrue\fi
+
+% ---------------------------------------------------------------------------
+% Supplement switch. \supptrue -> build ONLY the appendices and supplementary
+% figures, as a standalone companion file. Selected from the command line via
+%   ./build.sh supp
+% JNE counts the main article against a ~12,000-word guideline; splitting the
+% back matter into a separate file brings the article itself under it without
+% removing any content. The TN build (neither flag) keeps everything in one PDF.
+% ---------------------------------------------------------------------------
+\newif\ifsupp
+\suppfalse
+\ifdefined\suppbuild\supptrue\jnetrue\fi
+
+% appendices travel with the TN build and with the supplement, but not with the
+% standalone JNE article
+\newif\ifappendices
+\ifsupp\appendicestrue\else\ifjne\appendicesfalse\else\appendicestrue\fi\fi
+
+\ifjne
+  \ifsupp
+    \IfFileExists{TN0484_jne.aux}{\externaldocument{TN0484_jne}}{}
+  \else
+    \IfFileExists{TN0484_jne_supplement.aux}{\externaldocument{TN0484_jne_supplement}}{}
+  \fi
+\fi
 
 \definecolor{neblue}{RGB}{10,79,140}
 \definecolor{negray}{RGB}{85,85,85}
@@ -107,6 +137,19 @@ a network mechanism for temporal-interference stimulation}\\[10pt]
 \end{flushleft}
 \fi
 
+\ifsupp
+\begin{center}
+{\large\bfseries Supplementary Material}\\[4pt]
+\begin{minipage}{0.86\textwidth}\centering\small
+Appendices and supplementary figures accompanying the article. Section, equation and
+figure numbers referenced here follow the main text; supplementary figures are numbered
+S1, S2, \dots
+\end{minipage}
+\end{center}
+\vspace{8pt}
+\fi
+
+\ifsupp\else
 \section*{Abstract}
 \ifjne
 % JNE structured abstract: Objective / Approach / Main results / Significance,
@@ -232,7 +275,7 @@ Here we show that a population-scale mechanism, built from two ingredients alrea
 standard cortical models, suffices: a static firing-rate \emph{sigmoid}, whose
 nonzero curvature $\Sig''$ makes it a square-law demodulator, and a
 \emph{second-order-synapse network} whose synaptic kinetics filter the carrier away
-while a weakly-damped \emph{stable focus} resonantly amplifies the recovered envelope at
+while a weakly-damped \emph{stable focus} resonantly amplifies the recovered beat component at
 the network's natural frequency (Fig.~\ref{fig:concept}). The amplification is a property
 of the focus, not of the Hopf specifically: it sharpens as the focus nears criticality,
 which the column approaches near \emph{both} the saddle-node on an invariant circle
@@ -271,7 +314,7 @@ it can also be an AM receiver for an external carrier.
 (carrier $f_c$, envelope $\Omega$) reaches a nonlinear detector (the firing-rate
 sigmoid, curvature $\Sig''$), whose output passes through a tuned resonator (the
 second-order-synapse network near a Hopf, natural frequency $f_0$), recovering
-the envelope as an oscillation at $\Omega$. The stages map onto the radio-frequency (RF)
+a beat-frequency component as an oscillation at $\Omega$. The stages map onto the radio-frequency (RF)
 front end, square-law/diode detector, resonant RLC tank (the tuned
 resistor--inductor--capacitor circuit that selects one station), and audio output of a
 classic AM receiver
@@ -354,7 +397,7 @@ membrane low-pass does not contradict this: it bears on \emph{access}, not legit
 open biophysical question is which fast compartment (axon initial segment, node, terminal,
 or channel) lets a kHz carrier reach that nonlinear transfer (\S\ref{sec:khz}); once the
 carrier is sampled there, the neural mass describes the population-level demodulation and
-near-Hopf amplification of the recovered envelope.
+near-Hopf amplification of the recovered beat component.
 
 The single-column JR circuit couples a pyramidal population to one excitatory and
 one inhibitory interneuron population through this synapse$+$sigmoid motif. Writing
@@ -397,9 +440,9 @@ gamma) subcircuit (pyramidal $P_2$ with PV interneurons; intrinsic gamma,
 $\sim$40~Hz). The single JR column lets us isolate and analyze the
 mechanism; the LaNMM then exhibits it in a column with its own fast/slow loops and
 two native resonances. Everything below applies to both: the field couples through
-a sigmoid, and the recovered envelope drives a resonant circuit.
+a sigmoid, and the recovered beat component drives a resonant circuit.
 
-\subsection{From applied field to a demodulated envelope}\label{sec:coupling}
+\subsection{From applied field to a squared-envelope beat component}\label{sec:coupling}
 We model the applied TI field $E(t)$ (V/m) as a quasi-static perturbation of the
 membrane potential that the spike-generating nonlinearity reads. ``Quasi-static''
 means we neglect electromagnetic propagation and induction (wavelengths $\gg$
@@ -557,7 +600,7 @@ fixed post-coupling polarization} $\varepsilon$, it is independent of the carrie
 $\omega_c$. This last prediction needs care: as a function of the \emph{applied} field the
 response inherits the coupling $\varepsilon=\kappa(f_c)E_0$, so the field required for a
 given effect rises with $f_c$ (\S\ref{sec:khz})---consistent with the experimental
-consensus. Carrier independence is thus a statement about the recovered envelope at fixed
+consensus. Carrier independence is thus a statement about the recovered beat component at fixed
 polarization, not about the applied field.
 
 \subsection{Which function of the envelope does physiology transduce?}\label{sec:transduction}
@@ -636,19 +679,19 @@ low-pass with corner $a/2\pi\approx16$~Hz. It passes the $\sim$10~Hz envelope
 ($|H|\!\sim\!0.7$) while suppressing a $100$~Hz carrier to $\sim$2.5\%
 (Fig.~\ref{fig:carrier}, right), so the carrier is filtered out of the loop
 \emph{after} the sigmoid has used it to demodulate. 
-Thus, two distinct mechanisms shape the closed-loop dynamics: the sigmoid extracts an envelope whose amplitude is inherently independent of the carrier, and the synaptic low-pass subsequently removes the carrier itself from the spectrum.
+Thus two distinct mechanisms shape the closed-loop dynamics: the sigmoid generates a squared-envelope component at the beat frequency, whose amplitude is inherently independent of the carrier, and the synaptic low-pass then removes the carrier itself from the spectrum.
 
 
 % fig:carrier moved to Results (Theory is equations-only)
 
-What turns this recovered envelope into a large, frequency-selective response is
+What turns this recovered beat component into a large, frequency-selective response is
 the network. Linearizing the mass about its fixed point gives a leading eigenvalue pair
 $\lambda_\pm=-\gamma\pm i\omega_0$; near the Hopf the response is dominated by this critical
 mode, so the whole network behaves as a single weakly damped harmonic oscillator with
 damping $\gamma$ and natural frequency $\omega_0$ (the gain below is its one-mode,
 center-manifold reduction). Just below a supercritical Hopf, $\gamma\to0^+$ and
 the mass is a sharply tuned (high quality-factor $\mathcal{Q}=\omega_0/2\gamma$) resonator;
-driving it with the demodulated envelope
+driving it with the demodulated beat component
 \eqref{eq:demod} at $\Omega$ gives the textbook resonance gain
 \begin{equation}
 G(\Omega)\propto\big[(\omega_0^2-\Omega^2)^2+(2\gamma\Omega)^2\big]^{-1/2},
@@ -733,7 +776,7 @@ drive, a weak bias near threshold shifts spike probability and timing through
 stochastic resonance \cite{reato2010,liu2018}. The population sigmoid \eqref{eq:sigmoid}
 is itself a mean-field stochastic-resonance device---its smooth slope is the spread of
 thresholds and noise across the population---so the bias shifts the mean rate through
-$\Sig'$ while the demodulated envelope emerges through the curvature $\Sig''$.
+$\Sig'$ while the demodulated beat component emerges through the curvature $\Sig''$.
 
 Both halves are state-dependent---detection through $\Sig''(v^*)$, amplification
 through $1/\gamma$---so TI and transcranial magnetic stimulation (TMS) efficacy should
@@ -874,9 +917,8 @@ $(f_c,\Delta f)$ at fixed $A$, built on the LaNMM module of \cite{ruffini2025cfc
 (Figs.~\ref{fig:lanmm_p2},~\ref{fig:lanmm_p1}) show the \emph{stimulation-induced} alpha
 enhancement, alpha power minus the unstimulated ($A=0$, no modulation) baseline, which
 removes the per-simulation offset so the resonant structure is visible. For the
-alpha resonance of Figs.~\ref{fig:lanmm_res},~\ref{fig:lanmm_map} we instead drive
-the deep $P_1$ loop directly and sweep its input against $\Delta f$, reading the
-lock-in (Eq.~\eqref{eq:lockin}) of $v_{P_1}$ at $\Delta f$.
+alpha resonance we instead drive the deep $P_1$ loop directly and sweep its input against
+$\Delta f$, reading the lock-in (Eq.~\eqref{eq:lockin}) of $v_{P_1}$ at $\Delta f$.
 
 \subsection{Exact next-generation mean field (NMM2 PING)}
 We test the mechanism in the exact next-generation mean field (NMM2, \S\ref{sec:nmm}),
@@ -1011,15 +1053,14 @@ synthesized by the sigmoid and absent from the input.}
 \label{fig:demod}
 \end{figure}
 
-\subsection{Near the Hopf, the demodulated envelope drives a sharp resonance}
-The resonance is quantified in Figs.~\ref{fig:res} and~\ref{fig:map}. In the
+\subsection{Near the Hopf, the demodulated beat drives a sharp resonance}
+The resonance is quantified in Fig.~\ref{fig:res}. In the
 fixed-point regime ($p>315$, a stable focus) the response is a Lorentzian centered at
 $f_0$ whose height grows monotonically as the Hopf is approached
 ($0.23\!\to\!0.43\!\to\!0.70$~mV; Fig.~\ref{fig:res}), i.e.\ gain $\propto1/\gamma$. This
 is genuine forced gain: with no drive the focus is silent at $\Omega$, so all power at
 $\Omega$ is synthesized by the demodulating nonlinearity and amplified by the recurrent
-loop. The two-dimensional map shows the same story as a ridge at $f_0$ that sharpens and
-intensifies toward the bifurcation (Fig.~\ref{fig:map}). Above the Hopf ($p<315$) the
+loop. Above the Hopf ($p<315$) the
 column free-runs at $f_0$ and the demodulated drive instead phase-locks that autonomous
 alpha within a $1{:}1$ Arnold tongue; because lock-in amplitude at $\Omega$ then conflates
 the driven response with the free-running cycle, we characterize that regime with the
@@ -1028,7 +1069,7 @@ output frequency $f_{\rm out}$ rather than the lock-in amplitude (Fig.~\ref{fig:
 \begin{figure}[t!]
 \centering
 \includegraphics[width=\textwidth]{fig_resonance.pdf}
-\caption{\textbf{The recovered envelope drives a resonance that sharpens toward the Hopf (Jansen--Rit).}
+\caption{\textbf{The demodulated beat drives a resonance that sharpens toward the Hopf (Jansen--Rit).}
 Fixed-point regime ($p>315$, stable focus): lock-in response at $\Omega$ vs.\ envelope
 frequency ($\varepsilon=0.3$~mV). \emph{(a)} The demodulated drive forces a Lorentzian
 resonance at $f_0\!\approx\!11.1$~Hz whose peak redshifts slightly as the damping grows
@@ -1094,24 +1135,18 @@ and negative.
 \centering
 \includegraphics[width=\textwidth]{fig_curvature_twotone.pdf}
 \caption{\textbf{The curvature law, the square law, and the surrogate control
-(Jansen--Rit, genuine two tones).} \emph{(a)} The measured signed (in-phase) open-loop
-response tracks $\half\Sig''(v^*)\varepsilon^2$ across the whole operating range
-(maximum deviation $0.9\%$), vanishes at the inflection $v_0$, and reverses sign across
-it---a direct verification that demodulation is the sigmoid-curvature term of
-Eq.~\eqref{eq:demod}. The mechanism is sign-agnostic: $\Sig''$ sets the sign and phase of
-the demodulated response while $|\Sig''|$ sets its gain, so the resonance picture is
-unchanged up to an overall sign in the $\Sig''>0$ lobe, which this sweep already spans.
-The sign flip is a falsifiable prediction (\S\ref{sec:predictions}).
-\emph{(b)} The closed-loop response scales as $\varepsilon^2$ at small drive, measured
-log--log slope $1.99$ against the predicted $2$.
-\emph{(c)} Replacing the field-receiving sigmoid by its tangent at $v^*$ collapses the
-response $634\times$ ($1.34\!\to\!0.0021$~mV): the nonlinearity is the detector.
-\emph{(d)} Surrogate control. The ratio of the two-tone to the matched AM response at
-$\Omega$ approaches $1$ as $\varepsilon\!\to\!0$ ($1.0000$ at $0.02$~mV, $0.988$ at
-$1$~mV), confirming that the two waveforms agree on the leading $\Omega$ component in the
-perturbative regime. This licenses the AM surrogate for the dense sweeps of
-Figs.~\ref{fig:res} and~\ref{fig:jcurve}, which measure only that component; it does
-\emph{not} license it for DC or harmonic claims (\S\ref{sec:coupling}).}
+(Jansen--Rit, genuine two tones).} \emph{(a)} The signed open-loop response tracks
+$\half\Sig''(v^*)\varepsilon^2$ across the operating range (maximum deviation $0.9\%$),
+vanishing at the inflection $v_0$ and reversing sign across it. The mechanism is
+sign-agnostic: $\Sig''$ sets sign and phase while $|\Sig''|$ sets gain, so the resonance
+picture is unchanged up to an overall sign in the $\Sig''>0$ lobe, which this sweep spans.
+The sign flip is itself a prediction (\S\ref{sec:predictions}). \emph{(b)} The closed-loop
+response scales as $\varepsilon^2$, measured slope $1.99$. \emph{(c)} Replacing the
+field-receiving sigmoid by its tangent collapses the response $634\times$. \emph{(d)}
+Surrogate control: the two-tone/AM ratio at $\Omega$ approaches $1$ as
+$\varepsilon\!\to\!0$ ($1.0000$ at $0.02$~mV, $0.988$ at $1$~mV), licensing the AM
+surrogate for the dense sweeps of Fig.~\ref{fig:jcurve}, which read only that component,
+and for nothing else.}
 \label{fig:opp}
 \end{figure}
 
@@ -1135,7 +1170,7 @@ same envelope resonance, now carrying the column's intrinsic rhythms.
 
 Driving the deep $P_1$ (alpha) loop directly and sweeping the envelope frequency
 $\Delta f$ reproduces the single-column picture in the laminar model
-(Figs.~\ref{fig:lanmm_res},~\ref{fig:lanmm_map}). With the $P_1$ input as the
+. With the $P_1$ input as the
 bifurcation parameter, the stable-focus side (high drive) gives a forced alpha
 resonance at $\sim$10~Hz that grows as the alpha Hopf is approached, while the
 limit-cycle side (low drive) entrains the autonomous alpha---the same
@@ -1154,7 +1189,7 @@ Sweeping the field amplitude $\varepsilon$ and beat frequency $\Delta f$ at a fi
 carrier produces \emph{nonlinear Arnold tongues}: alpha power in $P_1$ is maximal
 when $\Delta f$ matches the deep alpha ($\sim$10~Hz) and grows with $\varepsilon$
 (Figs.~\ref{fig:lanmm_p2}a,b and~\ref{fig:lanmm_p1}a,b)---envelope resonance and
-phase locking of the slow generator to the recovered envelope, exactly as in the
+phase locking of the slow generator to the recovered beat component, exactly as in the
 JR resonance curves but now in a biophysical two-band column.
 
 The carrier dependence reproduces, and physically grounds, the two coupling
@@ -1186,21 +1221,16 @@ choice matter, consistent with frequency-tagging/intermodulation paradigms
 \centering
 \includegraphics[width=0.86\textwidth]{fig_lanmm_field_p2_twotone.pdf}
 \caption{\textbf{LaNMM Arnold tongues: two-tone TI field on the superficial $P_2$ (gamma)
-loop.} The field is a genuine two-tone waveform entering the $P_2$ sigmoid argument as a
-membrane polarization $\varepsilon$ (mV), with all external drives held flat. Colour shows
-the \emph{stimulation-induced} alpha-band ($8$--$12$~Hz) enhancement: power minus the
-unstimulated $\varepsilon=0$ baseline, which removes the per-simulation offset and isolates
-what the drive adds. \emph{(a,b)} $P_1$ and $P_2$ enhancement vs.\ field amplitude
-$\varepsilon$ and beat frequency $\Delta f$ (carrier $40$~Hz), peaking at the $P_1$ alpha
-($10.0$~Hz, dashed line). White contour in \emph{(a)}: the $1{:}1$ frequency-captured set,
-$|f_{\rm out}-\Delta f|<0.3$~Hz (Appendix~\ref{sec:vocab}), which is what defines the
-tongue. Band power alone cannot separate capture from a forced response, since both place
-power at $\Delta f$; the captured set is therefore computed from the dominant output
-frequency and drawn explicitly. Its width grows monotonically with drive, from $0.5$~Hz at
-$\varepsilon\!\to\!0$ (the tolerance-limited tip) to $2.75$~Hz at $\varepsilon=3$~mV.
-\emph{(c,d)} Enhancement vs.\ carrier frequency and $\Delta f$ at $\varepsilon=1.5$~mV:
-$P_1$ demodulation requires \emph{both} a carrier near the $P_2$ gamma ($\approx$$44$~Hz)
-and $\Delta f\approx$$10$~Hz ($P_1$ alpha)---a double resonance.}
+loop.} The field enters the $P_2$ sigmoid argument as a membrane polarization $\varepsilon$
+(mV) with all external drives flat. Color shows alpha-band ($8$--$12$~Hz) power minus the
+unstimulated $\varepsilon=0$ baseline. \emph{(a,b)} $P_1$ and $P_2$ enhancement vs.\
+$\varepsilon$ and $\Delta f$ (carrier $40$~Hz), peaking at the $P_1$ alpha ($10.0$~Hz,
+dashed). The white contour in \emph{(a)} is the $1{:}1$ captured set
+(Appendix~\ref{sec:vocab}), drawn explicitly because band power alone cannot separate
+capture from a forced response; its width grows from $0.5$~Hz at $\varepsilon\!\to\!0$ to
+$2.75$~Hz at $3$~mV. \emph{(c,d)} Enhancement vs.\ carrier and $\Delta f$ at
+$\varepsilon=1.5$~mV: $P_1$ demodulation needs \emph{both} a carrier near the $P_2$ gamma
+($\approx$$44$~Hz) and $\Delta f$ near the $P_1$ alpha---a double resonance.}
 \label{fig:lanmm_p2}
 \end{figure}
 
@@ -1328,7 +1358,7 @@ field of an all-to-all network of quadratic integrate-and-fire (QIF) neurons wit
 Lorentzian-distributed excitabilities
 \cite{montbrio2015,ruffini2025rosetta,clusella2023}. Integrating that spiking network
 ($N=8000$ neurons per population, parameters identical to the PING mean field; Methods)
-shows TI bunching spike \emph{times} into the recovered envelope without changing the mean
+shows TI bunching spike \emph{times} into the beat cycle with only a small change in the mean
 rate, on both sides of the gamma Hopf (Fig.~\ref{fig:qif_raster}). Below the Hopf (forced)
 the field-free network fires asynchronously at a flat rate; with TI on, spikes condense
 into envelope-locked bands (Fig.~\ref{fig:qif_raster}a,b). Above the Hopf (oscillatory) the
@@ -1355,43 +1385,28 @@ that TI alters spike timing far more than firing rate \cite{vieira2024}.
 \begin{figure}[t!]
 \centering
 \includegraphics[width=\textwidth]{fig_qif_raster_twotone.pdf}
-\caption{\textbf{QIF spiking network (microscale of the NMM2 PING \emph{gamma}
-generator): TI realigns spike timing, not mean rate.} $N=8000$ excitatory and inhibitory
-quadratic integrate-and-fire neurons whose exact mean field is the NMM2 PING circuit
-(Eq.~\eqref{eq:nmm2-ping}). This circuit's intrinsic rhythm is \emph{gamma}
-($\sim$53~Hz), so, as in the alpha figures but one band up, the TI beat $\Delta f$ is
-set in the gamma range (here much larger than the $\Delta f\!\sim\!11$~Hz of the
-Jansen--Rit alpha column; carrier $f_c=300$~Hz). Black ticks are $E$ spikes (400 of
-8000, a representative sample), blue the population rate $r_E(t)$, red the TI envelope; the boxed value
-is the $\Delta f$ modulation depth $A_\Omega/\langle r_E\rangle$ of the rate (near zero off, large on). The bifurcation parameter is the common
-background drive $\bar\eta$ (gamma Hopf at $\bar\eta_{\rm Hopf}\!\approx\!1.1$).
-\emph{(a)}~Forced ($\bar\eta=0.85$, just below the Hopf---a damped gamma resonator), TI
-off: asynchronous firing, flat rate. \emph{(b)}~Forced, TI on, driven \emph{near} the
-gamma resonance ($\Delta f=55$~Hz): spikes bunch into the envelope (modulation depth $0.79$). \emph{(c)}~Oscillatory
-($\bar\eta=1.5$, above the Hopf---an autonomous $\sim$53~Hz gamma cycle), TI off:
-free-running gamma, no $\Delta f$ lock-in. \emph{(d)}~Oscillatory, TI on, with the beat set
-\emph{below} the autonomous gamma (beat $\Delta f=42$~Hz, a detuning of $\approx$11~Hz
-from $f_0\!\approx\!53$~Hz): the TI beat \emph{gates} the gamma---the population rate
-gains a $\Delta f$-locked component (modulation depth $0.17$) while the intrinsic $\sim$53~Hz
-gamma persists. This is forced cross-frequency \emph{gating} (PAC), \emph{not} frequency
-entrainment: the $\sim$11~Hz detuning places the beat outside the $1{:}1$ Arnold tongue
-(contrast the genuine frequency locking of Fig.~\ref{fig:entrain}), so the gamma is
-amplitude-modulated at $\Delta f$ rather than pulled to it---demodulation surviving above
-the Hopf as envelope-to-rhythm coupling. The detuning is what certifies the
-$\Delta f$-locked component as a real driven effect rather than coincidence.
-\emph{Insets} (each normalized to its own mean, so the $y$-axis reads the relative
-modulation; $x$-axis is the $\Delta f$ beat phase in cycles; TI off gray, on blue):
-\emph{(b)} the population rate folded on the beat phase (the forced response \emph{is} at
-$\Delta f$); \emph{(d)} the gamma-band \emph{amplitude} folded on the beat phase---taking
-the amplitude removes the gamma carrier, so the near-commensurate $53/42$~Hz gamma cannot
-contaminate the fold (a raw-rate fold would). Both are flat with TI off and show a clear
-$\Delta f$-locked modulation with TI on, making the envelope-locked timing direct where the
-raster alone leaves it subtle.}
+\caption{\textbf{QIF spiking network: TI realigns spike timing, not mean rate.} $N=8000$
+excitatory and inhibitory quadratic integrate-and-fire neurons whose exact mean field is the
+NMM2 PING circuit (Eq.~\eqref{eq:nmm2-ping}). The circuit's intrinsic rhythm is gamma
+($\sim$53~Hz), so the beat is set in the gamma range (carrier $f_c=300$~Hz, genuine two
+tones). Black ticks are $E$ spikes (400 of 8000), blue the population rate, red the TI
+envelope; the bifurcation parameter is the common drive $\bar\eta$ (gamma Hopf at
+$\approx$$1.1$). \emph{(a,b)} Forced ($\bar\eta=0.85$), TI off then on at
+$\Delta f=55$~Hz: asynchronous firing becomes envelope-locked bunching.
+\emph{(c,d)} Oscillatory ($\bar\eta=1.5$), TI off then on with the beat detuned to
+$42$~Hz: the free-running gamma persists but gains a $\Delta f$-locked component. Because
+the $\approx$11~Hz detuning places the beat outside the $1{:}1$ tongue, this is forced
+cross-frequency \emph{gating}, not frequency capture (contrast
+Fig.~\ref{fig:entrain}); the detuning is what certifies the locked component as a driven
+effect. \emph{Insets}, each normalized to its own mean, folded on beat phase (off gray, on
+blue): \emph{(b)} the population rate; \emph{(d)} the gamma-band \emph{amplitude}, since
+taking the amplitude removes the gamma carrier so the near-commensurate $53/42$~Hz rhythms
+cannot contaminate the fold. Both are flat with TI off.}
 \label{fig:qif_raster}
 \end{figure}
 
 \subsection{Falsifiable predictions and tests}\label{sec:predictions}
-The mechanism makes three sharp predictions, each with a clean experimental handle.
+The mechanism makes four sharp predictions, each with a clean experimental handle.
 \begin{enumerate}[leftmargin=*]
 \item \textbf{Carrier independence at fixed polarization.} Once the post-coupling
 polarization $\varepsilon=\kappa(f_c)E_0$ is matched, the envelope response no longer
@@ -1406,6 +1421,16 @@ point and \emph{reverses sign} across the inflection, vanishing at $v_0$ where t
 gain $\Sig'$ (PEIX, Eq.~\eqref{eq:peix}) peaks. \emph{Test:} shift $v^*$ with tonic
 drive, neuromodulation, or task state and read out the predicted scaling and sign
 reversal of the TI response.
+\item \textbf{Transduction class.} A weak smooth nonlinearity transduces $A^2$ and an
+envelope follower transduces $A$ (\S\ref{sec:transduction}), and the two are separable at a
+single matched target. The former gives $Y_\Omega\propto\varepsilon^2$ with a second-harmonic
+ratio vanishing as $\varepsilon\!\to\!0$; the latter gives $Y_\Omega\propto\varepsilon$ with
+the ratio pinned at $1/5$. \emph{Test:} sweep field amplitude off resonance (so that both
+lines sit on the flat part of $G$) and read the log--log slope together with
+$Y_{2\Omega}/Y_\Omega$; on resonance the network suppresses the second harmonic by
+$\sim$$3\mathcal{Q}$ and the test must be corrected by an independently measured
+$G(2\Omega)/G(\Omega)$.
+
 \item \textbf{Frequency selectivity and state-dependence.} The response is largest
 when $\Delta f$ matches a region's resonant rhythm and is amplified as $1/\gamma$ near
 a bifurcation, so manipulations that move the operating point or the distance to the
@@ -1430,6 +1455,9 @@ quantitative reanalysis of these datasets against the model is a natural next st
 \toprule
 \textbf{Prediction (model basis)} & \textbf{Existing evidence} & \textbf{Sharp test} \\
 \midrule
+Transduction class: $Y_\Omega\propto\varepsilon^2$ and vanishing $Y_{2\Omega}/Y_\Omega$
+(square law) vs.\ $\propto\varepsilon$ and $1/5$ (envelope following) & --- (a sharp new
+prediction; untested) & Amplitude sweep off resonance; transfer-corrected harmonic ratio \\
 Timing, not rate: TI amplifies the envelope-locked AC, not the DC mean rate
 ($G(\omega_0)\!\gg\!G(0)$) & \emph{Supported in vivo}: TI alters spike timing but not
 firing rate, primate \cite{vieira2024} & Lock-in of spike timing at $\Delta f$ vs.\ the
@@ -1455,294 +1483,193 @@ work.}\label{tab:predictions}
 \end{table}
 
 \section{Discussion}\label{sec:discussion}
-We have given a mesoscopic, population-level account of TI demodulation in which
-the firing-rate sigmoid is a square-law detector and proximity to a Hopf
-bifurcation turns the recovered envelope into a sharp, frequency-selective
-response. This complements rather than competes with the single-neuron
-ion-channel rectification account \cite{mirzakhalili2020}: both are
-rectify-then-filter demodulation, but ours needs no specific channel, lives at the
-scale of the EEG-generating population, and inherits the brain's own resonances, so
-a region's tuning is set by its intrinsic dynamics just as a radio is tuned by its
-tank. Because each mass is $\sim$$10^4$ neurons, demodulation is a \emph{population}
-read-out by the sigmoid---a single-neuron nonlinearity coarse-grained over the
-ensemble---while the amplification (the near-Hopf resonance) is the emergent
-\emph{network} property; the single cell, beyond contributing to the sigmoid's
-shape, need only supply a fast nonlinearity that samples the carrier.
+We have given a mesoscopic account of TI in which the firing-rate nonlinearity is a
+square-law detector and proximity to a Hopf bifurcation turns the recovered beat component
+into a sharp, frequency-selective response. This complements rather than competes with the
+single-neuron ion-channel account \cite{mirzakhalili2020}: both are rectify-then-filter
+demodulation, but ours is agnostic about which fast cellular nonlinearity supplies the
+effective curvature, and it inherits the brain's own resonances, so a region's tuning is
+set by its intrinsic dynamics just as a radio is tuned by its tank. Detection is a
+population read-out of a coarse-grained single-cell nonlinearity; the amplification is the
+emergent network property. Beyond contributing to the transfer's shape, the single cell
+need only supply a fast nonlinearity that samples the carrier.
 
-This factorization identifies where the carrier-sampling nonlinearity may live. The TI literature
-points to three best-supported, non-exclusive loci. (i)~\emph{Axonal Na$^+$ channels}
-at nodes and the AIS: fast voltage-gated Na$^+$ rectifies because activation outpaces
-inactivation \cite{mirzakhalili2020,wang2023}, Na$^+$-inactivation conduction block
-passes the slow envelope while removing the carrier
-\cite{mirzakhalili2020,opancar2025}, and persistent Na$^+$---a fast subthreshold
-rectifier tied to axonal resonance---could even set an optimal $\Delta f$.
-(ii)~\emph{Presynaptic terminals}, which polarize $\sim$2--10$\times$ more than somata
-\cite{rahman2013,aberra2023,chakraborty2018} and convert depolarization into
-transmitter release through the steeply nonlinear Ca$^{2+}$--release relation. Sensitivity
-is not speed, however. For an isopotential compartment $\tau_m=R_mC_m$ with both quantities
-taken per unit area, so the membrane time constant does not shrink with compartment size:
-a small bouton has a small capacitance and a correspondingly large input resistance. A
-terminal therefore tracks a kHz carrier no better than a soma does, and the short time
-constants available in axons come from high-conductance nodal and myelinated membrane
-rather than from small size. Terminals are thus the \emph{sensitive} locus, not the fast
-one, and the carrier sampling the factorization requires is supplied by~(i).
-(iii)~\emph{Threshold spiking}, where near threshold the spike probability is a smooth
-nonlinearity and a weak bias is rectified through stochastic resonance
-\cite{liu2018,reato2010}. In model cortical neurons TI produces block, onset and
-phasic responses depending on geometry \cite{wang2023}, and in vivo it alters spike
-timing rather than rate in the primate brain \cite{vieira2024}---consistent with the
-timing-not-rate signature of our resonance (\S\ref{sec:timing}). The mesoscopic
-mechanism is agnostic to which of these does the sampling.
-
-The same fast-element logic explains TMS, and underscores that high-frequency drive
-is not somatic. TMS pulses carry kHz spectral content (peak $\sim$3.9~kHz), which a
-$\tau_m\!\approx\!16$~ms soma attenuates by $\sim$50~dB; TMS---like TI---therefore
-cannot be driving the soma at kHz, and works instead through fast excitable elements
-whose chronaxie ($\sim$0.15--0.25~ms) sets an effective corner near $\sim$800~Hz
-\cite{barker1991,peterchev2013}. That the bare unmodulated kHz carrier is itself
-weakly effective on network oscillations \cite{esmaeilpour2020} is the complement of
-the same fact: the carrier matters only where a fast nonlinearity rectifies it.
-
-The amplification half is not specific to TI. A conventional tACS field oscillates in
-the envelope band directly, so it needs no demodulation---but it drives the same
-near-Hopf resonator and should inherit the same network gain: a tACS rhythm at $\Delta
-f$ near a region's natural frequency is resonantly boosted as the network approaches
-criticality ($\propto1/\gamma$) and as its coupling $J$ grows, the Arnold-tongue picture
-of weak-field stimulation \cite{clusella2023}. We confirm this in the JR column
-(Fig.~\ref{fig:tacs}): a direct $\Delta f$ drive, swept in coupling toward the alpha Hopf
-at fixed operating point, reproduces the same $1/\gamma$ growth and resonance sharpening
-as the demodulated TI drive, but linear in the field rather than square-law. TI thus
-differs from tACS only by a sigmoid demodulation front-end that turns a kHz carrier's
-envelope into an effective in-band drive; downstream, both share the criticality- and
-coupling-controlled amplifier, so---matched for effective in-band drive---TI and tACS
-should entrain alike and show the same state- and coupling-dependence.
-
-The mechanism's falsifiable predictions (carrier independence at fixed
-polarization, the PEIX-controlled sign flip, and frequency-selective
-state-dependence) are consolidated with their tests in \S\ref{sec:predictions};
-they could be read out in the same models already applied to Alzheimer's disease and
-psychedelics \cite{ruffini2025cfc}. The two-band LaNMM
-results (\S\ref{sec:lanmm-results}) bear this out: its JR (alpha) and PING (gamma)
-subcircuits give the same sigmoid demodulation two native resonances, with the
-beat frequency selecting the band; this embeds TI demodulation in the HAM read-out
-hierarchy \cite{ruffini2025ham}, where envelope extraction is the inverse of the
-amplitude-modulation encoding used for prediction-error evaluation. Concretely, the
-most effective beat tracks the target's own rhythm---$\Delta f\!\sim\!10$~Hz to engage
-an alpha generator, $\Delta f\!\sim\!40$--$55$~Hz for a gamma (PING) circuit, as in the
-NMM2/QIF figures---so TI's optimal $\Delta f$ is a testable function of regional spectral
-anatomy rather than a single universal value, and gamma-band targets call for
-correspondingly higher beat frequencies.
-
-\textbf{Amplification is critical slowing, of a mean-field kind.} The network effect at
-the heart of this work, gain $\propto1/\gamma$ as the damping $\gamma$ (the leading
-Jacobian eigenvalue) vanishes at the Hopf, is the dynamical signature of \emph{critical
-slowing}: a susceptibility that diverges as a system approaches a bifurcation. Whether
-that warrants the word ``criticality'' depends on the model. In the heuristic Jansen--Rit
-and LaNMM columns the Hopf is a bifurcation of a finite-dimensional, fitted ODE, a
-near-bifurcation statement rather than a phase transition. In the exact next-generation
-mean field (NMM2/MPR) it is sharper: the reduction from the spiking QIF population is
-exact in the thermodynamic limit, and the dynamical variables $(r,v)$ are genuine
-\emph{order parameters}, conformally related to the Kuramoto--Daido order parameter
-through the Ott--Antonsen ansatz \cite{ott2008,montbrio2015}, so the Hopf is a true
-macroscopic transition of the underlying many-body system and the $1/\gamma$ gain is its
-diverging susceptibility. One qualifier keeps this honest. Because the reduction assumes
-all-to-all coupling, the critical point is \emph{mean-field}: it delivers temporal
-critical slowing but no diverging \emph{spatial} correlation length, so the column
-realizes the temporal-susceptibility face of criticality and not the scale-free spatial
-one. With the inter-neuron coupling $J$ as the control parameter
-(Fig.~\ref{fig:nmm2_jcurve}), TI drives a population toward a genuine, if mean-field,
-critical point and reads out its susceptibility, and its efficacy is largest where the
-network sits closest to that transition.
-
-\textbf{Prior work already places the operative nonlinearity in the network.}
-Large-scale simulations attribute tACS
-entrainment to the recurrent excitatory coupling of pyramidal cells and recover an Arnold
-tongue from it \cite{ali2013}; the dynamical transfer function of an E--I network,
-computed for both rate and spiking models, shows a resonance whose position depends on
-recurrent coupling \cite{ledoux2011}; and a cortical model driven by an amplitude-modulated
-high-frequency waveform phase-locks to the envelope through the same target engagement as
-low-frequency tACS \cite{negahbani2018}. The broader case for treating stimulation as
-interacting with ongoing dynamics rather than imposing on passive tissue has been made
-explicitly \cite{krause2023}. What we add is the specific pair of factors: $\Sig''$ as the
-square-law detector, with the demodulated amplitude in closed form, and $1/\gamma$ as the
-amplification, with its size tied to a measurable relaxation time.
+\textbf{Where the carrier-sampling nonlinearity may live.} The literature points to three
+non-exclusive loci. (i)~\emph{Axonal Na$^+$ channels} at nodes and the AIS, where fast
+voltage-gated Na$^+$ rectifies because activation outpaces inactivation
+\cite{mirzakhalili2020,wang2023} and inactivation-mediated block passes the slow envelope
+while removing the carrier \cite{opancar2025}. (ii)~\emph{Presynaptic terminals}, which
+polarize $\sim$2--10$\times$ more than somata \cite{rahman2013,aberra2023,chakraborty2018}
+and convert depolarization into release through a steeply nonlinear Ca$^{2+}$ relation.
+Sensitivity is not speed, however: for an isopotential compartment $\tau_m=R_mC_m$ with
+both quantities per unit area, so the time constant does not shrink with size---a small
+bouton has small capacitance and correspondingly large input resistance. A terminal
+therefore tracks a kHz carrier no better than a soma, and the short axonal time constants
+come from high-conductance nodal membrane rather than from small size. Terminals are the
+\emph{sensitive} locus, not the fast one, and the carrier sampling is supplied
+by~(i). (iii)~\emph{Threshold spiking}, where a weak bias near threshold is rectified
+through stochastic resonance \cite{liu2018,reato2010}. The same logic applies to TMS, whose
+pulses carry kHz content that a $16$~ms soma attenuates by $\sim$50~dB, so it too must act
+through fast elements whose chronaxie sets a corner near $\sim$800~Hz
+\cite{barker1991,peterchev2013}.
 
 \textbf{The conventional TI dose map is an assumption about physiology, not a consequence
-of field physics.} The envelope is a mathematical property of a high-frequency waveform.
-It is not itself a low-frequency electric field, and nothing in Maxwell's equations
-delivers it to a neuron; biology must construct it through a nonlinear transduction.
-Targeting work since \cite{grossman2017} has taken the envelope-modulation amplitude,
-$\mathcal{M}[A]=2\min(\varepsilon_1,\varepsilon_2)$, as the spatial dose. Stated
-carefully, that practice assumes $R(\mathbf{x})=\Phi(\mathcal{M}[A(\mathbf{x},t)])$ for
-some monotonic $\Phi$---that the response depends on the envelope excursion \emph{alone},
-and not separately on the carrier baseline, the larger carrier, the operating point or the
-orientation. A linear envelope follower is the simplest realization of that assumption but
-not the only one, and the assumption is substantive rather than automatic.
-
-A weak, smooth nonlinearity cannot satisfy it. The carrier average
+of field physics.} The envelope is a mathematical property of a high-frequency waveform. It
+is not itself a low-frequency field, and nothing in Maxwell's equations delivers it to a
+neuron; biology must construct it. Targeting work since \cite{grossman2017} takes the
+envelope-modulation amplitude $\mathcal{M}[A]=2\min(\varepsilon_1,\varepsilon_2)$ as the
+spatial dose, which assumes $R(\mathbf{x})=\Phi(\mathcal{M}[A])$ for monotonic $\Phi$---that
+the response depends on the envelope excursion \emph{alone}, and not separately on the
+carrier baseline, the operating point or the orientation. That assumption is substantive,
+and a weak smooth nonlinearity cannot satisfy it: the carrier average
 Eq.~\eqref{eq:cycavg} is invariant under $A\to-A$, so its expansion contains only even
-powers and there is no term proportional to $A$ at all: $F(A)-F(0)\sim A^2$ for any smooth
-$g$. The mechanism studied here is therefore not an exotic alternative to envelope
-following---it is the generic perturbative answer, and envelope following is the special
-case that requires justification.
-
-Recovering $A$ itself takes something effectively rectifying or nonanalytic, the
-biological analogue of the radio's diode, together with a detector timescale satisfying
-$\omega_c^{-1}\ll\tau\ll\Omega^{-1}$ so that it averages the carrier while still following
-the beat. A half-wave rectifier delivers $A/\pi$ and a full-wave rectifier $2A/\pi$; a
-thresholded rectifier $g(x)=[x-\Theta]_+$ gives
-$F(A)=\pi^{-1}[\sqrt{A^2-\Theta^2}-\Theta\arccos(\Theta/A)]$ for $A>\Theta$, not globally
-linear but close to it over a range. Sharply asymmetric channel activation, spike threshold
-on depolarizing phases, and threshold crossing in a noisy population are candidate
-realizations. But the perturbative argument bites here too: any \emph{smoothed} threshold
-returns to $A^2$ asymptotically as the field weakens. Numerically, a softened threshold has
-a log--log slope of exactly $2.00$ for $A\ll\Theta$, drifting toward $1$ only at
-amplitudes comparable to the threshold itself. Envelope following therefore requires
-operation in a finite, non-perturbative region near a sharp threshold, not in the
-arbitrarily weak-field limit where human TI sits.
-
-One further caution. An apparently linear envelope response can be produced by a
-square-law detector. Writing $A(t)=A_0+\delta A(t)$ with $|\delta A|\ll A_0$, a detector
-$F=c_2A^2$ gives $F\simeq c_2A_0^2+2c_2A_0\,\delta A$, linear in the envelope
-\emph{fluctuation} but with a gain proportional to the local baseline $A_0$. It is locally
-linear without being envelope-only, and the $A_0$ weighting is exactly the spatial
-reweighting of Eq.~\eqref{eq:reweight} seen again from the time domain.
+powers and no term proportional to $A$ exists. Square-law transduction is therefore the
+generic perturbative answer and envelope following is the special case needing
+justification, since recovering $A$ requires rectification (\S\ref{sec:transduction}) and
+any \emph{smoothed} threshold reverts to $A^2$ as the field weakens.
 
 We doubt there is a single universal TI mechanism. Near threshold a sharp channel or spike
 nonlinearity may act as a rectifier and approximate envelope following; well below it, the
 leading response of any smooth cellular nonlinearity is square-law mixing, filtered and
-amplified by the network as described here. The empirical picture is consistent with that
-split rather than with a clean, efficient envelope detector: primate recordings report
-incomplete demodulation, a timing rather than rate effect, and a substantially weaker
-response to TI than to tACS \cite{vieira2024}, and peripheral-nerve work argues that some
-TI responses reflect carrier integration or kHz rectification rather than envelope
-extraction \cite{peripheral2023}. What settles it is not whether TI works but which
-quantity it transduces, and \S\ref{sec:transduction} gives the measurement: at a matched
-target the envelope-locked response scales as $\varepsilon$ for an envelope follower and
-as $\varepsilon^2$ for a weak square-law detector, with a transfer-corrected harmonic
-spectrum to corroborate the assignment.
+amplified by the network as described here. The empirical picture fits that split rather
+than a clean envelope detector: primate recordings report incomplete demodulation, a timing
+rather than rate effect, and a much weaker response to TI than to tACS \cite{vieira2024},
+and peripheral-nerve work argues that some TI responses reflect carrier integration rather
+than envelope extraction \cite{peripheral2023}. What settles it is not whether TI works but
+which quantity it transduces, and \S\ref{sec:transduction} gives the measurement.
 
-\textbf{The amplitude budget does not close at human field strengths.} A transcranial field
-must clear two hurdles before it can produce a response at $\Delta f$, and they need
-different answers.
+\textbf{The amplifier is not specific to TI.} A tACS field oscillates in the envelope band
+directly and needs no demodulation, but it drives the same near-Hopf resonator. Sweeping
+the coupling toward the alpha Hopf at \emph{pinned} operating point, a direct $\Delta f$
+drive reproduces the same $1/\gamma$ growth and resonance sharpening as the demodulated TI
+drive, linear in the field rather than square-law (Fig.~\ref{fig:tacs}). Prior work has
+shown that recurrent coupling shapes tACS entrainment and sets the position of a network
+resonance \cite{ali2013,ledoux2011}; what the pinned sweep adds is the isolation of the
+gain itself, with detection held fixed so that only $\gamma$ varies. TI then differs from
+tACS only by a demodulating front end that converts a kHz carrier's envelope into an
+effective in-band drive; downstream, both share the criticality- and coupling-controlled
+amplifier, so---matched for effective in-band drive---they should entrain alike.
 
-The first hurdle is that weak fields barely move a membrane. Measured coupling is
-$0.12$--$0.21$~mV of somatic polarization per V/m in hippocampus
-\cite{bikson2004,deans2007}, and up to $\sim$$0.5$~mV per V/m for cortical L5/6 pyramidal
-cells \cite{radman2009}. Human cortex sees about $0.8$~V/m at 2~mA
-\cite{huang2017,huang2017corr}, and most of the applied current is shunted through scalp
-and skull before it arrives \cite{voroslakos2018}. So the field shifts a soma by a few
-tenths of a millivolt, against the $\sim$$23$~mV that separates rest from threshold
-\cite{koga2010}. No cell fires because of the field alone. This is as true of tACS as of TI.
+\textbf{Amplification is critical slowing, of a mean-field kind.} Gain $\propto1/\gamma$ as
+the damping vanishes at the Hopf is the dynamical signature of \emph{critical slowing}: a
+susceptibility that diverges as a system approaches a bifurcation. Whether that warrants
+the word ``criticality'' depends on the model. In the heuristic Jansen--Rit and LaNMM
+columns the Hopf is a bifurcation of a finite-dimensional, fitted ODE, a near-bifurcation
+statement rather than a phase transition. In the exact next-generation mean field it is
+sharper: the reduction from the spiking QIF population is exact in the thermodynamic limit
+and $(r,v)$ are genuine \emph{order parameters}, conformally related to the
+Kuramoto--Daido order parameter through the Ott--Antonsen ansatz
+\cite{ott2008,montbrio2015}, so the Hopf is a true macroscopic transition and the
+$1/\gamma$ gain its diverging susceptibility. One qualifier keeps this honest. Because the
+reduction assumes all-to-all coupling the critical point is \emph{mean-field}: it delivers
+temporal critical slowing but no diverging \emph{spatial} correlation length, so the column
+realizes the temporal-susceptibility face of criticality and not the scale-free spatial
+one. With $J$ as the control parameter (Fig.~\ref{fig:nmm2_jcurve}), TI drives a population
+toward a genuine, if mean-field, critical point and reads out its susceptibility.
 
-The second hurdle belongs to TI alone. Its field carries no power at $\Delta f$, so the
-response there has to be manufactured, and that is what $\Sig''$ does.
+\textbf{Prior work already places the operative nonlinearity in the network.} Recurrent
+excitatory coupling accounts for tACS entrainment and yields an Arnold tongue
+\cite{ali2013}; the dynamical transfer function of an E--I network shows a resonance whose
+position depends on recurrent coupling \cite{ledoux2011}; an amplitude-modulated
+high-frequency drive phase-locks a cortical model to its envelope through the same target
+engagement as low-frequency tACS \cite{negahbani2018}; and comparing neuron models directly,
+integrate-and-fire membranes fail to reproduce observed TI behavior while
+Hodgkin--Huxley ones succeed \cite{plovie2025}. The general case for stimulation as
+interaction with ongoing dynamics has been made explicitly \cite{krause2023}. What we add
+is the pair of factors---$\Sig''$ as the detector in closed form, $1/\gamma$ as the
+amplification tied to a measurable relaxation time---and, downstream of both, that the
+transduced quantity is $A^2$ rather than $A$, which this work does not distinguish.
 
-The two answers do not substitute for each other. The resonance clears the first hurdle: a
-population near its own bifurcation responds to a weak push far more strongly than an
-isolated cell. It cannot clear the second, because it amplifies TI and tACS alike and
-cancels when the two are compared.
+\textbf{The amplitude budget does not close at human field strengths.} Two hurdles stand
+between a transcranial field and a response at $\Delta f$, and they need different answers.
+The first is that weak fields barely move a membrane: measured coupling is
+$0.12$--$0.21$~mV per V/m in hippocampus \cite{bikson2004,deans2007} and up to
+$\sim$$0.5$~mV per V/m for cortical L5/6 pyramidal cells \cite{radman2009}, human cortex
+sees about $0.8$~V/m at 2~mA \cite{huang2017,huang2017corr}, and most applied current is
+shunted through scalp and skull \cite{voroslakos2018}. The field shifts a soma by a few
+tenths of a millivolt against the $\sim$$23$~mV separating rest from threshold
+\cite{koga2010}. This is as true of tACS as of TI. The second hurdle belongs to TI alone:
+its field carries no power at $\Delta f$, so the response there must be manufactured, and
+that is what $\Sig''$ does. The two answers do not substitute for each other. Resonance
+clears the first---a population near its own bifurcation responds to a weak push far more
+strongly than an isolated cell---but not the second, because it amplifies TI and tACS alike
+and cancels when the two are compared.
 
-The resonance buys a factor of order ten. Writing the reverberation time of the weakly
-damped focus as $\tau=1/\gamma$, the gain at resonance relative to the same circuit's
-response to a steady input is $\mathcal{Q}=\omega_0/2\gamma=\pi f_0\tau$: $\pi$ times the number of
-cycles the ringing survives. Cortical population activity in vivo relaxes over a few hundred
-milliseconds \cite{wilting2018}, which at $f_0=10$~Hz gives $\mathcal{Q}$ of order $10$. That measured
-timescale is wideband rather than alpha-specific, so it sets the order of magnitude and not
-the value. Gain also costs bandwidth: the resonance is $1/(\pi\tau)$ wide, about $1$~Hz, so
-a $\Delta f$ fixed at a group-mean alpha will drift outside it during a session.
-
-At equal field strength, TI is far weaker than tACS. A tACS field oscillating at $\Delta f$
-drives the population directly. TI must first manufacture its $\Delta f$ signal out of a kHz
-carrier, and that conversion is inefficient. With per-carrier polarizations
-$\varepsilon_{1,2}$ the demodulated drive is $\half\Sig''\varepsilon_1\varepsilon_2$,
-against $2\Sig'\varepsilon$ for tACS at the same peak polarization. Their ratio,
-$\eta=\Sig''\varepsilon/4\Sig'$, is proportional to $\varepsilon$: a square-law detector
-gets \emph{less} efficient as the signal gets weaker. Formally $\eta$ reaches unity at
-$\varepsilon\approx7$~mV, but that is the same order as the distance to threshold and lies
-outside the range where the expansion itself holds, so parity with tACS is not reachable by
-this route rather than merely expensive. At $1$~V/m with a
-$1$~kHz carrier, TI comes out $\sim$$300\times$ weaker than tACS if the carrier reaches a
-fast nodal compartment, and $\sim$$10^6\times$ weaker if it reaches only the soma. The
-resonance does not make this back, because it multiplies both equally.
-
-What TI buys for that price is targeting: a field applied directly at $\Delta f$ cannot be
-steered to a deep structure, whereas two kHz beams can.
+The resonance buys a factor of order ten. With $\tau=1/\gamma$ the reverberation time, the
+gain at resonance relative to the same circuit's response to a steady input is
+$\mathcal{Q}=\pi f_0\tau$. Cortical population activity relaxes over a few hundred
+milliseconds \cite{wilting2018}, giving $\mathcal{Q}$ of order $10$ at $f_0=10$~Hz---an
+order of magnitude, not a value, since that timescale is wideband rather than
+alpha-specific. Gain also costs bandwidth: the resonance is $1/(\pi\tau)$ wide, about
+$1$~Hz, so a $\Delta f$ fixed at a group-mean alpha will drift outside it during a session.
+At equal field strength TI is far weaker than tACS. With per-carrier polarizations
+$\varepsilon_{1,2}$ the demodulated drive is
+$\half\Sig''\varepsilon_1\varepsilon_2$ against $2\Sig'\varepsilon$ for tACS at the same
+peak polarization, a ratio $\eta=\Sig''\varepsilon/4\Sig'$ proportional to
+$\varepsilon$: a square-law detector gets \emph{less} efficient as the signal weakens.
+Formally $\eta$ reaches unity near $\varepsilon\approx7$~mV, but that is the order of the
+distance to threshold and lies outside the expansion's validity, so parity is not reachable
+by this route rather than merely expensive. At $1$~V/m with a $1$~kHz carrier TI comes out
+$\sim$$300\times$ weaker than tACS if the carrier reaches a fast nodal compartment, and
+$\sim$$10^6\times$ weaker if it reaches only the soma. What TI buys for that price is
+targeting: a field applied directly at $\Delta f$ cannot be steered to a deep structure,
+whereas two kHz beams can.
 
 The same nonlinearity explains why TI works in rodents and disappoints in humans. A mouse
-brain sees $\sim$$383$~V/m from a TI montage, while optimized human montages reach
-$0.24$--$0.57$~V/m at depth \cite{rampersad2019}, a field ratio of order $10^3$. A nonlinear
-detector amplifies that disparity rather than preserving it, but not by the full square. At
-mouse field strengths the per-carrier polarization arriving at the detector is
-$\varepsilon\!\sim\!18$~mV, roughly $80\%$ of the way from rest to threshold, so the sigmoid
-saturates and the small-signal expansion \eqref{eq:demod} no longer holds. Evaluating the
-full sigmoid rather than its quadratic term gives a drive ratio of order $10^4$, where
-extrapolating the square law would predict $10^6$. The rodent experiment is therefore not
-the human experiment scaled down: the mouse is driven into saturation, while the human, at
+brain sees $\sim$$383$~V/m from a TI montage while optimized human montages reach
+$0.24$--$0.57$~V/m at depth \cite{rampersad2019}, a field ratio of order $10^3$. A
+nonlinear detector amplifies that disparity, but not by the full square: at mouse field
+strengths the polarization reaching the detector is $\varepsilon\!\sim\!18$~mV, roughly
+$80\%$ of the way to threshold, so the transfer saturates and the small-signal expansion
+fails. Evaluating the full sigmoid gives a drive ratio of order $10^4$ where extrapolating
+the square law would predict $10^6$. The rodent experiment is therefore not the human
+experiment scaled down: the mouse is driven into saturation while the human, at
 $\varepsilon\!\sim\!0.02$~mV, sits deep in the perturbative regime where the quadratic
 penalty is worst. A network model finding that TI needs $\sim$$100\times$ the tACS
-amplitude \cite{karimi2024} is consistent with a nonlinear detector operating there.
+amplitude \cite{karimi2024} is consistent with a nonlinear detector operating there. What
+survives is the mechanism, not a solution to the dose problem---and it names the three
+quantities worth improving: the carrier's access to a fast compartment, the operating point
+through $\Sig''$, and proximity to the bifurcation through $\mathcal{Q}$.
 
-What survives is the mechanism, not a solution to the dose problem. It explains TI's
-phenomenology and the rodent-to-human collapse, and names the three quantities worth
-improving: the carrier's access to a fast compartment, the operating point through
-$\Sig''$, and proximity to the bifurcation through $\mathcal{Q}$.
-
-Several limitations should be kept in view. The field enters the population sigmoid
-directly; we treat the field-to-nonlinearity coupling $\kappa(f_c)$
-phenomenologically (Eq.~\eqref{eq:bridge}) rather than modeling channel kinetics,
-and $\varepsilon$ should be read as the post-coupling polarization, not the applied
-field (\S\ref{sec:coupling}). The population sigmoid is likewise a coarse-grained
-stand-in for distributed single-cell nonlinearities. JR alpha near this Hopf is
-high quality-factor, so the stable-side peaks are narrow and would be broadened by noise and
-population heterogeneity. The $100$~Hz carrier is below TI's kHz range, but this is
-a testable regime in its own right (\S\ref{sec:khz}) and the argument depends only
-on a timescale separation. Finally, the LaNMM realization here still treats a
-single, deterministic, noiseless column with a phenomenological field coupling;
-coupled noisy columns and an explicit, realistic $\kappa(f_c)$ remain natural next
-steps. The human evidence is also not uniformly positive: a controlled study found
-peripheral but no central effects \cite{iszak2023}, and a systematic review reports that
-occipito-parietal TI did not modulate alpha power \cite{mansourinezhad2025}. The
-narrowband prediction above turns the second into a design question, namely whether
-$\Delta f$ tracked individual alpha closely enough to stay inside a $\sim$$1$~Hz response
-band; that is a prediction to be tested, not an explanation to be assumed.
+\textbf{Limitations.} The field enters the population transfer directly; we treat the
+field-to-nonlinearity coupling $\kappa(f_c)$ phenomenologically rather than modeling
+channel kinetics, and $\varepsilon$ should be read as post-coupling polarization. The
+population sigmoid is a coarse-grained stand-in for distributed single-cell nonlinearities.
+JR alpha near this Hopf is high quality-factor, so the stable-side peaks are narrow and
+would be broadened by noise and population heterogeneity; the columns here are single,
+deterministic and noiseless, and coupled noisy columns with an explicit $\kappa(f_c)$
+remain the natural next step. The human evidence is also not uniformly positive: a
+controlled study found peripheral but no central effects \cite{iszak2023}, and a systematic
+review reports that occipito-parietal TI did not modulate alpha power
+\cite{mansourinezhad2025}. The narrowband prediction turns the second into a design
+question---whether $\Delta f$ tracked individual alpha closely enough to stay inside a
+$\sim$$1$~Hz response band---which is a prediction to be tested, not an explanation to be
+assumed.
 
 \section{Conclusion}
-A population sigmoid and a second-order-synapse network near a Hopf bifurcation
-suffice to demodulate a temporal-interference field and resonate at the recovered
-envelope frequency. The sigmoid's curvature is inherited from single-neuron
-nonlinearity, coarse-grained over the $\sim$$10^4$ neurons of the mass; what is
-emergent is that demodulation is read out at the \emph{population} level, needing
-no specific channel, and that the resonant amplification is a \emph{network}
-property. A fast single-cell nonlinearity (Na$^+$ at nodes/AIS, persistent Na$^+$,
-presynaptic terminals) need only sample the carrier. The column then
-behaves as a tuned AM receiver---a nonlinear detector followed by a resonant
-tank---so that \emph{wherever a fast-enough nonlinearity sees the carrier, the
-population sigmoid demodulates and the network amplifies}.
+In the weak-field limit any smooth cellular nonlinearity transduces the \emph{square} of
+the TI envelope rather than the envelope itself: the carrier average contains only even
+powers, so the leading response is $\tfrac14 g''(v^*)A^2$ and there is no term linear in
+$A$. Recovering $A$ would require rectification, and any smoothed threshold reverts to
+$A^2$ as the field weakens. The population sigmoid is thus not an exotic detector but the
+generic perturbative one, and the beat component it generates,
+$\half\Sig''(v^*)\varepsilon_1\varepsilon_2$, is what a second-order-synapse network near
+a Hopf then amplifies as $1/\gamma$. A fast single-cell nonlinearity---Na$^+$ at nodes or
+the AIS, persistent Na$^+$, presynaptic terminals---need only deliver the carrier to that
+transfer; the mechanism is agnostic about which one does.
 
-The amplification half is not automatic: the gain scales as $1/\gamma$ with the
-distance to the Hopf, so a large, sharply tuned response appears only near criticality.
-It is tunable both by brain state and by the coupling itself---holding detection fixed,
-the demodulated gain grows toward $1/\gamma$ as the network is driven to criticality by
-its own connectivity (\S\ref{sec:jcurve}), in the heuristic JR column and, with coupling
-and rectifier both derived, in the exact NMM2 mean field. Both halves are thus
-\textbf{state-dependent}---detection through $\Sig''(v^*)$ (which changes sign across the
-inflection), amplification through $\gamma$---set by neuromodulation, attention, arousal
-and pathology (PEIX). TI efficacy is then as much a property of \emph{brain state} as of
-the stimulus: largest near criticality, and tunable---even abolished or
-sign-reversed---by shifting the operating point.
+Both halves are state-dependent, detection through $\Sig''(v^*)$ and amplification through
+$\gamma$, so TI efficacy is as much a property of brain state as of the stimulus: largest
+near a bifurcation, tunable by connectivity at fixed detection, and reversible in sign by
+shifting the operating point. That the same amplifier serves a direct in-band drive means
+tACS inherits it too, which is why resonance cannot recover TI's square-law penalty.
 
-This picture is both testable and actionable. It makes sharp, falsifiable predictions
-(\S\ref{sec:predictions})---carrier-independence at fixed polarization, a sign reversal
-of the response across the sigmoid inflection, and a response that peaks when $\Delta f$
-matches a region's intrinsic rhythm---and it argues that TI should be dosed to brain state
-rather than delivered open-loop. More broadly, it places external stimulation inside the
-same framework as the cortex's handling of its \emph{own} rhythms: if a column is an AM
-\emph{transceiver} for endogenous cross-frequency coupling
-\cite{ruffini2025cfc,ruffini2025ham}, TI simply drives it as a \emph{receiver} for an
-external carrier. The natural next steps---a realistic field-to-nonlinearity coupling
-$\kappa(f_c)$ and coupled, noisy columns---point toward a quantitative, state-aware account
-of who responds to TI, and when.
+Because the transduced quantity is $A^2$ and not $A$, the mechanism predicts a spatial
+response map that is the conventional envelope map reweighted by the dominant local
+polarization, a response quadratic rather than linear in field amplitude, and an
+envelope-locked spectrum without the harmonic ladder an envelope follower would produce.
+These are measurable, and they are what would settle which quantity TI actually
+transduces.
 
 \section*{Code and data availability}
 All simulation and figure-generation code, the committed datasets, and a one-command
@@ -1772,8 +1699,17 @@ commercializes transcranial stimulation devices. BM, AJ and FC are affiliated wi
 Neuroelectrics. The remaining authors declare no competing interests.
 
 \section*{Author contributions}
-% TODO: CRediT statement. Optional at IOP, but absent one all co-authors are
-% taken to share full responsibility for the entire paper.
+% CRediT roles. DRAFT -- each co-author must confirm their own line before
+% submission; the assignment below is inferred from the project record.
+Using the CRediT taxonomy: \textbf{G.~Ruffini} --- conceptualization, methodology,
+formal analysis, software, writing (original draft), supervision, funding acquisition.
+\textbf{B.~Mercadal} --- methodology, formal analysis, writing (review and editing).
+\textbf{A.~Just} --- software, validation, visualization, writing (review and editing).
+\textbf{R.~de Palma Aristides} --- software, validation, writing (review and editing).
+\textbf{F.~Castaldo} --- methodology, writing (review and editing).
+\textbf{S.~Canals} --- conceptualization, writing (review and editing).
+\textbf{C.~Mirasso} --- conceptualization, methodology, writing (review and editing).
+All authors read and approved the final manuscript.
 \fi
 
 \section*{Declaration of generative AI and AI-assisted technologies in the manuscript
@@ -1788,6 +1724,8 @@ for the content of the published article.
 \bibliographystyle{unsrt}
 \bibliography{references}
 
+\fi
+\ifappendices
 \clearpage
 \appendix
 \renewcommand{\thefigure}{S\arabic{figure}}
@@ -1885,75 +1823,30 @@ context; see the head note on $A$ and $C$.}\label{tab:notation}
 \end{longtable}}
 
 \section{TI requires detection: the Stuart--Landau normal form amplifies but cannot demodulate}\label{app:sl}
-The two ingredients of the mechanism---near-Hopf \emph{amplification} and square-law
-\emph{detection}---are separable, and the universal Hopf normal form makes the separation
-sharp. The Stuart--Landau (SL) equation \cite{pikovsky2001} is
+Amplification and detection are separable, and the universal Hopf normal form makes the
+separation sharp. The Stuart--Landau equation \cite{pikovsky2001} is
 \begin{equation}
 \dot z=(a+i\omega_0)z-|z|^2z+F(t),\qquad \gamma\equiv-a>0\ \ (\text{stable side}),
 \label{eq:sl}
 \end{equation}
-with the AM field $F(t)=\varepsilon[1+m\cos\Omega t]\cos\omega_c t$. Does $z$ acquire any
-power at the beat $\Omega$ (i.e.\ at $\Delta f$)?
+driven by the TI field $F$. Expanding $z=\sum_k Z_k(t)e^{ik\omega_c t}$ in carrier
+harmonics with slowly varying envelopes, the field forces only $k=\pm1$ and the cubic feeds
+index $k=l-p+q$. The odd-$k$ subspace is therefore invariant and attracting: if every even
+$Z_k$ vanishes, then for even $k$ both sources vanish---$F_k=0$, and $l-p+q$ cannot be even
+with $l,p,q$ odd---leaving $\dot Z_k=[a+i(\omega_0-k\omega_c)]Z_k$, which decays at rate
+$\gamma>0$. So $z$ lives only on odd carrier harmonics, to all orders in $\varepsilon$. The
+beat line is a \emph{baseband} signal and would sit in $k=0$; since $Z_0\equiv0$, the
+response at $\Delta f$ is identically zero. An \emph{even} nonlinearity instead produces a
+nonzero $k=0$ term through $\cos^2\omega_c t\to\half$---the very line the odd cubic cannot
+make. Numerically ($a=-0.5$, $f_0=10$, $f_c=100$~Hz, $\varepsilon=0.5$), a square-law
+detector on the same field gives a $\Delta f$ lock-in of $2.5\times10^{-1}$ while
+$\mathrm{Re}\,z$ gives $\sim$$2\times10^{-8}$, at the numerical floor. Driven instead
+directly in band, the same equation shows the forced $1/\gamma$ growth toward the Hopf.
 
-\emph{Proof (carrier-harmonic ansatz).} Expand $z$ in harmonics of the carrier with
-slowly varying envelopes,
-\begin{equation}
-z(t)=\sum_{k\in\mathbb{Z}} Z_k(t)\,e^{ik\omega_c t},
-\label{eq:sl-ansatz}
-\end{equation}
-the $Z_k$ varying on the slow envelope scale $\Omega\ll\omega_c$. The field forces only
-the $k=\pm1$ harmonics,
-$F=\tfrac{\varepsilon}{2}(1+m\cos\Omega t)\,(e^{i\omega_c t}+e^{-i\omega_c t})$, and the
-cubic is $|z|^2z=\sum_{l,p,q}Z_l\bar Z_p Z_q\,e^{i(l-p+q)\omega_c t}$, feeding carrier index
-$k=l-p+q$. Substituting Eq.~\eqref{eq:sl-ansatz} into Eq.~\eqref{eq:sl} and matching each
-$e^{ik\omega_c t}$,
-\begin{equation}
-\dot Z_k=\big[a+i(\omega_0-k\omega_c)\big]Z_k\;-\!\!\sum_{l-p+q=k}\!\!Z_l\bar Z_p Z_q\;+F_k .
-\label{eq:sl-modes}
-\end{equation}
-The \emph{odd-$k$ subspace is invariant and attracting}: suppose $Z_k=0$ for every even
-$k$. Then for even $k$ both sources vanish ($F_k=0$, and the cubic would need $l-p+q=k$
-even with $l,p,q$ odd, which is impossible), leaving $\dot Z_k=[a+i(\omega_0-k\omega_c)]Z_k$,
-a linear mode that decays at rate $-a=\gamma>0$. So the solution tracks the Fourier
-structure of the forcing: $z$ lives only on \emph{odd} carrier harmonics (with sidebands at
-$k\omega_c\pm n\Omega$), to all orders in $\varepsilon$. The demodulated line at the beat is
-a \emph{baseband} signal, so it would sit in the $k=0$ component; but $Z_0\equiv0$, so $z$
-has identically zero weight at $\Delta f$. A square-law (\emph{even}) nonlinearity instead
-produces a nonzero $k=0$ term (from $\cos^2\omega_c t\to\half$) oscillating at
-$\Omega$---the demodulated line the odd cubic cannot make. Equivalently, demodulation is
-the $O(\varepsilon^2)$ term $\half\Sig''\varepsilon^2 m$ (Eq.~\eqref{eq:demod}); the SL
-normal form has \emph{no} even-order term. \textbf{The SL resonator amplifies
-($\sim1/\gamma$) but does not detect.}
-
-\emph{Numerical confirmation} (Fig.~\ref{fig:sl}; $a=-0.5$, $f_0=10$, $f_c=100$,
-$\Delta f=10$~Hz, $\varepsilon=0.5$, $m=1$): a square-law detector on the same field gives
-a $\Delta f$ lock-in of $F^2|_{\Delta f}=2.5\times10^{-1}$, whereas the SL state
-$\mathrm{Re}\,z$ has only $\sim$$2\times10^{-8}$ at $\Delta f$---at the numerical floor,
-$\sim$$10^{7}\times$ smaller. Driven instead \emph{directly} in band (a tACS-like drive at
-$\Delta f$, no carrier), the same SL gives a forced lock-in that grows as $1/\gamma$ toward
-the Hopf (Fig.~\ref{fig:sl}a).
-
-\emph{The dissociation.} The SL thus responds to tACS (a direct in-band drive feeds the
-universal near-Hopf susceptibility, $\propto1/\gamma$) but is blind to TI (it has no
-square-law to demodulate the carrier). This isolates the paper's two ingredients:
-\emph{amplification} is the model-independent near-Hopf susceptibility, shared with tACS
-and with any normal-form resonator; \emph{detection} is the model-\emph{specific}
-square-law that the SL normal form lacks. It also sharpens the founding point of
-\S\ref{sec:coupling}: a critical resonator alone cannot demodulate---TI requires a detector.
-
-\begin{figure}[t!]
-\centering
-\includegraphics[width=0.84\textwidth]{fig_sl_dissociation.pdf}
-\caption{\textbf{Stuart--Landau dissociation: amplification without detection.} SL normal
-form (Eq.~\eqref{eq:sl}). \emph{(a)} Driven directly in band at $\Delta f$ (tACS-like; weak
-drive, linear regime), the forced lock-in of $\mathrm{Re}\,z$ grows as $1/\gamma$ toward
-the Hopf---the universal near-Hopf amplification. \emph{(b)} Under the AM \emph{carrier}
-(TI), the $\Delta f$ line in $\mathrm{Re}\,z$ sits at the numerical floor
-($\sim$$2\times10^{-8}$), while a square-law detector $F^2$ recovers it
-($2.5\times10^{-1}$)---a $\sim$$10^{7}\times$ gap. The normal form amplifies but cannot
-demodulate.}
-\label{fig:sl}
-\end{figure}
+The normal form thus responds to tACS but is blind to TI. Amplification is the
+model-independent near-Hopf susceptibility, shared with any normal-form resonator;
+detection is the model-specific even-order term the normal form lacks. A critical
+resonator alone cannot demodulate.
 
 \section{Vocabulary and metrics}\label{sec:vocab}
 ``Entrainment'' is used in several senses, and our system can exhibit more than one, so
@@ -1986,21 +1879,7 @@ modulation of a persisting rhythm \emph{gating}, reporting the metric appropriat
 (the above-Hopf QIF panel, with its $\sim$11~Hz detuning, is a case of gating, not
 entrainment).
 
-Concretely for the JR entrainment analysis (Fig.~\ref{fig:entrain}): we place the column
-on the limit-cycle side---input $p$ between the SNIC ($p\!\approx\!114$) and the Hopf
-($p\!\approx\!315$), where it free-runs at $f_0(p)$---and drive it with
-$s(t)=\varepsilon\cos\Omega t$. The Arnold tongue (Fig.~\ref{fig:entrain}a) is the
-$\Delta f$ lock-in over the $(\Delta f,\varepsilon)$ grid at fixed $p$ with the
-$1{:}1$-locked set outlined; the locking plateau (b) is $f_{\rm out}$ vs $\Delta f$ (equal
-to $\Delta f$ inside the tongue, snapping back to $f_0$ outside); the criticality panel
-(c) fixes $\varepsilon$ and sweeps $p$ toward the Hopf, reporting the locking range
-(locked-$\Delta f$ width on a grid centered on $f_0(p)$) and the field-free cycle
-amplitude ($\max-\min$ of $v$). Two subtleties: (i)~the $\Delta f$ window ($f_0\pm12$~Hz)
-is wide enough that near-Hopf locking ranges are resolved rather than grid-clipped
-(clipped points are flagged in Fig.~\ref{fig:entrain}c); (ii)~as onset is approached the
-cycle amplitude $\to0$ and the tongue merges into the forced-resonance bandwidth, so the
-supercritical locking range and the subcritical $1/\gamma$ susceptibility coincide there
-by construction---why responsiveness peaks at criticality on both sides.
+The Arnold-tongue protocol for Fig.~\ref{fig:entrain} places the column on the limit-cycle side (input $p$ between the SNIC and the Hopf, free-running at $f_0(p)$) and drives it with $s(t)=\varepsilon\cos\Omega t$; the implementation, including the grid widths and the clipping check, is in the released code. One subtlety is worth stating: as onset is approached the cycle amplitude vanishes and the tongue merges into the forced-resonance bandwidth, so the supercritical locking range and the subcritical $1/\gamma$ susceptibility coincide there by construction---which is why responsiveness peaks at criticality on both sides.
 
 \section{Supplementary figures}
 
@@ -2013,20 +1892,10 @@ subcircuit (pyramidal $P_1$ + SS + SST; alpha). \emph{(a)} the TI field drives
 $P_2$ while $P_1$ receives a flat drive; \emph{(b)} the TI field drives $P_1$
 while $P_2$ is flat. Through the sigmoid nonlinearities and $P_1$--$P_2$ coupling,
 the slow envelope is transferred to the column: $P_2$ carries the modulated fast
-carrier, while $P_1$ exposes the recovered low-frequency envelope (right traces).}
+carrier, while $P_1$ exposes the recovered low-frequency beat component (right traces).}
 \label{fig:lanmm_setup}
 \end{figure}
 
-\begin{figure}[t!]
-\centering
-\includegraphics[width=0.72\textwidth]{fig_lanmm_map.pdf}
-\caption{\textbf{LaNMM alpha resonance map (NMM1, laminar).} Demodulated $P_1$ response
-(log scale) over the (envelope frequency $\Delta f$, $P_1$ drive) plane: a ridge at the
-alpha natural frequency ($\sim$10~Hz) that intensifies through the supercritical Hopf
-(dashed line). The analog of the JR map (Fig.~\ref{fig:map}) and the NMM2 map
-(Fig.~\ref{fig:nmm2_map}).}
-\label{fig:lanmm_map}
-\end{figure}
 
 
 \begin{figure}[t!]
@@ -2047,28 +1916,18 @@ field rather than square-law. Throughout, the column is a stable focus ($\gamma>
 \centering
 \includegraphics[width=\textwidth]{fig_entrainment.pdf}
 \caption{\textbf{Above the Hopf: entrainment, not $1/\gamma$ amplification (Jansen--Rit).}
-The column is set in its autonomous alpha limit cycle (input $p=250$, below the input
-Hopf; $f_0\!\approx\!11$~Hz) and driven by a direct in-band sinusoid at $\Delta f$.
-\emph{(a)} The $1{:}1$ Arnold tongue---the region of $(\Delta f,\varepsilon)$ where the
+The column is set in its autonomous alpha limit cycle ($p=250$, $f_0\!\approx\!11$~Hz) and
+driven by a direct in-band sinusoid. \emph{(a)} The $1{:}1$ Arnold tongue---where the
 dominant output frequency locks to $\Delta f$---is a wedge anchored at $f_0$ that widens
-with drive amplitude. \emph{(b)} Frequency locking at fixed drive: inside the tongue the
-output follows $\Delta f$ (diagonal); outside, it falls back to the autonomous $f_0$. \emph{(c)} Sweeping the operating point toward the Hopf at fixed drive, the locking range (tongue width) grows as the autonomous cycle amplitude $\to0$: entrainment is easiest near criticality---the supercritical counterpart of the $1/\gamma$ forced gain (blue: locking range, left axis; red dashed: autonomous cycle amplitude, right axis).
-Here amplification is read as entrainment (tongue width, locking range), not as the
-diverging $1/\gamma$ gain of the stable-focus side (Fig.~\ref{fig:jcurve})---so the
-column is most responsive near criticality on both sides of the Hopf: to forcing below,
-to entrainment above.}
+with drive. \emph{(b)} Inside the tongue the output follows $\Delta f$; outside, it falls
+back to $f_0$. \emph{(c)} Toward the Hopf at fixed drive the locking range grows as the
+autonomous cycle amplitude vanishes (blue, left axis; red dashed, right axis). Above the
+Hopf amplification reads as tongue width rather than as the diverging $1/\gamma$ gain of
+the stable-focus side (Fig.~\ref{fig:jcurve}): the column is most responsive near
+criticality on both sides.}
 \label{fig:entrain}
 \end{figure}
 
-\begin{figure}[t!]
-\centering
-\includegraphics[width=0.74\textwidth]{fig_resonance_map.pdf}
-\caption{\textbf{The resonance ridge sharpens and intensifies toward the Hopf (Jansen--Rit).} Demodulated response $A_\Omega$ over the
-(envelope frequency, input $p$) plane. The ridge at $f_0\!\approx\!11.1$~Hz
-sharpens and intensifies as $p$ approaches the Hopf from above, visualizing the
-$1/\gamma$ gain of Eq.~\eqref{eq:gain}.}
-\label{fig:map}
-\end{figure}
 \begin{figure}[t!]
 \centering
 \includegraphics[width=0.74\textwidth]{fig_khz.pdf}
@@ -2097,16 +1956,6 @@ claim on the physical waveform rather than on the AM surrogate.}
 \end{figure}
 \begin{figure}[t!]
 \centering
-\includegraphics[width=\textwidth]{fig_lanmm_resonance.pdf}
-\caption{\textbf{LaNMM alpha resonance (NMM1, laminar).} Lock-in response of the deep
-pyramidal $P_1$ at the envelope frequency $\Delta f$, the $P_1$ (alpha) loop driven by
-an AM field (carrier $100$~Hz) with its input as bifurcation parameter. This supplementary sweep retains the surrogate: it reads only the lock-in at $\Delta f$, where the two waveforms agree (Fig.~\ref{fig:opp}d). \emph{(a)} (stable focus, high drive) forced alpha resonance at $\sim$10~Hz growing as the Hopf
-is approached. \emph{(b)} (limit cycle, low drive) entrainment of the autonomous
-alpha. Directly parallel to the JR single column (Fig.~\ref{fig:res}).}
-\label{fig:lanmm_res}
-\end{figure}
-\begin{figure}[t!]
-\centering
 \includegraphics[width=0.86\textwidth]{fig_lanmm_field_p1_twotone.pdf}
 \caption{\textbf{LaNMM Arnold tongues: two-tone TI field delivered directly to the deep
 $P_1$ (alpha) loop.} As Fig.~\ref{fig:lanmm_p2} but with the field on $P_1$. The deep loop
@@ -2130,17 +1979,14 @@ superficial drive.}
 \begin{figure}[t!]
 \centering
 \includegraphics[width=0.72\textwidth]{fig_nmm2_map.pdf}
-\caption{\textbf{NMM2 PING resonance map (exact mean field).} Demodulated response
-over the (envelope frequency $\Delta f$, background drive $\bar\eta$) plane, log color
-scale. The ridge follows the gamma natural frequency $f_0(\bar\eta)$, and its diagonal
-slope, $f_0$ rising with $\bar\eta$, reflects the state-dependent transfer of NMM2,
-absent in the static-sigmoid JR and LaNMM. White markers outline the $1{:}1$
-frequency-captured set, $|f_{\rm out}-\Delta f|<0.3$~Hz
-(Appendix~\ref{sec:vocab}), evaluated only above the Hopf (dashed line) where there is an
-autonomous rhythm to capture: entrainment tracks the ridge there, while the same color
-field below the Hopf is a forced response. Lock-in amplitude alone cannot separate the
-two, since both place power at $\Delta f$, which is why the locked set is drawn
-explicitly rather than inferred from the color.}
+\caption{\textbf{NMM2 PING resonance map (exact mean field).} Demodulated response over
+the ($\Delta f$, background drive $\bar\eta$) plane, log color scale. The ridge follows the
+gamma natural frequency, and its diagonal slope---$f_0$ rising with $\bar\eta$---reflects
+the state-dependent transfer of NMM2, absent in the static-sigmoid models. White markers
+outline the $1{:}1$ captured set (Appendix~\ref{sec:vocab}), drawn only above the Hopf
+(dashed line) where there is an autonomous rhythm to capture; below it the same color field
+is a forced response. Lock-in amplitude cannot separate the two, since both place power at
+$\Delta f$.}
 \label{fig:nmm2_map}
 \end{figure}
 
@@ -2188,25 +2034,27 @@ spike-timing-without-rate finding of \cite{vieira2024}.}
 \begin{figure}[t!]
 \centering
 \includegraphics[width=\textwidth]{fig_qif_timing_twotone.pdf}
-\caption{\textbf{Timing, not rate, in the QIF network.} \emph{(a)} Power spectrum of
-$r_E(t)$ in the field-free (autonomous) state: the spiking network ($N=8000$) matches the
-exact NMM2 mean field in the gamma rhythm (both $\sim$53~Hz) and in mean rate
-$\langle r_E\rangle$. \emph{(b)} Intermodulation in the oscillatory regime (TI off vs.\
-on, log power): with TI on the nonlinearity mixes the imposed $\Delta f=42$~Hz beat with
-the intrinsic $f_0\!\approx\!53$~Hz gamma, lighting up the direct $\Delta f$ line and the
-\emph{sum} sideband $f_0\!+\!\Delta f\!\approx\!95$~Hz, both absent when TI is off (the
-difference tone $f_0\!-\!\Delta f\!\approx\!11$~Hz sits near the floor, its amplitude set by
-the network transfer function rather than the mixer)---the spiking-network view of the same
-sigmoid frequency-mixing that drives demodulation throughout, and the sideband signature of
-gating rather than entrainment. \emph{(c)} The $\Delta f$ \emph{modulation
-depth} $A_\Omega/\langle r_E\rangle$---the amplitude of the $\Delta f$-locked rate
-oscillation as a fraction of the mean rate---off vs.\ on: near zero with TI off
-($0.01$--$0.03$), large with TI on ($0.19$ oscillatory, $0.76$ forced), while the mean rate
-stays nearly flat ($\times1.07$--$1.11$). We report the modulation depth rather than the
-off$\to$on lock-in \emph{ratio} because the latter divides by the near-zero field-free
-baseline and is realization-noisy; the depth uses two well-estimated quantities and is
-stable.}
+\caption{\textbf{Timing, not rate, in the QIF network.} \emph{(a)} Field-free power
+spectrum of $r_E(t)$: the spiking network ($N=8000$) matches the exact NMM2 mean field in
+both gamma frequency ($\sim$53~Hz) and mean rate. \emph{(b)} Intermodulation above the
+Hopf (TI off vs.\ on, log power): the nonlinearity mixes the imposed $\Delta f=42$~Hz beat
+with the intrinsic $53$~Hz gamma, raising the direct $\Delta f$ line and the sum sideband
+near $95$~Hz, both absent with TI off. This is the sideband signature of gating rather
+than entrainment. \emph{(c)} The $\Delta f$ modulation depth
+$A_\Omega/\langle r_E\rangle$, off vs.\ on: $0.01$--$0.03$ rising to $0.17$--$0.79$, while
+the mean rate stays nearly flat ($\times1.07$--$1.11$). Modulation depth is reported
+rather than the off$\to$on lock-in ratio, whose denominator sits at the near-zero
+field-free floor.}
 \label{fig:qif_timing}
 \end{figure}
 
+
+% The supplement cites a handful of works (locking metrics, normal-form theory)
+% and is read as a standalone file, so it carries its own reference list.
+\ifsupp
+\clearpage
+\bibliographystyle{unsrt}
+\bibliography{references}
+\fi
+\fi
 \end{document}

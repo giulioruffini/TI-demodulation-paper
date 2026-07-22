@@ -89,9 +89,9 @@ def beat_inset(ax, off_key, on_key, mode="rate"):
         ca = ca / ca.mean()                                  # normalize -> relative modulation
         iax.plot(np.r_[ctr, ctr + 1], np.r_[ca, ca], color=col, lw=1.4, label=lab)
     iax.set_xticks([0, 1, 2]); iax.set_xticklabels(["0", "1", "2"])
-    iax.set_xlabel(r"$\Delta f$ phase (cycles)", fontsize=7.5, labelpad=1, fontweight="bold")
+    iax.set_xlabel(r"$\Delta f$ phase (cycles)", fontsize=9.0, labelpad=1, fontweight="bold")
     ylab = r"$\gamma$ amp. (norm.)" if mode == "gamma" else r"$r_E$ (norm.)"
-    iax.set_ylabel(ylab, fontsize=7.5, labelpad=1, fontweight="bold")
+    iax.set_ylabel(ylab, fontsize=9.0, labelpad=1, fontweight="bold")
     iax.yaxis.set_major_locator(MaxNLocator(3))
     iax.tick_params(length=2, pad=1, labelsize=7.0, direction="in")
     # the inset's tick/axis labels fall on the busy raster; a white halo keeps
@@ -100,7 +100,7 @@ def beat_inset(ax, off_key, on_key, mode="rate"):
     for t in list(iax.get_xticklabels()) + list(iax.get_yticklabels()):
         t.set_fontweight("bold"); t.set_bbox(halo)
     iax.xaxis.label.set_bbox(halo); iax.yaxis.label.set_bbox(halo)
-    iax.legend(fontsize=6.8, frameon=False, loc="upper right", ncol=2,
+    iax.legend(fontsize=9.0, frameon=False, loc="upper right", ncol=2,
                handlelength=0.9, columnspacing=0.8, handletextpad=0.4, borderpad=0.1)
     iax.patch.set_alpha(1.0); iax.patch.set_facecolor("white")
     for sp in iax.spines.values():
@@ -129,7 +129,7 @@ def raster_panel(ax, key, title, show_env, annot=None):
     ax.set_xlim(0, tmeas); ax.set_ylim(-2, nrec + 2); ax.set_zorder(axr.get_zorder() + 1)
     ax.patch.set_visible(False)
     if annot:                                     # quantify the envelope-locked timing
-        ax.text(0.025, 0.96, annot, transform=ax.transAxes, fontsize=7.6, va="top",
+        ax.text(0.025, 0.96, annot, transform=ax.transAxes, fontsize=9.0, va="top",
                 color=NEGREEN, fontweight="bold",
                 bbox=dict(fc="white", ec=NEGREEN, lw=0.6, alpha=0.85, pad=1.6))
     figstyle.panel(ax, title.strip("()"))
@@ -138,8 +138,6 @@ def raster_panel(ax, key, title, show_env, annot=None):
 
 def fig_raster():
     fig, axs = plt.subplots(2, 2, figsize=(10, 6), sharex=True)
-    depth = {k: conds[k]["q"]["AC"] / conds[k]["q"]["rmean"]
-             for k in ("forced_off", "forced_on", "entrain_off", "entrain_on")}
     raster_panel(axs[0, 0], "forced_off", "(a)", False)
     raster_panel(axs[0, 1], "forced_on",
                  "(b)", True)
@@ -185,7 +183,7 @@ def fig_timing():
     axA.plot(fy, Py / Py.max(), color=NERED, lw=1.4, ls="--", label="NMM2 mean field (exact)")
     axA.set_xlim(0, 130); axA.set_xlabel("frequency (Hz)"); axA.set_ylabel("power (norm.)")
     figstyle.panel(axA, "a")
-    axA.legend(fontsize=7.5, frameon=False, loc="upper right")
+    axA.legend(fontsize=9.0, frameon=False, loc="upper right")
     axA.spines[["top", "right"]].set_visible(False)
 
     # (b) intermodulation: oscillatory regime, TI off vs on. The nonlinearity mixes the
@@ -201,11 +199,11 @@ def fig_timing():
     # set by the network transfer function, not the mixer), so we do not flag it.
     for fr, txt in ((dfb, r"$\Delta f$"), (fg, r"$f_0$"), (fg + dfb, r"$f_0{+}\Delta f$")):
         axC.axvline(fr, ls=":", color=NERED, lw=0.8, alpha=0.7)
-        axC.text(fr, 1.5, txt, rotation=90, fontsize=7, color=NERED, ha="right", va="bottom")
+        axC.text(fr, 1.5, txt, rotation=90, fontsize=9.0, color=NERED, ha="right", va="bottom")
     axC.set_xlim(0, 120); axC.set_ylim(1e-4, 4)
     axC.set_xlabel("frequency (Hz)"); axC.set_ylabel("power of $r_E$ (norm.)")
     figstyle.panel(axC, "b")
-    axC.legend(fontsize=7.5, frameon=False, loc="lower right")
+    axC.legend(fontsize=9.0, frameon=False, loc="lower right")
     axC.spines[["top", "right"]].set_visible(False)
 
     # (c) Df modulation depth = AC(Df)/<r_E> -- a STABLE off->on metric: the amplitude
@@ -222,14 +220,13 @@ def fig_timing():
     x = np.arange(len(regimes)); bw = 0.36
     axB.bar(x - bw / 2, depth_off, bw, color=GR, label="TI off")
     axB.bar(x + bw / 2, depth_on, bw, color=NEGREEN, label="TI on")
-    for xi in range(len(regimes)):
-        axB.text(xi - bw / 2, depth_off[xi] + 0.012, f"{depth_off[xi]:.2f}", ha="center", fontsize=7.5)
-        axB.text(xi + bw / 2, depth_on[xi] + 0.012, f"{depth_on[xi]:.2f}", ha="center", fontsize=7.5,
-                 color=NEGREEN, fontweight="bold")
+    # Numeric bar labels removed: they print below the 6.2 pt floor once the figure is
+    # scaled to its placed width, and the same values are already given in the Results
+    # text and the caption. The bars carry the comparison on their own.
     axB.set_xticks(x); axB.set_xticklabels([n for _, n in regimes])
     axB.set_ylabel(r"$A_\Omega/\langle r_E\rangle$")
     figstyle.panel(axB, "c")
-    axB.legend(fontsize=7.5, frameon=False, loc="upper left")
+    axB.legend(fontsize=9.0, frameon=False, loc="upper left")
     axB.set_ylim(0, max(depth_on) * 1.18)
     axB.spines[["top", "right"]].set_visible(False)
 

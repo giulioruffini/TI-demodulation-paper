@@ -251,12 +251,6 @@ Angel~V. Peterchev, Stefan~M. Goetz, Gregory~G. Westin, Bruce Luber, and
   stimulation.
 \newblock {\em Clinical Neurophysiology}, 124(7):1364--1372, 2013.
 
-\bibitem{ott2008}
-Edward Ott and Thomas~M. Antonsen.
-\newblock Low dimensional behavior of large systems of globally coupled
-  oscillators.
-\newblock {\em Chaos}, 18(3):037113, 2008.
-
 \bibitem{ali2013}
 M.~M. Ali, K.~K. Sellers, and F.~Frohlich.
 \newblock Transcranial alternating current stimulation modulates large-scale
@@ -269,12 +263,25 @@ Erwan Ledoux and Nicolas Brunel.
   to time-dependent inputs.
 \newblock {\em Frontiers in Computational Neuroscience}, 5, 2011.
 
+\bibitem{ott2008}
+Edward Ott and Thomas~M. Antonsen.
+\newblock Low dimensional behavior of large systems of globally coupled
+  oscillators.
+\newblock {\em Chaos}, 18(3):037113, 2008.
+
 \bibitem{negahbani2018}
 Ehsan Negahbani, Florian~H. Kasten, Christoph~S. Herrmann, and Flavio
   Fröhlich.
 \newblock Targeting alpha-band oscillations in a cortical model with
   amplitude-modulated high-frequency transcranial electric stimulation.
 \newblock {\em NeuroImage}, 173:3–12, 2018.
+
+\bibitem{plovie2025}
+Thomas Plovie, Ruben Schoeters, Thomas Tarnaud, Wout Joseph, and Emmeric
+  Tanghe.
+\newblock Nonlinearities and timescales in neural models of temporal
+  interference stimulation.
+\newblock {\em Bioelectromagnetics}, 46(1):e22522, 2025.
 
 \bibitem{krause2023}
 Matthew~R. Krause, Pedro~G. Vieira, and Christopher~C. Pack.

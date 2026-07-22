@@ -1,9 +1,15 @@
 #!/usr/bin/env bash
 # Build TN0484 in either of its two forms from the single source.
 #
-#   ./build.sh          Technical Note   -> TN0484_envelope_demodulation.pdf
-#   ./build.sh jne      JNE manuscript   -> TN0484_jne.pdf
-#   ./build.sh both
+#   ./build.sh          Technical Note        -> TN0484_envelope_demodulation.pdf
+#   ./build.sh jne      JNE article (no apps)  -> TN0484_jne.pdf
+#   ./build.sh supp     JNE supplement         -> TN0484_jne_supplement.pdf
+#   ./build.sh both     TN + JNE
+#   ./build.sh all      TN + JNE + supplement
+#
+# JNE counts the article against a ~12,000-word guideline, so the JNE build drops
+# the appendices and supplementary figures and `supp` emits them as a companion
+# file. The TN build keeps everything in one PDF.
 #
 # The two differ only by the \ifjne switch in the preamble: the TN keeps the
 # Neuroelectrics/BCOM furniture and the prose abstract, the JNE build strips the
@@ -37,8 +43,12 @@ build() {
 
 case "${1:-tn}" in
   tn)   build "${SRC}" ""              "Technical Note" ;;
-  jne)  build "TN0484_jne" "\\def\\jnebuild{}" "JNE manuscript" ;;
+  jne)  build "TN0484_jne" "\\def\\jnebuild{}" "JNE article" ;;
+  supp) build "TN0484_jne_supplement" "\\def\\suppbuild{}" "JNE supplement" ;;
   both) build "${SRC}" ""              "Technical Note"
-        build "TN0484_jne" "\\def\\jnebuild{}" "JNE manuscript" ;;
-  *)    echo "usage: $0 [tn|jne|both]" >&2; exit 2 ;;
+        build "TN0484_jne" "\\def\\jnebuild{}" "JNE article" ;;
+  all)  build "${SRC}" ""              "Technical Note"
+        build "TN0484_jne" "\\def\\jnebuild{}" "JNE article"
+        build "TN0484_jne_supplement" "\\def\\suppbuild{}" "JNE supplement" ;;
+  *)    echo "usage: $0 [tn|jne|supp|both|all]" >&2; exit 2 ;;
 esac
