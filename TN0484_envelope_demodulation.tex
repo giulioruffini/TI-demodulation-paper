@@ -1542,10 +1542,15 @@ which quantity it transduces, and \S\ref{sec:transduction} gives the measurement
 directly and needs no demodulation, but it drives the same near-Hopf resonator. Sweeping
 the coupling toward the alpha Hopf at \emph{pinned} operating point, a direct $\Delta f$
 drive reproduces the same $1/\gamma$ growth and resonance sharpening as the demodulated TI
-drive, linear in the field rather than square-law (Fig.~\ref{fig:tacs}). Prior work has
-shown that recurrent coupling shapes tACS entrainment and sets the position of a network
-resonance \cite{ali2013,ledoux2011}; what the pinned sweep adds is the isolation of the
-gain itself, with detection held fixed so that only $\gamma$ varies. TI then differs from
+drive, linear in the field rather than square-law (Fig.~\ref{fig:tacs}). That coupling
+controls this gain is not itself new: the dynamical transfer function of an E--I network is
+known to become resonant near a Hopf bifurcation, with a peak that \emph{diverges} on the
+bifurcation line as connectivity is varied \cite{ledoux2011}, and increased
+self-connectivity is known to enhance weak-field resonant sensitivity in the exact mean
+field \cite{clusella2023}. What the pinned sweep adds is the separation of amplification
+from \emph{detection}. Holding $\Sig''(v^*)$ exactly constant while only $\gamma$ varies
+isolates the network gain, and shows that the same amplifier acts on a drive the population
+has itself demodulated, which is why it cancels when TI and tACS are compared. TI then differs from
 tACS only by a demodulating front end that converts a kHz carrier's envelope into an
 effective in-band drive; downstream, both share the criticality- and coupling-controlled
 amplifier, so---matched for effective in-band drive---they should entrain alike.
@@ -1568,9 +1573,11 @@ one. With $J$ as the control parameter (Fig.~\ref{fig:nmm2_jcurve}), TI drives a
 toward a genuine, if mean-field, critical point and reads out its susceptibility.
 
 \textbf{Prior work already places the operative nonlinearity in the network.} Recurrent
-excitatory coupling accounts for tACS entrainment and yields an Arnold tongue
-\cite{ali2013}; the dynamical transfer function of an E--I network shows a resonance whose
-position depends on recurrent coupling \cite{ledoux2011}; an amplitude-modulated
+excitation, with short-term synaptic depression, accounts for tACS entrainment in a
+large-scale spiking model and yields an Arnold tongue over stimulation amplitude and
+frequency \cite{ali2013}; the dynamical transfer function of an E--I network, in both rate
+and spiking form, is resonant near a Hopf bifurcation with a peak that diverges on the
+bifurcation line as the connectivity is swept \cite{ledoux2011}; an amplitude-modulated
 high-frequency drive phase-locks a cortical model to its envelope through the same target
 engagement as low-frequency tACS \cite{negahbani2018}; and comparing neuron models directly,
 integrate-and-fire membranes fail to reproduce observed TI behavior while

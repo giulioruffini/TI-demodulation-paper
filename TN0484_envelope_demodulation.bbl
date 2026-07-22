@@ -251,12 +251,6 @@ Angel~V. Peterchev, Stefan~M. Goetz, Gregory~G. Westin, Bruce Luber, and
   stimulation.
 \newblock {\em Clinical Neurophysiology}, 124(7):1364--1372, 2013.
 
-\bibitem{ali2013}
-M.~M. Ali, K.~K. Sellers, and F.~Frohlich.
-\newblock Transcranial alternating current stimulation modulates large-scale
-  cortical network activity by network resonance.
-\newblock {\em Journal of Neuroscience}, 33(27):11262–11275, 2013.
-
 \bibitem{ledoux2011}
 Erwan Ledoux and Nicolas Brunel.
 \newblock Dynamics of networks of excitatory and inhibitory neurons in response
@@ -268,6 +262,12 @@ Edward Ott and Thomas~M. Antonsen.
 \newblock Low dimensional behavior of large systems of globally coupled
   oscillators.
 \newblock {\em Chaos}, 18(3):037113, 2008.
+
+\bibitem{ali2013}
+M.~M. Ali, K.~K. Sellers, and F.~Frohlich.
+\newblock Transcranial alternating current stimulation modulates large-scale
+  cortical network activity by network resonance.
+\newblock {\em Journal of Neuroscience}, 33(27):11262–11275, 2013.
 
 \bibitem{negahbani2018}
 Ehsan Negahbani, Florian~H. Kasten, Christoph~S. Herrmann, and Flavio
