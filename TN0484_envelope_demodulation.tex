@@ -1655,12 +1655,29 @@ $\mathrm{PEIX}=4s(1-s)$ gives $(1-2s)^2=1-\mathrm{PEIX}$,
 The efficiency is therefore state-dependent exactly as the mechanism predicts---maximal
 where the population is saturated and far from the inflection, and vanishing at
 $\mathrm{PEIX}=1$, where the transfer is locally linear and cannot demodulate at all---but
-it is \emph{bounded} by $\rho\varepsilon/4$ whatever the state. At Vieira et al.'s fields
-that ceiling is $1.4\%$, still $26\times$ short of the measured efficiency, and it is
-approached only in deep saturation where $\Sig'\!\to\!0$ and the tACS reference dies with
-it. For human fields at $\varepsilon\!\sim\!0.02$~mV the ceiling is $0.28\%$. No choice of
-brain state rescues a sigmoid-type population detector here, which is what makes the
-comparison decisive rather than a matter of parameter tuning. An efficiency
+at fixed $\rho$ it is \emph{bounded} by $\rho\varepsilon/4$ whatever the state. At the
+physiological Jansen--Rit slope ($\rho=0.56$~mV$^{-1}$, transfer width
+$1/\rho\!\approx\!1.8$~mV) that ceiling is $1.4\%$ at Vieira et al.'s fields and $0.28\%$
+at human ones. Brain state alone therefore does not close a $26\times$ gap.
+
+The slope is itself a parameter, however, so the honest question is what the whole sigmoid
+family can do. Evaluating the exact cycle response rather than its quadratic truncation,
+and maximizing over both $v^*$ and $\rho$ at $\varepsilon=0.1$~mV, the ratio rises with
+$\rho$ to a maximum of $\eta\!\approx\!0.32$ near $\rho\!\approx\!40$--$80$~mV$^{-1}$ and
+falls again for steeper transfers. The family therefore \emph{can} reach the measured
+efficiency; it is not excluded. Two things about the point where it does so decide the
+interpretation. First, the maximum is $1/\pi$ to within numerical error---the half-wave
+rectifier constant of \S\ref{sec:transduction}---because a sigmoid that steep, at its
+optimal operating point, is no longer detecting through curvature but rectifying. The two
+transduction classes are not rival models but two limits of one family, and the data select
+the rectifying limit. Second, reaching it requires a transfer width
+$1/\rho\!\approx\!12$--$25\;\mu$V, some two orders below the Jansen--Rit value. That is not
+a population quantity. The width of a neural-mass sigmoid is set by the spread of
+thresholds and noise across $\sim$$10^4$ neurons and is of order millivolts; a
+$20\;\mu$V threshold scale is the scale of a single cell's spike initiation. The parameter
+regime that fits the data is thus precisely the regime in which the ``population sigmoid''
+has degenerated into a single-cell threshold, and detection has ceased to be a population
+phenomenon. An efficiency
 that is both large and roughly field-independent is instead the signature of a
 \emph{rectifying} transduction, and the measured values sit close to the rectifier
 constants of \S\ref{sec:transduction}, $1/\pi\approx0.32$ and $2/\pi\approx0.64$. That
