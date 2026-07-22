@@ -157,32 +157,31 @@ S1, S2, \dots
 \noindent
 \textbf{Objective.} Temporal-interference (TI) stimulation applies two high-frequency
 currents whose amplitudes beat at a low difference frequency, offering focal, steerable
-stimulation deep in the brain. Yet an amplitude-modulated field carries no spectral power
-at the beat frequency, so no passive, linear element of a neuron can follow it. Recovering the beat requires a nonlinearity, which has generally been sought
-in single-cell ion channels. We ask whether demodulation and its frequency tuning could
-instead be properties of the neural population.
-\textbf{Approach.} We treat the firing-rate nonlinearity of a neural mass, the
-$\sim$$10^4$-neuron unit that generates the EEG, as an amplitude detector, and its recurrent
-synaptic network poised near a Hopf bifurcation as a resonant amplifier. The account is
-tested across a modeling ladder: a heuristic Jansen--Rit column (JR), a laminar model (LaNMM), an
-exact next-generation mean field (NMM2), and the quadratic integrate-and-fire spiking
-network underlying it.
-\textbf{Main results.} Population transfer function (sigmoid in JR) curvature acts as a square-law detector that recovers the
-beat, and the network amplifies it resonantly at its own natural frequency. We give this as a
-\emph{candidate} route rather than the established one: it is the generic weak-field answer
-for any smooth nonlinearity, but the one in-regime primate measurement implies an
-efficiency a sigmoid detector cannot reach at any operating point, and so favors a more
-rectifying transduction. Detection is
-inherited from the single neuron; the sharp frequency selectivity is emergent, set by
-proximity to criticality and tunable by connectivity. The mechanism reproduces TI's known
-behavior: independence of the carrier once membrane polarization is matched, largest
-response when the beat matches a region's intrinsic rhythm, and, because the resonance
-amplifies oscillatory timing far more than mean rate, realignment of spike timing with only
-a small change in firing rate, as observed in vivo.
-\textbf{Significance.} TI efficacy should be as much a property of the brain as of the
-device, depending on brain state and regional connectivity. The cortical column behaves as a
-tuned AM radio receiver, which reframes dose optimization around the target's dynamics and
-yields falsifiable predictions listed in the paper.
+stimulation at depth. But the field carries no power at the beat, so no passive linear
+element can follow it; recovering it needs a nonlinearity, generally sought in single-cell
+ion channels. We ask how much of demodulation and its tuning belongs
+instead to the neural population.
+\textbf{Approach.} We treat the firing-rate nonlinearity of a neural mass as an amplitude
+detector and its recurrent network near a Hopf bifurcation as a resonant amplifier, across a
+modeling ladder: a Jansen--Rit column, a laminar model, an exact next-generation mean
+field, and its underlying quadratic integrate-and-fire network.
+\textbf{Main results.} Transfer-function curvature acts as a square-law detector recovering
+the beat, and the network amplifies it resonantly at its natural frequency, the gain
+following $1/\gamma$ as the damping vanishes and tunable by connectivity at fixed
+detection. We offer detection as a \emph{candidate}: square-law transduction is generic for any
+smooth weak nonlinearity, but the one primate measurement at
+human-comparable fields implies an efficiency a population-width transfer cannot deliver,
+favoring a rectifying and probably cellular detector. Amplification is independent of that
+question, since the measured gain is normalized by the detector output. The account reproduces
+TI's known behavior: carrier independence at matched polarization, a peak when the beat
+matches a region's rhythm, and spike-timing realignment with little rate change, as seen
+in vivo.
+\textbf{Significance.} What the population contributes is tuning rather than detection. TI
+efficacy should thus be as much a property of the brain as of the device, largest near a
+bifurcation and set by state and connectivity. The column is a tuned receiver whose
+detector may sit in the single cell, which reframes dose optimization around the target's
+dynamics and yields a measurement deciding the detector class.
+
 \else
 \noindent
 Temporal-interference (TI) stimulation promises what other non-invasive methods
@@ -1688,6 +1687,18 @@ the radio analogy explicitly and proposing asymmetry between inward Na$^+$ and o
 K$^+$ channels as the operative nonlinearity---a rectifier, not a smooth curvature. They
 also note that circuit-level frequency dependence could contribute to demodulation, which
 is the mechanism developed here.
+
+None of this touches the amplification half, and it is worth being precise about why. The
+$J$-curve reports $A_\Omega/A_{\rm open}$, the closed-loop response normalized by the
+open-loop detector output at the same operating point. The detector divides out by
+construction: whatever manufactures the beat component---a smooth population curvature, a
+nodal rectifier, a spike threshold---the recurrent network's response to that in-band drive
+is the same, and it is that response which follows $1/\gamma$ and sharpens toward the
+bifurcation. The same holds in the exact mean field, where the rectifier is the derived
+$v_E^2$ term and no operating-point pinning is needed at all. Detection and amplification
+are therefore not merely conceptually separable but experimentally separable, and today's
+evidence bears only on the first. What the population contributes is the tuning, not the
+detecting.
 
 We therefore do not claim that square-law transduction is what operates in the human brain
 at safe field strengths. What the parity argument establishes is narrower and still holds:
