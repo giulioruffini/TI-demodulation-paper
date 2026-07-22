@@ -1533,12 +1533,13 @@ any \emph{smoothed} threshold reverts to $A^2$ as the field weakens.
 We doubt there is a single universal TI mechanism. Near threshold a sharp channel or spike
 nonlinearity may act as a rectifier and approximate envelope following; well below it, the
 leading response of any smooth cellular nonlinearity is square-law mixing, filtered and
-amplified by the network as described here. The empirical picture fits that split rather
-than a clean envelope detector: primate recordings report incomplete demodulation, a timing
-rather than rate effect, and a much weaker response to TI than to tACS \cite{vieira2024},
-and peripheral-nerve work argues that some TI responses reflect carrier integration rather
-than envelope extraction \cite{peripheral2023}. What settles it is not whether TI works but
-which quantity it transduces, and \S\ref{sec:transduction} gives the measurement.
+amplified by the network as described here. Which of the two operates at human field
+strengths is an empirical question, and the evidence available does not favor ours: primate
+recordings at human-comparable fields find demodulation inefficient but not nearly as
+inefficient as a weak square law requires \cite{vieira2024}, and peripheral-nerve work
+argues that some TI responses reflect carrier integration rather than envelope extraction
+\cite{peripheral2023}. What settles it is not whether TI works but which quantity it
+transduces, and \S\ref{sec:transduction} gives the measurement.
 
 \textbf{The amplifier is not specific to TI.} A tACS field oscillates in the envelope band
 directly and needs no demodulation, but it drives the same near-Hopf resonator. Sweeping
@@ -1620,15 +1621,33 @@ Formally $\eta$ reaches unity near $\varepsilon\approx7$~mV, but that is the ord
 distance to threshold and lies outside the expansion's validity, so parity is not reachable
 by this route rather than merely expensive. At $1$~V/m with a $1$~kHz carrier TI comes out
 $\sim$$300\times$ weaker than tACS if the carrier reaches a fast nodal compartment, and
-$\sim$$10^6\times$ weaker if it reaches only the soma. The one in-vivo measurement of this
-ratio is much less severe: in macaque, TI reaches $0.34$ times the strength of conventional
-tACS in absolute terms, or $\sim$$12\%$ once the current difference is accounted for
-\cite{vieira2024}. The two numbers are not in contradiction, because they are taken in
-different regimes---the primate fields are far above the human weak-field limit, and a
-square-law detector is \emph{least} penalized where the drive is largest, exactly as in
-the rodent case above. They do bracket the honest range, and the prediction that separates
-them is the amplitude scaling of \S\ref{sec:transduction}: the quadratic penalty should
-deepen as the field is reduced toward human values. What TI buys for that price is
+$\sim$$10^6\times$ weaker if it reaches only the soma. \textbf{The one in-regime measurement contradicts this estimate, and that is informative.}
+Vieira et al.\ deliberately worked at modulation depths of $0.5$--$0.7$~V/m, chosen to
+match human studies rather than the $60$--$383$~V/m of rodent work, and measured TI at
+$0.34$ times the strength of conventional tACS (slope; $95\%$ CI $0.04$--$0.65$), or
+$\sim$$12\%$ per unit current \cite{vieira2024}. Their cleanest comparison drives the same
+neurons with conventional tACS and with an AM waveform at \emph{matched modulation depth},
+and finds demodulation roughly $50\%$ efficient. This is the same regime our estimate
+addresses, so the two can be compared directly---and they disagree. Taking their fields
+with a favorable cortical coupling ($\sim$$0.5$~mV per V/m) through a fast element at
+$2$~kHz gives $\varepsilon\!\approx\!0.1$~mV and hence $\eta\!\approx\!0.7\%$, about
+$70\times$ below what they measure; a somatic route is worse by two further orders.
+
+The discrepancy has a natural reading. Because $\eta\propto\varepsilon$, a weak square-law
+detector cannot be $50\%$ efficient at $0.1$~mV: reaching parity would need $\varepsilon$
+of order $10$~mV, two orders above what these fields deliver. An efficiency that is both
+large and roughly field-independent is instead the signature of a \emph{rectifying}
+transduction, and the measured values sit close to the rectifier constants of
+\S\ref{sec:transduction}---$1/\pi\approx0.32$ for half-wave and $2/\pi\approx0.64$ for
+full-wave detection---though the confidence interval is wide and a phase-locking ratio is
+not a drive ratio. Read that way, the existing in-vivo evidence leans away from square-law
+transduction as the dominant route at human field strengths and toward an effectively
+rectifying one. This does not touch the amplification half of the mechanism, which is
+waveform-agnostic, nor the parity argument, which says only that a \emph{smooth} weak
+nonlinearity must transduce $A^2$. It does mean the transduction class is an open
+empirical question rather than a settled one, and it raises the value of the amplitude
+sweep of \S\ref{sec:transduction}: a slope of $1$ would confirm rectification, a slope of
+$2$ our square law. What TI buys for that price is
 targeting: a field applied directly at $\Delta f$ cannot be steered to a deep structure,
 whereas two kHz beams can.
 
