@@ -1,6 +1,75 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.59 — Address Raul's Overleaf review comments (round 1, six comments) (latest)
+## v1.62 — Cut the redundant LaNMM resonance claim; correct the figure-script table (latest)
+`fig_lanmm_resonance` NOT restored (Kaiti's call): it repeats the beat resonance JR (Fig 3) and
+NMM2 (Fig 9) establish more cleanly, while Fig 7 carries LaNMM's unique content (alpha-gamma
+architecture, tongues, double resonance). The orphaned paragraph is cut from 8 lines to 1,
+explicitly a consistency check pointing at the repo -- a Results paragraph must not lean on
+evidence it does not display. `fig_lanmm_resonance` + `fig_lanmm_map` -> `figures/archive/`
+with a README giving the reason for each. Neither is a submission asset.
+FOUND WHILE CHECKING: the README figure-script table predated the two-tone conversion --
+claimed 24 figures vs the manuscript's 21, named 8 that no longer exist (fig_demodulation,
+fig_verification, fig_operating_point, fig_resonance_map, fig_sl_dissociation, both
+lanmm_arnold, fig_nmm2_resonance), and was missing every *_twotone figure. Code-and-data
+availability promises this table regenerates every figure, so it was a broken reproducibility
+claim. Regenerated against \includegraphics + each generator's savefig/.npz deps, verified
+script by script; all 21 confirmed on disk. fig_lanmm_setup stays a **gap** (hand-drawn).
+Repo-only figures now listed with reasons. Commit a93232a.
+
+## v1.61 — Consistency and precision pass (Kaiti round 2, ten items)
+No new theory or simulations. Scoped the absolute-drive claim to eps ~ 0.1 mV (it is
+field-dependent; disparity GROWS as eps falls, smooth sigmoid ~ eps^2 vs a repositioned
+threshold). Softened the microvolt reading: far below any realistic population transfer, NOT a
+measured single-cell property. Eq (22) maximises the RATIO not the response -- both drives
+vanish in the saturated tails. Square law "sets a floor" -> generic leading perturbative form
+(the quadratic coefficient vanishes at the inflection). "Any smooth cellular nonlinearity" ->
+smooth *memoryless* transfer, or nonzero second-order Volterra kernel (channels with memory are
+outside the S2.3 cycle-average). "What the population contributes is tuning, not detection" ->
+tuning and amplification established, detection may be microscopic or population. Carrier
+independence now conditional on an inert carrier (the LaNMM double resonance is the
+counterexample). Fig 1 radio analogy was literally wrong -- an AM tank PRECEDES the detector and
+selects the carrier; ours follows it at baseband. Attribution fix: "which this work does not
+distinguish" -> the cited network studies do not. Stale: e(t), I_0 dropped from notation; Fig S1
+"slow envelope transferred" -> generated beat component; terminals removed from the fast-element
+list in the Conclusion (contradicted the Discussion's own R_m C_m argument). Two one-line
+limitations: cascading NMM transfers cannot solve carrier access (the synaptic filter kills the
+kHz carrier before a second sigmoid, |H| = 6.3e-5 at 2 kHz); a population of microscopic
+rectifiers would have its aggregate transfer broadened by threshold heterogeneity. Commit e303603.
+
+## v1.60 — Scan window artifact found; Vieira demoted from calibration to existence proof
+**BUG.** `sigmoid_family_scan.py` searched v* over V0 +- 6/rho, i.e. reduced x in [-6,6]. The
+optimising x runs as ~1.046*u (u = rho*eps), so it leaves the window once u > ~5.7. Everything
+past that boundary was artifact: the "maximum near rho ~ 40-80 /mV", the "falls again for
+steeper transfers", and the ~0.32 ceiling whose proximity to 1/pi was read as the half-wave
+rectifier constant. Timestep refinement cannot expose this; only the x-window can.
+**Corrected.** Exact scale invariance: eta = eta(u, x) with 2e0 cancelling, so the family
+supremum is INDEPENDENT of field strength (verified to 4 dp over a 160x range of rho). With the
+window scaled to u, eta is numerically monotone over the explored range and converges to the
+hard-threshold limit sup eta = 0.34793 at delta/(2 eps) = 0.523 -- that is 1.093/pi, not 1/pi.
+NO finite optimal width; 95% of ceiling needs u >~ 6, i.e. 1/rho <~ eps/6 (17 uV at Vieira's
+fields, 3.3 uV at human). Also recorded because it cuts against us: such a detector is NOT weak
+-- ~3 orders more absolute open-loop drive than the JR sigmoid at eps = 0.1 mV.
+**Vieira recalibrated.** Fetched PMC11137077 and verified: 20 neurons, 10 responsive, 7 both;
+PLV 0.043 -> 0.20 [0.043, 0.64] (tACS) and -> 0.10 [0.023, 0.38] (AM), p = 0.01; single AM
+carrier through ONE electrode pair, not two tones; depth matched on the EXTRACELLULAR field at
+1.14-1.17x; Deming 0.34 [0.04, 0.65]; 12%/current assumes linearity in I (the point at issue);
+2 monkeys; 234 units, 65 significant; 0.5-0.62 V/m vs 60-383 V/m rodent. Removed "the data
+select the rectifying limit", "an efficiency a population-width transfer cannot deliver", "the
+family can reach the measured efficiency", and the 0.36 anchor. Kept and credited the design
+strengths. Added the retrospective reanalysis: fit dPLV = Psi(a I^p) per modality with baseline
+PLV and state as covariates, test p ~ 1 vs p ~ 2. Prediction 1 now notes that matching
+polarization rather than extracellular field is the correction existing comparisons lack.
+Also fixed from a full read-through: TN abstract contradicted itself in one paragraph (recovery
+is a population property / detection is inherited from the single neuron) because the previous
+revision rewrote only the structured abstract; Conclusion asserted "Because the transduced
+quantity is A^2 and not A" while the Discussion called it open; J-curve 27x -> 30x (the dataset
+has said 30.4x since it was regenerated in 81deb54, after the sentence was written); orphaned
+period left when fig_lanmm_resonance was dropped in 9dd5c1b; Appendix B never cited; the
+300x/10^6x comparison uses two powers of |H_m| and is now marked matched-applied-field.
+Commit a46a81c.
+**STABLE POSITION: detector class unresolved; network amplification established.**
+
+## v1.59 — Address Raul's Overleaf review comments (round 1, six comments)
 Giulio relayed Raul de Palma's Overleaf comments; applied all six in one pass:
 1+5+6 (focus, not Hopf): the resonance is the property of a weakly-damped STABLE FOCUS, not the Hopf
   specifically; the column resonates near BOTH the SNIC (slower) and the Hopf (alpha). Reworded the
