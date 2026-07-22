@@ -20,7 +20,13 @@ os.makedirs(FIGS, exist_ok=True)
 NEBLUE = "#0a4f8c"; NERED = "#b3361f"; NEGREEN = "#1a9850"; GR = "#555555"
 
 
-d = np.load(os.path.join(HERE, "qif_raster.npz"), allow_pickle=True)
+# Prefer the genuine two-tone run when present: spiking/threshold dynamics are
+# exactly where the AM surrogate and physical TI cannot be assumed equivalent.
+_SRC = "qif_raster_twotone.npz" if os.path.exists(
+    os.path.join(HERE, "qif_raster_twotone.npz")) else "qif_raster.npz"
+_TAG = "_twotone" if "twotone" in _SRC else ""
+print(f"  source: {_SRC}")
+d = np.load(os.path.join(HERE, _SRC), allow_pickle=True)
 meta = d["meta"].item(); conds = d["conds"].item()
 T = meta["T"]; tmeas = meta["t_meas"]; t0 = T - tmeas
 
@@ -152,7 +158,7 @@ def fig_raster():
         figstyle.thin_ticks(fig)
         figstyle.scale_text(fig, placed_frac=1)
         overlap.check(fig, placed_frac=1, name="make_qif_figs.py")
-        fig.savefig(os.path.join(FIGS, f"fig_qif_raster.{ext}"), dpi=300, bbox_inches="tight")
+        fig.savefig(os.path.join(FIGS, f"fig_qif_raster{_TAG}.{ext}"), dpi=300, bbox_inches="tight")
     plt.close(fig)
 
 
@@ -232,7 +238,7 @@ def fig_timing():
     figstyle.scale_text(fig, placed_frac=1)
     overlap.check(fig, placed_frac=1, name="make_qif_figs.py")
     for ext in ("pdf", "png"):
-        fig.savefig(os.path.join(FIGS, f"fig_qif_timing.{ext}"), dpi=300, bbox_inches="tight")
+        fig.savefig(os.path.join(FIGS, f"fig_qif_timing{_TAG}.{ext}"), dpi=300, bbox_inches="tight")
     plt.close(fig)
 
 

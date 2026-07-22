@@ -53,11 +53,29 @@ PI = np.pi
 FIGDIR = os.environ.get("TN_FIGDIR") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "figures")
 
 
+
+# --- applied-field waveform -------------------------------------------------
+# 'am'      : A(1 + cos Om t) cos(wc t)        -- the modulated-carrier surrogate
+# 'twotone' : A[cos(w1 t) + cos(w2 t)],  w2-w1 = Om  -- the physical TI waveform
+# At m = 1 the two share their peak amplitude (2A) and their leading quadratic
+# component at Omega; they differ in DC and in the second harmonic (the surrogate
+# emits a 2*Omega line at 25% of the fundamental, two tones emit none).
+WAVE = 'am'
+
+def _field(t, A, wO, wc):
+    if A == 0.0:
+        return 0.0
+    if WAVE == 'am':
+        return A*(1.0 + np.cos(wO*t))*np.cos(wc*t)
+    if WAVE == 'twotone':
+        return A*(np.cos((wc - wO/2.0)*t) + np.cos((wc + wO/2.0)*t))
+    raise ValueError(f"unknown WAVE {WAVE!r}")
+
 def _rhs(y, t, eta, A, wO, wc):
     """RHS of the 8-D system, vectorized over the last axis. eta is the common
     background drive (bifurcation parameter); F drives the E membrane current."""
     r_e, v_e, r_i, v_i, s_e, z_e, s_i, z_i = y
-    F = A*(1.0 + np.cos(wO*t))*np.cos(wc*t) if A != 0.0 else 0.0
+    F = _field(t, A, wO, wc)
     return np.array([
         (DEL/(PI*TAU_E) + 2*r_e*v_e)/TAU_E,
         (eta - (PI*TAU_E*r_e)**2 + v_e**2 + F)/TAU_E + C*(A_EE*s_e - A_EI*s_i),

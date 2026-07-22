@@ -35,9 +35,27 @@ def lorentz_eta(n, etabar, delta=DEL):
 
 
 # ---- exact mean field (Eq. nmm2-ping; copied from nmm2_ping.py for the overlay) ----
+
+# --- applied-field waveform -------------------------------------------------
+# 'am'      : A(1 + cos Om t) cos(wc t)        -- the modulated-carrier surrogate
+# 'twotone' : A[cos(w1 t) + cos(w2 t)],  w2-w1 = Om  -- the physical TI waveform
+# At m = 1 the two share their peak amplitude (2A) and their leading quadratic
+# component at Omega; they differ in DC and in the second harmonic (the surrogate
+# emits a 2*Omega line at 25% of the fundamental, two tones emit none).
+WAVE = 'am'
+
+def _field(t, A, wO, wc):
+    if A == 0.0:
+        return 0.0
+    if WAVE == 'am':
+        return A*(1.0 + np.cos(wO*t))*np.cos(wc*t)
+    if WAVE == 'twotone':
+        return A*(np.cos((wc - wO/2.0)*t) + np.cos((wc + wO/2.0)*t))
+    raise ValueError(f"unknown WAVE {WAVE!r}")
+
 def _mf_rhs(y, t, eta, Af, wO, wc):
     r_e, v_e, r_i, v_i, s_e, z_e, s_i, z_i = y
-    F = Af * (1 + np.cos(wO * t)) * np.cos(wc * t) if Af != 0 else 0.0
+    F = _field(t, Af, wO, wc)
     return np.array([
         (DEL / (PI * TAU_E) + 2 * r_e * v_e) / TAU_E,
         (eta - (PI * TAU_E * r_e) ** 2 + v_e ** 2 + F) / TAU_E + C * (A_EE * s_e - A_EI * s_i),
@@ -73,7 +91,7 @@ def qif_run(etabar, Af, fc, df, Ne, Ni, T, dt, t_meas, nrec=400, seed=1):
     rmean = 0.0; nmean = 0
     for k in range(nstep):
         t = k * dt
-        F = Af * (1 + np.cos(wO * t)) * np.cos(wc * t) if Af != 0 else 0.0
+        F = _field(t, Af, wO, wc)
         Ie = TAU_E * C * (A_EE * s_e - A_EI * s_i)
         Ii = TAU_I * C * (A_IE * s_e - A_II * s_i)
         Ve = Ve + dt * (Ve * Ve + eta_e + F + Ie) / TAU_E
@@ -120,6 +138,11 @@ if __name__ == "__main__":
     T = 250.0 if quick else 420.0
     t_meas = 150.0
     fc = 300.0; Af = 35.0
+    # --twotone drives with the physical TI waveform (two tones) instead of the AM
+    # surrogate. Spiking/threshold dynamics are exactly where the two cannot be
+    # assumed equivalent beyond perturbation theory, so the published run uses it.
+    if "--twotone" in sys.argv:
+        globals()["WAVE"] = "twotone"
     # forced: just below the gamma Hopf (eta_Hopf~1.1); drive at the gamma resonance.
     # entrain: above the Hopf (autonomous f0~54 Hz); drive DETUNED (42 Hz) so the
     #          TI beat re-times the rhythm to its own envelope.
@@ -147,9 +170,10 @@ if __name__ == "__main__":
             conds[f"{reg}_{fld}"] = dict(q=q, mf_t=tm, mf_re=rm)
             print(f"{reg:8s} {fld:3s}: <r_e>={q['rmean']:.4f}  AC@{df:.0f}Hz={q['AC']:.4f}  "
                   f"VS={q['VS']:.3f}  spikes={q['spk_t'].size}")
-    np.savez(os.path.join(HERE, "qif_raster.npz"),
+    _tag = "_twotone" if WAVE == "twotone" else ""
+    np.savez(os.path.join(HERE, f"qif_raster{_tag}.npz"),
              meta=dict(Ne=Ne, Ni=Ni, dt=dt, T=T, t_meas=t_meas, fc=fc, Af=Af,
                        eta_forced=ETA_FORCED, df_forced=DF_FORCED,
                        eta_entrain=ETA_ENTRAIN, df_entrain=DF_ENTRAIN),
              conds=conds, allow_pickle=True)
-    print("saved qif_raster.npz")
+    print(f"saved qif_raster{_tag}.npz  (WAVE={WAVE})")
