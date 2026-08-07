@@ -8,16 +8,16 @@ Nir Grossman, David Bono, Nina Dedic, Suhasa~B. Kodandaramaiah, Andrii Rudenko,
   electric fields.
 \newblock {\em Cell}, 169(6):1029--1041.e16, 2017.
 
+\bibitem{mirzakhalili2020}
+Ehsan Mirzakhalili, Beatrice Barra, Marco Capogrosso, and Scott~F. Lempka.
+\newblock Biophysics of temporal interference stimulation.
+\newblock {\em Cell Systems}, 11(6):557--572.e5, 2020.
+
 \bibitem{nahin2001}
 Paul~J. Nahin.
 \newblock {\em The Science of Radio: with MATLAB and Electronics Workbench
   Demonstrations}.
 \newblock Springer, 2nd edition, 2001.
-
-\bibitem{mirzakhalili2020}
-Ehsan Mirzakhalili, Beatrice Barra, Marco Capogrosso, and Scott~F. Lempka.
-\newblock Biophysics of temporal interference stimulation.
-\newblock {\em Cell Systems}, 11(6):557--572.e5, 2020.
 
 \bibitem{opancar2025}
 Aleksandar Opan{\v c}ar, Petra Ondr{\'a}{\v c}kov{\'a}, David~Samuel Rose, Jan
@@ -44,6 +44,12 @@ Sara Caldas-Martinez, Chaitanya Goswami, Mats Forssell, Jiaming Cao, Alison~L.
 \newblock Cell-specific effects of temporal interference stimulation on
   cortical function.
 \newblock {\em Communications Biology}, 7:1076, 2024.
+
+\bibitem{karimi2024}
+Nafiseh Karimi, Rassoul Amirfattahi, and Abolghasem Zeidaabadi~Nezhad.
+\newblock Neuromodulation effect of temporal interference stimulation based on
+  network computational model.
+\newblock {\em Frontiers in Human Neuroscience}, 18, 2024.
 
 \bibitem{soroushi2025}
 Hossein Soroushi, Sara Abbasi, Yun Du, Ning Ning, and Yuming Lei.
@@ -128,6 +134,13 @@ Roser Sanchez-Todo, Andr{\'e}~M. Bastos, Edmundo Lopez-Sola, Borja Mercadal,
 \newblock A physical neural mass model framework for the analysis of
   oscillatory generators from laminar electrophysiological recordings.
 \newblock {\em NeuroImage}, 270:119938, 2023.
+
+\bibitem{galangadea2023}
+Adri{\`a} Galan-Gadea, Ricardo Salvador, Fabrice Bartolomei, Fabrice Wendling,
+  and Giulio Ruffini.
+\newblock Spherical harmonics representation of the steady-state membrane
+  potential shift induced by {tDCS} in realistic neuron models.
+\newblock {\em Journal of Neural Engineering}, 20(2):026004, 2023.
 
 \bibitem{deitcher2017}
 Yair Deitcher, Guy Eyal, Lida Kanari, Matthijs~B. Verhoog, Guy~Antoine
