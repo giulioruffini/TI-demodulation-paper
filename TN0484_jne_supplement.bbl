@@ -1,5 +1,33 @@
 \begin{thebibliography}{1}
 
+\bibitem{ruffini2025rosetta}
+Francesca Castaldo, Raul de~Palma~Aristides, Pau Clusella, Jordi Garcia-Ojalvo,
+  and Giulio Ruffini.
+\newblock Rosetta {S}tone of neural mass models.
+\newblock {\em Physics Reports}, 1189:1--49, 2026.
+\newblock arXiv:2512.10982.
+
+\bibitem{ruffini2025cfc}
+Giulio Ruffini, Edmundo Lopez-Sola, Raul Palma, Roser Sanchez-Todo, Jakub
+  Vohryzek, Francesca Castaldo, and Karl Friston.
+\newblock Cross-frequency coupling as a neural substrate for prediction error
+  evaluation: a laminar neural mass modeling approach.
+\newblock {\em bioRxiv}, 2025.
+\newblock Preprint 2025.03.19.644090.
+
+\bibitem{sanchezTodo2023}
+Roser Sanchez-Todo, Andr{\'e}~M. Bastos, Edmundo Lopez-Sola, Borja Mercadal,
+  Emiliano Santarnecchi, Earl~K. Miller, Gustavo Deco, and Giulio Ruffini.
+\newblock A physical neural mass model framework for the analysis of
+  oscillatory generators from laminar electrophysiological recordings.
+\newblock {\em NeuroImage}, 270:119938, 2023.
+
+\bibitem{jansen1995}
+Ben~H. Jansen and Vincent~G. Rit.
+\newblock Electroencephalogram and visual evoked potential generation in a
+  mathematical model of coupled cortical columns.
+\newblock {\em Biological Cybernetics}, 73(4):357--366, 1995.
+
 \bibitem{pikovsky2001}
 Arkady Pikovsky, Michael Rosenblum, and J{\"u}rgen Kurths.
 \newblock {\em Synchronization: A Universal Concept in Nonlinear Sciences}.

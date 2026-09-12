@@ -130,7 +130,7 @@ a network mechanism for temporal-interference stimulation}\\[10pt]
 \textbf{Author:} & Giulio Ruffini, Borja Mercadal, Alex Just, Raul de Palma Aristides,\\
 & Francesca Castaldo, Santiago Canals, and Claudio Mirasso \\
 \textbf{Affiliation:} & Neuroelectrics\,/\,BCOM\,/\,IFISC (UIB-CSIC)\,/\,IN (UMH-CSIC) \\
-\textbf{Date:} & 2026-07-21 \qquad \textbf{Version:} 0.12.0 \\
+\textbf{Date:} & 2026-09-12 \qquad \textbf{Version:} 0.13.0 \\
 \textbf{DOI:} & \href{https://doi.org/10.5281/zenodo.21009618}{10.5281/zenodo.21009618} \\
 \end{tabular}\\[4pt]
 {\color{neblue}\rule{\textwidth}{1pt}}
@@ -151,34 +151,31 @@ S1, S2, \dots
 
 \ifsupp\else
 \section*{Abstract}
-% GR: is the abstract up to date? Does it reflect the content? Do last with conclusions.
 \ifjne
 % JNE structured abstract: Objective / Approach / Main results / Significance,
 % bold run-in headings, 300-word cap. Currently 294 -- any addition needs a cut.
 \noindent
 \textbf{Objective.} Temporal-interference (TI) stimulation applies two high-frequency
-currents whose amplitudes beat at a low difference frequency, offering focal, steerable
-stimulation at depth. But the electric field carries no power at the beat, so no passive linear
+currents whose amplitudes beat at a low difference frequency, offering focal stimulation
+at depth. But the electric field carries no power at the beat, so no passive linear
 element can follow it; recovering it needs a nonlinearity, generally sought in single-cell
-ion channels. We ask how much of demodulation and its tuning can be explained at the mesoscale description
-level (neural population).
+ion channels. We ask how much of demodulation and its tuning the neural population explains.
 \textbf{Approach.} We treat the firing-rate nonlinearity of a neural mass as an amplitude
 detector and its recurrent network near a Hopf bifurcation as a resonant amplifier, across a
 modeling ladder: a Jansen--Rit column, a laminar model, an exact next-generation mean
 field, and its underlying quadratic integrate-and-fire network.
-\textbf{Main results.} Transfer-function curvature acts as a square-law detector recovering
-the beat, and the network amplifies it resonantly at its natural frequency, the gain
+\textbf{Main results.} Transfer curvature is a square-law detector of the beat, and the
+network amplifies it resonantly at its natural frequency, the gain
 following $1/\gamma$ as the damping vanishes and tunable by connectivity at fixed
-detection. We offer detection as a \emph{candidate}: square-law transduction is generic for any
-smooth weak nonlinearity, but the sigmoid family's efficiency ceiling is reached
-only in a threshold limit whose microvolt transfer width lies far below any realistic
-population transfer. Amplification is independent of that
-question, since the measured gain is normalized by the detector output. The account reproduces
+detection. The carrier selects the entry point: the soma is shut at kilohertz while the
+axon initial segment stays open. Detection is offered as a \emph{candidate}: square-law
+transduction is generic for any smooth weak nonlinearity, but the sigmoid family reaches its
+efficiency ceiling only at a microvolt, single-cell transfer width. Amplification is independent of that question, since the measured gain
+is normalized by the detector output. The account reproduces
 TI's known behavior: inert-carrier independence at matched polarization, a peak when the beat
 matches a region's rhythm, and spike-timing realignment with little rate change, as seen
 in vivo.
-\textbf{Significance.} Tuning is a population property---whatever detects. TI
-efficacy should thus be as much a property of the targeted brain circuit characteristics as of the device, largest near a
+\textbf{Significance.} TI efficacy should be as much a property of the targeted circuit as of the device, largest near a
 bifurcation and set by state and connectivity. The column is a tuned receiver whose
 detector may sit in the single cell, which reframes dose optimization around the target's
 dynamics and yields a measurement deciding the detector class.
@@ -196,7 +193,9 @@ neural \emph{population} rather than the single cell. In a neural mass, the
 $\sim$$10^4$-neuron unit that generates the EEG, the firing-rate nonlinearity acts as
 a square-law detector that demodulates the beat, while the recurrent synaptic network,
 poised near a Hopf bifurcation, resonantly amplifies the recovered rhythm at its own
-natural frequency. Square-law detection is generic for any smooth weak nonlinearity, but
+natural frequency. The field reaches that nonlinearity through compartment-specific entry
+points that the carrier selects: the soma is shut at kilohertz while the axon initial
+segment stays open. Square-law detection is generic for any smooth weak nonlinearity, but
 its efficiency against a direct in-band drive is bounded, and the sigmoid family approaches
 that bound only in a threshold limit whose microvolt transfer width is a single-cell rather
 than a population scale; present evidence does not decide which class operates in vivo.
@@ -249,9 +248,8 @@ linear, time-invariant (LTI) system maps a sinusoid to a sinusoid of the same
 frequency; it can attenuate or phase-shift the three carrier lines but can
 \emph{never} synthesize a new line at $\Omega$. The membrane's passive RC
 low-pass---often invoked as ``the neuron follows the slow envelope''---therefore
-cannot by itself demodulate TI.  The original passive-filtering
-intuition is now widely regarded as insufficient, since a linear filter cannot
-create the envelope line \cite{mirzakhalili2020}. Demodulation requires a nonlinearity. This is
+cannot by itself demodulate TI, a point now widely accepted \cite{mirzakhalili2020}.
+Demodulation requires a nonlinearity. This is
 the founding lesson of AM radio \cite{nahin2001}: a receiver cannot
 recover the message with linear components alone; it needs a nonlinear element (a
 square-law device or a diode) to shift spectral energy down to \emph{baseband}---the
@@ -271,7 +269,7 @@ onset response) rather than a dedicated envelope channel
 response is not driven by envelope extraction at all \cite{peripheral2023}. In
 vivo, TI reliably alters spike \emph{timing} but not firing rate in the primate
 brain, and is much weaker than conventional low-frequency stimulation under
-human-relevant conditions \cite{vieira2024}. Most tellingly, recent slice work
+human-relevant conditions \cite{vieira2024}. Recent slice work
 finds that pyramidal and parvalbumin (PV) interneurons respond differently and
 that most pyramidal TI responses disappear when synaptic transmission is blocked,
 leading Caldas-Martinez et al.\ to conclude that TI is ``largely a network
@@ -284,8 +282,8 @@ nonzero curvature $\Sig''$ makes it a square-law demodulator, and a
 \emph{second-order-synapse network} whose synaptic kinetics filter the carrier away
 while a weakly-damped \emph{stable focus} resonantly amplifies the recovered beat component at
 the network's natural frequency (Fig.~\ref{fig:concept}). The amplification is a property
-of a weakly-damped \emph{stable focus} nearing criticality---here the Hopf that opens the
-alpha rhythm---and is not tied to one parameter. (A saddle-node on an invariant circle gives
+of the focus nearing criticality---here the Hopf that opens the alpha rhythm---and is not
+tied to one parameter. (A saddle-node on an invariant circle gives
 the column a separate, slower rhythm, but through excitability with a diverging period rather
 than a sharp focus resonance, so its amplification is of a different kind.)
 Where existing accounts locate the nonlinearity in cellular excitability, ours reads
@@ -420,7 +418,7 @@ membrane low-pass does not contradict this: it bears on \emph{access}---how the 
 reaches the nonlinearity---not on legitimacy. Because an applied field polarizes the membrane
 directly, in parallel, at every compartment (\S\ref{sec:coupling}), access is set by the
 entry point, and the open biophysical question is which fast compartment (axon initial
-segment, node, terminal, or channel) still passes a kHz carrier to that nonlinear transfer
+segment, node, or channel) still passes a kHz carrier to that nonlinear transfer
 (\S\ref{sec:khz}). Once the carrier is sampled there, the neural mass describes the
 population-level demodulation and near-Hopf amplification of the recovered beat component.
 
@@ -439,9 +437,8 @@ $\sim$10~Hz) coupled to a superficial PING-like (pyramidal--interneuron network
 gamma) subcircuit (pyramidal $P_2$ with PV interneurons; intrinsic gamma,
 $\sim$40~Hz). The single JR column lets us isolate and analyze the
 mechanism; the LaNMM then exhibits it in a column with its own fast/slow loops and
-two native resonances. Everything below applies to both: the field couples
- through the lumped membrane population in
-a sigmoid, and the recovered beat component drives a resonant circuit.
+two native resonances. Everything below applies to both: the field enters the sigmoid argument as a
+membrane polarization, and the recovered beat component drives a resonant circuit.
 
 \subsection{From applied field to a squared-envelope beat component}\label{sec:coupling}
 We model the applied TI field $E(t)$ (V/m) as a quasi-static perturbation of the
@@ -458,7 +455,7 @@ Unlike synaptic drive, an applied field does not enter through the synaptic kern
 it polarizes the membrane directly and simultaneously at every compartment---soma,
 dendrite, axon initial segment (AIS), terminal---each with its own coupling and its
 own access filter. The perturbation $s(t)$ reaching the nonlinearity is therefore a
-sum over these parallel entry points,
+sum over these parallel entry points, or ``doors'',
 \begin{equation}
 s(t)=\sum_c \boldsymbol\lambda^c_f\!\cdot\!\mathbf E(t),\qquad
 \lambda^c_f=\lambda^c_0\,\lvert H_c(\omega_c)\rvert,
@@ -476,7 +473,7 @@ $\lambda^{\rm soma}_f$ collapses and the dominant term crosses over (\S\ref{sec:
 For a single carrier the amplitude reaching the nonlinearity is the post-coupling
 polarization $\varepsilon=\lambda_f E_0$ of the open door, recovering Eq.~\eqref{eq:am}
 rather than the raw applied field. The main text takes the favorable direct limit in
-which a fast door (axonal/nodal/terminal) samples the carrier before appreciable
+which a fast door (axonal or nodal) samples the carrier before appreciable
 attenuation, $\lambda_f\!\approx\!\lambda_0$, isolating the sigmoid$+$resonance
 principle; \S\ref{sec:khz} restores the roll-off and shows the carrier dependence
 entering quadratically, $A_\Omega\propto\lvert H(f_c)\rvert^2$.
@@ -728,7 +725,8 @@ low-passes the field before the spike nonlinearity. (The demodulating $\Sig''$ i
 transfer; the door filter is the upstream \emph{access} stage---this section asks only whether the
 carrier survives to it.) Modeling the somatic door as a first-order filter
 $H_m(\omega)=1/(1+i\omega\tau_m)$, the carrier amplitude reaching the detector is
-$\varepsilon_{\mathrm{eff}}(f_c)=\varepsilon/\sqrt{1+(\omega_c\tau_m)^2}$, and
+$\varepsilon_{\mathrm{eff}}(f_c)=\varepsilon/\sqrt{1+(\omega_c\tau_m)^2}$ (that is,
+$\lambda^{\rm soma}_f E_0$ in the notation of Eq.~\eqref{eq:doors}), and
 since $\Omega\ll\omega_c$ the three AM lines are attenuated almost equally, so
 \begin{equation}
 A_\Omega(f_c)\;\simeq\;\half\,\Sig''(v^*)\,m\,\varepsilon_{\mathrm{eff}}^2
@@ -770,15 +768,17 @@ this limit, and a direct kHz-carrier run (Fig.~\ref{fig:khz_direct}) confirms it
 \toprule
 Entry point (door) & Input & Access corner & Dominates when \\
 \midrule
-synapse\,$\to$\,dendrite\,$\to$\,soma & rate $\phi$ & $\sim$16\,Hz & normal operation \\
+synapse\,$\to$\,dendrite\,$\to$\,soma & rate $r$ & $\sim$16\,Hz & normal operation \\
 field\,$\to$\,soma\,/\,dendrite & field $\varepsilon$ & $\sim$10\,Hz & DC, slow tES \\
 \textbf{field\,$\to$\,AIS} & field $\varepsilon$ & $\sim$\textbf{800\,Hz} & \textbf{kHz carriers (TI)} \\
-field\,$\to$\,presynaptic terminal & field $\varepsilon$ & 1--3\,kHz & very high carriers \\
+Na$_{\rm v}$ activation gate (within $\Sig$) & --- & $\sim$1\,kHz & sets the ceiling \\
 \bottomrule
 \end{tabular}
 \caption{Entry points into the sigmoid argument of Eq.~\eqref{eq:doors}. The same field enters through
 several doors; corners are order-of-magnitude, and which door dominates is set by the carrier. The AIS
-door (bold) is the leading candidate for TI; the compartment is not yet settled.}
+door (bold) is the leading candidate for TI; the compartment is not yet settled. Presynaptic
+terminals polarize strongly but, as isopotential compartments, are no faster than the soma
+(\S\ref{sec:discussion}).}
 \label{tab:doors}
 \end{table}
 
@@ -798,8 +798,9 @@ One lumped assumption then remains: that $\Sig$ is static. A static $\Sig$ is th
 $\tau_{\rm gate}\!\to\!0$ idealization of a spike-initiation nonlinearity whose Na$_{\rm v}$ activation
 gate has $\tau\!\approx\!0.1$--$0.2$~ms, a corner near 1~kHz; above it $\Sig''$ itself rolls off by a
 factor $|H_{\rm gate}(\omega_c)|^2$. This gate, not the membrane, sets the frequency ceiling of the
-mechanism, and it is measurable: a carrier sweep at fixed envelope frequency and field should show two
-roll-offs (near $\sim$800~Hz and 1--3~kHz), not the single $\sim$10~Hz corner of the somatic door.
+mechanism, and it is measurable: a carrier sweep at fixed envelope frequency and field should roll
+off only in the kHz range, where the access corner ($\sim$800~Hz) and the gate corner ($\sim$1~kHz)
+combine, not at the $\sim$10~Hz corner of the somatic door.
 
 Because transcranial electrical stimulation (tES)---and TI, a tES with a kHz carrier---is weak and \emph{modulatory}, the
 fast-element route is a small, sustained bias of the most excitable compartments, not
@@ -1165,7 +1166,7 @@ passes the envelope ($\sim$0.7) and suppresses the $100$~Hz carrier ($\sim$2.5\%
 To pre-empt the objection that the demonstration runs only at $100$~Hz, we drive the
 full recurrent column with a genuine kHz field, passing it through
 an explicit membrane low-pass (an extra first-order state, time constant $\tau$) for
-each coupling route before it reaches the sigmoid (Fig.~\ref{fig:khz_direct}a). The
+each coupling route before it reaches the sigmoid. The
 column demodulates and resonates at the recovered alpha well into the kHz band when
 the nonlinearity sits at a fast element ($\tau\!\approx\!0.2$~ms), exactly as
 Eq.~\eqref{eq:khz} predicts (Fig.~\ref{fig:khz_direct}a). Driving the fast-element route
@@ -1470,7 +1471,9 @@ $\lambda_f=\lambda_0|H(f_c)|$, or when a fast cellular or network stage is itsel
 through the membrane roll-off (Eq.~\eqref{eq:khz})---as single-neuron accounts also
 predict \cite{opancar2025,mirzakhalili2020}. \emph{Test:} hold the in-zone
 polarization fixed (raising $E_0$ to compensate the measured $\lambda_f$) while
-sweeping $f_c$; the network signature is a flat envelope response. Existing
+sweeping $f_c$; the network signature is a flat envelope response. At fixed applied
+field the same sweep reads the entry point: the roll-off should sit in the kHz range (AIS
+access, Na$_{\rm v}$ gating), not at the $\sim$10~Hz somatic corner (\S\ref{sec:khz}). Existing
 AM-versus-tACS comparisons match the extracellular modulation rather than $\varepsilon$
 \cite{vieira2024}, so this is the correction they lack.
 \item \textbf{Operating-point (PEIX) control and sign flip.} Because
@@ -1528,7 +1531,7 @@ Network, not single-cell, read-out (population sigmoid + synaptic recurrence) &
 Carrier independence at fixed polarization (no $\omega_c$ in $A_\Omega$) & TI thresholds
 inherit the carrier's $f_c$-dependence \cite{opancar2025,peripheral2023}; bare kHz weakly
 effective \cite{esmaeilpour2020} & Fix in-zone polarization, sweep $f_c\!\to$ flat envelope
-response \\
+response; at fixed field, a kHz-range (not 10~Hz) roll-off \\
 Operating-point ($\Sig''$) control and sign reversal across $v_0$ & Cell-type-specific TI
 responses (PV vs.\ pyramidal) \cite{caldas2024} & Shift $v^*$ (neuromodulation/state)
 $\to$ scaling and sign flip \\
@@ -1627,7 +1630,7 @@ sharper: the reduction from the spiking QIF population is exact in the thermodyn
 and $(r,v)$ are genuine \emph{order parameters}, conformally related to the
 Kuramoto--Daido order parameter through the Ott--Antonsen ansatz
 \cite{ott2008,montbrio2015}, so the Hopf is a true macroscopic transition and the
-$1/\gamma$ gain its diverging susceptibility. One qualifier keeps this honest. Because the
+$1/\gamma$ gain its diverging susceptibility. One qualifier applies. Because the
 reduction assumes all-to-all coupling the critical point is \emph{mean-field}: it delivers
 temporal critical slowing but no diverging \emph{spatial} correlation length, so the column
 realizes the temporal-susceptibility face of criticality and not the scale-free spatial
@@ -1797,7 +1800,7 @@ matching post-coupling polarization rather than extracellular field alone, and r
 amplitude slope together with the transfer-corrected harmonic ratio of
 \S\ref{sec:transduction}, separates the classes without an absolute calibration.
 
-None of this touches the amplification half, and it is worth being precise about why. The
+None of this touches the amplification half, for a definite reason. The
 $J$-curve reports $A_\Omega/A_{\rm open}$, the closed-loop response normalized by the
 open-loop detector output at the same operating point. The detector divides out by
 construction: whatever manufactures the beat component---a smooth population curvature, a
@@ -1855,7 +1858,11 @@ generic perturbative one, and the beat component it generates,
 $\half\Sig''(v^*)\varepsilon_1\varepsilon_2$, is what a second-order-synapse network near
 a Hopf then amplifies as $1/\gamma$. Its efficiency against a direct in-band drive is
 bounded, however, and the bound is approached only where the transfer has narrowed to a
-single-cell scale, so whether the population or the cell detects is left open here. A fast
+single-cell scale, so whether the population or the cell detects is left open here. Because
+an applied field polarizes every compartment in parallel, the carrier selects the entry
+point: the somatic door is shut above tens of hertz while the axon initial segment passes a
+kHz carrier, so the neural-mass argument is a sum over doors, and a carrier sweep should
+roll off in the kHz range rather than at the somatic corner. A fast
 single-cell nonlinearity---Na$^+$ at nodes or the AIS, persistent Na$^+$---need only
 deliver the carrier to that transfer, with presynaptic terminals contributing enhanced
 polarization and nonlinear release downstream rather than carrier sampling; the mechanism
@@ -1983,7 +1990,6 @@ $y_1,\,y_2$ & excitatory, inhibitory post-synaptic potentials & mV \\
 $C,\,C_1\!-\!C_4$ & intracolumn connectivity constants & -- \\
 $p$ & external input rate; JR bifurcation parameter & s$^{-1}$ \\
 \midrule \multicolumn{3}{@{}l}{\textit{Applied TI field and coupling}} \\*
-$s(t)$ & applied TI field perturbation, AM or two-tone (JR; LaNMM) & mV \\
 $\varepsilon$ & field modulation amplitude, JR and LaNMM (a membrane polarization entering the sigmoid argument) & mV \\
 $A_f$ & field modulation amplitude, NMM2/QIF (in the dimensionless MPR units of $v_E$) & -- \\
 $m$ & modulation depth & -- \\
@@ -1992,6 +1998,8 @@ $f_1,f_2$ & the two applied carrier tones ($f_c\!=\!(f_1\!+\!f_2)/2$) & Hz \\
 $\Delta f,\ \Omega\!=\!2\pi\Delta f$ & envelope (beat) frequency, $\Delta f\!=\!f_2\!-\!f_1$ & Hz, rad\,s$^{-1}$ \\
 $E(t),\ s(t)$ & applied field; membrane perturbation reaching the nonlinearity ($s\!=\!\sum_c\boldsymbol\lambda^c_f\!\cdot\!\mathbf E$, Eq.~\eqref{eq:doors}) & V\,m$^{-1}$; mV \\
 $\lambda,\ \lambda^c_0,\ \lambda^c_f$ & field-to-membrane coupling: generic, DC (door $c$), and carrier-effective ($\lambda^c_f\!=\!\lambda^c_0|H_c|$) & mV\,/\,(V\,m$^{-1}$) \\
+$\Lambda[\hat E]$ & direct (non-synaptic) field term in the sigmoid argument, Eq.~\eqref{eq:nmm1}; equals $s(t)$ in the JR column & mV \\
+$H_c(\omega),\ H_{\rm gate}$ & access filter of door $c$; Na$_{\rm v}$ activation-gate filter & -- \\
 $H_m(\omega),\ \tau_m$ & somatic membrane low-pass and its time constant & --; ms \\
 $\tau$ & fast-element (node/AIS/terminal) time constant & ms \\
 \midrule \multicolumn{3}{@{}l}{\textit{Network dynamics, response, and bifurcation}} \\*
@@ -2028,7 +2036,9 @@ context; see the head note on $A$ and $C$.}\label{tab:notation}
 The models are written in the NMM1 transfer-function formalism of Eq.~\eqref{eq:nmm1}
 \cite{ruffini2025rosetta}: synaptic operators $\hat L$ transduce firing rates into PSPs, the
 PSPs sum with any direct field term $\Lambda[\hat E]$ in the sigmoid argument, and the sigmoid
-returns the rate.
+returns the rate. The Jansen--Rit column is given here; the laminar model is specified in
+\cite{ruffini2025cfc,sanchezTodo2023} with its field drive in Eq.~\eqref{eq:lanmm_drive}, and
+the NMM2 PING motif and its QIF network in Eq.~\eqref{eq:nmm2-ping} and \S\ref{sec:qif-methods}.
 
 \subsection*{Jansen--Rit column}
 Writing $y_0$ for the excitatory PSP driving the interneurons, $y_1$ and $y_2$ for the
@@ -2115,7 +2125,7 @@ modulation of a persisting rhythm \emph{gating}, reporting the metric appropriat
 (the above-Hopf QIF panel, with its $\sim$11~Hz detuning, is a case of gating, not
 entrainment).
 
-The Arnold-tongue protocol for Fig.~\ref{fig:entrain} places the column on the limit-cycle side (input $p$ between the SNIC and the Hopf, free-running at $f_0(p)$) and drives it with $s(t)=\varepsilon\cos\Omega t$; the implementation, including the grid widths and the clipping check, is in the released code. One subtlety is worth stating: as onset is approached the cycle amplitude vanishes and the tongue merges into the forced-resonance bandwidth, so the supercritical locking range and the subcritical $1/\gamma$ susceptibility coincide there by construction---which is why responsiveness peaks at criticality on both sides.
+The Arnold-tongue protocol for Fig.~\ref{fig:entrain} places the column on the limit-cycle side (input $p$ between the SNIC and the Hopf, free-running at $f_0(p)$) and drives it with $s(t)=\varepsilon\cos\Omega t$; the implementation, including the grid widths and the clipping check, is in the released code. One subtlety: as onset is approached the cycle amplitude vanishes and the tongue merges into the forced-resonance bandwidth, so the supercritical locking range and the subcritical $1/\gamma$ susceptibility coincide there by construction---which is why responsiveness peaks at criticality on both sides.
 
 \section{Supplementary figures}
 

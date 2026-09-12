@@ -36,7 +36,7 @@ bands), to the exact mean-field **NMM2** (derived rectifier), down to a spiking
 ├── LICENSE                                # CC-BY-4.0
 ├── CITATION.cff                           # machine-readable citation (DOI, authors)
 ├── TN0484_envelope_demodulation.tex       # the manuscript (\graphicspath{{figures/}})
-├── TN0484_envelope_demodulation.pdf       # last good build (34 pp)
+├── TN0484_envelope_demodulation.pdf       # last good build (46 pp)
 ├── TN0484_envelope_demodulation.bbl       # committed so a single pdflatex works w/o bibtex
 ├── references.bib                         # BibTeX source for all references
 ├── requirements.txt                       # pinned Python deps (numpy/scipy/matplotlib + ...)
@@ -70,7 +70,7 @@ pdflatex TN0484_envelope_demodulation
 pdflatex TN0484_envelope_demodulation
 ```
 
-Last known good: **34 pp, 0 undefined refs, 0 citation warnings.** The `.bbl` is
+Last known good: **46 pp (TN), 34 pp (JNE article) + 14 pp (supplement); 0 undefined refs, 0 citation warnings.** The `.bbl` is
 committed, so a single `pdflatex` rebuilds the PDF when references are unchanged.
 
 ## Reproduce the figures

@@ -1,6 +1,35 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.62 — Cut the redundant LaNMM resonance claim; correct the figure-script table (latest)
+## v1.63 — Integrate the August "doors" edit; abstract and conclusion brought up to date (latest)
+Giulio's 2026-08-07 snapshot (501ee97, undocumented until now) rewrote the coupling section
+around parallel, compartment-specific entry points ("doors", Eq. doors, Table doors, AC space
+constant Eq. lambda, Na_v gate ceiling), added the NMM1 transfer-function form (Eq. nmm1), and
+moved the JR equations + parameter table to a new App. B. It left a note asking whether the
+abstract still reflected the content. This pass (v0.13.0, 2026-09-12):
+- Abstracts (TN prose + JNE structured) and Conclusion now carry the entry-point result
+  (carrier selects the door; soma shut at kHz, AIS open). JNE abstract trimmed back to the
+  300-word cap (301 by pdftotext including the four run-in headings).
+- Table doors reconciled with the Discussion's R_m C_m argument: the "presynaptic terminal,
+  1-3 kHz" row contradicted "a terminal tracks a kHz carrier no better than a soma"; replaced
+  by the Na_v activation-gate row (~1 kHz), caption says terminals are sensitive, not fast.
+  "terminal" dropped from the two fast-door lists (sec:nmm, sec:coupling). Rate symbol in the
+  table phi -> r (paper's symbol).
+- "Two roll-offs (800 Hz and 1-3 kHz)" -> a single kHz-range roll-off where access (~800 Hz)
+  and gate (~1 kHz) corners combine; the two corners are too close to resolve as two. FLAG
+  for Giulio: this rewords his sentence.
+- Entry-point test added to Prediction 1 and Table predictions (kHz-range, not 10 Hz, roll-off
+  at fixed field). eps_eff tied to lambda^soma_f E_0. Notation table: duplicate s(t) row
+  removed; Lambda[E], H_c, H_gate added. App. B opens with pointers to where LaNMM/NMM2/QIF
+  equations live. Intro: sentence duplicated by the Aug edit merged; "weakly-damped stable
+  focus" twice in a row fixed; "Most tellingly" / "keeps this honest" / "worth being precise" /
+  "worth stating" removed (self-grading). Version block + CITATION.cff -> 0.13.0.
+- Builds: TN 46 pp (was 34: App. B + doors material), JNE 34 pp, supplement 14 pp, 0 undefined
+  after two passes of ./build.sh all (xr-hyper needs the second pass). README page counts fixed.
+- Not done: co-author approval request (still unsent); SC/CM funding lines; AI-tool versions.
+  JNE main text has grown by the doors material; re-measure with texcount before submission
+  (texcount returns 0 on this file because of the \ifjne switches; measure on a jne-expanded copy).
+
+## v1.62 — Cut the redundant LaNMM resonance claim; correct the figure-script table
 `fig_lanmm_resonance` NOT restored (Kaiti's call): it repeats the beat resonance JR (Fig 3) and
 NMM2 (Fig 9) establish more cleanly, while Fig 7 carries LaNMM's unique content (alpha-gamma
 architecture, tongues, double resonance). The orphaned paragraph is cut from 8 lines to 1,
