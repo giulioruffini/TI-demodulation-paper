@@ -5,6 +5,6 @@
 - [ ] ask Canals and Mirasso for their funding lines (Acknowledgments TODO)
 - [ ] pin Claude/ChatGPT versions in the AI declaration before JNE submission
 - [ ] re-measure JNE main-text words with texcount on a jne-expanded copy (12,000 cap)
-- [ ] push v0.13.0 to GitHub and refresh the Zenodo record
+- [ ] merge two-tone-validation into main (main is behind) and refresh the Zenodo record with v0.13.0
 - [ ] GALVANI plenary deck (Slide Maker/GALVANI2026): rehearse to 18 min, decide final title
 - [x] integrate the 2026-08-07 doors edit into abstract, conclusion, predictions (v0.13.0)
