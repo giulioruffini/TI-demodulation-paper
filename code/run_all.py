@@ -54,6 +54,8 @@ STEPS = [
         "-> lanmm_field_P1_twotone.npz (slow)"),
     ("data: qif_raster twotone", "qif_raster.py", ["--twotone"], [],
         "-> qif_raster_twotone.npz (N=8000, settle 800 ms + integer-cycle windows; slow)"),
+    ("data: ping_fast_carrier_check", "ping_fast_carrier_check.py", [], [],
+        "-> ping_fast_carrier_check.json (MPR crossover + PING fast-carrier source error; ~10 s)"),
 
     # --- figure generators (write to FIGDIR) ---
     ("figures_v2",  "figures_v2.py", [], [
@@ -87,6 +89,8 @@ STEPS = [
         "computes the curves via nmm2_ping.lockin_curve (no cache)"),
     ("make_khz_twotone_fig", "make_khz_twotone_fig.py", [], ["fig_khz_twotone"],
         "renders khz_twotone.npz; see GAPS for its producer"),
+    ("mpr_crossover_fig", "mpr_crossover_fig.py", [], ["fig_mpr_crossover"],
+        "needs ping_fast_carrier_check.json"),
 ]
 
 # Figures with no producing script (documented gaps).

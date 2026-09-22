@@ -28,17 +28,24 @@ _TAG = "_twotone" if "twotone" in _SRC else ""
 print(f"  source: {_SRC}")
 d = np.load(os.path.join(HERE, _SRC), allow_pickle=True)
 meta = d["meta"].item(); conds = d["conds"].item()
-T = meta["T"]; tmeas = meta["t_meas"]; t0 = T - tmeas
+# Cache layout: since 2026-09-22 each condition carries its own T, t_meas (integer number of
+# beat cycles) and kmeas; older caches had one global window. Resolve per condition.
+def _win(key):
+    q = conds[key]["q"]
+    if "T" in q:
+        return float(q["T"]), float(q["t_meas"])
+    return float(meta["T"]), float(meta["t_meas"])
+T, tmeas = _win(next(iter(conds))); t0 = T - tmeas          # defaults (first condition)
 
 
 def env(t, df):
     return 0.5 * (1 + np.cos(2 * np.pi * df / 1000.0 * t))
 
 
-def cycle_avg(re_t, ts, df, nbin=20):
+def cycle_avg(re_t, ts, df, nbin=20, t_start=None):
     """Population rate folded onto the TI-beat (Df) phase over the measure window.
     Flat for a free/asynchronous network; a clear bump when timing locks to the beat."""
-    m = ts >= t0; t = ts[m]; re = re_t[m]
+    m = ts >= (t0 if t_start is None else t_start); t = ts[m]; re = re_t[m]
     ph = (df / 1000.0 * t) % 1.0
     bins = np.linspace(0, 1, nbin + 1); idx = np.clip(np.digitize(ph, bins) - 1, 0, nbin - 1)
     out = np.array([re[idx == k].mean() if (idx == k).any() else np.nan for k in range(nbin)])
@@ -110,6 +117,8 @@ def beat_inset(ax, off_key, on_key, mode="rate"):
 
 
 def raster_panel(ax, key, title, show_env, annot=None):
+    global T, tmeas, t0
+    T, tmeas = _win(key); t0 = T - tmeas
     c = conds[key]; q = c["q"]; df = q["df"]; nrec = q["nrec"]
     st = q["spk_t"]; si = q["spk_id"]
     # smoothed population rate r_E(t) (right axis), drawn first (behind)
@@ -126,7 +135,9 @@ def raster_panel(ax, key, title, show_env, annot=None):
                  lw=1.3, alpha=0.55, zorder=3)
     # raster on top
     ax.plot(st - t0, si, "|", color="k", ms=1.7, mew=0.35, alpha=0.7, zorder=5)
-    ax.set_xlim(0, tmeas); ax.set_ylim(-2, nrec + 2); ax.set_zorder(axr.get_zorder() + 1)
+    # show the last ZOOM ms of the measurement window (the folds and metrics use all of it)
+    ZOOM = 200.0
+    ax.set_xlim(max(0.0, tmeas - ZOOM), tmeas); ax.set_ylim(-2, nrec + 2); ax.set_zorder(axr.get_zorder() + 1)
     ax.patch.set_visible(False)
     if annot:                                     # quantify the envelope-locked timing
         ax.text(0.025, 0.96, annot, transform=ax.transAxes, fontsize=9.0, va="top",
@@ -146,11 +157,16 @@ def fig_raster():
     raster_panel(axs[1, 1], "entrain_on",
                  "(d)", True)
     beat_inset(axs[0, 1], "forced_off", "forced_on")                    # forced: rate folded on Df
-    beat_inset(axs[1, 1], "entrain_off", "entrain_on", mode="gamma")    # gating: gamma amp vs Df phase (PAC)
+    # 2026-09-22 (review R7): the gamma-amplitude estimator (45-70 Hz band-pass + Hilbert,
+    # fold from 40 ms) removed the 11 and 95 Hz sidebands that carry the envelope and
+    # included the settling interval. The inset now folds the population rate over the
+    # measurement window, as in (b); with 34 beat cycles the near-commensurate 53 Hz gamma
+    # averages out of the 42 Hz fold. Gating vs capture is shown by the sidebands in fig_qif_timing.
+    beat_inset(axs[1, 1], "entrain_off", "entrain_on", mode="rate")
     for ax in axs[:, 0]:
         ax.set_ylabel("E neuron #")
     for ax in axs[1, :]:
-        ax.set_xlabel("time (ms)")
+        ax.set_xlabel("time in the measurement window (ms)")
     fig.tight_layout(w_pad=2.8, h_pad=2.0)
     for ext in ("pdf", "png"):
         figstyle.thin_ticks(fig)
