@@ -7,4 +7,5 @@
 - [ ] re-measure JNE main-text words with texcount on a jne-expanded copy (12,000 cap)
 - [ ] merge two-tone-validation into main (main is behind) and refresh the Zenodo record with v0.13.0
 - [ ] GALVANI plenary deck (Slide Maker/GALVANI2026): rehearse to 18 min, decide final title
+- [ ] re-sync Overleaf from GitHub (overleaf/main is the v0.12.0 mirror of 2026-07-21; Raul comments there)
 - [x] integrate the 2026-08-07 doors edit into abstract, conclusion, predictions (v0.13.0)
