@@ -1,5 +1,19 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v1.65 — Kaiti's revision brief v2 received; its code claims verified; Hopf located (no manuscript edits)
+Brief `WP0185_review_notes_v2_for_Klaus.md` (Kaiti, 2026-09-22; filed with the sigmoid/QIF note,
+crossover.py and mpr_crossover.png under `_private/reviews/2026-09-22_kaiti_v2/`, gitignored).
+Central point R13: the JR sigmoid curvature σ'' and the QIF/MPR fast-carrier mixing are different
+detectors; the uncoupled MPR DC response crosses from a²F''/4 (slow carrier) to a²F'/(2ω²) (fast),
+so NMM2 does not validate the σ'' law, the sign-flip prediction is JR-specific, and the 0.3479
+ceiling is a memoryless comparator only. Verified in our code today: timing_not_rate.py:87 reads
+Sigm(v) without the field; qif_raster.py vector strength is pooled; make_lanmm_field_figs.py:30
+clips at zero and lanmm_field_tongues.py uses FFT band power (Methods says Hilbert); QIF runs are
+420 ms/150 ms Euler; jr_twotone_figs.spec is amplitude not power; run_all.py lacks all 8 two-tone
+figures. Mean-field PING Hopf by Jacobian bisection on nmm2_ping._rhs: η̄_H = 1.11045, f = 53.97 Hz
+— the paper's "≈1, QIF 1.1 is finite-size" paragraph is wrong. Companion check scripts/JSON and
+the v1 notes did not arrive (only the md, note tex/pdf, crossover.py, png). Plan in todo.md.
+
 ## v1.64 — Readability and notation review written (no manuscript edits)
 Full read of v0.13.0 for prose and notation only; findings in
 `docs/review_2026-09-22_readability_notation.md` with line numbers against commit 072d2dc.
