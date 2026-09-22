@@ -1666,9 +1666,16 @@ strengths is an empirical question that present evidence does not settle. Primat
 recordings at human-comparable fields find an AM waveform less effective than matched-depth
 tACS, but do not estimate the difference closely enough to select a transduction law
 \cite{vieira2024}, and peripheral-nerve work argues that some TI responses reflect carrier
-integration rather than envelope extraction \cite{peripheral2023}. What settles it is not
-whether TI works but which quantity it transduces, and \S\ref{sec:transduction} gives the
-measurement.
+integration rather than envelope extraction \cite{peripheral2023}. Two 2025 studies sharpen
+that point at suprathreshold intensities: in peripheral nerves the strength--frequency
+curves of TI, amplitude-modulated and unmodulated kHz waveforms overlap
+\cite{opancar2025}, and in isolated hippocampal neurons pure $2$ and $20$~kHz fields excite
+at high intensity while modulation patterns the firing without lowering the threshold
+\cite{semenov2025}. At those intensities the carrier itself stimulates. The weak-field
+mixing route analyzed here is a candidate for the subthreshold, modulatory regime of the
+primate recordings and of the recent patient studies of hippocampal TI
+\cite{vieira2024,missey2026}. What settles it is not whether TI works but which quantity
+it transduces, and \S\ref{sec:transduction} gives the measurement.
 
 \textbf{The amplifier is not specific to TI.} A tACS field oscillates in the envelope band
 directly and needs no demodulation, but it drives the same near-Hopf resonator. Sweeping
@@ -1851,7 +1858,9 @@ transfer, and whether it stays sharp enough at human fields is a separate biophy
 question. The exact mean field resolves the static-versus-dynamic question for a QIF
 population with an instantaneous quadratic; real spike initiation has gate kinetics of
 $0.1$--$0.2$~ms, so at $1$~kHz the gate is not a small parameter, and the fast-carrier
-coefficient of \S\ref{sec:dynamic} is a model statement, not a measured cellular one. The human evidence is also not uniformly positive: a
+coefficient of \S\ref{sec:dynamic} is a model statement, not a measured cellular one;
+single-compartment modeling finds that channel gating kinetics, not the current--voltage
+nonlinearity, carry the TI response \cite{plovie2025}. The human evidence is also not uniformly positive: a
 controlled study found peripheral but no central effects \cite{iszak2023}, and a systematic
 review reports that occipito-parietal TI did not modulate alpha power
 \cite{mansourinezhad2025}. The narrowband prediction turns the second into a design
