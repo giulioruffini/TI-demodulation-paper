@@ -1,4 +1,11 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{vinck2010}
+Martin Vinck, Marijn van Wingerden, Thilo Womelsdorf, Pascal Fries, and Cyriel
+  M.~A. Pennartz.
+\newblock The pairwise phase consistency: a bias-free measure of rhythmic
+  neuronal synchronization.
+\newblock {\em NeuroImage}, 51(1):112--122, 2010.
 
 \bibitem{ruffini2025rosetta}
 Francesca Castaldo, Raul de~Palma~Aristides, Pau Clusella, Jordi Garcia-Ojalvo,
@@ -33,6 +40,29 @@ Arkady Pikovsky, Michael Rosenblum, and J{\"u}rgen Kurths.
 \newblock {\em Synchronization: A Universal Concept in Nonlinear Sciences}.
 \newblock Cambridge University Press, 2001.
 
+\bibitem{gordon2019}
+Nathan Gordon, Jakob Hohwy, Matthew~J. Davidson, Jeroen J.~A. van Boxtel, and
+  Naotsugu Tsuchiya.
+\newblock From intermodulation components to visual perception and
+  cognition---a review.
+\newblock {\em NeuroImage}, 199:480--494, 2019.
+
+\bibitem{esmaeilpour2021}
+Zeinab Esmaeilpour, Greg Kronberg, Davide Reato, Lucas~C. Parra, and Marom
+  Bikson.
+\newblock Temporal interference stimulation targets deep brain regions by
+  modulating neural oscillations.
+\newblock {\em Brain Stimulation}, 14(1):55--65, 2021.
+
+\bibitem{violante2023}
+Ines~R. Violante, Ketevan Alania, Antonino~M. Cassar{\`a}, Esra Neufeld, Emma
+  Acerbo, Romain Carron, Adam Williamson, Danielle~L. Kurtin, Edward Rhodes,
+  Adam Hampshire, Niels Kuster, Edward~S. Boyden, Alvaro Pascual-Leone, and Nir
+  Grossman.
+\newblock Non-invasive temporal interference electrical stimulation of the
+  human hippocampus.
+\newblock {\em Nature Neuroscience}, 26(11):1994--2004, 2023.
+
 \bibitem{lachaux1999}
 Jean-Philippe Lachaux, Eugenio Rodriguez, Jacques Martinerie, and Francisco~J.
   Varela.
@@ -49,11 +79,5 @@ Adriano B.~L. Tort, Robert Komorowski, Howard Eichenbaum, and Nancy Kopell.
 \newblock Measuring phase-amplitude coupling between neuronal oscillations of
   different frequencies.
 \newblock {\em Journal of Neurophysiology}, 104(2):1195--1210, 2010.
-
-\bibitem{vieira2024}
-Pedro~G. Vieira, Matthew~R. Krause, and Christopher~C. Pack.
-\newblock Temporal interference stimulation disrupts spike timing in the
-  primate brain.
-\newblock {\em Nature Communications}, 15:4558, 2024.
 
 \end{thebibliography}

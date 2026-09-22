@@ -177,6 +177,13 @@ Fran{\c c}ois Grimbert and Olivier Faugeras.
 \newblock Bifurcation analysis of {J}ansen's neural mass model.
 \newblock {\em Neural Computation}, 18(12):3052--3068, 2006.
 
+\bibitem{vinck2010}
+Martin Vinck, Marijn van Wingerden, Thilo Womelsdorf, Pascal Fries, and Cyriel
+  M.~A. Pennartz.
+\newblock The pairwise phase consistency: a bias-free measure of rhythmic
+  neuronal synchronization.
+\newblock {\em NeuroImage}, 51(1):112--122, 2010.
+
 \bibitem{pikovsky2001}
 Arkady Pikovsky, Michael Rosenblum, and J{\"u}rgen Kurths.
 \newblock {\em Synchronization: A Universal Concept in Nonlinear Sciences}.
@@ -199,29 +206,6 @@ Zeinab Esmaeilpour, Mark Jackson, Greg Kronberg, Tianhe Zhang, Rosana Esteller,
 \newblock Limited sensitivity of hippocampal synaptic function or network
   oscillations to unmodulated kilohertz electric fields.
 \newblock {\em eNeuro}, 7(6):ENEURO.0368--20.2020, 2020.
-
-\bibitem{gordon2019}
-Nathan Gordon, Jakob Hohwy, Matthew~J. Davidson, Jeroen J.~A. van Boxtel, and
-  Naotsugu Tsuchiya.
-\newblock From intermodulation components to visual perception and
-  cognition---a review.
-\newblock {\em NeuroImage}, 199:480--494, 2019.
-
-\bibitem{esmaeilpour2021}
-Zeinab Esmaeilpour, Greg Kronberg, Davide Reato, Lucas~C. Parra, and Marom
-  Bikson.
-\newblock Temporal interference stimulation targets deep brain regions by
-  modulating neural oscillations.
-\newblock {\em Brain Stimulation}, 14(1):55--65, 2021.
-
-\bibitem{violante2023}
-Ines~R. Violante, Ketevan Alania, Antonino~M. Cassar{\`a}, Esra Neufeld, Emma
-  Acerbo, Romain Carron, Adam Williamson, Danielle~L. Kurtin, Edward Rhodes,
-  Adam Hampshire, Niels Kuster, Edward~S. Boyden, Alvaro Pascual-Leone, and Nir
-  Grossman.
-\newblock Non-invasive temporal interference electrical stimulation of the
-  human hippocampus.
-\newblock {\em Nature Neuroscience}, 26(11):1994--2004, 2023.
 
 \bibitem{wang2023}
 Boshuo Wang, Aman~S. Aberra, Warren~M. Grill, and Angel~V. Peterchev.
@@ -247,22 +231,6 @@ Aman~S. Aberra, Ruochen Wang, Warren~M. Grill, and Angel~V. Peterchev.
 Darpan Chakraborty, Dennis~Q. Truong, Marom Bikson, and Hanoch Kaphzan.
 \newblock Neuromodulation of axon terminals.
 \newblock {\em Cerebral Cortex}, 28(8):2786--2794, 2018.
-
-\bibitem{barker1991}
-Anthony~T. Barker, C.~W. Garnham, and Ian~L. Freeston.
-\newblock Magnetic nerve stimulation: the effect of waveform on efficiency,
-  determination of neural membrane time constants and the measurement of
-  stimulator output.
-\newblock {\em Electroencephalography and Clinical Neurophysiology Supplement},
-  43:227--237, 1991.
-
-\bibitem{peterchev2013}
-Angel~V. Peterchev, Stefan~M. Goetz, Gregory~G. Westin, Bruce Luber, and
-  Sarah~H. Lisanby.
-\newblock Pulse width dependence of motor threshold and input--output curve
-  characterized with controllable pulse parameter transcranial magnetic
-  stimulation.
-\newblock {\em Clinical Neurophysiology}, 124(7):1364--1372, 2013.
 
 \bibitem{ledoux2011}
 Erwan Ledoux and Nicolas Brunel.
@@ -369,6 +337,29 @@ Paria Mansourinezhad, Rob M~C Mestrom, Debby C~W Klooster, Mathieu Sprengers,
 \newblock Systematic review of experimental studies in humans on transcranial
   temporal interference stimulation.
 \newblock {\em Journal of Neural Engineering}, 22(5):051001, 2025.
+
+\bibitem{gordon2019}
+Nathan Gordon, Jakob Hohwy, Matthew~J. Davidson, Jeroen J.~A. van Boxtel, and
+  Naotsugu Tsuchiya.
+\newblock From intermodulation components to visual perception and
+  cognition---a review.
+\newblock {\em NeuroImage}, 199:480--494, 2019.
+
+\bibitem{esmaeilpour2021}
+Zeinab Esmaeilpour, Greg Kronberg, Davide Reato, Lucas~C. Parra, and Marom
+  Bikson.
+\newblock Temporal interference stimulation targets deep brain regions by
+  modulating neural oscillations.
+\newblock {\em Brain Stimulation}, 14(1):55--65, 2021.
+
+\bibitem{violante2023}
+Ines~R. Violante, Ketevan Alania, Antonino~M. Cassar{\`a}, Esra Neufeld, Emma
+  Acerbo, Romain Carron, Adam Williamson, Danielle~L. Kurtin, Edward Rhodes,
+  Adam Hampshire, Niels Kuster, Edward~S. Boyden, Alvaro Pascual-Leone, and Nir
+  Grossman.
+\newblock Non-invasive temporal interference electrical stimulation of the
+  human hippocampus.
+\newblock {\em Nature Neuroscience}, 26(11):1994--2004, 2023.
 
 \bibitem{lachaux1999}
 Jean-Philippe Lachaux, Eugenio Rodriguez, Jacques Martinerie, and Francisco~J.

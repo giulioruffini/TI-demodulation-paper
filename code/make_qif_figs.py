@@ -136,8 +136,7 @@ def raster_panel(ax, key, title, show_env, annot=None):
     # raster on top
     ax.plot(st - t0, si, "|", color="k", ms=1.7, mew=0.35, alpha=0.7, zorder=5)
     # show the last ZOOM ms of the measurement window (the folds and metrics use all of it)
-    ZOOM = 200.0
-    ax.set_xlim(max(0.0, tmeas - ZOOM), tmeas); ax.set_ylim(-2, nrec + 2); ax.set_zorder(axr.get_zorder() + 1)
+    ax.set_ylim(-2, nrec + 2); ax.set_zorder(axr.get_zorder() + 1)
     ax.patch.set_visible(False)
     if annot:                                     # quantify the envelope-locked timing
         ax.text(0.025, 0.96, annot, transform=ax.transAxes, fontsize=9.0, va="top",
@@ -165,6 +164,10 @@ def fig_raster():
     beat_inset(axs[1, 1], "entrain_off", "entrain_on", mode="rate")
     for ax in axs[:, 0]:
         ax.set_ylabel("E neuron #")
+    # show the last ZOOM ms common to all windows (folds and metrics use the whole window)
+    ZOOM = 200.0
+    tmin = min(_win(k)[1] for k in conds)
+    axs[0, 0].set_xlim(max(0.0, tmin - ZOOM), tmin)
     for ax in axs[1, :]:
         ax.set_xlabel("time in the measurement window (ms)")
     fig.tight_layout(w_pad=2.8, h_pad=2.0)

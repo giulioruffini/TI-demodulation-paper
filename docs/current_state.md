@@ -1,5 +1,28 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v1.66 — v0.14.0: the revision after Kaiti's v2 brief and Giulio's decisions (2026-09-22)
+Manuscript, code and figures revised in five passes; disposition of every review item in
+`docs/revision_2026-09-22_disposition.md`. Science: new \S dynamic (MPR crossover
+C(Q,w) from F''/4 at slow carriers to F'/(2w^2) at fast ones, sign change at
+w_z=sqrt(nu^2-3d^2); PING fast-carrier source within 1.1/0.1/0.03% of the exact second-order
+response at 300/1000/2000 Hz; Fig. crossover). Two-tone field is primary (Intro Eq. am,
+sec:coupling derivation), AM surrogate separate (eq:amsur). Sign-flip prediction is
+JR-specific; Prediction 2 is now state- and carrier-dependent response. 0.3479 bound moved to
+App. bound as a memoryless comparator with the step-detector correction (harmonic ratio 0.151).
+LaNMM results moved to App. lanmm as a low-carrier extension; maps signed (95/97% of the
+P1-driven grids are suppression). Numerics: JR rate read-out includes the field (modulation
+26->346 mHz vs mean shift -1.3->-7.7 mHz, ratio 19-66); QIF rerun with 800 ms settle and
+integer-cycle windows (modulation depth 0.29/0.23 from ~0, mean rate +8-10%, per-neuron PPC
+median 0.003-0.005; dt/2 and VPEAK checks); Hopf at eta=1.110 (no finite-size offset).
+Abstracts, Introduction, Discussion (shortened: criticality, TMS, budget metaphors,
+retrospective fit removed) and Conclusion (Giulio's three paragraphs) rewritten. Builds: TN
+50 pp, JNE 34 pp, supplement 18 pp, 0 undefined after two passes. Deck corrected (eight
+frames) and committed in Slide Maker/GALVANI2026. JNE main text ~18.8k words by pdftotext
+(captions and math included): over the 12,000 guideline; cutting is Giulio's call.
+Not done: em-dash sweep of untouched paragraphs; lambda/m notation collisions; phase-based
+capture test; kHz PING time-domain runs; co-author confirmations. Calliope cut, Overleaf
+re-sync and GitHub push held for Giulio's review (a cut on a public paper deposits).
+
 ## v1.65 — Kaiti's revision brief v2 received; its code claims verified; Hopf located (no manuscript edits)
 Brief `WP0185_review_notes_v2_for_Klaus.md` (Kaiti, 2026-09-22; filed with the sigmoid/QIF note,
 crossover.py and mpr_crossover.png under `_private/reviews/2026-09-22_kaiti_v2/`, gitignored).

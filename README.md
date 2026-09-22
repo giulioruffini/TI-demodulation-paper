@@ -20,10 +20,12 @@ heuristic single-column Jansen–Rit (JR) model, through the laminar **LaNMM** (
 bands), to the exact mean-field **NMM2** (derived rectifier), down to a spiking
 **QIF** network, and out to a **tACS** corollary that shares the same amplifier.
 
-> **Key message:** *wherever a fast-enough nonlinearity samples the carrier, the
-> population sigmoid demodulates and the network amplifies* — the single-cell entry
-> point supplies the carrier sampling, while the demodulation read-out and resonant
-> gain are network properties.
+> **Key message:** *a nonlinearity mixes the two carriers into a difference-frequency
+> component, and the recurrent network near its Hopf amplifies it selectively.* The two
+> modeled detectors are not the same object: the memoryless sigmoid mixes through its
+> curvature, the exact QIF mean field through its voltage quadratic acting on the
+> carrier-frequency excursion, read out through the population slope. Generation and
+> amplification are separate contributions.
 
 ![concept](figures/fig_concept.png)
 ![resonance](figures/fig_resonance.png)
@@ -36,7 +38,7 @@ bands), to the exact mean-field **NMM2** (derived rectifier), down to a spiking
 ├── LICENSE                                # CC-BY-4.0
 ├── CITATION.cff                           # machine-readable citation (DOI, authors)
 ├── TN0484_envelope_demodulation.tex       # the manuscript (\graphicspath{{figures/}})
-├── TN0484_envelope_demodulation.pdf       # last good build (46 pp)
+├── TN0484_envelope_demodulation.pdf       # last good build (50 pp; JNE article 34 pp + supplement 18 pp)
 ├── TN0484_envelope_demodulation.bbl       # committed so a single pdflatex works w/o bibtex
 ├── references.bib                         # BibTeX source for all references
 ├── requirements.txt                       # pinned Python deps (numpy/scipy/matplotlib + ...)
@@ -91,8 +93,8 @@ so the dependent figures can be rebuilt without re-running the (slow) sweeps.
 
 ### Figure → script table (verified)
 
-21 figures are included by the manuscript; the table below is generated against the
-`\includegraphics` list and is current as of the two-tone conversion. Status legend:
+22 figures are included by the manuscript; the table below is generated against the
+`\includegraphics` list and is current as of v0.14.0 (2026-09-22). Status legend:
 **OK** = generator writes to `figures/` and runs from committed inputs; **gap** = no
 working generator.
 
@@ -114,6 +116,7 @@ working generator.
 | fig_lanmm_field_p1_twotone | `make_lanmm_field_figs.py` | lanmm_field_P1_twotone.npz ‡ | – | OK |
 | fig_lanmm_field_p2_twotone | `make_lanmm_field_figs.py` | lanmm_field_P2_twotone.npz ‡ | – | OK |
 | fig_timing_not_rate | `make_timing_fig.py` | timing_not_rate.npz ‡ | – | OK |
+| fig_mpr_crossover | `mpr_crossover_fig.py` | ping_fast_carrier_check.json ‡ (from `ping_fast_carrier_check.py`) | yes | OK |
 | fig_qif_raster_twotone | `make_qif_figs.py` | qif_raster_twotone.npz ‡ | – | OK |
 | fig_qif_timing_twotone | `make_qif_figs.py` | qif_raster_twotone.npz ‡ | – | OK |
 | fig_tacs_jcurve | `tacs_jsweep.py` | tacs_jsweep.npz | – | OK |
