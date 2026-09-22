@@ -1864,7 +1864,14 @@ population with an instantaneous quadratic; real spike initiation has gate kinet
 $0.1$--$0.2$~ms, so at $1$~kHz the gate is not a small parameter, and the fast-carrier
 coefficient of \S\ref{sec:dynamic} is a model statement, not a measured cellular one;
 single-compartment modeling finds that channel gating kinetics, not the current--voltage
-nonlinearity, carry the TI response \cite{plovie2025}. The human evidence is also not uniformly positive: a
+nonlinearity, carry the TI response, and that integrate-and-fire cells fail to reproduce
+it \cite{plovie2025}. That negative result concerns an isolated cell, whose slow stage
+must be intracellular. In a population the synaptic and recurrent dynamics supply the slow
+stage, and the cell need only rectify the carrier: a network of quadratic
+integrate-and-fire cells responds to TI (\S\ref{sec:qif}) with the spike-initiation
+quadratic as the rectifier, and a population of hard-threshold cells with spread
+thresholds would respond through the fraction crossing threshold at the carrier peaks,
+linearly in the envelope above the spread and quadratically below it. The human evidence is also not uniformly positive: a
 controlled study found peripheral but no central effects \cite{iszak2023}, and a systematic
 review reports that occipito-parietal TI did not modulate alpha power
 \cite{mansourinezhad2025}. The narrowband prediction turns the second into a design
