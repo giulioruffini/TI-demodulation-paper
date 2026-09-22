@@ -47,6 +47,13 @@ STEPS = [
     ("data: timing_not_rate","timing_not_rate.py",[],       [], "-> timing_not_rate.npz (feeds make_timing_fig; slow lock-in sweep)"),
     ("data: entrain",       "entrain.py",       [],        [], "-> entrain.npz, entrain_b.npz (tongue, locking; slow)"),
     ("data: entrain_crit",  "entrain_crit.py",  [],        [], "-> entrain_crit.npz (criticality sweep; slow)"),
+    # --- genuine two-tone producers (the manuscript's published waveform; added 2026-09-22) ---
+    ("data: lanmm_field P2", "lanmm_field_tongues.py", ["--target", "P2", "--wave", "twotone"], [],
+        "-> lanmm_field_P2_twotone.npz (slow)"),
+    ("data: lanmm_field P1", "lanmm_field_tongues.py", ["--target", "P1", "--wave", "twotone"], [],
+        "-> lanmm_field_P1_twotone.npz (slow)"),
+    ("data: qif_raster twotone", "qif_raster.py", ["--twotone"], [],
+        "-> qif_raster_twotone.npz (N=8000, settle 800 ms + integer-cycle windows; slow)"),
 
     # --- figure generators (write to FIGDIR) ---
     ("figures_v2",  "figures_v2.py", [], [
@@ -69,12 +76,23 @@ STEPS = [
     ("make_entrain_fig", "make_entrain_fig.py", [], ["fig_entrainment"], "needs entrain*.npz"),
     ("sl_dissociation",  "sl_dissociation.py", [], ["fig_sl_dissociation"], "Stuart-Landau control (pure numpy)"),
     ("make_timing_fig",  "make_timing_fig.py", [], ["fig_timing_not_rate"], "needs timing_not_rate.npz"),
-    ("make_qif_figs",    "make_qif_figs.py",   [], ["fig_qif_raster", "fig_qif_timing"], "needs qif_raster.npz"),
+    ("make_qif_figs",    "make_qif_figs.py",   [], ["fig_qif_raster_twotone", "fig_qif_timing_twotone"],
+        "needs qif_raster_twotone.npz (falls back to qif_raster.npz -> fig_qif_raster/fig_qif_timing)"),
+    # --- genuine two-tone figures (2026-09-22) ---
+    ("jr_twotone_figs",  "jr_twotone_figs.py", [], ["fig_demodulation_twotone", "fig_curvature_twotone"],
+        "pure numpy via jr_demod; no cache"),
+    ("make_lanmm_field_figs", "make_lanmm_field_figs.py", ["--wave", "twotone"],
+        ["fig_lanmm_field_p1_twotone", "fig_lanmm_field_p2_twotone"], "needs lanmm_field_{P1,P2}_twotone.npz; signed maps"),
+    ("make_nmm2_twotone_fig", "make_nmm2_twotone_fig.py", [], ["fig_nmm2_resonance_twotone"],
+        "computes the curves via nmm2_ping.lockin_curve (no cache)"),
+    ("make_khz_twotone_fig", "make_khz_twotone_fig.py", [], ["fig_khz_twotone"],
+        "renders khz_twotone.npz; see GAPS for its producer"),
 ]
 
 # Figures with no producing script (documented gaps).
 GAPS = {
     "fig_lanmm_setup":  "hand-drawn schematic (not generated)",
+    "khz_twotone.npz":  "data for fig_khz_twotone: committed cache; its generating run is not a standalone script in the tree",
 }
 
 

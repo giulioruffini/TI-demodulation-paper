@@ -1,8 +1,11 @@
 """Timing, not rate (Jansen-Rit). At FIXED detection (pinned v*, so sigma'' is
 constant) we drive the column toward the Hopf through the coupling C and read out,
 at the resonant beat Df=f0(C):
-  - AC : lock-in amplitude at Df of the LFP v=y1-y2  (the envelope-locked response),
-  - DC : shift of the mean pyramidal firing rate <Sigma(v)> from its field-free value.
+  - AC_v : lock-in amplitude at Df of the LFP v=y1-y2  (the envelope-locked response),
+  - AC   : lock-in amplitude at Df of the pyramidal rate r_P = Sigma(v + s), the SAME
+           observable whose mean is reported (2026-09-22: the rate read-out now includes the
+           field term s(t) inside the sigmoid, as in the dynamics; it used to omit it),
+  - DC   : shift of the mean pyramidal firing rate <Sigma(v + s)> from its field-free value.
 The network transfer is G(Om)~[(w0^2-Om^2)^2+(2*g*Om)^2]^{-1/2}: at Om=w0 it is
 ~1/(2*g*w0) (diverges as the Hopf is approached, g->0), while at Om=0 it is ~1/w0^2
 (flat). So the AC entrains and is resonantly amplified ~1/g, while the DC mean-rate
@@ -76,6 +79,7 @@ def run(p, C, Om, eps, m, fc, t_set, t_meas, dt):
     w = np.hanning(nm); ws = w.sum()
     ac = np.zeros(N); as_ = np.zeros(N); av = np.zeros(N)
     awc = np.zeros(N); aws = np.zeros(N); arate = np.zeros(N)
+    arc = np.zeros(N); ars = np.zeros(N)
     for k in range(nm):
         s1 = field(t, eps, m, Om, fc); k1 = rhs(Y, p, C, s1)
         s2 = field(t+.5*dt, eps, m, Om, fc); k2 = rhs(Y+.5*dt*k1, p, C, s2)
@@ -83,11 +87,15 @@ def run(p, C, Om, eps, m, fc, t_set, t_meas, dt):
         s3 = field(t+dt, eps, m, Om, fc); k4 = rhs(Y+dt*k3, p, C, s3)
         Y = Y + (dt/6)*(k1+2*k2+2*k3+k4); t += dt
         v = Y[:, 1]-Y[:, 2]; co = np.cos(Om*t); si = np.sin(Om*t)
+        r = Sigm(v + s3)                 # the model's pyramidal rate, field included (s3 = field at the updated t)
         ac += w[k]*v*co; as_ += w[k]*v*si; av += w[k]*v
-        awc += w[k]*co; aws += w[k]*si; arate += w[k]*Sigm(v)
+        arc += w[k]*r*co; ars += w[k]*r*si; arate += w[k]*r
+        awc += w[k]*co; aws += w[k]*si
     vb = av/ws; c = ac-vb*awc; s = as_-vb*aws
-    AC = 2/ws*np.sqrt(c**2+s**2)
-    return AC, arate/ws
+    AC_v = 2/ws*np.sqrt(c**2+s**2)
+    rb = arate/ws; cr = arc-rb*awc; sr = ars-rb*aws
+    AC_r = 2/ws*np.sqrt(cr**2+sr**2)
+    return AC_v, AC_r, rb
 
 if __name__ == "__main__":
     HERE = os.path.dirname(os.path.abspath(__file__))
@@ -111,14 +119,14 @@ if __name__ == "__main__":
     for i, C in enumerate(Cs):
         _, g, o = jac_eig(ps[i], C); gam[i] = g; om[i] = o
     Om = om.copy()                       # drive at the (per-C) eigenfrequency = resonance
-    AC, rate_on = run(ps, Cs, Om, eps, m, fc, t_set, t_meas, dt)
+    AC_v, AC, rate_on = run(ps, Cs, Om, eps, m, fc, t_set, t_meas, dt)
     rate_off = Sigm(vstar)               # pinned field-free fixed point -> constant baseline
     DC = rate_on - rate_off
-    print("  C      p       gamma   f0(Hz)   AC(mV)      DC_rate(Hz)   |AC/DC|")
+    print("  C      p       gamma   f0(Hz)   AC_v(mV)    AC_rate(Hz)   DC_rate(Hz)   AC/|DC|")
     for i in range(len(Cs)):
         print(f"{Cs[i]:7.2f}{ps[i]:8.2f}{gam[i]:8.3f}{om[i]/2/np.pi:8.2f}"
-              f"{AC[i]:12.4e}{DC[i]:13.3e}{abs(AC[i]/DC[i]):9.1f}")
+              f"{AC_v[i]:12.4e}{AC[i]:14.4e}{DC[i]:13.3e}{abs(AC[i]/DC[i]):9.1f}")
     np.savez(os.path.join(HERE, "timing_not_rate.npz"),
-             Cs=Cs, ps=ps, gam=gam, om=om, AC=AC, DC=DC, rate_on=rate_on,
+             Cs=Cs, ps=ps, gam=gam, om=om, AC=AC, AC_v=AC_v, DC=DC, rate_on=rate_on,
              rate_off=rate_off, vstar=vstar, eps=eps, m=m, fc=fc)
     print("saved timing_not_rate.npz")

@@ -87,7 +87,8 @@ def qif_run(etabar, Af, fc, df, Ne, Ni, T, dt, t_meas, nrec=400, seed=1):
     nstep = int(T / dt); kmeas = int((T - t_meas) / dt)
     ts = np.empty(nstep); re_t = np.empty(nstep)
     spk_t = []; spk_id = []
-    sc = ss = ntot = 0.0                                # vector-strength accumulators (E, in window)
+    sc = ss = ntot = 0.0                                # pooled vector-strength accumulators (E, in window)
+    sc_n = np.zeros(Ne); ss_n = np.zeros(Ne); n_n = np.zeros(Ne)   # per-neuron accumulators (2026-09-22)
     rmean = 0.0; nmean = 0
     for k in range(nstep):
         t = k * dt
@@ -110,12 +111,28 @@ def qif_run(etabar, Af, fc, df, Ne, Ni, T, dt, t_meas, nrec=400, seed=1):
                 spk_t.extend([t] * fired.size); spk_id.extend(fired.tolist())
             # envelope-phase vector strength over ALL E spikes; mean rate
             if ne:
-                ph = wO * t
-                sc += ne * np.cos(ph); ss += ne * np.sin(ph); ntot += ne
+                ph = wO * t; cph = np.cos(ph); sph = np.sin(ph)
+                sc += ne * cph; ss += ne * sph; ntot += ne
+                sc_n += se * cph; ss_n += se * sph; n_n += se
             rmean += r_e_emp; nmean += 1
-    VS = np.sqrt(sc ** 2 + ss ** 2) / ntot if ntot else 0.0
+    VS = np.sqrt(sc ** 2 + ss ** 2) / ntot if ntot else 0.0       # pooled (population) vector strength
+    # per-neuron vector strength: neurons with >= NMIN spikes in the window; the Rayleigh
+    # bias floor for n random phases is ~sqrt(pi/(4 n)), so report the off-field control alongside.
+    NMIN = 10
+    ok = n_n >= NMIN
+    VS_n = np.full(Ne, np.nan); PPC_n = np.full(Ne, np.nan)
+    VS_n[ok] = np.sqrt(sc_n[ok] ** 2 + ss_n[ok] ** 2) / n_n[ok]
+    # pairwise phase consistency (Vinck et al. 2010): PPC = (n R^2 - 1)/(n - 1), an unbiased
+    # estimate of the squared resultant; zero in expectation for random phases, so it is
+    # comparable across neurons with different spike counts.
+    PPC_n[ok] = (n_n[ok] * VS_n[ok] ** 2 - 1.0) / (n_n[ok] - 1.0)
+    PPC = (ntot * VS ** 2 - 1.0) / (ntot - 1.0) if ntot > 1 else 0.0
     return dict(ts=ts, re_t=re_t, spk_t=np.array(spk_t), spk_id=np.array(spk_id),
-                VS=VS, rmean=rmean / max(nmean, 1), nrec=nrec, etabar=etabar, Af=Af, df=df)
+                VS=VS, PPC=PPC, VS_n=VS_n, PPC_n=PPC_n, n_spk=n_n, nmin=NMIN,
+                VS_n_median=float(np.nanmedian(VS_n)) if ok.any() else np.nan,
+                PPC_n_median=float(np.nanmedian(PPC_n)) if ok.any() else np.nan,
+                frac_ok=float(ok.mean()),
+                rmean=rmean / max(nmean, 1), nrec=nrec, etabar=etabar, Af=Af, df=df)
 
 
 def smooth(x, dt, win_ms=1.0):
@@ -135,9 +152,18 @@ if __name__ == "__main__":
     quick = "--quick" in sys.argv
     Ne = Ni = 400 if quick else 8000
     dt = 0.005 if quick else 0.0025
-    T = 250.0 if quick else 420.0
-    t_meas = 150.0
+    # 2026-09-22 (review R12): settle 800 ms (>= 4.5 relaxation times at eta=0.85, where the
+    # mean-field relaxation time is ~176 ms) and measure over an INTEGER number of beat
+    # cycles (>= 800 ms), so the finite-window bias of the vector strength vanishes.
+    # Previously T = 420 ms with a 150 ms window (8 cycles at 55 Hz, 6 at 42 Hz).
+    T_SETTLE = 250.0 - 150.0 if quick else 800.0
+    def window(df, floor_ms=150.0 if quick else 800.0):
+        ncyc = int(np.ceil(floor_ms * df / 1000.0))
+        return ncyc * 1000.0 / df, ncyc
     fc = 300.0; Af = 35.0
+    for i, a_ in enumerate(sys.argv):                      # convergence overrides
+        if a_ == "--dt": dt = float(sys.argv[i + 1])
+        if a_ == "--vpeak": globals()["VPEAK"] = float(sys.argv[i + 1])
     # --twotone drives with the physical TI waveform (two tones) instead of the AM
     # surrogate. Spiking/threshold dynamics are exactly where the two cannot be
     # assumed equivalent beyond perturbation theory, so the published run uses it.
@@ -148,32 +174,42 @@ if __name__ == "__main__":
     #          TI beat re-times the rhythm to its own envelope.
     ETA_FORCED, DF_FORCED = 0.85, 55.0
     ETA_ENTRAIN, DF_ENTRAIN = 1.5, 42.0
-    kmeas = int((T - t_meas) / dt)
 
     if "--test" in sys.argv or quick:
         for name, eta, df in [("forced", ETA_FORCED, DF_FORCED), ("entrain", ETA_ENTRAIN, DF_ENTRAIN)]:
+            t_meas, ncyc = window(df); T = T_SETTLE + t_meas; kmeas = int((T - t_meas) / dt)
             qo = qif_run(eta, 0.0, fc, df, Ne, Ni, T, dt, t_meas)
             qn = qif_run(eta, Af, fc, df, Ne, Ni, T, dt, t_meas)
-            print(f"{name:8s}: <r_e> off={qo['rmean']:.4f} on={qn['rmean']:.4f} | "
+            print(f"{name:8s} dt={dt} VPEAK={VPEAK} T={T:.1f} window={t_meas:.1f} ms ({ncyc} cycles): "
+                  f"<r_e> off={qo['rmean']:.4f} on={qn['rmean']:.4f} | "
                   f"AC@df off={lockin(qo['ts'],qo['re_t'],df,kmeas):.4f} "
-                  f"on={lockin(qn['ts'],qn['re_t'],df,kmeas):.4f}")
+                  f"on={lockin(qn['ts'],qn['re_t'],df,kmeas):.4f} | "
+                  f"VS pooled off={qo['VS']:.3f} on={qn['VS']:.3f} | "
+                  f"VS per-neuron median off={qo['VS_n_median']:.3f} on={qn['VS_n_median']:.3f} | "
+                  f"PPC pooled off={qo['PPC']:.4f} on={qn['PPC']:.4f} | PPC per-neuron median off={qo['PPC_n_median']:.4f} on={qn['PPC_n_median']:.4f} "
+                  f"(frac>= {qo['nmin']} spikes: {qo['frac_ok']:.2f}/{qn['frac_ok']:.2f})", flush=True)
         sys.exit(0)
 
     # full run: 4 conditions (2 regimes x off/on) + mean-field overlays
     conds = {}
+    meta_w = {}
     for reg, eta, df in [("forced", ETA_FORCED, DF_FORCED), ("entrain", ETA_ENTRAIN, DF_ENTRAIN)]:
+        t_meas, ncyc = window(df); T = T_SETTLE + t_meas; kmeas = int((T - t_meas) / dt)
+        meta_w[reg] = dict(T=T, t_meas=t_meas, ncyc=ncyc, kmeas=kmeas)
         for fld, Afv in [("off", 0.0), ("on", Af)]:
             q = qif_run(eta, Afv, fc, df, Ne, Ni, T, dt, t_meas)
             tm, rm = mf_run(eta, Afv, fc, df, T, dt)
             q["AC"] = lockin(q["ts"], q["re_t"], df, kmeas)
-            q["df"] = df
+            q["df"] = df; q["T"] = T; q["t_meas"] = t_meas; q["kmeas"] = kmeas
             conds[f"{reg}_{fld}"] = dict(q=q, mf_t=tm, mf_re=rm)
-            print(f"{reg:8s} {fld:3s}: <r_e>={q['rmean']:.4f}  AC@{df:.0f}Hz={q['AC']:.4f}  "
-                  f"VS={q['VS']:.3f}  spikes={q['spk_t'].size}")
+            print(f"{reg:8s} {fld:3s}: T={T:.1f} window={t_meas:.1f} ms ({ncyc} cycles)  <r_e>={q['rmean']:.4f}  "
+                  f"AC@{df:.0f}Hz={q['AC']:.4f}  VS pooled={q['VS']:.3f}  "
+                  f"VS per-neuron median={q['VS_n_median']:.3f}  PPC pooled={q['PPC']:.4f}  PPC per-neuron median={q['PPC_n_median']:.4f} (frac>={q['nmin']} spk {q['frac_ok']:.2f})  "
+                  f"spikes(rec)={q['spk_t'].size}", flush=True)
     _tag = "_twotone" if WAVE == "twotone" else ""
     np.savez(os.path.join(HERE, f"qif_raster{_tag}.npz"),
-             meta=dict(Ne=Ne, Ni=Ni, dt=dt, T=T, t_meas=t_meas, fc=fc, Af=Af,
+             meta=dict(Ne=Ne, Ni=Ni, dt=dt, T_settle=T_SETTLE, windows=meta_w, fc=fc, Af=Af,
                        eta_forced=ETA_FORCED, df_forced=DF_FORCED,
-                       eta_entrain=ETA_ENTRAIN, df_entrain=DF_ENTRAIN),
+                       eta_entrain=ETA_ENTRAIN, df_entrain=DF_ENTRAIN, VPEAK=VPEAK),
              conds=conds, allow_pickle=True)
     print(f"saved qif_raster{_tag}.npz  (WAVE={WAVE})")
