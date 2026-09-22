@@ -1,6 +1,21 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.63 — Integrate the August "doors" edit; abstract and conclusion brought up to date (latest)
+## v1.64 — Readability and notation review written (no manuscript edits)
+Full read of v0.13.0 for prose and notation only; findings in
+`docs/review_2026-09-22_readability_notation.md` with line numbers against commit 072d2dc.
+Headline items: φ vs r in eq:coupling/eq:lanmm_drive (the v1.63 φ→r fix missed the equations);
+λ₀ is both the DC coupling (477) and the DC space constant (eq:lambda 790); "ω_c and ω_c+Ω"
+at 552 contradicts f_{1,2}=f_c∓Δf/2; δ (threshold offset, 1761) never defined; η is both
+excitability and TI/tACS efficiency; bare H at 479/1469 ambiguous between synaptic and access
+filters; LaNMM Methods use A for the field amplitude (972–975) where the table says ε.
+Abbreviations undefined at first use: AM, LFP, tACS (used at 620, defined 1054), SNIC, RF,
+PAC, PLV. Methods vocabulary paragraph and App. D duplicate each other. 43 paragraphs with
+≥2 em-dashes (nine with four; Conclusion para 1 worst). Defensive cluster in the Discussion
+(650, 1698, 1777, 1785, 1820). kHz two-tone beat quoted as 10.9 Hz for tones 11.0 Hz apart
+(1174, 2196). "Colour" at 2212. tells.py: 52 hits, 5 false positives (wrapped "rather than").
+Arithmetic, references, theorem: not checked (landau).
+
+## v1.63 — Integrate the August "doors" edit; abstract and conclusion brought up to date 
 Giulio's 2026-08-07 snapshot (501ee97, undocumented until now) rewrote the coupling section
 around parallel, compartment-specific entry points ("doors", Eq. doors, Table doors, AC space
 constant Eq. lambda, Na_v gate ceiling), added the NMM1 transfer-function form (Eq. nmm1), and
