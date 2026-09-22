@@ -33,3 +33,7 @@ figures/fig_lanmm_checker.*
 
 # Internal working notes / correspondence (excluded from the public archive)
 _private/
+
+# One-off archives made for external review packages; never track
+/code.zip
+/figures.zip
