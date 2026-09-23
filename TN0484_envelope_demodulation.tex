@@ -130,7 +130,7 @@ a network mechanism for temporal-interference stimulation}\\[10pt]
 \textbf{Author:} & Giulio Ruffini, Borja Mercadal, Alex Just, Raul de Palma Aristides,\\
 & Francesca Castaldo, Santiago Canals, and Claudio Mirasso \\
 \textbf{Affiliation:} & Neuroelectrics\,/\,BCOM\,/\,IFISC (UIB-CSIC)\,/\,IN (UMH-CSIC) \\
-\textbf{Date:} & 2026-09-22 \qquad \textbf{Version:} 0.14.0 \\
+\textbf{Date:} & 2026-09-23 \qquad \textbf{Version:} 0.14.1 \\
 \textbf{DOI:} & \href{https://doi.org/10.5281/zenodo.21009618}{10.5281/zenodo.21009618} \\
 \end{tabular}\\[4pt]
 {\color{neblue}\rule{\textwidth}{1pt}}
@@ -171,7 +171,8 @@ $1/\gamma$ in the damping, tunable by connectivity at fixed generated drive. The
 differ: the sigmoid mixes through its curvature and reverses sign at its inflection; the
 dynamic model at a fast carrier mixes the carrier-frequency voltage excursion and reads it
 out through the population slope, the crossover lying at the population's own frequency. A
-steady-state rate curve therefore does not determine the response to a fast carrier. The
+steady-state rate curve therefore does not determine the response to a fast carrier,
+though with matched access both detectors share its roll-off. The
 beat-locked modulation of the rate grows toward the bifurcation far faster than the mean
 rate, in the mean field and in a network of $8000$ neurons per population. TI and a direct
 in-band drive share the amplifier, so resonance alone gives TI no efficiency advantage.
@@ -197,7 +198,9 @@ integrate-and-fire mean field the cell's own voltage quadratic mixes the carrier
 excursion and the population reads the result through its slope. Both give quadratic scaling
 in the field, but their coefficients and operating-point dependence differ, and a
 steady-state rate curve does not determine the response to a fast carrier: the crossover
-from curvature to slope sits at the population's own frequency, below TI's carriers. In the
+from curvature to slope sits at the population's own frequency, below TI's carriers, and
+with matched access the two detectors share the carrier roll-off and differ in coefficient
+and sign. In the
 local square-law description the generated beat depends on the product of the two effective
 carrier inputs rather than on the envelope excursion, and the network susceptibility sets how
 strongly it appears in the response. TI and a direct low-frequency drive share the downstream
@@ -626,6 +629,29 @@ signs and the coefficient changes sign at $\omega_z=\sqrt{\nu^2-3d^2}$
 hertz for the gamma-generating PING of \S\ref{sec:nmm2-results}; the $300$~Hz carrier used
 there, and TI's kHz carriers, are on the fast side.
 
+The two limits are not two carrier penalties. The linear response of the voltage to the
+current is $H_v(\omega)=(i\omega+d)/[(i\omega+d)^2+\nu^2]$, the population's own membrane:
+state-shaped below $\nu$, the bare capacitance $1/(i\omega)$ above it. Dividing $C$ by
+$|H_v|^2$ gives the detector coefficient at fixed voltage excursion,
+\begin{equation}
+K(\omega)=\frac{C(Q,\omega)}{|H_v(\omega)|^2}
+=\frac{F'(Q)}{2}\;\frac{\omega^2+3d^2-\nu^2}{\omega^2+d^2},
+\label{eq:kfixed}
+\end{equation}
+which is bounded: it runs from the static curvature per unit squared excursion at
+$\omega\to0$ to $F'/2$ for $\omega\gg\nu$, vanishes at $\omega_z$, and carries no power of
+$\omega$ above the population's rates. All of the $1/\omega^2$ at fixed current sits in
+$|H_v|^2$: it is the membrane term $\tau\dot v$ integrating the injected current, the same
+low-pass that Eq.~\eqref{eq:doors} places in front of the sigmoid, here computed by the model
+rather than assumed. Since $F''=4r^*(3d^2-\nu^2)/(d^2+\nu^2)^3$, the inflection of $F$ is the
+point $\nu^2=3d^2$, and above it the fast coefficient $F'/2$ and the static curvature have
+opposite signs. Relative to a static curve read on the same membrane, the dynamics therefore
+multiply the fast-carrier coefficient by $d^2/(3d^2-\nu^2)$, a constant set by the operating
+point ($0.35$, $0.66$ and $-0.03$ at $r^*\approx10$, $17$ and $37$~Hz for $\tau=15$~ms,
+$\Delta=1$), not a further roll-off. With matched access the memoryless and the dynamic
+detector share the leading carrier scaling; the detector sets the prefactor, its sign and
+its structure near the population's own frequencies.
+
 The same reasoning fixes what a two-tone field generates in the full eight-state PING of
 Eq.~\eqref{eq:nmm2-ping}. In the fast-carrier limit each tone's voltage phasor is
 $a_j/(i\omega_j\tau_E)$, and the $v_E^2$ term produces a difference-frequency source of
@@ -796,6 +822,20 @@ term of order $\gamma^2$, immaterial near the Hopf. Just above the
 Hopf the mass is an autonomous limit cycle at $\omega_0$, and the demodulated drive
 \emph{entrains} it (an Arnold tongue), giving a response peak near $\omega_0$ that
 grows with cycle amplitude.
+
+Collecting the stages, the response at the beat is
+\begin{equation}
+R_\Omega\simeq G(\Omega;\gamma)\;D\;\lambda_f(\omega_1)E_1\,\lambda_f(\omega_2)E_2 ,
+\label{eq:receiver}
+\end{equation}
+with $\lambda_f(\omega_c)=\lambda_0|H_c(\omega_c)|$ the access of the open door
+(Eq.~\eqref{eq:doors}), $D$ the detector coefficient ($\half\Sig''(v^*)$ for the memoryless
+sigmoid; for the exact mean field the slope-read coefficient of Eq.~\eqref{eq:kfixed},
+constant above the population's own rates) and $G$ the network gain of
+Eq.~\eqref{eq:gain}. The carrier frequency enters only through $\lambda_f$, the beat
+frequency only through $G$, and the operating point through $D$ and $\gamma$. A carrier
+sweep and a beat sweep therefore measure different stages, and the two detectors differ in
+$D$, not in the carrier dependence.
 
 The resonance amplifies but cannot detect. The universal Hopf normal form, whose
 nonlinearity is odd, responds to an in-band drive yet produces no line at $\Omega$ at any
@@ -1081,7 +1121,7 @@ synapses,
 \begin{equation}
 \begin{aligned}
 \tau_E\dot r_E&=\Delta/(\pi\tau_E)+2r_Ev_E, &\quad
-\tau_E\dot v_E&=v_E^2+\bar\eta-(\pi\tau_E r_E)^2+\tau_E C\,(s_E-s_I)+\delta V(t),\\[2pt]
+\tau_E\dot v_E&=v_E^2+\bar\eta-(\pi\tau_E r_E)^2+\tau_E C\,(s_E-s_I)+I_E(t),\\[2pt]
 \tau_I\dot r_I&=\Delta/(\pi\tau_I)+2r_Iv_I, &\quad
 \tau_I\dot v_I&=v_I^2+\bar\eta-(\pi\tau_I r_I)^2+\tau_I C\,(s_E-2s_I),
 \end{aligned}
@@ -1095,11 +1135,15 @@ set the E and I rows---i.e.\ the $E$ membrane sees $C\,(s_E-s_I)$ and the $I$ me
 $C\,(s_E-2s_I)$, the only asymmetry being the doubled $I\!\to\!I$ weight $A_{ii}=2$. The common background drive $\bar\eta$---the same in both
 populations, with no separate input current---is the bifurcation parameter: raising it
 past a supercritical Hopf at $\bar\eta_H=1.110$ opens a gamma limit cycle (the gamma
-counterpart of the JR alpha Hopf). The applied field enters the excitatory membrane
-current as $\delta V(t)=\lambda E(t)$ as two genuine tones at $f_c\mp\Delta f/2$ (carrier
-$f_c=300$~Hz, envelope $\Delta f$ swept through the gamma band); the polarization is
-expressed in the dimensionless MPR units of $v_E$, so the carrier is
-rectified by the exact quadratic $v_E^2$ term, with no postulated sigmoid. We
+counterpart of the JR alpha Hopf). The applied field enters the excitatory voltage equation
+as a current-like forcing, $I_E(t)=P\,E(t)$ in the convention of the exact mean field
+\cite{ruffini2021nmm2}, with the dipole coupling $P$ instantaneous, as two genuine tones at
+$f_c\mp\Delta f/2$ (carrier $f_c=300$~Hz, envelope $\Delta f$ swept through the gamma band)
+of amplitude $A_f$ in the dimensionless MPR units of $v_E$. The E membrane $\tau_E\dot v_E$
+integrates this forcing into the carrier-frequency excursion $A_f/(\omega\tau_E)$ that the
+exact quadratic $v_E^2$ term rectifies, with no postulated sigmoid; the PING as run is
+therefore the somatic door of Eq.~\eqref{eq:doors} with $\tau_m=\tau_E$, computed rather
+than assumed. We
 integrate with fixed-step RK4 ($\Delta t=0.05$~ms) and read out the lock-in
 (Eq.~\eqref{eq:lockin}) of $r_E$ at $\Delta f$ over the $(\Delta f, \bar\eta)$ plane.
 Parameters (Rosetta Stone PING \cite{ruffini2025rosetta}): $\Delta=1$, global coupling
@@ -2004,7 +2048,7 @@ $\Sig(v)$ & population firing-rate transfer function & s$^{-1}$ \\
 $\Sig'(v)$ & sigmoid slope (read-out gain) & s$^{-1}$\,mV$^{-1}$ \\
 $\Sig''(v)$ & sigmoid curvature; the memoryless detector coefficient & s$^{-1}$\,mV$^{-2}$ \\
 $F(Q),\,F',\,F''$ & MPR steady-state rate curve, Eq.~\eqref{eq:Fmpr}, and its derivatives & -- \\
-$C(Q,\omega)$ & MPR second-order DC coefficient, Eq.~\eqref{eq:crossover}; $d$, $\nu$ its relaxation rate and ringing frequency & -- \\
+$C(Q,\omega)$, $K(\omega)$ & MPR second-order DC coefficient at fixed current, Eq.~\eqref{eq:crossover}, and at fixed voltage excursion, Eq.~\eqref{eq:kfixed}; $d$, $\nu$ the population's relaxation rate and ringing frequency & -- \\
 $e_0$ & half the maximal firing rate ($\Sig\!\to\!2e_0$ as $v\!\to\!\infty$) & s$^{-1}$ \\
 $v_0$ & sigmoid inflection (half-maximal) potential & mV \\
 $\rho$ & sigmoid slope parameter & mV$^{-1}$ \\
@@ -2019,7 +2063,7 @@ $C,\,C_1\!-\!C_4$ & intracolumn connectivity constants & -- \\
 $p$ & external input rate; JR bifurcation parameter & s$^{-1}$ \\
 \midrule \multicolumn{3}{@{}l}{\textit{Applied TI field and coupling}} \\*
 $\varepsilon$ & field modulation amplitude, JR and LaNMM (a membrane polarization entering the sigmoid argument) & mV \\
-$A_f$ & field modulation amplitude, NMM2/QIF (in the dimensionless MPR units of $v_E$) & -- \\
+$A_f$, $I_E(t)$ & amplitude of the field's current-like forcing $I_E(t)=P\,E(t)$ in the E voltage equation, NMM2/QIF (dimensionless MPR units of $v_E$) & -- \\
 $m$ & modulation depth & -- \\
 $f_c,\ \omega_c\!=\!2\pi f_c$ & carrier frequency & Hz, rad\,s$^{-1}$ \\
 $f_1,f_2$ & the two applied carrier tones ($f_c\!=\!(f_1\!+\!f_2)/2$) & Hz \\

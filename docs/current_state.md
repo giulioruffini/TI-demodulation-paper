@@ -1,5 +1,20 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v1.67 — v0.14.1: one membrane, counted once (2026-09-23)
+After the discussion of Kaiti's note on "access + detector dynamics": the QIF's 1/w^2 at fixed
+current is the membrane term tau*dv integrating the injected current, i.e. the somatic door of
+Eq. doors computed by the model, not a second carrier penalty. New Eq. kfixed in sec:dynamic:
+the coefficient at fixed voltage excursion K(w)=C/|H_v|^2=(F'/2)(w^2+3d^2-nu^2)/(w^2+d^2) is
+bounded and flat above the population's rates; F''=4r*(3d^2-nu^2)/(d^2+nu^2)^3 so the inflection
+is nu^2=3d^2; relative to a static curve on the same membrane the dynamics multiply the
+fast-carrier coefficient by d^2/(3d^2-nu^2) (0.35/0.66/-0.03 at r*=10/17/37 Hz). New Eq. receiver
+in sec:carrier: R = G(Omega;gamma) D lambda_f(w1)E1 lambda_f(w2)E2, carrier only through
+lambda_f, beat only through G, operating point through D and gamma. PING methods: the field is
+a current-like forcing I_E(t)=P E(t) (was mislabeled delta V "polarization"); the E membrane is
+the door. Abstracts: matched access gives both detectors the same roll-off. Check script
+code/static_vs_dynamic_check.py and figure docs/static_vs_dynamic_2026-09-23.png. Still held
+for Giulio: push, Calliope cut, Overleaf, co-author email.
+
 ## v1.66 — v0.14.0: the revision after Kaiti's v2 brief and Giulio's decisions (2026-09-22)
 Manuscript, code and figures revised in five passes; disposition of every review item in
 `docs/revision_2026-09-22_disposition.md`. Science: new \S dynamic (MPR crossover

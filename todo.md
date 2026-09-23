@@ -1,6 +1,6 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
-- [ ] Giulio: review v0.14.0 (TN0484_envelope_demodulation.pdf, TN0484_jne.pdf) against docs/revision_2026-09-22_disposition.md; decide length cuts (JNE main text ~18.8k words incl. captions vs 12,000 guideline)
+- [ ] Giulio: review v0.14.1 (TN0484_envelope_demodulation.pdf, TN0484_jne.pdf) against docs/revision_2026-09-22_disposition.md and the v1.67 changelog entry (Eq. 14 fixed-excursion coefficient, Eq. 20 receiver equation, PING field as current); decide length cuts (JNE main text ~18.9k words incl. captions vs 12,000 guideline)
 - [ ] after review: push two-tone-validation to GitHub, cut v0.14.0 in Calliope (public paper: the cut deposits to Zenodo, confirm first), re-sync Overleaf from GitHub, merge into main
 - [ ] after review: send the co-author approval request with v0.14.0 (HOLD until then); restore "All authors read and approved" on sign-off
 - [ ] GALVANI Thu 24 Sep: present Slide Maker/GALVANI2026/kaiti_v2 (Kaiti enriched v2 + v3 additions, 24 main + 12 backups, TI_tuned_receiver_enriched_v3_with_backup.pdf); narration is 20:10 for a 20-min slot, drop one slide (candidates: 21 What to test, or 7 rate curve); decide title

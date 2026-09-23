@@ -48,4 +48,4 @@ for a in ax:
     a.set_xlim(1,1e4); a.set_xlabel("carrier frequency $f_c$ (Hz), $\\tau=15$ ms")
     for fx in (300,1000,2000): a.axvline(fx,color="0.8",lw=0.7,ls=":")
 ax[0].legend(fontsize=7,loc="lower left",frameon=False); ax[2].legend(fontsize=7,loc="lower left",frameon=False)
-fig.tight_layout(); fig.savefig("static_vs_dynamic.png",dpi=130)
+fig.tight_layout(); fig.savefig("static_vs_dynamic.png",dpi=130); fig.savefig("static_vs_dynamic.pdf")
