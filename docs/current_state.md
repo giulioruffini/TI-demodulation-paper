@@ -13,7 +13,9 @@ lambda_f, beat only through G, operating point through D and gamma. PING methods
 a current-like forcing I_E(t)=P E(t) (was mislabeled delta V "polarization"); the E membrane is
 the door. Abstracts: matched access gives both detectors the same roll-off. sec:coupling: the door coupling is grounded in the compartment equation C dV/dt + A V = I0 - p E (NMM2 SI), lambda_0 its w->0 value and H_c its frequency dependence; prescribing lambda_0 E in a static sigmoid and injecting p E into a membrane equation are the two ends of one chain, and a detector comparison needs the field inserted at the same point (after Kaiti's reading of Francesca's slide 16, 2026-09-23). Two-tone single-population run at 995/1005 Hz (code/mpr_twotone_lines_check.py): carrier line in
 the rate 0.02 of NMM1-on-the-same-membrane (rate integration), beat line 0.32 (constant), all
-lines equal to the chain prediction to four digits; chi^(2)(w1,-w2) ~ 1/(w1 w2), chi^(1) ~ 1/w^2.
+lines equal to the chain prediction to four digits; chi^(2)(w1,-w2) ~ 1/(w1 w2), chi^(1) ~ 1/w^2. Table exponents (sec:dynamic): current->voltage w^-1 both;
+voltage->rate carrier 1 vs w^-1; current->rate carrier w^-1 vs w^-2; beat (w1 w2)^-1 both, NMM2 times a
+constant of the operating point; v^2 mixes at w^-2, rv at w^-3, r^2 at w^-4 (Kaiti's four-line summary).
 Check script
 code/static_vs_dynamic_check.py and figure docs/static_vs_dynamic_2026-09-23.png. Still held
 for Giulio: push, Calliope cut, Overleaf, co-author email.

@@ -682,7 +682,34 @@ rate integrates: the second-order susceptibility at the difference frequency is
 $\propto1/(\omega_1\omega_2)$ while the first-order one is $\propto1/\omega^2$. In a single
 population driven by tones at $995$ and $1005$~Hz ($\tau=15$~ms, $r^*\approx10$~Hz) the carrier
 line in the rate is $0.02$ of what a static curve on the same membrane would give, while the
-beat line is $0.32$ of it, both to four digits as this chain predicts.
+beat line is $0.32$ of it, both to four digits as this chain predicts. Table~\ref{tab:exponents}
+collects the exponents. Relative to a static curve on the same membrane, the dynamic population
+supplies one additional high-frequency integration, from voltage to rate; it acts on the carrier
+in the rate and not on the beat, which is processed through the population susceptibility at
+$\Omega$, a factor that carries no carrier-frequency scaling. Of the three quadratic terms of
+Eq.~\eqref{eq:mpr}, $v^2$ mixes two voltage excursions at $1/(\omega_1\omega_2)$, $2rv$ a rate
+and a voltage excursion at $1/\omega^3$, and $\pi^2r^2$ two rate excursions at $1/\omega^4$, so
+$v^2$ controls the fast-carrier beat.
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lcc}
+\toprule
+stage & static curve, same membrane & dynamic population \\
+\midrule
+current $\to$ voltage & $\omega^{-1}$ & $\omega^{-1}$ \\
+voltage $\to$ rate, carrier & $1$ & $\omega^{-1}$ \\
+current $\to$ rate, carrier & $\omega^{-1}$ & $\omega^{-2}$ \\
+two tones $\to$ beat in the rate & $(\omega_1\omega_2)^{-1}$ & $(\omega_1\omega_2)^{-1}\times$ const. \\
+\bottomrule
+\end{tabular}
+\caption{Fast-carrier exponents of the two detectors on the same membrane. The dynamic population
+suppresses the carrier in the rate once more than the static curve does, but the beat is formed
+in the voltage equation before that integration. The constant in the last row is
+$d^2/(3d^2-\nu^2)$ times the population susceptibility at $\Omega$: it depends on the operating
+point, and can change sign, but not on the carrier.}
+\label{tab:exponents}
+\end{table}
 
 \subsection{Transduction class and its spatial and spectral signatures}\label{sec:transduction}
 A neural response proportional to the squared envelope is not equivalent to one
