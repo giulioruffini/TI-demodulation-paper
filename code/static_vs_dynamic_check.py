@@ -18,8 +18,8 @@ fig,ax=plt.subplots(1,3,figsize=(15,4.3))
 for Q,col,lab in cases:
     r,d,nu=rates(Q); fd=d/(2*np.pi*TAU); fnu=nu/(2*np.pi*TAU)
     # (a) linear rate response, normalized to DC
-    ax[0].plot(f,abs(Hr(Q,w)/Hr(Q,1e-9)),color=col,lw=1.8,label=lab)
-    ax[0].plot(f,abs(Hv(Q,w)/Hv(Q,1e-9)),color=col,lw=1.0,ls="--")
+    ax[0].plot(f,abs(Hr(Q,w)/Hr(Q,1e-9)),color=col,lw=1.8,label=lab)      # NMM2: rate lags the voltage (inertia) x membrane
+    ax[0].plot(f,abs(Hv(Q,w)/Hv(Q,1e-9)),color=col,lw=1.0,ls="--")         # NMM1 with the same membrane: static curve on the filtered voltage
     # (b) rectified output
     cd=C(Q,w); cs=C_static(Q,w)
     ax[1].plot(f,abs(cd),color=col,lw=1.8,label=lab)
@@ -34,15 +34,18 @@ for Q,col,lab in cases:
     ax[2].text(1.2e4,d*d/(3*d*d-nu*nu),f"{d*d/(3*d*d-nu*nu):.2f}",color=col,fontsize=8,va="center")
     for a in ax: a.axvline(fnu,color=col,lw=0.6,ls=":",alpha=0.6)
     print(f"Q={Q:5.1f}  r*={r:.3f}  d={d:.2f}  nu={nu:.2f}  f_d={fd:.0f} Hz  f_nu={fnu:.0f} Hz  R(inf)=d^2/(3d^2-nu^2)={d*d/(3*d*d-nu*nu):+.3f}")
-ax[0].plot(f,np.ones_like(f),color="0.3",lw=1.2,ls="-.",label="static sigmoid, no membrane (follows everything)")
+g1=0.5*(f/50.)**-1; g2=0.5*(f/50.)**-2
+ax[0].plot(f,g1,color="0.6",lw=0.8,ls="--"); ax[0].text(3000,g1[np.searchsorted(f,3000)]*1.8,"$\\propto f^{-1}$",fontsize=8,color="0.4")
+ax[0].plot(f,g2,color="0.6",lw=0.8,ls="--"); ax[0].text(3000,g2[np.searchsorted(f,3000)]*1.8,"$\\propto f^{-2}$",fontsize=8,color="0.4")
 ax[0].set_xscale("log"); ax[0].set_yscale("log"); ax[0].set_ylim(1e-5,2)
-ax[0].set_ylabel("linear response of the rate to a drive at $f$ (norm. to DC)"); ax[0].set_title("(a) NMM2 rate cannot follow a fast drive",fontsize=10,loc="left")
-ax[0].text(1.5,2e-5,"solid: NMM2 rate  |  dashed: voltage (membrane only)",fontsize=7.5,color="0.3")
+ax[0].set_ylabel("linear response of the rate at the drive frequency (norm. to DC)"); ax[0].set_title("(a) linear response: the NMM2 rate lags the voltage by one power",fontsize=10,loc="left")
+ax[0].text(1.3,3.5e-5,"dashed: NMM1 rate on the same membrane, $\\propto 1/f$ (membrane)",fontsize=7.5,color="0.3")
+ax[0].text(1.3,1.5e-5,"solid: NMM2 rate, $\\propto 1/f^2$ (membrane $\\times$ rate inertia)",fontsize=7.5,color="0.3")
 ax[1].set_xscale("log"); ax[1].set_yscale("log"); ax[1].set_ylim(1e-7,1)
 gl=1e-2*(f/100.)**-2; ax[1].plot(f,gl,color="0.6",lw=0.8,ls="--"); ax[1].text(2000,gl[np.searchsorted(f,2000)]*1.6,"$\\propto f^{-2}$",fontsize=8,color="0.4")
-ax[1].set_ylabel("|rectified DC rate shift| / $a^2$ ($\\tau=1$ units)"); ax[1].set_title("(b) rectified output: NMM2 solid, NMM1 + same membrane dashed",fontsize=10,loc="left")
+ax[1].set_ylabel("|rectified DC rate shift| / $a^2$ ($\\tau=1$ units)"); ax[1].set_title("(b) rectified (beat) output: same slope, the membrane",fontsize=10,loc="left")
 ax[2].set_xscale("log"); ax[2].set_ylim(-0.6,1.3); ax[2].axhline(0,color="0.6",lw=0.7); ax[2].axhline(1,color="0.6",lw=0.7)
-ax[2].set_ylabel("NMM2 / NMM1  (same membrane, same curve $F$)"); ax[2].set_title("(c) ratio NMM2 / NMM1",fontsize=10,loc="left")
+ax[2].set_ylabel("NMM2 / NMM1  (same membrane, same curve $F$)"); ax[2].set_title("(c) ratio NMM2 / NMM1 of the rectified output",fontsize=10,loc="left")
 ax[2].text(1.3,1.2,"$R\\to d^2/(3d^2-\\nu^2)$ above the population rates: a constant, no power of $f$",fontsize=8)
 for a in ax:
     a.set_xlim(1,1e4); a.set_xlabel("carrier frequency $f_c$ (Hz), $\\tau=15$ ms")
