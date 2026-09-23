@@ -674,7 +674,15 @@ reversal of Eq.~\eqref{eq:demod} at the inflection is a property of the memoryle
 And carrier independence at fixed polarization survives in the dynamic model, with
 polarization now the carrier-frequency voltage excursion $a_j/(\omega_j\tau_E)$: at fixed
 current the generated source rolls off as $1/(\omega_1\omega_2)$ from the membrane dynamics
-themselves.
+themselves. The rate's own linear response falls faster, as $1/\omega^2$: the membrane
+integrates the drive into the voltage and the rate equation integrates the voltage again, which is
+what a dynamic transfer function shows when it is driven at the carrier. The beat does not
+inherit the second power, because the product is formed in the voltage equation, before the
+rate integrates: the second-order susceptibility at the difference frequency is
+$\propto1/(\omega_1\omega_2)$ while the first-order one is $\propto1/\omega^2$. In a single
+population driven by tones at $995$ and $1005$~Hz ($\tau=15$~ms, $r^*\approx10$~Hz) the carrier
+line in the rate is $0.02$ of what a static curve on the same membrane would give, while the
+beat line is $0.32$ of it, both to four digits as this chain predicts.
 
 \subsection{Transduction class and its spatial and spectral signatures}\label{sec:transduction}
 A neural response proportional to the squared envelope is not equivalent to one
