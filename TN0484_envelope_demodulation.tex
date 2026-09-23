@@ -492,7 +492,14 @@ where $\lambda^c_0$ is the DC (quasi-static) coupling of door $c$---the weak-fie
 polarization length $\delta V=\boldsymbol\lambda\!\cdot\!\mathbf E$ of
 transcranial-stimulation modeling \cite{ruffini2025rosetta,galangadea2023}---and $\lambda^c_f$ is its
 effective coupling at the carrier, the DC value rolled off by that door's own filter
-$H_c$.
+$H_c$. Both are limits of one compartment equation, $C\dot{\mathbf V}+A\mathbf V=\mathbf I^0-\mathbf p\,E$
+\cite{ruffini2021nmm2}, whose response to an alternating field is
+$\delta\mathbf V(\omega)=-(A+i\omega C)^{-1}\mathbf p\,E(\omega)$: the quasi-static $\lambda_0$ is
+its value at $\omega\to0$ and $H_c$ its frequency dependence. Prescribing $\lambda_0E$ inside a
+static sigmoid and injecting the current $\mathbf p\,E$ into a model that carries its own
+$C\dot V$, as the exact mean field does (\S\ref{sec:dynamic}), are the two ends of this one
+chain; the membrane filter is applied once either way, and a comparison of the two detectors
+is only meaningful with the field inserted at the same point.
 The field is thus not only a somatic membrane perturbation, and which door
 dominates is set by the carrier: at DC the soma/dendrite has the largest coupling (the
 whole-cell dipole), but its filter cuts it at kHz while a fast door stays open, so

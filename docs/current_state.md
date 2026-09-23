@@ -11,7 +11,7 @@ fast-carrier coefficient by d^2/(3d^2-nu^2) (0.35/0.66/-0.03 at r*=10/17/37 Hz).
 in sec:carrier: R = G(Omega;gamma) D lambda_f(w1)E1 lambda_f(w2)E2, carrier only through
 lambda_f, beat only through G, operating point through D and gamma. PING methods: the field is
 a current-like forcing I_E(t)=P E(t) (was mislabeled delta V "polarization"); the E membrane is
-the door. Abstracts: matched access gives both detectors the same roll-off. Check script
+the door. Abstracts: matched access gives both detectors the same roll-off. sec:coupling: the door coupling is grounded in the compartment equation C dV/dt + A V = I0 - p E (NMM2 SI), lambda_0 its w->0 value and H_c its frequency dependence; prescribing lambda_0 E in a static sigmoid and injecting p E into a membrane equation are the two ends of one chain, and a detector comparison needs the field inserted at the same point (after Kaiti's reading of Francesca's slide 16, 2026-09-23). Check script
 code/static_vs_dynamic_check.py and figure docs/static_vs_dynamic_2026-09-23.png. Still held
 for Giulio: push, Calliope cut, Overleaf, co-author email.
 
