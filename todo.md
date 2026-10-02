@@ -1,7 +1,9 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
 - [ ] assess K's proposed 10–100× shorter effective QIF time scale for fast nanostructure access, recomputing the operating point and resonance and counting each physical filter once
-- [ ] establish which cellular demodulation mechanisms the population transfer functional represents and identify the other Nir paper
+- [ ] add Luff et al. 2024, The neuron mixer (10.1016/j.celrep.2024.114274), and distinguish its cellular mixing evidence from a calibrated population transfer functional
+- [ ] identify the nanostructure access reference from the Grossman discussion; revisit the access argument using Semenov et al. 2025's distinction between field-induced charging and current-injection time constants
+- [ ] clarify when sigmoid curvature generates the beat, when sigmoid slope reads an already-generated beat, and how recurrent gain amplifies it; qualify the assumed gate roll-off
 - [ ] Giulio: review v0.14.1 (TN0484_envelope_demodulation.pdf, TN0484_jne.pdf) against docs/revision_2026-09-22_disposition.md and the v1.67 changelog entry (Eq. 14 fixed-excursion coefficient, Eq. 20 receiver equation, PING field as current); decide length cuts (JNE main text ~18.9k words incl. captions vs 12,000 guideline)
 - [ ] after review: push two-tone-validation to GitHub, cut v0.14.0 in Calliope (public paper: the cut deposits to Zenodo, confirm first), re-sync Overleaf from GitHub, merge into main
 - [ ] after review: send the co-author approval request with v0.14.0 (HOLD until then); restore "All authors read and approved" on sign-off
