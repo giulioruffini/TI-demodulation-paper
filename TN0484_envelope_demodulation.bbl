@@ -39,6 +39,12 @@ Ryan~B. Budde, Michael~T. Williams, and Pedro~P. Irazoqui.
   driven by envelope extraction.
 \newblock {\em Journal of Neural Engineering}, 20(2):026041, 2023.
 
+\bibitem{semenov2025}
+Iurii Semenov, Vitalii Kim, Giedre Silkuniene, and Andrei~G. Pakhomov.
+\newblock Excitation and polarization of isolated neurons by high-frequency
+  sine waves for temporal interference stimulation.
+\newblock {\em Cell Reports Physical Science}, 2025.
+
 \bibitem{vieira2024}
 Pedro~G. Vieira, Matthew~R. Krause, and Christopher~C. Pack.
 \newblock Temporal interference stimulation disrupts spike timing in the
@@ -71,12 +77,6 @@ Wei Wang, M.~Florian, C.~Ling, K.~Wei, J.~Jian, H.~Sun, L.~Yan, S.~Hu, and
   deep brain stimulation---mechanistic insights, clinical advances, and future
   directions.
 \newblock {\em Translational Psychiatry}, 2026.
-
-\bibitem{semenov2025}
-Iurii Semenov, Vitalii Kim, Giedre Silkuniene, and Andrei~G. Pakhomov.
-\newblock Excitation and polarization of isolated neurons by high-frequency
-  sine waves for temporal interference stimulation.
-\newblock {\em Cell Reports Physical Science}, 2025.
 
 \bibitem{ruffini2025cfc}
 Giulio Ruffini, Edmundo Lopez-Sola, Raul Palma, Roser Sanchez-Todo, Jakub
@@ -111,6 +111,25 @@ Hugh~R. Wilson and Jack~D. Cowan.
   model neurons.
 \newblock {\em Biophysical Journal}, 12(1):1--24, 1972.
 
+\bibitem{montbrio2015}
+Ernest Montbri{\'o}, Diego Paz{\'o}, and Alex Roxin.
+\newblock Macroscopic description for networks of spiking neurons.
+\newblock {\em Physical Review X}, 5(2):021028, 2015.
+
+\bibitem{ruffini2021nmm2}
+Giulio Ruffini.
+\newblock Analysis and extension of exact mean-field theory with dynamic
+  synaptic currents.
+\newblock {\em bioRxiv}, 2021.
+\newblock Preprint 2021.09.01.458563 (NMM2).
+
+\bibitem{clusella2023}
+Pau Clusella, Elif K{\"o}ksal-Ers{\"o}z, Jordi Garcia-Ojalvo, and Giulio
+  Ruffini.
+\newblock Comparison between an exact and a heuristic neural mass model with
+  second-order synapses.
+\newblock {\em Biological Cybernetics}, 117(1-2):5--19, 2023.
+
 \bibitem{hutcheonyarom2000}
 Bruce Hutcheon and Yosef Yarom.
 \newblock Resonance, oscillation and the intrinsic frequency preferences of
@@ -137,25 +156,6 @@ Nicolas Brunel and Xiao-Jing Wang.
   irregular neural discharges? {I}. synaptic dynamics and
   excitation--inhibition balance.
 \newblock {\em Journal of Neurophysiology}, 90(1):415--430, 2003.
-
-\bibitem{montbrio2015}
-Ernest Montbri{\'o}, Diego Paz{\'o}, and Alex Roxin.
-\newblock Macroscopic description for networks of spiking neurons.
-\newblock {\em Physical Review X}, 5(2):021028, 2015.
-
-\bibitem{ruffini2021nmm2}
-Giulio Ruffini.
-\newblock Analysis and extension of exact mean-field theory with dynamic
-  synaptic currents.
-\newblock {\em bioRxiv}, 2021.
-\newblock Preprint 2021.09.01.458563 (NMM2).
-
-\bibitem{clusella2023}
-Pau Clusella, Elif K{\"o}ksal-Ers{\"o}z, Jordi Garcia-Ojalvo, and Giulio
-  Ruffini.
-\newblock Comparison between an exact and a heuristic neural mass model with
-  second-order synapses.
-\newblock {\em Biological Cybernetics}, 117(1-2):5--19, 2023.
 
 \bibitem{sanchezTodo2023}
 Roser Sanchez-Todo, Andr{\'e}~M. Bastos, Edmundo Lopez-Sola, Borja Mercadal,
@@ -186,20 +186,6 @@ Guy Eyal, Matthijs~B. Verhoog, Guilherme Testa-Silva, Yair Deitcher,
 \newblock Unique membrane properties and enhanced signal processing in human
   neocortical neurons.
 \newblock {\em eLife}, 5:e16553, 2016.
-
-\bibitem{reato2010}
-Davide Reato, Asif Rahman, Marom Bikson, and Lucas~C. Parra.
-\newblock Low-intensity electrical stimulation affects network dynamics by
-  modulating population rate and spike timing.
-\newblock {\em Journal of Neuroscience}, 30(45):15067--15079, 2010.
-
-\bibitem{liu2018}
-Anli Liu, Mih{\'a}ly V{\"o}r{\"o}slakos, Greg Kronberg, Simon Henin, Matthew~R.
-  Krause, Yu~Huang, Alexander Opitz, Ashesh Mehta, Christopher~C. Pack, Bart
-  Krekelberg, Antal Ber{\'e}nyi, and Lucas~C. Parra.
-\newblock Immediate neurophysiological effects of transcranial electrical
-  stimulation.
-\newblock {\em Nature Communications}, 9:5092, 2018.
 
 \bibitem{grimbert2006}
 Fran{\c c}ois Grimbert and Olivier Faugeras.
@@ -268,6 +254,13 @@ Charles C.~H. Cohen, Marko~A. Popovic, Jan Klooster, Marie-Theres Weil, Wiebke
   nanocircuit.
 \newblock {\em Cell}, 180(2):311--322.e15, 2020.
 
+\bibitem{luff2024}
+Charlotte~E. Luff, Patrycja Dzialecka, Emma Acerbo, Adam Williamson, and Nir
+  Grossman.
+\newblock Pulse-width modulated temporal interference (pwm-ti) brain
+  stimulation.
+\newblock {\em Brain Stimulation}, 17(1):92–103, January 2024.
+
 \bibitem{missey2026}
 Florian Missey, Emma Acerbo, Adam~S. Dickey, et~al.
 \newblock Non-invasive temporal interference stimulation of the hippocampus
@@ -279,12 +272,6 @@ Erwan Ledoux and Nicolas Brunel.
 \newblock Dynamics of networks of excitatory and inhibitory neurons in response
   to time-dependent inputs.
 \newblock {\em Frontiers in Computational Neuroscience}, 5, 2011.
-
-\bibitem{ott2008}
-Edward Ott and Thomas~M. Antonsen.
-\newblock Low dimensional behavior of large systems of globally coupled
-  oscillators.
-\newblock {\em Chaos}, 18(3):037113, 2008.
 
 \bibitem{ali2013}
 M.~M. Ali, K.~K. Sellers, and F.~Frohlich.
@@ -298,13 +285,6 @@ Ehsan Negahbani, Florian~H. Kasten, Christoph~S. Herrmann, and Flavio
 \newblock Targeting alpha-band oscillations in a cortical model with
   amplitude-modulated high-frequency transcranial electric stimulation.
 \newblock {\em NeuroImage}, 173:3–12, 2018.
-
-\bibitem{plovie2025}
-Thomas Plovie, Ruben Schoeters, Thomas Tarnaud, Wout Joseph, and Emmeric
-  Tanghe.
-\newblock Nonlinearities and timescales in neural models of temporal
-  interference stimulation.
-\newblock {\em Bioelectromagnetics}, 46(1):e22522, 2025.
 
 \bibitem{krause2023}
 Matthew~R. Krause, Pedro~G. Vieira, and Christopher~C. Pack.
@@ -345,26 +325,17 @@ Yu~Huang, Anli~A Liu, Belen Lafon, Daniel Friedman, Michael Dayan, Xiuyuan
   vivo human brain during transcranial electric stimulation.
 \newblock {\em eLife}, 7, February 2018.
 
-\bibitem{voroslakos2018}
-Mihály Vöröslakos, Yuichi Takeuchi, Kitti Brinyiczki, Tamás Zombori,
-  Azahara Oliva, Antonio Fernández-Ruiz, Gábor Kozák, Zsigmond~Tamás
-  Kincses, Béla Iványi, György Buzsáki, and Antal Berényi.
-\newblock Direct effects of transcranial electric stimulation on brain circuits
-  in rats and humans.
-\newblock {\em Nature Communications}, 9(1), February 2018.
-
-\bibitem{koga2010}
-Kohei Koga, Xiangyao Li, Tao Chen, Hendrik~W Steenland, Giannina Descalzi, and
-  Min Zhuo.
-\newblock In vivo whole-cell patch-clamp recording of sensory synaptic
-  responses of cingulate pyramidal neurons to noxious mechanical stimuli in
-  adult mice.
-\newblock {\em Molecular Pain}, 6, January 2010.
-
 \bibitem{wilting2018}
 Jens Wilting and Viola Priesemann.
 \newblock Inferring collective dynamical states from widely unobserved systems.
 \newblock {\em Nature Communications}, 9(1), 2018.
+
+\bibitem{plovie2025}
+Thomas Plovie, Ruben Schoeters, Thomas Tarnaud, Wout Joseph, and Emmeric
+  Tanghe.
+\newblock Nonlinearities and timescales in neural models of temporal
+  interference stimulation.
+\newblock {\em Bioelectromagnetics}, 46(1):e22522, 2025.
 
 \bibitem{iszak2023}
 Krisztián Iszak, Simon~Mathies Gronemann, Stefanie Meyer, Alexander Hunold,

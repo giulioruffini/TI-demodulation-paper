@@ -5,21 +5,25 @@
 
 **Paper:** *The cortical column as a tuned receiver: a network mechanism for
 temporal-interference stimulation* — G. Ruffini, B. Mercadal, A. Just,
-R. de Palma Aristides, F. Castaldo, S. Canals, C. Mirasso.
+R. de Palma Aristides, F. Castaldo, N. Grossman, S. Canals, C. Mirasso.
 Archived at Zenodo: **[doi:10.5281/zenodo.21009618](https://doi.org/10.5281/zenodo.21009618)**.
 Licensed **CC-BY-4.0** (see [`LICENSE`](LICENSE)); machine-readable citation in
 [`CITATION.cff`](CITATION.cff).
 
-The current local draft is **v0.14.2** (October 2, 2026), in
+The current local draft is **v0.14.3** (October 2, 2026), in
 [TN0484_envelope_demodulation.pdf](TN0484_envelope_demodulation.pdf) and
 [TN0484_jne.pdf](TN0484_jne.pdf). As checked on October 2,
 [Calliope WP0185](https://calliope.bcom.one/papers/WP0185) still lists v0.12.0
 (July 21); the newer local draft remains pending Giulio's review and release.
 
-This revision adds Cohen et al. (2020) on the periaxonal nanocircuit, Luff et al.
-(2024) on cellular frequency mixing, and the September 29 draft by de Palma
-Aristides et al. (WP0242) on single-cell TI frequency selectivity. The proposed
-shorter access time scale remains a modeling hypothesis; the simulations are unchanged.
+This revision connects the fast-membrane NMM2 limit to a static population transfer
+with dynamic synapses, distinguishes carrier access from cellular mixing and circuit
+amplification, and adds Nir Grossman to the authors. Cohen's periaxonal study,
+Luff's cellular-mixing work, and Raul's unpublished WP0242 manuscript remain cited.
+The shorter effective access time is a modeling hypothesis; the plotted simulations
+retain their original parameters. All 22 figures are preserved. The revision and
+validation record is in [docs/revision_2026-10-02_v0143.md](docs/revision_2026-10-02_v0143.md),
+with a [redline against v0.14.2](docs/redline_v0142_to_v0143.pdf).
 
 Sigmoid curvature + near-Hopf amplification as a **mesoscopic, network** mechanism
 for temporal-interference (TI) stimulation. An amplitude-modulated (AM) field
@@ -32,11 +36,11 @@ bands), to the exact mean-field **NMM2** (derived rectifier), down to a spiking
 **QIF** network, and out to a **tACS** corollary that shares the same amplifier.
 
 > **Key message:** *a nonlinearity mixes the two carriers into a difference-frequency
-> component, and the recurrent network near its Hopf amplifies it selectively.* The two
-> modeled detectors are not the same object: the memoryless sigmoid mixes through its
-> curvature, the exact QIF mean field through its voltage quadratic acting on the
-> carrier-frequency excursion, read out through the population slope. Generation and
-> amplification are separate contributions.
+> component, and the recurrent network near its Hopf amplifies it selectively.* The
+> static and dynamic descriptions are connected by their time scales. When membrane
+> relaxation is fast relative to the input, the exact mean field reduces to a static
+> rate curve; otherwise its mixing coefficient is dynamic. Generation and amplification
+> remain separate contributions, with membrane access counted once.
 
 ![concept](figures/fig_concept.png)
 ![resonance](figures/fig_resonance.png)
@@ -49,7 +53,7 @@ bands), to the exact mean-field **NMM2** (derived rectifier), down to a spiking
 ├── LICENSE                                # CC-BY-4.0
 ├── CITATION.cff                           # machine-readable citation (DOI, authors)
 ├── TN0484_envelope_demodulation.tex       # the manuscript (\graphicspath{{figures/}})
-├── TN0484_envelope_demodulation.pdf       # current build (52 pp; JNE article 36 pp + supplement 18 pp)
+├── TN0484_envelope_demodulation.pdf       # current build (46 pp; JNE article 30 pp + supplement 18 pp)
 ├── TN0484_envelope_demodulation.bbl       # committed so a single pdflatex works w/o bibtex
 ├── references.bib                         # BibTeX source for all references
 ├── requirements.txt                       # pinned Python deps (numpy/scipy/matplotlib + ...)
@@ -83,9 +87,9 @@ pdflatex TN0484_envelope_demodulation
 pdflatex TN0484_envelope_demodulation
 ```
 
-Current build: **52 pp (TN), 36 pp (JNE article) + 18 pp (supplement); 0 errors,
+Current build: **46 pp (TN), 30 pp (JNE article) + 18 pp (supplement); 0 errors,
 0 undefined references or citations.** Existing warnings about bibliography month
-macros, shared citation labels in the split build, and a long repository URL remain
+macros and shared citation labels in the split build remain
 listed in `todo.md`. The `.bbl` is committed, so a single `pdflatex` rebuilds the PDF
 when references are unchanged.
 

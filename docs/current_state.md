@@ -1,5 +1,32 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v1.70 — v0.14.3: fast-membrane argument, shorter paper, Nir Grossman added (2026-10-02)
+Revised the manuscript at Giulio's request. The theory connects the static QIF
+population curve to the NMM2 slow-synapse limit and distinguishes fast relaxation
+relative to synapses from the stronger condition needed to track a kHz carrier.
+The argument separates carrier access, cellular/population mixing, and recurrent
+amplification, counting each physical filter once. Cohen, Luff, and Raul remain
+cited for their distinct contributions; the shorter effective access time remains
+a modeling hypothesis. The plotted simulations retain their finite membrane times.
+
+Nir Grossman is listed after Francesca Castaldo, with Imperial affiliation, ORCID,
+and a draft conceptualization contribution. All previous authors retain their
+relative order. Author declarations and manuscript approval remain pending.
+
+The main-body LaTeX word count, including headings and captions, is about 30% lower
+(15,041 to approximately 10,592). All 22 figures are preserved. Builds now have
+46 pages (TN), 30 pages (article), and 18 pages (supplement), with no errors,
+undefined references/citations, or overfull boxes. The prose pass, rendered-page
+review, physical-rate equilibrium check, static mixing check, and existing PING
+fast-carrier check are complete. Existing month-macro and shared citation-label
+warnings remain in the TODO.
+
+The full change and validation record is
+`docs/revision_2026-10-02_v0143.md`; the review copy is
+`docs/redline_v0142_to_v0143.pdf`, compared with v0.14.2 at `538930d`.
+Release, push, Overleaf synchronization, and circulation remain held for Giulio's
+review. No simulation code, parameters, datasets, or figure assets changed.
+
 ## v1.69 — shorter-tau literature check and QIF analysis; manuscript unchanged (2026-10-02)
 K clarified that the task is to use existing periaxonal work and test a shorter effective
 QIF membrane time scale, without implementing a new double cable. Removed that proposed

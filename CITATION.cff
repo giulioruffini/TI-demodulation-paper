@@ -2,12 +2,13 @@ cff-version: 1.2.0
 message: "If you use this work, please cite it using the metadata below."
 title: "The cortical column as a tuned receiver: a network mechanism for temporal-interference stimulation"
 abstract: >-
-  A mesoscopic, network mechanism for temporal-interference (TI) stimulation: the
-  population firing-rate sigmoid of a neural mass acts as a square-law demodulator of
-  an amplitude-modulated field, and a second-order-synapse network near a Hopf
-  bifurcation resonantly amplifies the recovered envelope. Demonstrated across a
-  modeling ladder (Jansen-Rit, laminar LaNMM, exact NMM2 mean field, QIF spiking
-  network) with a tACS corollary.
+  Population models separate carrier access, nonlinear difference-frequency
+  generation, and recurrent amplification in temporal-interference stimulation.
+  The static transfer curve emerges from the exact QIF mean field in the
+  slow-synapse limit; carrier mixing requires the corresponding separation of
+  time scales. Near a Hopf bifurcation, the recurrent network amplifies the
+  generated beat. Demonstrated with Jansen-Rit, NMM2, and QIF models, with a
+  laminar extension and comparison with direct low-frequency stimulation.
 type: software
 authors:
   - family-names: Ruffini
@@ -30,6 +31,10 @@ authors:
     given-names: Francesca
     affiliation: "Neuroelectrics / BCOM"
     orcid: "https://orcid.org/0000-0002-4947-4552"
+  - family-names: Grossman
+    given-names: Nir
+    affiliation: "Department of Brain Sciences and UK Dementia Research Institute, Imperial College London"
+    orcid: "https://orcid.org/0000-0003-2002-9049"
   - family-names: Canals
     given-names: Santiago
     affiliation: "Instituto de Neurociencias (UMH-CSIC) / BCOM"
@@ -44,7 +49,7 @@ identifiers:
     description: "Zenodo archive of this repository (concept DOI, resolves to latest version)"
 repository-code: "https://github.com/giulioruffini/TI-demodulation-paper"
 license: CC-BY-4.0
-version: "0.14.2"
+version: "0.14.3"
 date-released: "2026-10-02"
 keywords:
   - temporal interference
