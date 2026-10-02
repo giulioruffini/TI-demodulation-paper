@@ -1,6 +1,6 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
-- [ ] calibrate the shorter-tau QIF/MPR network at plausible baseline rates and recalculate its resonance, using docs/qif_short_tau_2026-10-02.md
+- [ ] frame shorter-tau NMM2 through its established slow-synapse reduction; specify when the carrier also sees a static rate map and which synaptic network resonance remains
 - [ ] clarify when sigmoid curvature generates the beat, when sigmoid slope reads an already-generated beat, and how recurrent gain amplifies it; qualify the assumed gate roll-off
 - [ ] Giulio: review v0.14.2 against docs/revision_2026-09-22_disposition.md and changelog v1.67–1.68 (membrane accounting and Cohen/Luff/Raul additions); decide JNE length cuts
 - [ ] after review: push two-tone-validation to GitHub, release the reviewed version in Calliope (public paper: the cut deposits to Zenodo, confirm first), re-sync Overleaf from GitHub, merge into main

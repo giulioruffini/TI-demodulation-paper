@@ -145,6 +145,49 @@ the maxima of the forced-response spectrum.
 The supported reduced-model conclusion is that shorter effective membrane
 dynamics can substantially strengthen the carrier excursions reaching the QIF
 quadratic, including in a comparison with matched baseline rate and voltage.
-The remaining network task is to calibrate a shorter-tau population at plausible
-rates and locate its recurrent resonance. This can be done within QIF/MPR; a new
-periaxonal-circuit implementation is outside the requested scope.
+These parameter changes do not obstruct the existing adiabatic reduction of NMM2.
+A comparison at fixed physical rates requires consistent parameter normalization,
+but the conceptual starting point is the slow-synapse limit below.
+
+## A fast membrane gives the established slow-synapse reduction
+
+As Giulio pointed out after reviewing these results, fast membrane dynamics relative
+to synapses put NMM2 in its existing slow-synapse regime. Section 3.1 of
+[Clusella et al. (2023)](https://doi.org/10.1007/s00422-022-00952-7) derives this map
+to a model with a static transfer curve. No new periaxonal implementation is needed
+to study this limit.
+
+Let Q be the total normalized drive in the MPR voltage equation, with the synaptic
+normalization retained from that equation. If the rate and voltage relax to their
+attracting equilibrium much faster than Q changes, setting their fast derivatives
+to zero gives
+
+\[
+r(t)\simeq\Phi_{\tau_m}(Q(t)),\qquad
+\Phi_{\tau_m}(Q)=\frac{1}{\pi\tau_m}
+\sqrt{\frac{Q+\sqrt{Q^2+\Delta^2}}{2}}.
+\]
+
+Here Delta is the excitability half-width and r is the physical firing rate. The
+second-order synaptic equations remain dynamic, with this rate as their input.
+The static curve is nonlinear even without recurrent coupling.
+
+This reduction applies to slow synaptic inputs when the population relaxation time
+is short relative to synaptic variation. Applying the same static curve directly
+to the kHz carrier requires the stronger condition that population relaxation is
+also fast relative to the carrier. In that regime, consider a perturbation
+q(t)=a1*cos(omega1*t)+a2*cos(omega2*t) about a background Q0. Here a1 and a2
+are the input amplitudes and omega1 and omega2 their angular frequencies. The
+second-order difference-frequency term in the rate is
+
+\[
+\frac{1}{2}\Phi_{\tau_m}''(Q_0)a_1a_2
+\cos[(\omega_1-\omega_2)t].
+\]
+
+The static curve therefore supplies mixing through its curvature, while its slope
+sets the local gain entering recurrent synaptic feedback. The remaining synaptic
+network can support resonance for suitable architecture and parameters; a resonance
+depending on the eliminated membrane dynamics need not survive. If only the
+synaptic time-scale separation holds, carrier mixing must instead be evaluated
+from the fast driven subsystem before reducing the slow network dynamics.
