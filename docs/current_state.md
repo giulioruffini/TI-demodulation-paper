@@ -1,5 +1,26 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v1.69 — shorter-tau literature check and QIF analysis; manuscript unchanged (2026-10-02)
+K clarified that the task is to use existing periaxonal work and test a shorter effective
+QIF membrane time scale, without implementing a new double cable. Removed that proposed
+implementation from the TODO. Findings and derivation are in
+`docs/qif_short_tau_2026-10-02.md`, with a reproducible script and JSON results.
+
+Cohen's methods report a minimum fitted axonal decay time near 1 ms. Luff/Grossman's
+PWM-TI paper uses a 1-ms passive RC example and explores 1–100 ms; it does not use
+Cohen's model. No use or citation of Cohen's nanocircuit was found in the seven
+Grossman coauthored articles inspected from 2023–2026. Semenov's approximately 0.7-us
+external-field charging measurement is a different response mode.
+
+In an uncoupled QIF/MPR comparison with matched baseline rate and voltage, reducing
+tau from 15 ms to 1.5, 1, and 0.15 ms increases the v-squared beat-source magnitude
+by 97.8, 214, and 3,073 at 980/1020 Hz. Drive and heterogeneity are recalibrated to
+match the baseline; normalized stimulation amplitudes are fixed. Exact second-order
+rate responses agree with direct nonlinear integrations after amplitude extrapolation
+(largest relative error 1.3e-5). A literal global tau reduction in the existing PING
+also changes rates and modes; a physiologically calibrated network comparison remains
+open. No manuscript, figure, PDF, or release version changed.
+
 ## v1.68 — v0.14.2: periaxonal access and cellular TI references (2026-10-02)
 Added Cohen et al. (Cell, 2020, doi:10.1016/j.cell.2019.11.039), identified from
 K's submyelin clue and the earlier `TI_mechanisms_NMM_revised.pdf` note. The Discussion

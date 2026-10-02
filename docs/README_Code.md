@@ -30,6 +30,7 @@ pip install numpy scipy matplotlib
 | `figures_v2.py` | v2 figures: concept schematic, bifurcation+sigmoid, 2-D map, carrier independence (+ synapse transfer function), operating-point law. |
 | `khz_analysis.py` | Carrier-frequency sweep to 10 kHz: direct coupling (flat) vs. membrane low-pass (1/fc² rolloff) → `fig_khz`. Answers "what happens at 1k/2k/10k Hz". |
 | `test_jr_demod.py` | Self-checks (derivatives, fixed point, square law, linearization control). |
+| `qif_short_tau_check.py` | Shorter-tau QIF/MPR comparison with fixed parameters or matched baseline rate/voltage; exact second-order beat response checked against direct integration. Run from the repository root with `.venv/bin/python code/qif_short_tau_check.py`; writes `docs/qif_short_tau_2026-10-02.json`. |
 | `current_state.md` | Project state / next steps. |
 | `TN0484_envelope_demodulation.tex/.pdf` | The Technical Note. |
 
