@@ -1,4 +1,4 @@
-# TN0484 — A neural-mass mechanism for temporal-interference envelope demodulation
+# TN0484 / WP0185 — The cortical column as a tuned receiver
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21009618.svg)](https://doi.org/10.5281/zenodo.21009618)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
@@ -9,6 +9,12 @@ R. de Palma Aristides, F. Castaldo, S. Canals, C. Mirasso.
 Archived at Zenodo: **[doi:10.5281/zenodo.21009618](https://doi.org/10.5281/zenodo.21009618)**.
 Licensed **CC-BY-4.0** (see [`LICENSE`](LICENSE)); machine-readable citation in
 [`CITATION.cff`](CITATION.cff).
+
+The current local draft is **v0.14.1** (September 23, 2026), in
+[TN0484_envelope_demodulation.pdf](TN0484_envelope_demodulation.pdf) and
+[TN0484_jne.pdf](TN0484_jne.pdf). As checked on October 2,
+[Calliope WP0185](https://calliope.bcom.one/papers/WP0185) still lists v0.12.0
+(July 21); the newer local draft remains pending Giulio's review and release.
 
 Sigmoid curvature + near-Hopf amplification as a **mesoscopic, network** mechanism
 for temporal-interference (TI) stimulation. An amplitude-modulated (AM) field
