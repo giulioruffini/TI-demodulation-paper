@@ -19,6 +19,13 @@ Paul~J. Nahin.
   Demonstrations}.
 \newblock Springer, 2nd edition, 2001.
 
+\bibitem{luff2024mixer}
+Charlotte~E. Luff, Robert Peach, Emma-Jane Mallas, Edward Rhodes, Felix
+  Laumann, Edward~S. Boyden, David~J. Sharp, Mauricio Barahona, and Nir
+  Grossman.
+\newblock The neuron mixer and its impact on human brain dynamics.
+\newblock {\em Cell Reports}, 43(6):114274, 2024.
+
 \bibitem{opancar2025}
 Aleksandar Opan{\v c}ar, Petra Ondr{\'a}{\v c}kov{\'a}, David~Samuel Rose, Jan
   Trajlinek, Vedran {\DJ}erek, and Eric~Daniel G{\l}owacki.
@@ -109,6 +116,14 @@ Bruce Hutcheon and Yosef Yarom.
 \newblock Resonance, oscillation and the intrinsic frequency preferences of
   neurons.
 \newblock {\em Trends in Neurosciences}, 23(5):216--222, 2000.
+
+\bibitem{depalma2026ti}
+Raul de~Palma~Aristides, Leonardo~L. Gollo, Francesca Castaldo, Giulio Ruffini,
+  Santiago Canals, and Claudio~R. Mirasso.
+\newblock Frequency-selective responses to temporal interference stimulation in
+  hippocampal neurons.
+\newblock Unpublished manuscript, September 29, 2026. BCOM Working Paper
+  WP0242, 2026.
 
 \bibitem{brunelhakim1999}
 Nicolas Brunel and Vincent Hakim.
@@ -245,6 +260,13 @@ Aman~S. Aberra, Ruochen Wang, Warren~M. Grill, and Angel~V. Peterchev.
 Darpan Chakraborty, Dennis~Q. Truong, Marom Bikson, and Hanoch Kaphzan.
 \newblock Neuromodulation of axon terminals.
 \newblock {\em Cerebral Cortex}, 28(8):2786--2794, 2018.
+
+\bibitem{cohen2020periaxonal}
+Charles C.~H. Cohen, Marko~A. Popovic, Jan Klooster, Marie-Theres Weil, Wiebke
+  M{\"o}bius, Klaus-Armin Nave, and Maarten H.~P. Kole.
+\newblock Saltatory conduction along myelinated axons involves a periaxonal
+  nanocircuit.
+\newblock {\em Cell}, 180(2):311--322.e15, 2020.
 
 \bibitem{missey2026}
 Florian Missey, Emma Acerbo, Adam~S. Dickey, et~al.

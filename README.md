@@ -10,11 +10,16 @@ Archived at Zenodo: **[doi:10.5281/zenodo.21009618](https://doi.org/10.5281/zeno
 Licensed **CC-BY-4.0** (see [`LICENSE`](LICENSE)); machine-readable citation in
 [`CITATION.cff`](CITATION.cff).
 
-The current local draft is **v0.14.1** (September 23, 2026), in
+The current local draft is **v0.14.2** (October 2, 2026), in
 [TN0484_envelope_demodulation.pdf](TN0484_envelope_demodulation.pdf) and
 [TN0484_jne.pdf](TN0484_jne.pdf). As checked on October 2,
 [Calliope WP0185](https://calliope.bcom.one/papers/WP0185) still lists v0.12.0
 (July 21); the newer local draft remains pending Giulio's review and release.
+
+This revision adds Cohen et al. (2020) on the periaxonal nanocircuit, Luff et al.
+(2024) on cellular frequency mixing, and the September 29 draft by de Palma
+Aristides et al. (WP0242) on single-cell TI frequency selectivity. The proposed
+shorter access time scale remains a modeling hypothesis; the simulations are unchanged.
 
 Sigmoid curvature + near-Hopf amplification as a **mesoscopic, network** mechanism
 for temporal-interference (TI) stimulation. An amplitude-modulated (AM) field
@@ -44,7 +49,7 @@ bands), to the exact mean-field **NMM2** (derived rectifier), down to a spiking
 ├── LICENSE                                # CC-BY-4.0
 ├── CITATION.cff                           # machine-readable citation (DOI, authors)
 ├── TN0484_envelope_demodulation.tex       # the manuscript (\graphicspath{{figures/}})
-├── TN0484_envelope_demodulation.pdf       # last good build (50 pp; JNE article 34 pp + supplement 18 pp)
+├── TN0484_envelope_demodulation.pdf       # current build (52 pp; JNE article 36 pp + supplement 18 pp)
 ├── TN0484_envelope_demodulation.bbl       # committed so a single pdflatex works w/o bibtex
 ├── references.bib                         # BibTeX source for all references
 ├── requirements.txt                       # pinned Python deps (numpy/scipy/matplotlib + ...)
@@ -78,8 +83,11 @@ pdflatex TN0484_envelope_demodulation
 pdflatex TN0484_envelope_demodulation
 ```
 
-Last known good: **46 pp (TN), 34 pp (JNE article) + 14 pp (supplement); 0 undefined refs, 0 citation warnings.** The `.bbl` is
-committed, so a single `pdflatex` rebuilds the PDF when references are unchanged.
+Current build: **52 pp (TN), 36 pp (JNE article) + 18 pp (supplement); 0 errors,
+0 undefined references or citations.** Existing warnings about bibliography month
+macros, shared citation labels in the split build, and a long repository URL remain
+listed in `todo.md`. The `.bbl` is committed, so a single `pdflatex` rebuilds the PDF
+when references are unchanged.
 
 ## Reproduce the figures
 

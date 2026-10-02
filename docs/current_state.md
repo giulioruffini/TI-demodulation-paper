@@ -1,5 +1,32 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v1.68 — v0.14.2: periaxonal access and cellular TI references (2026-10-02)
+Added Cohen et al. (Cell, 2020, doi:10.1016/j.cell.2019.11.039), identified from
+K's submyelin clue and the earlier `TI_mechanisms_NMM_revised.pdf` note. The Discussion
+distinguishes the established conducting periaxonal space from its as-yet uncomputed
+transfer under an extracellular kHz field. K's proposed 10–100× shorter effective QIF
+access time scale remains a hypothesis; changing it requires recomputing the operating
+point and resonance and counting each physical filter once. This is the nanostructure
+reference; Semenov et al. (2025) is a separate field-induced charging study.
+
+Added Luff et al., *The neuron mixer and its impact on human brain dynamics* (Cell
+Reports, 2024, doi:10.1016/j.celrep.2024.114274), distinct from the existing PWM-TI
+reference. The Introduction records subthreshold cellular mixing near 5 kHz and the
+synaptic/TTX blockade evidence. The Discussion distinguishes a calibrated dynamic
+population functional from a static firing-rate curve.
+
+Added de Palma Aristides et al., *Frequency-Selective Responses to Temporal Interference
+Stimulation in Hippocampal Neurons*, as an unpublished September 29, 2026 manuscript
+(WP0242), using the received PDF's full byline. Cited for cellular frequency selectivity
+and conductance/state dependence, alongside the paper's recurrent-amplification account.
+No simulation parameters or results changed. Release, push, Overleaf sync, and co-author
+email remain held for Giulio's review.
+
+Validation: `./build.sh all` twice; TN 52 pp, JNE 36 pp, supplement 18 pp, no errors
+or undefined references/citations. New passages and bibliography entries checked in
+rendered TN/JNE pages. Logs retain warnings from unchanged bibliography month macros,
+shared citation labels imported across JNE files, and the long repository URL.
+
 ## v1.67 — v0.14.1: one membrane, counted once (2026-09-23)
 After the discussion of Kaiti's note on "access + detector dynamics": the QIF's 1/w^2 at fixed
 current is the membrane term tau*dv integrating the injected current, i.e. the somatic door of

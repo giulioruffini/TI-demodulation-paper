@@ -130,7 +130,7 @@ a network mechanism for temporal-interference stimulation}\\[10pt]
 \textbf{Author:} & Giulio Ruffini, Borja Mercadal, Alex Just, Raul de Palma Aristides,\\
 & Francesca Castaldo, Santiago Canals, and Claudio Mirasso \\
 \textbf{Affiliation:} & Neuroelectrics\,/\,BCOM\,/\,IFISC (UIB-CSIC)\,/\,IN (UMH-CSIC) \\
-\textbf{Date:} & 2026-09-23 \qquad \textbf{Version:} 0.14.1 \\
+\textbf{Date:} & 2026-10-02 \qquad \textbf{Version:} 0.14.2 \\
 \textbf{DOI:} & \href{https://doi.org/10.5281/zenodo.21009618}{10.5281/zenodo.21009618} \\
 \end{tabular}\\[4pt]
 {\color{neblue}\rule{\textwidth}{1pt}}
@@ -264,8 +264,13 @@ places the nonlinearity in single-neuron ion channels: Mirzakhalili et al.\
 \cite{mirzakhalili2020} show in Hodgkin--Huxley and MRG-type mammalian myelinated
 axon models that TI works through nonlinear, ion-channel-mediated rectification, in which
 asymmetric voltage-gated conductances rectify the carrier and, after membrane
-low-pass, follow the envelope---the textbook rectify-then-filter detector. Other
-studies report that TI thresholds inherit the carrier's frequency dependence,
+low-pass, follow the envelope---the textbook rectify-then-filter detector.
+Luff et al.\ \cite{luff2024mixer} directly observed subthreshold difference-frequency
+oscillations in individual neurons under two-tone stimulation, including carriers near
+$5$~kHz. At those carrier frequencies the mixing persisted during synaptic blockade,
+whereas blocking tetrodotoxin-sensitive sodium channels suppressed it. These recordings
+provide experimental evidence for cellular mixing alongside the biophysical models.
+Other studies report that TI thresholds inherit the carrier's frequency dependence,
 suggesting a mechanism shared with direct kHz stimulation (conduction block,
 onset response) rather than a dedicated envelope channel
 \cite{opancar2025,peripheral2023}, and in some peripheral preparations the
@@ -382,10 +387,14 @@ $\Sig''$ summarizes cellular nonlinearities (thresholds, spike generation, noise
 by the spread of states across the population. Whether a fast carrier reaches that curve
 unchanged is a question the memoryless model cannot answer; the exact mean field below
 (Eq.~\eqref{eq:mpr}) can, and \S\ref{sec:dynamic} shows that it does not. The network
-supplies the resonant \emph{amplification} (\S\ref{sec:carrier}). Frequency-selective resonance can also be intrinsic to single cells
-(e.g.\ $I_h$ and $I_M$ currents \cite{hutcheonyarom2000}); we locate it instead in the
-network, where second-order synapses on a loop near criticality generate it even when the cells do
-not \cite{brunelhakim1999,brunelwang2003}.
+supplies the resonant \emph{amplification} (\S\ref{sec:carrier}). Frequency-selective
+resonance can also be intrinsic to single cells, through currents such as $I_h$ and $I_M$
+\cite{hutcheonyarom2000}. A companion modeling manuscript by de Palma Aristides et al.\
+\cite{depalma2026ti} reports cell-type- and state-dependent TI frequency selectivity in
+morphologically detailed hippocampal neurons, with sensitivity to these conductances.
+Such cellular tuning can coexist with recurrent amplification. The models here isolate
+the latter: second-order synapses on a loop near criticality generate resonance even
+when the cells do not \cite{brunelhakim1999,brunelwang2003}.
 
 Assembled into a network, these two elements give the NMM1 transfer-function form of
 \cite{ruffini2025rosetta} (their Eq.~6.5): for each synapse $m\!\leftarrow\!n$,
@@ -1713,6 +1722,10 @@ mechanism is nonlinear mixing followed by network tuning, not a universal
 sigmoid-curvature law. The single cell need only supply a fast nonlinearity that samples
 the carrier; in the exact mean field that is the spike-generating quadratic acting on a
 voltage excursion of order $a/\omega$.
+A population transfer functional calibrated to the relevant cellular dynamics could
+incorporate ion-channel mixing. A static firing-rate sigmoid specifies only the
+steady-state relation; its curvature does not establish that dynamic functional or its
+carrier-frequency dependence.
 
 \textbf{Where the carrier-sampling nonlinearity may live.} The literature points to three
 non-exclusive loci. (i)~\emph{Axonal Na$^+$ channels} at nodes and the AIS, where fast
@@ -1731,6 +1744,18 @@ by~(i). (iii)~\emph{Threshold spiking}, where a weak bias near threshold is rect
 through stochastic resonance \cite{liu2018,reato2010}. Each is a candidate; the
 simulations impose an access filter and a nonlinearity, they do not identify the
 compartment.
+
+The periaxonal space provides another candidate access route. Cohen et al.\
+\cite{cohen2020periaxonal} combined recordings, electron microscopy, and cable modeling
+to establish a conducting space between the axon membrane and myelin, approximately
+$12$~nm wide and incompletely sealed at the paranodes. Their double-cable model separates
+the potentials across the myelin sheath and the underlying axon membrane. This
+architecture motivates computing the transfer from an applied extracellular kHz field
+to the local voltage at a candidate mixer. The saltatory-conduction measurements do not
+determine that transfer. A $10$--$100$-fold shorter effective carrier-access time scale
+in a QIF reduction remains a modeling hypothesis to test against this geometry. Changing
+the QIF membrane time scale also requires recomputing its operating point and resonance,
+with each physical filtering process represented once.
 
 \textbf{The conventional TI dose map is an assumption about physiology, not a consequence
 of field physics.} The envelope is a mathematical property of a high-frequency waveform. It
