@@ -169,6 +169,35 @@ its resonant term has a parameter-dependent residue divided by
 residue is nonzero. It does not make the full network a constant-numerator
 canonical oscillator or make only gamma change in a coupling sweep.
 
+## Weak-field mixing admits an effective second-order description
+
+K subsequently clarified the paper's intended scope: weak-field TI, with cellular
+nonlinearities represented by an effective quadratic mixing response. Direct
+suprathreshold TI is outside the explanatory claim. The unresolved molecular
+identity of a mixer does not obstruct this effective description or require an
+HH comparison before completing the paper.
+
+For a smooth response about a stable operating state, the second-order term
+generically produces a difference frequency from two input tones. Its coefficient
+can combine contributions from multiple cellular processes. It must be nonzero:
+symmetry, an inflection, or cancellation can suppress this order. Weak amplitude
+justifies truncating the amplitude expansion; it does not make the response
+instantaneous. For a dynamic system the coefficient is a complex function of the
+two frequencies and operating state. A scalar curvature describes its static
+limit, with the same time-scale conditions already used in the manuscript.
+
+Thus the generic weak-field conclusion is the quadratic mixing structure. QIF
+provides a derived realization, while the JR sigmoid provides a phenomenological
+one. Their numerical coefficients, signs, and frequency dependence remain
+model-specific. A QIF model need not reproduce each microscopic process separately
+to support the paper's mixing-and-amplification argument; neither does a common
+quadratic scaling make an unmodified QIF kernel universal. Any quantitative claim
+about a particular biological preparation would require additional calibration.
+Existing stronger-drive illustrations should be labeled by their role when the
+revision resumes, without silently treating them as weak-field evidence or
+removing them. The earlier model-specific observations below remain relevant to
+the limits of inference, rather than requirements for a new cellular study.
+
 ## The cell-to-population connection has a model-specific closure
 
 In the subsequent discussion, K asked what single-neuron demodulation the transfer
