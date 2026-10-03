@@ -1,28 +1,23 @@
-% TN0484 / WP0185: abstract, single source. Included by tn0484_storyline.tex; the same text
-% is the TN abstract of the manuscript from v0.14.4 (the JNE build keeps its structured form).
-% Date: 2026-10-03. Status: proposed, applied in v0.14.4 pending K's approval.
-% Compared with: the v0.14.3 TN abstract (2026-10-02) and the v0.14.3 JNE structured abstract.
-% Main changes: the result replaces "We show how"; the time-scale sentences carry the
-% coexistence claim they justify; "membrane filtering counted once" is said in plain words;
-% the dose-map sentence states its reason; the open questions close the abstract.
-% Words: 238. Neither the manuscript's structure nor any earlier plan is changed by this file.
+% TN0484 / WP0185: abstract included by tn0484_storyline.tex and mirrored in the TN manuscript.
+% Date: 2026-10-03. v0.14.5 implements K's approved weak-field effective-response framing.
+% The JNE build keeps a structured abstract with the same scope. Section and figure order stay fixed.
 Temporal-interference (TI) stimulation applies two high-frequency currents whose
-superposition contains no field component at their low difference frequency. Neural
-populations can generate that component by nonlinear mixing and amplify it selectively
-by recurrent resonance. In a Jansen--Rit column, the firing-rate sigmoid mixes the
-carriers through its curvature. In an exact quadratic integrate-and-fire mean field, the
-corresponding static curve emerges when the membrane variables relax faster than their
-input while the synapses remain dynamic; at faster inputs, mixing depends on the
-population dynamics and cannot be read from the steady-state curve. Fast cellular access
-and slow circuit resonance can therefore coexist in one population model. In both
-descriptions the leading weak-input beat is proportional to the product of the effective
-carrier amplitudes, and the membrane's attenuation of the carrier enters that product
-once, through those amplitudes. Recurrent dynamics near a Hopf bifurcation amplify the
-beat as $1/\gamma$, where $\gamma$ is the damping of the critical mode. Connectivity
-controls this gain at fixed generated drive, and beat-locked rate modulation grows
-faster than the mean-rate change, in the mean field and in a spiking network of $8000$
-neurons per population. Because the beat follows the carrier product rather than the
-envelope excursion, an envelope-only dose map rests on a physiological assumption. TI
-and direct low-frequency stimulation share the downstream amplifier, so resonance alone
-confers no TI efficiency advantage. The biological access pathway and the absolute
-response at human field strengths remain unresolved.
+superposition contains no field component at their low difference frequency. Population
+models generate that component through effective quadratic mixing and amplify it by
+recurrent resonance. For a smooth weak-input response with a nonzero second-order term,
+cellular nonlinearities contribute to a beat proportional to the product of the carrier
+amplitudes. A Jansen--Rit firing-rate sigmoid realizes this mixing through its curvature.
+An exact quadratic integrate-and-fire mean field provides a derived realization: its
+static rate curve emerges when membrane relaxation is fast relative to the input, while
+synapses remain dynamic. Outside that limit the mixing coefficient is frequency
+dependent. Fast cellular access and slow circuit resonance can therefore coexist, with
+membrane attenuation counted once. Near a Hopf bifurcation, the network amplifies the
+generated beat as $1/\gamma$ within linear response, where $\gamma$ is the modal damping.
+Coupling sweeps separate this gain from leading-order beat generation. Beat-locked rate
+modulation grows faster than the mean-rate change in the mean field and in a spiking
+network of $8000$ neurons per population. In this weak-input regime, the carrier-product
+law makes an envelope-only dose map conditional on the transduction mechanism. TI and
+direct low-frequency stimulation share the amplifier when effective input coupling,
+readout, and operating state are matched. The analysis concerns weak modulation of
+ongoing activity; biological access and the absolute response at human field strengths
+remain unresolved.

@@ -10,18 +10,20 @@ Archived at Zenodo: **[doi:10.5281/zenodo.21009618](https://doi.org/10.5281/zeno
 Licensed **CC-BY-4.0** (see [`LICENSE`](LICENSE)); machine-readable citation in
 [`CITATION.cff`](CITATION.cff).
 
-The current local draft is **v0.14.4** (October 3, 2026), in
+The current local draft is **v0.14.5** (October 3, 2026), in
 [TN0484_envelope_demodulation.pdf](TN0484_envelope_demodulation.pdf) and
 [TN0484_jne.pdf](TN0484_jne.pdf). As checked on October 2,
 [Calliope WP0185](https://calliope.bcom.one/papers/WP0185) still lists v0.12.0
 (July 21); the newer local draft remains pending Giulio's review and release.
 
-v0.14.4 is a readability revision of v0.14.3 with no scientific change: the abstract is
-stated result-first, one slip in Results 4.1 is corrected (the two-tone input has two lines,
-not the surrogate's three), the eigenvalue pair is renamed $\mu_\pm$ and the NMM1 indices
-$X\leftarrow Y$, acronyms are expanded at first use, and nine long paragraphs are split.
-Record: [docs/revision_2026-10-03_v0144.md](docs/revision_2026-10-03_v0144.md); redline
-against v0.14.3: [docs/redline_v0143_to_v0144.pdf](docs/redline_v0143_to_v0144.pdf).
+v0.14.5 frames weak-field mixing as an effective second-order response that combines
+cellular contributions, with QIF as a derived realization. It explains the single-cell
+content of the static curve, distinguishes small amplitude from fast relaxation, and
+places direct carrier-evoked spiking outside the explanatory scope. It adds the qualified
+Cifra citation and fixes the reversed efficiency-trend sentence. All 22 figures, their
+order, and the simulation code and parameters are preserved. Record:
+[docs/revision_2026-10-03_v0145.md](docs/revision_2026-10-03_v0145.md); redline against
+v0.14.4: [docs/redline_v0144_to_v0145.pdf](docs/redline_v0144_to_v0145.pdf).
 
 v0.14.3 (October 2) connects the fast-membrane NMM2 limit to a static population transfer
 with dynamic synapses, distinguishes carrier access from cellular mixing and circuit
@@ -37,20 +39,19 @@ with a [redline against v0.14.2](docs/redline_v0142_to_v0143.pdf).
 [planning/tn0484_storyline.tex](planning/tn0484_storyline.tex) (section-by-section argument
 map), compiled to [build/storyline/tn0484_storyline.pdf](build/storyline/tn0484_storyline.pdf)
 with `~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex`.
-It maps the v0.14.4 organization and ends with four decisions for K; nothing is cut or
-reordered before his approval. The
+It maps v0.14.5, with the weak-field framing authorized by K and section order unchanged.
+The three placement decisions remain open: Theory order, LaNMM methods, and figure
+promotion. The
 [general practice](../../giulio-personal-handbook/dos-and-donts.md#abstract-and-storyline-planning)
 is maintained in the personal handbook.
 
-Sigmoid curvature + near-Hopf amplification as a **mesoscopic, network** mechanism
-for temporal-interference (TI) stimulation. An amplitude-modulated (AM) field
-carries no spectral power at its envelope frequency, so demodulation requires a
-nonlinearity. We show that the population firing-rate **sigmoid** of a neural mass
-is a square-law demodulator, and that a second-order-synapse network **near a Hopf
-bifurcation** resonantly amplifies the recovered envelope. The ladder runs from the
-heuristic single-column Jansen–Rit (JR) model, through the laminar **LaNMM** (two
-bands), to the exact mean-field **NMM2** (derived rectifier), down to a spiking
-**QIF** network, and out to a **tACS** corollary that shares the same amplifier.
+Smooth weak-input cellular responses generically generate a quadratic beat when their
+second-order coefficient is nonzero. The paper represents their combined contribution
+through an effective population response and examines its recurrent amplification.
+The Jansen–Rit sigmoid supplies a phenomenological realization; NMM2 supplies one derived
+from QIF neurons. The spiking network tests that population description, and LaNMM
+extends the mechanism to two resonant bands. Direct low-frequency stimulation shares
+the amplifier when effective coupling, readout, and operating state are matched.
 
 > **Key message:** *a nonlinearity mixes the two carriers into a difference-frequency
 > component, and the recurrent network near its Hopf amplifies it selectively.* The
@@ -70,7 +71,7 @@ bands), to the exact mean-field **NMM2** (derived rectifier), down to a spiking
 ├── LICENSE                                # CC-BY-4.0
 ├── CITATION.cff                           # machine-readable citation (DOI, authors)
 ├── TN0484_envelope_demodulation.tex       # the manuscript (\graphicspath{{figures/}})
-├── TN0484_envelope_demodulation.pdf       # current build (46 pp; JNE article 30 pp + supplement 18 pp)
+├── TN0484_envelope_demodulation.pdf       # current build (47 pp; JNE article 31 pp + supplement 18 pp)
 ├── TN0484_envelope_demodulation.bbl       # committed so a single pdflatex works w/o bibtex
 ├── references.bib                         # BibTeX source for all references
 ├── requirements.txt                       # pinned Python deps (numpy/scipy/matplotlib + ...)
@@ -104,7 +105,7 @@ pdflatex TN0484_envelope_demodulation
 pdflatex TN0484_envelope_demodulation
 ```
 
-Current build: **46 pp (TN), 30 pp (JNE article) + 18 pp (supplement); 0 errors,
+Current build: **47 pp (TN), 31 pp (JNE article) + 18 pp (supplement); 0 errors,
 0 undefined references or citations.** Existing warnings about bibliography month
 macros and shared citation labels in the split build remain
 listed in `todo.md`. The `.bbl` is committed, so a single `pdflatex` rebuilds the PDF

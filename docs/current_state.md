@@ -1,5 +1,24 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v1.73 — v0.14.5: effective weak-field mixing (2026-10-03)
+At Giulio's instruction, the paper now leads with a smooth weak-input response whose
+nonzero second-order term combines cellular contributions to mixing. QIF supplies a
+derived realization; identifying individual channel contributions is not a prerequisite.
+The theory defines a complex mixing coefficient and its static-curvature limit, explains
+the single-cell content of F, and keeps weak amplitude separate from fast relaxation.
+The scope is modulation of ongoing activity; direct carrier-evoked spiking and block are
+outside it. The abstract, Discussion, Conclusion, and storyline carry this interpretation.
+
+The Cifra citation now states the review's scope below 0.1 kV/m without asserting a
+universal threshold. The reversed efficiency-trend sentence is corrected (R10). The
+other audit items retain their recorded status. All 22 figure identities and their
+order, section order, simulation code, data, and parameters are unchanged. The three
+structural decisions remain Giulio's. Record: `docs/revision_2026-10-03_v0145.md`;
+redline against v0.14.4: `docs/redline_v0144_to_v0145.pdf`.
+
+The draft remains local. GitHub push, Calliope/Zenodo release, Overleaf sync, and
+coauthor email remain held. Calliope/Zenodo remain at v0.12.0.
+
 ## v1.72 — storyline and R1–R13 audit; manuscript unchanged (2026-10-03)
 Reviewed v0.14.4 at `2ccea30` / `095cb9b`, including the storyline, redline,
 relevant manuscript figures, and code supporting the original review items.

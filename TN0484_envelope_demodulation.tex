@@ -89,7 +89,7 @@
 \hypersetup{
   pdftitle={The cortical column as a tuned receiver: a network mechanism for temporal-interference stimulation},
   pdfauthor={Giulio Ruffini, Borja Mercadal, Alex Just, Raul de Palma Aristides, Francesca Castaldo, Nir Grossman, Santiago Canals, Claudio Mirasso},
-  pdfsubject={TN0484 / WP0185, version 0.14.4, October 3, 2026}
+  pdfsubject={TN0484 / WP0185, version 0.14.5, October 3, 2026}
 }
 
 \begin{document}
@@ -141,7 +141,7 @@ a network mechanism for temporal-interference stimulation}\\[10pt]
 & Santiago Canals, and Claudio Mirasso \\
 \textbf{Affiliations:} & Neuroelectrics\,/\,BCOM\,/\,IFISC (UIB-CSIC)\,/\,IN (UMH-CSIC)\\
 & Imperial College London (Brain Sciences and UK Dementia Research Institute) \\
-\textbf{Date:} & 2026-10-03 \qquad \textbf{Version:} 0.14.4 \\
+\textbf{Date:} & 2026-10-03 \qquad \textbf{Version:} 0.14.5 \\
 \textbf{DOI:} & \href{https://doi.org/10.5281/zenodo.21009618}{10.5281/zenodo.21009618} \\
 \end{tabular}\\[4pt]
 {\color{neblue}\rule{\textwidth}{1pt}}
@@ -168,51 +168,53 @@ S1, S2, \dots
 \noindent
 \textbf{Objective.} Temporal-interference (TI) stimulation applies two high-frequency
 currents with a low difference frequency. The field contains no component at that
-difference frequency. We examine how cellular nonlinearities represented in population
-models generate this component and how recurrent circuits amplify it.
+difference frequency. We examine how effective cellular nonlinearities generate this
+component under weak stimulation and how recurrent circuits amplify it.
 \textbf{Approach.} We drive a Jansen--Rit column, an exact quadratic integrate-and-fire
 (QIF) mean field, and its spiking network with two-tone inputs. We separate carrier
-access, nonlinear mixing, and recurrent gain, and relate the static and dynamic
-population descriptions through their time-scale limits.
-\textbf{Main results.} The leading weak-input beat component scales with the product
-of the effective carrier amplitudes. A static rate curve mixes through its curvature;
+access, nonlinear mixing, and recurrent gain. A weak-input expansion combines cellular
+contributions into an effective second-order response, realized by both models.
+\textbf{Main results.} For a smooth response with a nonzero second-order term, the
+leading beat scales with the product of the effective carrier amplitudes.
+A static rate curve mixes through its curvature;
 the exact mean field recovers this description when its membrane variables relax faster
 than the input, leaving dynamic synapses. Outside that limit the mixing coefficient
 depends on the population dynamics, and the membrane's carrier attenuation enters
 only once, through access. Near a Hopf
 bifurcation, the recurrent network selectively amplifies the generated beat as
-$1/\gamma$, where $\gamma$ is the modal damping. Connectivity controls this gain at
-fixed generated drive. Beat-locked rate modulation grows faster than the mean-rate change
+$1/\gamma$ within linear response, where $\gamma$ is the modal damping. Coupling sweeps
+separate this gain from leading-order beat generation. Beat-locked rate modulation
+grows faster than the mean-rate change
 in the mean field and in a network of $8000$ neurons per population.
 \textbf{Significance.} Fast cellular access and slow circuit resonance can coexist in
-one population model. The biological access pathway and absolute response at human
-field strengths remain unresolved. The analysis distinguishes beat generation from
-amplification and shows why an envelope-only dose map requires a physiological
-assumption. TI and direct low-frequency stimulation share the downstream amplifier,
-so resonance alone confers no TI efficiency advantage.
+one population model. The weak-input product law makes an envelope-only dose map
+conditional on the transduction mechanism. TI and direct low-frequency stimulation
+share the amplifier when effective input coupling, readout, and state are matched.
+The analysis concerns weak modulation of ongoing activity; biological access and
+absolute response at human field strengths remain unresolved.
 
 \else
 \noindent
 Temporal-interference (TI) stimulation applies two high-frequency currents whose
-superposition contains no field component at their low difference frequency. Neural
-populations can generate that component by nonlinear mixing and amplify it selectively
-by recurrent resonance. In a Jansen--Rit column, the firing-rate sigmoid mixes the
-carriers through its curvature. In an exact quadratic integrate-and-fire mean field, the
-corresponding static curve emerges when the membrane variables relax faster than their
-input while the synapses remain dynamic; at faster inputs, mixing depends on the
-population dynamics and cannot be read from the steady-state curve. Fast cellular access
-and slow circuit resonance can therefore coexist in one population model. In both
-descriptions the leading weak-input beat is proportional to the product of the effective
-carrier amplitudes, and the membrane's attenuation of the carrier enters that product
-once, through those amplitudes. Recurrent dynamics near a Hopf bifurcation amplify the
-beat as $1/\gamma$, where $\gamma$ is the damping of the critical mode. Connectivity
-controls this gain at fixed generated drive, and beat-locked rate modulation grows
-faster than the mean-rate change, in the mean field and in a spiking network of $8000$
-neurons per population. Because the beat follows the carrier product rather than the
-envelope excursion, an envelope-only dose map rests on a physiological assumption. TI
-and direct low-frequency stimulation share the downstream amplifier, so resonance alone
-confers no TI efficiency advantage. The biological access pathway and the absolute
-response at human field strengths remain unresolved.
+superposition contains no field component at their low difference frequency. Population
+models generate that component through effective quadratic mixing and amplify it by
+recurrent resonance. For a smooth weak-input response with a nonzero second-order term,
+cellular nonlinearities contribute to a beat proportional to the product of the carrier
+amplitudes. A Jansen--Rit firing-rate sigmoid realizes this mixing through its curvature.
+An exact quadratic integrate-and-fire mean field provides a derived realization: its
+static rate curve emerges when membrane relaxation is fast relative to the input, while
+synapses remain dynamic. Outside that limit the mixing coefficient is frequency
+dependent. Fast cellular access and slow circuit resonance can therefore coexist, with
+membrane attenuation counted once. Near a Hopf bifurcation, the network amplifies the
+generated beat as $1/\gamma$ within linear response, where $\gamma$ is the modal damping.
+Coupling sweeps separate this gain from leading-order beat generation. Beat-locked rate
+modulation grows faster than the mean-rate change in the mean field and in a spiking
+network of $8000$ neurons per population. In this weak-input regime, the carrier-product
+law makes an envelope-only dose map conditional on the transduction mechanism. TI and
+direct low-frequency stimulation share the amplifier when effective input coupling,
+readout, and operating state are matched. The analysis concerns weak modulation of
+ongoing activity; biological access and the absolute response at human field strengths
+remain unresolved.
 \fi
 
 \smallskip
@@ -247,6 +249,13 @@ lines (Fig.~\ref{fig:demod}). A linear, time-invariant system can attenuate or p
 them but cannot create a new one. Passive membrane filtering therefore cannot
 demodulate TI \cite{mirzakhalili2020}; a nonlinear element must mix the carriers into
 the low-frequency band, as in AM reception \cite{nahin2001}.
+
+We consider weak modulation of ongoing neural activity. For a smooth response
+about an operating state, a nonzero second-order term mixes the carriers into
+their difference frequency. Cellular contributions can therefore be combined in
+an effective population response without identifying each microscopic mechanism.
+Direct stimulation thresholds and conduction block under strong TI lie outside
+this scope.
 
 Voltage-gated ion channels provide a cellular mixing mechanism in Hodgkin--Huxley
 and McIntyre--Richardson--Grill (MRG) myelinated-axon models \cite{mirzakhalili2020}.
@@ -346,7 +355,11 @@ $Q=\bar\eta+I$, setting both derivatives to zero gives $v=-\Delta/(2\pi r)$ and
 r=F(Q)=\frac{1}{\pi}\sqrt{\frac{Q+\sqrt{Q^2+\Delta^2}}{2}} .
 \label{eq:Fmpr}
 \end{equation}
-This nonlinear curve exists without recurrent coupling. It has an inflection at
+Equivalently, $F$ averages the single-neuron steady rate $f(q)=\sqrt q/\pi$ for
+$q>0$, and $f(q)=0$ otherwise, over the excitability distribution. Here $\eta$ is
+the neuron's excitability and $q=\eta+I$ its constant total drive. Threshold
+recruitment and the concave rate increase of active cells both enter its curvature. This nonlinear curve exists
+without recurrent coupling. It has an inflection at
 $Q=\Delta/\sqrt3$ and an unbounded concave rise, unlike the saturating JR sigmoid.
 
 If the population relaxes to this equilibrium faster than synaptic inputs change,
@@ -367,14 +380,15 @@ carrier of angular frequency $\omega_c$ requires the stronger condition
 $\omega_c\tau_{\rm rel}\ll1$. A population can therefore be quasistatic for its
 synaptic inputs yet dynamic for a kHz carrier.
 
-The transfer curve summarizes cellular nonlinearities only within this regime.
-The exact QIF reduction includes its spike-generating quadratic and excitability
-distribution; it does not by itself reproduce the sodium-channel kinetics implicated
-by Luff et al.\ \cite{luff2024mixer}. Those mechanisms can enter an effective
-population description through a calibrated dynamic input--output functional.
-A steady-state rate curve alone does not specify its frequency dependence.
-Section~\ref{sec:dynamic} calculates this dependence for QIF and recovers
-Eq.~\eqref{eq:Fmpr} in the adiabatic limit.
+The transfer curve summarizes cellular nonlinearities within this regime. Its
+curvature combines their leading contributions to mixing; its slope converts a
+slow input into a rate change and enters recurrent gain. QIF supplies a derived
+realization through its spike-generating quadratic and excitability distribution.
+The generic weak-input mixing law does not require identifying each channel's
+contribution, although the coefficient and its frequency dependence are
+model-specific. Outside the static limit these contributions belong to a dynamic
+input--output functional. Section~\ref{sec:dynamic} calculates this response for
+QIF and recovers Eq.~\eqref{eq:Fmpr} in the adiabatic limit.
 
 Cellular and circuit resonance are also distinct. Conductances such as $I_h$ and
 $I_M$ can tune single neurons \cite{hutcheonyarom2000}; the companion manuscript of
@@ -454,6 +468,22 @@ A_\Omega\simeq\half\,\Sig''(v^*)\,\varepsilon_1\varepsilon_2 ,
 where $\simeq$ means to leading order in the polarizations, here and in what follows. The
 same expansion leaves a constant (DC) term, $\tfrac14\Sig''(\varepsilon_1^2+\varepsilon_2^2)$,
 which any read-out of the mean rate must include.
+
+For a dynamic cellular response with synaptic input held fixed, define the
+effective second-order coefficient $\chi^{(2)}$ by the complex beat amplitude
+$\widehat r_\Omega$,
+\[
+\widehat r_\Omega\simeq\chi^{(2)}(\omega_2,-\omega_1)\,
+\varepsilon_2\varepsilon_1,\qquad
+r_\Omega(t)=\operatorname{Re}\!\left[\widehat r_\Omega e^{i\Omega t}\right].
+\]
+Here $r_\Omega(t)$ is the generated rate component before recurrent feedback.
+With this cosine-amplitude convention, the memoryless limit is
+$\chi^{(2)}=\Sig''(v^*)/2$. Multiple cellular processes can contribute to the same
+coefficient. Small amplitude justifies the second-order expansion; it does not
+remove memory, so the coefficient may depend on both frequencies and the
+operating state. Symmetry or cancellation can make it vanish. QIF and the sigmoid
+realize this shared quadratic structure with different coefficients.
 
 What the quadratic term recovers is not the envelope but its square. Writing $A(t)$ for
 the instantaneous envelope of the two-tone field,
@@ -608,9 +638,9 @@ Odd powers of $A$ average away, leaving only even ones:
 Y_{\rm LF}(A)=g(v^*)+\tfrac14 g''(v^*)A^2+\tfrac1{64}g^{(4)}(v^*)A^4+\cdots
 \label{eq:cycavg}
 \end{equation}
-A weak, smooth nonlinearity therefore transduces $A^2$ generically, whatever its detailed
-shape---which is what the sigmoid mechanism of \S\ref{sec:coupling} does, and why
-Eq.~\eqref{eq:demod} is quadratic. Recovering $A$ itself requires a qualitatively
+A smooth memoryless response with $g''(v^*)\neq0$ therefore transduces $A^2$ at
+leading weak-input order, whatever its detailed shape. This includes the sigmoid
+mechanism of \S\ref{sec:coupling}. Recovering $A$ itself requires a qualitatively
 different detector: strong rectification. A full-wave rectifier gives
 $\mathrm{LPF}[\,|A\cos\omega_c t|\,]=(2/\pi)A$ and a half-wave rectifier
 $(1/\pi)A$, both linear in the envelope, as does a diode-and-capacitor peak detector.
@@ -827,12 +857,11 @@ at low frequency can respond differently to the carrier. A somatic charging time
 alone therefore does not determine every extracellular-field response mode.
 The periaxonal and field-charging evidence is considered in \S\ref{sec:discussion}.
 
-Channel kinetics can introduce further frequency dependence when they are not
-already represented in the detector. An explicit gate filter $H_{\rm gate}$
-would require its own dynamical model or measurement; a static sigmoid does not
-imply a universal $1$~kHz gate cutoff. In particular, the QIF coefficient in
-Eq.~\eqref{eq:crossover} includes the dynamics of that reduced model, not a
-separately calibrated sodium-channel response. Carrier sweeps can constrain the
+Channel kinetics contribute to the effective dynamic mixing response. An
+additional gate filter would duplicate any dynamics already included there;
+neither a static sigmoid nor QIF specifies a universal $1$~kHz gate cutoff.
+Equation~\eqref{eq:crossover} gives the QIF realization of this response.
+Carrier sweeps can constrain the
 combined access and mixing response, while beat-frequency sweeps probe the
 downstream amplifier.
 
@@ -1476,13 +1505,15 @@ measured, not assigned to a particular compartment in advance.
 the operating point through the detector coefficient, and the two modeled detectors
 disagree on how: the memoryless sigmoid follows $\Sig''(v^*)$ and reverses sign across the
 inflection, where PEIX (Eq.~\eqref{eq:peix}) peaks; the dynamic mean field at a fast
-carrier follows $F'$ and the network susceptibility, without a sign rule
+carrier mixes in the voltage dynamics and is read through the rate and network
+susceptibility; its DC rectification follows $F'$, without the same curvature sign rule
 (\S\ref{sec:dynamic}). \emph{Test:} vary tonic drive and carrier frequency while
 measuring both amplitude and phase of the beat response. Compare these with the
 predicted mixing coefficient after accounting for changes in network susceptibility;
 a response-amplitude change alone does not isolate the detector.
-\item \textbf{Transduction class.} A weak smooth nonlinearity transduces $A^2$ and an
-envelope follower transduces $A$ (\S\ref{sec:transduction}), and the two are separable at a
+\item \textbf{Transduction class.} A smooth memoryless response with nonzero curvature
+transduces $A^2$ at weak input, whereas an ideal envelope follower transduces $A$
+(\S\ref{sec:transduction}), and the two are separable at a
 single matched target. The former gives $Y_\Omega\propto\varepsilon^2$ with a second-harmonic
 ratio vanishing as $\varepsilon\!\to\!0$; the latter gives $Y_\Omega\propto\varepsilon$ with
 the ratio pinned at $1/5$. \emph{Test:} sweep field amplitude off resonance (so that both
@@ -1547,29 +1578,29 @@ work.}\label{tab:predictions}
 \end{table}
 
 \section{Discussion}\label{sec:discussion}
-The population models separate the generation of a difference-frequency drive from
-its recurrent amplification. Cellular mixing can supply that drive, while the
-network determines its frequency selectivity and gain. This interpretation connects
-the ion-channel mechanism \cite{mirzakhalili2020,luff2024mixer} to the network
-dependence seen in slices and simulations \cite{caldas2024,karimi2024,soroushi2025}.
-It does not require cellular mixing and circuit amplification to be competing
-explanations.
+Weak-field TI admits an effective description in which cellular nonlinearities
+generate a quadratic mixing response and recurrent dynamics amplify it. For a
+smooth response with a nonzero second-order term, microscopic contributions can
+be combined in the mixing coefficient; identifying each channel is unnecessary
+for this leading-order account. QIF provides a derived realization of that
+structure. This connects cellular mixing \cite{mirzakhalili2020,luff2024mixer}
+with the network dependence seen in slices and simulations
+\cite{caldas2024,karimi2024,soroushi2025}.
 
-The distinction between a static sigmoid and a dynamic population functional is a
-time-scale distinction. In the slow-synapse limit, the exact QIF mean field reduces
-to the nonlinear curve in Eq.~\eqref{eq:Fmpr} while synapses retain their dynamics.
-If relaxation is also fast relative to the carrier, the curve's curvature gives
-the leading beat. Otherwise, the dynamic mixing calculation is required. The
-curve's slope has a separate role: it converts a slow input into a rate change and
-sets the local gain entering recurrent feedback. This reduction explains what
-can be included in a population transfer, but does not establish that a particular
-QIF parameterization reproduces the channel mechanisms measured by Luff et al.\
-\cite{luff2024mixer}. That identification requires matching the relevant dynamical
-response, not only a steady-state firing-rate curve.
+Small amplitude and fast relaxation justify different reductions. Weak input
+permits a second-order expansion of the dynamic response. Fast membrane
+relaxation gives the NMM2 slow-synapse limit, a static rate curve with dynamic
+synapses; if relaxation is also fast relative to the carrier, its curvature
+gives the leading beat. Otherwise the mixing coefficient retains frequency
+dependence. The curve's slope converts a slow input into a rate change and sets
+local recurrent gain. The generic quadratic structure survives this distinction,
+while its magnitude, phase, and frequency dependence remain model-specific.
 
 Fast access has several possible anatomical and electrical origins. Nodes and the
 AIS contain voltage-gated channels capable of nonlinear rectification
-\cite{mirzakhalili2020,wang2023}. Presynaptic terminals can polarize more strongly
+\cite{mirzakhalili2020,wang2023}; direct field--protein structural effects are
+reviewed mainly at higher fields, with fields below $0.1$~kV/m outside that
+review's scope \cite{cifra2026}. Presynaptic terminals can polarize more strongly
 than somata \cite{rahman2013,aberra2023,chakraborty2018}, but small size alone does
 not imply fast charging: for an isopotential membrane, the product of specific
 resistance and capacitance is independent of area. Conductance, geometry, and the
@@ -1610,9 +1641,11 @@ unmodulated kHz fields can have similar excitation thresholds, with modulation
 patterning firing rather than lowering the threshold
 \cite{opancar2025,semenov2025}; some peripheral responses do not require envelope
 extraction \cite{peripheral2023}. The weak-input calculation here concerns
-subthreshold mixing and its amplification. It provides a candidate mechanism for
-modulatory responses, not a common explanation for every TI preparation
-\cite{vieira2024,missey2026}.
+modulation of ongoing activity through mixing and amplification
+\cite{vieira2024,missey2026}. Direct carrier-evoked spiking and conduction block
+are outside its scope. Finite-amplitude model examples illustrate modulation and
+saturation beyond the expansion; they do not establish weak-field physiological
+thresholds.
 
 The recurrent amplifier is shared with direct low-frequency stimulation. In our
 coupling sweep, holding the JR operating point fixed holds the local curvature
@@ -1636,7 +1669,7 @@ not fix the coupling at kHz. For equal TI carrier polarizations $\varepsilon$,
 the JR beat drive is $\Sig''\varepsilon^2/2$, whereas a direct drive of the same
 peak polarization gives $2\Sig'\varepsilon$. Their leading amplitude ratio is
 $\eta_{\rm det}\simeq|\Sig''|\varepsilon/(4\Sig')$: the relative efficiency decreases
-with input amplitude in this perturbative regime. A larger recurrent gain
+as the input is weakened in this perturbative regime. A larger recurrent gain
 amplifies both drives.
 
 For scale, a reverberation time $\tau_{\rm rev}=1/\gamma$ gives a near-Hopf
@@ -1671,11 +1704,12 @@ square-law detection and linear envelope following. This bound applies to that
 memoryless family and matching convention, not to the dynamic QIF detector or to
 all cellular mechanisms. Its proximity to an experimental ratio is not a fit.
 
-The models leave identifiable limitations. Access is phenomenological, and the
-QIF quadratic does not replace channel kinetics; single-cell comparisons find
-TI responses that Hodgkin--Huxley models reproduce and integrate-and-fire models
-do not \cite{plovie2025}. Our spiking-network result establishes population mixing
-and amplification in QIF, without resolving that biophysical difference. Noise,
+Quantitative physiological predictions require calibration of access and mixing.
+Their values are not fixed by the quadratic scaling law. In comparisons of
+stimulus-evoked firing, Hodgkin--Huxley and Frankenhaeuser--Huxley models reproduce
+responses missed by the tested leaky, exponential, and adaptive-exponential
+integrate-and-fire models \cite{plovie2025}. Such model dependence concerns the
+specific response, without invalidating the weak-input expansion. Noise,
 heterogeneity beyond the assumed excitability distribution, and interactions
 between columns can broaden or shift the deterministic resonances. Cascading
 ordinary synaptic filters cannot solve carrier access, because they attenuate
@@ -1686,11 +1720,12 @@ mixed, including reported peripheral effects without central effects
 access, generated beat, and network tuning in the same preparation.
 
 \section{Conclusion}
-The models show how neural populations can act as tuned receivers of temporal-interference
-inputs. Nonlinear mixing generates a component at the difference frequency, and recurrent
-dynamics selectively amplify it near a network resonance. Generation and amplification are
-distinct contributions: a large network response does not, by itself, imply efficient
-detection.
+In the weak-field regime, smooth cellular nonlinearities with a nonzero
+second-order response can be represented by effective quadratic mixing. The
+population models provide realizations of this description: mixing generates
+the difference-frequency component, and recurrent dynamics amplify it near a
+network resonance. A large network response does not, by itself, imply efficient
+detection or identify the microscopic mixer.
 
 The static and dynamic population descriptions are connected by their time scales.
 Fast membrane relaxation gives the NMM2 slow-synapse limit: a nonlinear static rate
