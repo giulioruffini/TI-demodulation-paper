@@ -1,5 +1,6 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
+- [ ] prepare an abstract plus a section-by-section storyline in LaTeX/PDF from the latest manuscript, using WP0216's map and preserving the arguments, evidence, and examples — requested 2026-10-03
 - [ ] Giulio: review v0.14.3 and docs/redline_v0142_to_v0143.pdf, especially the fast-membrane interpretation, qualified access claims, and author order
 - [ ] after review: push two-tone-validation to GitHub, release the reviewed version in Calliope (public paper: the cut deposits to Zenodo, confirm first), re-sync Overleaf from GitHub, merge into main
 - [ ] after review: send the co-author approval request with the reviewed version (HOLD until then); restore "All authors read and approved" on sign-off

@@ -25,6 +25,13 @@ retain their original parameters. All 22 figures are preserved. The revision and
 validation record is in [docs/revision_2026-10-02_v0143.md](docs/revision_2026-10-02_v0143.md),
 with a [redline against v0.14.2](docs/redline_v0142_to_v0143.pdf).
 
+**Planning note, October 3.** K requested an abstract plus a section-by-section storyline
+for TN0484 / WP0185, following the [WP0216 example](<../../BCOM WPs and Blogs/working_drafts/WP216-Pattern_Persist_PLR/manuscript/build/argument_map/wp0216_argument_map.pdf>).
+Prepare editable LaTeX and a PDF from the latest manuscript, currently v0.14.3, to guide
+the next substantive revision and preserve its arguments, evidence, and examples. The
+[general practice](../../giulio-personal-handbook/dos-and-donts.md#abstract-and-storyline-planning)
+is maintained in the personal handbook; this planning document remains to be prepared.
+
 Sigmoid curvature + near-Hopf amplification as a **mesoscopic, network** mechanism
 for temporal-interference (TI) stimulation. An amplitude-modulated (AM) field
 carries no spectral power at its envelope frequency, so demodulation requires a
