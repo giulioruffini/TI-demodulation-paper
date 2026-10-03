@@ -169,6 +169,50 @@ its resonant term has a parameter-dependent residue divided by
 residue is nonzero. It does not make the full network a constant-numerator
 canonical oscillator or make only gamma change in a coupling sweep.
 
+## The cell-to-population connection has a model-specific closure
+
+In the subsequent discussion, K asked what single-neuron demodulation the transfer
+curve represents and relayed Klaus's account. R13's closure concerns the QIF
+reduction, not identification of Luff's biological mixer. Sections 2.1 and the
+second Discussion paragraph already state that boundary.
+
+In membrane-time units, the single QIF neuron's steady rate is
+`f(q) = sqrt(q)/pi` for positive constant drive `q`, and zero otherwise. Averaging
+over the Lorentzian excitability distribution gives `F(Q)`. This retains threshold
+recruitment and the concave rate increase of active cells. The square-root response
+is unbounded, not saturating. The curvature's sign change is a property of this
+specified population; it is not a universal biological discriminator between
+recruitment and an ionic mixing mechanism. A cumulative threshold distribution is
+one microscopic interpretation of the JR sigmoid, not an identification of channel
+kinetics from its fitted shape.
+
+When the population follows both carriers adiabatically, the weak two-tone rate
+component is `F''(Q0) a1 a2 cos[(omega2-omega1)t]/2`, for input amplitudes `a1,a2`
+around drive `Q0`. Outside that regime the dynamic QIF equations retain mixing
+through the voltage quadratic and the other population terms. The quadratic is a
+generic spike-onset normal form, not an identified sodium-channel current. A
+shorter QIF membrane time changes its dynamical regime; it does not calibrate a
+real neuron's gating kinetics. Luff's subthreshold voltage mixing also illustrates
+why an output firing-rate curve alone is incomplete: voltage can mix while the
+cell remains silent.
+
+The proposed HH/QIF comparison is useful but must compare the same quantity.
+`C(Q,omega)` in Eq. 13 is a single-carrier DC rate coefficient at fixed current;
+it is not the finite-beat two-tone kernel. At fixed polarization, compare the
+complex difference-frequency response of the same observable in both models,
+with input coupling, operating state, and population averaging specified. Voltage
+and rate kernels are different observables. Normalize out the same linear access
+response once; comparing a voltage-normalized HH result directly to the
+current-normalized `C` would confound access and mixing. Agreement would support
+a QIF surrogate over the tested frequencies and states, without identifying its
+quadratic with a particular ion channel or validating biological tissue.
+
+Plovie et al. compare HH/FH with leaky, exponential, and adaptive-exponential IF;
+their reported comparison does not test QIF. This supports the need for
+model-specific validation, not a direct negative result about QIF. The HH/QIF
+kernel calculation remains a proposed follow-up, not an agreed new requirement
+for this manuscript revision.
+
 ## The Cifra citation needs a scope clause, not a threshold claim
 
 Cifra et al., *Chemical Society Reviews* **55**, 7568–7616 (2026),
