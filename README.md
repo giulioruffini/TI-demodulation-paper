@@ -10,13 +10,20 @@ Archived at Zenodo: **[doi:10.5281/zenodo.21009618](https://doi.org/10.5281/zeno
 Licensed **CC-BY-4.0** (see [`LICENSE`](LICENSE)); machine-readable citation in
 [`CITATION.cff`](CITATION.cff).
 
-The current local draft is **v0.14.3** (October 2, 2026), in
+The current local draft is **v0.14.4** (October 3, 2026), in
 [TN0484_envelope_demodulation.pdf](TN0484_envelope_demodulation.pdf) and
 [TN0484_jne.pdf](TN0484_jne.pdf). As checked on October 2,
 [Calliope WP0185](https://calliope.bcom.one/papers/WP0185) still lists v0.12.0
 (July 21); the newer local draft remains pending Giulio's review and release.
 
-This revision connects the fast-membrane NMM2 limit to a static population transfer
+v0.14.4 is a readability revision of v0.14.3 with no scientific change: the abstract is
+stated result-first, one slip in Results 4.1 is corrected (the two-tone input has two lines,
+not the surrogate's three), the eigenvalue pair is renamed $\mu_\pm$ and the NMM1 indices
+$X\leftarrow Y$, acronyms are expanded at first use, and nine long paragraphs are split.
+Record: [docs/revision_2026-10-03_v0144.md](docs/revision_2026-10-03_v0144.md); redline
+against v0.14.3: [docs/redline_v0143_to_v0144.pdf](docs/redline_v0143_to_v0144.pdf).
+
+v0.14.3 (October 2) connects the fast-membrane NMM2 limit to a static population transfer
 with dynamic synapses, distinguishes carrier access from cellular mixing and circuit
 amplification, and adds Nir Grossman to the authors. Cohen's periaxonal study,
 Luff's cellular-mixing work, and Raul's unpublished WP0242 manuscript remain cited.
@@ -25,12 +32,15 @@ retain their original parameters. All 22 figures are preserved. The revision and
 validation record is in [docs/revision_2026-10-02_v0143.md](docs/revision_2026-10-02_v0143.md),
 with a [redline against v0.14.2](docs/redline_v0142_to_v0143.pdf).
 
-**Planning note, October 3.** K requested an abstract plus a section-by-section storyline
-for TN0484 / WP0185, following the [WP0216 example](<../../BCOM WPs and Blogs/working_drafts/WP216-Pattern_Persist_PLR/manuscript/build/argument_map/wp0216_argument_map.pdf>).
-Prepare editable LaTeX and a PDF from the latest manuscript, currently v0.14.3, to guide
-the next substantive revision and preserve its arguments, evidence, and examples. The
+**Abstract and storyline (October 3).** The inspection document K requested is
+[planning/tn0484_abstract.tex](planning/tn0484_abstract.tex) (single-source abstract) and
+[planning/tn0484_storyline.tex](planning/tn0484_storyline.tex) (section-by-section argument
+map), compiled to [build/storyline/tn0484_storyline.pdf](build/storyline/tn0484_storyline.pdf)
+with `~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex`.
+It maps the v0.14.4 organization and ends with four decisions for K; nothing is cut or
+reordered before his approval. The
 [general practice](../../giulio-personal-handbook/dos-and-donts.md#abstract-and-storyline-planning)
-is maintained in the personal handbook; this planning document remains to be prepared.
+is maintained in the personal handbook.
 
 Sigmoid curvature + near-Hopf amplification as a **mesoscopic, network** mechanism
 for temporal-interference (TI) stimulation. An amplitude-modulated (AM) field

@@ -1,5 +1,23 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v1.71 — v0.14.4: readability revision and the storyline document (2026-10-03)
+Giulio asked for a revision of the TI note with readability as a focus. Per the
+practice he endorsed the same day, the abstract-plus-storyline document came first:
+`planning/tn0484_abstract.tex` (238 words, proposed) and `planning/tn0484_storyline.tex`,
+compiled to `build/storyline/tn0484_storyline.pdf`, mapping every section of the
+v0.14.3 organization and ending with four decisions for him (Theory order, LaNMM methods
+placement, promotion of Figures S3/S10/S11, the abstract). Nothing is cut or reordered.
+
+The manuscript revision is content-preserving: the TN abstract rewritten result-first,
+one factual slip in Results 4.1 corrected (the two-tone input has two lines, not the
+surrogate's three), the eigenvalue pair renamed mu_pm and the NMM1 indices X<-Y (both
+todo items), PING/RK4/FFT/PSP/PWM-TI expanded at first use, a grammar slip fixed,
+emphasis words and one defensive clause removed, and nine long paragraphs split at
+their seams. Builds: 46/30/18 pages, no errors, undefined references, or overfull
+boxes; tells.py clean. Record: `docs/revision_2026-10-03_v0144.md`; redline against
+v0.14.3 (`dd7122d`): `docs/redline_v0143_to_v0144.pdf`. Release, push, Overleaf sync,
+Calliope cut, and circulation remain held for Giulio's review.
+
 ## v1.70 — v0.14.3: fast-membrane argument, shorter paper, Nir Grossman added (2026-10-02)
 Revised the manuscript at Giulio's request. The theory connects the static QIF
 population curve to the NMM2 slow-synapse limit and distinguishes fast relaxation

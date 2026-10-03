@@ -1,0 +1,344 @@
+% TN0484 / WP0185: abstract and storyline. Build from the project root:
+%   ~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex
+% Map mode: rows follow the v0.14.4 manuscript order and numbering (TN build; the JNE build
+% moves the appendices and figures S1--S12 to the supplement). Prepared 2026-10-03.
+\documentclass[11pt,a4paper,landscape]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,microtype}
+\usepackage[left=14mm,right=14mm,top=17mm,bottom=16mm,headheight=14pt,headsep=5mm]{geometry}
+\usepackage[table]{xcolor}
+\usepackage{array,tabularx,xltabular,booktabs,ragged2e}
+\usepackage{url}
+\usepackage{fancyhdr,lastpage}
+\usepackage{amsmath}
+\usepackage[hidelinks]{hyperref}
+
+% ---- paper identity ---------------------------------------------------------
+\newcommand{\wpnumber}{TN0484 / WP0185}
+\newcommand{\papertitle}{The cortical column as a tuned receiver}
+\newcommand{\storylinedate}{3 October 2026}
+\newcommand{\baselinelabel}{v0.14.4}
+\newcommand{\abstractfile}{tn0484_abstract.tex}
+\newcommand{\storylineauthors}{Giulio Ruffini}
+% -----------------------------------------------------------------------------
+
+\definecolor{ink}{HTML}{183C4A}
+\definecolor{muted}{HTML}{53616B}
+\definecolor{rulecolor}{HTML}{A6B8BF}
+\definecolor{wash}{HTML}{EDF3F5}
+\hypersetup{pdftitle={\wpnumber: Abstract and storyline},
+  pdfauthor={\storylineauthors},
+  pdfsubject={Abstract and section map of \papertitle}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily\color{muted}\wpnumber\quad\papertitle}
+\fancyhead[R]{\small\sffamily\color{muted}Abstract and storyline\quad\storylinedate}
+\fancyfoot[L]{\small\sffamily\color{muted}Internal reading map\quad\textbullet\quad Section order: \baselinelabel}
+\fancyfoot[R]{\small\sffamily\color{muted}\thepage\,/\,\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\tabcolsep}{3.5mm}
+\renewcommand{\arraystretch}{1.12}
+\arrayrulecolor{rulecolor}
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\newcommand{\place}[2]{\textbf{\color{ink}#1}\par\smallskip #2}
+% xltabular breaks across pages (tabularx does not). Its body is scanned for the literal
+% \end{xltabular}, so the environment is written out in the body rather than wrapped.
+\newcommand{\maphead}{%
+  \rowcolor{wash}\textbf{Place in \baselinelabel} & \textbf{Scientific content to retain} &
+  \textbf{Contribution to the argument} & \textbf{Examples / links}\\[3pt]
+  \midrule\endhead
+  \bottomrule\endlastfoot}
+\newcommand{\pagetitle}[2]{%
+  {\Large\sffamily\bfseries\color{ink}#1\par}
+  \vspace{2pt}{\normalsize #2\par}\vspace{5pt}}
+
+\begin{document}
+\pagetitle{\papertitle: a network mechanism for temporal-interference stimulation}{Abstract and storyline}
+\vspace{6mm}
+\begin{center}
+\begin{minipage}{180mm}
+{\large\sffamily\bfseries\color{ink}Abstract\par}
+\vspace{3mm}
+\fontsize{12}{15.4}\selectfont
+\IfFileExists{\abstractfile}{\input{\abstractfile}}{\input{planning/\abstractfile}}
+\end{minipage}
+\end{center}
+\vspace{5mm}
+{\footnotesize\color{muted}The abstract is the TN abstract of v0.14.4, proposed on 3 October 2026 and
+awaiting K's approval; the JNE build keeps a structured abstract with the same claims. The map
+below records the v0.14.3 organization, which v0.14.4 leaves unchanged; the decisions on the last
+page are the structural questions the map raised. Nothing is cut or reordered before approval.}
+
+\newpage
+\pagetitle{Problem and theory}{First argument block: Sections 1--2}
+A two-tone field carries no power at its beat frequency, so a neural response there requires a
+nonlinear element. The question is how much of that response belongs to the population circuit
+rather than to the cell. The theory builds the receiver in three stages, access, mixing, and
+amplification, and shows that the static and dynamic detectors are one object seen at
+different carrier speeds.
+
+\begingroup\fontsize{9.4}{11.4}\selectfont
+\begin{xltabular}{\linewidth}{@{}L{38mm}Y L{62mm}L{46mm}@{}}\toprule
+\maphead
+\place{\S1}{Introduction}
+& The two-tone field (Eq.~1) has lines only at the applied tones; a linear system cannot create
+  the beat. Cellular mixing exists (MRG and Hodgkin--Huxley axon models; Luff's subthreshold
+  mixer at 5~kHz, TTX-sensitive). Network dependence exists (timing-not-rate in primates;
+  pyramidal responses lost under synaptic block; network simulations). The paper separates
+  carrier access, beat generation, and recurrent amplification, and the population
+  reduction does not identify the anatomical access route.
+& States the problem and the distinction the paper turns on: cellular mixing versus the
+  network response it recruits. Announces the ladder (JR column, QIF mean field, spiking
+  network, laminar column) once. The transfer curve must be defined before its curvature
+  can mix, so \S2.1 follows.
+& Fig.~1 (receiver concept). Grossman 2017; Mirzakhalili 2020; Luff 2024 (mixer); Vieira
+  2024; Caldas-Martinez 2024; CFC and HAM companion papers.\\[2pt]
+\midrule
+\place{\S2.1}{Population transfer and the slow-synapse limit}
+& JR synaptic filter and sigmoid (Eqs.~2--3); NMM1 with the direct field term
+  $\Lambda[\hat E]$ (Eq.~3). The MPR mean field (Eq.~4) and its static curve $F(Q)$ (Eq.~5),
+  inflection at $Q=\Delta/\sqrt3$. The slow-synapse reduction (Eq.~6) and its two conditions:
+  $\tau_{\rm rel}\ll\tau_s$ makes the transfer static for synaptic input; $\omega_c\tau_{\rm rel}\ll1$
+  is the stronger condition for a carrier. The QIF reduction does not contain sodium-channel
+  kinetics. Cellular and circuit resonance are distinct.
+& Defines what a transfer curve is and when it is static, so that curvature can be a mixer.
+  Introduces the time-scale distinction that the Discussion and Conclusion reuse. The field
+  must reach the curve, which \S2.2 supplies.
+& Rosetta Stone (Ruffini 2025); Montbri\'o 2015; Clusella 2023; de Palma Aristides 2026
+  (WP0242, unpublished); Hutcheon and Yarom 2000.\\[2pt]
+\midrule
+\place{\S2.2}{From applied field to a squared-envelope beat}
+& Quasistatic field; polarization $s(t)$ through parallel entry points with access filters
+  (Eqs.~7--8), one compartment response counted once. Taylor expansion (Eqs.~9--10) with the
+  truncation condition $|s|\ll1/\rho\approx1.8$~mV. The square of the envelope (Eq.~11): $A^2$
+  is sinusoidal, $A$ is a rectified cosine. The AM surrogate (Eq.~12), where it is used and
+  where it is not. Three predictions: $\varepsilon^2$ scaling, $\Sigma''$ law, carrier
+  independence at fixed polarization.
+& Derives the beat and its amplitude: the first result. Fixes the waveform discipline
+  (two tones for every waveform-sensitive claim). The derivation assumes a static curve, so
+  \S2.3 asks what a dynamic population does.
+& Figs.~3 and 6 (two-tone runs); Fig.~6d (surrogate check). HAM paper (Volterra kernel);
+  Galan and Gadea 2023.\\[2pt]
+\midrule
+\place{\S2.3}{The exact mean field connects static and dynamic mixing}
+& $C(Q,\omega)$ (Eq.~13) with limits $F''/4$ and $F'/(2\omega^2)$ (Eq.~14), sign change at
+  $\omega_z$ above the inflection. Fixed-excursion coefficient $K(\omega)$ (Eq.~15): the
+  $1/\omega^2$ is the membrane, not a detector filter. The PING $v_E^2$ source matches the
+  second-order response to 1.1\%, 0.1\%, 0.03\% at 300, 1000, 2000~Hz. Carrier and beat take
+  different routes to the rate (Table~1).
+& Shows that the static and dynamic detectors are one object at different carrier speeds,
+  with membrane access counted once; settles the detector-penalty question of September 2026.
+  Whatever the detector, its envelope law has observable signatures, which \S2.4 derives.
+& Fig.~7; Table~1. Code: \path{static_vs_dynamic_check.py}, \path{mpr_twotone_lines_check.py}.\\[2pt]
+\midrule
+\place{\S2.4}{Transduction class and its signatures}
+& Cycle average (Eq.~16) is even in $A$; square law is generic for a smooth transfer;
+  rectifiers follow $A$; a step detector follows neither. Harmonic ladder $1/5$, $3/35$, $1/21$
+  and $r_{\rm det}$ (Eq.~17). The network suppresses the second harmonic ($\mathcal Q=10$:
+  20\% reads 0.7\%), so the test runs off resonance at $\Delta f\simeq f_0/4$. Excursion map
+  (Eq.~18): product law, $2\times$ versus $40\times$ example; not an account of focality. Spatial
+  response (Eq.~19) and signed vector coupling.
+& Converts the detector class into measurements (amplitude slope, harmonic ratio, dose map)
+  and separates spatial from dynamical selectivity. Generation gives a weak drive; \S2.5
+  explains what makes it large.
+& App.~D (bound and step detector); Fig.~6b (slope 1.99); Table~3 (predictions).\\[2pt]
+\midrule
+\place{\S2.5}{Amplification: synaptic low-pass and network resonance}
+& Synaptic transfer $H_s$ (16~Hz corner; 0.7 at 10~Hz, 2.5\% at 100~Hz). One-mode reduction,
+  $\mu_\pm=-\gamma\pm i\omega_0$, $\mathcal Q=\omega_0/2\gamma$, gain $\propto1/\gamma$
+  (Eq.~20); entrainment above the Hopf. Receiver equation (Eq.~21) with $D$ and $G$ and their
+  normalization for JR and QIF. The cubic normal form has no quadratic mixer.
+& Supplies the second factor of the receiver and the claim that a large susceptibility is
+  not evidence of detection. The carrier must still reach the mixer, which \S2.6 quantifies.
+& Fig.~5; Figs.~4 and 9; App.~C.\\[2pt]
+\midrule
+\place{\S2.6}{Carrier access depends on the effective membrane response}
+& $H_m$ (Eq.~22); $|H_m|^2\approx10^{-4}$ at 1~kHz for 16~ms, 0.39 and 0.14 at 1 and 2~kHz for
+  0.2~ms, labeled as assumed. Table~2 (response stages). AC space constant (Eq.~23), one tenth
+  at 1~kHz. A gate filter needs its own model; the QIF coefficient is not a calibrated sodium
+  response. Carrier sweeps constrain access plus mixing; beat sweeps probe the amplifier.
+& Separates carrier independence at fixed polarization from the applied-field roll-off and
+  makes fast access a labeled hypothesis. The detector coefficient also depends on state,
+  which \S2.7 takes up.
+& Figs.~S5, S6, S9; Deitcher 2017; Eyal 2016; Discussion paragraph on Cohen, Luff, Semenov.\\[2pt]
+\midrule
+\place{\S2.7}{Operating-point dependence}
+& PEIX (Eq.~24) tracks $\Sigma'$ and peaks where $\Sigma''$ vanishes; the complementarity
+  belongs to the memoryless detector. The dynamic detector at a fast carrier follows $F'$ with
+  no sign rule. State shifts (neuromodulation, pathology) scale, and in JR can flip, the response.
+& Turns the detector coefficient into a brain-state prediction and marks which part is
+  model-specific. The theory is complete; Methods specify the simulations that test it.
+& Fig.~2b; Fig.~6a; CFC paper (PEIX).\\[2pt]
+\end{xltabular}\endgroup
+
+{\footnotesize\color{muted}JR, Jansen--Rit; MRG, McIntyre--Richardson--Grill; QIF, quadratic
+integrate-and-fire; MPR, Montbri\'o--Paz\'o--Roxin; NMM1/NMM2, sigmoid and exact mean-field
+neural mass models; PING, pyramidal--interneuron network gamma; AM, amplitude modulation; PEIX,
+Population Excitation--Inhibition Index; CFC, cross-frequency coupling; HAM, hierarchical
+amplitude modulation.}
+
+\newpage
+\pagetitle{Simulations}{Second argument block: Sections 3--4}
+The Results climb the ladder. The JR column verifies the three predictions of \S2.2; the exact
+mean field reproduces generation and amplification with a derived nonlinearity; the spiking
+network confirms the timing signature at the microscale. Methods stand apart because the
+lock-in read-out and the pinned-operating-point protocol recur across models.
+
+\begingroup\fontsize{9.4}{11.4}\selectfont
+\begin{xltabular}{\linewidth}{@{}L{38mm}Y L{62mm}L{46mm}@{}}\toprule
+\maphead
+\place{\S3.1}{Jansen--Rit: integration, lock-in, controls}
+& Field enters only the pyramidal sigmoid; the read-out $v=y_1-y_2$ is not fed the field.
+  RK4 steps with $<1\%$ convergence; settling and windows. Hopf at $p\approx315$,
+  $f_0\approx11.1$~Hz; SNIC at $p\approx114$. Lock-in (Eq.~25) with DC subtraction to $10^{-8}$.
+  Open-loop detector versus closed-loop column; square law, linearization, finite-difference checks.
+& Makes every JR number reproducible and defines the lock-in that every later section uses.
+& Fig.~2; Grimbert and Faugeras 2006; \path{run_all.py}.\\[2pt]
+\midrule
+\place{\S3.2--3.4}{LaNMM, NMM2 PING, QIF network}
+& LaNMM: field as a signed polarization, not a clipped rate (a clip is a half-wave rectifier);
+  alpha-power read-out; signed maps. PING (Eq.~27): weights $(1,1,1,2)$, $\bar\eta_H=1.110$,
+  $f_0=54$~Hz, field as current $I_E=PE$ so the membrane computes access with
+  $\tau_m=\tau_E$; two criticality knobs. QIF: $N=8000$ per population, Lorentzian quantiles,
+  beat 55~Hz (forced) and 42~Hz (gated, 11~Hz detuning); modulation depth and pairwise phase
+  consistency; the 45\% threshold sensitivity of phase concentration.
+& Fixes the models whose results follow and states which comparisons are perturbative.
+  Decision for K: \S3.2 serves only the App.~E results and could travel with them.
+& Eqs.~26--27; Fig.~S2 (LaNMM setup); Rosetta Stone PING parameters; Vinck 2010.\\[2pt]
+\midrule
+\place{\S3.5--3.6}{Coupling sweeps, tACS control, vocabulary}
+& Pinning: solve $p(C)$ for fixed $v^*$, read $\gamma,\omega_0$ from the Jacobian; tACS control
+  at $\varepsilon=0.1$~mV. Three terms: forced response, entrainment (dominance screen
+  $|f_{\rm out}-\Delta f|<0.3$~Hz), gating.
+& The pinning protocol isolates amplification from detection; the vocabulary keeps
+  ``entrainment'' from covering gating.
+& App.~F (metrics); Pikovsky 2001; Canolty 2010; Tort 2010.\\[2pt]
+\midrule
+\place{\S4.1--4.2}{The sigmoid demodulates; the beat drives a resonance}
+& An alpha line from two tones with no alpha power in the input. Lorentzian response growing
+  $0.23\to0.43\to0.70$~mV toward the Hopf ($1/\gamma$); above the Hopf, Arnold-tongue entrainment
+  read by output frequency.
+& The existence result: the beat is synthesized and amplified.
+& Figs.~3, 4; Fig.~S4.\\[2pt]
+\midrule
+\place{\S4.3--4.4}{Carrier independence, kHz roll-off, curvature law}
+& Flat response over 25--300~Hz at fixed polarization; $1/f_c^2$ roll-off for 16~ms, retained
+  access for 0.2~ms; two tones at 2~kHz with $2.2\times10^{-13}$ input leakage. Curvature law to
+  0.9\%; slope 1.99; linearization collapses the response $634\times$; two-tone/AM ratio
+  $1.0000$ at 0.02~mV and $0.988$ at 1~mV.
+& Verifies the three predictions of \S2.2 and licenses the surrogate for the dense sweeps only.
+& Figs.~5, 6; Figs.~S6, S9; Esmaeilpour 2020.\\[2pt]
+\midrule
+\place{\S4.5}{Exact mean-field confirmation}
+& PING generates and amplifies the beat through $v_E^2$; diagonal ridge with operating point;
+  the detector sits on the fast side of its crossover, with a source operating-point
+  independent to about 1\%.
+& The receiver is not an artifact of the sigmoid.
+& Figs.~7, 8; Fig.~S8; Clusella 2023.\\[2pt]
+\midrule
+\place{\S4.6}{Coupling sets the gain at fixed detection}
+& Pinned $J$-curve: $\sim30\times$ growth, $1/\gamma$ then saturation; the same gain--$\gamma$
+  relation via $p$; stable-focus side only. NMM2 $J$-curve without pinning.
+& The mesoscale claim: amplification depends on distance to criticality, not on which
+  parameter delivers it.
+& Fig.~9; Fig.~S10; Clusella 2023.\\[2pt]
+\midrule
+\place{\S4.7--4.8}{Timing over rate; QIF confirmation}
+& Modulation grows $13.5\times$ (26 to 346~mHz) against a mean shift of $5.8\times$ ($-1.3$ to
+  $-7.7$~mHz); ratio 19 far from the Hopf, 45--66 near it. QIF: bunching below the Hopf;
+  gating with sidebands at 95 and 11~Hz above it; modulation depth $0.003\to0.29/0.23$ with
+  rate $+8$--$10\%$; weak per-neuron locking.
+& The timing-not-rate signature at mesoscale and microscale, qualitatively matching Vieira.
+& Fig.~10; Figs.~S11, S12; Vieira 2024.\\[2pt]
+\midrule
+\place{\S4.9}{Falsifiable predictions}
+& Four predictions with tests: access versus mixing by carrier sweep; state and carrier
+  dependence; transduction class by amplitude slope and harmonic ratio off resonance;
+  frequency selectivity. Table~3 against existing evidence; synaptic block tests network
+  involvement without excluding a cellular detector.
+& Converts the mechanism into falsifiable statements and bridges to the Discussion.
+& Table~3; Vieira 2024; Caldas-Martinez 2024; Opancar 2025.\\[2pt]
+\end{xltabular}\endgroup
+
+{\footnotesize\color{muted}LaNMM, laminar neural mass model; tACS, transcranial alternating-current
+stimulation; SNIC, saddle-node on an invariant circle; RK4, fourth-order Runge--Kutta.}
+
+\newpage
+\pagetitle{Interpretation and supporting material}{Third block: Sections 5--6 and Appendices A--G}
+The Discussion changes level from model results to physiology and states each scope limit at the
+claim it limits. The appendices hold the notation, the model equations, the two bounds, the
+laminar extension, and the metrics.
+
+\begingroup\fontsize{9.4}{11.4}\selectfont
+\begin{xltabular}{\linewidth}{@{}L{38mm}Y L{62mm}L{46mm}@{}}\toprule
+\maphead
+\place{\S5}{Discussion}
+& Generation versus amplification does not compete with cellular mixing. The time-scale
+  distinction and what the QIF reduction omits. Fast-access origins (nodes, AIS, terminals;
+  RC independent of area). Cohen's periaxonal space ($\sim1$~ms fitted decay), Luff's 1~ms RC,
+  Semenov's $0.7~\mu$s charging: a $10$--$100\times$ shorter time is a hypothesis. Dose map:
+  $\min$ versus product and the DC term. Intensity changes the mechanism. Shared amplifier
+  with tACS; temporal, not spatial, criticality. Couplings 0.12--0.5~mV per V/m;
+  $\eta_{\rm det}\simeq|\Sigma''|\varepsilon/4\Sigma'$; $\mathcal Q\sim10$. Vieira's 0.34
+  (0.04--0.65) against 0.8\% and why that is not a rejection. The 0.348 supremum and its
+  scope. Limitations: Plovie 2025, noise, columns, cascaded synapses cannot solve access,
+  mixed human results.
+& Reinterprets each result in physiological terms and places every caveat where it bites.
+  Retain all paragraphs; each adds a level (mechanism, time scales, anatomy, dosimetry,
+  intensity, efficiency, scale, data, bound, limits).
+& Fig.~S3 (tACS); Cohen 2020; Luff 2024 (PWM-TI); Semenov 2025; Vieira 2024; App.~D.\\[2pt]
+\midrule
+\place{\S6}{Conclusion}
+& Receiver: mixing generates, resonance amplifies, and a large response does not imply
+  efficient detection. Static and dynamic descriptions connected by time scales; each filter
+  once. Product law, shared amplifier, open access pathway.
+& Restates the storyline in three paragraphs without new claims.
+& ---\\[2pt]
+\midrule
+\place{App.~A--B}{Notation and units; model equations}
+& Table~4 (symbols, with the reused-glyph head note); JR equations (Eq.~28) and Table~5.
+& Recovery aids; definitions remain local.
+& ---\\[2pt]
+\midrule
+\place{App.~C--D}{Cubic normal form; efficiency bound}
+& Stuart--Landau has no second-order source (Eq.~31); numerical control at the floor.
+  $\eta_{\rm det}\le\rho\varepsilon/4$ (Eq.~32); family supremum $0.3479$ at
+  $\delta/2\varepsilon=0.523$ (Eq.~34), a step detector with harmonic ratio 0.151; the
+  microvolt width is an idealization, and the maximum is numerical, not certified.
+& C supports \S2.5 (susceptibility is not detection); D supports \S2.4 and the Discussion's
+  efficiency paragraphs.
+& \path{threshold_bound_check.py}.\\[2pt]
+\midrule
+\place{App.~E}{Laminar column at low carriers}
+& Tongues at 25--80~Hz carriers up to 3~mV, outside the perturbative regime; 95\%/97\% of the
+  $P_1$-driven grids below baseline; double resonance under superficial drive (7\% off
+  resonance) against broadband response under deep drive (25\%); three LaNMM predictions,
+  the carrier-matching one untested.
+& Shows a band-limited intermediary makes the carrier choice matter; does not carry the kHz
+  argument.
+& Fig.~S1, S2, S7; Gordon 2019.\\[2pt]
+\midrule
+\place{App.~F--G}{Vocabulary metrics; supplementary figures}
+& Dominance screen versus capture test; folded-rate metric; Arnold-tongue protocol.
+  Figures S2--S12 support \S4.2--4.8 and the Discussion.
+& Metrics behind the three terms; the figure bank for the JNE supplement.
+& Figs.~S2--S12.\\[2pt]
+\end{xltabular}\endgroup
+
+\vspace{4pt}
+{\footnotesize\color{muted}
+\textbf{Decisions for K.} (1)~Theory holds seven subsections and about 4,500 words before any
+simulation; \S2.4 (transduction class) and \S2.6 (carrier access) serve the predictions and the
+Discussion more than the Results. Keep the current order, or move those two after the Results as
+interpretation sections. (2)~Methods \S3.2 (LaNMM) describes an experiment whose results are in
+App.~E; in the JNE article the method appears without its result. Keep, or move \S3.2 into App.~E.
+(3)~Figures S3 (tACS shares the amplifier), S10 (NMM2 $J$-curve), and S11 (timing against rate)
+support main-text claims in \S4.6--4.7 and the Discussion from the supplement; the main text has
+ten figures. Promote none, one, or all three. (4)~The abstract above replaces the v0.14.3 TN
+abstract; approve or revert. None of these is executed in v0.14.4.}
+\end{document}
