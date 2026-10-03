@@ -1,5 +1,23 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v1.72 — storyline and R1–R13 audit; manuscript unchanged (2026-10-03)
+Reviewed v0.14.4 at `2ccea30` / `095cb9b`, including the storyline, redline,
+relevant manuscript figures, and code supporting the original review items.
+Recommendations and the item-by-item audit are in
+`docs/review_2026-10-03_storyline_r1_r13.md`. Proposed: keep access before Results,
+move detailed transduction tests after the model results, place LaNMM methods in
+Appendix E, promote S11, and retain the new abstract with local scope corrections.
+All decisions remain Giulio's; nothing was cut or reordered.
+
+R1/R8/R11/R13 are closed at their stated scope; R2/R3/R4/R5/R6/R9/R10/R12 are
+partial; R7 remains open. Remaining issues include claims that exceed the
+surrogate and four-point PING controls, phase/capture interpretations, the
+canonical-oscillator approximation, a reversed efficiency-trend sentence, and
+reproduction gaps. The Cifra TODO now distinguishes the review's exclusion of
+fields below 0.1 kV/m from a universal biological threshold. No manuscript,
+bibliography, planning source, PDF, simulation, figure, or parameter changed.
+Release, push, Calliope cut, Overleaf sync, and coauthor email remain held.
+
 ## v1.71 — v0.14.4: readability revision and the storyline document (2026-10-03)
 Giulio asked for a revision of the TI note with readability as a focus. Per the
 practice he endorsed the same day, the abstract-plus-storyline document came first:
