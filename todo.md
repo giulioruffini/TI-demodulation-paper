@@ -4,6 +4,7 @@
 - [ ] Giulio: review v0.14.4 against docs/redline_v0143_to_v0144.pdf (readability revision; §4.1 two-tone slip fixed) and the earlier v0.14.3 fast-membrane interpretation and author order
 - [ ] after review: push two-tone-validation to GitHub, release the reviewed version in Calliope (public paper: the cut deposits to Zenodo, confirm first), re-sync Overleaf from GitHub, merge into main
 - [ ] after review: send the co-author approval request with the reviewed version (HOLD until then); restore "All authors read and approved" on sign-off
+- [ ] cite Cifra et al., Chem. Soc. Rev. 55, 7568 (2026), doi:10.1039/D3CS00244F, for the scope statement that direct field–protein effects need fields above 0.1 kV/m (§4.1, Fig. 15), far above TI's ~1 V/m: one clause in the Discussion access paragraph or at the gate-filter remark in §2.6; add the bib entry; PDF in ~/Downloads/d3cs00244f.pdf — 2026-10-03
 - [ ] resolve bibliography month macros and shared JNE citation-label warnings before submission
 - [ ] obtain Grossman, Canals, and Mirasso funding and competing-interest declarations; confirm all author roles and affiliations; pin AI-tool versions before submission
 - [ ] optional, if a reviewer asks: phase-based capture test for the LaNMM tongues; kHz PING time-domain run; scenario table of field couplings
