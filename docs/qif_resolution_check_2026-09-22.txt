@@ -1,0 +1,23 @@
+== smoke test (quick) ==
+forced   dt=0.005 VPEAK=100.0 T=263.6 window=163.6 ms (9 cycles): <r_e> off=0.0515 on=0.0573 | AC@df off=0.0288 on=0.0484 | VS pooled off=0.276 on=0.414 | VS per-neuron median off=0.157 on=0.281 | PPC pooled off=0.0761 on=0.1715 | PPC per-neuron median off=-0.0593 on=-0.0127 (frac>= 10 spikes: 0.16/0.33)
+entrain  dt=0.005 VPEAK=100.0 T=266.7 window=166.7 ms (7 cycles): <r_e> off=0.0520 on=0.0559 | AC@df off=0.0008 on=0.0134 | VS pooled off=0.052 on=0.111 | VS per-neuron median off=0.142 on=0.094 | PPC pooled off=0.0024 on=0.0121 | PPC per-neuron median off=-0.0886 on=-0.0828 (frac>= 10 spikes: 0.35/0.29)
+
+== FULL two-tone run: N=8000, dt=0.0025, settle 800 ms, integer-cycle windows >= 800 ms ==
+Tue Sep 22 16:05:48 CEST 2026
+forced   off: T=1600.0 window=800.0 ms (44 cycles)  <r_e>=0.0527  AC@55Hz=0.0001  VS pooled=0.001  VS per-neuron median=0.054  PPC pooled=-0.0000  PPC per-neuron median=-0.0183 (frac>=10 spk 0.94)  spikes(rec)=16972
+forced   on : T=1600.0 window=800.0 ms (44 cycles)  <r_e>=0.0582  AC@55Hz=0.0169  VS pooled=0.115  VS per-neuron median=0.161  PPC pooled=0.0132  PPC per-neuron median=0.0034 (frac>=10 spk 0.96)  spikes(rec)=18828
+entrain  off: T=1609.5 window=809.5 ms (34 cycles)  <r_e>=0.0524  AC@42Hz=0.0000  VS pooled=0.013  VS per-neuron median=0.027  PPC pooled=0.0002  PPC per-neuron median=-0.0225 (frac>=10 spk 0.94)  spikes(rec)=17012
+entrain  on : T=1609.5 window=809.5 ms (34 cycles)  <r_e>=0.0564  AC@42Hz=0.0131  VS pooled=0.129  VS per-neuron median=0.167  PPC pooled=0.0166  PPC per-neuron median=0.0046 (frac>=10 spk 0.96)  spikes(rec)=18539
+saved qif_raster_twotone.npz  (WAVE=twotone)
+Tue Sep 22 16:09:17 CEST 2026
+
+== convergence: --test at dt/2 (0.00125) ==
+forced   dt=0.00125 VPEAK=100.0 T=1600.0 window=800.0 ms (44 cycles): <r_e> off=0.0527 on=0.0582 | AC@df off=0.0001 on=0.0169 | VS pooled off=0.001 on=0.114 | VS per-neuron median off=0.054 on=0.156 | PPC pooled off=-0.0000 on=0.0131 | PPC per-neuron median off=-0.0184 on=0.0021 (frac>= 10 spikes: 0.94/0.96)
+entrain  dt=0.00125 VPEAK=100.0 T=1609.5 window=809.5 ms (34 cycles): <r_e> off=0.0524 on=0.0564 | AC@df off=0.0000 on=0.0130 | VS pooled off=0.014 on=0.130 | VS per-neuron median off=0.028 on=0.171 | PPC pooled off=0.0002 on=0.0169 | PPC per-neuron median off=-0.0224 on=0.0060 (frac>= 10 spikes: 0.94/0.96)
+Tue Sep 22 16:14:19 CEST 2026
+
+== convergence: --test at VPEAK=200 ==
+forced   dt=0.0025 VPEAK=200.0 T=1600.0 window=800.0 ms (44 cycles): <r_e> off=0.0515 on=0.0571 | AC@df off=0.0001 on=0.0167 | VS pooled off=0.001 on=0.168 | VS per-neuron median off=0.050 on=0.264 | PPC pooled off=-0.0000 on=0.0282 | PPC per-neuron median off=-0.0200 on=0.0476 (frac>= 10 spikes: 0.94/0.96)
+entrain  dt=0.0025 VPEAK=200.0 T=1609.5 window=809.5 ms (34 cycles): <r_e> off=0.0517 on=0.0557 | AC@df off=0.0000 on=0.0131 | VS pooled off=0.012 on=0.127 | VS per-neuron median off=0.024 on=0.158 | PPC pooled off=0.0001 on=0.0161 | PPC per-neuron median off=-0.0227 on=0.0016 (frac>= 10 spikes: 0.94/0.96)
+Tue Sep 22 16:16:58 CEST 2026
+DONE

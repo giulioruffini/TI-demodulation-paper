@@ -1,0 +1,75 @@
+Figure directory: /var/folders/1v/vw2pwln11hl2pz2h2kt7dgf40000gn/T/tn0484-r12-auke_007/fresh-figures
+Mode: recompute available data, then plot
+Data producers write caches in: /private/var/folders/1v/vw2pwln11hl2pz2h2kt7dgf40000gn/T/tn0484-r12-auke_007/code
+>>> data: analyses_v2: analyses_v2.py
+/Users/giulio/.matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /var/folders/1v/vw2pwln11hl2pz2h2kt7dgf40000gn/T/matplotlib-1fnvxfcz because there was an issue with the default path ({configdir}); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Matplotlib is building the font cache; this may take a moment.
+[1] operating-point law done (0s). peak A_ol=0.019 at v*=3.6; min near inflection v0=6.0: A_ol=0.0000
+[2] carrier sweep done (9s). closed-loop range 0.503-0.592 mV over fc=25-300 Hz
+[3] 2-D map done (23s). max=0.852 mV
+[4] bifurcation done (28s).
+saved analyses_v2.npz  (total 28s)
+    ok  [42.2s]
+
+>>> figures_v2: figures_v2.py
+/Users/giulio/.matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /var/folders/1v/vw2pwln11hl2pz2h2kt7dgf40000gn/T/matplotlib-ytvj6q5s because there was an issue with the default path ({configdir}); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Matplotlib is building the font cache; this may take a moment.
+  [figcheck] figures_v2.py: 16 issue(s)
+      TOO SMALL  '0' prints at 4.5 pt
+      TOO SMALL  '20' prints at 4.5 pt
+      TOO SMALL  '40' prints at 4.5 pt
+      TOO SMALL  '60' prints at 4.5 pt
+      TOO SMALL  '80' prints at 4.5 pt
+      TOO SMALL  '100' prints at 4.5 pt
+      TOO SMALL  '5' prints at 4.5 pt
+      TOO SMALL  '10' prints at 4.5 pt
+      TOO SMALL  '15' prints at 4.5 pt
+      TOO SMALL  '25' prints at 4.5 pt
+      TOO SMALL  '30' prints at 4.5 pt
+      TOO SMALL  '35' prints at 4.5 pt
+      TOO SMALL  '45' prints at 4.5 pt
+wrote fig_concept
+  figstyle WARNING: smallest type still prints at 5.5 pt (target 6.2); this figure needs content removed, not larger type.
+  [figcheck] figures_v2.py: 7 issue(s)
+      COLLISION  '−100' x '−7.5' (22% of the smaller)
+      TOO SMALL  'SNIC' prints at 5.9 pt
+      TOO SMALL  'SN' prints at 5.9 pt
+      TOO SMALL  'HB$^{-}$' prints at 5.9 pt
+      TOO SMALL  'HB$^{+}$' prints at 5.9 pt
+      TOO SMALL  'SNLC' prints at 5.9 pt
+wrote fig_bifurcation_sigmoid
+  [figcheck] figures_v2.py: clean
+wrote fig_resonance_map
+  [figcheck] figures_v2.py: clean
+wrote fig_carrier_independence
+  [figcheck] figures_v2.py: clean
+wrote fig_operating_point
+v2 figures done.
+    ok  [17.7s]
+
+>>> data: resonance stable: rerun_resonance.py stable
+/Users/giulio/.matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /var/folders/1v/vw2pwln11hl2pz2h2kt7dgf40000gn/T/matplotlib-tbxk3u7f because there was an issue with the default path ({configdir}); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Matplotlib is building the font cache; this may take a moment.
+stable side:
+  p=330  peak=0.703 mV @ 11.08 Hz
+  p=355  peak=0.433 mV @ 11.05 Hz
+  p=395  peak=0.225 mV @ 10.93 Hz
+    ok  [48.5s]
+
+>>> rerun_resonance: rerun_resonance.py plot
+/Users/giulio/.matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /var/folders/1v/vw2pwln11hl2pz2h2kt7dgf40000gn/T/matplotlib-qmr_1ais because there was an issue with the default path ({configdir}); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Matplotlib is building the font cache; this may take a moment.
+  [figcheck] rerun_resonance.py: clean
+STABLE peaks: ['0.703', '0.433', '0.225']
+wrote fig_resonance (single regime: stable focus)
+    ok  [14.0s]
+
+SUMMARY
+  ok                             42.2s  data: analyses_v2
+  ok                             17.7s  figures_v2
+  ok                             48.5s  data: resonance stable
+  ok                             14.0s  rerun_resonance

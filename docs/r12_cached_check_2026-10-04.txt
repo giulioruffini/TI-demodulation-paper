@@ -1,0 +1,40 @@
+Figure directory: /var/folders/1v/vw2pwln11hl2pz2h2kt7dgf40000gn/T/tn0484-r12-auke_007/cached-figures
+Mode: replot existing caches
+LIMIT: fig_khz_twotone: replot only: khz_twotone.npz is committed, but its original producer and full run parameters are absent
+>>> make_lanmm_field_figs: make_lanmm_field_figs.py --wave twotone
+/Users/giulio/.matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /var/folders/1v/vw2pwln11hl2pz2h2kt7dgf40000gn/T/matplotlib-e_6h1jsr because there was an issue with the default path ({configdir}); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Matplotlib is building the font cache; this may take a moment.
+[P2 twotone]
+  tongue peak at eps=3.0 mV: Delta f = 10.00 Hz
+  dominance width (eps=0 row excluded): 0.50 Hz at eps=0.10 mV  ->  2.75 Hz at eps=3.0 mV;  grid step 0.250 Hz, autonomous f_out at eps=0: [10.667]
+  Pt1: min -3.51e+07, max 6.11e+07, negative fraction 0.44
+  Pt2: min -1.41e+06, max 1.8e+08, negative fraction 0.19
+  Pc1: min -2.58e+07, max 4.31e+07, negative fraction 0.31
+  Pc2: min -1.65e+06, max 7.38e+07, negative fraction 0.12
+  carrier-map peak at Delta f=10 Hz: f_c = 44.0 Hz  (map at eps=1.5 mV)
+  wrote fig_lanmm_field_p2_twotone.pdf/.png
+[P1 twotone]
+  tongue peak at eps=1.0 mV: Delta f = 10.25 Hz
+  dominance width (eps=0 row excluded): 0.50 Hz at eps=0.03 mV  ->  1.25 Hz at eps=1.0 mV;  grid step 0.250 Hz, autonomous f_out at eps=0: [10.667]
+  Pt1: min -3.39e+07, max 6.57e+06, negative fraction 0.95
+  Pt2: min -1.62e+06, max 3.89e+05, negative fraction 0.96
+  Pc1: min -1.81e+07, max 2.43e+07, negative fraction 0.97
+  Pc2: min -8.83e+05, max 1.07e+06, negative fraction 0.90
+  carrier-map peak at Delta f=10 Hz: f_c = 26.0 Hz  (map at eps=0.5 mV)
+  wrote fig_lanmm_field_p1_twotone.pdf/.png
+    ok  [18.2s]
+
+>>> make_khz_twotone_fig: make_khz_twotone_fig.py
+/Users/giulio/.matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /var/folders/1v/vw2pwln11hl2pz2h2kt7dgf40000gn/T/matplotlib-ki0vsnjn because there was an issue with the default path ({configdir}); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Matplotlib is building the font cache; this may take a moment.
+  [figcheck] make_khz_twotone_fig.py: clean
+  input 8-14 Hz max Fourier amplitude : 2.243e-13
+  output line at 11.00 Hz : 7.616e-02
+  wrote fig_khz_twotone
+    ok  [14.0s]
+
+SUMMARY
+  ok                             18.2s  make_lanmm_field_figs
+  ok                             14.0s  make_khz_twotone_fig

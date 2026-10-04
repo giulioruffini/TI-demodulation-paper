@@ -138,15 +138,16 @@ def resonance_map():
 
 # ====================================== FIG 4: carrier independence + synapse TF
 def carrier_independence():
+    # Rate and voltage have different units; compare their normalized carrier profiles.
     fig, ax = plt.subplots(1, 2, figsize=(11,4.0))
     fc=d["fc_grid"]
-    ax[0].semilogx(fc, d["A_ci_cl"], "o-", color=NEB, label="closed-loop JR (near Hopf)")
-    ax[0].semilogx(fc, d["A_ci_ol"], "s--", color=NEB2, ms=4, label="open-loop detector")
-    ax[0].axvline(d["F0"], color=NER, ls=":", lw=1); ax[0].text(d["F0"]*1.05, ax[0].get_ylim()[1]*0.1,
+    ax[0].semilogx(fc, d["A_ci_cl"]/d["A_ci_cl"][-1], "o-", color=NEB, label="closed-loop JR (near Hopf)")
+    ax[0].semilogx(fc, d["A_ci_ol"]/d["A_ci_ol"][-1], "s--", color=NER, ms=4, label="open-loop detector")
+    ax[0].axvline(d["F0"], color=NER, ls=":", lw=1); ax[0].text(d["F0"]*1.05, 1.18,
         "$f_0$", color=NER, fontsize=9)
-    ax[0].set_ylim(0, None)
+    ax[0].set_ylim(0.94, 1.21)
     ax[0].set_xlabel("carrier frequency  $f_c$  (Hz)")
-    ax[0].set_ylabel("demodulated response @ $\\Omega$ (mV)")
+    ax[0].set_ylabel("response / response at 300 Hz")
     ax[0].legend(fontsize=8, frameon=False); ax[0].spines[["top","right"]].set_visible(False)
 
     w=2*np.pi*np.logspace(0,3,400)
@@ -179,7 +180,7 @@ def operating_point():
     yref=np.interp(d["v_ref"], vg, d["A_ol_signed"])
     ax.plot(d["v_ref"], yref, "o", color="#1a9850", ms=6, label="JR operating points ($p$=265–395)")
     ax.set_xlabel("operating point  $v^*$  (mV)   [indexed by PEIX]")
-    ax.set_ylabel("demodulated response @ $\\Omega$ (mV)")
+    ax.set_ylabel(r"open-loop rate at $\Omega$ (s$^{-1}$)")
     ax.legend(fontsize=8.5, frameon=False, loc="upper right"); ax.spines[["top","right"]].set_visible(False)
     fig.tight_layout()
     figstyle.scale_text(fig, placed_frac=0.74)

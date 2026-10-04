@@ -10,11 +10,21 @@ Archived at Zenodo: **[doi:10.5281/zenodo.21009618](https://doi.org/10.5281/zeno
 Licensed **CC-BY-4.0** (see [`LICENSE`](LICENSE)); machine-readable citation in
 [`CITATION.cff`](CITATION.cff).
 
-The current local draft is **v0.14.6** (October 4, 2026), in
+The current local draft is **v0.15.0-draft1** (October 4, 2026), in
 [TN0484_envelope_demodulation.pdf](TN0484_envelope_demodulation.pdf) and
 [TN0484_jne.pdf](TN0484_jne.pdf). As checked on October 2,
 [Calliope WP0185](https://calliope.bcom.one/papers/WP0185) still lists v0.12.0
 (July 21); the newer local draft remains pending Giulio's review and release.
+
+v0.15.0-draft1 integrates Klaus's reconstructed LaNMM lock-in comparison and
+corrects claim scope, gain units, and figure-reproduction paths. The old 7%/25%
+claims are replaced by a defined beat average and two-window table. The kHz two-tone
+illustration remains replot-only because its producer and complete settings are
+unavailable. Section order and all 22 figures are retained. Record:
+[docs/revision_2026-10-04_v0150draft1.md](docs/revision_2026-10-04_v0150draft1.md);
+redline against v0.14.6:
+[docs/redline_v0146_to_v0150draft1.pdf](docs/redline_v0146_to_v0150draft1.pdf).
+Versioned review copies are under `build/`; release and circulation remain held.
 
 v0.14.6 reviews v0.14.5 and applies four corrections: the shared-amplifier consequence is
 restored in both abstracts, the gate-filter sentence states both halves of K's position,
@@ -46,7 +56,7 @@ with a [redline against v0.14.2](docs/redline_v0142_to_v0143.pdf).
 [planning/tn0484_storyline.tex](planning/tn0484_storyline.tex) (section-by-section argument
 map), compiled to [build/storyline/tn0484_storyline.pdf](build/storyline/tn0484_storyline.pdf)
 with `~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex`.
-It maps v0.14.5, with the weak-field framing authorized by K and section order unchanged.
+It maps v0.15.0-draft1, with the weak-field framing authorized by K and section order unchanged.
 The three placement decisions remain open: Theory order, LaNMM methods, and figure
 promotion. The
 [general practice](../../giulio-personal-handbook/dos-and-donts.md#abstract-and-storyline-planning)
@@ -78,7 +88,7 @@ the amplifier when effective coupling, readout, and operating state are matched.
 ├── LICENSE                                # CC-BY-4.0
 ├── CITATION.cff                           # machine-readable citation (DOI, authors)
 ├── TN0484_envelope_demodulation.tex       # the manuscript (\graphicspath{{figures/}})
-├── TN0484_envelope_demodulation.pdf       # current build (47 pp; JNE article 31 pp + supplement 18 pp)
+├── TN0484_envelope_demodulation.pdf       # current build (48 pp; JNE article 31 pp + supplement 19 pp)
 ├── TN0484_envelope_demodulation.bbl       # committed so a single pdflatex works w/o bibtex
 ├── references.bib                         # BibTeX source for all references
 ├── requirements.txt                       # pinned Python deps (numpy/scipy/matplotlib + ...)
@@ -112,10 +122,10 @@ pdflatex TN0484_envelope_demodulation
 pdflatex TN0484_envelope_demodulation
 ```
 
-Current build: **47 pp (TN), 31 pp (JNE article) + 18 pp (supplement); 0 errors,
-0 undefined references or citations.** Existing warnings about bibliography month
-macros and shared citation labels in the split build remain
-listed in `todo.md`. The `.bbl` is committed, so a single `pdflatex` rebuilds the PDF
+Current build: **48 pp (TN), 31 pp (JNE article) + 19 pp (supplement); 0 errors,
+0 undefined references or citations, and no overfull boxes.** Bibliography month
+macros and shared citation-label warnings are repaired. A float-only page notice
+and an underfull bibliography line remain. The `.bbl` is committed, so a single `pdflatex` rebuilds the PDF
 when references are unchanged.
 
 ## Reproduce the figures

@@ -1,9 +1,8 @@
-"""Two appendix figures from qif_raster.npz:
-  fig_qif_raster      -- spike rasters (forced & entrained, field off/on): TI realigns
-                         spike timing into the envelope while the mean rate is flat.
-  fig_qif_timing      -- (a) QIF population rate vs the exact NMM2 mean field (validation
-                         of the QIF<->NMM2 link); (b) fold-change off->on of mean rate
-                         vs envelope-locked timing (rate ~flat, timing up).
+"""QIF spike rasters, spectra, and beat-locked rate modulation from cached runs.
+
+The main figure uses forced and oscillatory regimes with TI off/on. The timing
+figure compares spectra and rate-modulation depth. Raw rate folding and sidebands
+do not establish modulation of the autonomous gamma amplitude.
 """
 import os
 import numpy as np
@@ -82,7 +81,7 @@ def gamma_amp_fold(re_t, ts, df, dt, band=(45.0, 70.0), nbin=24, t_start=40.0):
 def beat_inset(ax, off_key, on_key, mode="rate"):
     """Inset folded on the Df beat phase, TI off (flat) vs on (bump). mode='rate' folds the
     raw r_E (forced case: the response is at Df); mode='gamma' folds the gamma-amplitude
-    envelope (gating case: PAC of the persisting gamma). Both curves are normalized to their
+    envelope (an optional diagnostic, not used in the paper). Both curves are normalized to their
     own mean, so the y-axis reads the relative (depth) modulation -- dimensionless and
     directly comparable to the boxed Df modulation depth."""
     df = conds[on_key]["q"]["df"]; dt = meta["dt"]
@@ -160,7 +159,7 @@ def fig_raster():
     # fold from 40 ms) removed the 11 and 95 Hz sidebands that carry the envelope and
     # included the settling interval. The inset now folds the population rate over the
     # measurement window, as in (b); with 34 beat cycles the near-commensurate 53 Hz gamma
-    # averages out of the 42 Hz fold. Gating vs capture is shown by the sidebands in fig_qif_timing.
+    # averages out of the 42 Hz fold. Sidebands alone do not establish gamma-amplitude gating.
     beat_inset(axs[1, 1], "entrain_off", "entrain_on", mode="rate")
     for ax in axs[:, 0]:
         ax.set_ylabel("E neuron #")
@@ -208,7 +207,7 @@ def fig_timing():
     # (b) intermodulation: oscillatory regime, TI off vs on. The nonlinearity mixes the
     # imposed Df=42 Hz beat with the intrinsic ~53 Hz gamma -> sidebands. TI-on lights up
     # the direct Df line (42) and the SUM 53+42=95; the difference 53-42=11 is weak. This is
-    # the spiking-network view of the macroscale frequency mixing (sideband = gating).
+    # the spiking-network view of the macroscale frequency mixing (sidebands establish mixing, not its unique modulation mechanism).
     dfb = conds["entrain_on"]["q"]["df"]; fg = 53.0
     for key, col, lab in (("entrain_off", GR, "TI off"), ("entrain_on", NEBLUE, "TI on")):
         qq = conds[key]["q"]; fS, PS = _rate_spectrum(qq["re_t"], qq["ts"], dt)

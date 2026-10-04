@@ -134,8 +134,8 @@ def lockin_map(etagrid, dfgrid_Hz, A=8.0, fc_Hz=300.0, t_settle=800.0, t_meas=15
     With return_fout=True also returns the dominant (largest non-DC) output
     frequency of r_e in Hz, on the same grid. Lock-in amplitude cannot
     distinguish a forced response at Delta f from genuine frequency capture,
-    because both put power at Delta f; f_out can, and the 1:1 locked set
-    |f_out - Delta f| < 0.3 Hz is what defines an Arnold tongue."""
+    because both put power at Delta f. The screen
+    |f_out - Delta f| < 0.3 Hz identifies frequency dominance, not phase capture."""
     EE, DD = np.meshgrid(etagrid, dfgrid_Hz, indexing="ij")
     eta = EE.ravel().copy(); dfflat = DD.ravel().copy()
     n = eta.size; y = _init(n)
@@ -185,23 +185,23 @@ def make_figures(A=8.0, fc_Hz=300.0):
     print(f"gamma Hopf near eta={eta_hopf:.2f}, onset f0~{f_onset:.0f} Hz")
     # lock-in map
     M, FOUT = lockin_map(etagrid, dfgrid, A=A, fc_Hz=fc_Hz, return_fout=True)
-    # 1:1 frequency capture, the criterion the vocabulary section defines.
+    # Frequency-dominance screen; no phase-capture test is performed.
     # Only meaningful ABOVE the Hopf: below it there is no autonomous rhythm to
     # capture, so the dominant output frequency is trivially Delta f and the
     # criterion would relabel a plain forced response as entrainment.
     LOCKED = (np.abs(FOUT - dfgrid[None, :]) < 0.3)
     LOCKED &= (etagrid[:, None] > eta_hopf)
     LOCKED = LOCKED.astype(float)
-    print(f"  1:1 locked fraction of grid (above Hopf only): {LOCKED.mean():.2%}")
+    print(f"  frequency-dominance fraction of grid (above Hopf only): {LOCKED.mean():.2%}")
 
-    # ---- Fig.: resonance map (log scale: entrainment >> stable-focus forced response) ----
+    # ---- Fig.: resonance map in stable-focus and autonomous regimes --------------
     fig, ax = plt.subplots(figsize=(6.4, 4.6))
     im = ax.imshow(M, origin="lower", aspect="auto", cmap="viridis",
                    interpolation="bilinear",
                    norm=LogNorm(vmin=max(M.max()*1e-3, 1e-5), vmax=M.max()),
                    extent=[dfgrid[0], dfgrid[-1], etagrid[0], etagrid[-1]])
-    # 1:1 locked set outlined: the colour field is the forced/gated response,
-    # the contour is the actual Arnold tongue.
+    # The contour outlines frequency dominance in the autonomous regime.
+    # It does not identify an Arnold tongue without an additional phase test.
     ax.contour(dfgrid, etagrid, LOCKED, levels=[0.5], colors="w", linewidths=1.4)
     if np.isfinite(eta_hopf):
         ax.axhline(eta_hopf, color="w", ls="--", lw=1)

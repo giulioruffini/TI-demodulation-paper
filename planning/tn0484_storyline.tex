@@ -1,6 +1,6 @@
 % TN0484 / WP0185: abstract and storyline. Build from the project root:
 %   ~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex
-% Map mode: rows follow the v0.14.6 manuscript order and numbering (TN build; the JNE build
+% Map mode: rows follow the v0.15.0-draft1 manuscript order and numbering (TN build; the JNE build
 % moves the appendices and figures S1--S12 to the supplement). Prepared 2026-10-03.
 \documentclass[11pt,a4paper,landscape]{article}
 \usepackage[T1]{fontenc}
@@ -18,7 +18,7 @@
 \newcommand{\wpnumber}{TN0484 / WP0185}
 \newcommand{\papertitle}{The cortical column as a tuned receiver}
 \newcommand{\storylinedate}{4 October 2026}
-\newcommand{\baselinelabel}{v0.14.6}
+\newcommand{\baselinelabel}{v0.15.0-draft1}
 \newcommand{\abstractfile}{tn0484_abstract.tex}
 \newcommand{\storylineauthors}{Giulio Ruffini}
 % -----------------------------------------------------------------------------
@@ -69,7 +69,7 @@
 \end{minipage}
 \end{center}
 \vspace{5mm}
-{\footnotesize\color{muted}The abstract is the TN abstract of v0.14.6. K authorized the weak-field
+{\footnotesize\color{muted}The abstract is the TN abstract of v0.15.0-draft1. K authorized the weak-field
 effective-response framing on 3 October 2026; the JNE build keeps a structured abstract with
 the same claims. Section and figure order remain unchanged from v0.14.4. The placement
 decisions on the last page remain open; this revision does not cut or reorder content.}
@@ -211,7 +211,7 @@ lock-in read-out and the pinned-operating-point protocol recur across models.
   RK4 steps with $<1\%$ convergence; settling and windows. Hopf at $p\approx315$,
   $f_0\approx11.1$~Hz; SNIC at $p\approx114$. Lock-in (Eq.~25) with DC subtraction to $10^{-8}$.
   Open-loop detector versus closed-loop column; square law, linearization, finite-difference checks.
-& Makes every JR number reproducible and defines the lock-in that every later section uses.
+& Specifies the JR integrator and lock-in; run-specific reproduction limits remain recorded.
 & Fig.~2; Grimbert and Faugeras 2006; \path{run_all.py}.\\[2pt]
 \midrule
 \place{\S3.2--3.4}{LaNMM, NMM2 PING, QIF network}
@@ -219,7 +219,7 @@ lock-in read-out and the pinned-operating-point protocol recur across models.
   alpha-power read-out; signed maps. PING (Eq.~27): weights $(1,1,1,2)$, $\bar\eta_H=1.110$,
   $f_0=54$~Hz, field as current $I_E=PE$ so the membrane computes access with
   $\tau_m=\tau_E$; two criticality knobs. QIF: $N=8000$ per population, Lorentzian quantiles,
-  beat 55~Hz (forced) and 42~Hz (gated, 11~Hz detuning); modulation depth and pairwise phase
+  beat 55~Hz (forced) and 42~Hz (oscillatory, 11~Hz detuning); modulation depth and pairwise phase
   consistency; the 45\% threshold sensitivity of phase concentration.
 & Fixes the models whose results follow and states which comparisons are perturbative.
   Decision for K: \S3.2 serves only the App.~E results and could travel with them.
@@ -227,16 +227,17 @@ lock-in read-out and the pinned-operating-point protocol recur across models.
 \midrule
 \place{\S3.5--3.6}{Coupling sweeps, tACS control, vocabulary}
 & Pinning: solve $p(C)$ for fixed $v^*$, read $\gamma,\omega_0$ from the Jacobian; tACS control
-  at $\varepsilon=0.1$~mV. Three terms: forced response, entrainment (dominance screen
-  $|f_{\rm out}-\Delta f|<0.3$~Hz), gating.
-& The pinning protocol isolates amplification from detection; the vocabulary keeps
+  at $\varepsilon=0.1$~mV. Forced response, phase capture, and amplitude gating are
+  distinct. The maps measure frequency dominance ($|f_{\rm out}-\Delta f|<0.3$~Hz);
+  the rate fold does not uniquely identify gamma-amplitude gating.
+& The pinning protocol holds the local detector curvature fixed; the vocabulary keeps
   ``entrainment'' from covering gating.
 & App.~F (metrics); Pikovsky 2001; Canolty 2010; Tort 2010.\\[2pt]
 \midrule
 \place{\S4.1--4.2}{The sigmoid demodulates; the beat drives a resonance}
-& An alpha line from two tones with no alpha power in the input. Lorentzian response growing
-  $0.23\to0.43\to0.70$~mV toward the Hopf ($1/\gamma$); above the Hopf, Arnold-tongue entrainment
-  read by output frequency.
+& An alpha line from two tones with no alpha power in the input. Approximately Lorentzian response growing
+  $0.23\to0.43\to0.70$~mV toward the Hopf ($1/\gamma$); above the Hopf, frequency
+  dominance read by output frequency, without a phase-capture test.
 & The existence result: the beat is synthesized and amplified.
 & Figs.~3, 4; Fig.~S4.\\[2pt]
 \midrule
@@ -246,28 +247,29 @@ lock-in read-out and the pinned-operating-point protocol recur across models.
   0.9\%; slope 1.99; linearization collapses the response $634\times$; two-tone/AM ratio
   $1.0000$ at 0.02~mV and $0.988$ at 1~mV.
 & Verifies the static detector predictions. Retain the one-point open-loop scope of the
-  surrogate check; its extension to recurrent sweeps remains a review item.
+  surrogate check; recurrent AM sweeps are explicitly qualified.
 & Figs.~5, 6; Figs.~S6, S9; Esmaeilpour 2020.\\[2pt]
 \midrule
 \place{\S4.5}{Exact mean-field confirmation}
 & PING generates and amplifies the beat through $v_E^2$; diagonal ridge with operating point;
-  the detector sits on the fast side of its crossover, with a source operating-point
-  independent to about 1\%.
+  the fast-carrier source predicts the second-order response within 1.1\% at four
+  tested stable states; this does not bound source variation across every sweep.
 & The receiver is not an artifact of the sigmoid.
 & Figs.~7, 8; Fig.~S8; Clusella 2023.\\[2pt]
 \midrule
 \place{\S4.6}{Coupling sets the gain at fixed detection}
 & Pinned $J$-curve: $\sim30\times$ growth, $1/\gamma$ then saturation; the same gain--$\gamma$
-  relation via $p$; stable-focus side only. NMM2 $J$-curve without pinning.
-& The mesoscale claim: amplification depends on distance to criticality, not on which
-  parameter delivers it.
+  trend via $p$; stable-focus side only. Frequency and modal projections vary too.
+  NMM2 $J$-curve uses an unpinned fast-carrier normalization, qualified at finite carrier.
+& The mesoscale claim: network gain grows near a weakly damped mode while the JR
+  local curvature is fixed; parameter paths need not have identical finite-distance gain.
 & Fig.~9; Fig.~S10; Clusella 2023.\\[2pt]
 \midrule
 \place{\S4.7--4.8}{Timing over rate; QIF confirmation}
 & Modulation grows $13.5\times$ (26 to 346~mHz) against a mean shift of $5.8\times$ ($-1.3$ to
   $-7.7$~mHz); ratio 19 far from the Hopf, 45--66 near it. QIF: bunching below the Hopf;
-  gating with sidebands at 95 and 11~Hz above it; modulation depth $0.003\to0.29/0.23$ with
-  rate $+8$--$10\%$; weak per-neuron locking.
+  beat-locked firing and sidebands at 95 and 11~Hz above it, without identifying gamma-amplitude
+  gating; modulation depth $0.003\to0.29/0.23$, rate $+8$--$11\%$, weak per-neuron locking.
 & Larger modulation than mean-rate change at mesoscale and microscale, qualitatively
   consistent with Vieira; retain the nonzero mean shift and weak per-neuron locking.
 & Fig.~10; Figs.~S11, S12; Vieira 2024.\\[2pt]
@@ -335,16 +337,17 @@ laminar extension, and the metrics.
 & \path{threshold_bound_check.py}.\\[2pt]
 \midrule
 \place{App.~E}{Laminar column at low carriers}
-& Tongues at 25--80~Hz carriers up to 3~mV, outside the perturbative regime; 95\%/97\% of the
-  $P_1$-driven grids below baseline; double resonance under superficial drive (7\% off
-  resonance) against broadband response under deep drive (25\%); three LaNMM predictions,
-  the carrier-matching one untested.
+& Frequency selection at 25--80~Hz carriers up to 3~mV, outside the perturbative regime;
+  95\%/97\% of $P_1$-driven grids below baseline. Off-alpha mean lock-in peaks at 39~Hz
+  for superficial drive and 25~Hz for direct drive, with unequal amplitudes. Retain the
+  3/10~s comparison, field-free background, and limits of the near-alpha readout. The old
+  7\%/25\% claims are replaced by the reproducible carrier-profile table.
 & Shows a band-limited intermediary makes the carrier choice matter; does not carry the kHz
   argument.
 & Fig.~S1, S2, S7; Gordon 2019.\\[2pt]
 \midrule
 \place{App.~F--G}{Vocabulary metrics; supplementary figures}
-& Dominance screen versus capture test; folded-rate metric; Arnold-tongue protocol.
+& Dominance screen versus capture test; folded-rate metric versus gamma-amplitude gating; frequency-dominance protocol.
   Figures S2--S12 support \S4.2--4.8 and the Discussion.
 & Metrics behind the three terms; the figure bank for the JNE supplement.
 & Figs.~S2--S12.\\[2pt]
@@ -359,7 +362,8 @@ transduction tests while retaining carrier access (\S2.6) before its Results app
 (3)~Promote S3 (tACS), S10 (NMM2 $J$-curve), S11 (modulation versus mean rate), or none;
 the review recommends S11 first and retaining all 22 figures. None of these placement
 changes has been executed. K authorized the weak-field framing and the corresponding
-abstract revision in v0.14.5. Remaining claim and reproduction issues are recorded in
-\path{docs/review_2026-10-03_storyline_r1_r13.md}; frequency-dominance maps do not establish
-phase capture, and the LaNMM lock-in percentages need their supporting calculation.}
+abstract revision in v0.14.5. The current draft qualifies the gain and capture claims and
+replaces the LaNMM percentages with a documented off-alpha comparison. The kHz two-tone cache
+remains replot-only. Coauthor approval, declarations, and release alignment remain pending;
+see \path{todo.md}.}
 \end{document}

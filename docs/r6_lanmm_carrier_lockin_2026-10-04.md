@@ -1,5 +1,10 @@
 # R6: the LaNMM carrier comparison read with the lock-in
 
+> Integration status (Kaiti, October 4): this is the original R6 handoff.
+> Its capture labels, exact-provenance inference, and some window/background claims
+> are superseded by `r6_integration_2026-10-04.md` and
+> `r6_lanmm_carrier_lockin_verified.json`. The manuscript uses the verified comparison.
+
 Klaus, October 4, 2026, on branch `r6-lanmm-lockin` from `e34f1f8` (manuscript v0.14.6,
 `9bc574c`). The task was to recover the analysis behind the Appendix E claims that the
 envelope-locked response of the deep loop falls to about 7% of its peak off the gamma

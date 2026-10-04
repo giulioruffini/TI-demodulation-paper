@@ -1,5 +1,17 @@
 # Submission-readiness review — v0.14.6
 
+**October 4 repair update.** The findings below are the historical review of
+v0.14.6. They are addressed at the revised claim level in **v0.15.0-draft1**;
+see [the revision record](docs/revision_2026-10-04_v0150draft1.md) and
+[the R6 integration note](docs/r6_integration_2026-10-04.md). R6's old percentages
+are withdrawn and replaced by defined, preserved calculations. R12's targeted
+reproduction repairs pass; the kHz two-tone producer remains unavailable and that
+illustration is explicitly replot-only. Author declarations, approval, and release
+alignment remain open. This update does not turn the original read-only review
+into a record of tests it did not perform.
+
+---
+
 Reviewed October 4, 2026, at manuscript commit `9bc574c` on `two-tone-validation`.
 This record does not change the manuscript version.
 
