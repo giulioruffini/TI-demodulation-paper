@@ -1,12 +1,14 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
-- [ ] Giulio: review v0.14.6 (Kaiti's v0.14.5 framing, docs/redline_v0144_to_v0145.pdf, plus Klaus's four corrections, docs/redline_v0145_to_v0146.pdf), then decide the storyline's three placement questions (Theory order, LaNMM methods, S3/S10/S11 promotion)
-- [ ] after Giulio's decisions: close the remaining R2–R7/R9/R12 items in docs/review_2026-10-03_storyline_r1_r13.md; R10 is repaired in v0.14.5; do not cut or reorder before approval
-- [ ] after review: push two-tone-validation to GitHub, release the reviewed version in Calliope (public paper: the cut deposits to Zenodo, confirm first), re-sync Overleaf from GitHub, merge into main
-- [ ] after review: send the co-author approval request with the reviewed version (HOLD until then); restore "All authors read and approved" on sign-off
-- [ ] resolve bibliography month macros and shared JNE citation-label warnings before submission
-- [ ] obtain Grossman, Canals, and Mirasso funding and competing-interest declarations; confirm all author roles and affiliations; pin AI-tool versions before submission
-- [ ] after the claim-scope decision: run phase/modal tests if retaining capture/gating claims; otherwise narrow those claims; kHz PING runs and a field-coupling scenario table remain optional
+- [ ] revise R2/R4/R7 claim scope using ERRATA_TN0484_envelope_demodulation.md; distinguish open-loop validation, fixed detector curvature, frequency dominance, and rate modulation; phase/modal tests are needed only if retaining stronger capture/gating claims
+- [ ] recover and preserve the LaNMM lock-in calculation supporting 7%/25% (R6), or agree wording that matches the available band-power evidence
+- [ ] repair run_all.py dependency selection, TN_FIGDIR handling, and amplitude/power labels; restore the missing kHz-cache producer or document the limit, then verify reproduction from a clean checkout (R12)
+- [ ] correct the finite-damping peak convention (R9), phase-sum and timing/rate wording (R3/R5), Cifra threshold wording, Plovie's first name, and bibliography/build warnings
+- [ ] Giulio: decide the three optional placement questions (Theory order, LaNMM methods, S3/S10/S11 promotion); scientific repairs need not wait, but do not cut or reorder before approval
+- [ ] obtain Grossman, Canals, and Mirasso funding and remaining competing-interest declarations; confirm all author roles and affiliations; record AI-tool versions before submission
+- [ ] after repairs and authorization: send the coauthor approval request for the submission version (HOLD); restore "All authors read and approved" only after every author signs off
+- [ ] after review and authorization: push two-tone-validation, cut Calliope/Zenodo, re-sync Overleaf, and merge into main (all remain HOLD); align the availability statement with the released version
+- [x] review v0.14.6 for submission readiness; record confirmed claim/evidence gaps and a read-only JR matrix check in ERRATA_TN0484_envelope_demodulation.md; manuscript unchanged (October 4)
 - [x] review v0.14.5 and apply four corrections as v0.14.6: abstracts' efficiency consequence, gate-filter sentence, Cifra clause purpose, Discussion reader aid; chi2 in Table 4 (October 4)
 - [x] revise v0.14.5 around effective weak-field mixing, define the dynamic coefficient and static limit, explain QIF's cellular content, and update the abstract/storyline without reordering (October 3)
 - [x] add the qualified Cifra scope clause and bibliography entry; correct the weak-input efficiency trend (R10) (October 3)
