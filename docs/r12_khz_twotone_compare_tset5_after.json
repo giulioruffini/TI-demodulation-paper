@@ -1,0 +1,30 @@
+{
+ "n_bins": 133334,
+ "n_bins_cache": 133334,
+ "f_grid_max_abs_diff": 0.0,
+ "f1_diff": 0.0,
+ "f2_diff": 0.0,
+ "F0_diff": 0.0,
+ "PI_max_abs_diff": 9.031120282749674e-06,
+ "PI_max": 0.49266371179099927,
+ "PV_max_abs_diff": 0.0002595053869661662,
+ "PV_max": 0.07615781994611578,
+ "PV_rel_diff_at_line": 0.0013731622652637513,
+ "line_bin_Hz": 11.00002750006875,
+ "line_amp_mV": 0.07626239699067054,
+ "line_amp_cache_mV": 0.07615781994611578,
+ "input_8_14_max": 7.768592983858738e-14,
+ "input_8_14_max_cache": 2.2430135031813757e-13,
+ "PV_DC_bin": 0.0010358187191817575,
+ "PV_DC_bin_cache": 0.0007763133322155913,
+ "settings": {
+  "eps": 0.5,
+  "t_set": 5.0,
+  "sample": "after",
+  "demean": "plain",
+  "fc": 2000.0,
+  "tau": 0.0002,
+  "dt": 1.5e-05,
+  "t_meas": 4.0
+ }
+}
