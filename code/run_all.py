@@ -7,8 +7,8 @@ all required caches must already exist. ``--dry-run`` prints the resolved plan
 without writing files. Figure output honors TN_FIGDIR or --figdir; simulations
 still write their caches in code/, so use a separate checkout to protect those.
 
-The hand-drawn LaNMM schematic has no generator. The two-tone kHz spectrum can be
-replotted, but its original data-producing run is absent from the repository.
+The hand-drawn LaNMM schematic has no generator. The reconstructed two-tone kHz
+producer writes a separate cache; the archived spectra remain unchanged.
 """
 import argparse
 import importlib.util
@@ -42,6 +42,8 @@ STEPS = [
         "-> qif_raster_twotone.npz (N=8000, settle 800 ms + integer-cycle windows; slow)"),
     ("data: ping_fast_carrier_check", "ping_fast_carrier_check.py", [], [],
         "-> ping_fast_carrier_check.json (MPR crossover + PING fast-carrier source error; ~10 s)"),
+    ("data: khz_twotone", "khz_twotone_producer.py", ["--write", "khz_twotone_reproduced.npz"], [],
+        "-> khz_twotone_reproduced.npz; preserves archived khz_twotone.npz"),
 
     # --- figure generators (write to FIGDIR) ---
     ("figures_v2",  "figures_v2.py", [], [
@@ -74,7 +76,7 @@ STEPS = [
     ("make_nmm2_twotone_fig", "make_nmm2_twotone_fig.py", [], ["fig_nmm2_resonance_twotone"],
         "computes the curves via nmm2_ping.lockin_curve (no cache)"),
     ("make_khz_twotone_fig", "make_khz_twotone_fig.py", [], ["fig_khz_twotone"],
-        "renders khz_twotone.npz; see GAPS for its producer"),
+        "renders fresh spectra when recomputing, archived khz_twotone.npz with --from-cache"),
     ("mpr_crossover_fig", "mpr_crossover_fig.py", [], ["fig_mpr_crossover"],
         "needs ping_fast_carrier_check.json"),
 ]
@@ -91,6 +93,13 @@ DEPENDENCIES = {
     "make_qif_figs": ("data: qif_raster twotone",),
     "make_lanmm_field_figs": ("data: lanmm_field P2", "data: lanmm_field P1"),
     "mpr_crossover_fig": ("data: ping_fast_carrier_check",),
+    "make_khz_twotone_fig": ("data: khz_twotone",),
+}
+
+# Some reconstructed producers preserve their historical cache under its old name.
+# Recomputations render the fresh output; cache mode uses the archived data.
+RECOMPUTED_ARGS = {
+    "make_khz_twotone_fig": ["--input", "khz_twotone_reproduced.npz"],
 }
 
 # These scripts only render existing data. Other generators run inline simulations
@@ -110,7 +119,6 @@ CACHE_INPUTS = {
 
 GAPS = {
     "fig_lanmm_setup": "hand-drawn schematic; no generator",
-    "fig_khz_twotone": "replot only: khz_twotone.npz is committed, but its original producer and full run parameters are absent",
 }
 
 
@@ -158,7 +166,10 @@ def resolve_steps(only=(), from_cache=False):
         if not from_cache:
             for dep in DEPENDENCIES.get(label, ()):
                 visit(dep)
-        ordered.append(by_label[label])
+        step = by_label[label]
+        if not from_cache and label in RECOMPUTED_ARGS:
+            step = (step[0], step[1], list(RECOMPUTED_ARGS[label]), step[3], step[4])
+        ordered.append(step)
 
     for label, *_rest in STEPS:
         if label in selected:

@@ -86,7 +86,7 @@
 
 \newcommand{\Sig}{\sigma}
 \newcommand{\half}{\tfrac{1}{2}}
-\newcommand{\paperver}{0.15.0-draft1}
+\newcommand{\paperver}{0.15.0-draft2}
 \hypersetup{
   pdftitle={The cortical column as a tuned receiver: a network mechanism for temporal-interference stimulation},
   pdfauthor={Giulio Ruffini, Borja Mercadal, Alex Just, Raul de Palma Aristides, Francesca Castaldo, Nir Grossman, Santiago Canals, Claudio Mirasso},
@@ -925,9 +925,15 @@ $1.5\times10^{-5}$~s for the $2$~kHz output spectrum. Halving each step changes 
 reported lock-in amplitudes by less than $1\%$. The $10$~kHz figures quoted in
 \S\ref{sec:khz} are analytic evaluations of Eq.~\eqref{eq:khz}, not simulations.
 
-For each measurement the system is settled for $10$--$16$~s (longer near the Hopf, where damping is weak) before a
-$3$--$20$~s measurement window; the resonance sweeps use a $20$~s window so the
-lock-in averages the beating in the autonomous regime. Parameter
+The resonance sweep in Fig.~\ref{fig:res} uses $10$~s of settling and a $20$~s
+measurement window. Long windows reduce transients from weakly damped modes and
+average beating when autonomous activity persists. Other runs use the windows
+specified in their scripts.
+The two-tone $2$~kHz example (Fig.~\ref{fig:khz_twotone}) uses $p=400$~s$^{-1}$,
+$C=135$, and $0.5$~mV per tone with $\tau=0.2$~ms. From a zero initial state,
+it settles for $4$~s and records $4$~s at $\Delta t=1.5\times10^{-5}$~s,
+sampling before each RK4 step. Its amplitude spectra use plain-mean subtraction
+and a Hann window. Parameter
 sweeps are vectorized: the state is an
 $(N,6)$ array advanced simultaneously for all $N$ parameter combinations, so a full
 resonance map runs in seconds.
@@ -1274,9 +1280,9 @@ column demodulates and resonates at the recovered alpha in the fast-access case
 ($\tau=0.2$~ms), as
 Eq.~\eqref{eq:khz} predicts (Fig.~\ref{fig:khz_direct}a). Driving the fast-element route
 with two \emph{genuine} tones at $f_{1,2}=1994.54$ and $2005.46$~Hz, centered near
-$2$~kHz and beating at $10.91$~Hz, the input carries $2.2\times10^{-13}$ of its spectral
-amplitude in the $8$--$14$~Hz band, i.e.\ none, while the output carries a line at the
-beat
+$2$~kHz and beating at $10.91$~Hz, the finite-window input spectrum has a maximum
+amplitude of $2.2\times10^{-13}$~mV in the $8$--$14$~Hz band, while the output
+carries a line at the beat
 (Fig.~\ref{fig:khz_twotone}), with the attenuation set by the analytic
 $|H_m|^2\!=\!0.137$ at $2$~kHz for $\tau=0.2$~ms. The kHz claim therefore rests on the
 two-tone waveform under the specified access assumption. The anatomical route is
@@ -1785,9 +1791,9 @@ Simulation code, cached results, and figure-generation scripts are provided at
 the public archive is linked through
 \href{https://doi.org/10.5281/zenodo.21009618}{Zenodo (doi:10.5281/zenodo.21009618)}.
 The repository \texttt{README} maps figures to their scripts and distinguishes
-recomputation from replotting cached data. The two-tone kHz illustration
-(Fig.~\ref{fig:khz_twotone}) can be replotted from its archived spectra, but its
-original producer and complete run parameters are unavailable. The LaNMM setup
+recomputation from replotting cached data. A reconstructed producer with explicit
+run settings reproduces every archived spectral bin of the two-tone kHz
+illustration (Fig.~\ref{fig:khz_twotone}) exactly. The LaNMM setup
 is a drawn schematic. The LaNMM carrier comparison has both measurement-window
 caches and a reproducible summary script. The code is released under CC-BY-4.0.
 % Release hold: align the public repository/archive with this reviewed draft before submission.
@@ -2173,7 +2179,7 @@ $P_1$, $0.5$ mV & $10$ s & $0.091$ & $25$ & $42$--$67$  & $52$\\
 
 The carrier peaks and aggregate ranges persist with the longer window, although
 individual normalized values change by up to $3.1$ percentage points for $P_2$
-drive and $9.7$ for $P_1$ drive. The smallest $S$ exceeds its mean field-free
+drive and $9.6$ for $P_1$ drive. The smallest $S$ exceeds its mean field-free
 background by factors of about $16$ and $8$, respectively, with the $3$~s window,
 and $62$ and $32$ with $10$~s. Some individual beat--carrier points remain near or below
 background; the comparison concerns the mean over beats, not each grid point.
@@ -2317,7 +2323,7 @@ compartments.}
 Two equal tones at $f_1=1994.54$ and $f_2=2005.46$~Hz, beating at approximately
 $10.9$~Hz, pass through the assumed low-pass ($\tau=0.2$~ms) into the recurrent column.
 \emph{(a)} The input amplitude spectrum has lines only at $f_1$ and $f_2$; in the
-$8$--$14$~Hz band it is $2.2\times10^{-13}$, zero to numerical precision.
+$8$--$14$~Hz band its maximum is $2.2\times10^{-13}$~mV.
 \emph{(b)} The output carries a demodulated line at the beat, $10.9$~Hz.}
 \label{fig:khz_twotone}
 \end{figure}

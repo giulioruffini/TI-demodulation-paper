@@ -2,9 +2,10 @@
 
 Renders the saved khz_twotone.npz run -- two genuine tones at 1994.54/2005.46 Hz
 through the fast-element filter (tau = 0.2 ms) into the recurrent JR column.
-This is a replot of the committed spectra. The original data-producing run and
-its full integration parameters are not archived; this script does not recompute it.
+The default input is the committed spectrum cache. Use --input to plot fresh
+spectra from khz_twotone_producer.py, which reproduces that cache bit for bit.
 """
+import argparse
 import os
 import numpy as np
 import matplotlib
@@ -20,7 +21,12 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 FIGS = os.environ.get("TN_FIGDIR") or os.path.join(HERE, "..", "figures")
 os.makedirs(FIGS, exist_ok=True)
 
-d = np.load(os.path.join(HERE, "khz_twotone.npz"))
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument("--input", default=os.path.join(HERE, "khz_twotone.npz"),
+                    help="Spectrum cache to render; default is the archived run")
+args = parser.parse_args()
+d = np.load(args.input)
+print("  spectrum input:", os.path.abspath(args.input))
 fI, PI, fV, PV = d["fI"], d["PI"], d["fV"], d["PV"]
 f1, f2, F0 = float(d["f1"]), float(d["f2"]), float(d["F0"])
 

@@ -1,5 +1,13 @@
 # Submission-readiness review — v0.14.6
 
+**Draft2 update (October 4).** Klaus verified the R6 integration; the maximum P1
+window difference is now rounded to 9.6 percentage points. The reconstructed kHz
+producer reproduces all seven stored arrays bit for bit in independent runs, and
+both runner modes use the intended data. R12's missing-producer gap is closed.
+See [the draft2 record](docs/revision_2026-10-04_v0150draft2.md). The earlier
+updates below describe their reviewed versions; author approval and declarations
+remain open.
+
 **October 4 repair update.** The findings below are the historical review of
 v0.14.6. They are addressed at the revised claim level in **v0.15.0-draft1**;
 see [the revision record](docs/revision_2026-10-04_v0150draft1.md) and

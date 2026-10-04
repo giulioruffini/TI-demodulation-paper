@@ -29,6 +29,7 @@ pip install numpy scipy matplotlib
 | `analyses_v2.py` | v2 computations → `analyses_v2.npz`: operating-point law, carrier sweep, 2-D resonance map (10 s / 8 s window), bifurcation diagram. |
 | `figures_v2.py` | v2 figures: concept schematic, bifurcation+sigmoid, 2-D map, carrier independence (+ synapse transfer function), operating-point law. |
 | `khz_analysis.py` | Carrier-frequency sweep to 10 kHz: direct coupling (flat) vs. membrane low-pass (1/fc² rolloff) → `fig_khz`. Answers "what happens at 1k/2k/10k Hz". |
+| `khz_twotone_producer.py` | Reconstructed 2 kHz two-tone run; `--compare` checks archived spectra, `--write` saves a separate fresh cache. |
 | `test_jr_demod.py` | Self-checks (derivatives, fixed point, square law, linearization control). |
 | `qif_short_tau_check.py` | Shorter-tau QIF/MPR comparison with fixed parameters or matched baseline rate/voltage; exact second-order beat response checked against direct integration. Run from the repository root with `.venv/bin/python code/qif_short_tau_check.py`; writes `docs/qif_short_tau_2026-10-02.json`. |
 | `current_state.md` | Project state / next steps. |
@@ -53,10 +54,17 @@ preserved. `--from-cache` runs only renderers, checks their required inputs, and
 rejects figures whose script also performs an inline simulation.
 
 The current resonance figure uses the stable sweep and plot modes; the cycle mode
-is retained for the older analysis but is not a prerequisite. The two-tone kHz
-figure can be replotted from the committed spectrum cache, but its original
-producer and full run parameters are missing. It is not an independently
-recomputable result in this archive. See the [figure table and provenance limits](../README.md#reproduce-the-figures).
+is retained for the older analysis but is not a prerequisite. The reconstructed
+`khz_twotone_producer.py` reproduces all seven arrays of the archived two-tone kHz
+cache exactly. Recomputing `fig_khz_twotone` writes a separate
+`khz_twotone_reproduced.npz` and plots it; `--from-cache` uses the preserved
+`khz_twotone.npz`. Settings are recorded in
+[the recovery note](r12_khz_twotone_2026-10-04.md). See the [figure table and provenance limits](../README.md#reproduce-the-figures).
+
+The draft2 check passes all 11 runner tests. Independent fresh and cached kHz runs
+produce identical figure images, and the fresh data match all seven archived
+arrays bit for bit. The original cache is unchanged. The comparison and runner
+logs are linked from the [integration record](revision_2026-10-04_v0150draft2.md).
 
 The October 4 reproduction check used a scratch tree containing tracked inputs.
 It regenerated the missing analyses and stable-resonance caches, then rendered the

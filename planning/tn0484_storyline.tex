@@ -1,6 +1,6 @@
 % TN0484 / WP0185: abstract and storyline. Build from the project root:
 %   ~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex
-% Map mode: rows follow the v0.15.0-draft1 manuscript order and numbering (TN build; the JNE build
+% Map mode: rows follow the v0.15.0-draft2 manuscript order and numbering (TN build; the JNE build
 % moves the appendices and figures S1--S12 to the supplement). Prepared 2026-10-03.
 \documentclass[11pt,a4paper,landscape]{article}
 \usepackage[T1]{fontenc}
@@ -18,7 +18,7 @@
 \newcommand{\wpnumber}{TN0484 / WP0185}
 \newcommand{\papertitle}{The cortical column as a tuned receiver}
 \newcommand{\storylinedate}{4 October 2026}
-\newcommand{\baselinelabel}{v0.15.0-draft1}
+\newcommand{\baselinelabel}{v0.15.0-draft2}
 \newcommand{\abstractfile}{tn0484_abstract.tex}
 \newcommand{\storylineauthors}{Giulio Ruffini}
 % -----------------------------------------------------------------------------
@@ -69,7 +69,7 @@
 \end{minipage}
 \end{center}
 \vspace{5mm}
-{\footnotesize\color{muted}The abstract is the TN abstract of v0.15.0-draft1. K authorized the weak-field
+{\footnotesize\color{muted}The abstract is the TN abstract of v0.15.0-draft2. K authorized the weak-field
 effective-response framing on 3 October 2026; the JNE build keeps a structured abstract with
 the same claims. Section and figure order remain unchanged from v0.14.4. The placement
 decisions on the last page remain open; this revision does not cut or reorder content.}
@@ -243,7 +243,7 @@ lock-in read-out and the pinned-operating-point protocol recur across models.
 \midrule
 \place{\S4.3--4.4}{Carrier independence, kHz roll-off, curvature law}
 & Flat response over 25--300~Hz at fixed polarization; $1/f_c^2$ roll-off for 16~ms, retained
-  access for 0.2~ms; two tones at 2~kHz with $2.2\times10^{-13}$ input leakage. Curvature law to
+  access for 0.2~ms; two tones at 2~kHz with $2.2\times10^{-13}$~mV input spectral residue. Curvature law to
   0.9\%; slope 1.99; linearization collapses the response $634\times$; two-tone/AM ratio
   $1.0000$ at 0.02~mV and $0.988$ at 1~mV.
 & Verifies the static detector predictions. Retain the one-point open-loop scope of the
@@ -364,6 +364,6 @@ the review recommends S11 first and retaining all 22 figures. None of these plac
 changes has been executed. K authorized the weak-field framing and the corresponding
 abstract revision in v0.14.5. The current draft qualifies the gain and capture claims and
 replaces the LaNMM percentages with a documented off-alpha comparison. The kHz two-tone cache
-remains replot-only. Coauthor approval, declarations, and release alignment remain pending;
+has a reconstructed producer that reproduces every archived spectral bin exactly. Coauthor approval, declarations, and release alignment remain pending;
 see \path{todo.md}.}
 \end{document}

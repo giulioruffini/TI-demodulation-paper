@@ -27,6 +27,7 @@ code/analyses_v2.npz
 code/sweep_hi_stable.npz
 code/sweep_hi_cycle.npz
 code/tacs_jsweep.npz
+code/khz_twotone_reproduced.npz
 
 # Non-manuscript diagnostic outputs
 figures/fig_lanmm_checker.*

@@ -1,0 +1,19 @@
+Figure directory: /tmp/tn0484_v0150draft2/repro/figures
+Mode: recompute available data, then plot
+Data producers write caches in: /tmp/tn0484_v0150draft2/repro/code
+>>> data: khz_twotone: khz_twotone_producer.py --write khz_twotone_reproduced.npz
+operating point v*=8.599 mV, gamma=1.740 s^-1, F0=10.914393 Hz, f1=1994.542804, f2=2005.457196; settle 266666 steps, measure 266666 steps; 41 s
+wrote khz_twotone_reproduced.npz
+    ok  [41.0s]
+
+>>> make_khz_twotone_fig: make_khz_twotone_fig.py --input khz_twotone_reproduced.npz
+  spectrum input: /private/tmp/tn0484_v0150draft2/repro/code/khz_twotone_reproduced.npz
+  [figcheck] make_khz_twotone_fig.py: clean
+  input 8-14 Hz max Fourier amplitude : 2.243e-13
+  output line at 11.00 Hz : 7.616e-02
+  wrote fig_khz_twotone
+    ok  [1.7s]
+
+SUMMARY
+  ok                             41.0s  data: khz_twotone
+  ok                              1.7s  make_khz_twotone_fig

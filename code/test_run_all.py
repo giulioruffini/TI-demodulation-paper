@@ -34,6 +34,21 @@ class FigurePlanTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'No cache-only renderer'):
             run_all.resolve_steps(['fig_khz_direct'], from_cache=True)
 
+    def test_khz_recomputation_plots_the_new_spectra(self):
+        plan = run_all.resolve_steps(['fig_khz_twotone'])
+        self.assertEqual([step[0] for step in plan],
+                         ['data: khz_twotone', 'make_khz_twotone_fig'])
+        output = plan[0][2][plan[0][2].index('--write') + 1]
+        source = plan[1][2][plan[1][2].index('--input') + 1]
+        self.assertEqual(source, output)
+        self.assertNotEqual(source, 'khz_twotone.npz')
+
+    def test_khz_cache_mode_uses_the_archived_spectra(self):
+        plan = run_all.resolve_steps(['fig_khz_twotone'], from_cache=True)
+        self.assertEqual([step[0] for step in plan], ['make_khz_twotone_fig'])
+        self.assertEqual(plan[0][2], [])
+        self.assertEqual(run_all.CACHE_INPUTS[plan[0][0]], ('khz_twotone.npz',))
+
     def test_unknown_figure_does_not_succeed_silently(self):
         with self.assertRaisesRegex(ValueError, 'No generator'):
             run_all.resolve_steps(['fig_typo'])

@@ -1,0 +1,62 @@
+{
+  "committed_cache_sha256": "68039e10262c1f3c5a5e92aeb1ec6f0b2595e273dcea091a368777964446b41b",
+  "original_file_unchanged": true,
+  "all_stored_arrays_bit_exact": {
+    "fI": true,
+    "PI": true,
+    "fV": true,
+    "PV": true,
+    "f1": true,
+    "f2": true,
+    "F0": true
+  },
+  "input_band_max_mV": 2.2430135031813757e-13,
+  "input_tone_peak_mV": 0.49266371179099927,
+  "input_band_to_peak_ratio": 4.552828733878659e-13,
+  "runner_arrays_bit_exact": {
+    "fI": true,
+    "PI": true,
+    "fV": true,
+    "PV": true,
+    "f1": true,
+    "f2": true,
+    "F0": true
+  },
+  "runner_archived_cache_unchanged": true,
+  "rendered_png_sha256": {
+    "manuscript": "94e4697335a93292cd05c12fb480b785445568753e3f64ccf9e99552145b47e1",
+    "recomputed": "94e4697335a93292cd05c12fb480b785445568753e3f64ccf9e99552145b47e1",
+    "cached": "94e4697335a93292cd05c12fb480b785445568753e3f64ccf9e99552145b47e1"
+  },
+  "all_pngs_identical": true,
+  "comparison": {
+    "n_bins": 133334,
+    "n_bins_cache": 133334,
+    "f_grid_max_abs_diff": 0.0,
+    "f1_diff": 0.0,
+    "f2_diff": 0.0,
+    "F0_diff": 0.0,
+    "PI_max_abs_diff": 0.0,
+    "PI_max": 0.49266371179099927,
+    "PV_max_abs_diff": 0.0,
+    "PV_max": 0.07615781994611578,
+    "PV_rel_diff_at_line": 0.0,
+    "line_bin_Hz": 11.00002750006875,
+    "line_amp_mV": 0.07615781994611578,
+    "line_amp_cache_mV": 0.07615781994611578,
+    "input_8_14_max": 2.2430135031813757e-13,
+    "input_8_14_max_cache": 2.2430135031813757e-13,
+    "PV_DC_bin": 0.0007763133322155913,
+    "PV_DC_bin_cache": 0.0007763133322155913,
+    "settings": {
+      "eps": 0.5,
+      "t_set": 4.0,
+      "sample": "before",
+      "demean": "plain",
+      "fc": 2000.0,
+      "tau": 0.0002,
+      "dt": 1.5e-05,
+      "t_meas": 4.0
+    }
+  }
+}

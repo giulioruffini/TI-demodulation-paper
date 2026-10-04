@@ -10,17 +10,25 @@ Archived at Zenodo: **[doi:10.5281/zenodo.21009618](https://doi.org/10.5281/zeno
 Licensed **CC-BY-4.0** (see [`LICENSE`](LICENSE)); machine-readable citation in
 [`CITATION.cff`](CITATION.cff).
 
-The current local draft is **v0.15.0-draft1** (October 4, 2026), in
+The current local draft is **v0.15.0-draft2** (October 4, 2026), in
 [TN0484_envelope_demodulation.pdf](TN0484_envelope_demodulation.pdf) and
 [TN0484_jne.pdf](TN0484_jne.pdf). As checked on October 2,
 [Calliope WP0185](https://calliope.bcom.one/papers/WP0185) still lists v0.12.0
 (July 21); the newer local draft remains pending Giulio's review and release.
 
+v0.15.0-draft2 integrates the reconstructed kHz two-tone producer, which matches
+all seven archived arrays bit for bit. The figure runner plots freshly generated
+spectra when recomputing and uses the archived cache with `--from-cache`. It corrects
+the input spectral-amplitude units, documents the 4 s settling/4 s measurement run,
+and rounds the P1 window difference to 9.6 percentage points. Record:
+[docs/revision_2026-10-04_v0150draft2.md](docs/revision_2026-10-04_v0150draft2.md);
+redline against draft1:
+[docs/redline_v0150draft1_to_v0150draft2.pdf](docs/redline_v0150draft1_to_v0150draft2.pdf).
+
 v0.15.0-draft1 integrates Klaus's reconstructed LaNMM lock-in comparison and
 corrects claim scope, gain units, and figure-reproduction paths. The old 7%/25%
-claims are replaced by a defined beat average and two-window table. The kHz two-tone
-illustration remains replot-only because its producer and complete settings are
-unavailable. Section order and all 22 figures are retained. Record:
+claims are replaced by a defined beat average and two-window table. Its kHz producer
+gap is resolved in draft2. Section order and all 22 figures are retained. Record:
 [docs/revision_2026-10-04_v0150draft1.md](docs/revision_2026-10-04_v0150draft1.md);
 redline against v0.14.6:
 [docs/redline_v0146_to_v0150draft1.pdf](docs/redline_v0146_to_v0150draft1.pdf).
@@ -56,7 +64,7 @@ with a [redline against v0.14.2](docs/redline_v0142_to_v0143.pdf).
 [planning/tn0484_storyline.tex](planning/tn0484_storyline.tex) (section-by-section argument
 map), compiled to [build/storyline/tn0484_storyline.pdf](build/storyline/tn0484_storyline.pdf)
 with `~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex`.
-It maps v0.15.0-draft1, with the weak-field framing authorized by K and section order unchanged.
+It maps v0.15.0-draft2, with the weak-field framing authorized by K and section order unchanged.
 The three placement decisions remain open: Theory order, LaNMM methods, and figure
 promotion. The
 [general practice](../../giulio-personal-handbook/dos-and-donts.md#abstract-and-storyline-planning)
@@ -140,6 +148,7 @@ cd code
 python run_all.py --list
 python run_all.py --only fig_resonance,fig_concept --dry-run
 python run_all.py --only fig_resonance --figdir /tmp/tn0484-figures
+python run_all.py --only fig_khz_twotone --figdir /tmp/tn0484-khz-figures
 python run_all.py --from-cache --only fig_jcurve,fig_khz_twotone --figdir /tmp/tn0484-figures
 python run_all.py --figdir /tmp/tn0484-figures  # all available steps; heavy
 ```
@@ -153,8 +162,11 @@ figure directory is `figures/`, whose files are overwritten unless redirected.
 simulation or a data producer. Missing inputs and requests without a cache-only
 renderer fail before execution. The uncommitted `analyses_v2.npz` and
 `sweep_hi_stable.npz` must first be generated to replot their figures from cache.
-The two-tone kHz figure is available only as a replot: its original producing run
-and full integration parameters are absent. The LaNMM setup diagram is hand-drawn.
+The reconstructed two-tone kHz producer writes `code/khz_twotone_reproduced.npz`;
+the renderer uses that fresh file in recomputation mode. The archived
+`code/khz_twotone.npz` is preserved and supplies `--from-cache` mode. The settings
+and exact comparison are recorded in [the recovery note](docs/r12_khz_twotone_2026-10-04.md).
+The LaNMM setup diagram is hand-drawn.
 The dependency and failure checks run with `python code/test_run_all.py` from the
 repository root.
 
@@ -162,8 +174,8 @@ repository root.
 
 22 figures are included by the manuscript. The table records the available scripts
 and inputs; it does not assert a fresh rerun of every numerical calculation.
-**Available** means the producer or renderer is present; **replot only** marks a
-missing original data-producing run.
+**Available** means the producer or renderer is present; it does not imply
+that every simulation was rerun during this revision.
 
 | figure | script | data dep. | scipy | status |
 |---|---|---|---|---|
@@ -175,7 +187,7 @@ missing original data-producing run.
 | fig_resonance | `rerun_resonance.py` (stable/plot) | sweep_hi_stable.npz† | – | Available |
 | fig_khz | `khz_analysis.py` | (inline) | yes | Available |
 | fig_khz_direct | `khz_direct.py` (imports `timing_not_rate`) | (inline) | – | Available |
-| fig_khz_twotone | `make_khz_twotone_fig.py` | khz_twotone.npz ‡ | – | **Replot only** |
+| fig_khz_twotone | `khz_twotone_producer.py` + `make_khz_twotone_fig.py` | fresh khz_twotone_reproduced.npz; archived khz_twotone.npz ‡ | – | Available; exact cache reproduction verified |
 | fig_jcurve | `make_jfig.py` | jcurve_main.npz, jcurve_res.npz ‡ | (engine) | Available |
 | fig_nmm2_map | `nmm2_ping.py` | (inline grid) | – | Available |
 | fig_nmm2_resonance_twotone | `make_nmm2_twotone_fig.py` | (inline grid) | – | Available |
