@@ -10,11 +10,18 @@ Archived at Zenodo: **[doi:10.5281/zenodo.21009618](https://doi.org/10.5281/zeno
 Licensed **CC-BY-4.0** (see [`LICENSE`](LICENSE)); machine-readable citation in
 [`CITATION.cff`](CITATION.cff).
 
-The current local draft is **v0.14.5** (October 3, 2026), in
+The current local draft is **v0.14.6** (October 4, 2026), in
 [TN0484_envelope_demodulation.pdf](TN0484_envelope_demodulation.pdf) and
 [TN0484_jne.pdf](TN0484_jne.pdf). As checked on October 2,
 [Calliope WP0185](https://calliope.bcom.one/papers/WP0185) still lists v0.12.0
 (July 21); the newer local draft remains pending Giulio's review and release.
+
+v0.14.6 reviews v0.14.5 and applies four corrections: the shared-amplifier consequence is
+restored in both abstracts, the gate-filter sentence states both halves of K's position,
+the Cifra clause says what it is for, and the "not competing explanations" sentence returns
+to the Discussion; $\chi^{(2)}$ enters Table 4. Record:
+[docs/revision_2026-10-04_v0146.md](docs/revision_2026-10-04_v0146.md); redline against
+v0.14.5: [docs/redline_v0145_to_v0146.pdf](docs/redline_v0145_to_v0146.pdf).
 
 v0.14.5 frames weak-field mixing as an effective second-order response that combines
 cellular contributions, with QIF as a derived realization. It explains the single-cell

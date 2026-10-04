@@ -89,7 +89,7 @@
 \hypersetup{
   pdftitle={The cortical column as a tuned receiver: a network mechanism for temporal-interference stimulation},
   pdfauthor={Giulio Ruffini, Borja Mercadal, Alex Just, Raul de Palma Aristides, Francesca Castaldo, Nir Grossman, Santiago Canals, Claudio Mirasso},
-  pdfsubject={TN0484 / WP0185, version 0.14.5, October 3, 2026}
+  pdfsubject={TN0484 / WP0185, version 0.14.6, October 4, 2026}
 }
 
 \begin{document}
@@ -141,7 +141,7 @@ a network mechanism for temporal-interference stimulation}\\[10pt]
 & Santiago Canals, and Claudio Mirasso \\
 \textbf{Affiliations:} & Neuroelectrics\,/\,BCOM\,/\,IFISC (UIB-CSIC)\,/\,IN (UMH-CSIC)\\
 & Imperial College London (Brain Sciences and UK Dementia Research Institute) \\
-\textbf{Date:} & 2026-10-03 \qquad \textbf{Version:} 0.14.5 \\
+\textbf{Date:} & 2026-10-04 \qquad \textbf{Version:} 0.14.6 \\
 \textbf{DOI:} & \href{https://doi.org/10.5281/zenodo.21009618}{10.5281/zenodo.21009618} \\
 \end{tabular}\\[4pt]
 {\color{neblue}\rule{\textwidth}{1pt}}
@@ -189,8 +189,8 @@ in the mean field and in a network of $8000$ neurons per population.
 \textbf{Significance.} Fast cellular access and slow circuit resonance can coexist in
 one population model. The weak-input product law makes an envelope-only dose map
 conditional on the transduction mechanism. TI and direct low-frequency stimulation
-share the amplifier when effective input coupling, readout, and state are matched.
-The analysis concerns weak modulation of ongoing activity; biological access and
+share the amplifier when effective input coupling, readout, and state are matched, so
+resonance alone confers no TI efficiency advantage. The analysis concerns weak modulation of ongoing activity; biological access and
 absolute response at human field strengths remain unresolved.
 
 \else
@@ -205,14 +205,15 @@ An exact quadratic integrate-and-fire mean field provides a derived realization:
 static rate curve emerges when membrane relaxation is fast relative to the input, while
 synapses remain dynamic. Outside that limit the mixing coefficient is frequency
 dependent. Fast cellular access and slow circuit resonance can therefore coexist, with
-membrane attenuation counted once. Near a Hopf bifurcation, the network amplifies the
+membrane attenuation entering once, through access. Near a Hopf bifurcation, the network amplifies the
 generated beat as $1/\gamma$ within linear response, where $\gamma$ is the modal damping.
 Coupling sweeps separate this gain from leading-order beat generation. Beat-locked rate
 modulation grows faster than the mean-rate change in the mean field and in a spiking
 network of $8000$ neurons per population. In this weak-input regime, the carrier-product
 law makes an envelope-only dose map conditional on the transduction mechanism. TI and
 direct low-frequency stimulation share the amplifier when effective input coupling,
-readout, and operating state are matched. The analysis concerns weak modulation of
+readout, and operating state are matched, so resonance alone gives TI no efficiency
+advantage. The analysis concerns weak modulation of
 ongoing activity; biological access and the absolute response at human field strengths
 remain unresolved.
 \fi
@@ -857,9 +858,11 @@ at low frequency can respond differently to the carrier. A somatic charging time
 alone therefore does not determine every extracellular-field response mode.
 The periaxonal and field-charging evidence is considered in \S\ref{sec:discussion}.
 
-Channel kinetics contribute to the effective dynamic mixing response. An
-additional gate filter would duplicate any dynamics already included there;
-neither a static sigmoid nor QIF specifies a universal $1$~kHz gate cutoff.
+Channel kinetics contribute to the effective dynamic mixing response. A gate
+filter added outside the detector must not duplicate dynamics the detector already
+contains, and where the detector lacks them, as QIF lacks sodium-channel kinetics,
+the filter needs its own model or measurement; neither a static sigmoid nor QIF
+specifies a universal $1$~kHz gate cutoff.
 Equation~\eqref{eq:crossover} gives the QIF realization of this response.
 Carrier sweeps can constrain the
 combined access and mixing response, while beat-frequency sweeps probe the
@@ -1585,7 +1588,8 @@ be combined in the mixing coefficient; identifying each channel is unnecessary
 for this leading-order account. QIF provides a derived realization of that
 structure. This connects cellular mixing \cite{mirzakhalili2020,luff2024mixer}
 with the network dependence seen in slices and simulations
-\cite{caldas2024,karimi2024,soroushi2025}.
+\cite{caldas2024,karimi2024,soroushi2025}. Cellular mixing and circuit amplification
+are therefore not competing explanations.
 
 Small amplitude and fast relaxation justify different reductions. Weak input
 permits a second-order expansion of the dynamic response. Fast membrane
@@ -1598,9 +1602,12 @@ while its magnitude, phase, and frequency dependence remain model-specific.
 
 Fast access has several possible anatomical and electrical origins. Nodes and the
 AIS contain voltage-gated channels capable of nonlinear rectification
-\cite{mirzakhalili2020,wang2023}; direct field--protein structural effects are
-reviewed mainly at higher fields, with fields below $0.1$~kV/m outside that
-review's scope \cite{cifra2026}. Presynaptic terminals can polarize more strongly
+\cite{mirzakhalili2020,wang2023}. At stimulation fields of order $1$~V/m these
+channels respond through membrane polarization, not through direct action of the
+field on the protein: the structural effects reviewed by Cifra et al.\
+\cite{cifra2026} require fields from $10$~kV/m to GV/m, and that review places
+fields below $0.1$~kV/m outside its scope, where it expects direct effects to be
+negligible against thermal noise. Presynaptic terminals can polarize more strongly
 than somata \cite{rahman2013,aberra2023,chakraborty2018}, but small size alone does
 not imply fast charging: for an isopotential membrane, the product of specific
 resistance and capacitance is independent of area. Conductance, geometry, and the
@@ -1880,6 +1887,7 @@ $\tau_{\rm rev}=1/\gamma$ & network reverberation time & s \\
 $\mathcal{Q}=\omega_0/2\gamma$ & near-Hopf resonance quality factor & -- \\
 $G(\Omega)$ & response to a generated beat drive; $\propto1/\gamma$ near resonance & input/output dependent \\
 $D$ & beat-source coefficient for the injection convention in Eq.~\eqref{eq:receiver} & model-dependent \\
+$\chi^{(2)}(\omega_2,-\omega_1)$ & effective second-order coefficient of the generated rate at fixed synaptic input, \S\ref{sec:coupling}; $\Sig''(v^*)/2$ in the memoryless limit & model-dependent \\
 $A_\Omega$ & demodulated response: lock-in amplitude at $\Omega$ of $v$ (mV) or, in \S\ref{sec:timing} and the QIF network, of a rate & mV or s$^{-1}$ \\
 $Y_\Omega,\,Y_{\rm LF}$ & detector (pre-network) output at $\Omega$ and at baseband, \S\ref{sec:transduction} & -- \\
 $\mathcal{M}[\cdot]$ & peak-to-peak excursion of a periodic quantity, Eq.~\eqref{eq:reweight} & -- \\

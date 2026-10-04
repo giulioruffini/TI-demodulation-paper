@@ -1,5 +1,20 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v1.74 — v0.14.6: review of Kaiti's v0.14.5, four corrections (2026-10-04)
+Giulio asked whether v0.14.5 needed revision. Kaiti's weak-field effective-response
+framing (authorized by K) is kept; its chi^(2) definition, F(Q) derivation, R10 fix,
+Plovie scoping (checked against the published abstract), and Cifra entry are correct.
+Corrected: the shared-amplifier consequence ("resonance alone gives TI no efficiency
+advantage") restored in both abstracts; the 2.6 gate-filter sentence now states both
+halves of K's position (no duplication, and its own model where the detector lacks the
+kinetics); the Cifra clause says what it is for (polarization route, not direct
+field-protein action; 10 kV/m to GV/m; below 0.1 kV/m outside the review's scope);
+the "not competing explanations" sentence restored in the Discussion; chi^(2) added to
+Table 4; planning abstract regenerated from the manuscript with its header. Builds
+47/31/18, clean. Record: `docs/revision_2026-10-04_v0146.md`; redline:
+`docs/redline_v0145_to_v0146.pdf`. Holds unchanged; Kaiti's open R-items and the three
+placement decisions wait for Giulio.
+
 ## v1.73 — v0.14.5: effective weak-field mixing (2026-10-03)
 At Giulio's instruction, the paper now leads with a smooth weak-input response whose
 nonzero second-order term combines cellular contributions to mixing. QIF supplies a

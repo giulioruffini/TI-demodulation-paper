@@ -50,7 +50,7 @@ identifiers:
     description: "Zenodo archive of this repository (concept DOI, resolves to latest version)"
 repository-code: "https://github.com/giulioruffini/TI-demodulation-paper"
 license: CC-BY-4.0
-version: "0.14.5"
+version: "0.14.6"
 # Local draft; date-released will be set when the held release is authorized.
 keywords:
   - temporal interference
