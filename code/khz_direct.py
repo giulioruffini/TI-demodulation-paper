@@ -20,7 +20,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from timing_not_rate import A, a, B, b, v0, e0, rr, Sigm, jac_eig, _fp_v
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-FIGS = os.path.join(os.path.dirname(HERE), "figures")
+FIGS = os.environ.get("TN_FIGDIR") or os.path.join(os.path.dirname(HERE), "figures")
 NEBLUE = "#0a4f8c"; NEGREEN = "#1a9850"; NERED = "#b3361f"; GR = "#555555"
 C = 135.0; p = 400.0; m = 1.0; eps = 0.5
 C1, C2, C3, C4 = C, 0.8*C, 0.25*C, 0.25*C
@@ -73,6 +73,7 @@ def trace(fc, tau, dt, t_set, t_meas):
     return vv
 
 if __name__ == "__main__":
+    os.makedirs(FIGS, exist_ok=True)
     quick = "--quick" in sys.argv
     vfp, g0, w0 = jac_eig(p, C); F0 = w0/(2*np.pi)
     Om = 2*np.pi*F0

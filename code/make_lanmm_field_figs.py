@@ -6,7 +6,7 @@ Replaces the rate-coupled figures fig_lanmm_arnold_{p1,p2}, which were confounde
 the zero-clip on the external input rate (see the module docstring of
 lanmm_field_tongues.py). Layout matches the originals: a 2x2 panel block, P1 and P2
 alpha enhancement over the epsilon = 0 baseline, tongue on top and carrier map below,
-with the 1:1 frequency-capture contour drawn on panel (a).
+with the frequency-dominance contour drawn on panel (a).
 
 Usage:  python make_lanmm_field_figs.py [--wave twotone|am]
 """
@@ -21,7 +21,7 @@ import figstyle
 figstyle.apply()
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-FIGDIR = os.path.join(os.path.dirname(HERE), "figures")
+FIGDIR = os.environ.get("TN_FIGDIR") or os.path.join(os.path.dirname(HERE), "figures")
 
 
 def _imshow(ax, Z, x, y, letter, ylabel):
@@ -41,8 +41,8 @@ def _imshow(ax, Z, x, y, letter, ylabel):
     plt.colorbar(im, ax=ax, label="alpha band-power change (on$-$off, a.u.)")
 
 
-def capture_width(F1, df, eps):
-    """1:1 frequency-capture width per amplitude row, in Hz."""
+def dominance_width(F1, df, eps):
+    """Frequency-dominance width per amplitude row, in Hz; not a phase test."""
     step = df[1] - df[0]
     out = []
     for i in range(len(eps)):
@@ -81,7 +81,7 @@ def make(target, wave):
     plt.close(fig)
 
     # numbers quoted in the caption
-    w = capture_width(F1, df, eps)
+    w = dominance_width(F1, df, eps)
     j = int(np.argmin(np.abs(df - 10.0)))
     print(f"[{target} {wave}]")
     print(f"  tongue peak at eps={eps[-1]:.1f} mV: Delta f = {df[np.argmax(Pt1[-1])]:.2f} Hz")

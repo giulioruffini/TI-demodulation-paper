@@ -84,7 +84,7 @@ the amplifier when effective coupling, readout, and operating state are matched.
 ├── requirements.txt                       # pinned Python deps (numpy/scipy/matplotlib + ...)
 ├── figures/                               # fig_*.pdf (used by LaTeX) + fig_*.png (preview)
 ├── code/                                  # all simulation/analysis code
-│   ├── run_all.py                         # ONE-COMMAND reproduce of every figure
+│   ├── run_all.py                         # figure runner with dependency planning
 │   ├── figstyle.py                        # shared house style (palette + apply() + panel())
 │   ├── archive/                           # superseded/dead scripts (not in the live pipeline)
 │   └── ...                                # generators + engines (see table below)
@@ -120,50 +120,64 @@ when references are unchanged.
 
 ## Reproduce the figures
 
-One command regenerates everything, in dependency order, into `figures/`:
+The driver runs the available data producers before their figure generators.
+Selecting a figure with `--only` includes its prerequisites. Scripts that draw a
+group of figures still draw that whole group. Use `--dry-run` to inspect the plan
+without running calculations or writing files:
 
 ```bash
 cd code
-python run_all.py                  # full reproduce -> ../figures/ (heavy; overwrites)
-python run_all.py --figdir /tmp/f  # preview into a scratch dir (figures/ untouched)
-python run_all.py --list           # print the figure->script map and exit
-python run_all.py --only fig_jcurve,fig_khz   # rebuild a subset
+python run_all.py --list
+python run_all.py --only fig_resonance,fig_concept --dry-run
+python run_all.py --only fig_resonance --figdir /tmp/tn0484-figures
+python run_all.py --from-cache --only fig_jcurve,fig_khz_twotone --figdir /tmp/tn0484-figures
+python run_all.py --figdir /tmp/tn0484-figures  # all available steps; heavy
 ```
 
-Every generator honors the `TN_FIGDIR` env var (or `--figdir`) and defaults to
-`../figures/`. Data producers write `.npz` into `code/`; six of these are committed
-so the dependent figures can be rebuilt without re-running the (slow) sweeps.
+`--figdir` (or `TN_FIGDIR`) redirects figure files. **It does not redirect data
+caches:** simulations write into `code/`, including tracked `.npz` files. Run
+recomputation in a separate checkout if those files must be preserved. The default
+figure directory is `figures/`, whose files are overwritten unless redirected.
 
-### Figure → script table (verified)
+`--from-cache` only runs renderers with existing inputs; it never runs an inline
+simulation or a data producer. Missing inputs and requests without a cache-only
+renderer fail before execution. The uncommitted `analyses_v2.npz` and
+`sweep_hi_stable.npz` must first be generated to replot their figures from cache.
+The two-tone kHz figure is available only as a replot: its original producing run
+and full integration parameters are absent. The LaNMM setup diagram is hand-drawn.
+The dependency and failure checks run with `python code/test_run_all.py` from the
+repository root.
 
-22 figures are included by the manuscript; the table below is generated against the
-`\includegraphics` list and is current as of v0.14.0 (2026-09-22). Status legend:
-**OK** = generator writes to `figures/` and runs from committed inputs; **gap** = no
-working generator.
+### Figure → script table
+
+22 figures are included by the manuscript. The table records the available scripts
+and inputs; it does not assert a fresh rerun of every numerical calculation.
+**Available** means the producer or renderer is present; **replot only** marks a
+missing original data-producing run.
 
 | figure | script | data dep. | scipy | status |
 |---|---|---|---|---|
-| fig_concept | `figures_v2.py` | analyses_v2.npz† | – | OK |
-| fig_bifurcation_sigmoid | `figures_v2.py` | analyses_v2.npz†, jr_bifurcation.npz‡ | – | OK |
-| fig_carrier_independence | `figures_v2.py` | analyses_v2.npz† | – | OK |
-| fig_demodulation_twotone | `jr_twotone_figs.py` | (inline) | – | OK |
-| fig_curvature_twotone | `jr_twotone_figs.py` | (inline) | – | OK |
-| fig_resonance | `rerun_resonance.py` (stable/cycle/plot) | sweep_hi_{stable,cycle}.npz | – | OK |
-| fig_khz | `khz_analysis.py` | (inline) | yes | OK |
-| fig_khz_direct | `khz_direct.py` (imports `timing_not_rate`) | (inline) | – | OK |
-| fig_khz_twotone | `make_khz_twotone_fig.py` | khz_twotone.npz ‡ | – | OK |
-| fig_jcurve | `make_jfig.py` | jcurve_main.npz, jcurve_res.npz ‡ | (engine) | OK |
-| fig_nmm2_map | `nmm2_ping.py` | (inline grid) | – | OK |
-| fig_nmm2_resonance_twotone | `make_nmm2_twotone_fig.py` | (inline grid) | – | OK |
-| fig_nmm2_jcurve | `make_nmm2_jfig.py` | nmm2_jcD.npz ‡ | – | OK |
-| fig_lanmm_field_p1_twotone | `make_lanmm_field_figs.py` | lanmm_field_P1_twotone.npz ‡ | – | OK |
-| fig_lanmm_field_p2_twotone | `make_lanmm_field_figs.py` | lanmm_field_P2_twotone.npz ‡ | – | OK |
-| fig_timing_not_rate | `make_timing_fig.py` | timing_not_rate.npz ‡ | – | OK |
-| fig_mpr_crossover | `mpr_crossover_fig.py` | ping_fast_carrier_check.json ‡ (from `ping_fast_carrier_check.py`) | yes | OK |
-| fig_qif_raster_twotone | `make_qif_figs.py` | qif_raster_twotone.npz ‡ | – | OK |
-| fig_qif_timing_twotone | `make_qif_figs.py` | qif_raster_twotone.npz ‡ | – | OK |
-| fig_tacs_jcurve | `tacs_jsweep.py` | tacs_jsweep.npz | – | OK |
-| fig_entrainment | `make_entrain_fig.py` | entrain{,_b,_crit}.npz ‡ | – | OK |
+| fig_concept | `figures_v2.py` | analyses_v2.npz† | – | Available |
+| fig_bifurcation_sigmoid | `figures_v2.py` | analyses_v2.npz†, jr_bifurcation.npz‡ | – | Available |
+| fig_carrier_independence | `figures_v2.py` | analyses_v2.npz† | – | Available |
+| fig_demodulation_twotone | `jr_twotone_figs.py` | (inline) | – | Available |
+| fig_curvature_twotone | `jr_twotone_figs.py` | (inline) | – | Available |
+| fig_resonance | `rerun_resonance.py` (stable/plot) | sweep_hi_stable.npz† | – | Available |
+| fig_khz | `khz_analysis.py` | (inline) | yes | Available |
+| fig_khz_direct | `khz_direct.py` (imports `timing_not_rate`) | (inline) | – | Available |
+| fig_khz_twotone | `make_khz_twotone_fig.py` | khz_twotone.npz ‡ | – | **Replot only** |
+| fig_jcurve | `make_jfig.py` | jcurve_main.npz, jcurve_res.npz ‡ | (engine) | Available |
+| fig_nmm2_map | `nmm2_ping.py` | (inline grid) | – | Available |
+| fig_nmm2_resonance_twotone | `make_nmm2_twotone_fig.py` | (inline grid) | – | Available |
+| fig_nmm2_jcurve | `make_nmm2_jfig.py` | nmm2_jcD.npz ‡ | – | Available |
+| fig_lanmm_field_p1_twotone | `make_lanmm_field_figs.py` | lanmm_field_P1_twotone.npz ‡ | – | Available |
+| fig_lanmm_field_p2_twotone | `make_lanmm_field_figs.py` | lanmm_field_P2_twotone.npz ‡ | – | Available |
+| fig_timing_not_rate | `make_timing_fig.py` | timing_not_rate.npz ‡ | – | Available |
+| fig_mpr_crossover | `mpr_crossover_fig.py` | ping_fast_carrier_check.json ‡ (from `ping_fast_carrier_check.py`) | yes | Available |
+| fig_qif_raster_twotone | `make_qif_figs.py` | qif_raster_twotone.npz ‡ | – | Available |
+| fig_qif_timing_twotone | `make_qif_figs.py` | qif_raster_twotone.npz ‡ | – | Available |
+| fig_tacs_jcurve | `tacs_jsweep.py` | tacs_jsweep.npz | – | Available |
+| fig_entrainment | `make_entrain_fig.py` | entrain{,_b,_crit}.npz ‡ | – | Available |
 | fig_lanmm_setup | — | — | – | **gap**: hand-drawn schematic |
 
 Not included by the manuscript, kept in the repository only: `fig_lanmm_resonance` and
@@ -173,11 +187,19 @@ on why; `fig_lanmm_arnold_p1`/`_p2` (`lanmm_arnold_tongues.py`), superseded by t
 the AM-surrogate control of Fig. 4d can be reproduced; and `fig_lanmm_checker.png`, a
 diagnostic (gitignored).
 
-† `analyses_v2.npz` is **not** committed — `run_all.py` regenerates it via `analyses_v2.py` first.
-‡ committed `.npz` (figure rebuildable without re-running the sweep).
+† These caches are not committed. `run_all.py` includes their producers when
+recomputing the corresponding figures, including when `--only` is used.
+‡ Committed data: the corresponding renderer can reuse it without rerunning the sweep.
 
-The only remaining **gap** is `fig_lanmm_setup`, an intentionally hand-drawn schematic.
-(`fig_lanmm_arnold_p1/p2` additionally need the external `lanmmv11` module to re-run.)
+`khz_twotone.npz`, introduced in commit `a7d6e6f`, contains the input and output
+spectra and `f1`, `f2`, and `F0`. It has no trajectory, time step, settling duration,
+stimulus amplitude, or complete model-parameter record. The AM calculation in
+`khz_direct.py` does not establish those missing two-tone settings. Its cached
+spectra can be inspected and replotted, but exact recomputation is not currently
+supported. `jr_bifurcation.npz` is imported AUTO continuation data; the raw branch
+files and conversion script are in `code/jrnmm_plot/`, separate from the RK4 sweeps.
+The legacy `fig_lanmm_arnold_p1/p2` additionally require the external `lanmmv11`
+module; the current field-coupled LaNMM figures do not.
 
 ### Engines & helpers (not figure generators)
 

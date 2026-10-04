@@ -25,7 +25,7 @@ pip install numpy scipy matplotlib
 | `jr_demod.py` | Core engine: JR model, sigmoid + derivatives, vectorized RK4 integrator with AM field injection, lock-in detection, open-loop detector, fixed-point/bifurcation helpers. Running it as a script produces the resonance sweep `sweep_results.npz`. |
 | `jr_analysis.py` | Standalone Hopf locator: fixed point vs `p`, Jacobian eigenvalues, prints the Hopf input and natural frequency. |
 | `make_figures.py` | Demodulation-sanity and verification figures (square-law + linearization control). |
-| `rerun_resonance.py` | Resonance curves with a long 20 s lock-in window (10 s settle / 20 s measure). Usage: `stable`, `cycle`, then `plot` → `fig_resonance`. |
+| `rerun_resonance.py` | Resonance curves with a long 20 s lock-in window (10 s settle / 20 s measure). Usage: `stable`, then `plot` → `fig_resonance`; `cycle` is retained for the older analysis. |
 | `analyses_v2.py` | v2 computations → `analyses_v2.npz`: operating-point law, carrier sweep, 2-D resonance map (10 s / 8 s window), bifurcation diagram. |
 | `figures_v2.py` | v2 figures: concept schematic, bifurcation+sigmoid, 2-D map, carrier independence (+ synapse transfer function), operating-point law. |
 | `khz_analysis.py` | Carrier-frequency sweep to 10 kHz: direct coupling (flat) vs. membrane low-pass (1/fc² rolloff) → `fig_khz`. Answers "what happens at 1k/2k/10k Hz". |
@@ -34,22 +34,37 @@ pip install numpy scipy matplotlib
 | `current_state.md` | Project state / next steps. |
 | `TN0484_envelope_demodulation.tex/.pdf` | The Technical Note. |
 
-## Reproduce everything
+## Reproduction entry points
+
+Run `code/run_all.py` from the repository root; it sets each subprocess's working
+directory to `code/`. `--only` includes the required data producers before plotting,
+and `--dry-run` prints that plan without executing it:
 
 ```bash
-python3 jr_analysis.py            # (optional) locate the Hopf: p~315, f0~11.1 Hz
-python3 analyses_v2.py            # -> analyses_v2.npz                       (~30 s)
-python3 figures_v2.py             # fig_concept, fig_bifurcation_sigmoid, fig_resonance_map,
-                                  #    fig_carrier_independence, fig_operating_point
-python3 make_figures.py           # fig_demodulation, fig_verification
-python3 rerun_resonance.py stable # resonance sweep (10 s settle / 20 s measure)
-python3 rerun_resonance.py cycle
-python3 rerun_resonance.py plot   # -> fig_resonance
-python3 khz_analysis.py           # fig_khz (direct coupling vs membrane low-pass to 10 kHz)
-python3 test_jr_demod.py          # ALL TESTS PASSED
-# jr_demod.py is the shared engine (imported by all), not run directly.
-pdflatex TN0484_envelope_demodulation.tex   # x2 for refs
+.venv/bin/python code/run_all.py --only fig_resonance,fig_concept --dry-run
+.venv/bin/python code/run_all.py --only fig_resonance --figdir /tmp/tn0484-figures
+.venv/bin/python code/run_all.py --from-cache --only fig_jcurve,fig_khz_twotone --figdir /tmp/tn0484-figures
+.venv/bin/python code/test_run_all.py
 ```
+
+Figure output honors `TN_FIGDIR` or `--figdir`. Simulation data still goes into
+`code/`, so use a separate checkout for recomputation if existing caches must be
+preserved. `--from-cache` runs only renderers, checks their required inputs, and
+rejects figures whose script also performs an inline simulation.
+
+The current resonance figure uses the stable sweep and plot modes; the cycle mode
+is retained for the older analysis but is not a prerequisite. The two-tone kHz
+figure can be replotted from the committed spectrum cache, but its original
+producer and full run parameters are missing. It is not an independently
+recomputable result in this archive. See the [figure table and provenance limits](../README.md#reproduce-the-figures).
+
+The October 4 reproduction check used a scratch tree containing tracked inputs.
+It regenerated the missing analyses and stable-resonance caches, then rendered the
+concept figure group and resonance figure through `--only`. Cached LaNMM and kHz
+replots and all nine runner regression checks also passed. This was a selective
+check, not a rerun of the full simulation suite. The existing concept and
+bifurcation renderers still emit small-type/collision warnings; these checks do
+not establish that every regenerated figure matches the manually reviewed layout.
 
 ## Model & key parameters
 Standard JR (Jansen & Rit 1995): `A=3.25, B=22 mV; a=100, b=50 1/s;

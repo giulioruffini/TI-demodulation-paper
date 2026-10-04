@@ -18,8 +18,9 @@ Produces
                                (c) nonlinear vs linearized sigmoid, closed loop
                                (d) AM vs two-tone at Omega, ratio -> 1 as eps -> 0
 
-The (d) control is what licenses continued use of the AM surrogate for the dense
-perturbative sweeps (Figs. 4 and 9), which measure only the leading Omega component.
+The (d) control verifies the leading open-loop Omega component at one operating
+point. The recurrent AM-surrogate sweeps remain model-specific: their DC shift can
+change the operating state near a Hopf bifurcation.
 """
 
 import os
@@ -76,7 +77,7 @@ def fig_demod():
     for fl in (fc - F0 / 2, fc + F0 / 2):
         ax[0, 1].axvline(fl, color=NEGRAY, ls="--", lw=0.6, alpha=0.45)
     ax[0, 1].set_xlabel("frequency (Hz)")
-    ax[0, 1].set_ylabel("power")
+    ax[0, 1].set_ylabel("Fourier amplitude (mV)")
     figstyle.panel(ax[0, 1], "b")
 
     ax[1, 0].plot(tt, v[w0], color=NEBLUE, lw=1.7)
@@ -92,7 +93,7 @@ def fig_demod():
                       fontsize=8, color=NEBLUE,
                       arrowprops=dict(arrowstyle="->", color=NEBLUE, lw=0.8))
     ax[1, 1].set_xlabel("frequency (Hz)")
-    ax[1, 1].set_ylabel("power")
+    ax[1, 1].set_ylabel("Fourier amplitude (mV)")
     figstyle.panel(ax[1, 1], "d")
 
     from matplotlib.ticker import LogLocator, NullFormatter
@@ -110,8 +111,8 @@ def fig_demod():
 
     ia = np.argmin(np.abs(fV - F0))
     band = (fI > 8) & (fI < 13)
-    print(f"  two-tone input: max power in 8-13 Hz band = {PI[band].max():.3e}")
-    print(f"  output alpha line at {fV[ia]:.2f} Hz, power = {PV[ia]:.3e}")
+    print(f"  two-tone input: max Fourier amplitude in 8-13 Hz band = {PI[band].max():.3e}")
+    print(f"  output alpha line at {fV[ia]:.2f} Hz, Fourier amplitude = {PV[ia]:.3e}")
     print("  wrote fig_demodulation_twotone")
 
 
