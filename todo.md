@@ -1,11 +1,11 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
-- [ ] Giulio: confirm that published Neural Computation Appendix A.1 retained the bioRxiv v3 PEIX definition; draft11 equivalence and all three downstream identities are checked
 - [ ] review article length after the Landau additions; retain explanations unless Giulio approves the proposed cuts
 - [ ] Giulio: review the corrected JNE working edition and fixed-baseline redline; authorize coauthor circulation when ready
 - [ ] obtain missing funding declarations; confirm the supplied competing-interests statement, author roles and affiliations, actual AI-tool versions, and the submission version with every author
 - [ ] after review and authorization: push, align the public code/archive, cut Calliope/Zenodo, re-sync Overleaf, and circulate the coauthor request (all HOLD)
 - [ ] migrate the paper folder at the next coordinated version boundary; run the layout checker before and after, with no concurrent session editing
+- [x] verify PEIX against the published Neural Computation supplement, Appendix A, pp. 1–2; definition unchanged, reference copy filed (October 5)
 - [x] close Klaus's extended fidelity check of b436a9c; text, Methods, prediction table, captions, cache identity, and figure units agree (October 5)
 - [x] integrate and independently check Landau items 1/5/6/18/19/21/29; bracket NMM2 peaks, use two-tone timing data, and qualify the mean-shift and gain claims (October 5)
 - [x] address the assigned Landau text/citation/notation findings in draft11; verify arithmetic and distinguish remaining numerical findings (October 5)

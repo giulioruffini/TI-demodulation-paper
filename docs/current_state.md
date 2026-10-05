@@ -16,10 +16,12 @@ Klaus's independent fidelity check of `b436a9c` passes: his reserved numerical
 passages, the abstract, and the S10/S11 captions match the producer outputs.
 The Landau correction cycle is closed; the review freeze is lifted.
 
-Klaus confirms that his PEIX check used bioRxiv v3 Appendix A.1, not the published
-CFC supplement. That preprint and the author appendix agree; Giulio is to confirm
-the published formula before submission. Author review, declarations, and the length
-review remain. The fixed reading baseline stays draft9 `8016065`.
+The published PEIX check is closed. Giulio supplied the Neural Computation
+supplement; Klaus and Kaiti checked Appendix A, pp. 1–2. The definition and four
+properties agree with bioRxiv v3 and draft11. A reference copy is filed at
+`_private/references/neco.a.1537-supp.pdf`, with its hash in the validation record.
+Author review, declarations, and the length review remain. The fixed reading
+baseline stays draft9 `8016065`.
 See `revision_2026-10-05_v0150draft11_numerics.md` and the earlier text record.
 All release holds remain.
 

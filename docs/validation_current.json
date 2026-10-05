@@ -2,7 +2,7 @@
   "version": "0.15.0-draft11",
   "review_baseline": "0c394df",
   "redline_baseline": "8016065",
-  "status": "Landau correction cycle closed after independent numerical fidelity pass; author, PEIX publication, and length review pending",
+  "status": "Landau correction cycle and published PEIX verification closed; author and length review pending",
   "outputs": {
     "jne": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
@@ -143,14 +143,36 @@
     "source_definition": "PEIX(x) = -sign(x) * (4 exp(-x)/(1 + exp(-x))^2 - 1), x = r * (<V> - V0)",
     "result": "pass",
     "max_absolute_difference_reported": 7e-16,
-    "voltage_interval_mV": [-5, 20],
+    "voltage_interval_mV": [
+      -5,
+      20
+    ],
     "downstream_identities_checked_by_reviewer": [
       "Sigma'(v)/Sigma'(v0) = 1 - |PEIX|",
       "Sigma'' = -rho * Sigma' * sign(PEIX) * sqrt(|PEIX|)",
       "|PEIX| = (1 - 2 zeta)^2"
     ],
-    "published_appendix_verified": false,
-    "remaining_action": "Giulio to confirm that the published Neural Computation Appendix A.1 retained this definition. No manuscript change required."
+    "published_appendix_verified": true,
+    "remaining_action": null,
+    "published_source_verification": {
+      "reported_by": "klaus-484-TI-helper",
+      "reported_at": "2026-10-05 20:27 CEST",
+      "directly_checked_by": "Kaiti",
+      "checked_on": "2026-10-05",
+      "supplied_by": "Giulio",
+      "original_path": "/Users/giulio/Downloads/neco.a.1537-supp.pdf",
+      "local_reference_copy": "_private/references/neco.a.1537-supp.pdf",
+      "sha256": "7e7a17a548554be2bb05404afd19bc42e3ac801c05fb742b6d139309a2e2e977",
+      "pdf_pages": 25,
+      "pages_inspected": [
+        1,
+        2
+      ],
+      "location": "Appendix A: Band power and PEIX (sigmoid saturation) plots",
+      "method": "Text extraction and visual inspection of the published definition and four properties, compared with draft11 Eq. peix.",
+      "algebraic_identity": "4 exp(-x)/(1 + exp(-x))^2 = sech^2(x/2)",
+      "result": "Definition unchanged from bioRxiv v3 and equivalent to draft11; the four stated properties agree. No manuscript edit needed."
+    }
   },
   "independent_fidelity_review": {
     "reviewer": "klaus-484-TI-helper",
@@ -169,9 +191,19 @@
       "timing_values_reported": {
         "modulation_growth_factor": 13.24,
         "mean_shift_growth_factor": 4.37,
-        "modulation_to_mean_ratios": [14.47, 57.76, 43.84],
-        "rate_modulation_mHz": [25.6, 338.6],
-        "mean_rate_shift_mHz": [-1.77, -7.72]
+        "modulation_to_mean_ratios": [
+          14.47,
+          57.76,
+          43.84
+        ],
+        "rate_modulation_mHz": [
+          25.6,
+          338.6
+        ],
+        "mean_rate_shift_mHz": [
+          -1.77,
+          -7.72
+        ]
       },
       "units_and_rounding_reported": "The S10 rate axes correctly convert ms^-1 to Hz by multiplying by 1000. Full-sweep exponent 0.7055 is printed as 0.71; amplitude-check bound 1.104 as 11%; the stated 0.1% sideband bound covers the independent check below 0.05%.",
       "remaining_discrepancies_reported": []

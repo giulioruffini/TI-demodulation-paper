@@ -122,15 +122,22 @@ Klaus's follow-up confirms that the Landau reference check used bioRxiv
 the local author appendix: the index is signed, zero at the inflection, and
 approaches opposite signs in the two saturation limits. These were separate
 checks of prepublication sources, not verification of the published supplement.
-Giulio, a coauthor of the CFC paper, is to confirm the published formula before
-submission; the TODO now names that action. The manuscript definition is unchanged.
+At that stage, confirmation of the published formula remained on Giulio's TODO.
+The manuscript definition was unchanged.
 
 At 20:23 Klaus reported a direct comparison with the bioRxiv v3 Appendix A.1
 page supplied by Giulio: draft11's PEIX formula agrees to a maximum difference
 of $7\times10^{-16}$ over $V\in[-5,20]$ mV. He also checked the normalized-slope,
 curvature, and rate-fraction identities used downstream. This closes the
-formula-equivalence check; only whether the published appendix changed that
-definition remains to be confirmed by Giulio. No manuscript edit is needed.
+formula-equivalence check; confirmation of the published definition remained open.
+
+At 20:27 Klaus confirmed the definition in the published Neural Computation
+supplement supplied by Giulio. Kaiti then inspected Appendix A, pp. 1–2, in the
+25-page PDF: the formula and four properties are unchanged. The identity
+$4e^{-x}/(1+e^{-x})^2=\operatorname{sech}^2(x/2)$ makes its equivalence to draft11
+explicit. The reference copy is filed at `_private/references/neco.a.1537-supp.pdf`;
+its SHA-256 and provenance are in `docs/validation_current.json`. The published
+PEIX item is closed. No manuscript edit or rebuild was needed.
 
 Author review, missing declarations, and the submission decision
 remain pending. No push, Calliope/Zenodo cut, Overleaf synchronization, or coauthor
