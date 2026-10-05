@@ -1,5 +1,17 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v0.15.0-draft11 — Landau text corrections (2026-10-05)
+
+The assigned text, citation, and notation findings from the review of `0c394df`
+are addressed. PEIX now follows the signed CFC convention; short-membrane TI
+network precedent is credited; the Vieira experiments and access geometries are
+distinguished. Figure 2's alpha interval is corrected using the existing cache.
+Klaus retains the new computations for items 1/5/6/18/19/21/29. The abstract and
+affected numerical passages await his results, so this draft is not ready for
+submission. The final published CFC appendix remains a source-verification limit;
+the local author appendix and PEIX identities agree. The reading baseline stays
+draft9 `8016065`. See `revision_2026-10-05_v0150draft11.md`. Release holds remain.
+
 ## Draft8 integration — one abstract and one working edition (2026-10-05)
 
 Klaus's source changes from `089e00a` are integrated with draft8's corrected

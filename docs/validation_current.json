@@ -1,144 +1,143 @@
 {
-  "version": "0.15.0-draft10",
-  "editing_baseline": "8016065",
-  "review_baseline": {
-    "working_edition": "TN0484_jne.pdf",
-    "redline": "docs/redline_last_read.pdf",
-    "baseline_commit": "8016065",
-    "baseline_version": "0.15.0-draft9",
-    "baseline_status": "Giulio requested one redline against draft9 in the October 5 placement instruction relayed by Klaus; 8016065 includes the supplied competing-interests statement",
-    "policy": "Keep this baseline fixed across edits; advance only when Giulio identifies a later version as read. Regenerate TN and supplement for an authorized archive cut."
-  },
-  "outputs": [
-    {
-      "path": "TN0484_jne.pdf",
-      "bytes": 1864064,
-      "sha256": "2febcdbf9b577d279c25600b955a37c671ba2c678356fa514b5af4880985f19a"
-    },
-    {
-      "path": "docs/redline_last_read.pdf",
-      "bytes": 2035089,
-      "sha256": "cab72dd6246ab1246e77d226558b18008febda066836ad46dad4892e70f6508e"
-    },
-    {
-      "path": "build/storyline/tn0484_storyline.pdf",
-      "bytes": 297825,
-      "sha256": "ed422e515cc51a391c88813abad5b3b9560ef96fdaccbe48f46c4ab531fd98c3"
-    }
-  ],
-  "retention": {
-    "figure_labels": {
-      "count": 23,
-      "retained": true,
-      "same_order": false
-    },
-    "equation_labels": {
-      "count": 32,
-      "retained": true,
-      "same_order": false
-    },
-    "table_labels": {
-      "count": 6,
-      "retained": true,
-      "same_order": true
-    },
-    "equation_contents_byte_identical": true,
-    "align_contents_byte_identical": true,
-    "figure_contents_byte_identical": true,
-    "tabular_contents_byte_identical": true,
-    "longtable_contents_byte_identical": true,
-    "cited_works": 60,
-    "citation_occurrences_unchanged": true,
-    "introduction_conclusion_competing_interests_unchanged": true,
-    "lanmm_method_retained_except_local_navigation": true,
-    "jr_method_retained_except_relocated_estimator": true,
-    "transduction_theory_has_no_forward_procedure_reference": true,
-    "shared_abstract_source_unchanged": true,
-    "carrier_control_figure_11_and_raster_figure_10": true,
-    "lanmm_methods_E1_and_results_E2": true,
-    "supplementary_placements": {
-      "fig:tacs": "S3",
-      "fig:nmm2_jcurve": "S10",
-      "fig:timing": "S11"
-    }
-  },
-  "abstract_text_identical_in_rendered_formats": true,
-  "logs": {
+  "version": "0.15.0-draft11",
+  "review_baseline": "0c394df",
+  "redline_baseline": "8016065",
+  "status": "text corrections complete; numerical errata reserved for Klaus",
+  "outputs": {
     "jne": {
-      "errors": 0,
-      "undefined": 0,
-      "overfull": 0,
-      "multiply_defined": 0,
-      "pages": 34
-    },
-    "redline": {
-      "errors": 0,
-      "undefined": 0,
-      "overfull": 0,
-      "multiply_defined": 0,
-      "pages": 35
+      "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
+      "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.log",
+      "pages": 35,
+      "sha256": "ea9426d19599efb2a937585fff9b1dd1a2b6b209983c4c55b2ade49574d56f30",
+      "diagnostics": {
+        "errors": 0,
+        "undefined": 0,
+        "overfull": 0,
+        "duplicate_labels": 0
+      }
     },
     "tn_validation": {
-      "errors": 0,
-      "undefined": 0,
-      "overfull": 0,
-      "multiply_defined": 0,
-      "pages": 51
+      "path": "/tmp/tn0484_draft11/tn/tn_validation.pdf",
+      "log": "/tmp/tn0484_draft11/tn/tn_validation.log",
+      "pages": 53,
+      "sha256": "1e09151b83da307acc9ec3aec59879412955e01a150e8111df8899002f6bc651",
+      "diagnostics": {
+        "errors": 0,
+        "undefined": 0,
+        "overfull": 0,
+        "duplicate_labels": 0
+      }
     },
     "supp_validation": {
-      "errors": 0,
-      "undefined": 0,
-      "overfull": 0,
-      "multiply_defined": 0,
-      "pages": 19
+      "path": "/tmp/tn0484_draft11/supp/supp_validation.pdf",
+      "log": "/tmp/tn0484_draft11/supp/supp_validation.log",
+      "pages": 20,
+      "sha256": "2b4dc9be1f732b1bedf283161bc72cf862b83af357cf14bd9779d2a555f5e0e7",
+      "diagnostics": {
+        "errors": 0,
+        "undefined": 0,
+        "overfull": 0,
+        "duplicate_labels": 0
+      }
     },
     "storyline": {
-      "errors": 0,
-      "undefined": 0,
-      "overfull": 0,
-      "multiply_defined": 0,
-      "pages": 9
+      "path": "/tmp/tn0484_draft11/storyline/tn0484_storyline.pdf",
+      "log": "/tmp/tn0484_draft11/storyline/tn0484_storyline.log",
+      "pages": 10,
+      "sha256": "28b838d16475b79cf8124ab309aeae55bbea7f621b540a25bd5a25afd60872bf",
+      "diagnostics": {
+        "errors": 0,
+        "undefined": 0,
+        "overfull": 0,
+        "duplicate_labels": 0
+      }
+    },
+    "redline": {
+      "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.pdf",
+      "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.log",
+      "pages": 37,
+      "sha256": "2af2e7e0e7d3808d993f2d17c026b2d0de9193ddd4fce044fa11119f82c5a4f3",
+      "diagnostics": {
+        "errors": 0,
+        "undefined": 0,
+        "overfull": 0,
+        "duplicate_labels": 0
+      }
     }
   },
-  "pages_rendered": {
-    "jne": [
-      1,
-      2,
-      13,
-      14,
-      23,
-      24,
-      25,
-      30
-    ],
-    "redline": [
-      1,
-      26
-    ],
-    "supp_validation": [
-      1,
-      8,
-      9
-    ],
-    "storyline": [
-      1,
-      5,
-      9
+  "retention": {
+    "fig_labels": {
+      "count": 23,
+      "order_unchanged": true
+    },
+    "eq_labels": {
+      "count": 32,
+      "order_unchanged": true
+    },
+    "tab_labels": {
+      "count": 6,
+      "order_unchanged": true
+    },
+    "cited_works": 60,
+    "shared_abstract_unchanged_pending_Klaus": true,
+    "timing_method_unchanged": true,
+    "nmm2_results_unchanged": true,
+    "jr_and_nmm2_coupling_results_unchanged": true,
+    "timing_results_unchanged": true,
+    "reserved_and_qif_captions_unchanged": true,
+    "review_report_preserved": true,
+    "no_cache_changed_and_only_figure2_regenerated": true,
+    "rendered_abstract_identical_in_three_formats": true
+  },
+  "bibliography": {
+    "n_cited": 60,
+    "duplicate_keys": [],
+    "cited_but_missing_from_bib": [],
+    "cited_without_doi_or_url": [
+      "depalma2026ti",
+      "nahin2001",
+      "pikovsky2001"
     ]
   },
-  "numerical_reruns": "None; placement changes only",
-  "private_validation_outputs": {
-    "tn_validation": "/tmp/tn0484_draft10/tn/tn_validation.pdf",
-    "supp_validation": "/tmp/tn0484_draft10/supp/supp_validation.pdf"
-  },
+  "math_checks": "docs/draft11_text_math_2026-10-05.json",
   "visual_inspection": {
-    "status": "passed",
-    "scope": "Changed Methods, QIF Figures 10 and 11, LaNMM appendix, shared abstract, redline and storyline pages",
-    "findings": "No clipping, overlap, or layout defects on inspected pages"
+    "jne_pages": [
+      3,
+      8,
+      10,
+      13,
+      14,
+      15,
+      26,
+      28,
+      29,
+      32,
+      33
+    ],
+    "supp_pages": [
+      2,
+      3,
+      7,
+      8,
+      13
+    ],
+    "redline_pages": [
+      8,
+      13,
+      14
+    ],
+    "figure2": "both panels inspected; off-axis tick false positive; no visible overlap or clipping",
+    "storyline_pages": [
+      1,
+      5,
+      9,
+      10
+    ]
   },
-  "prose_check": {
-    "manuscript": 0,
-    "storyline": 0,
-    "revision_note": "Two false positives from Markdown table separators"
+  "source_sha256": {
+    "TN0484_envelope_demodulation.tex": "42416978c065cc8735741f340f6ed57d75c077e41a4a0ff3d9d5b04d4841d75d",
+    "references.bib": "8ee2a664fc78b990a6811d1bb9fef0d1c4eb68d4f5f2ee52f167604b94f96907",
+    "planning/tn0484_abstract.tex": "a5b891ee60abef946ee5aaf91ed411aa23967cca9fd4d70d05fe3871424e7a23",
+    "planning/tn0484_storyline.tex": "1d04b3e09cbea99ab54a84d93acdfe88646b14b6310bb63a0481f3871e09ab21"
   }
 }

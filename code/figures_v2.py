@@ -69,7 +69,9 @@ def bifurcation_sigmoid():
     def _branch(p, y, stable, color, label=None):
         ax[0].scatter(p[stable],  y[stable],  s=2.2, color=color, edgecolors="none", zorder=3, label=label)
         ax[0].scatter(p[~stable], y[~stable], s=2.2, color=color, edgecolors="none", zorder=2, alpha=0.28)
-    ax[0].axvspan(113.6, 315.7, color=NEL, alpha=0.14, lw=0, zorder=0)   # alpha-cycle region
+    # The alpha branch is bounded by two Hopf points; the SNIC belongs to lc1.
+    alpha_hopf = (89.829, 315.696)
+    ax[0].axvspan(*alpha_hopf, color=NEL, alpha=0.14, lw=0, zorder=0)
     _branch(b["fp_p"], b["fp_v"], b["fp_stable"], NEB, "fixed point")
     lc_lab = "limit cycle"
     for pre in ("lc1", "lc2"):
@@ -80,10 +82,10 @@ def bifurcation_sigmoid():
         if not (-70 < val < 345):
             continue
         ax[0].axvline(val, color=GR, ls="--", lw=0.8, alpha=0.55, zorder=1)
-        ax[0].text(val + 3.5, -5.2, str(lab), rotation=90, fontsize=7, va="bottom", color=GR)
-    ax[0].text((113.6 + 315.7) / 2, 10.8, "alpha limit cycle", color=NEB, fontsize=7.5,
+        ax[0].text(val + 3.5, -5.2, str(lab), rotation=90, fontsize=7.6, va="bottom", color=GR)
+    ax[0].text(np.mean(alpha_hopf), 10.8, "alpha limit cycle", color=NEB, fontsize=7.5,
                ha="center", style="italic")
-    ax[0].text(322, 2.4, "stable focus\n(resonator)\n$f_0\\approx11.1$ Hz", color=GR,
+    ax[0].text(322, 2.4, "stable focus\n(resonator)\n$f_0\\approx11.16$ Hz", color=GR,
                fontsize=7.3, ha="left", va="center", style="italic")
     ax[0].set_xlim(-70, 345); ax[0].set_ylim(-5.7, 12.5)
     ax[0].set_xlabel("external input  $p$  (Hz)"); ax[0].set_ylabel("LFP $v=y_1-y_2$ (mV)")

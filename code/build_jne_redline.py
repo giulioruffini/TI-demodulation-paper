@@ -75,15 +75,23 @@ def main():
         text = text.replace(r"\begin{document}", r"\begin{document}" + "\n" + label, 1)
         tex = stage / f"{job}.tex"
         tex.write_text(text)
-        with (stage / "build.txt").open("w") as log:
-            command = ["pdflatex", "-interaction=nonstopmode", "-halt-on-error",
-                       f"-output-directory={stage}", f"-jobname={job}",
-                       r"\def\jnebuild{}\input{" + str(tex) + "}"]
-            subprocess.run(command, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, check=True)
-            subprocess.run(["bibtex", job], cwd=stage, env=environment,
-                           stdout=log, stderr=subprocess.STDOUT, check=True)
-            for _ in range(2):
+        try:
+            with (stage / "build.txt").open("w") as log:
+                command = ["pdflatex", "-interaction=nonstopmode", "-halt-on-error",
+                           f"-output-directory={stage}", f"-jobname={job}",
+                           r"\def\jnebuild{}\input{" + str(tex) + "}"]
                 subprocess.run(command, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, check=True)
+                subprocess.run(["bibtex", job], cwd=stage, env=environment,
+                               stdout=log, stderr=subprocess.STDOUT, check=True)
+                for _ in range(2):
+                    subprocess.run(command, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, check=True)
+        except subprocess.CalledProcessError:
+            # TemporaryDirectory removes the failed stage; retain diagnostics first.
+            for source, suffix in [(tex, ".tex"), (stage / "build.txt", ".txt"),
+                                   (stage / (job + ".log"), ".log")]:
+                if source.exists():
+                    (ROOT / ("build/redline_build_failure" + suffix)).write_bytes(source.read_bytes())
+            raise
         diagnostics = (stage / f"{job}.log").read_text(errors="replace")
         if re.search(r"^!|undefined|Overfull|multiply defined", diagnostics, re.MULTILINE):
             (ROOT / "build/redline_build_failure.log").write_text(diagnostics)

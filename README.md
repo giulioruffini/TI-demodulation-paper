@@ -10,7 +10,7 @@ Archived at Zenodo: **[doi:10.5281/zenodo.21009618](https://doi.org/10.5281/zeno
 Licensed **CC-BY-4.0** (see [`LICENSE`](LICENSE)); machine-readable citation in
 [`CITATION.cff`](CITATION.cff).
 
-The current working edition is the **JNE article, v0.15.0-draft10**:
+The current working edition is the **JNE article, v0.15.0-draft11**:
 [TN0484_jne.pdf](TN0484_jne.pdf). Run `./build.sh` to update it. The TN and
 supplement are generated from the same manuscript for an authorized Calliope cut;
 they are not separate working editions. Older versioned PDFs are historical snapshots.
@@ -26,6 +26,15 @@ October 5 placement instruction.
 
 As checked on October 2, [Calliope WP0185](https://calliope.bcom.one/papers/WP0185)
 still lists v0.12.0 (July 21). Release and circulation remain held.
+
+v0.15.0-draft11 addresses the text, citation, and notation findings in Klaus's
+Landau review of `0c394df`. It corrects the signed PEIX convention, credits the
+earlier short-membrane TI network model, separates the experimental comparisons,
+and qualifies the access geometry. Figure 2's alpha interval is corrected from
+the existing continuation cache. The numerical findings assigned to Klaus remain
+open, including two-tone DC effects and NMM2 mode tracking; this is not a
+submission-ready version. The [revision record](docs/revision_2026-10-05_v0150draft11.md)
+maps every assigned erratum to its correction and records verification limits.
 
 v0.15.0-draft10 implements the placement decisions without scientific deletions.
 LaNMM methods now accompany their results in Appendix E. The transduction laws

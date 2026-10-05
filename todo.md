@@ -1,9 +1,13 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
-- [ ] Giulio: review draft10's placements in the JNE working edition and redline against draft9; authorize coauthor circulation when ready
+- [ ] integrate Klaus's Landau computations for items 1/5/6/18/19/21/29, then recheck the abstract, Results, figures, and timing/DC interpretation
+- [ ] confirm signed PEIX against the final published CFC appendix if Klaus retrieved it; the author appendix and identities are verified
+- [ ] review article length after numerical integration; draft11 has 13,252 counted prose words, with explanations retained
+- [ ] Giulio: review the corrected JNE working edition and fixed-baseline redline; authorize coauthor circulation when ready
 - [ ] obtain missing funding declarations; confirm the supplied competing-interests statement, author roles and affiliations, actual AI-tool versions, and the submission version with every author
 - [ ] after review and authorization: push, align the public code/archive, cut Calliope/Zenodo, re-sync Overleaf, and circulate the coauthor request (all HOLD)
 - [ ] migrate the paper folder at the next coordinated version boundary; run the layout checker before and after, with no concurrent session editing
+- [x] address the assigned Landau text/citation/notation findings in draft11; verify arithmetic and distinguish remaining numerical findings (October 5)
 - [x] close Klaus's independent draft10 fidelity check; clarify slope interpretation and JR scope, and update LaNMM method references (October 5)
 - [x] move LaNMM methods to Appendix E, separate transduction measurements from Theory, and promote S13 to Figure 11; retain S3/S10/S11 in the supplement (October 5)
 - [x] add Giulio's competing-interests statement, matching the NE byline and his confirmed co-founder/shareholder disclosure (October 5)

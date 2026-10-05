@@ -35,6 +35,13 @@ Guy Eyal, Matthijs~B. Verhoog, Guilherme Testa-Silva, Yair Deitcher,
   neocortical neurons.
 \newblock {\em eLife}, 5:e16553, 2016.
 
+\bibitem{esmaeilpour2021}
+Zeinab Esmaeilpour, Greg Kronberg, Davide Reato, Lucas~C. Parra, and Marom
+  Bikson.
+\newblock Temporal interference stimulation targets deep brain regions by
+  modulating neural oscillations.
+\newblock {\em Brain Stimulation}, 14(1):55--65, 2021.
+
 \bibitem{cohen2020periaxonal}
 Charles C.~H. Cohen, Marko~A. Popovic, Jan Klooster, Marie-Theres Weil, Wiebke
   M{\"o}bius, Klaus-Armin Nave, and Maarten H.~P. Kole.
@@ -116,8 +123,8 @@ Hossein Soroushi, Sara Abbasi, Yun Du, Ning Ning, and Yuming Lei.
 \newblock {\em WIREs Computational Statistics}, 17(3):e70031, 2025.
 
 \bibitem{wangw2026}
-Wei Wang, M.~Florian, C.~Ling, K.~Wei, J.~Jian, H.~Sun, L.~Yan, S.~Hu, and
-  B.~Bi.
+Wenjiang Wang, Florian Missey, Chenxi Ling, Kun Wei, Junhao Jian, Haoxuan Sun,
+  Liujiao Yan, Shaohua Hu, and Bo~Bi.
 \newblock Temporal interference stimulation: a new paradigm for non-invasive
   deep brain stimulation---mechanistic insights, clinical advances, and future
   directions.
@@ -146,15 +153,14 @@ Ryan~B. Budde, Michael~T. Williams, and Pedro~P. Irazoqui.
 Iurii Semenov, Vitalii Kim, Giedre Silkuniene, and Andrei~G. Pakhomov.
 \newblock Excitation and polarization of isolated neurons by high-frequency
   sine waves for temporal interference stimulation.
-\newblock {\em Cell Reports Physical Science}, 2025.
+\newblock {\em Cell Reports Physical Science}, 6(7):102660, 2025.
 
 \bibitem{ruffini2025cfc}
 Giulio Ruffini, Edmundo Lopez-Sola, Raul Palma, Roser Sanchez-Todo, Jakub
   Vohryzek, Francesca Castaldo, and Karl Friston.
 \newblock Cross-frequency coupling as a neural substrate for prediction error
   evaluation: a laminar neural mass modeling approach.
-\newblock {\em bioRxiv}, 2025.
-\newblock Preprint 2025.03.19.644090.
+\newblock {\em Neural Computation}, 38(8):1299--1343, 2026.
 
 \bibitem{ruffini2025ham}
 Giulio Ruffini.
@@ -283,9 +289,17 @@ Charlotte~E. Luff, Patrycja Dzialecka, Emma Acerbo, Adam Williamson, and Nir
 \newblock {\em Brain Stimulation}, 17(1):92–103, January 2024.
 
 \bibitem{missey2026}
-Florian Missey, Emma Acerbo, Adam~S. Dickey, et~al.
+Florian Missey, Emma Acerbo, Adam~S. Dickey, Jan Trajlinek, Ond{\v r}ej
+  Studni{\v c}ka, Claudia Lubrano, Mariane de~Ara{\'u}jo~e Silva, Evan Brady,
+  Vit V{\v s}iansk{\'y}, Johanna Szabo, Irena Dolezalova, Daniel Fabo, Martin
+  Pail, Claire-Anne Gutekunst, Rosanna Migliore, Michele Migliore, Stanislas
+  Lagarde, Romain Carron, Fariba Karimi, Raul~Castillo Astorga, Antonino~M.
+  Cassara, Niels Kuster, Esra Neufeld, Fabrice Bartolomei, Nigel~P. Pedersen,
+  Robert~E. Gross, Viktor Jirsa, Daniel~L. Drane, Milan Br{\'a}zdil, and Adam
+  Williamson.
 \newblock Non-invasive temporal interference stimulation of the hippocampus
-  suppresses epileptic biomarkers in patients with epilepsy.
+  suppresses epileptic biomarkers in patients with epilepsy: biophysical
+  differences between kilohertz and amplitude modulated stimulation.
 \newblock {\em Brain Stimulation}, 19(1):102981, 2026.
 
 \bibitem{ali2013}

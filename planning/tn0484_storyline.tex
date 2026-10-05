@@ -1,6 +1,6 @@
 % TN0484 / WP0185: abstract and storyline. Build from the project root:
 %   ~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex
-% Map mode: rows follow the v0.15.0-draft10 manuscript order and numbering (TN build; the JNE build
+% Map mode: rows follow the v0.15.0-draft11 manuscript order and numbering (TN build; the JNE build
 % moves the appendices and figures S1--S12 to the supplement). Prepared 2026-10-03.
 \documentclass[11pt,a4paper,landscape]{article}
 \usepackage[T1]{fontenc}
@@ -18,7 +18,7 @@
 \newcommand{\wpnumber}{TN0484 / WP0185}
 \newcommand{\papertitle}{The cortical column as a tuned receiver}
 \newcommand{\storylinedate}{5 October 2026}
-\newcommand{\baselinelabel}{v0.15.0-draft10}
+\newcommand{\baselinelabel}{v0.15.0-draft11}
 \newcommand{\abstractfile}{tn0484_abstract.tex}
 \newcommand{\storylineauthors}{Giulio Ruffini}
 % -----------------------------------------------------------------------------
@@ -76,7 +76,9 @@ working edition; only its run-in headings differ. Draft10 implements the placeme
 decisions relayed on 5 October: LaNMM methods join their results in Appendix E;
 transduction laws remain in Theory, with their measurement procedure in Methods;
 the equal-RMS carrier control moves from S13 to Figure 11. All scientific content
-is retained. The closing record gives the reasons for these placements.}
+is retained. Draft11 corrects notation, citation scope, and the access argument;
+the separate computational Landau findings await integration. The closing record
+gives the reasons for the placements.}
 
 \newpage
 \pagetitle{Problem and theory}{First argument block: Sections 1--2}
@@ -84,7 +86,9 @@ A two-tone field carries no power at its beat frequency. Access converts the app
 into local membrane polarization; nonlinear detection generates the beat; the network selects
 and amplifies that generated input. The Introduction develops these stages in that order,
 with their mechanisms and evidence. Axonal TI rectification is established in prior models;
-our contribution is its connection to population mixing and gain through an effective access time.
+Short effective membrane times were already tested in a TI gamma-network model
+(Esmaeilpour et al., 2021). Our contribution is the separation of mixing from
+recurrent gain, the exact QIF mean field, the product law, and the shared TI/tACS amplifier.
 Fast axonal compartments are the access hypothesis:
 Cohen's periaxonal circuit supports distinct nodal and internodal voltage dynamics; the AIS is a
 separate candidate with a high sodium-channel density. Neither observation fixes a TI charging
@@ -115,7 +119,7 @@ its static transfer is an adiabatic limit, not a consequence of small amplitude 
 \midrule
 \place{\S2.1}{Population transfer and the slow-synapse limit}
 & JR synaptic filter and sigmoid (Eqs.~2--3); NMM1 with the direct field term
-  $\Lambda[\hat E]$ (Eq.~3). The MPR mean field (Eq.~4) and its static curve $F(Q)$ (Eq.~5),
+  $\Lambda[E]$ (Eq.~3). The MPR mean field (Eq.~4) and its static curve $F(Q)$ (Eq.~5),
   inflection at $Q=\Delta/\sqrt3$, nonlinear even at zero recurrence and unbounded.
   Retain its derivation from the single-cell square-root rate and threshold recruitment.
   The slow-synapse reduction (Eq.~6) and its two conditions:
@@ -161,15 +165,17 @@ its static transfer is an adiabatic limit, not a consequence of small amplitude 
 & Cycle average (Eq.~16) is even in $A$; nonzero curvature gives a leading square law
   for a smooth memoryless transfer. Specified ideal rectifiers follow $A$; a step
   detector follows neither (harmonic ratio 0.151). Harmonic ladder $1/5$, $3/35$, $1/21$
-  and $r_{\rm det}$ (Eq.~17), with a vanishing weak-field harmonic ratio for smooth
-  square-law detection. Each harmonic is multiplied by its network gain. Excursion map
+  and $r_{\rm det}$ (Eq.~17), whose inverse needs the relative sign or a branch choice.
+  Smooth square-law detection has a vanishing weak-field harmonic ratio; a threshold
+  detector instead has an onset and an amplitude-dependent ratio. Each harmonic is
+  multiplied by its network gain. Excursion map
   (Eq.~18): product law, $2\times$ versus $40\times$ example; not an account of focality.
   DC intensity sums without cross-frequency cancellation after beat averaging:
   $202\times$ superficial/deep contrast in the example; local beat/DC at most one.
   Retain the maximum-principle assumptions (homogeneous isotropic conductor, fixed
   coupling), the distinction from spatially weighted physiological response,
   and isotropic-orientation cancellation of the beat for orthogonal fields.
-  Equal-RMS equivalence is scoped to static quadratic detection.
+  Equal-RMS equivalence is scoped to second order with equal DC coefficients at the carriers.
   Spatial response (Eq.~19) and signed vector coupling.
 & Derives the detector's amplitude, harmonic, and spatial signatures
   and separates spatial from dynamical selectivity. Generation gives a weak drive; \S2.5
@@ -186,11 +192,13 @@ its static transfer is an adiabatic limit, not a consequence of small amplitude 
 & Fig.~5; Figs.~4 and 9; App.~C.\\[2pt]
 \midrule
 \place{\S2.6}{Carrier access depends on the effective membrane response}
-& $H_m$ (Eq.~22); $|H_m|^2\approx10^{-4}$ at 1~kHz for 16~ms, 0.39 and 0.14 at 1 and 2~kHz for
+& Point-membrane $H_m$ (Eq.~22); $|H_m|^2\approx10^{-4}$ at 1~kHz for 16~ms, 0.39 and 0.14 at 1 and 2~kHz for
   0.2~ms, labeled as assumed. Table~2 separates somatic measurements, Cohen's approximately
-  1~ms minimum axonal decay, assumed fast access, channel kinetics, and synaptic filtering.
+  1~ms minimum axonal decay, assumed fast access, prior 1/0.4~ms TI network parameters,
+  channel kinetics, and synaptic filtering.
   Cohen is cited here as well as in the Introduction and Discussion. AC space constant (Eq.~23), one tenth
-  at 1~kHz. Channel kinetics belong in the effective mixing response, counted once;
+  at 1~kHz; at a long sealed cable end this gives quadratic suppression of about $10^{-2}$.
+  Channel kinetics belong in the effective mixing response, counted once;
   no universal gate cutoff follows from QIF. Carrier sweeps constrain access plus mixing;
   beat sweeps probe the amplifier. The plotted simulations retain finite membrane times;
   fast QIF relaxation is an analytic limit.
@@ -201,8 +209,10 @@ its static transfer is an adiabatic limit, not a consequence of small amplitude 
 & Figs.~S5, S6, S9; Deitcher 2017; Eyal 2016; Cohen 2020; Discussion comparison with Luff and Semenov.\\[2pt]
 \midrule
 \place{\S2.7}{Operating-point dependence}
-& PEIX (Eq.~24) tracks $\Sigma'$ and peaks where $\Sigma''$ vanishes; the complementarity
-  belongs to the memoryless detector. The fast-carrier QIF DC coefficient follows $F'$;
+& Signed PEIX (Eq.~24) is zero at the inflection and approaches $\pm1$ in saturation;
+  the normalized slope is $1-|\mathrm{PEIX}|$. Static mixing vanishes at the inflection;
+  slope and curvature play distinct roles in the memoryless detector.
+  The fast-carrier QIF DC coefficient follows $F'$;
   a beat also needs its finite-frequency susceptibility. State shifts scale, and in JR
   can flip, the response. Retain the slope-versus-curvature distinction.
 & Turns the detector coefficient into a brain-state prediction and marks which part is
@@ -239,8 +249,9 @@ lock-in read-out and the pinned-operating-point protocol recur across models.
 \midrule
 \place{\S3.2}{Jansen--Rit: integration, lock-in, controls}
 & Field enters only the pyramidal sigmoid; the read-out $v=y_1-y_2$ is not fed the field.
-  RK4 steps with $<1\%$ convergence; settling and windows. Hopf at $p\approx315$,
-  $f_0\approx11.1$~Hz; SNIC at $p\approx114$. The estimator in \S3.1 retains DC subtraction to $10^{-8}$.
+  RK4 steps with $<1\%$ convergence; settling and windows. Upper Hopf at $p\approx315.70$,
+  $f_0\approx11.16$~Hz; alpha cycle between Hopf points near 90 and 316.
+  The SNIC near 114 belongs to the larger cycle. The estimator in \S3.1 retains DC subtraction to $10^{-8}$.
   Open-loop detector versus closed-loop column; square law, linearization, finite-difference checks.
 & Specifies the JR integrator and lock-in; run-specific reproduction limits remain recorded.
 & Fig.~2; Grimbert and Faugeras 2006; \path{run_all.py}.\\[2pt]
@@ -354,8 +365,10 @@ laminar extension, and the metrics.
   The equal-RMS carrier comparison separates the operating-point shift from the beat.
   Intensity changes the mechanism. Shared amplifier
   with tACS; temporal, not spatial, criticality. Couplings 0.12--0.5~mV per V/m;
-  $\eta_{\rm det}\simeq|\Sigma''|\varepsilon/4\Sigma'$; $\mathcal Q\sim10$. Vieira's 0.34
-  (0.04--0.65) against 0.8\% and why that is not a rejection. The 0.348 supremum and its
+  $\eta_{\rm det}\simeq|\Sigma''|\varepsilon/4\Sigma'$; $\mathcal Q\sim10$. Vieira's unmatched-current
+  two-pair TI result (0.34, CI 0.04--0.65) is separate from the matched-depth AM control
+  (PLV 0.10 versus 0.20). The illustrative 0.1~mV budget gives 0.8\% at $v^*=8.30$~mV;
+  drive and PLV are different observables. The 0.348 supremum and its
   scope. Limitations: Plovie 2025, noise, columns, cascaded synapses cannot solve access,
   mixed human results.
 & Reinterprets each result in physiological terms and places every caveat where it bites.
