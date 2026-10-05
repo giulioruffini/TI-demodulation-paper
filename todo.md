@@ -1,10 +1,12 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
-- [ ] Giulio: review the single JNE working edition (draft8), including its shared abstract, table explanations, and access/detection/amplification argument and two-regime QIF comparison and decide whether to promote S13; authorize coauthor circulation when ready
+- [ ] Giulio: review draft9's DC spatial argument and shorter prose in the JNE working edition, using the fixed draft8 redline; decide whether to promote S13 and authorize coauthor circulation when ready
+- [ ] assess Klaus's independent DC spatial-scope check when his reply arrives; retain the stated homogeneity, access, orientation, and quadratic-response conditions
 - [ ] obtain missing funding/conflict declarations; confirm all author roles and affiliations, actual AI-tool versions, and approval of the submission version by every author
 - [ ] Giulio: decide the optional Theory order, LaNMM methods placement, and S3/S10/S11 promotion; preserve content and order until then
 - [ ] after review and authorization: push, align the public code/archive, cut Calliope/Zenodo, re-sync Overleaf, and circulate the coauthor request (all HOLD)
 - [ ] migrate the paper folder at the next coordinated version boundary; run the layout checker before and after, with no concurrent session editing
+- [x] add the qualified DC spatial-map argument, consolidate duplicate prose, and record section counts and retained content in draft9 (October 5)
 - [x] integrate Klaus's shared abstract and table explanations; use one JNE reading copy and one fixed-baseline redline (October 5)
 - [x] credit prior axonal TI models and separate nodal rectification from the AIS candidate; align abstracts, Introduction, Discussion, and Conclusion (October 5)
 - [x] place Cohen and AIS evidence in the access argument and Table 2; verify the cached TI/tACS ratios and restrict shared gain to linear response (October 5)

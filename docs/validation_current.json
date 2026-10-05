@@ -1,27 +1,29 @@
 {
-  "version": "0.15.0-draft8",
-  "integration_source": "089e00a",
-  "integration_base": "19b8f38",
+  "version": "0.15.0-draft9",
+  "editing_baseline": "b6fc18b",
   "review_baseline": {
     "working_edition": "TN0484_jne.pdf",
     "redline": "docs/redline_last_read.pdf",
-    "baseline_commit": "c4e6b0b",
-    "baseline_version": "0.15.0-draft7",
-    "baseline_status": "Carried over from Klaus's patch; last-read version awaiting Giulio's confirmation",
+    "baseline_commit": "19b8f38",
+    "baseline_version": "0.15.0-draft8",
+    "baseline_status": "Giulio identified draft8 as the reading baseline in the October 5 15:52 instruction relayed by Klaus",
     "policy": "Keep this baseline fixed across edits; advance only when Giulio identifies a later version as read. Regenerate TN and supplement for an authorized archive cut."
   },
   "outputs": [
     {
       "path": "TN0484_jne.pdf",
-      "pages": 34,
-      "bytes": 1619562,
-      "sha256": "b135f4bf11bb1fa3a856331e7ebfcb3f626da06f20e7e9ba27f8ec1f1ad815cb"
+      "bytes": 1616958,
+      "sha256": "29eeb42ae02efbf90908f4f5a936c670808ebe06510f0fa42363a0f7a7e556cd"
     },
     {
       "path": "docs/redline_last_read.pdf",
-      "pages": 34,
-      "bytes": 1691325,
-      "sha256": "d0933d6045335cf8986742214c6ae1bc60ae937adad02da6afb1244a9b19a5ce"
+      "bytes": 1684410,
+      "sha256": "4ce075df8f9127b71711150bc1a3c0805798839d01bbd4bcabbb38fd2f84261a"
+    },
+    {
+      "path": "build/storyline/tn0484_storyline.pdf",
+      "bytes": 296530,
+      "sha256": "2afdd4dbeecc82e5de2926de9c49205db0c1fc368c0d8aa92636fdc19debcabf"
     }
   ],
   "retention": {
@@ -45,6 +47,7 @@
     "align_contents_unchanged": true,
     "figure_contents_unchanged": true,
     "tabular_contents_unchanged": true,
+    "longtable_contents_unchanged": true,
     "citations": 60
   },
   "abstract_text_identical_in_rendered_formats": true,
@@ -59,15 +62,21 @@
       "errors": 0,
       "undefined": 0,
       "overfull": 0,
-      "pages": 34
+      "pages": 35
     },
     "tn_validation": {
       "errors": 0,
       "undefined": 0,
       "overfull": 0,
-      "pages": 52
+      "pages": 51
     },
-    "storyline_validation": {
+    "supp_validation": {
+      "errors": 0,
+      "undefined": 0,
+      "overfull": 0,
+      "pages": 19
+    },
+    "storyline": {
       "errors": 0,
       "undefined": 0,
       "overfull": 0,
@@ -77,44 +86,21 @@
   "pages_rendered": {
     "jne": [
       1,
+      2,
       8,
-      9,
-      12
+      10,
+      11,
+      26,
+      29
     ],
     "redline": [
       1,
-      8,
-      9,
-      12
+      10
     ],
-    "tn_validation": [
+    "storyline": [
       1,
-      37
-    ],
-    "storyline_validation": [
-      1
+      3
     ]
   },
-  "numerical_reruns": "None; exposition and document workflow only",
-  "visual_inspection": {
-    "jne_pages": [
-      1,
-      8,
-      9,
-      12
-    ],
-    "redline_pages": [
-      1,
-      8,
-      9,
-      12
-    ],
-    "tn_validation_pages": [
-      37
-    ],
-    "storyline_validation_pages": [
-      1
-    ],
-    "result": "No clipping, overlap, or illegible content on inspected pages"
-  }
+  "numerical_reruns": "None; analytic DC argument and exposition only"
 }

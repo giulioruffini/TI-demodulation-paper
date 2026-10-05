@@ -1,6 +1,6 @@
 % TN0484 / WP0185: abstract and storyline. Build from the project root:
 %   ~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex
-% Map mode: rows follow the v0.15.0-draft8 manuscript order and numbering (TN build; the JNE build
+% Map mode: rows follow the v0.15.0-draft9 manuscript order and numbering (TN build; the JNE build
 % moves the appendices and figures S1--S13 to the supplement). Prepared 2026-10-03.
 \documentclass[11pt,a4paper,landscape]{article}
 \usepackage[T1]{fontenc}
@@ -18,7 +18,7 @@
 \newcommand{\wpnumber}{TN0484 / WP0185}
 \newcommand{\papertitle}{The cortical column as a tuned receiver}
 \newcommand{\storylinedate}{5 October 2026}
-\newcommand{\baselinelabel}{v0.15.0-draft8}
+\newcommand{\baselinelabel}{v0.15.0-draft9}
 \newcommand{\abstractfile}{tn0484_abstract.tex}
 \newcommand{\storylineauthors}{Giulio Ruffini}
 % -----------------------------------------------------------------------------
@@ -72,9 +72,10 @@
 \vspace{5mm}
 {\footnotesize\color{muted}The article, technical note, and storyline share the four
 abstract macros in \texttt{planning/tn0484\_abstract.tex}. The JNE article is the
-working edition; only its run-in headings differ. The section map reflects draft8,
-including the attribution of prior axonal TI mechanisms and the explanations of
-Tables 1 and 2. K authorized the weak-field effective-response framing on 3 October
+working edition; only its run-in headings differ. The section map reflects draft9:
+repeated explanations are consolidated, and the DC spatial map follows the
+reweighting example. All results and explanations remain, including Tables 1 and 2.
+K authorized the weak-field effective-response framing on 3 October
 2026. The placement decisions on the last page remain open.}
 
 \newpage
@@ -163,8 +164,14 @@ its static transfer is an adiabatic limit, not a consequence of small amplitude 
   and $r_{\rm det}$ (Eq.~17). The network suppresses the second harmonic ($\mathcal Q=10$:
   20\% reads 0.7\%), so the test runs off resonance at $\Delta f\simeq f_0/4$, retaining
   the 1.22--1.25 transfer correction. Excursion map
-  (Eq.~18): product law, $2\times$ versus $40\times$ example; not an account of focality. Spatial
-  response (Eq.~19) and signed vector coupling.
+  (Eq.~18): product law, $2\times$ versus $40\times$ example; not an account of focality.
+  DC intensity sums without cross-frequency cancellation after beat averaging:
+  $202\times$ superficial/deep contrast in the example; local beat/DC at most one.
+  Retain the maximum-principle assumptions (homogeneous isotropic conductor, fixed
+  coupling), the distinction from spatially weighted physiological response,
+  and isotropic-orientation cancellation of the beat for orthogonal fields.
+  Equal-RMS equivalence is scoped to static quadratic detection.
+  Spatial response (Eq.~19) and signed vector coupling.
 & Converts the detector class into measurements (amplitude slope, harmonic ratio, dose map)
   and separates spatial from dynamical selectivity. Generation gives a weak drive; \S2.5
   explains what makes it large.
@@ -334,7 +341,9 @@ laminar extension, and the metrics.
   Cifra excludes fields below 0.1~kV/m from the review's scope, not by a universal threshold.
   Cohen's periaxonal space ($\sim1$~ms fitted decay), Luff's 1~ms RC,
   Semenov's $0.7~\mu$s charging: a $10$--$100\times$ shorter time is a hypothesis. Dose map:
-  $\min$ versus product and the DC term. Intensity changes the mechanism. Shared amplifier
+  excursion versus product and the DC term, referencing the derivation in \S2.4.
+  The equal-RMS carrier comparison separates the operating-point shift from the beat.
+  Intensity changes the mechanism. Shared amplifier
   with tACS; temporal, not spatial, criticality. Couplings 0.12--0.5~mV per V/m;
   $\eta_{\rm det}\simeq|\Sigma''|\varepsilon/4\Sigma'$; $\mathcal Q\sim10$. Vieira's 0.34
   (0.04--0.65) against 0.8\% and why that is not a rejection. The 0.348 supremum and its
@@ -393,10 +402,13 @@ some detailed interpretation after Results. The review recommends moving \S2.4's
 transduction tests while retaining carrier access (\S2.6) before its Results application.
 (2)~Keep LaNMM Methods \S3.2, or move it beside its results in App.~E.
 (3)~Promote S3 (tACS), S10 (NMM2 $J$-curve), S11 (modulation versus mean rate), or none;
-the review recommends S11 first and retaining all 22 figures. None of these placement
+the review recommends S11 first and retaining all 23 figures. None of these placement
 changes has been executed. K authorized the weak-field framing and the corresponding
 abstract revision in v0.14.5. The current draft qualifies the gain and capture claims and
 replaces the LaNMM percentages with a documented off-alpha comparison. The kHz two-tone cache
-has a reconstructed producer that reproduces every archived spectral bin exactly. Coauthor approval, declarations, and release alignment remain pending;
+has a reconstructed producer that reproduces every archived spectral bin exactly.
+Draft9 consolidates duplicate prose without changing section or figure order;
+the proposed-removals list recommends no scientific deletions. Coauthor approval,
+declarations, and release alignment remain pending;
 see \path{todo.md}.}
 \end{document}

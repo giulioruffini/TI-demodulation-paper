@@ -1,8 +1,8 @@
 {
   "working_edition": "TN0484_jne.pdf",
   "redline": "docs/redline_last_read.pdf",
-  "baseline_commit": "c4e6b0b",
-  "baseline_version": "0.15.0-draft7",
-  "baseline_status": "Carried over from Klaus's patch; last-read version awaiting Giulio's confirmation",
+  "baseline_commit": "19b8f38",
+  "baseline_version": "0.15.0-draft8",
+  "baseline_status": "Giulio identified draft8 as the reading baseline in the October 5 15:52 instruction relayed by Klaus",
   "policy": "Keep this baseline fixed across edits; advance only when Giulio identifies a later version as read. Regenerate TN and supplement for an authorized archive cut."
 }

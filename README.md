@@ -10,7 +10,7 @@ Archived at Zenodo: **[doi:10.5281/zenodo.21009618](https://doi.org/10.5281/zeno
 Licensed **CC-BY-4.0** (see [`LICENSE`](LICENSE)); machine-readable citation in
 [`CITATION.cff`](CITATION.cff).
 
-The current working edition is the **JNE article, v0.15.0-draft8**:
+The current working edition is the **JNE article, v0.15.0-draft9**:
 [TN0484_jne.pdf](TN0484_jne.pdf). Run `./build.sh` to update it. The TN and
 supplement are generated from the same manuscript for an authorized Calliope cut;
 they are not separate working editions. Older versioned PDFs are historical snapshots.
@@ -20,11 +20,20 @@ The article, TN, and storyline load one abstract from the four macros in
 run-in headings. Every table is introduced and explained in the surrounding text.
 Run `python3 code/build_jne_redline.py` to update the one current [JNE redline](docs/redline_last_read.pdf) against the baseline
 recorded in [planning/review_baseline.json](planning/review_baseline.json), rather
-than creating a new redline for each edit. The present baseline is draft7 (`c4e6b0b`),
-carried over from Klaus's patch pending Giulio's confirmation of his last-read version.
+than creating a new redline for each edit. The fixed reading baseline is draft8
+(`19b8f38`), identified in Giulio's October 5 revision instruction.
 
 As checked on October 2, [Calliope WP0185](https://calliope.bcom.one/papers/WP0185)
 still lists v0.12.0 (July 21). Release and circulation remain held.
+
+v0.15.0-draft9 adds the DC spatial-map calculation after the reweighting example,
+with the homogeneous-conductor and fixed-coupling assumptions stated locally.
+It consolidates repeated explanations, reducing the article by 541 prose words
+and the supplement by 97 while retaining all figures, equations, tables, and results.
+Clean validation builds are 51/34/19 pages (TN/JNE/supplement); only the JNE article
+and the fixed-baseline redline are working reading copies. The storyline is updated.
+See the [revision and section counts](docs/revision_2026-10-05_v0150draft9.md)
+and [pending placement decisions](docs/proposed_removals_draft9.md).
 
 v0.15.0-draft8 credits prior single-neuron TI work for axonal rectification and
 identifies the short-time population representation as our contribution. The AIS
@@ -162,7 +171,8 @@ the amplifier when effective coupling, readout, and operating state are matched.
 ├── LICENSE                                # CC-BY-4.0
 ├── CITATION.cff                           # machine-readable citation (DOI, authors)
 ├── TN0484_envelope_demodulation.tex       # the manuscript (\graphicspath{{figures/}})
-├── TN0484_envelope_demodulation.pdf       # current build (48 pp; JNE article 31 pp + supplement 19 pp)
+├── TN0484_jne.pdf                        # current JNE working article
+├── TN0484_envelope_demodulation.pdf       # TN output, regenerated at an authorized archive cut
 ├── TN0484_envelope_demodulation.bbl       # committed so a single pdflatex works w/o bibtex
 ├── references.bib                         # BibTeX source for all references
 ├── requirements.txt                       # pinned Python deps (numpy/scipy/matplotlib + ...)
