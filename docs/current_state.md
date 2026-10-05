@@ -1,16 +1,22 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v0.15.0-draft11 — Landau text corrections (2026-10-05)
+## v0.15.0-draft11 — Landau text and numerical corrections (2026-10-05)
 
-The assigned text, citation, and notation findings from the review of `0c394df`
-are addressed. PEIX now follows the signed CFC convention; short-membrane TI
-network precedent is credited; the Vieira experiments and access geometries are
-distinguished. Figure 2's alpha interval is corrected using the existing cache.
-Klaus retains the new computations for items 1/5/6/18/19/21/29. The abstract and
-affected numerical passages await his results, so this draft is not ready for
-submission. The final published CFC appendix remains a source-verification limit;
-the local author appendix and PEIX identities agree. The reading baseline stays
-draft9 `8016065`. See `revision_2026-10-05_v0150draft11.md`. Release holds remain.
+The text pass (`dc96c25`) and Klaus's numerical follow-ups (`139dd74`, `9190b9c`,
+`c91879f`) are integrated. NMM2's critical eigenpair is tracked continuously; a
+second mode dominates the middle of the coupling sweep. The near-Hopf linear
+gain exponent is 1.02, with finite-amplitude departures stated separately. Every
+simulated peak is now bracketed. Figure S10 is updated; S11 uses genuine two-tone
+data, whose complete timing sweep was reproduced exactly. TI/tACS ratios change
+by at most 2.2% between the waveforms, and the two-tone endpoint remains attracting.
+The abstract and prediction table now distinguish the initial growth of modulation
+from the later rectification of the amplified oscillation into a mean shift.
+
+The published CFC appendix remains a source-verification limit; the author
+appendix and PEIX identities agree. Author review, declarations, and the length
+review remain. The fixed reading baseline stays draft9 `8016065`.
+See `revision_2026-10-05_v0150draft11_numerics.md` and the earlier text record.
+All release holds remain.
 
 ## Draft8 integration — one abstract and one working edition (2026-10-05)
 

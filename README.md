@@ -27,14 +27,15 @@ October 5 placement instruction.
 As checked on October 2, [Calliope WP0185](https://calliope.bcom.one/papers/WP0185)
 still lists v0.12.0 (July 21). Release and circulation remain held.
 
-v0.15.0-draft11 addresses the text, citation, and notation findings in Klaus's
-Landau review of `0c394df`. It corrects the signed PEIX convention, credits the
-earlier short-membrane TI network model, separates the experimental comparisons,
-and qualifies the access geometry. Figure 2's alpha interval is corrected from
-the existing continuation cache. The numerical findings assigned to Klaus remain
-open, including two-tone DC effects and NMM2 mode tracking; this is not a
-submission-ready version. The [revision record](docs/revision_2026-10-05_v0150draft11.md)
-maps every assigned erratum to its correction and records verification limits.
+v0.15.0-draft11 integrates the text and numerical findings from Klaus's Landau
+review of `0c394df`. It corrects PEIX, citation scope, and access geometry, then
+separates the NMM2 critical mode from the competing gamma mode and repeats the
+mean-shift-dependent comparisons with genuine two tones. Figure S11 now uses
+the two-tone timing sweep; Figure S10 uses the refined mode analysis. The
+[text record](docs/revision_2026-10-05_v0150draft11.md) and
+[numerical integration record](docs/revision_2026-10-05_v0150draft11_numerics.md)
+map the findings, checks, and remaining limits. Author review, declarations, and
+release approval remain pending.
 
 v0.15.0-draft10 implements the placement decisions without scientific deletions.
 LaNMM methods now accompany their results in Appendix E. The transduction laws
@@ -282,10 +283,10 @@ that every simulation was rerun during this revision.
 | fig_jcurve | `make_jfig.py` | jcurve_main.npz, jcurve_res.npz ‡ | (engine) | Available |
 | fig_nmm2_map | `nmm2_ping.py` | (inline grid) | – | Available |
 | fig_nmm2_resonance_twotone | `make_nmm2_twotone_fig.py` | (inline grid) | – | Available |
-| fig_nmm2_jcurve | `make_nmm2_jfig.py` | nmm2_jcD.npz ‡ | – | Available |
+| fig_nmm2_jcurve | `make_nmm2_jfig.py` | nmm2_jcD.npz and docs/landau1_nmm2_jcurve_modes_2026-10-05.json ‡ | – | Available; critical-mode source and refined peaks |
 | fig_lanmm_field_p1_twotone | `make_lanmm_field_figs.py` | lanmm_field_P1_twotone.npz ‡ | – | Available |
 | fig_lanmm_field_p2_twotone | `make_lanmm_field_figs.py` | lanmm_field_P2_twotone.npz ‡ | – | Available |
-| fig_timing_not_rate | `make_timing_fig.py` | timing_not_rate.npz ‡ | – | Available |
+| fig_timing_not_rate | `make_timing_fig.py` | timing_not_rate_twotone.npz ‡ | – | Available; genuine two-tone data |
 | fig_mpr_crossover | `mpr_crossover_fig.py` | ping_fast_carrier_check.json ‡ (from `ping_fast_carrier_check.py`) | yes | Available |
 | fig_qif_raster_twotone | `make_qif_figs.py` | qif_raster_twotone.npz ‡ | – | Available |
 | fig_qif_timing_twotone | `make_qif_figs.py` | qif_raster_twotone.npz ‡ | – | Available |
@@ -305,12 +306,11 @@ diagnostic (gitignored).
 recomputing the corresponding figures, including when `--only` is used.
 ‡ Committed data: the corresponding renderer can reuse it without rerunning the sweep.
 
-`khz_twotone.npz`, introduced in commit `a7d6e6f`, contains the input and output
-spectra and `f1`, `f2`, and `F0`. It has no trajectory, time step, settling duration,
-stimulus amplitude, or complete model-parameter record. The AM calculation in
-`khz_direct.py` does not establish those missing two-tone settings. Its cached
-spectra can be inspected and replotted, but exact recomputation is not currently
-supported. `jr_bifurcation.npz` is imported AUTO continuation data; the raw branch
+`khz_twotone.npz`, introduced in commit `a7d6e6f`, is reproduced bit for bit by
+`khz_twotone_producer.py --compare`. The reconstructed settings are 4 s settling,
+4 s measurement, a 15 μs step, and 0.5 mV per tone, recorded before each RK4 step.
+The producer preserves the archive and writes a separate cache with `--write`.
+`jr_bifurcation.npz` is imported AUTO continuation data; the raw branch
 files and conversion script are in `code/jrnmm_plot/`, separate from the RK4 sweeps.
 The legacy `fig_lanmm_arnold_p1/p2` additionally require the external `lanmmv11`
 module; the current field-coupled LaNMM figures do not.
@@ -325,10 +325,22 @@ module; the current field-coupled LaNMM figures do not.
   lock-in, open-loop detector, Hopf helpers). Imported by the JR pipeline.
 - `jr_jsweep_engine.py` — J-curve engine; imported by `run_jcurve/run_res/make_jfig`.
 - `nmm2_jcA.py` — NMM2 J-curve engine (imported by `nmm2_jcD.py`).
-- `timing_not_rate.py` — data producer for `fig_timing_not_rate` (writes the `.npz`;
-  the figure is drawn by `make_timing_fig.py`). `qif_raster.py` integrates the
+- `nmm2_jcurve_modes.py --sim` — critical-mode continuation, linear-response grid,
+  refined simulated peaks, and the amplitude comparison; consumes `nmm2_jcD.npz`
+  and produces the table used by `make_nmm2_jfig.py`.
+- `timing_not_rate.py` and `timing_not_rate_twotone.py` — the AM and two-tone
+  sweeps; `make_timing_fig.py` renders the latter. `qif_raster.py` integrates the
   **N=8000** QIF network and feeds `make_qif_figs.py`.
 - `test_jr_demod.py` — self-checks (derivatives, fixed point, square law, control).
+
+## Numerical integration checks
+
+`code/verify_draft11_numerics.py --json /tmp/tn0484_numerics.json` checks the raw
+peak grids, reported ratios, and critical-mode eigenvalues. Its analytical
+Jacobian and Hessian independently evaluate the finite-sideband AM and two-tone
+beat kernels. It reads the committed caches without changing them. The full
+26-point two-tone timing sweep was also rerun and matched its cache exactly;
+see `docs/draft11_timing_reproduction_2026-10-05.json`.
 
 ## Verified
 

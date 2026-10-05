@@ -1,8 +1,9 @@
 """Landau finding 1 (2026-10-05): does the NMM2 J-curve peak follow 1/gamma of the CRITICAL mode?
-Tracks the eigenvalue that crosses at the gamma Hopf J* by continuation backward from J*, computes
-the exact linear-response gain from a beat-frequency source in the v_E equation to r_E over a fine
-frequency grid, and re-measures the simulated lock-in peak on an adaptive grid centred on the
-linear-response peak. Same engine, drive, and lock-in as nmm2_jcD.py. Writes nmm2_jcurve_modes.npz."""
+Tracks the eigenvalue that crosses at the gamma Hopf J* by continuation backward from J*.
+The beat source uses the central-carrier approximation; the full linearized network maps
+that source to r_E on a fine frequency grid. Simulated peaks are bracketed adaptively.
+Same engine, drive, and lock-in as nmm2_jcD.py. Writes nmm2_jcurve_modes.npz.
+The independent finite-sideband check is in verify_draft11_numerics.py."""
 import numpy as np, json, sys
 from scipy.optimize import brentq
 from nmm2_jcA import fp, gam_w, rhs, init, rk4, PI, ETA
@@ -38,7 +39,7 @@ for k in range(1, len(Cpath)):
         lam = ev[np.argmin(np.abs(ev - lam))]
     crit[len(Cg) - k] = lam
 gam_crit = -crit.real; f_crit = crit.imag / (2 * PI) * 1000
-# exact linear-response gain to r_E from the second-order beat source Re D^2f[q, conj q],
+# linear-response gain to r_E from the central-carrier source Re D^2f[q, conj q],
 # q = (i w_c I - J)^{-1} b_F, b_F = e_vE / tau_E (carrier forcing), on a 0.025 Hz grid (3001 points, 15-90 Hz).
 # For reference, also the gain from a source in the v_E equation alone (Gpk_vE).
 from nmm2_jcA import TAU_E
@@ -83,41 +84,86 @@ def lockin_pairs(C, fHz, Amp=8.0, fc_Hz=300.0, t_set=5000.0, t_meas=4000.0, dt=0
         ac += w[k] * re * co; as_ += w[k] * re * si; av += w[k] * re; awc += w[k] * co; aws += w[k] * si
     vb = av / w.sum(); c = ac - vb * awc; s = as_ - vb * aws
     return 2 / w.sum() * np.sqrt(c ** 2 + s ** 2)
-def run_sim():
-    offs = np.array([-0.6, -0.3, -0.15, 0.0, 0.15, 0.3, 0.6])
-    CC = np.repeat(Cg, len(offs)); FF = (fGpk[:, None] + offs[None, :]).ravel()
-    A = lockin_pairs(CC, FF).reshape(len(Cg), len(offs))
-    return A, offs
+
+def halfwidth_Hz(C, x):
+    """Half-width at 1/sqrt(2) of the linear gain curve around its peak (Hz), for grid spacing."""
+    J = jac(x, C); q = np.linalg.solve(1j * WC * np.eye(8) - J, bF); s = D2(x, C, q.real) + D2(x, C, q.imag)
+    G = np.array([abs(np.linalg.solve(1j * 2 * PI * f / 1000 * np.eye(8) - J, s)[0]) for f in fgrid])
+    k = G.argmax(); above = G >= G[k] / np.sqrt(2)
+    lo = k
+    while lo > 0 and above[lo - 1]: lo -= 1
+    hi = k
+    while hi < len(G) - 1 and above[hi + 1]: hi += 1
+    return 0.5 * (fgrid[hi] - fgrid[lo])
+
+def bracket_peaks(Crows, centers, steps, Amp, max_iter=12):
+    """Simulated lock-in on a 7-point grid per row (spacing steps[i]); rows whose maximum lies on
+    an edge are extended by 3 points beyond that edge until the maximum is interior. Returns per-row
+    (freqs, amps), the bracketed sampled maximum, and a parabolic (log-amplitude) refinement."""
+    F = [list(c + s * np.arange(-3, 4)) for c, s in zip(centers, steps)]
+    Avals = [None] * len(Crows)
+    todo = list(range(len(Crows))); new = {i: F[i] for i in todo}
+    for it in range(max_iter):
+        if not new: break
+        rows = list(new); CC = np.concatenate([np.full(len(new[i]), Crows[i]) for i in rows])
+        FF = np.concatenate([np.array(new[i]) for i in rows])
+        A = lockin_pairs(CC, FF, Amp=Amp); k = 0; nxt = {}
+        for i in rows:
+            n = len(new[i]); a = A[k:k + n]; k += n
+            if Avals[i] is None: fr, av = list(new[i]), list(a)
+            else: fr, av = F[i] + list(new[i]), list(Avals[i]) + list(a)
+            o = np.argsort(fr); F[i] = list(np.array(fr)[o]); Avals[i] = list(np.array(av)[o])
+            j = int(np.argmax(Avals[i])); s = steps[i]
+            if j == 0: nxt[i] = list(F[i][0] - s * np.arange(1, 4))
+            elif j == len(F[i]) - 1: nxt[i] = list(F[i][-1] + s * np.arange(1, 4))
+        new = nxt
+    pk = np.zeros(len(Crows)); pk_par = np.zeros(len(Crows)); fpk = np.zeros(len(Crows)); bracketed = np.zeros(len(Crows), bool)
+    for i in range(len(Crows)):
+        fr = np.array(F[i]); av = np.array(Avals[i]); j = int(np.argmax(av))
+        pk[i] = av[j]; fpk[i] = fr[j]; bracketed[i] = 0 < j < len(av) - 1
+        if bracketed[i]:
+            y = np.log(av[j - 1:j + 2]); den = y[0] - 2 * y[1] + y[2]
+            d = 0.5 * (y[0] - y[2]) / den if den < 0 else 0.0
+            pk_par[i] = np.exp(y[1] - 0.25 * (y[0] - y[2]) * d)
+        else: pk_par[i] = pk[i]
+    return F, Avals, pk, pk_par, fpk, bracketed
 
 if "--sim" in sys.argv:
-    A, offs = run_sim(); simpk = A.max(1)
+    hw = np.array([halfwidth_Hz(C, x) for C, x in zip(Cg, xs)])
+    steps = np.clip(hw / 3, 0.05, 2.0)
+    Fm, Am_, simpk, simpk_par, fsim, brk = bracket_peaks(Cg, fGpk, steps, 8.0)
     mid = (Cg > 14.5) & (Cg < 16.0)
     ratio = simpk / Gpk; ratio = ratio / np.median(ratio[mid])
-    # amplitude check: peak per A^2 over linear gain at nine couplings, A = 2, 4, 8;
-    # normalized to A = 2 at C = 15.527 (index 8); same adaptive grid (offsets -0.3..0.3 Hz), 5 s / 4 s
-    idx = [8, 13, 14, 15, 17, 19, 22, 25, 27]; offs2 = np.array([-0.3, -0.15, 0, 0.15, 0.3])
-    amp_grid = {}; amp_ratio = {}
+    idx = [8, 13, 14, 15, 17, 19, 22, 25, 27]
+    amp_ratio = {}; amp_raw = {}; amp_brk = {}; amp_par = {}
     for Amp in (2.0, 4.0, 8.0):
-        CC = np.repeat(Cg[idx], len(offs2)); FF = (fGpk[idx][:, None] + offs2).ravel()
-        G2 = lockin_pairs(CC, FF, Amp=Amp).reshape(len(idx), -1)
-        amp_grid[Amp] = G2; amp_ratio[Amp] = G2.max(1) / Amp ** 2 / Gpk[idx]
+        Fa, Aa, pa, ppar, fa, ba = bracket_peaks(Cg[idx], fGpk[idx], steps[idx], Amp)
+        amp_raw[Amp] = (Fa, Aa); amp_brk[Amp] = ba; amp_ratio[Amp] = pa / Amp ** 2 / Gpk[idx]; amp_par[Amp] = ppar / pa - 1
     ref = amp_ratio[2.0][0]
+    print("rows not bracketed:", np.where(~brk)[0].tolist(), " amp rows not bracketed:", {a: np.where(~amp_brk[a])[0].tolist() for a in amp_brk})
+    print("max parabolic correction to sampled peak: main", f"{np.max(simpk_par/simpk-1):.4f}", " amp", {a: f"{np.max(amp_par[a]):.4f}" for a in amp_par})
     for i in range(len(Cg)):
-        print(f"{Cg[i]:7.3f} gam_crit {gam_crit[i]:.4f} simpk {simpk[i]:.4e} cache {cache['peak'][i]:.4e} sim/lin {ratio[i]:6.3f} {'critical' if crit[i] else 'second mode'}")
+        print(f"{Cg[i]:7.3f} gam_crit {gam_crit[i]:.4f} simpk {simpk[i]:.4e} cache {cache['peak'][i]:.4e} sim/lin {ratio[i]:6.3f} {'critical' if crit[i] else 'second mode'} f_sim {fsim[i]:6.2f} (lin {fGpk[i]:6.2f}) n {len(Fm[i])}")
     for j, i in enumerate(idx):
         print(f"amp check C={Cg[i]:.3f}: A2 {amp_ratio[2.0][j]/ref:.3f} A4 {amp_ratio[4.0][j]/ref:.3f} A8 {amp_ratio[8.0][j]/ref:.3f}")
     np.savez("nmm2_jcurve_modes.npz", C=Cg, gam_plot=cache["gamma"], gam_crit=gam_crit, f_crit=f_crit,
-             Gpk_src=Gpk, fGpk_src=fGpk, Gpk_vE=Gpk_vE, crit=crit, simpk=simpk, sim_grid=A, offs=offs,
-             amp_idx=np.array(idx), amp_offs=offs2, amp_grid_A2=amp_grid[2.0], amp_grid_A4=amp_grid[4.0],
-             amp_grid_A8=amp_grid[8.0], cache_peak=cache["peak"], Chopf=Chopf, fgrid=fgrid)
+             Gpk_src=Gpk, fGpk_src=fGpk, Gpk_vE=Gpk_vE, crit=crit, simpk=simpk, simpk_parabolic=simpk_par, f_sim=fsim, bracketed=brk, steps_Hz=steps, halfwidth_Hz=hw,
+             sim_freqs=np.array([np.array(f) for f in Fm], dtype=object), sim_amps=np.array([np.array(a) for a in Am_], dtype=object),
+             amp_idx=np.array(idx), cache_peak=cache["peak"], Chopf=Chopf, fgrid=fgrid,
+             **{f"amp_freqs_A{int(a)}": np.array([np.array(f) for f in amp_raw[a][0]], dtype=object) for a in amp_raw},
+             **{f"amp_amps_A{int(a)}": np.array([np.array(v) for v in amp_raw[a][1]], dtype=object) for a in amp_raw},
+             allow_pickle=True)
     json.dump({"Chopf": Chopf, "slope_lin_near": sl, "slope_lin_all": sl_all,
                "settings": {"gain_grid_Hz": [15, 90, 3001], "source": "Re D2f[q,conj q], q=(i w_c-J)^-1 e_vE/tau_E, f_c=300 Hz",
-                            "sim": "Amp 8, f_c 300 Hz, AM surrogate as nmm2_jcD.py, dt 0.05 ms, settle 5000 ms, window 4000 ms, offsets -0.6..0.6 Hz around fGpk_src",
+                            "sim": "Amp 8, f_c 300 Hz, AM surrogate as nmm2_jcD.py, dt 0.05 ms, settle 5000 ms, window 4000 ms; 7-point grid around fGpk_src with spacing clip(halfwidth/3, 0.05, 2) Hz, extended by 3 points beyond any edge maximum until the maximum is interior (bracket_peaks)",
                             "sim_over_lin_normalization": "median over 14.5<C<16.0 = 1",
-                            "amp_check": "peak/Amp^2/Gpk_src at amp_idx, offsets -0.3..0.3 Hz, normalized to Amp=2 at C=15.527"},
+                            "amp_check": "bracketed peak/Amp^2/Gpk_src at amp_idx (same adaptive search), normalized to Amp=2 at C=15.527"},
                "C": Cg.tolist(), "gam_plot": cache["gamma"].tolist(), "gam_crit": gam_crit.tolist(), "f_crit": f_crit.tolist(),
                "Gpk_src": Gpk.tolist(), "fGpk_src": fGpk.tolist(), "Gpk_vE": Gpk_vE.tolist(), "crit": crit.tolist(),
-               "simpk": simpk.tolist(), "cache_peak": cache["peak"].tolist(), "sim_over_lin_src": ratio.tolist(),
+               "simpk": simpk.tolist(), "simpk_parabolic": simpk_par.tolist(), "f_sim": fsim.tolist(),
+               "bracketed": brk.tolist(), "steps_Hz": steps.tolist(), "halfwidth_Hz": hw.tolist(),
+               "amp_bracketed": {f"A{int(a)}": amp_brk[a].tolist() for a in amp_brk},
+               "amp_parabolic_minus_sampled": {f"A{int(a)}": amp_par[a].tolist() for a in amp_par}, "cache_peak": cache["peak"].tolist(), "sim_over_lin_src": ratio.tolist(),
                "amp_check": {"C": [float(Cg[i]) for i in idx], **{f"A{int(a)}": (amp_ratio[a] / ref).tolist() for a in amp_ratio}}},
               open("../docs/landau1_nmm2_jcurve_modes_2026-10-05.json", "w"), indent=1)
     print("DONE")

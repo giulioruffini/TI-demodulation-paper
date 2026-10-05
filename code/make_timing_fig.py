@@ -2,9 +2,11 @@
 rate versus the shift of its mean, both read from the SAME observable r_P = Sigma(v + s)
 in the same units (mHz), as the coupling drives the column toward the Hopf at pinned
 detection. (2026-09-22: the rate read-out now includes the field; the earlier figure
-compared an LFP lock-in in mV with a field-free rate mean.) Reads timing_not_rate.npz.
+compared an LFP lock-in in mV with a field-free rate mean.) Reads the genuine
+two-tone sweep, timing_not_rate_twotone.npz.
 
   python3 timing_not_rate.py   # -> timing_not_rate.npz  (the C-sweep data)
+  python3 timing_not_rate_twotone.py  # -> timing_not_rate_twotone.npz
   python3 make_timing_fig.py   # -> ../figures/fig_timing_not_rate.{png,pdf}
 """
 import numpy as np, os
@@ -17,7 +19,7 @@ import overlap
 HERE = os.path.dirname(os.path.abspath(__file__))
 FIGS = os.environ.get("TN_FIGDIR") or os.path.join(os.path.dirname(HERE), "figures")
 os.makedirs(FIGS, exist_ok=True)
-d = np.load(os.path.join(HERE, "timing_not_rate.npz"))
+d = np.load(os.path.join(HERE, "timing_not_rate_twotone.npz"))
 g = d["gam"]; AC = d["AC"]*1e3; DC = d["DC"]*1e3   # rate lock-in and mean shift, both in mHz
 o = np.argsort(g)[::-1]                          # far-from-Hopf -> Hopf
 g, AC, DC = g[o], AC[o], DC[o]
@@ -30,7 +32,7 @@ ax1.semilogy(g, AC, "o-", color=NEBLUE, lw=1.6, ms=4, label=r"beat-locked rate m
 ax1.semilogy(g, np.abs(DC), "s-", color=NERED, lw=1.4, ms=3.5, label=r"$|$mean-rate shift$|$")
 kk = AC[0]*g[0]
 ax1.semilogy(g, kk/g, "--", color=NEBLUE, lw=1.0, alpha=0.6, label=r"$\propto 1/\gamma$")
-ax1.set_xlabel(r"damping $\gamma$  (distance to Hopf) $\;\rightarrow$ Hopf")
+ax1.set_xlabel(r"damping $\gamma$ (s$^{-1}$) $\;\rightarrow$ Hopf")
 ax1.set_ylabel(r"rate $r_P$: beat lock-in, $|$mean shift$|$  (mHz)")
 ax1.invert_xaxis()
 figstyle.panel(ax1, "a")
@@ -42,7 +44,7 @@ ax2.semilogy(g, np.abs(DC)/np.abs(DC[0]), "s-", color=NERED, lw=1.4, ms=3.5,
              label=r"$|$mean-rate shift$|$")
 ax2.semilogy(g, g[0]/g, "--", color="0.5", lw=1.0, label=r"$\propto 1/\gamma$")
 ax2.axhline(1.0, color=NERED, lw=0.8, ls=":", alpha=0.6)
-ax2.set_xlabel(r"damping $\gamma$  (distance to Hopf) $\;\rightarrow$ Hopf")
+ax2.set_xlabel(r"damping $\gamma$ (s$^{-1}$) $\;\rightarrow$ Hopf")
 ax2.set_ylabel("gain, normalized to far-from-Hopf")
 ax2.invert_xaxis()
 figstyle.panel(ax2, "b")

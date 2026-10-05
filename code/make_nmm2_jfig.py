@@ -4,6 +4,7 @@ fig_nmm2_jcurve.{png,pdf} into ../figures/. Run from the code/ directory:
 
     python3 nmm2_jcA.py        # (engine, imported by nmm2_jcD.py)
     python3 nmm2_jcD.py        # -> nmm2_jcD.npz  (resonance-peak grid)
+    python3 nmm2_jcurve_modes.py --sim  # -> mode tracking, gain, and refined peaks
     python3 make_nmm2_jfig.py  # -> ../figures/fig_nmm2_jcurve.{png,pdf}
 
 Companion to make_jfig.py (the Jansen-Rit J-curve plotter)."""
@@ -35,7 +36,7 @@ ax[0].axvline(Chopf, ls='--', color='#b3361f', lw=1.3)
 ax[0].text(Chopf-0.04, Glin.max()*1e3*0.97, 'gamma\nHopf $J^*$', color='#b3361f',
            ha='right', va='top', fontsize=9)
 ax[0].set_xlabel(r'inter-QIF coupling $J\;(=C)$')
-ax[0].set_ylabel(r'peak demodulated $A_\Omega$ ($r_E$, $\times10^{-3}$)')
+ax[0].set_ylabel(r'peak rate modulation $A_\Omega$ (Hz)')
 figstyle.panel(ax[0], "a"); ax[0].grid(alpha=.3); ax[0].legend(fontsize=8, loc='upper left')
 # (b) gain against the critical mode's damping
 x = 1/gc
@@ -47,7 +48,7 @@ ax[1].loglog(x, Glin*1e3, '-', color='0.45', lw=1.2, label='linear response')
 xg = np.array([x[hi].min()/1.6, x.max()]); k = Glin[-1]*gc[-1]   # anchored where the critical mode dominates
 ax[1].loglog(xg, k*xg*1e3, 'k--', lw=1, label=r'$\propto 1/\gamma$')
 ax[1].set_xlabel(r'$1/\gamma$ of the critical mode (ms)')
-ax[1].set_ylabel(r'peak $A_\Omega$ ($\times10^{-3}$)')
+ax[1].set_ylabel(r'peak $A_\Omega$ (Hz)')
 figstyle.panel(ax[1], "b")
 ax[1].legend(fontsize=7); ax[1].grid(alpha=.3, which='both')
 
@@ -59,6 +60,7 @@ for a in (ax[1].xaxis, ax[1].yaxis):
     a.set_minor_formatter(NullFormatter())
 plt.tight_layout(w_pad=2.5)
 figstyle.scale_text(plt.gcf(), placed_frac=0.92)
+overlap.check(plt.gcf(), placed_frac=0.92, name="make_nmm2_jfig.py")
 plt.savefig(os.path.join(FIGDIR, "fig_nmm2_jcurve.png"), dpi=300)
 plt.savefig(os.path.join(FIGDIR, "fig_nmm2_jcurve.pdf"))
 print("wrote", os.path.join(FIGDIR, "fig_nmm2_jcurve.{png,pdf}"))

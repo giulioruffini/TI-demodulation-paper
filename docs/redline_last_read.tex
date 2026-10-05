@@ -1,7 +1,7 @@
 \documentclass[11pt,a4paper]{article}
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-2v1lo47q/old.tex   Mon Oct  5 19:35:46 2026
-%DIF ADD /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-2v1lo47q/new.tex   Mon Oct  5 19:35:46 2026
+%DIF DEL /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-q8namel6/old.tex   Mon Oct  5 20:11:29 2026
+%DIF ADD /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-q8namel6/new.tex   Mon Oct  5 20:11:29 2026
 \usepackage[margin=2.3cm]{geometry}
 \usepackage{lmodern}        % classic Computer Modern look, vectorized (T1)
 \usepackage[T1]{fontenc}
@@ -234,7 +234,8 @@ relative to the input, leaving dynamic synapses. Otherwise mixing depends on
 frequency. Membrane attenuation enters once, through access. Near a Hopf bifurcation,
 the network amplifies the generated beat as $1/\gamma$ within linear response,
 where $\gamma$ is modal damping. Coupling sweeps separate this gain from leading-order
-beat generation. Rate modulation grows faster than the mean-rate change near resonance.
+beat generation. Rate modulation \DIFdelbegin \DIFdel{grows faster than }\DIFdelend \DIFaddbegin \DIFadd{initially outgrows }\DIFaddend the mean-rate change\DIFdelbegin \DIFdel{near resonance}\DIFdelend \DIFaddbegin \DIFadd{; closer to
+the Hopf, rectification of the amplified oscillation accelerates the mean shift}\DIFaddend .
 Spiking simulations distinguish beat modulation below the oscillatory threshold from
 gamma induced when rectification crosses it. An equal-power mean-field carrier
 control separates induction from the beat response.\
@@ -261,7 +262,8 @@ relative to the input, leaving dynamic synapses. Otherwise mixing depends on
 frequency. Membrane attenuation enters once, through access. Near a Hopf bifurcation,
 the network amplifies the generated beat as $1/\gamma$ within linear response,
 where $\gamma$ is modal damping. Coupling sweeps separate this gain from leading-order
-beat generation. Rate modulation grows faster than the mean-rate change near resonance.
+beat generation. Rate modulation \DIFdelbegin \DIFdel{grows faster than }\DIFdelend \DIFaddbegin \DIFadd{initially outgrows }\DIFaddend the mean-rate change\DIFdelbegin \DIFdel{near resonance}\DIFdelend \DIFaddbegin \DIFadd{; closer to
+the Hopf, rectification of the amplified oscillation accelerates the mean shift}\DIFaddend .
 Spiking simulations distinguish beat modulation below the oscillatory threshold from
 gamma induced when rectification crosses it. An equal-power mean-field carrier
 control separates induction from the beat response.\ Fast access, cellular mixing, and slow circuit resonance form
@@ -640,16 +642,20 @@ $A_\Omega=\half\Sig''\varepsilon^2m$) and are \emph{not} equivalent beyond it. F
 whereas for the $m=1$ AM surrogate
 $\mathrm{LPF}[s^2]=\varepsilon^2(\tfrac34+\cos\Omega t+\tfrac14\cos2\Omega t)$: the same
 $\Omega$ amplitude, but a different DC term and a spurious second harmonic at $25\%$ of
-the fundamental. Since that second harmonic is the observable that
+the fundamental. \DIFdelbegin \DIFdel{Since that second harmonic is the observable that
 distinguishes transduction classes (\S\ref{sec:transduction}), every claim that turns on
-the waveform is run with genuine two tones: the demodulation demonstration
+the waveform is run with genuine two tones : }\DIFdelend \DIFaddbegin \DIFadd{Genuine two tones are used for }\DIFaddend the demodulation demonstration
 (Fig.~\ref{fig:demod}), the curvature and square-law controls (Fig.~\ref{fig:opp}), the
 laminar maps (Figs.~\ref{fig:lanmm_p2},~\ref{fig:lanmm_p1}) and the kHz demonstration.
-The AM surrogate is retained for the dense perturbative sweeps in $(\Omega,p)$ and
-$(\Omega,C)$, which read only the leading $\Omega$ component, and
-Fig.~\ref{fig:opp}d verifies their open-loop agreement at one operating point.
-It does not establish quantitative equivalence of the recurrent sweeps near the Hopf,
-where the different DC terms can shift the operating state.
+The AM surrogate is retained for \DIFdelbegin \DIFdel{the dense perturbative sweeps in $(\Omega,p)$ and $(\Omega,C)$, which read only the leading $\Omega$ component, and
+}\DIFdelend \DIFaddbegin \DIFadd{dense resonance and coupling sweeps;
+}\DIFaddend Fig.~\ref{fig:opp}d verifies \DIFdelbegin \DIFdel{their }\DIFdelend open-loop agreement at \DIFaddbegin \DIFadd{$\Omega$ at }\DIFaddend one operating point.
+\DIFdelbegin \DIFdel{It does not establish quantitative equivalence of }\DIFdelend \DIFaddbegin \DIFadd{That agreement does not extend to the mean shift or second harmonic, the latter
+being a diagnostic of transduction class (\S\ref{sec:transduction}). We therefore
+repeat the mean-shift-dependent comparisons with two tones: the timing-versus-rate
+figure uses them, }\DIFaddend the \DIFdelbegin \DIFdel{recurrent sweeps near the Hopf, where the }\DIFdelend \DIFaddbegin \DIFadd{TI/tACS ratios change by at most $2.2\%$ on the tested grid,
+and the NMM2 endpoint remains attracting. The corresponding Results report both
+waveforms, whose }\DIFaddend different DC terms can shift the \DIFaddbegin \DIFadd{recurrent }\DIFaddend operating state.
 
 \DIFdelbegin \DIFdel{In the language of \cite{ruffini2025ham}, the quadratic cross-term $s_1 s_2$ between }\DIFdelend \DIFaddbegin \DIFadd{The quadratic cross term
 $\varepsilon_1\varepsilon_2\cos\omega_1t\cos\omega_2t$ mixes the two fast TI
@@ -1433,18 +1439,42 @@ called the }\DIFaddend J-curve\DIFaddbegin \DIFadd{, }\DIFaddend varies
 $J\equiv C$ at fixed $\bar\eta$ toward $J^*$, located by bisection on the leading
 Jacobian eigenvalue, and reads the lock-in peak of $r_E$ over $\Delta f$
 (Fig.~\ref{fig:nmm2_jcurve}). Unlike the JR J-curve, this sweep does not pin the
-operating point. In the fast-carrier
-approximation the leading voltage source is fixed by the carrier excursion
-(\S\ref{sec:dynamic}). The \DIFdelbegin \DIFdel{four-state }\DIFdelend \DIFaddbegin \DIFadd{four-operating-point }\DIFaddend check bounds the error of that approximation
+operating point. \DIFdelbegin \DIFdel{In the fast-carrier
+approximation the leading voltage source is fixed by
+the carrier excursion
+(\S\ref{sec:dynamic}). The four-state check bounds the error of that approximation
 at the tested points; it does not establish source invariance over the full $J$
-sweep. The plotted normalization therefore uses the leading fast-carrier source,
-while the finite-carrier response can retain operating-state dependence.
+sweep.
+The plotted normalization therefore uses the leading fast-carrier source, while the finite-carrier response can retain }\DIFdelend \DIFaddbegin \DIFadd{At $\bar\eta=0$, we track the eigenpair that reaches the Hopf by
+continuation and define $\gamma$ from that critical pair, even where another mode
+dominates the response. The linear reference includes the }\DIFaddend operating-state
+\DIFdelbegin \DIFdel{dependence. }\DIFdelend \DIFaddbegin \DIFadd{dependence of the carrier response and the recurrent transfer. We compute its
+second-order source from the PING quadratic terms at the central carrier,
+$300$~Hz, and apply the full linearized network response over $15$--$90$~Hz
+in $0.025$~Hz steps. Using the distinct AM sidebands changes the peak gain by
+less than $0.1\%$ across this sweep.
+}
+
+\DIFadd{The simulated coupling sweep uses the AM surrogate, $A_f=8$, with $5$~s
+settling and a $4$~s window. We search around each linear resonance, extending
+the frequency grid until each sampled maximum is bracketed, and compare
+amplitudes $A_f=2,4,8$ at nine couplings. Local parabolic interpolation changes
+the sampled peaks by less than $1.3\%$. The figure scales the linear reference
+to the median measured gain over $14.5<J<16$; the amplitude check instead
+normalizes peak response divided by $A_f^2$ and linear gain to its value at
+$A_f=2$, $J=15.53$. These normalizations compare gain variation, rather than
+establishing invariance of the detector coefficient.
+}\DIFaddend
 
 We check the stability of the driven $J$-curve endpoint by integrating the full
 variational matrix along its trajectory. At carrier $300$~Hz and beat $50.5$~Hz,
 the AM input repeats every $2$~s. After $8$~s of settling, we compute the
 perturbation multipliers over that period and repeat over the next period.
 Moduli below one indicate decay of perturbations to the periodic response.
+\DIFaddbegin \DIFadd{Two-tone controls at $J=16.5663$ and $16.5901$, both with a $50.5$~Hz beat,
+use $5$~s settling, direct perturbation decay, and an $8$~s finite-time
+Lyapunov estimate.
+}\DIFaddend
 
 \subsection{QIF spiking network (microscale of NMM2)}\label{sec:qif-methods}
 NMM2 is the exact infinite-population mean field of all-to-all QIF neurons
@@ -1515,20 +1545,26 @@ column with the field-free operating point $v^*$ pinned: for
 each global connectivity $C$ we solve the field-free fixed-point relation analytically
 for the external drive $p(C)$ that holds $v^*$ (hence $\Sig''(v^*)$) fixed, vary $C\,(=J)$
 toward the alpha Hopf, and read $\gamma,\omega_0$ from the $6\times6$ Jacobian. The field
-is the AM surrogate of Eq.~\eqref{eq:amsur} for TI (Fig.~\ref{fig:jcurve}; AC lock-in vs DC mean
-rate for Fig.~\ref{fig:timing}) or a direct in-band sinusoid $s(t)=\varepsilon\cos\Omega t$
+is the AM surrogate of Eq.~\eqref{eq:amsur} for \DIFdelbegin \DIFdel{TI (}\DIFdelend Fig.~\ref{fig:jcurve}\DIFdelbegin \DIFdel{; AC lock-in vs DC mean
+rate for }\DIFdelend \DIFaddbegin \DIFadd{, genuine two
+tones for the timing comparison (}\DIFaddend Fig.~\ref{fig:timing})\DIFaddbegin \DIFadd{, }\DIFaddend or a direct in-band sinusoid $s(t)=\varepsilon\cos\Omega t$
 ($\varepsilon=0.1$~mV) for the tACS control (Fig.~\ref{fig:tacs}), each read out by the
-lock-in of $v$ at $\Delta f$.
-The Figure~\ref{fig:jcurve}--Figure~\ref{fig:tacs} response-ratio comparison uses
+lock-in of $v$ at $\Delta f$\DIFdelbegin \DIFdel{.
+}\DIFdelend \DIFaddbegin \DIFadd{, except in the timing comparison, which reads the
+modulation and mean of the same pyramidal rate $r_P=\Sig(v+s)$.
+That comparison uses $18$~s settling and a $20$~s window for each waveform.
+}\DIFaddend The Figure~\ref{fig:jcurve}--Figure~\ref{fig:tacs} response-ratio comparison uses
 $v^*=8.30$~mV, TI surrogate amplitude $0.3$~mV with $m=1$ and $f_c=100$~Hz,
 and tACS amplitude $0.1$~mV, driven at each field-free modal frequency.
-The TI amplitudes are interpolated logarithmically in $C$ onto the tACS grid.
-Pinning fixes the background curvature; it does not cancel the stimulation-induced
+The \DIFaddbegin \DIFadd{original }\DIFaddend TI amplitudes are interpolated logarithmically in $C$ onto the tACS
+grid. \DIFaddbegin \DIFadd{For the waveform comparison, both the surrogate and two-tone TI are rerun
+on that grid with $12$~s settling and a $6$~s window.
+}\DIFaddend Pinning fixes the background curvature; it does not cancel the stimulation-induced
 mean shift.
 Additional controls at $C=110$, $133.9091$, and $136.3$ use a tACS amplitude of
 $0.0143039$~mV, matched to the leading TI beat source. They record mean voltage,
 mean rate, and lock-in with $12$~s settling and a $6$~s window, repeated with
-$60$~s settling and a $20$~s window.
+$60$~s settling and a $20$~s window\DIFaddbegin \DIFadd{; the latter settings also test genuine two tones}\DIFaddend .
 
 \subsection{Vocabulary: forced response, entrainment, and gating}
 \emph{Forced response} denotes the component driven at the beat $\Delta f$,
@@ -1770,12 +1806,14 @@ lock-in amplitudes in linear response is
 The common network transfer cancels, so the ratio has no dependence on $\gamma$
 when both responses are linear about the same state. At the amplitudes used in
 Figs.~\ref{fig:jcurve} and~\ref{fig:tacs}, $\mathcal R_{\rm lin}=0.143$.
-The cached sweeps give approximately $0.14$ far from the Hopf, rising to $0.24$
-at $\gamma=1.07$~s$^{-1}$ and $0.47$ at $0.12$~s$^{-1}$.
-These are response ratios for the stated unequal input amplitudes, not an
+The \DIFdelbegin \DIFdel{cached }\DIFdelend \DIFaddbegin \DIFadd{surrogate }\DIFaddend sweeps give approximately $0.14$ far from the Hopf, rising to $0.24$
+at $\gamma=1.07$~s$^{-1}$ and $0.47$ at $0.12$~s$^{-1}$. \DIFaddbegin \DIFadd{Genuine two tones give
+$0.14$, $0.24$, and $0.46$, respectively, a change of at most $2.2\%$ across the grid.
+}\DIFaddend These are response ratios for the stated unequal input amplitudes, not an
 equal-power comparison. In controls at three couplings, matching the tACS input
 to TI's leading beat source gives TI/tACS output ratios of $0.99$, $0.94$, and
-$0.92$. Increasing that direct input by a factor of $6.99$ increases its response
+$0.92$ \DIFaddbegin \DIFadd{for the surrogate, and $0.99$, $0.93$, and $0.90$ for two tones}\DIFaddend .
+Increasing that direct input by a factor of $6.99$ increases its response
 by $6.97$, $3.95$, and $1.96$, respectively. These controls support earlier
 saturation of the larger response, accompanied by stimulation-induced mean
 shifts that field-free pinning does not cancel. The linear cancellation therefore
@@ -1791,7 +1829,8 @@ drive, but identifying an Arnold tongue requires phase tracking
 \centering
 \includegraphics[width=\textwidth]{fig_jcurve.pdf}
 \caption{\textbf{Coupling controls the amplification at fixed detection (Jansen--Rit).}
-The field-free operating point $v^*$ is pinned by co-solving $p(C)$, so $\Sig''(v^*)=-0.151$ and
+The \DIFaddbeginFL \DIFaddFL{input is the AM surrogate of Eq.~\eqref{eq:amsur}.
+The }\DIFaddendFL field-free operating point $v^*$ is pinned by co-solving $p(C)$, so $\Sig''(v^*)=-0.151$ and
 $A_{\rm open}$ are held constant throughout. \emph{(a)} The demodulated $A_\Omega$ grows as the
 coupling $C\,(=J)$ approaches the Hopf $C^*$ from the stable-focus side ($\gamma>0$). \emph{(b)} The envelope resonance
 sharpens and grows as $C\!\to\!C^*$. \emph{(c)} The network gain
@@ -1801,39 +1840,69 @@ bifurcation.}
 \end{figure}
 
 In NMM2 PING, the coupling $C$ is the mean inter-neuron QIF synaptic weight $J$.
-The leading fast-carrier source provides the normalization for this unpinned
+\DIFdelbegin \DIFdel{The leading fast-carrier source provides the normalization for this unpinned
 sweep (\S\ref{sec:dynamic}); finite-carrier source corrections over the full
-coupling range have not been bounded. Sweeping $J$ at fixed background drive
-$\bar\eta$ toward the gamma Hopf $J^*$, the demodulated peak of $r_E$ grows as
+coupling range have not been bounded. }\DIFdelend Sweeping $J$ at fixed background drive \DIFdelbegin \DIFdel{$\bar\eta$ }\DIFdelend toward the gamma Hopf \DIFdelbegin \DIFdel{$J^*$, the demodulated peak of $r_E$ grows as
 $1/\gamma$ before departing from this scaling near criticality
-(Fig.~\ref{fig:nmm2_jcurve}), consistent with the coupling-controlled weak-field
-sensitivity of QIF networks \cite{clusella2023}. Here both coupling and rectifier
-are derived, and $\gamma$ describes the field-free equilibrium.
+}\DIFdelend \DIFaddbegin \DIFadd{reveals two
+competing modes }\DIFaddend (Fig.~\ref{fig:nmm2_jcurve})\DIFdelbegin \DIFdel{, consistent with the }\DIFdelend \DIFaddbegin \DIFadd{. A second mode near $55$~Hz carries
+the linear-response peak over $14.6\lesssim J\lesssim16.2$; the critical mode
+carries it at lower couplings and again near the Hopf, where its frequency is
+about $50$~Hz. In that near-Hopf interval,
+$0.0014\lesssim\gamma\lesssim0.0081$~ms$^{-1}$, the linear gain scales as
+$1/\gamma$ with a fitted exponent of $1.02$ over a $5.8$-fold damping range.
+The full-sweep exponent is $0.71$, so a single-mode law does not describe the
+whole curve. This refines the }\DIFaddend coupling-controlled \DIFdelbegin \DIFdel{weak-field
+sensitivity of }\DIFdelend \DIFaddbegin \DIFadd{sensitivity expected in }\DIFaddend QIF
+networks \cite{clusella2023}\DIFdelbegin \DIFdel{. Here }\DIFdelend \DIFaddbegin \DIFadd{: }\DIFaddend both coupling and rectifier are derived, \DIFdelbegin \DIFdel{and }\DIFdelend \DIFaddbegin \DIFadd{but the
+dominant mode can change.
+}
+
+\DIFadd{At $A_f=8$, the simulated response exceeds the normalized linear reference by
+up to $48\%$ in the amplitude check, then saturates. At a quarter of that
+amplitude ($A_f=2$, one sixteenth of the power), the departures stay within
+$11\%$ at the nine tested couplings. The normalization is stated in Methods;
+}\DIFaddend $\gamma$ \DIFaddbegin \DIFadd{always }\DIFaddend describes the field-free \DIFdelbegin \DIFdel{equilibrium}\DIFdelend \DIFaddbegin \DIFadd{critical mode, not the driven state}\DIFaddend .
 Although a DC-only averaged calculation predicts an unstable endpoint, the full
 periodically forced solution remains attracting: its largest perturbation
 multiplier is $0.034$ over the $2$~s forcing period. Increasing settling from
-$0.6$ to $3$~s changes the endpoint lock-in by $0.8\%$. The final points therefore
-describe a stable nonlinear driven response rather than linear gain about the
-DC-shifted equilibrium. The alpha JR and gamma NMM2 circuits share the leading
-gain scaling despite their different mixers, with amplification set by proximity
-to the Hopf and adjustable through coupling.
+$0.6$ to $3$~s changes the endpoint lock-in by $0.8\%$. \DIFdelbegin \DIFdel{The final points therefore
+describe a stable }\DIFdelend \DIFaddbegin \DIFadd{With genuine two tones,
+the $50.5$~Hz endpoint control also attracts nearby trajectories: perturbations
+decay at $-0.0014$~ms$^{-1}$, and the $8$~s Lyapunov estimate is
+$-0.00079$~ms$^{-1}$. These controls test a }\DIFaddend nonlinear driven response\DIFdelbegin \DIFdel{rather than }\DIFdelend \DIFaddbegin \DIFadd{, not }\DIFaddend linear
+gain about the DC-shifted equilibrium. The alpha JR and gamma NMM2 circuits
+share the \DIFdelbegin \DIFdel{leading
+gain scaling }\DIFdelend \DIFaddbegin \DIFadd{$1/\gamma$ gain scaling of their critical mode }\DIFaddend despite their different
+mixers, with amplification \DIFdelbegin \DIFdel{set by proximity
+to the Hopf and }\DIFdelend adjustable through coupling.
 
 \subsection{The resonance amplifies the envelope-locked modulation more than the mean rate}\label{sec:timing}
 The demodulator feeds the network a constant term and a line at the beat $\Omega$
 (Eq.~\eqref{eq:taylor}), and the transfer $G(\Omega)$ of Eq.~\eqref{eq:gain} treats them
 differently: $G(\omega_0)\propto1/(2\gamma\omega_0)$ diverges as the Hopf is approached,
-while $G(0)\propto1/(\omega_0^2+\gamma^2)$ stays finite. Pinning $v^*$ to hold the local detector
+while $G(0)\propto1/(\omega_0^2+\gamma^2)$ stays finite. \DIFaddbegin \DIFadd{This comparison describes
+the response to the detector's DC and beat sources. The growing beat response
+itself rectifies and contributes another mean shift, quadratic in its amplitude.
+Before saturation that contribution can grow as $1/\gamma^2$, so bounded $G(0)$
+does not imply a bounded mean shift throughout the approach to the Hopf.
+}\DIFaddend Pinning $v^*$ to hold the local detector
 curvature fixed, as in Fig.~\ref{fig:jcurve}, and driving the column toward the Hopf
 through the coupling, we read both quantities from the same observable, the pyramidal
-rate $r_P=\Sig(v+s)$ with the field in its argument. The beat-locked modulation of $r_P$ at
-$\Delta f=f_0$ grows $13.5\times$ ($26$ to $346$~mHz), tracking $1/\gamma$ before
-saturating near criticality; the shift of its mean grows too, $5.8\times$ ($-1.3$ to
-$-7.7$~mHz), through rectification of the growing oscillation, but stays below $0.2\%$ of
-the $3.9$~Hz baseline (Fig.~\ref{fig:timing}). Modulation exceeds mean shift by $19\times$
-far from the Hopf and by $45$--$66\times$ near it. The network amplifies the
-envelope-locked modulation far more than the mean rate, so a small mean-rate change is
+rate $r_P=\Sig(v+s)$ with the field in its argument. \DIFdelbegin \DIFdel{The }\DIFdelend \DIFaddbegin \DIFadd{With genuine two tones, its
+}\DIFaddend beat-locked modulation \DIFdelbegin \DIFdel{of $r_P$ }\DIFdelend at $\Delta f=f_0$ grows \DIFdelbegin \DIFdel{$13.5\times$ }\DIFdelend \DIFaddbegin \DIFadd{$13.2\times$ }\DIFaddend ($26$ to \DIFdelbegin \DIFdel{$346$}\DIFdelend \DIFaddbegin \DIFadd{$339$}\DIFaddend ~mHz),
+tracking $1/\gamma$ before saturating\DIFdelbegin \DIFdel{near criticality; the shift of its mean grows too, $5.8\times$ ($-1.3$ }\DIFdelend \DIFaddbegin \DIFadd{; its mean shift grows $4.4\times$ ($-1.8$ }\DIFaddend to
+$-7.7$~mHz), \DIFdelbegin \DIFdel{through rectification of the growing oscillation, }\DIFdelend but stays below $0.2\%$ of the $3.9$~Hz baseline
+(Fig.~\ref{fig:timing}). \DIFdelbegin \DIFdel{Modulation exceeds mean shift by $19\times$
+}\DIFdelend \DIFaddbegin \DIFadd{The ratio of modulation to mean-shift magnitude rises from
+$14.5$ }\DIFaddend far from the Hopf \DIFdelbegin \DIFdel{and by }\DIFdelend \DIFaddbegin \DIFadd{to $58$ near $\gamma=1$~s$^{-1}$, then falls to $44$ closest
+to the Hopf as rectification of the amplified oscillation accelerates the mean shift.
+The surrogate, whose direct DC source is $3/4$ of the two-tone value, gives ratios
+of $19$, $66$, and }\DIFaddend $45$\DIFdelbegin \DIFdel{--$66\times$ near it. The network amplifies the envelope-locked modulation far more than the mean rate, so a }\DIFdelend \DIFaddbegin \DIFadd{. A }\DIFaddend small mean-rate change \DIFdelbegin \DIFdel{is
 the expected signature even where TI is acting, the mesoscopic counterpart of the
-observation that TI alters spike timing more than firing rate in the primate brain
+}\DIFdelend \DIFaddbegin \DIFadd{can therefore accompany a much
+larger beat response in this weakly driven regime, consistent with the
+}\DIFaddend observation that TI alters spike timing more than firing rate in the primate brain
 \cite{vieira2024}. The mean shift is small but nonzero, so the comparison must use
 commensurate measures, as here.
 
@@ -2029,8 +2098,10 @@ resonant peak and its width.
 Table~\ref{tab:predictions} compares the predictions and related model consequences
 with existing evidence.
 Two are qualitatively consistent with published observations: TI alters spike timing
-more than firing rate in vivo \cite{vieira2024} (our $G(\omega_0)\!\gg\!G(0)$ asymmetry,
-\S\ref{sec:timing}--\ref{sec:qif}), and most pyramidal TI responses vanish when synaptic
+more than firing rate in vivo \cite{vieira2024} (\DIFdelbegin \DIFdel{our $G(\omega_0)\!\gg\!G(0)$ asymmetry,
+}\DIFdelend \DIFaddbegin \DIFadd{the preferential beat response and
+its finite-amplitude limits in
+}\DIFaddend \S\ref{sec:timing}--\ref{sec:qif}), and most pyramidal TI responses vanish when synaptic
 transmission is blocked \cite{caldas2024} (a network read-out, which tests network
 involvement rather than excluding a surviving cellular detector). A
 quantitative reanalysis of these datasets against the model is a natural next step, and
@@ -2048,8 +2119,9 @@ Transduction class: $Y_\Omega\propto\varepsilon^2$ and vanishing $Y_{2\Omega}/Y_
 threshold detection has an onset and variable ratio }\DIFaddendFL & --- (untested;
 existing comparisons match extracellular field, not $\varepsilon$) & Amplitude sweep off
 resonance; transfer-corrected harmonic ratio \\
-Timing-dominated response: the envelope-locked modulation of the rate grows toward
-the Hopf faster than its mean ($G(\omega_0)\!\gg\!G(0)$) & \emph{Qualitatively
+Timing-dominated response: \DIFdelbeginFL \DIFdelFL{the envelope-locked modulation of the rate grows toward
+the Hopf faster than its mean ($G(\omega_0)\!\gg\!G(0)$) }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{beat modulation can exceed the mean shift; their ratio
+peaks and then falls as the amplified oscillation rectifies }\DIFaddendFL & \emph{Qualitatively
 consistent}: TI alters spike timing more than firing rate, primate \cite{vieira2024} &
 Lock-in of spike timing at $\Delta f$ vs.\ the mean-rate change, in the same effect
 measure \\
@@ -2971,16 +3043,23 @@ synthesized by the column although the input carries no alpha power.}
 \centering
 \includegraphics[width=0.92\textwidth]{fig_nmm2_jcurve.pdf}
 \caption{\textbf{Coupling controls the amplification in the exact mean field (NMM2
-PING, gamma).} $J\,(=C)$ is the literal inter-QIF synaptic weight. The sweep is unpinned
-and uses the leading fast-carrier source for normalization (\S\ref{sec:dynamic});
-its finite-carrier corrections have not been bounded across the full sweep.
-The plotted Hopf and damping $\gamma$ refer to the field-free equilibrium.
-The full forced endpoint is stable (largest multiplier $0.034$ over $2$~s),
-despite the instability predicted by a DC-only averaged equilibrium.
-\emph{(a)} The peak demodulated response of $r_E$ grows as $J\!\to\!J^*$ (gamma
-Hopf, $\bar\eta=0$; field-free stable focus, $\gamma>0$). \emph{(b)} The response
-is compared with the $1/\gamma$ reference (dashed), with finite-amplitude departures
-near criticality. Both coupling and rectifier are derived from the QIF network.}
+PING, gamma).} $J\,(=C)$ is the \DIFdelbeginFL \DIFdelFL{literal }\DIFdelendFL inter-QIF synaptic weight\DIFdelbeginFL \DIFdelFL{. The }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{; the }\DIFaddendFL sweep is unpinned
+\DIFaddbeginFL \DIFaddFL{at $\bar\eta=0$ }\DIFaddendFL and uses the \DIFdelbeginFL \DIFdelFL{leading fast-carrier source for normalization }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{AM surrogate with $A_f=8$.
+\emph{(a)} Simulated peak of $r_E$ }\DIFaddendFL (\DIFdelbeginFL \DIFdelFL{\S\ref{sec:dynamic}}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{blue}\DIFaddendFL ) \DIFaddbeginFL \DIFaddFL{and the linear reference (gray), scaled
+to the median measured gain over $14.5<J<16$. The reference includes the
+second-order carrier source}\DIFaddendFL ; its \DIFdelbeginFL \DIFdelFL{finite-carrier corrections have not been bounded across }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{nearby-carrier approximation changes }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{full sweep}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{AM
+peak gain by less than $0.1\%$}\DIFaddendFL . The \DIFdelbeginFL \DIFdelFL{plotted Hopf and damping $\gamma$ refer to }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{red dashed line marks }\DIFaddendFL the field-free \DIFdelbeginFL \DIFdelFL{equilibrium}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Hopf}\DIFaddendFL .
+\DIFaddbeginFL \DIFaddFL{\emph{(b)} }\DIFaddendFL The \DIFdelbeginFL \DIFdelFL{full forced endpoint is stable (largest multiplier $0.034$ over $2$~s)}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{same responses against inverse damping of the critical mode}\DIFaddendFL ,
+\DIFdelbeginFL \DIFdelFL{despite }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{tracked continuously from }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{instability predicted by a DC-only averaged equilibrium}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Hopf}\DIFaddendFL . \DIFdelbeginFL \DIFdelFL{\emph{(a)} The }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Symbols are filled where that mode carries
+the linear }\DIFaddendFL peak \DIFdelbeginFL \DIFdelFL{demodulated response of $r_E$ grows as $J\!\to\!J^*$ }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{and open where the second mode near $55$~Hz does
+}\DIFaddendFL (\DIFdelbeginFL \DIFdelFL{gamma
+Hopf, $\bar\eta=0$; field-free stable focus, $\gamma>0$}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{$14.6\lesssim J\lesssim16.2$}\DIFaddendFL ). \DIFdelbeginFL \DIFdelFL{\emph{(b)} }\DIFdelendFL The \DIFaddbeginFL \DIFaddFL{dashed $1/\gamma$ guide is anchored at the
+last linear-response point. The critical-mode gain follows it near the Hopf;
+the simulated }\DIFaddendFL response \DIFaddbeginFL \DIFaddFL{first exceeds and then falls below it at this amplitude.
+At a $50.5$~Hz beat, the endpoint }\DIFaddendFL is \DIFdelbeginFL \DIFdelFL{compared with }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{attracting for both waveforms: }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{$1/\gamma$ reference (dashed)}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{AM
+multiplier is $0.034$ over $2$~s}\DIFaddendFL , \DIFdelbeginFL \DIFdelFL{with finite-amplitude departures
+near criticality}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{and two-tone perturbations decay at
+$-0.0014$~ms$^{-1}$}\DIFaddendFL . Both coupling and rectifier are derived from the QIF network.}
 \label{fig:nmm2_jcurve}
 \end{figure}
 
@@ -2994,8 +3073,11 @@ pyramidal rate $r_P=\Sig(v+s)$, in mHz. \emph{(a)} The beat-locked modulation at
 $\Delta f=f_0$ (blue) is resonantly amplified and tracks $1/\gamma$ (dashed) before
 saturating; the magnitude of the mean-rate shift (red) stays at a few mHz and rises near
 the Hopf. \emph{(b)} Both normalized to their far-from-Hopf values (log scale): the
-modulation gain follows $1/\gamma$; the mean-shift gain rises later and less. Modulation
-exceeds mean shift by $19\times$ far from the Hopf and $45$--$66\times$ near it.}
+modulation \DIFdelbeginFL \DIFdelFL{gain follows $1/\gamma$; }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{grows $13.2\times$ and }\DIFaddendFL the mean-shift \DIFdelbeginFL \DIFdelFL{gain rises later and less}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{magnitude $4.4\times$ across the sweep}\DIFaddendFL .
+\DIFaddbeginFL \DIFaddFL{The input has two genuine tones. }\DIFaddendFL Modulation exceeds \DIFaddbeginFL \DIFaddFL{the }\DIFaddendFL mean shift by \DIFdelbeginFL \DIFdelFL{$19\times$ }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{$14.5\times$
+}\DIFaddendFL far from the Hopf\DIFdelbeginFL \DIFdelFL{and $45$--$66\times$ }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{; the ratio peaks at $58\times$ }\DIFaddendFL near \DIFdelbeginFL \DIFdelFL{it}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{$\gamma=1$~s$^{-1}$ and falls
+to $44\times$ at the nearest point as the amplified oscillation rectifies}\DIFaddendFL .
+\DIFaddbeginFL \DIFaddFL{The AM surrogate gives $19$, $66$, and $45\times$, respectively.}\DIFaddendFL }
 \label{fig:timing}
 \end{figure}
 

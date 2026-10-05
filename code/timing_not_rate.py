@@ -8,9 +8,10 @@ at the resonant beat Df=f0(C):
   - DC   : shift of the mean pyramidal firing rate <Sigma(v + s)> from its field-free value.
 The network transfer is G(Om)~[(w0^2-Om^2)^2+(2*g*Om)^2]^{-1/2}: at Om=w0 it is
 ~1/(2*g*w0) (diverges as the Hopf is approached, g->0), while at Om=0 it is ~1/w0^2
-(flat). So the AC entrains and is resonantly amplified ~1/g, while the DC mean-rate
-shift is not -- matching the in-vivo finding that TI alters spike timing, not rate
-(Vieira 2024).
+(flat). This compares the direct beat and DC sources only. Rectification of the
+amplified oscillation adds a mean shift quadratic in its amplitude; the modulation
+to mean-shift ratio therefore need not keep rising toward the Hopf. The lock-in
+measures a forced response, not phase capture of an autonomous oscillator.
 
 Self-contained (pure numpy; bisection root-finder so no scipy). The JR dynamics and
 the pinned-v* construction p(C) match jr_jsweep_engine.py used for the J-curve."""

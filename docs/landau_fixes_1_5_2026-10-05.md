@@ -26,12 +26,12 @@ the figure and this note use). Table, settings, and normalizations:
 
 | $J$ | $\gamma_{\rm crit}$ (ms$^{-1}$) | $A=2$ | $A=4$ | $A=8$ (published) |
 |---|---|---|---|---|
-| 15.527 | 0.0218 | 1.000 | 1.013 | 1.065 |
-| 16.190 | 0.0094 | 0.998 | 1.004 | 1.025 |
-| 16.254 | 0.0081 | 1.013 | 1.071 | 1.328 |
-| 16.434 | 0.0045 | 1.034 | 1.151 | 1.480 |
-| 16.566 | 0.0019 | 1.081 | 1.221 | 0.932 |
-| 16.590 | 0.0014 | 1.104 | 1.153 | 0.728 |
+| 15.527 | 0.0218 | 1.000 | 1.013 | 1.054 |
+| 16.190 | 0.0094 | 0.998 | 1.004 | 1.016 |
+| 16.254 | 0.0081 | 1.013 | 1.064 | 1.354 |
+| 16.434 | 0.0045 | 1.034 | 1.145 | 1.481 |
+| 16.566 | 0.0019 | 1.081 | 1.226 | 0.932 |
+| 16.590 | 0.0014 | 1.104 | 1.153 | 0.735 |
 
   At a quarter of the amplitude ($A=2$, one sixteenth of the power) the simulation follows linear
   response to within about 10% at the nine checked couplings. At the published
@@ -122,3 +122,16 @@ note use (`Gpk_src`, `fGpk_src`, `crit`, `simpk`, `sim_over_lin_src`, `amp_check
 lock-in grids in the npz; the rerun reproduces the earlier inline values to the printed digits.
 Interval statement corrected (the critical mode also carries the lowest couplings), the grid
 spacing stated as committed, and "quarter drive power" corrected to quarter amplitude.
+
+## Bracketed peaks (20:10)
+
+At Kaiti's request: several sampled maxima had been at the edge of their frequency grid (the
+low-coupling rows and $J=16.254$). The producer now samples each row on a 7-point grid with
+spacing set to a third of the linear resonance half-width (clipped to 0.05 to 2 Hz) and extends
+any edge maximum by three points until the maximum is interior (`bracket_peaks`). Every row of
+the main sweep and of the three amplitude-check sweeps is now bracketed without extension.
+A parabolic refinement in log amplitude changes the sampled maxima by at most 1.3%; both values
+are stored (`simpk`, `simpk_parabolic`). The simulated peak frequency departs from the linear
+peak by up to 2 Hz at $J=13.0$ and by 0.8 Hz in the upper second-mode rows, which the earlier
+fixed offsets had not covered. Conclusions unchanged: overshoot up to 48% at $A=8$ (amplitude
+check), within about 10% at $A=2$; exponent 1.016. Table above updated to the bracketed values.

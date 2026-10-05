@@ -76,8 +76,8 @@ working edition; only its run-in headings differ. Draft10 implements the placeme
 decisions relayed on 5 October: LaNMM methods join their results in Appendix E;
 transduction laws remain in Theory, with their measurement procedure in Methods;
 the equal-RMS carrier control moves from S13 to Figure 11. All scientific content
-is retained. Draft11 corrects notation, citation scope, and the access argument;
-the separate computational Landau findings await integration. The closing record
+is retained. Draft11 corrects notation, citation scope, and the access argument,
+and integrates the critical-mode and genuine two-tone checks. The closing record
 gives the reasons for the placements.}
 
 \newpage
@@ -86,7 +86,7 @@ A two-tone field carries no power at its beat frequency. Access converts the app
 into local membrane polarization; nonlinear detection generates the beat; the network selects
 and amplifies that generated input. The Introduction develops these stages in that order,
 with their mechanisms and evidence. Axonal TI rectification is established in prior models;
-Short effective membrane times were already tested in a TI gamma-network model
+short effective membrane times were already tested in a TI gamma-network model
 (Esmaeilpour et al., 2021). Our contribution is the separation of mixing from
 recurrent gain, the exact QIF mean field, the product law, and the shared TI/tACS amplifier.
 Fast axonal compartments are the access hypothesis:
@@ -259,8 +259,11 @@ lock-in read-out and the pinned-operating-point protocol recur across models.
 \place{\S3.3--3.4}{NMM2 PING and QIF network}
 & PING (Eq.~26): weights $(1,1,1,2)$, $\bar\eta_H=1.110$,
   $f_0=54$~Hz, field as current $I_E=PE$ so the membrane computes access with
-  $\tau_m=\tau_E$; two criticality knobs. QIF: $N=8000$ per population, Lorentzian quantiles,
-  beats 55 and 42~Hz at $\bar\eta=0.85/1.5$, defined by the field-free states; $A_f=35$ is finite
+  $\tau_m=\tau_E$; two criticality knobs. Critical-mode continuation and a
+  $15$--$90$~Hz linear-response grid for the coupling sweep;
+  separate normalizations for the plotted gain and the $A_f=2,4,8$ amplitude check.
+  QIF: $N=8000$ per population, Lorentzian quantiles, beats 55 and 42~Hz at
+  $\bar\eta=0.85/1.5$, defined by the field-free states; $A_f=35$ is finite
   amplitude, with carrier excursion about 1.2 per tone. Modulation depth and pairwise phase
   consistency; the 45\% threshold sensitivity of phase concentration.
 & Fixes the models whose results follow and states which comparisons are perturbative.
@@ -269,7 +272,9 @@ lock-in read-out and the pinned-operating-point protocol recur across models.
 \midrule
 \place{\S3.5--3.6}{Coupling sweeps, tACS control, vocabulary}
 & Pinning: solve $p(C)$ for fixed $v^*$, read $\gamma,\omega_0$ from the Jacobian; tACS control
-  at $\varepsilon=0.1$~mV. TI uses the AM surrogate at 0.3~mV and $m=1$; pinning
+  at $\varepsilon=0.1$~mV. The JR coupling figure uses the AM surrogate at 0.3~mV
+  and $m=1$; the timing figure uses genuine two tones. TI/tACS and endpoint controls
+  test both waveforms. Pinning
   is field-free and does not cancel driven mean shifts. Forced response, phase capture, and amplitude gating are
   distinct. The maps measure frequency dominance ($|f_{\rm out}-\Delta f|<0.3$~Hz);
   the rate fold does not uniquely identify gamma-amplitude gating.
@@ -304,19 +309,26 @@ lock-in read-out and the pinned-operating-point protocol recur across models.
 & Pinned $J$-curve: $\sim30\times$ growth, $1/\gamma$ then saturation; the same gain--$\gamma$
   trend via $p$; stable-focus side only. Frequency and modal projections vary too.
   The TI/tACS ratio cancels the common transfer in linear response (0.143 predicted);
-  the fixed-amplitude cache ratio rises to 0.24 and 0.47 near the Hopf. Retain the
+  the surrogate ratio rises to 0.24 and 0.47 near the Hopf (two tones: 0.24 and 0.46). Retain the
   unequal-input and field-free-pinning qualifications; matched-source tACS follows TI
-  with ratios 0.99, 0.94, 0.92 at three tested couplings. Both driven means can shift.
+  with ratios 0.99, 0.94, 0.92 for the surrogate and 0.99, 0.93, 0.90 for two tones
+  at three tested couplings. Both driven means can shift.
   Do not infer a universal efficiency gain.
-  NMM2 $J$-curve uses an unpinned fast-carrier normalization, qualified at finite carrier.
-  The full forced endpoint is stable despite the DC-only screen; retain the measured curve.
+  NMM2 has two competing modes: the critical mode dominates at low coupling and
+  near the Hopf, the $55$~Hz mode in between. The near-Hopf linear exponent is 1.02
+  over a 5.8-fold damping range; the full-sweep exponent is 0.71. Retain finite-amplitude
+  departures and the $A_f=2$ check. The $50.5$~Hz endpoint remains attracting for
+  both waveforms despite the DC-only screen; the peak figure is remeasured on a finer grid.
 & The mesoscale claim: network gain grows near a weakly damped mode while the JR
   local curvature is fixed; parameter paths need not have identical finite-distance gain.
 & Fig.~9; Fig.~S10; Clusella 2023.\\[2pt]
 \midrule
 \place{\S4.7--4.8}{Timing over rate; QIF amplitude regimes}
-& Modulation grows $13.5\times$ (26 to 346~mHz) against a mean shift of $5.8\times$ ($-1.3$ to
-  $-7.7$~mHz); ratio 19 far from the Hopf, 45--66 near it. QIF: at $\bar\eta=0.85$, stimulation
+& With two tones, modulation grows $13.2\times$ (26 to 339~mHz) against a mean shift
+  of $4.4\times$ ($-1.8$ to $-7.7$~mHz); ratio 14.5 far from the Hopf, peaking at 58
+  and falling to 44 nearest the Hopf. Retain the surrogate comparison (19, 66, 45)
+  and rectification of the amplified oscillation: finite $G(0)$ does not bound this
+  extra mean shift. QIF: at $\bar\eta=0.85$, stimulation
   induces gamma through a rectified E-drive shift beyond the E-only Hopf; at $1.5$, gamma dominates a smaller beat component. Phase folding
   suppresses that gamma. Retain sidebands, beat depths $0.29/0.23$, rate $+8$--$11\%$, and
   weak per-neuron locking; these runs do not test weak-input scaling or establish gating.
