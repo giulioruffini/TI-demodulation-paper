@@ -10,11 +10,21 @@ Archived at Zenodo: **[doi:10.5281/zenodo.21009618](https://doi.org/10.5281/zeno
 Licensed **CC-BY-4.0** (see [`LICENSE`](LICENSE)); machine-readable citation in
 [`CITATION.cff`](CITATION.cff).
 
-The current local draft is **v0.15.0-draft8** (October 5, 2026), in
-[TN0484_envelope_demodulation.pdf](TN0484_envelope_demodulation.pdf) and
-[TN0484_jne.pdf](TN0484_jne.pdf). As checked on October 2,
-[Calliope WP0185](https://calliope.bcom.one/papers/WP0185) still lists v0.12.0
-(July 21); the newer local draft remains pending Giulio's review and release.
+The current working edition is the **JNE article, v0.15.0-draft8**:
+[TN0484_jne.pdf](TN0484_jne.pdf). Run `./build.sh` to update it. The TN and
+supplement are generated from the same manuscript for an authorized Calliope cut;
+they are not separate working editions. Older versioned PDFs are historical snapshots.
+
+The article, TN, and storyline load one abstract from the four macros in
+[planning/tn0484_abstract.tex](planning/tn0484_abstract.tex); only the article adds
+run-in headings. Every table is introduced and explained in the surrounding text.
+Run `python3 code/build_jne_redline.py` to update the one current [JNE redline](docs/redline_last_read.pdf) against the baseline
+recorded in [planning/review_baseline.json](planning/review_baseline.json), rather
+than creating a new redline for each edit. The present baseline is draft7 (`c4e6b0b`),
+carried over from Klaus's patch pending Giulio's confirmation of his last-read version.
+
+As checked on October 2, [Calliope WP0185](https://calliope.bcom.one/papers/WP0185)
+still lists v0.12.0 (July 21). Release and circulation remain held.
 
 v0.15.0-draft8 credits prior single-neuron TI work for axonal rectification and
 identifies the short-time population representation as our contribution. The AIS
@@ -120,7 +130,7 @@ with a [redline against v0.14.2](docs/redline_v0142_to_v0143.pdf).
 [planning/tn0484_storyline.tex](planning/tn0484_storyline.tex) (section-by-section argument
 map), compiled to [build/storyline/tn0484_storyline.pdf](build/storyline/tn0484_storyline.pdf)
 with `~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex`.
-It maps v0.15.0-draft7, with the weak-field framing authorized by K and section order unchanged.
+Its source maps v0.15.0-draft8, with the weak-field framing authorized by K and section order unchanged.
 The three placement decisions remain open: Theory order, LaNMM methods, and figure
 promotion. The
 [general practice](../../giulio-personal-handbook/dos-and-donts.md#abstract-and-storyline-planning)

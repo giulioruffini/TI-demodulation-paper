@@ -1,28 +1,35 @@
-% TN0484 / WP0185: TN abstract, included by the storyline.
-% Date: 2026-10-05. Status: v0.15.0-draft8, internal review revision.
-Temporal-interference (TI) stimulation combines two high-frequency currents, yet
-their superposition contains no field component at the low difference frequency.
-The neural response requires field-to-membrane access, nonlinear detection, and
-amplification. Single-neuron TI models already demonstrate axonal ion-channel
+% TN0484 / WP0185: the only abstract text.
+% Shared by the JNE article, TN, and storyline; edit these four macros.
+% JNE adds run-in headings; TN and storyline print the same text without them.
+
+\newcommand{\absObjective}{Temporal-interference (TI) stimulation requires field-to-membrane
+access, nonlinear generation of a difference-frequency component absent from the
+field, and amplification of that component. We connect these stages for weak
+perturbations of ongoing activity.}
+
+\newcommand{\absApproach}{Single-neuron TI models already demonstrate axonal ion-channel
 rectification. We represent candidate fast access through axonal compartments,
-including nodes and the axon initial segment, by a short effective membrane time
-in the population model. Periaxonal circuitry motivates separate axonal and
-somatic voltage responses.
-The field-to-voltage transfer and response at human field strengths require calibration.
-For weak perturbations of ongoing activity, smooth cellular nonlinearities with
-a nonzero second-order response generate a beat proportional to the product of
-the effective carrier amplitudes. A Jansen--Rit firing-rate sigmoid realizes this
-mixing through its curvature. An exact quadratic integrate-and-fire mean field
-connects the static curve to spiking dynamics: fast membrane relaxation leaves
-dynamic synapses, whereas outside that limit mixing depends on frequency.
-Membrane attenuation enters once, through access. Near a Hopf bifurcation, the
-network amplifies the generated beat as $1/\gamma$ within linear response, where
-$\gamma$ is modal damping. Coupling sweeps separate this gain from leading-order
-beat generation. Rate modulation grows faster than the mean-rate change near
-resonance. Spiking simulations distinguish beat modulation below the oscillatory
-threshold from gamma induced when rectification crosses it; an equal-power
-mean-field carrier control separates induction from the beat response.
-The weak-input product law makes envelope-only dosimetry conditional on
-transduction. Within linear response, TI and direct low-frequency stimulation
-share the amplifier when coupling, readout, and state are matched, so resonance
-alone gives TI no efficiency advantage.
+including nodes and the axon initial segment, by a short effective membrane time.
+Periaxonal circuitry motivates separate axonal and somatic voltage responses.
+We analyze mixing and recurrent gain in a Jansen--Rit
+column, an exact quadratic integrate-and-fire mean field, and its spiking network.}
+
+\newcommand{\absResults}{For a smooth response with a nonzero second-order term,
+cellular contributions combine into a beat proportional to the product of the
+effective carrier amplitudes. A static rate curve mixes through its curvature;
+the exact mean field recovers this description when membrane relaxation is fast
+relative to the input, leaving dynamic synapses. Otherwise mixing depends on
+frequency. Membrane attenuation enters once, through access. Near a Hopf bifurcation,
+the network amplifies the generated beat as $1/\gamma$ within linear response,
+where $\gamma$ is modal damping. Coupling sweeps separate this gain from leading-order
+beat generation. Rate modulation grows faster than the mean-rate change near resonance.
+Spiking simulations distinguish beat modulation below the oscillatory threshold from
+gamma induced when rectification crosses it. An equal-power mean-field carrier
+control separates induction from the beat response.}
+
+\newcommand{\absSignificance}{Fast access, cellular mixing, and slow circuit resonance form
+a consistent candidate mechanism; its field-to-voltage transfer and response at
+human field strengths require calibration. The product law makes envelope-only
+dosimetry conditional on transduction. Within linear response, TI and direct
+low-frequency stimulation share the amplifier when coupling, readout, and state
+are matched, so resonance alone gives TI no efficiency advantage.}

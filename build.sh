@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 # Build TN0484 in either of its two forms from the single source.
 #
-#   ./build.sh          Technical Note        -> TN0484_envelope_demodulation.pdf
-#   ./build.sh jne      JNE article (no apps)  -> TN0484_jne.pdf
+#   ./build.sh          JNE working article   -> TN0484_jne.pdf
+#   ./build.sh jne      same working article  -> TN0484_jne.pdf
+#   ./build.sh tn       Technical Note        -> TN0484_envelope_demodulation.pdf
 #   ./build.sh supp     JNE supplement         -> TN0484_jne_supplement.pdf
 #   ./build.sh both     TN + JNE
 #   ./build.sh all      TN + JNE + supplement
+# Routine edits update the JNE article. Regenerate TN and supplement for an
+# authorized archive cut; do not create per-edit versioned reading copies.
 #
 # JNE counts the article against a ~12,000-word guideline, so the JNE build drops
 # the appendices and supplementary figures and `supp` emits them as a companion
@@ -60,7 +63,7 @@ build() {
   rmdir "${stage_dir}"
 }
 
-case "${1:-tn}" in
+case "${1:-jne}" in
   tn)   build "${SRC}" ""              "Technical Note" ;;
   jne)  build "TN0484_jne" "\\def\\jnebuild{}" "JNE article" ;;
   supp) build "TN0484_jne_supplement" "\\def\\suppbuild{}" "JNE supplement" ;;

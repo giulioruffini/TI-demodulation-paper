@@ -1,0 +1,120 @@
+{
+  "version": "0.15.0-draft8",
+  "integration_source": "089e00a",
+  "integration_base": "19b8f38",
+  "review_baseline": {
+    "working_edition": "TN0484_jne.pdf",
+    "redline": "docs/redline_last_read.pdf",
+    "baseline_commit": "c4e6b0b",
+    "baseline_version": "0.15.0-draft7",
+    "baseline_status": "Carried over from Klaus's patch; last-read version awaiting Giulio's confirmation",
+    "policy": "Keep this baseline fixed across edits; advance only when Giulio identifies a later version as read. Regenerate TN and supplement for an authorized archive cut."
+  },
+  "outputs": [
+    {
+      "path": "TN0484_jne.pdf",
+      "pages": 34,
+      "bytes": 1619562,
+      "sha256": "b135f4bf11bb1fa3a856331e7ebfcb3f626da06f20e7e9ba27f8ec1f1ad815cb"
+    },
+    {
+      "path": "docs/redline_last_read.pdf",
+      "pages": 34,
+      "bytes": 1691325,
+      "sha256": "d0933d6045335cf8986742214c6ae1bc60ae937adad02da6afb1244a9b19a5ce"
+    }
+  ],
+  "retention": {
+    "sections": {
+      "count": 35,
+      "retained_in_order": true
+    },
+    "figure_labels": {
+      "count": 23,
+      "retained_in_order": true
+    },
+    "equation_labels": {
+      "count": 32,
+      "retained_in_order": true
+    },
+    "table_labels": {
+      "count": 6,
+      "retained_in_order": true
+    },
+    "equation_contents_unchanged": true,
+    "align_contents_unchanged": true,
+    "figure_contents_unchanged": true,
+    "tabular_contents_unchanged": true,
+    "citations": 60
+  },
+  "abstract_text_identical_in_rendered_formats": true,
+  "logs": {
+    "jne": {
+      "errors": 0,
+      "undefined": 0,
+      "overfull": 0,
+      "pages": 34
+    },
+    "redline": {
+      "errors": 0,
+      "undefined": 0,
+      "overfull": 0,
+      "pages": 34
+    },
+    "tn_validation": {
+      "errors": 0,
+      "undefined": 0,
+      "overfull": 0,
+      "pages": 52
+    },
+    "storyline_validation": {
+      "errors": 0,
+      "undefined": 0,
+      "overfull": 0,
+      "pages": 9
+    }
+  },
+  "pages_rendered": {
+    "jne": [
+      1,
+      8,
+      9,
+      12
+    ],
+    "redline": [
+      1,
+      8,
+      9,
+      12
+    ],
+    "tn_validation": [
+      1,
+      37
+    ],
+    "storyline_validation": [
+      1
+    ]
+  },
+  "numerical_reruns": "None; exposition and document workflow only",
+  "visual_inspection": {
+    "jne_pages": [
+      1,
+      8,
+      9,
+      12
+    ],
+    "redline_pages": [
+      1,
+      8,
+      9,
+      12
+    ],
+    "tn_validation_pages": [
+      37
+    ],
+    "storyline_validation_pages": [
+      1
+    ],
+    "result": "No clipping, overlap, or illegible content on inspected pages"
+  }
+}

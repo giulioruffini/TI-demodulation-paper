@@ -30,8 +30,8 @@
 % the JNE build strips the house furniture and uses the structured abstract.
 % Never fork this file -- switch the flag.
 %
-% Default is the TN. Select the JNE build from the command line, without
-% editing this file, via ./build.sh jne  (which invokes pdflatex as
+% The working edition is JNE: ./build.sh defaults to it. The raw TeX default
+% remains TN; choose the article without editing this file via ./build.sh jne  (which invokes pdflatex as
 %   pdflatex -jobname=TN0484_jne "\def\jnebuild{}\input{<this file>}" ).
 % ---------------------------------------------------------------------------
 \newif\ifjne
@@ -164,67 +164,16 @@ S1, S2, \dots
 
 \ifsupp\else
 \section*{Abstract}
+% One text for the article, technical note, and storyline.
+\input{planning/tn0484_abstract.tex}
+\noindent
 \ifjne
-% JNE structured abstract: Objective / Approach / Main results / Significance,
-% bold run-in headings, 300-word cap.
-\noindent
-\textbf{Objective.} Temporal-interference (TI) stimulation requires field-to-membrane
-access, nonlinear generation of a difference-frequency component absent from the
-field, and amplification of that component. We connect these stages for weak
-perturbations of ongoing activity.
-\textbf{Approach.} Single-neuron TI models already demonstrate axonal ion-channel
-rectification. We represent candidate fast access through axonal compartments,
-including nodes and the axon initial segment, by a short effective membrane time.
-Periaxonal circuitry motivates separate axonal and somatic voltage responses.
-We analyze mixing and recurrent gain in a Jansen--Rit
-column, an exact quadratic integrate-and-fire mean field, and its spiking network.
-\textbf{Main results.} For a smooth response with a nonzero second-order term,
-cellular contributions combine into a beat proportional to the product of the
-effective carrier amplitudes. A static rate curve mixes through its curvature;
-the exact mean field recovers this description when membrane relaxation is fast
-relative to the input, leaving dynamic synapses. Otherwise mixing depends on
-frequency. Membrane attenuation enters once, through access. Near a Hopf bifurcation,
-the network amplifies the generated beat as $1/\gamma$ within linear response,
-where $\gamma$ is modal damping. Coupling sweeps separate this gain from leading-order
-beat generation. Rate modulation grows faster than the mean-rate change near resonance.
-Spiking simulations distinguish beat modulation below the oscillatory threshold from
-gamma induced when rectification crosses it. An equal-power mean-field carrier
-control separates induction from the beat response.
-\textbf{Significance.} Fast access, cellular mixing, and slow circuit resonance form
-a consistent candidate mechanism; its field-to-voltage transfer and response at
-human field strengths require calibration. The product law makes envelope-only
-dosimetry conditional on transduction. Within linear response, TI and direct
-low-frequency stimulation share the amplifier when coupling, readout, and state
-are matched, so resonance alone gives TI no efficiency advantage.
-
+\textbf{Objective.} \absObjective\
+\textbf{Approach.} \absApproach\
+\textbf{Main results.} \absResults\
+\textbf{Significance.} \absSignificance
 \else
-\noindent
-Temporal-interference (TI) stimulation combines two high-frequency currents, yet
-their superposition contains no field component at the low difference frequency.
-The neural response requires field-to-membrane access, nonlinear detection, and
-amplification. Single-neuron TI models already demonstrate axonal ion-channel
-rectification. We represent candidate fast access through axonal compartments,
-including nodes and the axon initial segment, by a short effective membrane time
-in the population model. Periaxonal circuitry motivates separate axonal and
-somatic voltage responses.
-The field-to-voltage transfer and response at human field strengths require calibration.
-For weak perturbations of ongoing activity, smooth cellular nonlinearities with
-a nonzero second-order response generate a beat proportional to the product of
-the effective carrier amplitudes. A Jansen--Rit firing-rate sigmoid realizes this
-mixing through its curvature. An exact quadratic integrate-and-fire mean field
-connects the static curve to spiking dynamics: fast membrane relaxation leaves
-dynamic synapses, whereas outside that limit mixing depends on frequency.
-Membrane attenuation enters once, through access. Near a Hopf bifurcation, the
-network amplifies the generated beat as $1/\gamma$ within linear response, where
-$\gamma$ is modal damping. Coupling sweeps separate this gain from leading-order
-beat generation. Rate modulation grows faster than the mean-rate change near
-resonance. Spiking simulations distinguish beat modulation below the oscillatory
-threshold from gamma induced when rectification crosses it; an equal-power
-mean-field carrier control separates induction from the beat response.
-The weak-input product law makes envelope-only dosimetry conditional on
-transduction. Within linear response, TI and direct low-frequency stimulation
-share the amplifier when coupling, readout, and state are matched, so resonance
-alone gives TI no efficiency advantage.
+\absObjective\ \absApproach\ \absResults\ \absSignificance
 \fi
 
 \smallskip
@@ -649,7 +598,8 @@ is read through the susceptibility at $\Omega$. Thus its carrier dependence is
 $1/(\omega_1\omega_2)$, not the product of two linear rate responses. Among the
 quadratic terms in Eq.~\eqref{eq:mpr}, $v^2$ contributes at order $\omega^{-2}$,
 $rv$ at $\omega^{-3}$, and $r^2$ at $\omega^{-4}$ for nearby fast tones.
-Table~\ref{tab:exponents} summarizes the comparison.
+Table~\ref{tab:exponents} compares these carrier-frequency powers for a static
+curve and a dynamic population with the same membrane access.
 
 \begin{table}[h]
 \centering\small
@@ -669,6 +619,26 @@ carrier once more between voltage and rate; the beat is formed before that step.
 Prefactors depend on the operating point and beat-frequency susceptibility.}
 \label{tab:exponents}
 \end{table}
+
+The first row is common to both detectors: the membrane converts current to voltage
+with one factor of $1/\omega$. In the second row, the static curve converts voltage
+to rate without further frequency attenuation; its slope sets the gain. The dynamic
+population integrates the carrier once more in its rate equation, adding a factor
+of $1/\omega$. The third row combines these stages, giving a current-to-rate carrier
+response proportional to $\omega^{-1}$ for the static curve and $\omega^{-2}$ for
+the dynamic population.
+
+The last row concerns the beat. The static curve mixes the attenuated voltage
+through its curvature. In the dynamic population, $v^2$ mixes it in the voltage
+equation, before the additional integration in the rate equation. Both therefore
+inherit $(\omega_1\omega_2)^{-1}$ from membrane access. Equal exponents do not imply
+equal amplitudes: the prefactors depend on the mixing coefficient and susceptibility
+at the fixed beat frequency $\Omega$. For the uncoupled carrier-averaged response,
+Eq.~\eqref{eq:kfixed} gives the coefficient $K(\omega)$ at fixed voltage excursion,
+which tends to $F'/2$ for fast carriers; it is not the full finite-$\Omega$ network
+prefactor. The dynamic population thus attenuates the carrier twice but generates
+the beat between those stages, so its steeper carrier roll-off in the rate does not
+imply an additional suppression of beat generation.
 
 \subsection{Transduction class and its spatial and spectral signatures}\label{sec:transduction}
 A neural response proportional to the squared envelope is not equivalent to one
@@ -886,6 +856,11 @@ In the latter description, the approach to a static transfer is governed by
 Eq.~\eqref{eq:slow_synapse}; the membrane filter must not be applied again outside
 the QIF equations. A short access time improves carrier transmission without,
 by itself, specifying the mixing coefficient or the remaining circuit resonance.
+Table~\ref{tab:doors} collects the response times that enter this section: measured
+somatic and axonal decays, the assumed fast access time, field-induced charging in
+a different stimulation regime, the cellular detector, and the synaptic filter
+acting downstream of detection. A characteristic frequency is given only for a
+specified filter; a measured decay is not by itself a TI cutoff.
 
 \begin{table}[h]
 \centering\small
@@ -2164,6 +2139,11 @@ applied-field perturbation $s(t)$ (\S\ref{sec:coupling}) entering the pyramidal 
 \ddot y_2 &= Bb\,C_4\,\Sig(C_3 y_0)-2b\dot y_2-b^2 y_2,
 \end{align}
 integrated as six first-order ODEs; the LFP proxy is $v=y_1-y_2$ \cite{jansen1995}.
+Table~\ref{tab:params} gives the reference column parameters. The synaptic rates
+correspond to excitatory and inhibitory decay times of $10$ and $20$~ms, while
+$A$ and $B$ set the postsynaptic-potential gains. The sigmoid parameters fix its
+voltage scale and rate ceiling; the sweeps vary the external rate $p$ or connectivity
+$C$ to change the operating state, as specified in Methods.
 
 \begin{table}[h]\centering\small
 \caption{Jansen--Rit parameters \cite{jansen1995}.}

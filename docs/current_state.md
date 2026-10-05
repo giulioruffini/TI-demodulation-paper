@@ -1,5 +1,16 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## Draft8 integration — one abstract and one working edition (2026-10-05)
+
+Klaus's source changes from `089e00a` are integrated with draft8's corrected
+attribution. The JNE article is the working edition. All formats load the same
+abstract macros, so neither the TN nor the storyline keeps a separate copy.
+Tables 1 and 2 are explained in place; the Table 1 text distinguishes frequency
+powers, gains, and the zero-beat coefficient from finite-beat susceptibility.
+`./build.sh` now builds JNE by default. One current redline uses the recorded
+baseline; TN and supplement publication wait for an authorized archive cut.
+Record: `revision_2026-10-05_single_abstract_tables.md`. Holds remain.
+
 ## v0.15.0-draft8 — attribution of axonal TI mechanisms (2026-10-05)
 
 The abstracts, Introduction, and Conclusion credit existing single-neuron TI
