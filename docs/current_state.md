@@ -12,6 +12,10 @@ by at most 2.2% between the waveforms, and the two-tone endpoint remains attract
 The abstract and prediction table now distinguish the initial growth of modulation
 from the later rectification of the amplified oscillation into a mean shift.
 
+Klaus's independent fidelity check of `b436a9c` passes: his reserved numerical
+passages, the abstract, and the S10/S11 captions match the producer outputs.
+The Landau correction cycle is closed; the review freeze is lifted.
+
 Klaus confirms that his PEIX check used bioRxiv v3 Appendix A.1, not the published
 CFC supplement. That preprint and the author appendix agree; Giulio is to confirm
 the published formula before submission. Author review, declarations, and the length

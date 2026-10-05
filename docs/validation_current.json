@@ -2,7 +2,7 @@
   "version": "0.15.0-draft11",
   "review_baseline": "0c394df",
   "redline_baseline": "8016065",
-  "status": "Landau text and numerical corrections integrated; author and length review pending",
+  "status": "Landau correction cycle closed after independent numerical fidelity pass; author, PEIX publication, and length review pending",
   "outputs": {
     "jne": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
@@ -134,5 +134,13 @@
   "figure_runner_tests": {
     "passed": 12,
     "scope": "existing cache-safety and dependency checks; numerical verifier checks the new raw grids"
+  },
+  "independent_fidelity_review": {
+    "reviewer": "klaus-484-TI-helper",
+    "reported_at": "2026-10-05 20:16 CEST",
+    "target_commit": "b436a9c",
+    "result": "pass",
+    "scope": "Reserved computational findings 1/5/6/18/19/21/29: abstract, timing paragraph and caption, TI/tACS values, NMM2 intervals and gain/amplitude statements, normalization, and two-tone endpoint; checked against committed producer outputs.",
+    "remaining_discrepancies_reported": []
   }
 }

@@ -87,6 +87,16 @@ are retained in order. `docs/validation_current.json` records the hashes and
 inspected pages. The prose checker is clear on the manuscript, abstract, and
 storyline; the revision note's only remaining flag is the Markdown table separator.
 
+## Independent fidelity confirmation
+
+Klaus's peer report of October 5 at 20:16 confirms a pass on `b436a9c` for all
+his reserved passages: the abstract, timing paragraph and caption, TI/tACS
+ratios, NMM2 mode intervals and exponents, amplitude comparison and normalization,
+and two-tone endpoint stability. He checked these against the committed producer
+outputs and reported no discrepancy. This closes the Landau correction cycle
+and the temporary review freeze; the submission and release decisions remain
+separate. No manuscript, figure, cache, or code change accompanied this record.
+
 ## Length and remaining review
 
 TeXcount reports 13,677 article words and 4,457 supplementary words, excluding
