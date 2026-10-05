@@ -19,7 +19,7 @@ No explanation, example, qualification, result, equation, figure, or table is ap
 
 ## DC argument and its scope
 
-The new paragraph follows the reweighting example in Section 2.4. One sentence in the Discussion links it to the equal-RMS control and the operating-state shift. Klaus was asked to check the scope independently; no reply had arrived when this record was prepared.
+The new paragraph follows the reweighting example in Section 2.4. One sentence in the Discussion links it to the equal-RMS control and the operating-state shift. Klaus's independent check arrived after the revision was committed; the review closure below records its disposition.
 
 For distinct carriers, the static quadratic expansion gives
 
@@ -99,3 +99,15 @@ The JNE, TN, and supplement build with no errors, undefined references, or overf
 Commands: `./build.sh jne`; private TN/supplement builds using the same source and switches; `python3 code/build_jne_redline.py`; `python3 code/count_section_words.py --json docs/word_counts_draft8_to_draft9.json`; prose checker on the manuscript, shared abstract, and storyline; content-inventory and rendered-abstract checks recorded in `docs/validation_current.json`.
 
 Release holds remain: no push, Calliope/Zenodo cut, Overleaf synchronization, or coauthor email.
+
+## Independent DC review closed, October 5
+
+Klaus's evidence is preserved at commit `e563b4a` on `dc-term-focality`, in `docs/dc_term_focality_2026-10-05.md`. It confirms the quadratic source formulas, averaging distinction, numerical example, homogeneous-region maximum principle, and isotropic orientation averages. Comparing it with the committed draft9 paragraph required no manuscript change. The following qualifications govern the additional claims in the peer note; they are not new results added to the article.
+
+- The population inequality is between magnitudes and requires mixing coefficients of one sign. Opposite curvatures can cancel the mean without canceling the beat. Draft9's orientation-independent curvature assumption is sufficient. Reversing the shared orientation vector reverses both field projections, leaving their product unchanged; reversing one carrier reverses the beat phase.
+- A constant anisotropic conductivity tensor admits the analogous elliptic maximum principle, but the ordinary Laplacian identity in the note applies in isotropic or transformed coordinates. Draft9 explicitly assumes isotropic conductivity. A superharmonic function excludes a strict interior minimum, not every interior extremum. The intensity theorem also places no general restriction on the beat product, whose Laplacian can have either sign.
+- A general dynamic detector's Hessian source is not necessarily positive semidefinite. The QIF voltage-square term supplies a positive contribution in the specified fast-carrier limit; this does not establish the same spatial theorem for every second-order dynamic detector. Draft9 restricts the new argument to static quadratic detection.
+- Nearby carrier frequencies alone do not bound the difference between their dynamic DC coefficients. Approximate equality requires sufficiently slow variation of the relevant susceptibility across the separation; an error of order beat frequency divided by carrier frequency needs an additional derivative bound. Draft9 leaves dynamic coefficients explicit.
+- Equal local RMS matches the static quadratic mean, not an entire spatial map produced by arbitrary different montages, nor every convex detector. The peer note's fourth-moment counterexample establishes the latter limit: for two equal nearby distinct tones of amplitude \(a\), \(\langle v^4\rangle=9a^4/4\), compared with \(3a^4/2\) for an equal-RMS single tone. The convex-composition spatial theorem and RMS equivalence are separate statements.
+
+The review is closed for the paragraph as written. No figure, numerical cache, manuscript source, PDF, word-count record, or reading baseline changed during this closure. The existing clean-build and retention checks therefore remain applicable; no builds or simulations were repeated. Optional generalizations in the peer note remain outside the manuscript.
