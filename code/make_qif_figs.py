@@ -20,9 +20,11 @@ NEBLUE = "#0a4f8c"; NERED = "#b3361f"; NEGREEN = "#1a9850"; GR = "#555555"
 
 # Prefer the genuine two-tone run when present: spiking/threshold dynamics are
 # exactly where the AM surrogate and physical TI cannot be assumed equivalent.
-_SRC = "qif_raster_twotone.npz" if os.path.exists(
-    os.path.join(HERE, "qif_raster_twotone.npz")) else "qif_raster.npz"
-_TAG = "_twotone" if "twotone" in _SRC else ""
+_SRC = os.environ.get("QIF_SRC") or ("qif_raster_twotone.npz" if os.path.exists(
+    os.path.join(HERE, "qif_raster_twotone.npz")) else "qif_raster.npz")
+# QIF_SRC / QIF_TAG (review branch, 2026-10-05): render an alternative cache, e.g. the
+# amplitude-10 runs of qif_raster_amp.py, under its own figure tag.
+_TAG = os.environ.get("QIF_TAG") or ("_twotone" if "twotone" in _SRC else "")
 print(f"  source: {_SRC}")
 d = np.load(os.path.join(HERE, _SRC), allow_pickle=True)
 meta = d["meta"].item(); conds = d["conds"].item()

@@ -1,0 +1,6 @@
+forced   off: Af=0 T=1600.0 window=800.0 ms (44 cycles) <r_e>=0.0527 AC@55Hz=0.0001 depth=0.0013 VS=0.001 PPC=-0.0000 PPC/neuron median=-0.0183 spikes(rec)=16972  [0.7 min]
+forced   on : Af=10 T=1600.0 window=800.0 ms (44 cycles) <r_e>=0.0541 AC@55Hz=0.0050 depth=0.0926 VS=0.046 PPC=0.0021 PPC/neuron median=-0.0158 spikes(rec)=17462  [0.7 min]
+entrain  off: Af=0 T=1609.5 window=809.5 ms (34 cycles) <r_e>=0.0524 AC@42Hz=0.0000 depth=0.0000 VS=0.013 PPC=0.0002 PPC/neuron median=-0.0225 spikes(rec)=17012  [0.7 min]
+entrain  on : Af=10 T=1609.5 window=809.5 ms (34 cycles) <r_e>=0.0532 AC@42Hz=0.0012 depth=0.0230 VS=0.015 PPC=0.0002 PPC/neuron median=-0.0225 spikes(rec)=17310  [0.7 min]
+saved /Users/giulio/Claude/NE TNs and Blogs/TN0484-r7-followups/code/qif_raster_twotone_a10.npz
+exit 0
