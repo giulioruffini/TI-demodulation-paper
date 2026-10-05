@@ -6,9 +6,8 @@ Question (review, October 5, 2026): the cached run shows a 51-52.5 Hz line of de
 0.6-0.7 with the field on, absent with it off, in both the spiking network and the exact
 mean field. Does the rectified DC shift of the field explain it?
 
-Method. The PING nonlinearities are quadratic (v^2, r^2, r v in the MPR equations), so
-the carrier average of the dynamics is exact at second order: the slow variables obey
-the field-free equations plus a constant source equal to the DC part of
+Method. The PING nonlinearities are quadratic (v^2, r^2, r v in the MPR equations).
+The second-order carrier-averaged approximation adds a source equal to the DC part of
 (1/2) D^2 f[x_1, x_1], where x_1 is the first-order carrier response. For tones of
 amplitude a at omega_j entering the tau_E-divided E voltage equation (b = e_v/tau_E),
     x_1 = sum_j a Re[q_j e^{i omega_j t}],  q_j = (i omega_j I - A)^{-1} b,
@@ -18,6 +17,8 @@ leading order, and the Hessian keeps whatever it does receive). In the fast-carr
 q_j[v_E] -> 1/(i omega_j tau_E), so s_DC[v_E] = a^2/(tau_E (omega tau_E)^2) for two tones,
 an E-only drive shift delta_eta_E = a^2/(omega tau_E)^2. The effective operating point
 solves f_0(x) + s_DC(x) = 0 self-consistently; its stability is the Jacobian there.
+The quadratic Hessian is exact, but using first-order carrier responses remains an
+approximation at finite amplitude and omits feedback from the slow beat response.
 
 Checks. (i) E-only shift scan to the critical delta_eta_E* and the corresponding a*;
 (ii) direct RK4 integration of the mean field (nmm2_ping._rhs, two tones) at several

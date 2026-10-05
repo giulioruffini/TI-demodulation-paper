@@ -19,26 +19,40 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 SRC=TN0484_envelope_demodulation
+TN_ROOT=$(pwd)
 
 build() {
   local jobname="$1" prelude="$2" label="$3"
+  local stage_dir
+  mkdir -p build
+  stage_dir=$(mktemp -d "build/.latex-${jobname}.XXXXXX")
   echo "==> building ${label} (${jobname}.pdf)"
+  # Keep the last complete PDF visible to Preview and the review-shelf watcher.
+  # A failed build leaves its diagnostic files in stage_dir.
   # Three passes plus bibtex: refs, then bibliography, then two to settle.
-  pdflatex -interaction=nonstopmode -jobname="${jobname}" "${prelude}\\input{${SRC}}" >/dev/null 2>&1 || true
-  bibtex "${jobname}" >/dev/null 2>&1 || true
-  pdflatex -interaction=nonstopmode -jobname="${jobname}" "${prelude}\\input{${SRC}}" >/dev/null 2>&1 || true
-  pdflatex -interaction=nonstopmode -jobname="${jobname}" "${prelude}\\input{${SRC}}" >/dev/null 2>&1 || true
+  pdflatex -interaction=nonstopmode -halt-on-error -output-directory="${stage_dir}" -jobname="${jobname}" "${prelude}\\input{${SRC}}" >"${stage_dir}/build.txt" 2>&1
+  (cd "${stage_dir}" && BIBINPUTS="${TN_ROOT}:${BIBINPUTS:-}" BSTINPUTS="${TN_ROOT}:${BSTINPUTS:-}" bibtex "${jobname}") >>"${stage_dir}/build.txt" 2>&1
+  pdflatex -interaction=nonstopmode -halt-on-error -output-directory="${stage_dir}" -jobname="${jobname}" "${prelude}\\input{${SRC}}" >>"${stage_dir}/build.txt" 2>&1
+  pdflatex -interaction=nonstopmode -halt-on-error -output-directory="${stage_dir}" -jobname="${jobname}" "${prelude}\\input{${SRC}}" >>"${stage_dir}/build.txt" 2>&1
 
   local pages errors undef
-  pages=$(grep -o '([0-9]* pages' "${jobname}.log" | tail -1 | tr -d '(' || echo "?")
-  errors=$(grep -c '^!' "${jobname}.log" || true)
-  undef=$(grep -c 'undefined' "${jobname}.log" || true)
+  pages=$(grep -o '([0-9]* pages' "${stage_dir}/${jobname}.log" | tail -1 | tr -d '(' || echo "?")
+  errors=$(grep -c '^!' "${stage_dir}/${jobname}.log" || true)
+  undef=$(grep -c 'undefined' "${stage_dir}/${jobname}.log" || true)
   echo "    ${pages}, ${errors} errors, ${undef} undefined"
-  if [ "${errors}" -ne 0 ]; then
-    echo "    FAILED -- see ${jobname}.log"
-    grep -A3 '^!' "${jobname}.log" | head -20
+  if [ "${errors}" -ne 0 ] || [ "${undef}" -ne 0 ]; then
+    echo "    FAILED -- see ${stage_dir}/${jobname}.log"
     return 1
   fi
+  test -s "${stage_dir}/${jobname}.pdf"
+  # Stage and destination share a filesystem: mv publishes each complete file
+  # with a rename rather than exposing a PDF while it is being written.
+  local product
+  for product in "${stage_dir}/${jobname}."*; do
+    mv -f "$product" .
+  done
+  mv -f "${stage_dir}/build.txt" "build/${jobname}_build.txt"
+  rmdir "${stage_dir}"
 }
 
 case "${1:-tn}" in

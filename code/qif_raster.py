@@ -1,12 +1,12 @@
-"""QIF microscale of the NMM2 PING gamma generator: spike rasters + timing-not-rate.
+"""QIF microscale of the NMM2 PING gamma generator: spike rasters and rate modulation.
 
 NMM2 (Montbrio-Pazo-Roxin) is the EXACT mean field of an all-to-all network of QIF
 neurons with Lorentzian-distributed excitabilities (Rosetta Stone / Clusella). Here we
 integrate that underlying spiking network directly, with the SAME parameters as the
-mean-field model (nmm2_ping.py), and show that an AM (TI) field realigns spike TIMING
-into the recovered envelope while leaving the mean firing rate essentially unchanged --
-the spiking-level counterpart of the mesoscale result (sec:timing) and the microscale
-analog of the in-vivo finding (Vieira 2024).
+mean-field model (nmm2_ping.py). The finite-amplitude examples contain a beat-locked
+rate component alongside gamma activity, with an 8--11% mean-rate increase. Their
+historical 'forced'/'entrain' keys identify the field-free state only; field-on
+activity at eta=0.85 is not a purely beat-forced response (October 5, 2026 review).
 
 QIF neuron j of population alpha in {E,I}:
     tau_a Vdot_j = V_j^2 + eta_j + [F(t) on E only] + tau_a C (A.s)
@@ -169,9 +169,9 @@ if __name__ == "__main__":
     # assumed equivalent beyond perturbation theory, so the published run uses it.
     if "--twotone" in sys.argv:
         globals()["WAVE"] = "twotone"
-    # forced: just below the gamma Hopf (eta_Hopf~1.1); drive at the gamma resonance.
-    # entrain: above the Hopf (autonomous f0~54 Hz); drive DETUNED (42 Hz) so the
-    #          TI beat re-times the rhythm to its own envelope.
+    # Historical cache keys: 'forced' is field-free stable, 'entrain' field-free
+    # oscillatory. At Af=35, the first field-on run also develops off-beat gamma.
+    # The 42 Hz beat in the second run coexists with the autonomous rhythm.
     ETA_FORCED, DF_FORCED = 0.85, 55.0
     ETA_ENTRAIN, DF_ENTRAIN = 1.5, 42.0
 

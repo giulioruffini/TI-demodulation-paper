@@ -10,11 +10,27 @@ Archived at Zenodo: **[doi:10.5281/zenodo.21009618](https://doi.org/10.5281/zeno
 Licensed **CC-BY-4.0** (see [`LICENSE`](LICENSE)); machine-readable citation in
 [`CITATION.cff`](CITATION.cff).
 
-The current local draft is **v0.15.0-draft2** (October 4, 2026), in
+The current local draft is **v0.15.0-draft3** (October 5, 2026), in
 [TN0484_envelope_demodulation.pdf](TN0484_envelope_demodulation.pdf) and
 [TN0484_jne.pdf](TN0484_jne.pdf). As checked on October 2,
 [Calliope WP0185](https://calliope.bcom.one/papers/WP0185) still lists v0.12.0
 (July 21); the newer local draft remains pending Giulio's review and release.
+
+v0.15.0-draft3 clarifies the weak-perturbation scope, gives the prose a light
+fluency pass, and relabels the QIF rasters as finite-amplitude examples. The
+field-on case at background drive 0.85 contains dominant off-beat gamma, so it
+is no longer called purely forced. Phase-folded insets now use a common 0–2
+scale, and the spectrum uses the stated measurement window. The raster PDF
+is reduced from 13.4 MB to 0.49 MB with dense layers rasterized; curves and labels
+remain vector graphics. Klaus's E-only stability calculation, independently
+reproduced here, attributes the new gamma to the rectified drive shift. An
+amplitude-10 mean-field control remains stable. New spiking runs at that amplitude
+and equal-RMS unmodulated-carrier controls are proposed to complement the
+amplitude-35 threshold-crossing example, which is retained. No original cache
+changes. Manuscript builds now publish complete PDFs atomically. Record:
+[docs/revision_2026-10-05_v0150draft3.md](docs/revision_2026-10-05_v0150draft3.md);
+redline against draft2:
+[docs/redline_v0150draft2_to_v0150draft3.pdf](docs/redline_v0150draft2_to_v0150draft3.pdf).
 
 v0.15.0-draft2 integrates the reconstructed kHz two-tone producer, which matches
 all seven archived arrays bit for bit. The figure runner plots freshly generated
@@ -64,7 +80,7 @@ with a [redline against v0.14.2](docs/redline_v0142_to_v0143.pdf).
 [planning/tn0484_storyline.tex](planning/tn0484_storyline.tex) (section-by-section argument
 map), compiled to [build/storyline/tn0484_storyline.pdf](build/storyline/tn0484_storyline.pdf)
 with `~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex`.
-It maps v0.15.0-draft2, with the weak-field framing authorized by K and section order unchanged.
+It maps v0.15.0-draft3, with the weak-field framing authorized by K and section order unchanged.
 The three placement decisions remain open: Theory order, LaNMM methods, and figure
 promotion. The
 [general practice](../../giulio-personal-handbook/dos-and-donts.md#abstract-and-storyline-planning)

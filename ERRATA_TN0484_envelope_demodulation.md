@@ -1,5 +1,16 @@
 # Submission-readiness review — v0.14.6
 
+**Draft3 update (October 5).** Klaus's raster analysis exposed a further R7
+classification error: a field-free stable QIF state does not remain a purely
+beat-forced state at the published amplitude. The text and captions now distinguish
+dominant off-beat gamma from the smaller beat-locked component and identify these
+as finite-amplitude illustrations. The weak-input calculation remains separate.
+See [the draft3 record](docs/revision_2026-10-05_v0150draft3.md). Klaus's E-only
+stability calculation and an independent reproduction support the rectified-DC
+explanation. At amplitude 10 the mean field stays forced. Complementary spiking
+runs and equal-RMS carrier controls are proposed; the current draft retains the
+corrected amplitude-35 examples as evidence of a change in operating regime.
+
 **Draft2 update (October 4).** Klaus verified the R6 integration; the maximum P1
 window difference is now rounded to 9.6 percentage points. The reconstructed kHz
 producer reproduces all seven stored arrays bit for bit in independent runs, and

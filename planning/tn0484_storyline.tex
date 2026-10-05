@@ -1,6 +1,6 @@
 % TN0484 / WP0185: abstract and storyline. Build from the project root:
 %   ~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex
-% Map mode: rows follow the v0.15.0-draft2 manuscript order and numbering (TN build; the JNE build
+% Map mode: rows follow the v0.15.0-draft3 manuscript order and numbering (TN build; the JNE build
 % moves the appendices and figures S1--S12 to the supplement). Prepared 2026-10-03.
 \documentclass[11pt,a4paper,landscape]{article}
 \usepackage[T1]{fontenc}
@@ -17,8 +17,8 @@
 % ---- paper identity ---------------------------------------------------------
 \newcommand{\wpnumber}{TN0484 / WP0185}
 \newcommand{\papertitle}{The cortical column as a tuned receiver}
-\newcommand{\storylinedate}{4 October 2026}
-\newcommand{\baselinelabel}{v0.15.0-draft2}
+\newcommand{\storylinedate}{5 October 2026}
+\newcommand{\baselinelabel}{v0.15.0-draft3}
 \newcommand{\abstractfile}{tn0484_abstract.tex}
 \newcommand{\storylineauthors}{Giulio Ruffini}
 % -----------------------------------------------------------------------------
@@ -69,9 +69,10 @@
 \end{minipage}
 \end{center}
 \vspace{5mm}
-{\footnotesize\color{muted}The abstract is the TN abstract of v0.15.0-draft2. K authorized the weak-field
+{\footnotesize\color{muted}The abstract is the TN abstract of v0.15.0-draft3. K authorized the weak-field
 effective-response framing on 3 October 2026; the JNE build keeps a structured abstract with
-the same claims. Section and figure order remain unchanged from v0.14.4. The placement
+the same claims. Draft3 makes weak perturbations explicit and distinguishes the finite-amplitude
+QIF examples. Section and figure order remain unchanged from v0.14.4. The placement
 decisions on the last page remain open; this revision does not cut or reorder content.}
 
 \newpage
@@ -92,6 +93,7 @@ memory or make its coefficient universal.
   mixer at 5~kHz, TTX-sensitive). Primate timing changes establish modulation; synaptic
   blockade and network simulations support circuit involvement. Retain weak modulation
   of ongoing activity as the scope, with direct stimulation thresholds and block outside it.
+  Weak input can perturb spiking neurons; linear gain requires stability under the rectified mean shift.
   Cellular contributions enter an effective quadratic response; access and amplification
   remain separate, without identifying an anatomical access route.
 & States the problem and the distinction the paper turns on: cellular mixing versus the
@@ -198,9 +200,9 @@ amplitude modulation.}
 
 \newpage
 \pagetitle{Simulations}{Second argument block: Sections 3--4}
-The Results climb the ladder. The JR column verifies the three predictions of \S2.2; the exact
-mean field reproduces generation and amplification with a derived nonlinearity; the spiking
-network confirms the timing signature at the microscale. Methods stand apart because the
+The JR column tests the predictions of \S2.2, and the exact mean field derives generation
+and amplification from QIF dynamics. Finite-amplitude spiking simulations illustrate the
+coexistence of beat-locked and gamma activity. Methods stand apart because the
 lock-in read-out and the pinned-operating-point protocol recur across models.
 
 \begingroup\fontsize{9.4}{11.4}\selectfont
@@ -219,7 +221,8 @@ lock-in read-out and the pinned-operating-point protocol recur across models.
   alpha-power read-out; signed maps. PING (Eq.~27): weights $(1,1,1,2)$, $\bar\eta_H=1.110$,
   $f_0=54$~Hz, field as current $I_E=PE$ so the membrane computes access with
   $\tau_m=\tau_E$; two criticality knobs. QIF: $N=8000$ per population, Lorentzian quantiles,
-  beat 55~Hz (forced) and 42~Hz (oscillatory, 11~Hz detuning); modulation depth and pairwise phase
+  beats 55 and 42~Hz at $\bar\eta=0.85/1.5$, defined by the field-free states; $A_f=35$ is finite
+  amplitude, with carrier excursion about 1.2 per tone. Modulation depth and pairwise phase
   consistency; the 45\% threshold sensitivity of phase concentration.
 & Fixes the models whose results follow and states which comparisons are perturbative.
   Decision for K: \S3.2 serves only the App.~E results and could travel with them.
@@ -265,13 +268,16 @@ lock-in read-out and the pinned-operating-point protocol recur across models.
   local curvature is fixed; parameter paths need not have identical finite-distance gain.
 & Fig.~9; Fig.~S10; Clusella 2023.\\[2pt]
 \midrule
-\place{\S4.7--4.8}{Timing over rate; QIF confirmation}
+\place{\S4.7--4.8}{Timing over rate; finite-amplitude QIF}
 & Modulation grows $13.5\times$ (26 to 346~mHz) against a mean shift of $5.8\times$ ($-1.3$ to
-  $-7.7$~mHz); ratio 19 far from the Hopf, 45--66 near it. QIF: bunching below the Hopf;
-  beat-locked firing and sidebands at 95 and 11~Hz above it, without identifying gamma-amplitude
-  gating; modulation depth $0.003\to0.29/0.23$, rate $+8$--$11\%$, weak per-neuron locking.
+  $-7.7$~mHz); ratio 19 far from the Hopf, 45--66 near it. QIF: at $\bar\eta=0.85$, stimulation
+  induces gamma through a rectified E-drive shift beyond the E-only Hopf; at $1.5$, gamma dominates a smaller beat component. Phase folding
+  suppresses that gamma. Retain sidebands, beat depths $0.29/0.23$, rate $+8$--$11\%$, and
+  weak per-neuron locking; these runs do not test weak-input scaling or establish gating.
+  The mean field stays stable at $A_f=10$; complementary spiking runs and equal-RMS
+  carrier controls are proposed. Retain the threshold-crossing example.
 & Larger modulation than mean-rate change at mesoscale and microscale, qualitatively
-  consistent with Vieira; retain the nonzero mean shift and weak per-neuron locking.
+  consistent with Vieira; retain the finite-amplitude scope, nonzero mean shift, and weak per-neuron locking.
 & Fig.~10; Figs.~S11, S12; Vieira 2024.\\[2pt]
 \midrule
 \place{\S4.9}{Falsifiable predictions}

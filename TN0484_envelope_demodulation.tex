@@ -86,11 +86,11 @@
 
 \newcommand{\Sig}{\sigma}
 \newcommand{\half}{\tfrac{1}{2}}
-\newcommand{\paperver}{0.15.0-draft2}
+\newcommand{\paperver}{0.15.0-draft3}
 \hypersetup{
   pdftitle={The cortical column as a tuned receiver: a network mechanism for temporal-interference stimulation},
   pdfauthor={Giulio Ruffini, Borja Mercadal, Alex Just, Raul de Palma Aristides, Francesca Castaldo, Nir Grossman, Santiago Canals, Claudio Mirasso},
-  pdfsubject={TN0484 / WP0185, version \paperver, October 4, 2026}
+  pdfsubject={TN0484 / WP0185, version \paperver, October 5, 2026}
 }
 
 \begin{document}
@@ -116,7 +116,7 @@ $^{4}$Instituto de Neurociencias (UMH-CSIC), Sant Joan d'Alacant, Spain\\
 $^{5}$Department of Brain Sciences and UK Dementia Research Institute,\\
 Imperial College London, London, United Kingdom\\[6pt]
 E-mail: \texttt{giulio.ruffini@neuroelectrics.com}\\[4pt]
-Working draft v\paperver\quad 2026-10-04
+Working draft v\paperver\quad 2026-10-05
 \end{minipage}\\[8pt]
 \begin{minipage}{0.86\textwidth}\centering\footnotesize\color{negray}
 \textbf{ORCID iDs:}\ %
@@ -143,7 +143,7 @@ a network mechanism for temporal-interference stimulation}\\[10pt]
 & Santiago Canals, and Claudio Mirasso \\
 \textbf{Affiliations:} & Neuroelectrics\,/\,BCOM\,/\,IFISC (UIB-CSIC)\,/\,IN (UMH-CSIC)\\
 & Imperial College London (Brain Sciences and UK Dementia Research Institute) \\
-\textbf{Date:} & 2026-10-04 \qquad \textbf{Version:} \paperver \\
+\textbf{Date:} & 2026-10-05 \qquad \textbf{Version:} \paperver \\
 \textbf{DOI:} & \href{https://doi.org/10.5281/zenodo.21009618}{10.5281/zenodo.21009618} \\
 \end{tabular}\\[4pt]
 {\color{neblue}\rule{\textwidth}{1pt}}
@@ -170,8 +170,8 @@ S1, S2, \dots
 \noindent
 \textbf{Objective.} Temporal-interference (TI) stimulation applies two high-frequency
 currents with a low difference frequency. The field contains no component at that
-difference frequency. We examine how effective cellular nonlinearities generate this
-component under weak stimulation and how recurrent circuits amplify it.
+difference frequency. We examine how cellular nonlinearities generate this component
+under weak perturbations of ongoing activity, and how recurrent circuits amplify it.
 \textbf{Approach.} We drive a Jansen--Rit column, an exact quadratic integrate-and-fire
 (QIF) mean field, and its spiking network with two-tone inputs. We separate carrier
 access, nonlinear mixing, and recurrent gain. A weak-input expansion combines cellular
@@ -185,39 +185,40 @@ depends on the population dynamics, and the membrane's carrier attenuation enter
 only once, through access. Near a Hopf
 bifurcation, the recurrent network selectively amplifies the generated beat as
 $1/\gamma$ within linear response, where $\gamma$ is the modal damping. Coupling sweeps
-separate this gain from leading-order beat generation. Beat-locked rate modulation
-grows faster than the mean-rate change
-in the mean field and in a network of $8000$ neurons per population.
+separate this gain from leading-order beat generation. Near resonance, rate modulation
+grows faster than the mean-rate change. Finite-amplitude simulations in networks of
+$8000$ neurons per population also show a beat-locked component alongside gamma activity.
 \textbf{Significance.} Fast cellular access and slow circuit resonance can coexist in
 one population model. The weak-input product law makes an envelope-only dose map
 conditional on the transduction mechanism. TI and direct low-frequency stimulation
 share the amplifier when effective input coupling, readout, and state are matched, so
-resonance alone confers no TI efficiency advantage. The analysis concerns weak modulation of ongoing activity; biological access and
-absolute response at human field strengths remain unresolved.
+resonance alone confers no TI efficiency advantage. Biological access and absolute
+response at human field strengths remain unresolved.
 
 \else
 \noindent
-Temporal-interference (TI) stimulation applies two high-frequency currents whose
-superposition contains no field component at their low difference frequency. Population
-models generate that component through effective quadratic mixing and amplify it by
-recurrent resonance. For a smooth weak-input response with a nonzero second-order term,
+Temporal-interference (TI) stimulation combines two high-frequency currents, yet their
+superposition contains no field component at the low difference frequency. Population
+models generate that component through effective quadratic mixing and amplify it through
+recurrent resonance. Our focus is weak perturbations of ongoing activity. For a smooth
+response with a nonzero second-order term,
 cellular nonlinearities contribute to a beat proportional to the product of the carrier
 amplitudes. A Jansen--Rit firing-rate sigmoid realizes this mixing through its curvature.
-An exact quadratic integrate-and-fire mean field provides a derived realization: its
-static rate curve emerges when membrane relaxation is fast relative to the input, while
-synapses remain dynamic. Outside that limit the mixing coefficient is frequency
-dependent. Fast cellular access and slow circuit resonance can therefore coexist, with
+An exact quadratic integrate-and-fire mean field derives this description from spiking
+dynamics. Its static rate curve emerges when membrane relaxation is fast relative to the
+input, while synapses remain dynamic. Outside that limit the mixing coefficient depends
+on frequency. Fast cellular access and slow circuit resonance can therefore coexist, with
 membrane attenuation entering once, through access. Near a Hopf bifurcation, the network amplifies the
 generated beat as $1/\gamma$ within linear response, where $\gamma$ is the modal damping.
-Coupling sweeps separate this gain from leading-order beat generation. Beat-locked rate
-modulation grows faster than the mean-rate change in the mean field and in a spiking
-network of $8000$ neurons per population. In this weak-input regime, the carrier-product
+Coupling sweeps separate this gain from leading-order beat generation. Near resonance,
+rate modulation grows faster than the mean-rate change. Finite-amplitude simulations in
+networks of $8000$ neurons per population also show a beat-locked component alongside gamma
+activity. In the weak-input regime, the carrier-product
 law makes an envelope-only dose map conditional on the transduction mechanism. TI and
 direct low-frequency stimulation share the amplifier when effective input coupling,
 readout, and operating state are matched, so resonance alone gives TI no efficiency
-advantage. The analysis concerns weak modulation of
-ongoing activity; biological access and the absolute response at human field strengths
-remain unresolved.
+advantage. Biological access and the absolute response at human field strengths remain
+unresolved.
 \fi
 
 \smallskip
@@ -253,12 +254,15 @@ them but cannot create a new one. Passive membrane filtering therefore cannot
 demodulate TI \cite{mirzakhalili2020}; a nonlinear element must mix the carriers into
 the low-frequency band, as in AM reception \cite{nahin2001}.
 
-We consider weak modulation of ongoing neural activity. For a smooth response
-about an operating state, a nonzero second-order term mixes the carriers into
-their difference frequency. Cellular contributions can therefore be combined in
-an effective population response without identifying each microscopic mechanism.
-Direct stimulation thresholds and conduction block under strong TI lie outside
-this scope.
+We focus on weak perturbations of ongoing neural activity. Neurons may already be
+spiking; weakness refers to the stimulation-induced change around that operating state.
+For a smooth response with a nonzero second-order term, cellular nonlinearities mix the
+carriers into their difference frequency. Their contributions can be combined in an
+effective population response without identifying each microscopic mechanism. The
+linear amplification calculation further requires that the rectified mean shift leave
+the operating state stable. Direct carrier-evoked spiking and conduction block under
+strong TI lie outside this scope; finite-amplitude network examples are identified
+separately.
 
 Voltage-gated ion channels provide a cellular mixing mechanism in Hodgkin--Huxley
 and McIntyre--Richardson--Grill (MRG) myelinated-axon models \cite{mirzakhalili2020}.
@@ -774,7 +778,8 @@ $\sqrt{\omega_0^2+\gamma^2}$. Its peak is at $\sqrt{\omega_0^2-\gamma^2}$ when
 $\omega_0>\gamma$. The full network transfer also contains frequency-dependent
 input and output projections, so this expression does not fix its exact peak.
 The leading $1/\gamma$ growth holds near a simple Hopf with nonzero projections,
-within the weak-drive regime. Above the Hopf an autonomous limit cycle appears,
+within the weak-drive regime. The rectified mean shift must also leave the operating
+state on the stable side of the bifurcation. Above the Hopf an autonomous limit cycle appears,
 and the demodulated drive can entrain it within an Arnold tongue; a large lock-in
 amplitude alone does not establish that phase capture.
 
@@ -1117,8 +1122,8 @@ while the finite-carrier response can retain operating-state dependence.
 
 \subsection{QIF spiking network (microscale of NMM2)}\label{sec:qif-methods}
 NMM2 is the exact mean field of an all-to-all network of QIF neurons
-\cite{montbrio2015,ruffini2025rosetta,clusella2023}, so we integrate that network directly
-to test the prediction at the spike level (\S\ref{sec:qif}): $N=8000$ QIF neurons per
+\cite{montbrio2015,ruffini2025rosetta,clusella2023}. We integrate that network directly
+to compare beat-locked and ongoing activity at the spike level (\S\ref{sec:qif}): $N=8000$ QIF neurons per
 population, parameters identical to the PING mean field (Eq.~\eqref{eq:nmm2-ping}),
 excitabilities $\eta_j\sim$ Lorentzian$(\bar\eta,\Delta)$ sampled by deterministic
 quantiles, second-order synapses driven by the empirical population rates, and a genuine
@@ -1126,20 +1131,27 @@ two-tone field entering the excitatory membranes. Spiking and threshold dynamics
 where the AM surrogate and the physical waveform cannot be assumed equivalent beyond
 perturbation theory, so this run uses two tones throughout.
 
-The bifurcation parameter is the common
-background drive $\bar\eta$, with the gamma Hopf at $\bar\eta_H=1.110$ ($f_0=54.0$~Hz)
-from the mean-field Jacobian; the spiking network shows the same threshold and an
-autonomous $f_0\!\approx\!53$~Hz, with no finite-size offset to explain. The carrier is
-$f_c=300$~Hz and the field amplitude $A_f=35$. Because
-this is a \emph{gamma} circuit, the TI beat $\Delta f$ is set in the gamma band:
-$\Delta f=55$~Hz \emph{near} the forced gamma resonance ($\bar\eta=0.85$, below the Hopf) and
-$\Delta f=42$~Hz in the oscillatory regime ($\bar\eta=1.5$, above the Hopf)---a detuning of
-$\approx$11~Hz below the autonomous $f_0\!\approx\!53$~Hz. The spectra distinguish
-the beat-locked rate component from the persisting gamma rhythm; detuning alone
-does not establish a boundary of the $1{:}1$ Arnold tongue (\S\ref{sec:vocab}).
+The common background drive $\bar\eta$ places the field-free mean field below or
+above a gamma Hopf at $\bar\eta_H=1.110$ ($f_0=54.0$~Hz). We use
+$\bar\eta=0.85$ with a $55$~Hz beat and $\bar\eta=1.5$ with a $42$~Hz beat.
+Both runs have carrier $f_c=300$~Hz and amplitude $A_f=35$ per tone. These are
+finite-amplitude illustrations: the fast-carrier estimate gives a voltage excursion
+$A_f/(\tau_E\omega_c)\approx1.2$ per tone in the model's voltage units. The field
+can therefore alter the dynamical regime, even when the unstimulated state is below
+Hopf. We label the conditions by their field-free state and separate the beat-locked
+component from other gamma activity. The spectra and rate folds do not by themselves
+establish phase capture (\S\ref{sec:vocab}).
+
+For two nearby carriers, the fast-carrier approximation gives a constant shift
+of the excitatory drive, $\delta\eta_E\simeq A_f^2/(\omega_c\tau_E)^2$, from the
+quadratic voltage term. We refine this estimate using the full PING linear carrier
+responses and their second-order DC source, then solve for the carrier-averaged
+equilibrium and its stability, including the source's dependence on that equilibrium.
+This approximation isolates the mean shift; direct two-tone integrations retain
+the beat forcing and provide a separate check.
 
 The network is integrated with Euler steps of $0.0025$~ms, settled for $800$~ms (over
-four relaxation times at $\bar\eta=0.85$, where the mean-field relaxation time is
+four field-free relaxation times at $\bar\eta=0.85$, where the mean-field relaxation time is
 $176$~ms) and measured over an integer number of beat cycles, $44$ at $55$~Hz and $34$ at
 $42$~Hz ($800$ and $810$~ms), removing the phase-coverage bias from incomplete
 beat cycles. Envelope-locked timing is quantified by the quadrature lock-in $A_\Omega$ of
@@ -1151,8 +1163,8 @@ spikes in the window.
 
 Halving the time step changes the lock-in and the pooled vector
 strength by under $1\%$; doubling the spike-detection threshold changes the lock-in by
-about $1\%$ and the mean rate by $2\%$, but the pooled vector strength in the forced
-regime by about $45\%$, so phase concentration, unlike rate modulation, is sensitive to
+about $1\%$ and the mean rate by $2\%$, but the pooled vector strength at
+$\bar\eta=0.85$ by about $45\%$, so phase concentration, unlike rate modulation, is sensitive to
 how spike times are defined.
 
 \subsection{Coupling sweeps, timing, and the tACS control (Jansen--Rit)}
@@ -1168,9 +1180,10 @@ rate for Fig.~\ref{fig:timing}) or a direct in-band sinusoid $s(t)=\varepsilon\c
 lock-in of $v$ at $\Delta f$.
 
 \subsection{Vocabulary: forced response, entrainment, and gating}
-``Entrainment'' is used in several senses, so we fix three terms. \emph{Forced response}
-is the driven, non-autonomous case below the Hopf, quantified by the lock-in amplitude at
-the beat $\Delta f$ (Eq.~\eqref{eq:lockin}). \emph{Entrainment} is reserved for its
+\emph{Forced response} denotes the component driven at the beat $\Delta f$,
+quantified by the lock-in amplitude (Eq.~\eqref{eq:lockin}). A purely forced regime
+requires a stable operating state under stimulation; being below Hopf with the field
+off is insufficient. \emph{Entrainment} is reserved for its
 dynamical-systems meaning, frequency capture of a \emph{self-sustained} oscillator
 \cite{pikovsky2001}; in the maps we screen for it with the dominance criterion
 $|f_{\rm out}-\Delta f|<0.3$~Hz on the dominant output frequency. This identifies
@@ -1181,16 +1194,16 @@ establish gating of gamma amplitude. Appendix~\ref{sec:vocab} gives the metrics
 and the frequency-dominance protocol.
 
 \section{Results}
-Two rungs of the modeling ladder carry the evidence: the single Jansen--Rit column
-(closed form, memoryless detector) and the exact next-generation mean field (NMM2, the
-nonlinearity derived rather than postulated) with its spiking network. Each shows the same
-pair, quadratic difference-frequency generation followed by near-Hopf amplification, with
-different detector coefficients. Two mesoscale signatures follow: the network's own
-coupling sets the gain at fixed generated drive (the $J$-curve, \S\ref{sec:jcurve}), and
-the resonance amplifies the envelope-locked modulation far more than the mean rate
-(\S\ref{sec:timing}), which the QIF network tests at the spike level. The laminar two-band
-column, at carriers of $25$--$80$~Hz and drives up to $3$~mV, is an extension
-(App.~\ref{app:lanmm}).
+The Jansen--Rit column and the exact next-generation mean field (NMM2) both generate a
+difference-frequency component and amplify it near a Hopf bifurcation. The former uses
+a memoryless sigmoid; the latter derives the nonlinearity from QIF dynamics. Their
+detector coefficients differ, but both separate beat generation from recurrent gain.
+Coupling controls that gain at fixed generated drive in the JR column
+(\S\ref{sec:jcurve}), and resonance amplifies beat-locked modulation more strongly than
+the mean rate (\S\ref{sec:timing}). Finite-amplitude QIF simulations then show how a
+beat-locked component coexists with gamma activity at the spike level. The laminar
+two-band column extends the analysis to carriers of $25$--$80$~Hz and drives up to
+$3$~mV (App.~\ref{app:lanmm}).
 
 \subsection{The Jansen--Rit sigmoid demodulates: an alpha line from a carrier-only input}
 Figure~\ref{fig:bif} orients the system: a supercritical Hopf at
@@ -1438,10 +1451,14 @@ The leading fast-carrier source provides the normalization for this unpinned
 sweep (\S\ref{sec:dynamic}); finite-carrier source corrections over the full
 coupling range have not been bounded. Sweeping $J$ at fixed background drive
 $\bar\eta$ toward the gamma Hopf $J^*$, the demodulated peak of $r_E$ grows as
-$1/\gamma$ and saturates at criticality (Fig.~\ref{fig:nmm2_jcurve}): the heuristic JR
+$1/\gamma$ before departing from this scaling near criticality
+(Fig.~\ref{fig:nmm2_jcurve}): the heuristic JR
 result, reproduced with the coupling \emph{and} the rectifier both derived rather than
 assumed, and a direct counterpart of the coupling-controlled weak-field sensitivity of
-QIF networks \cite{clusella2023}. The two columns exhibit the same gain scaling in
+QIF networks \cite{clusella2023}. Here $\gamma$ describes the field-free equilibrium;
+close enough to the Hopf, the rectified mean shift can change its stability, so the
+end of the finite-amplitude curve need not represent linear gain about a stable
+stimulated state. The two columns exhibit the same gain scaling in
 their two native bands, alpha (JR) and gamma (NMM2): the single-cell nonlinearity
 detects the envelope (coarse-grained into $\Sig''$, or the exact $v^2$), while the
 gain is a recurrent amplification set by proximity to the
@@ -1466,64 +1483,70 @@ observation that TI alters spike timing more than firing rate in the primate bra
 \cite{vieira2024}. The mean shift is small but nonzero, so the comparison must use
 commensurate measures, as here.
 
-\subsection{Microscale confirmation: TI realigns spike timing in the QIF network}\label{sec:qif}
-The mesoscale prediction has a direct microscale test, since NMM2 is the \emph{exact} mean
-field of an all-to-all network of quadratic integrate-and-fire (QIF) neurons with
-Lorentzian-distributed excitabilities
-\cite{montbrio2015,ruffini2025rosetta,clusella2023}. Integrating that spiking network
-($N=8000$ neurons per population, parameters identical to the PING mean field; Methods)
-shows TI bunching spike \emph{times} into the beat cycle with a smaller change in the mean
-rate, on both sides of the gamma Hopf (Fig.~\ref{fig:qif_raster}). Below the Hopf (forced)
-the field-free network fires asynchronously at a flat rate; with TI on, spikes condense
-into envelope-locked bands (Fig.~\ref{fig:qif_raster}a,b). Above the Hopf (oscillatory) the
-free-running gamma coexists with a beat-locked rate component: spikes group into
-the $\Delta f=42$~Hz cycle while the intrinsic $\sim$53~Hz rhythm persists
-(Fig.~\ref{fig:qif_raster}c,d). This establishes cross-frequency structure in the
-rate, without identifying whether the gamma amplitude or phase is modulated.
+\subsection{Finite-amplitude TI adds a beat-locked component to QIF population activity}\label{sec:qif}
+The QIF network connects the population description to individual spikes
+\cite{montbrio2015,ruffini2025rosetta,clusella2023}. With $8000$ neurons per population
+and the same parameters as the PING mean field, it develops a beat-locked component
+alongside other gamma activity (Fig.~\ref{fig:qif_raster}). These finite-amplitude runs
+illustrate that coexistence; they are not a test of the weak-input scaling law.
 
-Because the two rhythms coexist
-in a nonlinear medium, the QIF nonlinearity mixes them into intermodulation sidebands in
-the population rate---most prominently the direct $\Delta f$ line and the sum component near
-$95$~Hz ($53\!+\!42$), with the difference tone near $11$~Hz (the detuning itself); this is
-the spiking-network fingerprint of the same nonlinear frequency mixing that operates at the
-macroscale. Sidebands alone do not distinguish gamma-amplitude gating from phase
-modulation or other nonlinear interactions. The spiking network reproduces
-the exact NMM2 mean field's gamma spectrum (Fig.~\ref{fig:qif_timing}a).
+At $\bar\eta=0.85$, the field-free network fires asynchronously. Stimulation produces
+a dominant line near $52$~Hz, with modulation depth about $0.70$, and a smaller component
+at the $55$~Hz beat, with depth $0.29$. The second-order carrier-averaged system
+predicts an excitatory drive shift $\delta\eta_E\approx1.65$, beyond the E-only
+Hopf threshold $\delta\eta_E^*\approx0.286$, with a leading eigenvalue whose real
+part is $+0.032$~ms$^{-1}$. Direct mean-field integration reproduces the off-beat
+line, supporting the interpretation of panel~(b) as field-induced gamma with a
+smaller forced component. Lowering the tone amplitude to $A_f=10$ leaves the
+averaged equilibrium stable; the mean-field response is then dominated by the
+$55$~Hz beat, with depth $0.13$ and a mean-rate increase of $2.9\%$.
 
-Across both regimes the mean rate rises by about $8$--$11\%$, while the $\Delta f$ modulation depth of the
-population rate, $A_\Omega/\langle r_E\rangle$, rises from below $0.003$ to $0.29$ (forced)
-and $0.23$ (oscillatory) (Fig.~\ref{fig:qif_timing}c), measured over $44$ and $34$ whole beat
+At $\bar\eta=1.5$, gamma activity is already present without stimulation. With the
+field on, the rhythm near $53$--$54$~Hz remains about four times larger than the
+$42$~Hz beat-locked component. Gamma therefore dominates the raster in panel~(d);
+the coexistence of the rhythms produces slower variations in burst height. Folding the
+rate on the beat phase suppresses the non-beat-locked gamma and exposes the smaller
+component. The inset shows that phase average, not the full rate variation.
+
+The population spectrum also contains a sum sideband near $95$~Hz and a smaller
+difference component near $11$~Hz (Fig.~\ref{fig:qif_timing}b). These lines establish
+nonlinear mixing, without uniquely identifying gamma-amplitude gating or phase
+modulation. The field-free gamma spectra of the spiking network and exact mean field
+agree in frequency (Fig.~\ref{fig:qif_timing}a).
+
+Across both conditions the mean rate rises by about $8$--$11\%$, while the beat modulation
+depth, $A_\Omega/\langle r_E\rangle$, rises from below $0.003$ to $0.29$
+($\bar\eta=0.85$) and $0.23$ ($\bar\eta=1.5$) (Fig.~\ref{fig:qif_timing}c), measured over $44$ and $34$ whole beat
 cycles after $800$~ms of settling (Methods). Timing modulation therefore exceeds the
 relative mean-rate change by a factor of about three at the population level. Per neuron
 the locking is weak: the pairwise phase consistency of single-neuron spike phases at
 $\Delta f$ rises from its field-free control (median $-0.02$) to a median of
 $0.003$--$0.005$, and the pooled vector strength from below $0.02$ to $0.12$--$0.13$. The
-population's beat-locked component is built from many weakly biased cells, not from
-strongly locked ones. This is the spiking-level counterpart of \S\ref{sec:timing} and a
-qualitative analog of the in-vivo finding that TI alters spike timing more than firing
-rate \cite{vieira2024}.
+population's beat-locked component is built from many weakly biased cells. This gives a
+qualitative counterpart of the timing-versus-rate distinction in \S\ref{sec:timing}
+and in primate recordings \cite{vieira2024}; the present amplitudes do not establish
+the size of that effect under weak physiological stimulation.
 
 \begin{figure}[t!]
 \centering
 \includegraphics[width=\textwidth]{fig_qif_raster_twotone.pdf}
-\caption{\textbf{QIF spiking network: TI bunches spikes into the beat cycle with a
-smaller change in mean rate.} $N=8000$
+\caption{\textbf{Beat-locked and gamma activity coexist in the QIF network.} $N=8000$
 excitatory and inhibitory quadratic integrate-and-fire neurons whose exact mean field is the
-NMM2 PING circuit (Eq.~\eqref{eq:nmm2-ping}). The circuit's intrinsic rhythm is gamma
-($\sim$53~Hz), so the beat is set in the gamma range (carrier $f_c=300$~Hz, genuine two
-tones). Black ticks are $E$ spikes (400 of 8000), blue the population rate, red the TI
-envelope; the bifurcation parameter is the common drive $\bar\eta$ (gamma Hopf at
-$\approx$$1.1$). \emph{(a,b)} Forced ($\bar\eta=0.85$), TI off then on at
-$\Delta f=55$~Hz: asynchronous firing becomes envelope-locked bunching.
-\emph{(c,d)} Oscillatory ($\bar\eta=1.5$), TI off then on with the beat detuned to
-$42$~Hz: the free-running gamma persists and the rate gains a $\Delta f$-locked
-component. The TI-off control identifies the stimulation-induced component;
-neither the detuning nor the rate fold establishes gamma-amplitude gating.
-The last $200$~ms of the measurement window are shown. \emph{Insets} in
-\emph{(b,d)}: the population rate folded on the beat phase over the whole window ($44$ and
-$34$ cycles), each normalized to its own mean (off gray, on blue); with that many cycles
-the near-commensurate $53$~Hz gamma averages out of the $42$~Hz fold in \emph{(d)}. Both
-are flat with TI off.}
+NMM2 PING circuit (Eq.~\eqref{eq:nmm2-ping}). These are finite-amplitude examples
+($A_f=35$ per tone, carrier $f_c=300$~Hz). Black ticks are $E$ spikes (400 of 8000),
+blue is the smoothed population rate on a separate scale, and red is the TI envelope
+in arbitrary units. \emph{(a,b)} Field-free stable state ($\bar\eta=0.85$), TI off
+then on at $\Delta f=55$~Hz. The field-on response is dominated by field-induced gamma near
+$52$~Hz (depth $0.70$), with a smaller beat component (depth $0.29$).
+\emph{(c,d)} Field-free oscillatory state ($\bar\eta=1.5$), TI off then on at
+$\Delta f=42$~Hz. Gamma near $53$--$54$~Hz dominates the raster, with depth about
+four times the beat component's $0.23$; their coexistence gives slow variations in
+burst height. Depth is line amplitude divided by mean rate. The final $200$~ms of the
+common measurement interval are shown. \emph{Insets} in \emph{(b,d)} fold the
+rate on beat phase over $44$ and $34$ cycles (off gray, on blue), normalized to each
+condition's mean. This averaging suppresses non-beat-locked gamma and displays the
+smaller beat component on a common $0$--$2$ scale. The fold alone does not establish
+gamma-amplitude gating or phase capture.}
 \label{fig:qif_raster}
 \end{figure}
 
@@ -1686,9 +1709,12 @@ patterning firing rather than lowering the threshold
 extraction \cite{peripheral2023}. The weak-input calculation here concerns
 modulation of ongoing activity through mixing and amplification
 \cite{vieira2024,missey2026}. Direct carrier-evoked spiking and conduction block
-are outside its scope. Finite-amplitude model examples illustrate modulation and
-saturation beyond the expansion; they do not establish weak-field physiological
-thresholds.
+are outside its scope. The finite-amplitude QIF examples illustrate a related
+distinction: rectification can shift a stable population across its Hopf and induce
+gamma activity alongside the beat-locked component. The driven component must be
+separated from that change in regime. The boundary depends on the initial state's
+distance from the bifurcation as well as on field amplitude. These examples and the laminar extension describe
+behavior beyond the weak-input expansion; they do not establish physiological thresholds.
 
 The recurrent amplifier is shared with direct low-frequency stimulation. In our
 coupling sweep, holding the JR operating point fixed holds the local curvature
@@ -1763,7 +1789,7 @@ mixed, including reported peripheral effects without central effects
 access, generated beat, and network tuning in the same preparation.
 
 \section{Conclusion}
-In the weak-field regime, smooth cellular nonlinearities with a nonzero
+For weak perturbations of ongoing activity, smooth cellular nonlinearities with a nonzero
 second-order response can be represented by effective quadratic mixing. The
 population models provide realizations of this description: mixing generates
 the difference-frequency component, and recurrent dynamics amplify it near a
@@ -2385,9 +2411,12 @@ synthesized by the column although the input carries no alpha power.}
 PING, gamma).} $J\,(=C)$ is the literal inter-QIF synaptic weight. The sweep is unpinned
 and uses the leading fast-carrier source for normalization (\S\ref{sec:dynamic});
 its finite-carrier corrections have not been bounded across the full sweep.
+The plotted Hopf and damping $\gamma$ refer to the field-free equilibrium;
+the rectified shift can alter stability near the end of this finite-amplitude sweep.
 \emph{(a)} The peak demodulated response of $r_E$ grows as $J\!\to\!J^*$ (gamma
-Hopf, $\bar\eta=0$; stable focus, $\gamma>0$). \emph{(b)} The gain grows as $1/\gamma$ (dashed), saturating near
-criticality---the JR law, now with coupling and rectifier both derived.}
+Hopf, $\bar\eta=0$; field-free stable focus, $\gamma>0$). \emph{(b)} The response
+is compared with the $1/\gamma$ reference (dashed), with finite-amplitude departures
+near criticality. Both coupling and rectifier are derived from the QIF network.}
 \label{fig:nmm2_jcurve}
 \end{figure}
 
@@ -2411,14 +2440,17 @@ exceeds mean shift by $19\times$ far from the Hopf and $45$--$66\times$ near it.
 \includegraphics[width=\textwidth]{fig_qif_timing_twotone.pdf}
 \caption{\textbf{Beat-locked modulation and mean-rate change in the QIF network.} \emph{(a)} Field-free power
 spectrum of $r_E(t)$, normalized: the spiking network ($N=8000$) matches the exact NMM2
-mean field in gamma frequency ($\sim$53~Hz); a normalized spectrum does not test the mean
+mean field in gamma frequency ($\sim$55~Hz); a normalized spectrum does not test the mean
 rate. \emph{(b)} Intermodulation above the
 Hopf (TI off vs.\ on, log power): the nonlinearity mixes the imposed $\Delta f=42$~Hz beat
-with the intrinsic $53$~Hz gamma, raising the direct $\Delta f$ line and the sum sideband
+with the persisting gamma near $53$--$54$~Hz, raising the direct $\Delta f$ line and the sum sideband
 near $95$~Hz, both absent with TI off. These sidebands establish nonlinear mixing;
 they do not uniquely identify gamma-amplitude gating. \emph{(c)} The $\Delta f$ modulation depth
-$A_\Omega/\langle r_E\rangle$, off vs.\ on: below $0.003$ rising to $0.29$ (forced) and
-$0.23$ (oscillatory), while the mean rate rises by about $8$--$11\%$. Modulation depth is
+$A_\Omega/\langle r_E\rangle$, off vs.\ on: below $0.003$ rising to $0.29$
+($\bar\eta=0.85$) and $0.23$ ($\bar\eta=1.5$), while the mean rate rises by about
+$8$--$11\%$. The labels identify field-free states; both field-on responses contain
+gamma activity beyond the beat component. Spectra use the same post-settling windows
+as the rate measurements and are normalized to each spectrum's maximum. Modulation depth is
 reported rather than the off$\to$on lock-in ratio, whose denominator is the field-free
 floor.}
 \label{fig:qif_timing}

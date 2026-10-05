@@ -1,0 +1,8 @@
+  source: qif_raster_twotone.npz
+  [figcheck] fig_qif_raster: clean
+  [figcheck] make_qif_figs.py: clean
+wrote fig_qif_raster and fig_qif_timing
+  forced_off  : <r_e>=0.0527  AC@55=0.0001  spikes=16972
+  forced_on   : <r_e>=0.0582  AC@55=0.0169  spikes=18828
+  entrain_off : <r_e>=0.0524  AC@42=0.0000  spikes=17012
+  entrain_on  : <r_e>=0.0564  AC@42=0.0131  spikes=18539

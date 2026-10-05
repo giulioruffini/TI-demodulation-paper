@@ -32,6 +32,10 @@ pip install numpy scipy matplotlib
 | `khz_twotone_producer.py` | Reconstructed 2 kHz two-tone run; `--compare` checks archived spectra, `--write` saves a separate fresh cache. |
 | `test_jr_demod.py` | Self-checks (derivatives, fixed point, square law, linearization control). |
 | `qif_short_tau_check.py` | Shorter-tau QIF/MPR comparison with fixed parameters or matched baseline rate/voltage; exact second-order beat response checked against direct integration. Run from the repository root with `.venv/bin/python code/qif_short_tau_check.py`; writes `docs/qif_short_tau_2026-10-02.json`. |
+| `qif_cached_component_check.py` | Independent spectral check of the preserved two-tone QIF runs; separates beat lock-in, refined gamma peak, and the original FFT-bin estimate. Use `--json <path>` to save the result. |
+| `ping_field_operating_point.py` | E-only carrier-rectified drive shift, averaged stability, and direct mean-field spectra at amplitudes 5–35; writes the dated R7 JSON and diagnostic figure in `docs/`. |
+| `ping_field_operating_point_check.py` | Independent finite-difference/time-average check of the R7 source and threshold, plus original-integrator reproduction at amplitudes 10 and 35. Use `--json <path>`; no spiking cache is modified. |
+| `ping_other_sweeps_screen.py` | DC-only stability screen for the S10 AM surrogate and selected two-tone resonance states; use `--json <path>`. Does not test stability of the full beat-forced solution. |
 | `current_state.md` | Project state / next steps. |
 | `TN0484_envelope_demodulation.tex/.pdf` | The Technical Note. |
 

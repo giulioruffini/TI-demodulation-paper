@@ -1,25 +1,26 @@
 % TN0484 / WP0185: TN abstract, included by the storyline.
-% Date: 2026-10-04. Status: v0.15.0-draft2, internal repair revision.
-% The weak-field abstract remains unchanged from v0.14.6 (236 words).
-% Structure and all 22 figures are retained; placement decisions remain open.
-Temporal-interference (TI) stimulation applies two high-frequency currents whose
-superposition contains no field component at their low difference frequency. Population
-models generate that component through effective quadratic mixing and amplify it by
-recurrent resonance. For a smooth weak-input response with a nonzero second-order term,
+% Date: 2026-10-05. Status: v0.15.0-draft3, internal review revision.
+% Weak perturbations distinguished from finite-amplitude QIF illustrations.
+% Section order and all 22 figure identities retained.
+Temporal-interference (TI) stimulation combines two high-frequency currents, yet their
+superposition contains no field component at the low difference frequency. Population
+models generate that component through effective quadratic mixing and amplify it through
+recurrent resonance. Our focus is weak perturbations of ongoing activity. For a smooth
+response with a nonzero second-order term,
 cellular nonlinearities contribute to a beat proportional to the product of the carrier
 amplitudes. A Jansen--Rit firing-rate sigmoid realizes this mixing through its curvature.
-An exact quadratic integrate-and-fire mean field provides a derived realization: its
-static rate curve emerges when membrane relaxation is fast relative to the input, while
-synapses remain dynamic. Outside that limit the mixing coefficient is frequency
-dependent. Fast cellular access and slow circuit resonance can therefore coexist, with
+An exact quadratic integrate-and-fire mean field derives this description from spiking
+dynamics. Its static rate curve emerges when membrane relaxation is fast relative to the
+input, while synapses remain dynamic. Outside that limit the mixing coefficient depends
+on frequency. Fast cellular access and slow circuit resonance can therefore coexist, with
 membrane attenuation entering once, through access. Near a Hopf bifurcation, the network amplifies the
 generated beat as $1/\gamma$ within linear response, where $\gamma$ is the modal damping.
-Coupling sweeps separate this gain from leading-order beat generation. Beat-locked rate
-modulation grows faster than the mean-rate change in the mean field and in a spiking
-network of $8000$ neurons per population. In this weak-input regime, the carrier-product
+Coupling sweeps separate this gain from leading-order beat generation. Near resonance,
+rate modulation grows faster than the mean-rate change. Finite-amplitude simulations in
+networks of $8000$ neurons per population also show a beat-locked component alongside gamma
+activity. In the weak-input regime, the carrier-product
 law makes an envelope-only dose map conditional on the transduction mechanism. TI and
 direct low-frequency stimulation share the amplifier when effective input coupling,
 readout, and operating state are matched, so resonance alone gives TI no efficiency
-advantage. The analysis concerns weak modulation of
-ongoing activity; biological access and the absolute response at human field strengths
-remain unresolved.
+advantage. Biological access and the absolute response at human field strengths remain
+unresolved.
