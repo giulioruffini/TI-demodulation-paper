@@ -97,6 +97,15 @@ outputs and reported no discrepancy. This closes the Landau correction cycle
 and the temporary review freeze; the submission and release decisions remain
 separate. No manuscript, figure, cache, or code change accompanied this record.
 
+His extended report at 20:18 also confirms the Methods' linear reference,
+bracketed peak search, normalizations, and endpoint controls, the prediction
+table's timing row, and the S10/S11 captions. He reports byte identity of the
+timing cache with his version and of the NMM2 modes cache and JSON with
+`c91879f`. The plotted timing values recompute from the cache; the rate-axis
+conversion to Hz and the reported rounding agree. No discrepancy or further
+action was reported. The detailed values are recorded in
+`docs/validation_current.json` under the independent review.
+
 ## Length and remaining review
 
 TeXcount reports 13,677 article words and 4,457 supplementary words, excluding

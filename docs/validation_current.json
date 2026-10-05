@@ -141,6 +141,23 @@
     "target_commit": "b436a9c",
     "result": "pass",
     "scope": "Reserved computational findings 1/5/6/18/19/21/29: abstract, timing paragraph and caption, TI/tACS values, NMM2 intervals and gain/amplitude statements, normalization, and two-tone endpoint; checked against committed producer outputs.",
-    "remaining_discrepancies_reported": []
+    "remaining_discrepancies_reported": [],
+    "extended_confirmation": {
+      "reported_at": "2026-10-05 20:18 CEST",
+      "target_commit": "b436a9c",
+      "record_checkpoint": "fde90fc",
+      "result": "pass",
+      "scope": "Methods linear reference, bracketed peak search, normalizations, and AM/two-tone endpoint controls; prediction-table timing row; S10/S11 captions and plotted values, in addition to the original passage check.",
+      "cache_identity_reported": "S11 reads timing_not_rate_twotone.npz, byte-identical to Klaus's cache; nmm2_jcurve_modes.npz and its JSON table are byte-identical to c91879f.",
+      "timing_values_reported": {
+        "modulation_growth_factor": 13.24,
+        "mean_shift_growth_factor": 4.37,
+        "modulation_to_mean_ratios": [14.47, 57.76, 43.84],
+        "rate_modulation_mHz": [25.6, 338.6],
+        "mean_rate_shift_mHz": [-1.77, -7.72]
+      },
+      "units_and_rounding_reported": "The S10 rate axes correctly convert ms^-1 to Hz by multiplying by 1000. Full-sweep exponent 0.7055 is printed as 0.71; amplitude-check bound 1.104 as 11%; the stated 0.1% sideband bound covers the independent check below 0.05%.",
+      "remaining_discrepancies_reported": []
+    }
   }
 }
