@@ -36,9 +36,10 @@ pip install numpy scipy matplotlib
 | `ping_field_operating_point.py` | E-only carrier-rectified drive shift, averaged stability, and direct mean-field spectra at amplitudes 5–35; writes the dated R7 JSON and diagnostic figure in `docs/`. |
 | `ping_field_operating_point_check.py` | Independent finite-difference/time-average check of the R7 source and threshold, plus original-integrator reproduction at amplitudes 10 and 35. Use `--json <path>`; no spiking cache is modified. |
 | `ping_other_sweeps_screen.py` | DC-only stability screen for the S10 AM surrogate and selected two-tone resonance states; use `--json <path>`. Does not test stability of the full beat-forced solution. |
-| `qif_raster_amp.py` | Published spiking calculation at another tone amplitude. `--af 10` creates the additional QIF cache; `--n`, `--dt`, and `--floor-ms` select the independent convergence checks. |
+| `qif_raster_amp.py` | Published spiking calculation at another tone amplitude. `--af 10` creates the additional QIF cache; `--n`, `--dt`, `--floor-ms`, and `--vpeak` select the independent sensitivity checks. |
 | `verify_r7_followups.py` | Recomputes summaries of five preserved QIF caches and reproduces four equal-RMS mean-field trajectories with the original integrator. `--controls-only` regenerates only the carrier-control data used by S13. |
 | `make_qif_regimes_fig.py` | Figure S13: amplitude-10/35 spiking rasters and equal-RMS mean-field carrier spectra; selectable through `run_all.py`. |
+| `verify_r7_cutoff_leakage.py` | Recomputes the 100/200/400 cutoff summaries and reintegrates the high-amplitude carrier controls for 800/3200 ms Hann-window comparisons. Writes the independent cutoff/leakage audit with `--json <path>`. |
 | `s10_periodic_stability_check.py` | Full variational matrix over the 2 s AM period after 8 s settling. The endpoint's largest multiplier is 0.0342; repeat-period closure and a finite-difference Jacobian check are recorded. |
 | `current_state.md` | Project state / next steps. |
 | `TN0484_envelope_demodulation.tex/.pdf` | The Technical Note. |

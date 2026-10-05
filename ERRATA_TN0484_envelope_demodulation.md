@@ -1,5 +1,13 @@
 # Submission-readiness review — v0.14.6
 
+**Draft5 update (October 5).** Cutoff checks locate sensitivity of the weak-drive
+spiking depth: 0.093, 0.127, and 0.139 at cutoffs 100, 200, and 400, versus the
+mean-field 0.128. Agreement at 200 is not a joint convergence test. The longer
+carrier window suppresses the apparent 55 Hz response below 0.0001 while TI's
+persists near 0.31, supporting the leakage interpretation. Original rasters
+remain. See [the draft5 record](docs/revision_2026-10-05_v0150draft5.md).
+
+
 **Draft4 update (October 5).** The R7 follow-ups distinguish a stable beat response
 at amplitude 10 from induced gamma at amplitude 35. Figure S13 adds both regimes
 and equal-RMS mean-field carrier controls without replacing Figure 10 or S12.

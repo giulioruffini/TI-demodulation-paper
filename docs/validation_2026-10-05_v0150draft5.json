@@ -1,0 +1,41 @@
+{
+  "version": "0.15.0-draft5",
+  "baseline": "8d8cb7b",
+  "outputs": [
+    {
+      "path": "build/TN0484_v0.15.0-draft5.pdf",
+      "pages": 50,
+      "bytes": 3563548,
+      "sha256": "4ad44cd10e12d1afff3955e031b1c9fcdcd964f6dc9a08716ee72a7d18f3b162"
+    },
+    {
+      "path": "build/TN0484_v0.15.0-draft5_jne.pdf",
+      "pages": 32,
+      "bytes": 1608097,
+      "sha256": "dd90ac9d2587c21cfc3de13ebc371e084aa2df8d5a419f9e8b87fc159fe1370b"
+    },
+    {
+      "path": "build/TN0484_v0.15.0-draft5_jne_supplement.pdf",
+      "pages": 20,
+      "bytes": 2313759,
+      "sha256": "bc2346f6629ed63e6c38d9460ed4ab46f8366b1163e2c6f8fbcb3aa5e428b45f"
+    },
+    {
+      "path": "build/TN0484_v0.15.0-draft5_redline_vs_draft4.pdf",
+      "pages": 50,
+      "bytes": 3588061,
+      "sha256": "ca3ae62f3805503be87083e04b4007fbf6613ecf975c56880f65de1d8d256a5a"
+    },
+    {
+      "path": "build/storyline/TN0484_v0.15.0-draft5_storyline.pdf",
+      "pages": 8,
+      "bytes": 291130,
+      "sha256": "fdc283ce049c6f24da56337d0327d6bee6346e79afa122db327a460a044b83e6"
+    }
+  ],
+  "figure_count": 23,
+  "figures_unchanged": true,
+  "abstracts_equations_citations_retained": true,
+  "cutoff_summaries_verified": 3,
+  "carrier_window_spectra_verified": 4
+}

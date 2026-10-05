@@ -1,5 +1,16 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v0.15.0-draft5 — spike cutoff and spectral leakage (2026-10-05)
+
+Klaus's `b1a1c4c` is integrated as `8f03544`. Three cutoff summaries and four
+carrier-window spectra are independently verified. Raising the cutoff from
+100 to 200 changes the spiking depth from 0.093 to 0.127 (mean field 0.128);
+400 gives 0.139. The rasters retain 100, with sensitivity reported beside them.
+Joint cutoff/time-step refinement is requested from Klaus. A 3.2 s carrier
+window reduces the apparent 55 Hz depth to 0.000092 while TI retains 0.314.
+Record: `revision_2026-10-05_v0150draft5.md`. Release holds remain.
+
+
 ## v0.15.0-draft4 — lower-amplitude QIF response and carrier controls (2026-10-05)
 
 Klaus's R7 follow-ups are integrated from `5e5921d` and `cecb707` as `0b46d91`

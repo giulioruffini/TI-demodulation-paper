@@ -1,0 +1,144 @@
+{
+  "cutoff_checks": [
+    {
+      "file": "qif_raster_twotone_a10.npz",
+      "sha256": "1bdbb170c4da993a2e1f99c3054ea8f5eeb2ed8f995c11040764dec1129fe749",
+      "N": 8000,
+      "dt_ms": 0.0025,
+      "conditions": {
+        "forced": {
+          "off": {
+            "rate": 0.0526640625,
+            "beat_depth": 0.0013472501659191984,
+            "pooled_VS": 0.0005026187845918943,
+            "pooled_PPC": -2.7143012652562904e-06,
+            "median_cell_PPC": -0.01834856718183962
+          },
+          "on": {
+            "rate": 0.054120156250000016,
+            "beat_depth": 0.09263853381364229,
+            "pooled_VS": 0.045993785002414966,
+            "pooled_PPC": 0.0021125472635724193,
+            "median_cell_PPC": -0.015778577689973084
+          },
+          "rate_change_pct": 2.764871680759562,
+          "depth_to_rate_change": 3.3505545468277482
+        },
+        "entrain": {
+          "off": {
+            "rate": 0.05239045239632005,
+            "beat_depth": 5.408524795801169e-06,
+            "pooled_VS": 0.01307854716949073,
+            "pooled_PPC": 0.0001681015603239601,
+            "median_cell_PPC": -0.02249342635498816
+          },
+          "on": {
+            "rate": 0.05321671108585617,
+            "beat_depth": 0.02297851451293323,
+            "pooled_VS": 0.015422212385548029,
+            "pooled_PPC": 0.00023494374653113852,
+            "median_cell_PPC": -0.022508175332999477
+          },
+          "rate_change_pct": 1.5771169206283853,
+          "depth_to_rate_change": 1.4569949895520546
+        }
+      },
+      "V_peak": 100,
+      "relative_depth_difference_from_MF": -0.27476755178562107
+    },
+    {
+      "file": "qif_raster_twotone_a10_vp200.npz",
+      "sha256": "e9d002e9b5ee08c45607d6385ab2006632011777131859a893cc1be0cc1a5f91",
+      "N": 8000,
+      "dt_ms": 0.0025,
+      "conditions": {
+        "forced": {
+          "off": {
+            "rate": 0.05147937500000001,
+            "beat_depth": 0.0011297818986150696,
+            "pooled_VS": 0.0005573911682742301,
+            "pooled_PPC": -2.7245194893551137e-06,
+            "median_cell_PPC": -0.020039042997813564
+          },
+          "on": {
+            "rate": 0.05293796875,
+            "beat_depth": 0.1269358214915371,
+            "pooled_VS": 0.06251889906921919,
+            "pooled_PPC": 0.0039056727009595077,
+            "median_cell_PPC": -0.015277274947845776
+          },
+          "rate_change_pct": 2.8333555914383135,
+          "depth_to_rate_change": 4.480052622943098
+        }
+      },
+      "V_peak": 200,
+      "relative_depth_difference_from_MF": -0.00626690863220436
+    },
+    {
+      "file": "qif_raster_twotone_a10_vp400.npz",
+      "sha256": "9e2235fc9021af34085acbed025c23d55dde331d417308359d232d5ad5b2b872",
+      "N": 8000,
+      "dt_ms": 0.0025,
+      "conditions": {
+        "forced": {
+          "off": {
+            "rate": 0.050909218750000006,
+            "beat_depth": 0.0015129494657770805,
+            "pooled_VS": 0.0006455995760573708,
+            "pooled_PPC": -2.652398049450008e-06,
+            "median_cell_PPC": -0.020619118338503682
+          },
+          "on": {
+            "rate": 0.052382500000000005,
+            "beat_depth": 0.13932912265124145,
+            "pooled_VS": 0.06931834137105485,
+            "pooled_PPC": 0.004802063907933939,
+            "median_cell_PPC": -0.014724438744679666
+          },
+          "rate_change_pct": 2.89393804535647,
+          "depth_to_rate_change": 4.814516429430995
+        }
+      },
+      "V_peak": 400,
+      "relative_depth_difference_from_MF": 0.09075561289853784
+    }
+  ],
+  "carrier_windows": [
+    {
+      "waveform": "TI",
+      "measurement_ms": 800.0,
+      "depth_55": 0.29972202962853234,
+      "gamma_Hz": 51.25,
+      "gamma_depth": 0.6054194392459956
+    },
+    {
+      "waveform": "TI",
+      "measurement_ms": 3200.0,
+      "depth_55": 0.31383722129712305,
+      "gamma_Hz": 51.875,
+      "gamma_depth": 0.7017675610901297
+    },
+    {
+      "waveform": "carrier",
+      "measurement_ms": 800.0,
+      "depth_55": 0.010982570150865411,
+      "gamma_Hz": 51.25,
+      "gamma_depth": 0.7092638798231601
+    },
+    {
+      "waveform": "carrier",
+      "measurement_ms": 3200.0,
+      "depth_55": 9.203966758941999e-05,
+      "gamma_Hz": 51.5625,
+      "gamma_depth": 0.7372049253088496
+    }
+  ],
+  "carrier_settings": {
+    "dt_ms": 0.05,
+    "settling_ms": 800.0,
+    "eta": 0.85,
+    "carrier_Hz": 300.0,
+    "beat_Hz": 55.0,
+    "TI_tone_amplitude": 35.0
+  }
+}

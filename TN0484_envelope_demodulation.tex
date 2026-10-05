@@ -86,7 +86,7 @@
 
 \newcommand{\Sig}{\sigma}
 \newcommand{\half}{\tfrac{1}{2}}
-\newcommand{\paperver}{0.15.0-draft4}
+\newcommand{\paperver}{0.15.0-draft5}
 \hypersetup{
   pdftitle={The cortical column as a tuned receiver: a network mechanism for temporal-interference stimulation},
   pdfauthor={Giulio Ruffini, Borja Mercadal, Alex Just, Raul de Palma Aristides, Francesca Castaldo, Nir Grossman, Santiago Canals, Claudio Mirasso},
@@ -1153,11 +1153,13 @@ establish phase capture (\S\ref{sec:vocab}).
 
 We also run both conditions at $A_f=10$ per tone with the same measurement
 settings. For $\bar\eta=0.85$, separate checks double the population size,
-double the measurement window, or halve the integration step. An equal-RMS
+double the measurement window, or halve the integration step; further runs raise
+$V_{\rm peak}$ to $200$ and $400$ at the published step. An equal-RMS
 mean-field control replaces the two tones by one $300$~Hz carrier with peak
 amplitude $\sqrt{2}A_f$, using the same duration: both inputs have mean-square
 amplitude $A_f^2$ over these windows. The carrier comparison starts from the
-field-free equilibrium and uses $800$~ms settling and $800$~ms measurement.
+field-free equilibrium and uses $800$~ms settling and $800$~ms measurement,
+with a $3200$~ms window to check spectral leakage at the larger amplitude.
 
 For two nearby carriers, the fast-carrier approximation gives a constant shift
 of the excitatory drive, $\delta\eta_E\simeq A_f^2/(\omega_c\tau_E)^2$, from the
@@ -1513,11 +1515,15 @@ response from a stimulation-induced change of dynamical regime
 At $\bar\eta=0.85$ and tone amplitude $A_f=10$, the spiking network has a beat
 depth of $0.093$ at $55$~Hz and a mean-rate increase of $2.8\%$: modulation exceeds
 the fractional mean-rate change by a factor of $3.4$. The mean field gives a
-larger depth, $0.128$. The spiking estimate is $0.083$ when the population is
-doubled and $0.093$ when the time step is halved, so these checks do not close
-the difference between the finite implementation and its mean-field limit.
-The pooled spike-phase vector strength is $0.046$; median per-neuron phase
-consistency remains negative in both field-off and field-on windows. At
+larger depth, $0.128$. Raising the spike cutoff from $V_{\rm peak}=100$ to
+$200$ and $400$ gives depths $0.127$ and $0.139$, while the mean-rate increase
+stays at $2.8$--$2.9\%$. At the original cutoff, doubling the population gives
+$0.083$ and halving the time step gives $0.093$. The response is therefore
+sensitive to the finite spike cutoff; the agreement at $200$ does not by itself
+establish joint convergence in cutoff and time step.
+At the plotted cutoff, the pooled spike-phase vector strength is $0.046$;
+median per-neuron phase consistency remains negative in field-off and field-on
+windows at all three cutoffs. At
 $\bar\eta=1.5$, the corresponding $42$~Hz depth is smaller, $0.023$, against a
 $1.6\%$ mean-rate increase, and the existing gamma dominates the raster.
 
@@ -1534,8 +1540,11 @@ The equal-RMS unmodulated carrier provides a control for this distinction in
 the mean field (Fig.~\ref{fig:qif_regimes}c,d). It produces a rectified E-drive
 shift within $3\%$ of TI's and a similar mean-rate increase. At $A_f=35$, both
 waveforms induce gamma near $51$~Hz, whereas TI also produces the $55$~Hz beat
-component. At $A_f=10$, neither induces gamma, and TI alone produces a resolved
-beat response. The control separates induction of an oscillation from its
+component. Increasing the measurement window from $0.8$ to $3.2$~s reduces
+the carrier's apparent $55$~Hz depth from $0.011$ to $9.2\times10^{-5}$,
+consistent with spectral leakage, while TI's beat depth remains $0.30$--$0.31$.
+At $A_f=10$, neither induces gamma, and TI alone produces a resolved beat
+response. The control separates induction of an oscillation from its
 beat-frequency response; it has not been run in the spiking network.
 
 At $\bar\eta=1.5$, gamma activity is already present without stimulation. With the
@@ -2511,9 +2520,10 @@ single carrier (red), whose peak amplitude is $\sqrt{2}A_f$. Line amplitude is
 normalized by each trace's mean; the dashed line marks $55$~Hz. Spectra use a
 Hann window over $800$~ms after $800$~ms settling. Both waveforms induce gamma
 at the larger amplitude, while TI produces the additional beat response.
-Finite-window spectral leakage remains in the carrier control. The carrier
-comparison is a mean-field result; the spiking panels retain the finite voltage
-threshold specified in Methods.}
+The carrier's apparent $55$~Hz line falls below $10^{-4}$ with a $3.2$~s window,
+while TI's persists. The carrier comparison is a mean-field result. The spiking
+panels retain $V_{\rm peak}=100$; raising this cutoff to $200$ increases the
+$A_f=10$ beat depth to $0.127$ (\S\ref{sec:qif}).}
 \label{fig:qif_regimes}
 \end{figure}
 

@@ -10,11 +10,19 @@ Archived at Zenodo: **[doi:10.5281/zenodo.21009618](https://doi.org/10.5281/zeno
 Licensed **CC-BY-4.0** (see [`LICENSE`](LICENSE)); machine-readable citation in
 [`CITATION.cff`](CITATION.cff).
 
-The current local draft is **v0.15.0-draft4** (October 5, 2026), in
+The current local draft is **v0.15.0-draft5** (October 5, 2026), in
 [TN0484_envelope_demodulation.pdf](TN0484_envelope_demodulation.pdf) and
 [TN0484_jne.pdf](TN0484_jne.pdf). As checked on October 2,
 [Calliope WP0185](https://calliope.bcom.one/papers/WP0185) still lists v0.12.0
 (July 21); the newer local draft remains pending Giulio's review and release.
+
+v0.15.0-draft5 adds the spike-cutoff and longer-window checks. At cutoff 200,
+the amplitude-10 spiking depth is 0.127 against the mean-field 0.128; at cutoff
+400 it is 0.139, so joint cutoff/time-step convergence remains unestablished.
+The original-cutoff rasters remain. The matched carrier's apparent 55 Hz depth
+falls below 0.0001 with a fourfold longer window, while TI's stays near 0.31.
+Record: [docs/revision_2026-10-05_v0150draft5.md](docs/revision_2026-10-05_v0150draft5.md);
+redline: [docs/redline_v0150draft4_to_v0150draft5.pdf](docs/redline_v0150draft4_to_v0150draft5.pdf).
 
 v0.15.0-draft4 adds the lower-amplitude spiking comparison and equal-power
 mean-field carrier controls as Figure S13. At 10 per tone, the spiking network
@@ -91,7 +99,7 @@ with a [redline against v0.14.2](docs/redline_v0142_to_v0143.pdf).
 [planning/tn0484_storyline.tex](planning/tn0484_storyline.tex) (section-by-section argument
 map), compiled to [build/storyline/tn0484_storyline.pdf](build/storyline/tn0484_storyline.pdf)
 with `~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex`.
-It maps v0.15.0-draft4, with the weak-field framing authorized by K and section order unchanged.
+It maps v0.15.0-draft5, with the weak-field framing authorized by K and section order unchanged.
 The three placement decisions remain open: Theory order, LaNMM methods, and figure
 promotion. The
 [general practice](../../giulio-personal-handbook/dos-and-donts.md#abstract-and-storyline-planning)
