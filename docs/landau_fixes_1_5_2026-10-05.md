@@ -9,11 +9,15 @@ the manuscript source is untouched here and Kaiti integrates. Python: the projec
 $J^*=16.660$ by continuation backward from $J^*$, computes the exact linear-response gain from
 the second-order beat source $\mathrm{Re}\,D^2f[q,\bar q]$ to $r_E$ on a 0.025 Hz grid, and
 re-measures the simulated peak on an adaptive grid centred on the linear peak with 5 s
-settling and a 4 s window (`--sim`). Table: `docs/landau1_nmm2_jcurve_modes_2026-10-05.json`.
+settling and a 4 s window, and runs the amplitude check (`--sim`; one producer for every field
+the figure and this note use). Table, settings, and normalizations:
+`docs/landau1_nmm2_jcurve_modes_2026-10-05.json`; raw lock-in grids including the amplitude check:
+`code/nmm2_jcurve_modes.npz`. Gain grid: 3001 points over 15 to 90 Hz (0.025 Hz).
 
-- The PING column has two weakly damped modes. For $J\le16.19$ the response peak is carried by a
-  more damped mode at 53 to 57 Hz; for $J\ge16.25$ ($\gamma_{\rm crit}\le0.0081$ ms$^{-1}$) by the
-  critical mode at 49 to 50.6 Hz. The published abscissa followed the 25 to 90 Hz band filter,
+- The PING column has two weakly damped modes. The critical mode carries the response peak at
+  the lowest couplings, $J\le14.30$ (36 to 41 Hz, $\gamma_{\rm crit}\ge0.040$ ms$^{-1}$), and again
+  for $J\ge16.25$ ($\gamma_{\rm crit}\le0.0081$ ms$^{-1}$, 49 to 50.6 Hz). In between,
+  $14.62\le J\le16.19$, a second, more damped mode at 53 to 57 Hz carries it. The published abscissa followed the 25 to 90 Hz band filter,
   which for the first 11 points picked the non-critical pair (Landau is right).
 - Where the critical mode carries the response, the exact linear gain grows as $1/\gamma_{\rm crit}$:
   fitted exponent $1.016$ over a 5.8-fold range of $\gamma$ ($0.0081$ to $0.0014$ ms$^{-1}$).
@@ -29,7 +33,8 @@ settling and a 4 s window (`--sim`). Table: `docs/landau1_nmm2_jcurve_modes_2026
 | 16.566 | 0.0019 | 1.081 | 1.221 | 0.932 |
 | 16.590 | 0.0014 | 1.104 | 1.153 | 0.728 |
 
-  At weak drive the simulation follows linear response to within 10% everywhere. At the published
+  At a quarter of the amplitude ($A=2$, one sixteenth of the power) the simulation follows linear
+  response to within about 10% at the nine checked couplings. At the published
   amplitude the critical-mode response first exceeds linear response by up to 48%, as the
   rectified mean shift moves the operating point toward the Hopf, then saturates.
 - The cached peaks are accurate to 2% except at $J=16.25$ to $16.43$, where the 1.5 Hz grid missed
@@ -52,7 +57,7 @@ $44\times$ nearest the Hopf (surrogate: $19$, $66$, $45$). The figure can stay s
 if the text states both; or swap the cache for the two-tone one (same format).
 
 **TI/tACS** (`code/ti_tacs_twotone.py`, `docs/landau5_ti_tacs_twotone_2026-10-05.json`). Ratios at
-the cached tACS couplings change by at most 2%: $0.142\to0.142$ far, $0.238\to0.235$ at
+the cached tACS couplings change by about 2% at most: $0.142\to0.142$ far, $0.238\to0.235$ at
 $\gamma=1.07$, $0.469\to0.459$ at $\gamma=0.12$ s$^{-1}$. Source-matched controls (60 s settling,
 20 s window): $0.987$, $0.929$, $0.900$ (surrogate $0.99$, $0.94$, $0.92$); the $6.99\times$ input
 gives $6.97$, $3.95$, $1.96$, unchanged.
@@ -78,7 +83,7 @@ change until rectification of the amplified oscillation takes over the mean."
 Waveform-scope paragraph (after "...and the kHz demonstration."): "The AM surrogate is retained
 for the dense coupling and drive sweeps (Figs. jcurve, timing, tacs, nmm2_jcurve). Their
 mean-shift-dependent results were repeated with genuine two tones: the timing-versus-rate ratios
-are reported for both waveforms, the TI/tACS ratios change by at most 2%, and the NMM2 endpoint
+are reported for both waveforms, the TI/tACS ratios change by about 2% at most, and the NMM2 endpoint
 remains attracting." Drop "every claim that turns on the waveform is run with genuine two tones"
 or restrict it to the listed demonstrations.
 
@@ -95,17 +100,25 @@ TI/tACS paragraph: append "(genuine two tones: $0.14$, $0.24$, $0.46$)" after th
 ratios and "(two tones: $0.99$, $0.93$, $0.90$)" after the matched controls.
 
 NMM2 paragraph, replace "the demodulated peak of $r_E$ grows as $1/\gamma$ before departing from
-this scaling near criticality": "two weakly damped modes compete. Farther from $J^*$ a mode near
-$55$~Hz carries the peak response; for $\gamma\lesssim0.008$~ms$^{-1}$ the critical mode near
+this scaling near criticality": "two weakly damped modes compete. Over an intermediate coupling range ($14.6\le J\le16.2$) a
+second mode near $55$~Hz carries the peak response; for $\gamma\lesssim0.008$~ms$^{-1}$ the critical mode near
 $50$~Hz does, and there the linear-response gain grows as $1/\gamma$ (fitted exponent $1.02$ over
 a $5.8$-fold range). At the plotted drive the simulated peak first exceeds linear response by up
 to $48\%$, as the rectified mean shift moves the state toward the Hopf, then saturates; at a
-quarter of that drive power it stays within $10\%$ of linear response." Endpoint sentence: add
+quarter of that drive amplitude it stays within about $10\%$ of linear response." Endpoint sentence: add
 "with genuine two tones the endpoint perturbation decays at $-0.0014$~ms$^{-1}$." Replace "share
 the leading gain scaling" by "share the $1/\gamma$ gain scaling of their critical mode".
 
 Fig. nmm2_jcurve caption (a,b): "(a) Simulated peak (blue) and exact linear response (gray, scaled
 far from $J^*$) of $r_E$ as $J\to J^*$. (b) The same against $1/\gamma$ of the critical mode:
-filled where the critical mode carries the peak, open where a second mode near $55$~Hz does. The
+filled where the critical mode carries the peak, open where a second mode near $55$~Hz does ($14.6\le J\le16.2$). The
 linear response follows $1/\gamma$ (dashed) where the critical mode dominates; the simulated peak
 first exceeds and then falls below it at this drive amplitude."
+
+## Provenance repair (19:55)
+
+At Kaiti's request: `nmm2_jcurve_modes.py --sim` now produces every field the plotter and this
+note use (`Gpk_src`, `fGpk_src`, `crit`, `simpk`, `sim_over_lin_src`, `amp_check`), with raw
+lock-in grids in the npz; the rerun reproduces the earlier inline values to the printed digits.
+Interval statement corrected (the critical mode also carries the lowest couplings), the grid
+spacing stated as committed, and "quarter drive power" corrected to quarter amplitude.

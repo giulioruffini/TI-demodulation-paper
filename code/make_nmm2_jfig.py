@@ -23,7 +23,7 @@ C, Chopf = d["C"], float(d["Chopf"])
 import json
 M = json.load(open(os.path.join(HERE, "..", "docs", "landau1_nmm2_jcurve_modes_2026-10-05.json")))
 gc = np.array(M["gam_crit"]); sim = np.array(M["simpk"]); G = np.array(M["Gpk_src"]); fG = np.array(M["fGpk_src"])
-crit = np.abs(fG - np.array(M["f_crit"])) < 1.5          # response peak carried by the critical mode
+crit = np.array(M["crit"], bool)                         # response peak carried by the critical mode (producer field)
 mid = (C > 14.5) & (C < 16.0)
 Glin = G * np.median(sim[mid] / G[mid])                  # linear response, scaled to the measured gain away from the Hopf
 
