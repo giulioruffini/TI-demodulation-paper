@@ -1,5 +1,6 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
+- [ ] close Klaus's fidelity check of the draft11 numerical integration in b436a9c; source, figures, and caches remain unchanged during the check
 - [ ] Giulio: confirm the signed PEIX formula in the published Neural Computation supplement before submission; bioRxiv v3 Appendix A.1 and the author appendix agree
 - [ ] review article length after the Landau additions; retain explanations unless Giulio approves the proposed cuts
 - [ ] Giulio: review the corrected JNE working edition and fixed-baseline redline; authorize coauthor circulation when ready
