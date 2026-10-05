@@ -1,26 +1,27 @@
 % TN0484 / WP0185: TN abstract, included by the storyline.
-% Date: 2026-10-05. Status: v0.15.0-draft6, internal review revision.
-% Original 22 figures retained; complementary Figure S13 added.
-Temporal-interference (TI) stimulation combines two high-frequency currents, yet their
-superposition contains no field component at the low difference frequency. Population
-models generate that component through effective quadratic mixing and amplify it through
-recurrent resonance. Our focus is weak perturbations of ongoing activity. For a smooth
-response with a nonzero second-order term,
-cellular nonlinearities contribute to a beat proportional to the product of the carrier
-amplitudes. A Jansen--Rit firing-rate sigmoid realizes this mixing through its curvature.
-An exact quadratic integrate-and-fire mean field derives this description from spiking
-dynamics. Its static rate curve emerges when membrane relaxation is fast relative to the
-input, while synapses remain dynamic. Outside that limit the mixing coefficient depends
-on frequency. Fast cellular access and slow circuit resonance can therefore coexist, with
-membrane attenuation entering once, through access. Near a Hopf bifurcation, the network amplifies the
-generated beat as $1/\gamma$ within linear response, where $\gamma$ is the modal damping.
-Coupling sweeps separate this gain from leading-order beat generation. Near resonance,
-rate modulation grows faster than the mean-rate change. Spiking simulations distinguish
-beat modulation below the population's oscillatory threshold from gamma induced when
-rectification crosses it. An equal-power mean-field carrier control separates induction from the
-beat response. In the weak-input regime, the carrier-product
-law makes an envelope-only dose map conditional on the transduction mechanism. TI and
-direct low-frequency stimulation share the amplifier when effective input coupling,
-readout, and operating state are matched, so resonance alone gives TI no efficiency
-advantage. Biological access and the absolute response at human field strengths remain
-unresolved.
+% Date: 2026-10-05. Status: v0.15.0-draft7, internal review revision.
+Temporal-interference (TI) stimulation combines two high-frequency currents, yet
+their superposition contains no field component at the low difference frequency.
+The neural response requires field-to-membrane access, nonlinear detection, and
+amplification. We propose fast axonal compartments, including the axon initial
+segment and nodes, as candidate access sites. Evidence for periaxonal circuitry
+motivates treating axonal and somatic voltage responses separately; a short
+effective membrane time represents fast access in the population model.
+Its field-to-voltage transfer and response at human field strengths require calibration.
+For weak perturbations of ongoing activity, smooth cellular nonlinearities with
+a nonzero second-order response generate a beat proportional to the product of
+the effective carrier amplitudes. A Jansen--Rit firing-rate sigmoid realizes this
+mixing through its curvature. An exact quadratic integrate-and-fire mean field
+connects the static curve to spiking dynamics: fast membrane relaxation leaves
+dynamic synapses, whereas outside that limit mixing depends on frequency.
+Membrane attenuation enters once, through access. Near a Hopf bifurcation, the
+network amplifies the generated beat as $1/\gamma$ within linear response, where
+$\gamma$ is modal damping. Coupling sweeps separate this gain from leading-order
+beat generation. Rate modulation grows faster than the mean-rate change near
+resonance. Spiking simulations distinguish beat modulation below the oscillatory
+threshold from gamma induced when rectification crosses it; an equal-power
+mean-field carrier control separates induction from the beat response.
+The weak-input product law makes envelope-only dosimetry conditional on
+transduction. Within linear response, TI and direct low-frequency stimulation
+share the amplifier when coupling, readout, and state are matched, so resonance
+alone gives TI no efficiency advantage.

@@ -1,0 +1,11 @@
+{
+  "linear_ratio": 0.14303947193013722,
+  "rows_checked": 12,
+  "max_absolute_ratio_error": 5.551115123125783e-17,
+  "interpolation_extrapolates": false,
+  "source_sha256": {
+    "jcurve_main.npz": "d9c73caed0f6f2ffb4109e93ad58da16c98237829674d1f0d8fb0dfbc782a74e",
+    "tacs_jsweep.npz": "cec57aaf562ab95b4c0a872347365cd34ca245275c30cb9d41017e403ea812ed"
+  },
+  "scope": "Cache arithmetic verified; not a new trajectory or causal decomposition."
+}

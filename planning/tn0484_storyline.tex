@@ -1,6 +1,6 @@
 % TN0484 / WP0185: abstract and storyline. Build from the project root:
 %   ~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex
-% Map mode: rows follow the v0.15.0-draft6 manuscript order and numbering (TN build; the JNE build
+% Map mode: rows follow the v0.15.0-draft7 manuscript order and numbering (TN build; the JNE build
 % moves the appendices and figures S1--S13 to the supplement). Prepared 2026-10-03.
 \documentclass[11pt,a4paper,landscape]{article}
 \usepackage[T1]{fontenc}
@@ -18,7 +18,7 @@
 \newcommand{\wpnumber}{TN0484 / WP0185}
 \newcommand{\papertitle}{The cortical column as a tuned receiver}
 \newcommand{\storylinedate}{5 October 2026}
-\newcommand{\baselinelabel}{v0.15.0-draft6}
+\newcommand{\baselinelabel}{v0.15.0-draft7}
 \newcommand{\abstractfile}{tn0484_abstract.tex}
 \newcommand{\storylineauthors}{Giulio Ruffini}
 % -----------------------------------------------------------------------------
@@ -69,22 +69,26 @@
 \end{minipage}
 \end{center}
 \vspace{5mm}
-{\footnotesize\color{muted}The abstract is the TN abstract of v0.15.0-draft6. K authorized the weak-field
+{\footnotesize\color{muted}The abstract is the TN abstract of v0.15.0-draft7. K authorized the weak-field
 effective-response framing on 3 October 2026; the JNE build keeps a structured abstract with
-the same claims. Draft6 includes cutoff, half-step, and spectral-leakage checks to the amplitude-10 comparison and
-equal-power mean-field controls,
-while retaining the finite-amplitude QIF examples. Section order and the original
+the same claims. Draft7 organizes the opening around access, detection, and amplification, places Cohen and
+AIS evidence beside the access hypothesis, and distinguishes linear from finite-amplitude
+TI/tACS ratios. The QIF cutoff, half-step, and carrier controls remain. Section order and the original
 figures remain; Figure S13 adds the comparison. The placement
-decisions on the last page remain open; this revision does not cut or reorder content.}
+decisions on the last page remain open. The Introduction and Discussion paragraphs
+are reorganized around the physical stages at K's request; no section or figure is moved.}
 
 \newpage
 \pagetitle{Problem and theory}{First argument block: Sections 1--2}
-A two-tone field carries no power at its beat frequency. A smooth weak-input response with
-a nonzero second-order term generates that frequency by mixing. Cellular contributions can
-be combined in an effective response, with QIF providing a derived realization. Access controls
-the input reaching the mixer; recurrent dynamics amplify its output. The static QIF curve is
-the adiabatic limit of its dynamic population response. Small amplitude alone does not remove
-memory or make its coefficient universal.
+A two-tone field carries no power at its beat frequency. Access converts the applied field
+into local membrane polarization; nonlinear detection generates the beat; the network selects
+and amplifies that generated input. The Introduction should develop these stages in that order,
+with their proposed mechanisms and evidence. Fast axonal compartments are the access hypothesis:
+Cohen's periaxonal circuit supports distinct nodal and internodal voltage dynamics; the AIS is a
+separate candidate with a high sodium-channel density. Neither observation fixes a TI charging
+time. Luff supplies evidence for cellular mixing, while cellular resonance and recurrent
+amplification remain distinct. QIF connects the effective weak-input account to a neuron model;
+its static transfer is an adiabatic limit, not a consequence of small amplitude alone.
 
 \begingroup\fontsize{9.4}{11.4}\selectfont
 \begin{xltabular}{\linewidth}{@{}L{38mm}Y L{62mm}L{46mm}@{}}\toprule
@@ -96,13 +100,15 @@ memory or make its coefficient universal.
   blockade and network simulations support circuit involvement. Retain weak modulation
   of ongoing activity as the scope, with direct stimulation thresholds and block outside it.
   Weak input can perturb spiking neurons; linear gain requires stability under the rectified mean shift.
-  Cellular contributions enter an effective quadratic response; access and amplification
-  remain separate, without identifying an anatomical access route.
-& States the problem and the distinction the paper turns on: cellular mixing versus the
-  network response it recruits. Announces the ladder (JR column, QIF mean field, spiking
+  Introduce fast axonal access before detection: AIS and nodes are candidates; Cohen's
+  submyelin circuit explains distinct axonal voltage modes, not a measured TI transfer.
+  Cellular contributions enter an effective quadratic response, and cellular tuning remains
+  distinct from the recurrent amplifier. Retain the candidate positively and name its calibration gap.
+& States the physical sequence: field-to-membrane access, beat generation, then amplification.
+  Places each reference beside the stage it supports. Announces the ladder (JR column, QIF mean field, spiking
   network, laminar column) once. The transfer curve must be defined before its curvature
   can mix, so \S2.1 follows.
-& Fig.~1 (receiver concept). Grossman 2017; Mirzakhalili 2020; Luff 2024 (mixer); Vieira
+& Fig.~1 (receiver concept). Cohen 2020; Kole 2008 (AIS); Mirzakhalili 2020; Luff 2024 (mixer); Vieira
   2024; Caldas-Martinez 2024; CFC and HAM companion papers.\\[2pt]
 \midrule
 \place{\S2.1}{Population transfer and the slow-synapse limit}
@@ -174,15 +180,18 @@ memory or make its coefficient universal.
 \midrule
 \place{\S2.6}{Carrier access depends on the effective membrane response}
 & $H_m$ (Eq.~22); $|H_m|^2\approx10^{-4}$ at 1~kHz for 16~ms, 0.39 and 0.14 at 1 and 2~kHz for
-  0.2~ms, labeled as assumed. Table~2 (response stages). AC space constant (Eq.~23), one tenth
+  0.2~ms, labeled as assumed. Table~2 separates somatic measurements, Cohen's approximately
+  1~ms minimum axonal decay, assumed fast access, channel kinetics, and synaptic filtering.
+  Cohen is cited here as well as in the Introduction and Discussion. AC space constant (Eq.~23), one tenth
   at 1~kHz. Channel kinetics belong in the effective mixing response, counted once;
   no universal gate cutoff follows from QIF. Carrier sweeps constrain access plus mixing;
   beat sweeps probe the amplifier. The plotted simulations retain finite membrane times;
   fast QIF relaxation is an analytic limit.
 & Separates carrier independence at fixed polarization from the applied-field roll-off and
-  makes fast access a labeled hypothesis. The detector coefficient also depends on state,
+  connects the fast-compartment hypothesis to a reduced-model sensitivity calculation.
+  The detector coefficient also depends on state,
   which \S2.7 takes up.
-& Figs.~S5, S6, S9; Deitcher 2017; Eyal 2016; Discussion paragraph on Cohen, Luff, Semenov.\\[2pt]
+& Figs.~S5, S6, S9; Deitcher 2017; Eyal 2016; Cohen 2020; Discussion comparison with Luff and Semenov.\\[2pt]
 \midrule
 \place{\S2.7}{Operating-point dependence}
 & PEIX (Eq.~24) tracks $\Sigma'$ and peaks where $\Sigma''$ vanishes; the complementarity
@@ -232,7 +241,8 @@ lock-in read-out and the pinned-operating-point protocol recur across models.
 \midrule
 \place{\S3.5--3.6}{Coupling sweeps, tACS control, vocabulary}
 & Pinning: solve $p(C)$ for fixed $v^*$, read $\gamma,\omega_0$ from the Jacobian; tACS control
-  at $\varepsilon=0.1$~mV. Forced response, phase capture, and amplitude gating are
+  at $\varepsilon=0.1$~mV. TI uses the AM surrogate at 0.3~mV and $m=1$; pinning
+  is field-free and does not cancel driven mean shifts. Forced response, phase capture, and amplitude gating are
   distinct. The maps measure frequency dominance ($|f_{\rm out}-\Delta f|<0.3$~Hz);
   the rate fold does not uniquely identify gamma-amplitude gating.
 & The pinning protocol holds the local detector curvature fixed; the vocabulary keeps
@@ -265,6 +275,11 @@ lock-in read-out and the pinned-operating-point protocol recur across models.
 \place{\S4.6}{Coupling sets the gain at fixed detection}
 & Pinned $J$-curve: $\sim30\times$ growth, $1/\gamma$ then saturation; the same gain--$\gamma$
   trend via $p$; stable-focus side only. Frequency and modal projections vary too.
+  The TI/tACS ratio cancels the common transfer in linear response (0.143 predicted);
+  the fixed-amplitude cache ratio rises to 0.24 and 0.47 near the Hopf. Retain the
+  unequal-input and field-free-pinning qualifications; matched-source tACS follows TI
+  with ratios 0.99, 0.94, 0.92 at three tested couplings. Both driven means can shift.
+  Do not infer a universal efficiency gain.
   NMM2 $J$-curve uses an unpinned fast-carrier normalization, qualified at finite carrier.
   The full forced endpoint is stable despite the DC-only screen; retain the measured curve.
 & The mesoscale claim: network gain grows near a weakly damped mode while the JR
@@ -325,16 +340,17 @@ laminar extension, and the metrics.
   scope. Limitations: Plovie 2025, noise, columns, cascaded synapses cannot solve access,
   mixed human results.
 & Reinterprets each result in physiological terms and places every caveat where it bites.
-  Retain all paragraphs; each adds a level (mechanism, time scales, anatomy, dosimetry,
-  intensity, efficiency, scale, data, bound, limits). Retain matched-peak versus equal-RMS
+  Retain each level (anatomical access, mixing, time scales, dosimetry,
+  intensity, efficiency, scale, data, bound, limits), with access preceding detection. Retain matched-peak versus equal-RMS
   distinctions, and matching of input coupling, readout, and state for the shared amplifier.
 & Fig.~S3 (tACS); Cohen 2020; Luff 2024 (PWM-TI); Semenov 2025; Vieira 2024; App.~D.\\[2pt]
 \midrule
 \place{\S6}{Conclusion}
 & Effective quadratic mixing generates, resonance amplifies, and a large response does not
   identify a microscopic mixer. Static and dynamic descriptions connected by time scales; each filter
-  once. Product law, shared amplifier, open access pathway.
-& Restates the storyline in three paragraphs without new claims.
+  once. Product law; shared amplifier within linear response; proposed fast axonal access
+  with its TI-field transfer and human-field response awaiting calibration.
+& Restates access, detection, time-scale reduction, and amplification without new claims.
 & ---\\[2pt]
 \midrule
 \place{App.~A--B}{Notation and units; model equations}
@@ -363,9 +379,9 @@ laminar extension, and the metrics.
 \midrule
 \place{App.~F--G}{Vocabulary metrics; supplementary figures}
 & Dominance screen versus capture test; folded-rate metric versus gamma-amplitude gating; frequency-dominance protocol.
-  Figures S2--S12 support \S4.2--4.8 and the Discussion.
+  Figures S2--S13 support \S4.2--4.8 and the Discussion.
 & Metrics behind the three terms; the figure bank for the JNE supplement.
-& Figs.~S2--S12.\\[2pt]
+& Figs.~S2--S13.\\[2pt]
 \end{xltabular}\endgroup
 
 \vspace{4pt}

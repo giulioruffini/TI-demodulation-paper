@@ -1,0 +1,62 @@
+{
+  "source_tables": [
+    {
+      "file": "jcurve_main.npz",
+      "arrays_verified": 10,
+      "sha256": "d9c73caed0f6f2ffb4109e93ad58da16c98237829674d1f0d8fb0dfbc782a74e"
+    },
+    {
+      "file": "tacs_jsweep.npz",
+      "arrays_verified": 9,
+      "sha256": "cec57aaf562ab95b4c0a872347365cd34ca245275c30cb9d41017e403ea812ed"
+    }
+  ],
+  "controls": [
+    {
+      "C": 110.0,
+      "gamma_per_s": 10.739052810518642,
+      "TI_over_matched": 0.9888933651357925,
+      "large_over_matched": 6.972944679085837,
+      "max_stimulated_window_change_pct": 7.893577480544423e-06,
+      "mean_v_shift_mV": {
+        "off": 5.3290705182007514e-14,
+        "TI": 0.007266960229085129,
+        "tACS": 0.0018629085111054877,
+        "tACS_matched": 3.825488318476289e-05
+      },
+      "field_off_lockin_short_mV": 2.1172873165217492e-16,
+      "field_off_lockin_long_mV": 3.4180957657486905e-16
+    },
+    {
+      "C": 133.9090909,
+      "gamma_per_s": 1.0728393950793915,
+      "TI_over_matched": 0.9408202659717219,
+      "large_over_matched": 3.948539622898108,
+      "max_stimulated_window_change_pct": 2.0605387573979783e-05,
+      "mean_v_shift_mV": {
+        "off": 4.618527782440651e-14,
+        "TI": 0.013038923818173842,
+        "tACS": 0.09112661326427585,
+        "tACS_matched": 0.005512965603466924
+      },
+      "field_off_lockin_short_mV": 3.459084756759442e-07,
+      "field_off_lockin_long_mV": 1.839949926873783e-15
+    },
+    {
+      "C": 136.3,
+      "gamma_per_s": 0.12344222295907074,
+      "TI_over_matched": 0.9189885337092993,
+      "large_over_matched": 1.957045153949833,
+      "max_stimulated_window_change_pct": 0.10091682686603765,
+      "mean_v_shift_mV": {
+        "off": 8.212008850705388e-10,
+        "TI": 0.03437743454492548,
+        "tACS": 0.13206570553212416,
+        "tACS_matched": 0.03227019832464251
+      },
+      "field_off_lockin_short_mV": 0.09364078907453044,
+      "field_off_lockin_long_mV": 0.00011373557670758714
+    }
+  ],
+  "scope": "Portable input arrays and diagnostic arithmetic verified; original trajectories computed by Klaus."
+}

@@ -19,6 +19,36 @@ Paul~J. Nahin.
   Demonstrations}.
 \newblock Springer, 2nd edition, 2001.
 
+\bibitem{deitcher2017}
+Yair Deitcher, Guy Eyal, Lida Kanari, Matthijs~B. Verhoog, Guy~Antoine
+  Atenekeng~Kahou, Huibert~D. Mansvelder, Christiaan P.~J. de~Kock, and Idan
+  Segev.
+\newblock Comprehensive morpho-electrotonic analysis shows 2 distinct classes
+  of {L2} and {L3} pyramidal neurons in human temporal cortex.
+\newblock {\em Cerebral Cortex}, 27(11):5398--5414, 2017.
+
+\bibitem{eyal2016}
+Guy Eyal, Matthijs~B. Verhoog, Guilherme Testa-Silva, Yair Deitcher,
+  Johannes~C. Lodder, Ruth Benavides-Piccione, Juan Morales, Javier DeFelipe,
+  Christiaan P.~J. de~Kock, Huibert~D. Mansvelder, and Idan Segev.
+\newblock Unique membrane properties and enhanced signal processing in human
+  neocortical neurons.
+\newblock {\em eLife}, 5:e16553, 2016.
+
+\bibitem{cohen2020periaxonal}
+Charles C.~H. Cohen, Marko~A. Popovic, Jan Klooster, Marie-Theres Weil, Wiebke
+  M{\"o}bius, Klaus-Armin Nave, and Maarten H.~P. Kole.
+\newblock Saltatory conduction along myelinated axons involves a periaxonal
+  nanocircuit.
+\newblock {\em Cell}, 180(2):311--322.e15, 2020.
+
+\bibitem{kole2008ais}
+Maarten H.~P. Kole, Susanne~U. Ilschner, Bj{\"o}rn~M. Kampa, Stephen~R.
+  Williams, Peter~C. Ruben, and Greg~J. Stuart.
+\newblock Action potential generation requires a high sodium channel density in
+  the axon initial segment.
+\newblock {\em Nature Neuroscience}, 11(2):178--186, 2008.
+
 \bibitem{luff2024mixer}
 Charlotte~E. Luff, Robert Peach, Emma-Jane Mallas, Edward Rhodes, Felix
   Laumann, Edward~S. Boyden, David~J. Sharp, Mauricio Barahona, and Nir
@@ -26,30 +56,38 @@ Charlotte~E. Luff, Robert Peach, Emma-Jane Mallas, Edward Rhodes, Felix
 \newblock The neuron mixer and its impact on human brain dynamics.
 \newblock {\em Cell Reports}, 43(6):114274, 2024.
 
-\bibitem{opancar2025}
-Aleksandar Opan{\v c}ar, Petra Ondr{\'a}{\v c}kov{\'a}, David~Samuel Rose, Jan
-  Trajlinek, Vedran {\DJ}erek, and Eric~Daniel G{\l}owacki.
-\newblock The same biophysical mechanism is involved in both temporal
-  interference and direct k{H}z stimulation of peripheral nerves.
-\newblock {\em Nature Communications}, 16:9006, 2025.
+\bibitem{hutcheonyarom2000}
+Bruce Hutcheon and Yosef Yarom.
+\newblock Resonance, oscillation and the intrinsic frequency preferences of
+  neurons.
+\newblock {\em Trends in Neurosciences}, 23(5):216--222, 2000.
 
-\bibitem{peripheral2023}
-Ryan~B. Budde, Michael~T. Williams, and Pedro~P. Irazoqui.
-\newblock Temporal interference current stimulation in peripheral nerves is not
-  driven by envelope extraction.
-\newblock {\em Journal of Neural Engineering}, 20(2):026041, 2023.
+\bibitem{depalma2026ti}
+Raul de~Palma~Aristides, Leonardo~L. Gollo, Francesca Castaldo, Giulio Ruffini,
+  Santiago Canals, and Claudio~R. Mirasso.
+\newblock Frequency-selective responses to temporal interference stimulation in
+  hippocampal neurons.
+\newblock Unpublished manuscript, September 29, 2026. BCOM Working Paper
+  WP0242, 2026.
 
-\bibitem{semenov2025}
-Iurii Semenov, Vitalii Kim, Giedre Silkuniene, and Andrei~G. Pakhomov.
-\newblock Excitation and polarization of isolated neurons by high-frequency
-  sine waves for temporal interference stimulation.
-\newblock {\em Cell Reports Physical Science}, 2025.
+\bibitem{brunelhakim1999}
+Nicolas Brunel and Vincent Hakim.
+\newblock Fast global oscillations in networks of integrate-and-fire neurons
+  with low firing rates.
+\newblock {\em Neural Computation}, 11(7):1621--1671, 1999.
 
-\bibitem{vieira2024}
-Pedro~G. Vieira, Matthew~R. Krause, and Christopher~C. Pack.
-\newblock Temporal interference stimulation disrupts spike timing in the
-  primate brain.
-\newblock {\em Nature Communications}, 15:4558, 2024.
+\bibitem{brunelwang2003}
+Nicolas Brunel and Xiao-Jing Wang.
+\newblock What determines the frequency of fast network oscillations with
+  irregular neural discharges? {I}. synaptic dynamics and
+  excitation--inhibition balance.
+\newblock {\em Journal of Neurophysiology}, 90(1):415--430, 2003.
+
+\bibitem{ledoux2011}
+Erwan Ledoux and Nicolas Brunel.
+\newblock Dynamics of networks of excitatory and inhibitory neurons in response
+  to time-dependent inputs.
+\newblock {\em Frontiers in Computational Neuroscience}, 5, 2011.
 
 \bibitem{caldas2024}
 Sara Caldas-Martinez, Chaitanya Goswami, Mats Forssell, Jiaming Cao, Alison~L.
@@ -77,6 +115,31 @@ Wei Wang, M.~Florian, C.~Ling, K.~Wei, J.~Jian, H.~Sun, L.~Yan, S.~Hu, and
   deep brain stimulation---mechanistic insights, clinical advances, and future
   directions.
 \newblock {\em Translational Psychiatry}, 2026.
+
+\bibitem{vieira2024}
+Pedro~G. Vieira, Matthew~R. Krause, and Christopher~C. Pack.
+\newblock Temporal interference stimulation disrupts spike timing in the
+  primate brain.
+\newblock {\em Nature Communications}, 15:4558, 2024.
+
+\bibitem{opancar2025}
+Aleksandar Opan{\v c}ar, Petra Ondr{\'a}{\v c}kov{\'a}, David~Samuel Rose, Jan
+  Trajlinek, Vedran {\DJ}erek, and Eric~Daniel G{\l}owacki.
+\newblock The same biophysical mechanism is involved in both temporal
+  interference and direct k{H}z stimulation of peripheral nerves.
+\newblock {\em Nature Communications}, 16:9006, 2025.
+
+\bibitem{peripheral2023}
+Ryan~B. Budde, Michael~T. Williams, and Pedro~P. Irazoqui.
+\newblock Temporal interference current stimulation in peripheral nerves is not
+  driven by envelope extraction.
+\newblock {\em Journal of Neural Engineering}, 20(2):026041, 2023.
+
+\bibitem{semenov2025}
+Iurii Semenov, Vitalii Kim, Giedre Silkuniene, and Andrei~G. Pakhomov.
+\newblock Excitation and polarization of isolated neurons by high-frequency
+  sine waves for temporal interference stimulation.
+\newblock {\em Cell Reports Physical Science}, 2025.
 
 \bibitem{ruffini2025cfc}
 Giulio Ruffini, Edmundo Lopez-Sola, Raul Palma, Roser Sanchez-Todo, Jakub
@@ -130,33 +193,6 @@ Pau Clusella, Elif K{\"o}ksal-Ers{\"o}z, Jordi Garcia-Ojalvo, and Giulio
   second-order synapses.
 \newblock {\em Biological Cybernetics}, 117(1-2):5--19, 2023.
 
-\bibitem{hutcheonyarom2000}
-Bruce Hutcheon and Yosef Yarom.
-\newblock Resonance, oscillation and the intrinsic frequency preferences of
-  neurons.
-\newblock {\em Trends in Neurosciences}, 23(5):216--222, 2000.
-
-\bibitem{depalma2026ti}
-Raul de~Palma~Aristides, Leonardo~L. Gollo, Francesca Castaldo, Giulio Ruffini,
-  Santiago Canals, and Claudio~R. Mirasso.
-\newblock Frequency-selective responses to temporal interference stimulation in
-  hippocampal neurons.
-\newblock Unpublished manuscript, September 29, 2026. BCOM Working Paper
-  WP0242, 2026.
-
-\bibitem{brunelhakim1999}
-Nicolas Brunel and Vincent Hakim.
-\newblock Fast global oscillations in networks of integrate-and-fire neurons
-  with low firing rates.
-\newblock {\em Neural Computation}, 11(7):1621--1671, 1999.
-
-\bibitem{brunelwang2003}
-Nicolas Brunel and Xiao-Jing Wang.
-\newblock What determines the frequency of fast network oscillations with
-  irregular neural discharges? {I}. synaptic dynamics and
-  excitation--inhibition balance.
-\newblock {\em Journal of Neurophysiology}, 90(1):415--430, 2003.
-
 \bibitem{sanchezTodo2023}
 Roser Sanchez-Todo, Andr{\'e}~M. Bastos, Edmundo Lopez-Sola, Borja Mercadal,
   Emiliano Santarnecchi, Earl~K. Miller, Gustavo Deco, and Giulio Ruffini.
@@ -170,22 +206,6 @@ Adri{\`a} Galan-Gadea, Ricardo Salvador, Fabrice Bartolomei, Fabrice Wendling,
 \newblock Spherical harmonics representation of the steady-state membrane
   potential shift induced by {tDCS} in realistic neuron models.
 \newblock {\em Journal of Neural Engineering}, 20(2):026004, 2023.
-
-\bibitem{deitcher2017}
-Yair Deitcher, Guy Eyal, Lida Kanari, Matthijs~B. Verhoog, Guy~Antoine
-  Atenekeng~Kahou, Huibert~D. Mansvelder, Christiaan P.~J. de~Kock, and Idan
-  Segev.
-\newblock Comprehensive morpho-electrotonic analysis shows 2 distinct classes
-  of {L2} and {L3} pyramidal neurons in human temporal cortex.
-\newblock {\em Cerebral Cortex}, 27(11):5398--5414, 2017.
-
-\bibitem{eyal2016}
-Guy Eyal, Matthijs~B. Verhoog, Guilherme Testa-Silva, Yair Deitcher,
-  Johannes~C. Lodder, Ruth Benavides-Piccione, Juan Morales, Javier DeFelipe,
-  Christiaan P.~J. de~Kock, Huibert~D. Mansvelder, and Idan Segev.
-\newblock Unique membrane properties and enhanced signal processing in human
-  neocortical neurons.
-\newblock {\em eLife}, 5:e16553, 2016.
 
 \bibitem{grimbert2006}
 Fran{\c c}ois Grimbert and Olivier Faugeras.
@@ -255,13 +275,6 @@ Darpan Chakraborty, Dennis~Q. Truong, Marom Bikson, and Hanoch Kaphzan.
 \newblock Neuromodulation of axon terminals.
 \newblock {\em Cerebral Cortex}, 28(8):2786--2794, 2018.
 
-\bibitem{cohen2020periaxonal}
-Charles C.~H. Cohen, Marko~A. Popovic, Jan Klooster, Marie-Theres Weil, Wiebke
-  M{\"o}bius, Klaus-Armin Nave, and Maarten H.~P. Kole.
-\newblock Saltatory conduction along myelinated axons involves a periaxonal
-  nanocircuit.
-\newblock {\em Cell}, 180(2):311--322.e15, 2020.
-
 \bibitem{luff2024}
 Charlotte~E. Luff, Patrycja Dzialecka, Emma Acerbo, Adam Williamson, and Nir
   Grossman.
@@ -274,12 +287,6 @@ Florian Missey, Emma Acerbo, Adam~S. Dickey, et~al.
 \newblock Non-invasive temporal interference stimulation of the hippocampus
   suppresses epileptic biomarkers in patients with epilepsy.
 \newblock {\em Brain Stimulation}, 19(1):102981, 2026.
-
-\bibitem{ledoux2011}
-Erwan Ledoux and Nicolas Brunel.
-\newblock Dynamics of networks of excitatory and inhibitory neurons in response
-  to time-dependent inputs.
-\newblock {\em Frontiers in Computational Neuroscience}, 5, 2011.
 
 \bibitem{ali2013}
 M.~M. Ali, K.~K. Sellers, and F.~Frohlich.

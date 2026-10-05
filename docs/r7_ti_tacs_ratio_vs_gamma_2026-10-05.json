@@ -116,5 +116,15 @@
    "TI_gain": 105.48033087817767
   }
  ],
- "reading": "far from the Hopf the ratio equals the linear prediction within 1%; below gamma ~ 3/s it rises because the larger response (tACS here) saturates first; finite-amplitude effect, not gamma per se"
+ "units": {
+  "TI_gain": "mV s",
+  "ratio": "dimensionless"
+ },
+ "pinning": "field-free v*=8.30 mV; the stimulated mean is not clamped",
+ "interpolation": "linear interpolation of log TI amplitude in coupling C; no extrapolation",
+ "input_sha256": {
+  "jcurve_main.npz": "d9c73caed0f6f2ffb4109e93ad58da16c98237829674d1f0d8fb0dfbc782a74e",
+  "tacs_jsweep.npz": "cec57aaf562ab95b4c0a872347365cd34ca245275c30cb9d41017e403ea812ed"
+ },
+ "reading": "The ratio is about 0.14 far from the Hopf and rises near it at these fixed, unequal input amplitudes. Earlier saturation of the larger tACS response is consistent with the curves; this cache comparison alone does not separate saturation from mean shifts."
 }

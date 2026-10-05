@@ -1,5 +1,14 @@
 # Submission-readiness review — v0.14.6
 
+**Draft7 update (October 5).** The access hypothesis now appears where the reader
+needs it: abstract, Introduction, access theory, Table 2, and Conclusion. Cohen's
+axonal decay is distinguished from an assumed TI response time; a primary AIS
+reference supports its sodium-channel nonlinearity. The shared-amplifier claim
+is restricted to linear response. The cached ratio is verified independently;
+field-free pinning is not a cancellation of the driven mean shift. See
+[the draft7 record](docs/revision_2026-10-05_v0150draft7.md).
+
+
 **Draft6 update (October 5).** Both-step checks at cutoffs 200 and 400 are verified.
 The higher-cutoff depths span 0.121–0.141, and the cutoff-400 overshoot survives
 time-step refinement. The requested R7 diagnostics are complete at the stated

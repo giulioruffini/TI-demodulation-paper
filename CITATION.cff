@@ -5,7 +5,8 @@ abstract: >-
   Weak-field cellular nonlinearities contribute to an effective quadratic
   mixing response in temporal-interference stimulation. Population models
   separate carrier access, difference-frequency generation, and recurrent amplification.
-  The static transfer curve emerges from the exact QIF mean field in the
+  Fast axonal compartments provide a candidate access route whose TI-field
+  transfer requires calibration. The static transfer curve emerges from the exact QIF mean field in the
   slow-synapse limit; carrier mixing requires the corresponding separation of
   time scales. Near a Hopf bifurcation, the recurrent network amplifies the
   generated beat. Demonstrated with Jansen-Rit, NMM2, and QIF models, with a
@@ -50,7 +51,7 @@ identifiers:
     description: "Zenodo archive of this repository (concept DOI, resolves to latest version)"
 repository-code: "https://github.com/giulioruffini/TI-demodulation-paper"
 license: CC-BY-4.0
-version: "0.15.0-draft6"
+version: "0.15.0-draft7"
 # Local draft; date-released will be set when the held release is authorized.
 keywords:
   - temporal interference

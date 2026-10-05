@@ -41,6 +41,8 @@ pip install numpy scipy matplotlib
 | `make_qif_regimes_fig.py` | Figure S13: amplitude-10/35 spiking rasters and equal-RMS mean-field carrier spectra; selectable through `run_all.py`. |
 | `verify_r7_cutoff_leakage.py` | Recomputes the 100/200/400 cutoff summaries and reintegrates the high-amplitude carrier controls for 800/3200 ms Hann-window comparisons. Writes the independent cutoff/leakage audit with `--json <path>`; `--timesteps-only` verifies all six cutoff/time-step caches without reintegrating the carrier controls. |
 | `s10_periodic_stability_check.py` | Full variational matrix over the 2 s AM period after 8 s settling. The endpoint's largest multiplier is 0.0342; repeat-period closure and a finite-difference Jacobian check are recorded. |
+| `ti_tacs_ratio_vs_gamma.py` | Compares the preserved Figure 9 and S3 cache amplitudes at matched coupling using log interpolation; records input hashes and the limits of the causal interpretation. |
+| `verify_ti_tacs_ratio.py` | Independent derivative-ratio and explicit-interpolation check of all 12 ratios; `--json <path>` saves the arithmetic audit. `tacs_jsweep.npz` is now preserved for this comparison. |
 | `current_state.md` | Project state / next steps. |
 | `TN0484_envelope_demodulation.tex/.pdf` | The Technical Note. |
 

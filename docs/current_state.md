@@ -1,5 +1,20 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v0.15.0-draft7 — access, detection, amplification (2026-10-05)
+
+K's requested physical sequence now organizes the abstract and Introduction,
+with Cohen and AIS references placed at access and Table 2 distinguishing
+measured responses from assumed model times. The Discussion follows access
+before detection; section and figure order are retained. The linear TI/tACS
+ratio is derived and the finite-amplitude cache comparison is independently
+verified. Klaus's matched-source and longer-settling controls are integrated as
+`f0bba54`: TI/matched-tACS amplitudes are 0.99, 0.94, and 0.92 at three tested
+couplings. The larger direct response saturates earlier and develops larger mean
+shifts; field-free pinning does not cancel them. The 19 portable cache arrays and
+the diagnostic arithmetic are verified. Record: `revision_2026-10-05_v0150draft7.md`.
+Author approval, declarations, optional placement choices, and release holds remain.
+
+
 ## v0.15.0-draft6 — half-step cutoff checks complete (2026-10-05)
 
 Klaus's `f1831cd` is integrated as `5ecc5ac`. All six cutoff/time-step cache
