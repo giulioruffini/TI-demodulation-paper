@@ -1,6 +1,6 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
-- [ ] confirm signed PEIX against the final published CFC appendix if Klaus retrieved it; the author appendix and identities are verified
+- [ ] Giulio: confirm the signed PEIX formula in the published Neural Computation supplement before submission; bioRxiv v3 Appendix A.1 and the author appendix agree
 - [ ] review article length after the Landau additions; retain explanations unless Giulio approves the proposed cuts
 - [ ] Giulio: review the corrected JNE working edition and fixed-baseline redline; authorize coauthor circulation when ready
 - [ ] obtain missing funding declarations; confirm the supplied competing-interests statement, author roles and affiliations, actual AI-tool versions, and the submission version with every author

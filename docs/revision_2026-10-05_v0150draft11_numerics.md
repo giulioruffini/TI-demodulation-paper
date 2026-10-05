@@ -98,8 +98,13 @@ table, or figure was deleted, and no new placement decision was made. A separate
 length review remains on the TODO; scientific qualifications should not be
 removed to meet a length target without Giulio's decision.
 
-The final publication appendix for the CFC PEIX definition remains unavailable
-in this session; the author appendix and numerical identities were verified in
-the text pass. Author review, missing declarations, and the submission decision
+Klaus's follow-up confirms that the Landau reference check used bioRxiv
+10.1101/2025.03.19.644090 v3, Appendix A.1, "PEIX computation." It agrees with
+the local author appendix: the index is signed, zero at the inflection, and
+approaches opposite signs in the two saturation limits. These were separate
+checks of prepublication sources, not verification of the published supplement.
+Giulio, a coauthor of the CFC paper, is to confirm the published formula before
+submission; the TODO now names that action. The manuscript definition is unchanged.
+Author review, missing declarations, and the submission decision
 remain pending. No push, Calliope/Zenodo cut, Overleaf synchronization, or coauthor
 mail was performed.

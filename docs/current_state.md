@@ -12,8 +12,9 @@ by at most 2.2% between the waveforms, and the two-tone endpoint remains attract
 The abstract and prediction table now distinguish the initial growth of modulation
 from the later rectification of the amplified oscillation into a mean shift.
 
-The published CFC appendix remains a source-verification limit; the author
-appendix and PEIX identities agree. Author review, declarations, and the length
+Klaus confirms that his PEIX check used bioRxiv v3 Appendix A.1, not the published
+CFC supplement. That preprint and the author appendix agree; Giulio is to confirm
+the published formula before submission. Author review, declarations, and the length
 review remain. The fixed reading baseline stays draft9 `8016065`.
 See `revision_2026-10-05_v0150draft11_numerics.md` and the earlier text record.
 All release holds remain.
