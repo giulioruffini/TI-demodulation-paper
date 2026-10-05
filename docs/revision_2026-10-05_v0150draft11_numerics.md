@@ -124,6 +124,14 @@ approaches opposite signs in the two saturation limits. These were separate
 checks of prepublication sources, not verification of the published supplement.
 Giulio, a coauthor of the CFC paper, is to confirm the published formula before
 submission; the TODO now names that action. The manuscript definition is unchanged.
+
+At 20:23 Klaus reported a direct comparison with the bioRxiv v3 Appendix A.1
+page supplied by Giulio: draft11's PEIX formula agrees to a maximum difference
+of $7\times10^{-16}$ over $V\in[-5,20]$ mV. He also checked the normalized-slope,
+curvature, and rate-fraction identities used downstream. This closes the
+formula-equivalence check; only whether the published appendix changed that
+definition remains to be confirmed by Giulio. No manuscript edit is needed.
+
 Author review, missing declarations, and the submission decision
 remain pending. No push, Calliope/Zenodo cut, Overleaf synchronization, or coauthor
 mail was performed.

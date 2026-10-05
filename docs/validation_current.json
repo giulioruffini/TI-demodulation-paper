@@ -135,6 +135,23 @@
     "passed": 12,
     "scope": "existing cache-safety and dependency checks; numerical verifier checks the new raw grids"
   },
+  "independent_peix_review": {
+    "reviewer": "klaus-484-TI-helper",
+    "reported_at": "2026-10-05 20:23 CEST",
+    "target_commit": "d730e63",
+    "source": "bioRxiv 10.1101/2025.03.19.644090 v3, Appendix A.1 page supplied by Giulio",
+    "source_definition": "PEIX(x) = -sign(x) * (4 exp(-x)/(1 + exp(-x))^2 - 1), x = r * (<V> - V0)",
+    "result": "pass",
+    "max_absolute_difference_reported": 7e-16,
+    "voltage_interval_mV": [-5, 20],
+    "downstream_identities_checked_by_reviewer": [
+      "Sigma'(v)/Sigma'(v0) = 1 - |PEIX|",
+      "Sigma'' = -rho * Sigma' * sign(PEIX) * sqrt(|PEIX|)",
+      "|PEIX| = (1 - 2 zeta)^2"
+    ],
+    "published_appendix_verified": false,
+    "remaining_action": "Giulio to confirm that the published Neural Computation Appendix A.1 retained this definition. No manuscript change required."
+  },
   "independent_fidelity_review": {
     "reviewer": "klaus-484-TI-helper",
     "reported_at": "2026-10-05 20:16 CEST",
