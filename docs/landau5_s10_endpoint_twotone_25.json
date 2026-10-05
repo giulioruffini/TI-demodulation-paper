@@ -1,0 +1,21 @@
+{
+ "C": 16.566298888913757,
+ "beat_Hz": 50.5,
+ "gamma_free_per_ms": 0.0018513941934752364,
+ "mode_free_Hz": 50.497313314670386,
+ "lyapunov_window_per_ms": 0.002196072313294312,
+ "lyapunov_long_per_ms": -0.0009585165174018147,
+ "perturbation_decay_per_ms": -0.0016048788867619819,
+ "lockin_at_beat": 0.010897616769687774,
+ "mean_rE": 0.055370519119022014,
+ "beat_depth": 0.17731782229020662,
+ "beat_2nd_harmonic_depth": 0.021213894109873566,
+ "other_line_depth": 0.005215213402994312,
+ "other_line_Hz": 52.5,
+ "rE_min": 0.04376442681600208,
+ "rE_max": 0.06867015286678839,
+ "t_meas_ms": 1200.0,
+ "t_long_ms": 8000.0,
+ "waveform": "two tones, amplitude 8 each, fc 300 Hz",
+ "index": 25
+}
