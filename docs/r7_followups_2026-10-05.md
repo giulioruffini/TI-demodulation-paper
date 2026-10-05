@@ -46,10 +46,12 @@ above 15, so 10 sits at the top of the square-law range.
 
 Finite-size and discretization. The spiking beat depth at 10 is 27% below the mean field
 (0.093 against 0.128), more than at 35 (8%). Doubling the population to 16000 gives 0.083
-(rate +2.8%, PPC median $-0.016$), so the gap is not finite-size noise. The half-step run
-(dt = 0.00125 ms) is reported below when it completes; if the gap persists it is the
-Euler-plus-reset discretization of the QIF at V_peak = 100, which the exact mean field does
-not share, and the figure should quote the spiking depth with that caveat.
+(rate +2.8%, PPC median $-0.016$; cache `_a10_n16k.npz`), and halving the time step to
+0.00125 ms gives 0.093 again (cache `_a10_dt2.npz`), so the gap is neither finite-size
+noise nor the Euler step. It is a difference between the finite network as implemented
+(V_peak = 100, deterministic Lorentzian quantiles, spike-count rate) and the exact mean
+field at weak drive; a V_peak sensitivity run would locate it, and was not run here. Quote
+the spiking depth as 0.08--0.09 against the mean field's 0.13, with that caveat.
 
 ## 2. The equal-RMS unmodulated carrier (mean field)
 
