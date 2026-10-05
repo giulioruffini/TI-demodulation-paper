@@ -1,5 +1,17 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v0.15.0-draft4 — lower-amplitude QIF response and carrier controls (2026-10-05)
+
+Klaus's R7 follow-ups are integrated from `5e5921d` and `cecb707` as `0b46d91`
+and `6f6d5bf`. Five QIF cache summaries and four mean-field controls are independently
+reproduced. Figure S13 complements the preserved Figure 10 and S12: amplitude 10
+stays forced, while amplitude 35 induces gamma under either TI or an equal-RMS
+carrier. The unresolved spiking–mean-field depth difference is stated. A full-period
+variational check confirms the S10 endpoint is stable, with multiplier 0.034.
+Record: `revision_2026-10-05_v0150draft4.md`. Author approval, declarations, and
+optional placement decisions remain open; release and circulation remain held.
+
+
 ## v1.74 — v0.14.6: review of Kaiti's v0.14.5, four corrections (2026-10-04)
 Giulio asked whether v0.14.5 needed revision. Kaiti's weak-field effective-response
 framing (authorized by K) is kept; its chi^(2) definition, F(Q) derivation, R10 fix,

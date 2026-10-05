@@ -1,5 +1,15 @@
 # Submission-readiness review — v0.14.6
 
+**Draft4 update (October 5).** The R7 follow-ups distinguish a stable beat response
+at amplitude 10 from induced gamma at amplitude 35. Figure S13 adds both regimes
+and equal-RMS mean-field carrier controls without replacing Figure 10 or S12.
+The controls reproduce the rectified shift and gamma induction under a single
+carrier. A full-period variational calculation establishes stability of the S10
+endpoint (largest multiplier 0.034); the DC-only screen is not its stability test.
+The amplitude-10 spiking depth remains below the ideal mean field and is reported
+with that limitation. See [the draft4 record](docs/revision_2026-10-05_v0150draft4.md).
+
+
 **Draft3 update (October 5).** Klaus's raster analysis exposed a further R7
 classification error: a field-free stable QIF state does not remain a purely
 beat-forced state at the published amplitude. The text and captions now distinguish

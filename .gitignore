@@ -30,6 +30,7 @@ code/sweep_hi_stable.npz
 code/sweep_hi_cycle.npz
 code/tacs_jsweep.npz
 code/khz_twotone_reproduced.npz
+code/ping_carrier_control_recomputed.json
 
 # Non-manuscript diagnostic outputs
 figures/fig_lanmm_checker.*

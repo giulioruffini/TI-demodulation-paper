@@ -1,0 +1,25 @@
+{
+  "C": 16.590138649622375,
+  "eta": 0.0,
+  "amplitude": 8.0,
+  "carrier_Hz": 300.0,
+  "beat_Hz": 50.5,
+  "dt_ms": 0.05,
+  "period_ms": 2000.0,
+  "settle_ms": 8000.0,
+  "jacobian_max_error": 1.0307132924936013e-10,
+  "periods": [
+    {
+      "period_start_ms": 8000.0,
+      "relative_closure": 7.880602149449944e-07,
+      "largest_multiplier_modulus": 0.034193834944171254,
+      "leading_exponent_per_ms": -0.001687854957976771
+    },
+    {
+      "period_start_ms": 10000.0,
+      "relative_closure": 2.694689154615367e-08,
+      "largest_multiplier_modulus": 0.034193805036531,
+      "leading_exponent_per_ms": -0.001687855395301999
+    }
+  ]
+}

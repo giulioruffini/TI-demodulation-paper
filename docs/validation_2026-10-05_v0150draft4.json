@@ -1,0 +1,41 @@
+{
+  "version": "0.15.0-draft4",
+  "baseline": "669128b",
+  "outputs": [
+    {
+      "path": "build/TN0484_v0.15.0-draft4.pdf",
+      "pages": 50,
+      "bytes": 3562042,
+      "sha256": "efc50bf120142c84e8ddb2aced63f53068387c46b0b8139a61729e232f4d4c02"
+    },
+    {
+      "path": "build/TN0484_v0.15.0-draft4_jne.pdf",
+      "pages": 32,
+      "bytes": 1607451,
+      "sha256": "8dbb26cfeacdff5ba274a1d5057dd7811fdc98d3e94388de010df6eb4fd9fbd1"
+    },
+    {
+      "path": "build/TN0484_v0.15.0-draft4_jne_supplement.pdf",
+      "pages": 20,
+      "bytes": 2312414,
+      "sha256": "498ccc8333094ea1a1f5b2ca394d4b1eb5e7772d075a8b52802aeb7b492377ce"
+    },
+    {
+      "path": "build/TN0484_v0.15.0-draft4_redline_vs_draft3.pdf",
+      "pages": 50,
+      "bytes": 3658523,
+      "sha256": "a6a19816ca3a978106b475d51b6e84479aa9557f19dae39eb8e2146090e94e84"
+    },
+    {
+      "path": "build/storyline/TN0484_v0.15.0-draft4_storyline.pdf",
+      "pages": 8,
+      "bytes": 290782,
+      "sha256": "7e996dee2ba40267525ba6a33defd6c9be8f999cc03020e3560c73270b8b46ec"
+    }
+  ],
+  "original_figures_retained": 22,
+  "current_figures": 23,
+  "runner_tests": 12,
+  "clean_build_without_auxiliary_files": true,
+  "original_caches_and_qif_figures_unchanged": true
+}

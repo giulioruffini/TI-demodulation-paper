@@ -10,11 +10,22 @@ Archived at Zenodo: **[doi:10.5281/zenodo.21009618](https://doi.org/10.5281/zeno
 Licensed **CC-BY-4.0** (see [`LICENSE`](LICENSE)); machine-readable citation in
 [`CITATION.cff`](CITATION.cff).
 
-The current local draft is **v0.15.0-draft3** (October 5, 2026), in
+The current local draft is **v0.15.0-draft4** (October 5, 2026), in
 [TN0484_envelope_demodulation.pdf](TN0484_envelope_demodulation.pdf) and
 [TN0484_jne.pdf](TN0484_jne.pdf). As checked on October 2,
 [Calliope WP0185](https://calliope.bcom.one/papers/WP0185) still lists v0.12.0
 (July 21); the newer local draft remains pending Giulio's review and release.
+
+v0.15.0-draft4 adds the lower-amplitude spiking comparison and equal-power
+mean-field carrier controls as Figure S13. At 10 per tone, the spiking network
+has a 55 Hz modulation depth of 0.093 and a 2.8% mean-rate increase; at 35,
+rectification induces gamma under either TI or an equal-RMS carrier. The original
+Figure 10 and S12 remain. A full-period stability calculation confirms that the
+S10 endpoint is attracting, despite the DC-only screen. The spiking–mean-field
+depth difference at amplitude 10 is stated explicitly. Record:
+[docs/revision_2026-10-05_v0150draft4.md](docs/revision_2026-10-05_v0150draft4.md);
+redline against draft3:
+[docs/redline_v0150draft3_to_v0150draft4.pdf](docs/redline_v0150draft3_to_v0150draft4.pdf).
 
 v0.15.0-draft3 clarifies the weak-perturbation scope, gives the prose a light
 fluency pass, and relabels the QIF rasters as finite-amplitude examples. The
@@ -80,7 +91,7 @@ with a [redline against v0.14.2](docs/redline_v0142_to_v0143.pdf).
 [planning/tn0484_storyline.tex](planning/tn0484_storyline.tex) (section-by-section argument
 map), compiled to [build/storyline/tn0484_storyline.pdf](build/storyline/tn0484_storyline.pdf)
 with `~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex`.
-It maps v0.15.0-draft3, with the weak-field framing authorized by K and section order unchanged.
+It maps v0.15.0-draft4, with the weak-field framing authorized by K and section order unchanged.
 The three placement decisions remain open: Theory order, LaNMM methods, and figure
 promotion. The
 [general practice](../../giulio-personal-handbook/dos-and-donts.md#abstract-and-storyline-planning)
@@ -140,17 +151,14 @@ pip install -r requirements.txt          # numpy, scipy, matplotlib (+ deps)
 From the repo root (the `.tex` is at the root; `\graphicspath{{figures/}}`):
 
 ```bash
-pdflatex TN0484_envelope_demodulation
-bibtex   TN0484_envelope_demodulation
-pdflatex TN0484_envelope_demodulation
-pdflatex TN0484_envelope_demodulation
+./build.sh all
 ```
 
-Current build: **48 pp (TN), 31 pp (JNE article) + 19 pp (supplement); 0 errors,
+Current build: **50 pp (TN), 32 pp (JNE article) + 20 pp (supplement); 0 errors,
 0 undefined references or citations, and no overfull boxes.** Bibliography month
 macros and shared citation-label warnings are repaired. A float-only page notice
-and an underfull bibliography line remain. The `.bbl` is committed, so a single `pdflatex` rebuilds the PDF
-when references are unchanged.
+and an underfull bibliography line remain. Builds settle the article/supplement
+cross-references and publish complete PDFs by rename. The `.bbl` is committed.
 
 ## Reproduce the figures
 
@@ -188,7 +196,7 @@ repository root.
 
 ### Figure → script table
 
-22 figures are included by the manuscript. The table records the available scripts
+23 figures are included by the manuscript, including the complementary Figure S13. The table records the available scripts
 and inputs; it does not assert a fresh rerun of every numerical calculation.
 **Available** means the producer or renderer is present; it does not imply
 that every simulation was rerun during this revision.
@@ -214,6 +222,7 @@ that every simulation was rerun during this revision.
 | fig_mpr_crossover | `mpr_crossover_fig.py` | ping_fast_carrier_check.json ‡ (from `ping_fast_carrier_check.py`) | yes | Available |
 | fig_qif_raster_twotone | `make_qif_figs.py` | qif_raster_twotone.npz ‡ | – | Available |
 | fig_qif_timing_twotone | `make_qif_figs.py` | qif_raster_twotone.npz ‡ | – | Available |
+| fig_qif_regimes | `make_qif_regimes_fig.py` | original and amplitude-10 QIF caches; ping_carrier_control_traces.npz ‡ | – | Available; controls independently reproduced |
 | fig_tacs_jcurve | `tacs_jsweep.py` | tacs_jsweep.npz | – | Available |
 | fig_entrainment | `make_entrain_fig.py` | entrain{,_b,_crit}.npz ‡ | – | Available |
 | fig_lanmm_setup | — | — | – | **gap**: hand-drawn schematic |

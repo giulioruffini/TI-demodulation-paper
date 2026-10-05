@@ -29,6 +29,15 @@ class FigurePlanTests(unittest.TestCase):
         self.assertEqual(labels(['fig_qif_raster_twotone']),
                          ['data: qif_raster twotone', 'make_qif_figs'])
 
+    def test_qif_regimes_include_both_amplitudes_and_carrier_controls(self):
+        self.assertEqual(labels(['fig_qif_regimes']),
+                         ['data: qif_raster twotone', 'data: qif_raster amplitude10',
+                          'data: carrier controls', 'make_qif_regimes_fig'])
+        self.assertEqual(labels(['fig_qif_regimes'], True), ['make_qif_regimes_fig'])
+        self.assertEqual(run_all.CACHE_INPUTS['make_qif_regimes_fig'],
+                         ('qif_raster_twotone.npz', 'qif_raster_twotone_a10.npz',
+                          'ping_carrier_control_traces.npz'))
+
     def test_cache_mode_never_adds_producers(self):
         self.assertEqual(labels(['fig_resonance'], True), ['rerun_resonance'])
         with self.assertRaisesRegex(ValueError, 'No cache-only renderer'):

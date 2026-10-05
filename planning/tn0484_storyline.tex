@@ -1,7 +1,7 @@
 % TN0484 / WP0185: abstract and storyline. Build from the project root:
 %   ~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex
-% Map mode: rows follow the v0.15.0-draft3 manuscript order and numbering (TN build; the JNE build
-% moves the appendices and figures S1--S12 to the supplement). Prepared 2026-10-03.
+% Map mode: rows follow the v0.15.0-draft4 manuscript order and numbering (TN build; the JNE build
+% moves the appendices and figures S1--S13 to the supplement). Prepared 2026-10-03.
 \documentclass[11pt,a4paper,landscape]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -18,7 +18,7 @@
 \newcommand{\wpnumber}{TN0484 / WP0185}
 \newcommand{\papertitle}{The cortical column as a tuned receiver}
 \newcommand{\storylinedate}{5 October 2026}
-\newcommand{\baselinelabel}{v0.15.0-draft3}
+\newcommand{\baselinelabel}{v0.15.0-draft4}
 \newcommand{\abstractfile}{tn0484_abstract.tex}
 \newcommand{\storylineauthors}{Giulio Ruffini}
 % -----------------------------------------------------------------------------
@@ -69,10 +69,11 @@
 \end{minipage}
 \end{center}
 \vspace{5mm}
-{\footnotesize\color{muted}The abstract is the TN abstract of v0.15.0-draft3. K authorized the weak-field
+{\footnotesize\color{muted}The abstract is the TN abstract of v0.15.0-draft4. K authorized the weak-field
 effective-response framing on 3 October 2026; the JNE build keeps a structured abstract with
-the same claims. Draft3 makes weak perturbations explicit and distinguishes the finite-amplitude
-QIF examples. Section and figure order remain unchanged from v0.14.4. The placement
+the same claims. Draft4 adds the amplitude-10 spiking comparison and equal-power mean-field controls,
+while retaining the finite-amplitude QIF examples. Section order and the original
+figures remain; Figure S13 adds the comparison. The placement
 decisions on the last page remain open; this revision does not cut or reorder content.}
 
 \newpage
@@ -264,21 +265,25 @@ lock-in read-out and the pinned-operating-point protocol recur across models.
 & Pinned $J$-curve: $\sim30\times$ growth, $1/\gamma$ then saturation; the same gain--$\gamma$
   trend via $p$; stable-focus side only. Frequency and modal projections vary too.
   NMM2 $J$-curve uses an unpinned fast-carrier normalization, qualified at finite carrier.
+  The full forced endpoint is stable despite the DC-only screen; retain the measured curve.
 & The mesoscale claim: network gain grows near a weakly damped mode while the JR
   local curvature is fixed; parameter paths need not have identical finite-distance gain.
 & Fig.~9; Fig.~S10; Clusella 2023.\\[2pt]
 \midrule
-\place{\S4.7--4.8}{Timing over rate; finite-amplitude QIF}
+\place{\S4.7--4.8}{Timing over rate; QIF amplitude regimes}
 & Modulation grows $13.5\times$ (26 to 346~mHz) against a mean shift of $5.8\times$ ($-1.3$ to
   $-7.7$~mHz); ratio 19 far from the Hopf, 45--66 near it. QIF: at $\bar\eta=0.85$, stimulation
   induces gamma through a rectified E-drive shift beyond the E-only Hopf; at $1.5$, gamma dominates a smaller beat component. Phase folding
   suppresses that gamma. Retain sidebands, beat depths $0.29/0.23$, rate $+8$--$11\%$, and
   weak per-neuron locking; these runs do not test weak-input scaling or establish gating.
-  The mean field stays stable at $A_f=10$; complementary spiking runs and equal-RMS
-  carrier controls are proposed. Retain the threshold-crossing example.
+  At $A_f=10$, the stable-state spiking depth is $0.093$ with rate $+2.8\%$;
+  retain its difference from the mean-field depth $0.128$. In the equal-RMS mean-field comparison,
+  both waveforms induce gamma at the larger amplitude; TI adds a resolved beat component.
+  Add a complementary comparison (S13); retain the original threshold-crossing
+  and autonomous-gamma examples in Fig.~10 and S12.
 & Larger modulation than mean-rate change at mesoscale and microscale, qualitatively
   consistent with Vieira; retain the finite-amplitude scope, nonzero mean shift, and weak per-neuron locking.
-& Fig.~10; Figs.~S11, S12; Vieira 2024.\\[2pt]
+& Fig.~10; Figs.~S11--S13; Vieira 2024.\\[2pt]
 \midrule
 \place{\S4.9}{Falsifiable predictions}
 & Four predictions with tests: access versus mixing by carrier sweep; state and carrier

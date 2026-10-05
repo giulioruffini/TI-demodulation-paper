@@ -22,7 +22,7 @@ SRC=TN0484_envelope_demodulation
 TN_ROOT=$(pwd)
 
 build() {
-  local jobname="$1" prelude="$2" label="$3"
+  local jobname="$1" prelude="$2" label="$3" mode="${4:-publish}"
   local stage_dir
   mkdir -p build
   stage_dir=$(mktemp -d "build/.latex-${jobname}.XXXXXX")
@@ -40,9 +40,14 @@ build() {
   errors=$(grep -c '^!' "${stage_dir}/${jobname}.log" || true)
   undef=$(grep -c 'undefined' "${stage_dir}/${jobname}.log" || true)
   echo "    ${pages}, ${errors} errors, ${undef} undefined"
-  if [ "${errors}" -ne 0 ] || [ "${undef}" -ne 0 ]; then
+  if [ "${errors}" -ne 0 ] || { [ "${undef}" -ne 0 ] && [ "$mode" != "labels" ]; }; then
     echo "    FAILED -- see ${stage_dir}/${jobname}.log"
     return 1
+  fi
+  if [ "$mode" = "labels" ]; then
+    # Bootstrap cross-document labels without exposing an incomplete PDF.
+    mv -f "${stage_dir}/${jobname}.aux" .
+    return 0
   fi
   test -s "${stage_dir}/${jobname}.pdf"
   # Stage and destination share a filesystem: mv publishes each complete file
@@ -62,7 +67,9 @@ case "${1:-tn}" in
   both) build "${SRC}" ""              "Technical Note"
         build "TN0484_jne" "\\def\\jnebuild{}" "JNE article" ;;
   all)  build "${SRC}" ""              "Technical Note"
+        build "TN0484_jne" "\\def\\jnebuild{}" "JNE cross-reference labels" labels
+        build "TN0484_jne_supplement" "\\def\\suppbuild{}" "JNE supplement"
         build "TN0484_jne" "\\def\\jnebuild{}" "JNE article"
-        build "TN0484_jne_supplement" "\\def\\suppbuild{}" "JNE supplement" ;;
+        build "TN0484_jne_supplement" "\\def\\suppbuild{}" "JNE supplement (settled references)" ;;
   *)    echo "usage: $0 [tn|jne|supp|both|all]" >&2; exit 2 ;;
 esac
