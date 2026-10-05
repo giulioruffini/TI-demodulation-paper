@@ -10,11 +10,16 @@ Archived at Zenodo: **[doi:10.5281/zenodo.21009618](https://doi.org/10.5281/zeno
 Licensed **CC-BY-4.0** (see [`LICENSE`](LICENSE)); machine-readable citation in
 [`CITATION.cff`](CITATION.cff).
 
-The current local draft is **v0.15.0-draft7** (October 5, 2026), in
+The current local draft is **v0.15.0-draft8** (October 5, 2026), in
 [TN0484_envelope_demodulation.pdf](TN0484_envelope_demodulation.pdf) and
 [TN0484_jne.pdf](TN0484_jne.pdf). As checked on October 2,
 [Calliope WP0185](https://calliope.bcom.one/papers/WP0185) still lists v0.12.0
 (July 21); the newer local draft remains pending Giulio's review and release.
+
+v0.15.0-draft8 credits prior single-neuron TI work for axonal rectification and
+identifies the short-time population representation as our contribution. The AIS
+remains a candidate; its sodium-channel density does not locate the TI detector.
+See [the draft8 record](docs/revision_2026-10-05_v0150draft8.md).
 
 v0.15.0-draft7 organizes the abstract and Introduction around field-to-membrane
 access, nonlinear detection, and amplification. Cohen's periaxonal circuit now

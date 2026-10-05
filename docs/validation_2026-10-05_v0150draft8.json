@@ -1,0 +1,110 @@
+{
+  "version": "0.15.0-draft8",
+  "baseline": "c4e6b0b",
+  "outputs": [
+    {
+      "path": "build/TN0484_v0.15.0-draft8.pdf",
+      "pages": 52,
+      "bytes": 3573068,
+      "sha256": "e729dc5ad56ed2682087e855578ea774d119d3b2e8a3dacf05bf88b5cf31194b"
+    },
+    {
+      "path": "build/TN0484_v0.15.0-draft8_jne.pdf",
+      "pages": 34,
+      "bytes": 1617365,
+      "sha256": "2fdba6b1350d9da9870e86761b11f2a4e0149f7bf6b4fed30124eeabab31fefc"
+    },
+    {
+      "path": "build/TN0484_v0.15.0-draft8_jne_supplement.pdf",
+      "pages": 20,
+      "bytes": 2313950,
+      "sha256": "3c48fbf9e6f4d8026db4369d110e978791e55a50d8dc579013a926f2d7e99380"
+    },
+    {
+      "path": "build/TN0484_v0.15.0-draft8_redline_vs_draft7.pdf",
+      "pages": 52,
+      "bytes": 3600781,
+      "sha256": "e2fa59b6834660efef2a753d56b01fc2c34279b35f5b0dac1c5e83c0b35da9ec"
+    },
+    {
+      "path": "build/storyline/TN0484_v0.15.0-draft8_storyline.pdf",
+      "pages": 9,
+      "bytes": 294871,
+      "sha256": "d0bc3aab62d0f20ab33fb835e0f33805f1cb0347774583fb71b8ed3c9fd1c29b"
+    }
+  ],
+  "retention": {
+    "sections": {
+      "count": 35,
+      "retained_in_order": true
+    },
+    "figure_labels": {
+      "count": 23,
+      "retained_in_order": true
+    },
+    "equation_labels": {
+      "count": 32,
+      "retained_in_order": true
+    },
+    "citations": {
+      "retained": 60,
+      "total": 60,
+      "added": []
+    },
+    "jne_abstract_words": 281
+  },
+  "logs": {
+    "TN0484_envelope_demodulation": {
+      "errors": 0,
+      "undefined": 0,
+      "overfull": 0
+    },
+    "TN0484_jne": {
+      "errors": 0,
+      "undefined": 0,
+      "overfull": 0
+    },
+    "TN0484_jne_supplement": {
+      "errors": 0,
+      "undefined": 0,
+      "overfull": 0
+    },
+    "docs/redline_v0150draft7_to_v0150draft8": {
+      "errors": 0,
+      "undefined": 0,
+      "overfull": 0
+    },
+    "build/storyline/tn0484_storyline": {
+      "errors": 0,
+      "undefined": 0,
+      "overfull": 0
+    }
+  },
+  "change_scope": "Attribution and prose only; no numerical reruns",
+  "primary_sources_checked": [
+    "Mirzakhalili 2020, Figure 3D/F and Methods",
+    "Wang 2022, suprathreshold axonal responses",
+    "Kole 2008, AIS channel density"
+  ],
+  "visual_inspection": {
+    "tn_pages": [
+      1,
+      3,
+      4,
+      27,
+      29
+    ],
+    "jne_pages": [
+      1
+    ],
+    "redline_pages": [
+      1,
+      3
+    ],
+    "storyline_pages": [
+      1,
+      2
+    ],
+    "result": "No clipping, overlap, or unreadable text on inspected pages"
+  }
+}

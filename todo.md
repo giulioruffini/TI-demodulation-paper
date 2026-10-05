@@ -1,10 +1,11 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
-- [ ] Giulio: review v0.15.0-draft7's access/detection/amplification argument and two-regime QIF comparison and decide whether to promote S13; authorize coauthor circulation when ready
+- [ ] Giulio: review v0.15.0-draft8's access/detection/amplification argument and two-regime QIF comparison and decide whether to promote S13; authorize coauthor circulation when ready
 - [ ] obtain missing funding/conflict declarations; confirm all author roles and affiliations, actual AI-tool versions, and approval of the submission version by every author
 - [ ] Giulio: decide the optional Theory order, LaNMM methods placement, and S3/S10/S11 promotion; preserve content and order until then
 - [ ] after review and authorization: push, align the public code/archive, cut Calliope/Zenodo, re-sync Overleaf, and circulate the coauthor request (all HOLD)
 - [ ] migrate the paper folder at the next coordinated version boundary; run the layout checker before and after, with no concurrent session editing
+- [x] credit prior axonal TI models and separate nodal rectification from the AIS candidate; align abstracts, Introduction, Discussion, and Conclusion (October 5)
 - [x] place Cohen and AIS evidence in the access argument and Table 2; verify the cached TI/tACS ratios and restrict shared gain to linear response (October 5)
 - [x] integrate Klaus's matched-source tACS and longer-settling controls; verify portable cache tables and retain field-free pinning and finite-amplitude qualifications (October 5)
 - [x] verify all six cutoff/time-step summaries; retain cutoff sensitivity as a stated limitation and close the requested R7 diagnostics (October 5)

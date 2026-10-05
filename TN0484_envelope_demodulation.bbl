@@ -49,6 +49,13 @@ Maarten H.~P. Kole, Susanne~U. Ilschner, Bj{\"o}rn~M. Kampa, Stephen~R.
   the axon initial segment.
 \newblock {\em Nature Neuroscience}, 11(2):178--186, 2008.
 
+\bibitem{wang2023}
+Boshuo Wang, Aman~S. Aberra, Warren~M. Grill, and Angel~V. Peterchev.
+\newblock Responses of model cortical neurons to temporal interference
+  stimulation and related transcranial alternating current stimulation
+  modalities.
+\newblock {\em Journal of Neural Engineering}, 19(6):066047, 2022.
+
 \bibitem{luff2024mixer}
 Charlotte~E. Luff, Robert Peach, Emma-Jane Mallas, Edward Rhodes, Felix
   Laumann, Edward~S. Boyden, David~J. Sharp, Mauricio Barahona, and Nir
@@ -241,13 +248,6 @@ Zeinab Esmaeilpour, Mark Jackson, Greg Kronberg, Tianhe Zhang, Rosana Esteller,
 \newblock Limited sensitivity of hippocampal synaptic function or network
   oscillations to unmodulated kilohertz electric fields.
 \newblock {\em eNeuro}, 7(6):ENEURO.0368--20.2020, 2020.
-
-\bibitem{wang2023}
-Boshuo Wang, Aman~S. Aberra, Warren~M. Grill, and Angel~V. Peterchev.
-\newblock Responses of model cortical neurons to temporal interference
-  stimulation and related transcranial alternating current stimulation
-  modalities.
-\newblock {\em Journal of Neural Engineering}, 19(6):066047, 2022.
 
 \bibitem{cifra2026}
 Michal Cifra, Saurabh~Kumar Pandey, Tom{\'a}{\v s} Zakar, Michaela Poplov{\'a},

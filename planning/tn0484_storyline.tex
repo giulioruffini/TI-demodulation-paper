@@ -1,6 +1,6 @@
 % TN0484 / WP0185: abstract and storyline. Build from the project root:
 %   ~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex
-% Map mode: rows follow the v0.15.0-draft7 manuscript order and numbering (TN build; the JNE build
+% Map mode: rows follow the v0.15.0-draft8 manuscript order and numbering (TN build; the JNE build
 % moves the appendices and figures S1--S13 to the supplement). Prepared 2026-10-03.
 \documentclass[11pt,a4paper,landscape]{article}
 \usepackage[T1]{fontenc}
@@ -18,7 +18,7 @@
 \newcommand{\wpnumber}{TN0484 / WP0185}
 \newcommand{\papertitle}{The cortical column as a tuned receiver}
 \newcommand{\storylinedate}{5 October 2026}
-\newcommand{\baselinelabel}{v0.15.0-draft7}
+\newcommand{\baselinelabel}{v0.15.0-draft8}
 \newcommand{\abstractfile}{tn0484_abstract.tex}
 \newcommand{\storylineauthors}{Giulio Ruffini}
 % -----------------------------------------------------------------------------
@@ -69,9 +69,10 @@
 \end{minipage}
 \end{center}
 \vspace{5mm}
-{\footnotesize\color{muted}The abstract is the TN abstract of v0.15.0-draft7. K authorized the weak-field
+{\footnotesize\color{muted}The abstract is the TN abstract of v0.15.0-draft8. K authorized the weak-field
 effective-response framing on 3 October 2026; the JNE build keeps a structured abstract with
-the same claims. Draft7 organizes the opening around access, detection, and amplification, places Cohen and
+the same claims. Draft8 credits prior axonal TI models and identifies our contribution as
+the reduced population representation. Draft7 organizes the opening around access, detection, and amplification, places Cohen and
 AIS evidence beside the access hypothesis, and distinguishes linear from finite-amplitude
 TI/tACS ratios. The QIF cutoff, half-step, and carrier controls remain. Section order and the original
 figures remain; Figure S13 adds the comparison. The placement
@@ -82,8 +83,10 @@ are reorganized around the physical stages at K's request; no section or figure 
 \pagetitle{Problem and theory}{First argument block: Sections 1--2}
 A two-tone field carries no power at its beat frequency. Access converts the applied field
 into local membrane polarization; nonlinear detection generates the beat; the network selects
-and amplifies that generated input. The Introduction should develop these stages in that order,
-with their proposed mechanisms and evidence. Fast axonal compartments are the access hypothesis:
+and amplifies that generated input. The Introduction develops these stages in that order,
+with their mechanisms and evidence. Axonal TI rectification is established in prior models;
+our contribution is its connection to population mixing and gain through an effective access time.
+Fast axonal compartments are the access hypothesis:
 Cohen's periaxonal circuit supports distinct nodal and internodal voltage dynamics; the AIS is a
 separate candidate with a high sodium-channel density. Neither observation fixes a TI charging
 time. Luff supplies evidence for cellular mixing, while cellular resonance and recurrent
@@ -95,7 +98,7 @@ its static transfer is an adiabatic limit, not a consequence of small amplitude 
 \maphead
 \place{\S1}{Introduction}
 & The two-tone field (Eq.~1) has lines only at the applied tones; a linear system cannot create
-  the beat. Cellular mixing exists (MRG and Hodgkin--Huxley axon models; Luff's subthreshold
+  the beat. Cellular mixing exists (MRG axon model with Hodgkin--Huxley dynamics; Luff's subthreshold
   mixer at 5~kHz, TTX-sensitive). Primate timing changes establish modulation; synaptic
   blockade and network simulations support circuit involvement. Retain weak modulation
   of ongoing activity as the scope, with direct stimulation thresholds and block outside it.
@@ -348,8 +351,9 @@ laminar extension, and the metrics.
 \place{\S6}{Conclusion}
 & Effective quadratic mixing generates, resonance amplifies, and a large response does not
   identify a microscopic mixer. Static and dynamic descriptions connected by time scales; each filter
-  once. Product law; shared amplifier within linear response; proposed fast axonal access
-  with its TI-field transfer and human-field response awaiting calibration.
+  once. Product law; shared amplifier within linear response; fast access represented by
+  an effective membrane time, building on prior axonal TI mechanisms. Its TI-field transfer
+  and human-field response await calibration.
 & Restates access, detection, time-scale reduction, and amplification without new claims.
 & ---\\[2pt]
 \midrule

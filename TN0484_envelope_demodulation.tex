@@ -86,7 +86,7 @@
 
 \newcommand{\Sig}{\sigma}
 \newcommand{\half}{\tfrac{1}{2}}
-\newcommand{\paperver}{0.15.0-draft7}
+\newcommand{\paperver}{0.15.0-draft8}
 \hypersetup{
   pdftitle={The cortical column as a tuned receiver: a network mechanism for temporal-interference stimulation},
   pdfauthor={Giulio Ruffini, Borja Mercadal, Alex Just, Raul de Palma Aristides, Francesca Castaldo, Nir Grossman, Santiago Canals, Claudio Mirasso},
@@ -172,10 +172,11 @@ S1, S2, \dots
 access, nonlinear generation of a difference-frequency component absent from the
 field, and amplification of that component. We connect these stages for weak
 perturbations of ongoing activity.
-\textbf{Approach.} Fast axonal compartments, including the axon initial segment and
-nodes, are candidate access sites. Periaxonal circuitry motivates treating axonal
-and somatic voltage responses separately. We represent fast access by a short
-effective membrane time and analyze mixing and recurrent gain in a Jansen--Rit
+\textbf{Approach.} Single-neuron TI models already demonstrate axonal ion-channel
+rectification. We represent candidate fast access through axonal compartments,
+including nodes and the axon initial segment, by a short effective membrane time.
+Periaxonal circuitry motivates separate axonal and somatic voltage responses.
+We analyze mixing and recurrent gain in a Jansen--Rit
 column, an exact quadratic integrate-and-fire mean field, and its spiking network.
 \textbf{Main results.} For a smooth response with a nonzero second-order term,
 cellular contributions combine into a beat proportional to the product of the
@@ -201,11 +202,12 @@ are matched, so resonance alone gives TI no efficiency advantage.
 Temporal-interference (TI) stimulation combines two high-frequency currents, yet
 their superposition contains no field component at the low difference frequency.
 The neural response requires field-to-membrane access, nonlinear detection, and
-amplification. We propose fast axonal compartments, including the axon initial
-segment and nodes, as candidate access sites. Evidence for periaxonal circuitry
-motivates treating axonal and somatic voltage responses separately; a short
-effective membrane time represents fast access in the population model.
-Its field-to-voltage transfer and response at human field strengths require calibration.
+amplification. Single-neuron TI models already demonstrate axonal ion-channel
+rectification. We represent candidate fast access through axonal compartments,
+including nodes and the axon initial segment, by a short effective membrane time
+in the population model. Periaxonal circuitry motivates separate axonal and
+somatic voltage responses.
+The field-to-voltage transfer and response at human field strengths require calibration.
 For weak perturbations of ongoing activity, smooth cellular nonlinearities with
 a nonzero second-order response generate a beat proportional to the product of
 the effective carrier amplitudes. A Jansen--Rit firing-rate sigmoid realizes this
@@ -280,14 +282,16 @@ quantitative transfer from an applied TI field to local polarization remains to
 be calibrated; the measured and assumed time scales are distinguished in
 Table~\ref{tab:doors}.
 
-Detection requires that this polarization encounter a nonlinearity. Voltage-gated
-ion channels provide a cellular mixing mechanism in Hodgkin--Huxley
-and McIntyre--Richardson--Grill (MRG) myelinated-axon models \cite{mirzakhalili2020}.
+Detection requires that this polarization encounter a nonlinearity. Mirzakhalili
+et al.\ \cite{mirzakhalili2020} demonstrated subthreshold nodal mixing in a modified
+McIntyre--\allowbreak Richardson--\allowbreak Grill (MRG) myelinated-axon model
+with Hodgkin--Huxley ion-channel dynamics. Cortical-neuron models also
+show axonal excitation and conduction block under stronger fields \cite{wang2023}.
 Luff et al.\ \cite{luff2024mixer} directly observed subthreshold difference-frequency
 oscillations in individual neurons, including carriers near $5$~kHz. Mixing persisted
 during synaptic blockade but was suppressed by blocking tetrodotoxin-sensitive sodium
-channels. These measurements establish a cellular detector without identifying it
-with the proposed axonal access sites. In a population description, smooth cellular
+channels. These measurements establish a cellular detector without locating it
+within a specific compartment. In a population description, smooth cellular
 contributions can be combined into an effective second-order response; a static
 rate curve realizes that response through its curvature.
 
@@ -326,9 +330,9 @@ and a laminar model extends the calculation to two resonant bands at low carrier
 Related neural-mass accounts use the same nonlinear mixing for endogenous
 cross-frequency coupling and nested amplitude modulation
 \cite{ruffini2025cfc,ruffini2025ham}. Here the input is external, making the
-field-to-cell coupling an additional requirement. The proposed fast-compartment
-access route supplies the biological hypothesis; the population reduction connects
-its effective membrane response to detection and circuit amplification.
+field-to-cell coupling an additional requirement. Building on existing axonal
+TI mechanisms, we represent candidate fast access by a short effective membrane
+time and connect that response to population mixing and circuit amplification.
 
 \begin{figure}[t!]
 \centering
@@ -483,8 +487,8 @@ current through its own membrane equation must therefore count that filtering on
 For a dominant entry point, $\varepsilon_j=\lambda_f(\omega_j)E_j$ denotes the
 polarization reaching the nonlinearity. The direct-coupling calculation takes
 $\lambda_f\approx\lambda_0$ to isolate mixing and recurrent amplification;
-\S\ref{sec:khz} restores frequency-dependent access. The proposed fast axonal
-compartments motivate this limit; their anatomy enters the reduced model through
+\S\ref{sec:khz} restores frequency-dependent access. Fast axonal access motivates
+this limit; compartment anatomy enters the reduced model through
 the coupling and response time, which must be calibrated for the preparation.
 
 Expanding $\Sig$ about an operating point $v^*$ (a Volterra/Taylor expansion, as
@@ -1778,12 +1782,15 @@ work.}\label{tab:predictions}
 \end{table}
 
 \section{Discussion}\label{sec:discussion}
-Fast axonal access provides a candidate first stage of the TI mechanism.
+Axonal ion-channel rectification is already demonstrated in single-neuron TI
+models \cite{mirzakhalili2020}, with axonal excitation and block also found in
+cortical-neuron models \cite{wang2023}. We represent candidate fast axonal access
+by a short effective membrane time in the population model.
 Cohen et al.'s periaxonal circuit \cite{cohen2020periaxonal} establishes distinct
 voltage dynamics across myelin and the axolemma, motivating an axonal access
 response separate from the somatic one. Nodes and the AIS are candidate sites
-where polarization can encounter voltage-gated nonlinearities
-\cite{kole2008ais,mirzakhalili2020,wang2023}. The proposed connection is from this
+where polarization can encounter voltage-gated nonlinearities; the AIS has a
+high sodium-channel density \cite{kole2008ais}. The population reduction connects
 local polarization to cellular mixing and then to recurrent amplification.
 Luff et al.'s subthreshold mixing \cite{luff2024mixer} supplies evidence for the
 detector; it does not localize that detector to the AIS or the periaxonal circuit.
@@ -1938,8 +1945,9 @@ access, generated beat, and network tuning in the same preparation.
 
 \section{Conclusion}
 TI connects field-to-membrane access, nonlinear detection, and amplification.
-Fast axonal compartments, including the AIS and nodes, offer a candidate access
-route motivated by distinct axonal voltage dynamics and periaxonal circuitry.
+Building on axonal rectification in existing single-neuron TI models, we represent
+candidate fast access through nodes and the AIS by a short effective membrane
+time. Periaxonal circuitry motivates separate axonal and somatic voltage responses.
 Their field-to-voltage transfer under TI and the resulting response at human
 field strengths require calibration.
 

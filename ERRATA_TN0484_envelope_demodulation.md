@@ -1,5 +1,14 @@
 # Submission-readiness review — v0.14.6
 
+## v0.15.0-draft8 — axonal attribution (2026-10-05)
+
+Removed the abstract claim that we propose axonal access sites. Existing
+single-neuron TI models receive credit for axonal rectification, while our
+contribution is the short-time population representation. The Introduction and
+Discussion distinguish nodal mixing, axonal excitation/block, and AIS sodium-channel
+evidence. Conclusion and planning abstract are synchronized. See
+[the revision record](docs/revision_2026-10-05_v0150draft8.md).
+
 **Draft7 update (October 5).** The access hypothesis now appears where the reader
 needs it: abstract, Introduction, access theory, Table 2, and Conclusion. Cohen's
 axonal decay is distinguished from an assumed TI response time; a primary AIS

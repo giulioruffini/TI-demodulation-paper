@@ -1,5 +1,16 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v0.15.0-draft8 — attribution of axonal TI mechanisms (2026-10-05)
+
+The abstracts, Introduction, and Conclusion credit existing single-neuron TI
+models for axonal rectification. Our contribution is the effective population
+representation linking access, mixing, and recurrent gain. Mirzakhalili supports
+subthreshold nodal mixing; Wang supports axonal excitation and block; Kole
+supports AIS sodium-channel density, not localization of a TI detector. The
+positive access hypothesis and quantitative calibration gap remain. No equations,
+figures, results, or section order change. Record:
+`revision_2026-10-05_v0150draft8.md`. Release holds remain.
+
 ## v0.15.0-draft7 — access, detection, amplification (2026-10-05)
 
 K's requested physical sequence now organizes the abstract and Introduction,
