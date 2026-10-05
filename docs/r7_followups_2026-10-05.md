@@ -68,11 +68,27 @@ spike/reset threshold raised from the published V_peak = 100 (caches `_a10_vp200
 The field-free rate converges to the mean-field value as the cutoff rises, and at
 V_peak = 200 the beat depth agrees with the mean field within 1%. The gap at the published
 cutoff is therefore the finite spike threshold, which shortens each spike's trajectory and
-biases the weak-drive response low by about 27%. At V_peak = 400 the depth is 9% above the
-mean field; there the Euler step at threshold, $V^2 dt/\tau_E\approx27$ per step, is no
-longer small, so that value mixes cutoff and step effects (a half-step run at 400 was not
-done). For weak-drive comparisons use V_peak = 200, or quote the published-cutoff values with
-this bias; the published runs at 35 per tone and V_peak = 100 had an 8% gap.
+biases the weak-drive response low by about 27%.
+
+**Step refinement (added 14:00 at Kaiti's request).** The same three cutoffs at
+dt = 0.00125 ms (caches `_vp200_dt2.npz`, `_vp400_dt2.npz`, and `_dt2.npz` from before;
+`docs/r7_qif_amp10_vpeak_dt_2026-10-05.json`):
+
+| V_peak | dt (ms) | field-free rate | rate change | beat depth (MF 0.128) |
+|---:|---:|---:|---:|---:|
+| 100 | 0.0025 / 0.00125 | 0.0527 / 0.0527 | +2.8% / +2.8% | 0.093 / 0.093 |
+| 200 | 0.0025 / 0.00125 | 0.0515 / 0.0515 | +2.8% / +2.8% | 0.127 / 0.121 |
+| 400 | 0.0025 / 0.00125 | 0.0509 / 0.0509 | +2.9% / +2.9% | 0.139 / 0.141 |
+
+Halving the step changes the depth by at most 5% at any cutoff and leaves the rates
+unchanged to four digits, so the Euler step is not the issue and my earlier attribution of
+the 400 overshoot to the step was wrong. The weak-drive beat depth of the finite network
+depends on the cutoff at the ±10% level and is not converged in it at N = 8000: 0.093 at
+100, 0.121--0.127 at 200, 0.139--0.141 at 400, with the mean field's 0.128 between the last
+two. Agreement at 200 is a cutoff check, not a joint convergence. For weak-drive
+comparisons quote the spiking depth as 0.12--0.14 against the mean field's 0.13, or quote
+the published-cutoff value with its 27% low bias; the published runs at 35 per tone and
+V_peak = 100 had an 8% gap.
 
 ## 2. The equal-RMS unmodulated carrier (mean field)
 
