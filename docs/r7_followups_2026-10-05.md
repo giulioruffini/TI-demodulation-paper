@@ -27,20 +27,23 @@ re-measured with the same script.
 At drive 0.85 and 10 per tone the field-on response is a forced response: the rate ripples
 at the beat with the envelope and there are no gamma bursts (panel b of the new raster);
 the mean rate rises 2.8% against 10.5% at 35; the beat-locked depth exceeds the fractional
-rate change by 3.4. Per-neuron locking is absent (PPC median unchanged from the field-off
-value), so at this amplitude the beat-locked activity is a population effect only; pooled
-vector strength 0.046.
+rate change by 3.4. The per-neuron PPC median is unchanged from the field-off value, so no per-neuron
+locking is resolved at this amplitude; a negative median does not prove locking absent, only
+that it is below the resolution of this statistic. The beat-locked activity is resolved at
+the population level: pooled vector strength 0.046.
 
-The residual off-beat line at 51--52 Hz (0.016 with the field on, 0.005 off) is finite-size
-noise driven through the resonance, not an oscillation: it falls to 0.012 (on) and 0.002
-(off) with the 88-cycle window, the $1/\sqrt{T}$ scaling of an incoherent peak, and the
-mean field has none.
+The residual off-beat line at 51--52 Hz (0.016 with the field on, 0.005 off) behaves like
+finite-size noise driven through the resonance rather than an oscillation: it falls to 0.012
+(on) and 0.002 (off) with the 88-cycle window, as the $1/\sqrt{T}$ scaling of an incoherent
+peak predicts, and the mean field has none. Two windows are consistent with that scaling;
+they do not prove it.
 
 At drive 1.5 and 10 per tone the beat-locked component is 0.023, invisible in the raster and
 in the fold (panel d shows the unperturbed gamma with the envelope drawn over it). Between
-10 and 35 that component scales as the square of the amplitude (0.023 × 12.25 = 0.28 against
-0.232), whereas at drive 0.85 it does not (0.093 × 12.25 = 1.14 against 0.290): the forced
-response at 35 is saturated and the state has crossed the threshold. In the mean field the
+10 and 35 that component scales approximately as the square of the amplitude
+(0.023 × 12.25 = 0.28 against 0.232; two points, not a square-law validation), whereas at
+drive 0.85 it does not (0.093 × 12.25 = 1.14 against 0.290): the forced response at 35 is
+saturated and the state has crossed the threshold. In the mean field the
 beat depth is square-law between 5 and 10 per tone (0.030 → 0.128, ratio 4.3) and saturates
 above 15, so 10 sits at the top of the square-law range.
 
@@ -50,8 +53,26 @@ Finite-size and discretization. The spiking beat depth at 10 is 27% below the me
 0.00125 ms gives 0.093 again (cache `_a10_dt2.npz`), so the gap is neither finite-size
 noise nor the Euler step. It is a difference between the finite network as implemented
 (V_peak = 100, deterministic Lorentzian quantiles, spike-count rate) and the exact mean
-field at weak drive; a V_peak sensitivity run would locate it, and was not run here. Quote
-the spiking depth as 0.08--0.09 against the mean field's 0.13, with that caveat.
+field at weak drive. The V_peak check below locates it.
+
+**Spike cutoff (added 13:30 at Kaiti's request).** Same condition and settings with the
+spike/reset threshold raised from the published V_peak = 100 (caches `_a10_vp200.npz`,
+`_a10_vp400.npz`; `docs/r7_qif_amp10_vpeak_2026-10-05.json`):
+
+| V_peak | field-free rate (MF 0.0506) | rate change | beat depth (MF 0.128) | other line on | PPC per neuron, median off / on |
+|---:|---:|---:|---:|---:|---|
+| 100 | 0.0527 | +2.8% | 0.093 | 0.016 | $-0.018$ / $-0.016$ |
+| 200 | 0.0515 | +2.8% | 0.127 | 0.006 | $-0.020$ / $-0.015$ |
+| 400 | 0.0509 | +2.9% | 0.139 | 0.004 | $-0.021$ / $-0.015$ |
+
+The field-free rate converges to the mean-field value as the cutoff rises, and at
+V_peak = 200 the beat depth agrees with the mean field within 1%. The gap at the published
+cutoff is therefore the finite spike threshold, which shortens each spike's trajectory and
+biases the weak-drive response low by about 27%. At V_peak = 400 the depth is 9% above the
+mean field; there the Euler step at threshold, $V^2 dt/\tau_E\approx27$ per step, is no
+longer small, so that value mixes cutoff and step effects (a half-step run at 400 was not
+done). For weak-drive comparisons use V_peak = 200, or quote the published-cutoff values with
+this bias; the published runs at 35 per tone and V_peak = 100 had an 8% gap.
 
 ## 2. The equal-RMS unmodulated carrier (mean field)
 
@@ -71,6 +92,12 @@ The prediction holds in the mean field: the unmodulated carrier of equal RMS pro
 same rectified shift (within 3%), the same mean-rate rise, and at 35 the same induced gamma
 (0.71 against 0.61), with no beat line; at 10 neither waveform induces gamma and only TI
 carries the 55 Hz line. The spiking network was not run for the single carrier.
+
+**Leakage check (added 13:26 at Kaiti's request).** The single carrier's 55 Hz entry of
+0.011 in the 800 ms window is Hann leakage of the 51.25 Hz gamma line, three bins away: with
+a 3200 ms window (0.31 Hz bins, 11 bins away) it falls to 0.00009, while the two-tone 55 Hz
+line holds at 0.300 → 0.314 (`docs/r7_carrier_control_longwindow_2026-10-05.json`). The
+induced gamma resolves at 51.6--51.9 Hz with the longer window.
 
 ## 3. The S10 endpoint is an attracting driven state
 
@@ -100,6 +127,10 @@ biases the cached peak by under 1%. The spectrum has the beat, its second harmon
 surrogate's own 2Ω content plus the nonlinearity, 12% at the endpoint), and no line away
 from the beat beyond the Hann skirt (the "other line" at 52.5 Hz is 2 Hz from a 50.5 Hz
 beat in a 1.2 s window).
+
+Kaiti's independent full-period Floquet calculation (8×8 variational matrix over the
+2000 ms common forcing period after 8000 ms settling) gives a largest multiplier modulus
+0.0342, exponent −0.00169 /ms, in agreement with the perturbation decay above.
 
 Conclusion: the DC-only averaged screen overstates the loss of stability; the fully forced
 endpoint is amplification about a stable driven state, with the beat-frequency response

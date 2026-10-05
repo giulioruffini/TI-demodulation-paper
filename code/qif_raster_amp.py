@@ -23,8 +23,11 @@ ap.add_argument('--conditions', default='forced,entrain')
 ap.add_argument('--n', type=int, default=8000)
 ap.add_argument('--dt', type=float, default=0.0025)
 ap.add_argument('--tag', default='')
+ap.add_argument('--vpeak', type=float, default=None, help='spike/reset threshold (published 100)')
 a = ap.parse_args()
 Ne = Ni = a.n; dt = a.dt; fc = 300.0
+if a.vpeak is not None:
+    Q.VPEAK = a.vpeak
 regimes = dict(forced=(0.85, 55.0), entrain=(1.5, 42.0))
 
 
