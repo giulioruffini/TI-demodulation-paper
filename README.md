@@ -10,7 +10,7 @@ Archived at Zenodo: **[doi:10.5281/zenodo.21009618](https://doi.org/10.5281/zeno
 Licensed **CC-BY-4.0** (see [`LICENSE`](LICENSE)); machine-readable citation in
 [`CITATION.cff`](CITATION.cff).
 
-The current working edition is the **JNE article, v0.15.0-draft9**:
+The current working edition is the **JNE article, v0.15.0-draft10**:
 [TN0484_jne.pdf](TN0484_jne.pdf). Run `./build.sh` to update it. The TN and
 supplement are generated from the same manuscript for an authorized Calliope cut;
 they are not separate working editions. Older versioned PDFs are historical snapshots.
@@ -20,11 +20,21 @@ The article, TN, and storyline load one abstract from the four macros in
 run-in headings. Every table is introduced and explained in the surrounding text.
 Run `python3 code/build_jne_redline.py` to update the one current [JNE redline](docs/redline_last_read.pdf) against the baseline
 recorded in [planning/review_baseline.json](planning/review_baseline.json), rather
-than creating a new redline for each edit. The fixed reading baseline is draft8
-(`19b8f38`), identified in Giulio's October 5 revision instruction.
+than creating a new redline for each edit. The fixed reading baseline is draft9
+including the competing-interests statement (`8016065`), as requested in Giulio's
+October 5 placement instruction.
 
 As checked on October 2, [Calliope WP0185](https://calliope.bcom.one/papers/WP0185)
 still lists v0.12.0 (July 21). Release and circulation remain held.
+
+v0.15.0-draft10 implements the placement decisions without scientific deletions.
+LaNMM methods now accompany their results in Appendix E. The transduction laws
+and spatial maps remain in Theory; Methods 3.1 collects the lock-in estimator,
+amplitude-slope measurement, and harmonic-gain correction. The equal-RMS carrier
+control is Figure 11 in the QIF/PING results; S3, S10, and S11 remain supplementary.
+All equations, figure captions, and tables are retained. The
+[revision record](docs/revision_2026-10-05_v0150draft10.md) gives the relocation map
+and validation; the storyline reflects these placements.
 
 v0.15.0-draft9 adds the DC spatial-map calculation after the reweighting example,
 with the homogeneous-conductor and fixed-coupling assumptions stated locally.
@@ -139,9 +149,8 @@ with a [redline against v0.14.2](docs/redline_v0142_to_v0143.pdf).
 [planning/tn0484_storyline.tex](planning/tn0484_storyline.tex) (section-by-section argument
 map), compiled to [build/storyline/tn0484_storyline.pdf](build/storyline/tn0484_storyline.pdf)
 with `~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex`.
-Its source maps v0.15.0-draft8, with the weak-field framing authorized by K and section order unchanged.
-The three placement decisions remain open: Theory order, LaNMM methods, and figure
-promotion. The
+Its source maps v0.15.0-draft10 and records the completed placement decisions.
+The
 [general practice](../../giulio-personal-handbook/dos-and-donts.md#abstract-and-storyline-planning)
 is maintained in the personal handbook.
 
@@ -245,7 +254,7 @@ repository root.
 
 ### Figure → script table
 
-23 figures are included by the manuscript, including the complementary Figure S13. The table records the available scripts
+23 figures are included by the manuscript, including the complementary Figure 11 (formerly S13). The table records the available scripts
 and inputs; it does not assert a fresh rerun of every numerical calculation.
 **Available** means the producer or renderer is present; it does not imply
 that every simulation was rerun during this revision.

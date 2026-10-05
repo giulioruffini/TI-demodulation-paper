@@ -60,6 +60,16 @@ def main():
             cwd=ROOT, text=True, capture_output=True, check=True,
         )
         text = "\n".join(line.rstrip() for line in result.stdout.splitlines()) + "\n"
+        # latexdiff can retain a label inside a deleted, unnumbered formula.
+        # After a move to the supplement, that stale label collides with the
+        # current external label. Keep the deleted formula, without its label.
+        def without_deleted_label(match):
+            block = match.group()
+            if r"\DIFdel{" in block and r"\DIFadd{" not in block:
+                return re.sub(r"\\label\{[^}]+\}(?:[ \t]*\n)?", "", block)
+            return block
+        text = re.sub(r"\\begin\{displaymath\}.*?\\end\{displaymath\}",
+                      without_deleted_label, text, flags=re.DOTALL)
         label = (r"\noindent{\small Changes relative to v"
                  + config["baseline_version"] + " (" + baseline + r").}\par")
         text = text.replace(r"\begin{document}", r"\begin{document}" + "\n" + label, 1)
@@ -75,7 +85,7 @@ def main():
             for _ in range(2):
                 subprocess.run(command, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, check=True)
         diagnostics = (stage / f"{job}.log").read_text(errors="replace")
-        if re.search(r"^!|undefined|Overfull", diagnostics, re.MULTILINE):
+        if re.search(r"^!|undefined|Overfull|multiply defined", diagnostics, re.MULTILINE):
             (ROOT / "build/redline_build_failure.log").write_text(diagnostics)
             raise RuntimeError("Redline failed validation; see build/redline_build_failure.log")
         for suffix in [".tex", ".pdf", ".bbl", ".log"]:

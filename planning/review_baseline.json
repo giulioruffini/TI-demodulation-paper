@@ -1,8 +1,8 @@
 {
   "working_edition": "TN0484_jne.pdf",
   "redline": "docs/redline_last_read.pdf",
-  "baseline_commit": "19b8f38",
-  "baseline_version": "0.15.0-draft8",
-  "baseline_status": "Giulio identified draft8 as the reading baseline in the October 5 15:52 instruction relayed by Klaus",
+  "baseline_commit": "8016065",
+  "baseline_version": "0.15.0-draft9",
+  "baseline_status": "Giulio requested one redline against draft9 in the October 5 placement instruction relayed by Klaus; 8016065 includes the supplied competing-interests statement",
   "policy": "Keep this baseline fixed across edits; advance only when Giulio identifies a later version as read. Regenerate TN and supplement for an authorized archive cut."
 }

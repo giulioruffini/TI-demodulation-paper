@@ -1,7 +1,7 @@
 % TN0484 / WP0185: abstract and storyline. Build from the project root:
 %   ~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex
-% Map mode: rows follow the v0.15.0-draft9 manuscript order and numbering (TN build; the JNE build
-% moves the appendices and figures S1--S13 to the supplement). Prepared 2026-10-03.
+% Map mode: rows follow the v0.15.0-draft10 manuscript order and numbering (TN build; the JNE build
+% moves the appendices and figures S1--S12 to the supplement). Prepared 2026-10-03.
 \documentclass[11pt,a4paper,landscape]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -18,7 +18,7 @@
 \newcommand{\wpnumber}{TN0484 / WP0185}
 \newcommand{\papertitle}{The cortical column as a tuned receiver}
 \newcommand{\storylinedate}{5 October 2026}
-\newcommand{\baselinelabel}{v0.15.0-draft9}
+\newcommand{\baselinelabel}{v0.15.0-draft10}
 \newcommand{\abstractfile}{tn0484_abstract.tex}
 \newcommand{\storylineauthors}{Giulio Ruffini}
 % -----------------------------------------------------------------------------
@@ -72,11 +72,11 @@
 \vspace{5mm}
 {\footnotesize\color{muted}The article, technical note, and storyline share the four
 abstract macros in \texttt{planning/tn0484\_abstract.tex}. The JNE article is the
-working edition; only its run-in headings differ. The section map reflects draft9:
-repeated explanations are consolidated, and the DC spatial map follows the
-reweighting example. All results and explanations remain, including Tables 1 and 2.
-K authorized the weak-field effective-response framing on 3 October
-2026. The placement decisions on the last page remain open.}
+working edition; only its run-in headings differ. Draft10 implements the placement
+decisions relayed on 5 October: LaNMM methods join their results in Appendix E;
+transduction laws remain in Theory, with their measurement procedure in Methods;
+the equal-RMS carrier control moves from S13 to Figure 11. All scientific content
+is retained. The closing record gives the reasons for these placements.}
 
 \newpage
 \pagetitle{Problem and theory}{First argument block: Sections 1--2}
@@ -161,9 +161,8 @@ its static transfer is an adiabatic limit, not a consequence of small amplitude 
 & Cycle average (Eq.~16) is even in $A$; nonzero curvature gives a leading square law
   for a smooth memoryless transfer. Specified ideal rectifiers follow $A$; a step
   detector follows neither (harmonic ratio 0.151). Harmonic ladder $1/5$, $3/35$, $1/21$
-  and $r_{\rm det}$ (Eq.~17). The network suppresses the second harmonic ($\mathcal Q=10$:
-  20\% reads 0.7\%), so the test runs off resonance at $\Delta f\simeq f_0/4$, retaining
-  the 1.22--1.25 transfer correction. Excursion map
+  and $r_{\rm det}$ (Eq.~17), with a vanishing weak-field harmonic ratio for smooth
+  square-law detection. Each harmonic is multiplied by its network gain. Excursion map
   (Eq.~18): product law, $2\times$ versus $40\times$ example; not an account of focality.
   DC intensity sums without cross-frequency cancellation after beat averaging:
   $202\times$ superficial/deep contrast in the example; local beat/DC at most one.
@@ -172,7 +171,7 @@ its static transfer is an adiabatic limit, not a consequence of small amplitude 
   and isotropic-orientation cancellation of the beat for orthogonal fields.
   Equal-RMS equivalence is scoped to static quadratic detection.
   Spatial response (Eq.~19) and signed vector coupling.
-& Converts the detector class into measurements (amplitude slope, harmonic ratio, dose map)
+& Derives the detector's amplitude, harmonic, and spatial signatures
   and separates spatial from dynamical selectivity. Generation gives a weak drive; \S2.5
   explains what makes it large.
 & App.~D (bound and step detector); Fig.~6b (slope 1.99); Table~3 (predictions).\\[2pt]
@@ -227,25 +226,35 @@ lock-in read-out and the pinned-operating-point protocol recur across models.
 \begingroup\fontsize{9.4}{11.4}\selectfont
 \begin{xltabular}{\linewidth}{@{}L{38mm}Y L{62mm}L{46mm}@{}}\toprule
 \maphead
-\place{\S3.1}{Jansen--Rit: integration, lock-in, controls}
+\place{\S3.1}{Amplitude scaling and harmonic measurements}
+& Lock-in (Eq.~25): Hann window, weighted-mean subtraction, physical-amplitude
+  normalization, and finite-window leakage limits. Amplitude-slope test at fixed
+  coupling and linear downstream gain. Harmonic ratio corrected by
+  $|G(2\Omega)/G(\Omega)|$: at resonance and $\mathcal Q=10$, 20\% reads 0.7\%.
+  Off resonance at $\Delta f\simeq f_0/4$, the correction is 1.22--1.25;
+  an independent weak tACS sweep provides the alternative deconvolution.
+& Collects the measurement procedure after its theoretical predictions, preserving
+  the estimator and the restrictions on interpreting a measured harmonic ratio.
+& Fig.~6b; \S2.4; \S4.4 and \S4.9.\\[2pt]
+\midrule
+\place{\S3.2}{Jansen--Rit: integration, lock-in, controls}
 & Field enters only the pyramidal sigmoid; the read-out $v=y_1-y_2$ is not fed the field.
   RK4 steps with $<1\%$ convergence; settling and windows. Hopf at $p\approx315$,
-  $f_0\approx11.1$~Hz; SNIC at $p\approx114$. Lock-in (Eq.~25) with DC subtraction to $10^{-8}$.
+  $f_0\approx11.1$~Hz; SNIC at $p\approx114$. The estimator in \S3.1 retains DC subtraction to $10^{-8}$.
   Open-loop detector versus closed-loop column; square law, linearization, finite-difference checks.
 & Specifies the JR integrator and lock-in; run-specific reproduction limits remain recorded.
 & Fig.~2; Grimbert and Faugeras 2006; \path{run_all.py}.\\[2pt]
 \midrule
-\place{\S3.2--3.4}{LaNMM, NMM2 PING, QIF network}
-& LaNMM: field as a signed polarization, not a clipped rate (a clip is a half-wave rectifier);
-  alpha-power read-out; signed maps. PING (Eq.~27): weights $(1,1,1,2)$, $\bar\eta_H=1.110$,
+\place{\S3.3--3.4}{NMM2 PING and QIF network}
+& PING (Eq.~26): weights $(1,1,1,2)$, $\bar\eta_H=1.110$,
   $f_0=54$~Hz, field as current $I_E=PE$ so the membrane computes access with
   $\tau_m=\tau_E$; two criticality knobs. QIF: $N=8000$ per population, Lorentzian quantiles,
   beats 55 and 42~Hz at $\bar\eta=0.85/1.5$, defined by the field-free states; $A_f=35$ is finite
   amplitude, with carrier excursion about 1.2 per tone. Modulation depth and pairwise phase
   consistency; the 45\% threshold sensitivity of phase concentration.
 & Fixes the models whose results follow and states which comparisons are perturbative.
-  Decision for K: \S3.2 serves only the App.~E results and could travel with them.
-& Eqs.~26--27; Fig.~S2 (LaNMM setup); Rosetta Stone PING parameters; Vinck 2010.\\[2pt]
+  The LaNMM method now accompanies its results in App.~E.1.
+& Eq.~26; Rosetta Stone PING parameters; Vinck 2010.\\[2pt]
 \midrule
 \place{\S3.5--3.6}{Coupling sweeps, tACS control, vocabulary}
 & Pinning: solve $p(C)$ for fixed $v^*$, read $\gamma,\omega_0$ from the Jacobian; tACS control
@@ -306,11 +315,11 @@ lock-in read-out and the pinned-operating-point protocol recur across models.
   persists and quantitative convergence remains unestablished. In the equal-RMS mean-field comparison,
   both waveforms induce gamma at the larger amplitude; TI adds a resolved beat component.
   A fourfold longer window suppresses the carrier's apparent $55$~Hz line below $10^{-4}$.
-  Add a complementary comparison (S13); retain the original threshold-crossing
+  The complementary comparison is Figure 11 (formerly S13); retain the original threshold-crossing
   and autonomous-gamma examples in Fig.~10 and S12.
 & Larger modulation than mean-rate change at mesoscale and microscale, qualitatively
   consistent with Vieira; retain the finite-amplitude scope, nonzero mean shift, and weak per-neuron locking.
-& Fig.~10; Figs.~S11--S13; Vieira 2024.\\[2pt]
+& Figs.~10--11; Figs.~S11--S12; Vieira 2024.\\[2pt]
 \midrule
 \place{\S4.9}{Falsifiable predictions}
 & Four predictions with tests: access versus mixing by carrier sweep; state and carrier
@@ -365,50 +374,50 @@ laminar extension, and the metrics.
 & ---\\[2pt]
 \midrule
 \place{App.~A--B}{Notation and units; model equations}
-& Table~4 (symbols, with the reused-glyph head note); JR equations (Eq.~28) and Table~5.
+& Table~4 (symbols, with the reused-glyph head note); JR equations (Eq.~27) and Table~5.
 & Recovery aids; definitions remain local.
 & ---\\[2pt]
 \midrule
 \place{App.~C--D}{Cubic normal form; efficiency bound}
-& Stuart--Landau has no second-order source (Eq.~31); numerical control at the floor.
-  $\eta_{\rm det}\le\rho\varepsilon/4$ (Eq.~32); family supremum $0.3479$ at
-  $\delta/2\varepsilon=0.523$ (Eq.~34), a step detector with harmonic ratio 0.151; the
+& Stuart--Landau has no second-order source (Eq.~30); numerical control at the floor.
+  $\eta_{\rm det}\le\rho\varepsilon/4$ (Eq.~31); family supremum $0.3479$ at
+  $\delta/2\varepsilon=0.523$ (Eq.~33), a step detector with harmonic ratio 0.151; the
   microvolt width is an idealization, and the maximum is numerical, not certified.
 & C supports \S2.5 (susceptibility is not detection); D supports \S2.4 and the Discussion's
   efficiency paragraphs.
 & \path{threshold_bound_check.py}.\\[2pt]
 \midrule
-\place{App.~E}{Laminar column at low carriers}
-& Frequency selection at 25--80~Hz carriers up to 3~mV, outside the perturbative regime;
+\place{App.~E.1--E.2}{Laminar methods and low-carrier results}
+& Method: field as a signed polarization inside the sigmoid (Eq.~34), with no rate
+  clipping; a clip would itself rectify. RK4 integration, alpha-band power including
+  autonomous activity, signed power maps, and the 17-beat lock-in mean with 3/10~s
+  windows and field-free background controls. Results: frequency selection at 25--80~Hz carriers up to 3~mV, outside the perturbative regime;
   95\%/97\% of $P_1$-driven grids below baseline. Off-alpha mean lock-in peaks at 39~Hz
   for superficial drive and 25~Hz for direct drive, with unequal amplitudes. Retain the
   3/10~s comparison, field-free background, and limits of the near-alpha readout. The old
   7\%/25\% claims are replaced by the reproducible carrier-profile table.
-& Shows a band-limited intermediary makes the carrier choice matter; does not carry the kHz
-  argument.
+& Places the extension's method beside its results. A band-limited intermediary makes
+  the carrier choice matter; these results do not carry the kHz argument.
 & Fig.~S1, S2, S7; Gordon 2019.\\[2pt]
 \midrule
 \place{App.~F--G}{Vocabulary metrics; supplementary figures}
 & Dominance screen versus capture test; folded-rate metric versus gamma-amplitude gating; frequency-dominance protocol.
-  Figures S2--S13 support \S4.2--4.8 and the Discussion.
+  Figures S2--S12 support \S4.2--4.8 and the Discussion.
 & Metrics behind the three terms; the figure bank for the JNE supplement.
-& Figs.~S2--S13.\\[2pt]
+& Figs.~S2--S12.\\[2pt]
 \end{xltabular}\endgroup
 
 \vspace{4pt}
 {\footnotesize\color{muted}
-\textbf{Placement decisions for K.} (1)~Keep the seven Theory subsections in place, or move
-some detailed interpretation after Results. The review recommends moving \S2.4's detailed
-transduction tests while retaining carrier access (\S2.6) before its Results application.
-(2)~Keep LaNMM Methods \S3.2, or move it beside its results in App.~E.
-(3)~Promote S3 (tACS), S10 (NMM2 $J$-curve), S11 (modulation versus mean rate), or none;
-the review recommends S11 first and retaining all 23 figures. None of these placement
-changes has been executed. K authorized the weak-field framing and the corresponding
-abstract revision in v0.14.5. The current draft qualifies the gain and capture claims and
-replaces the LaNMM percentages with a documented off-alpha comparison. The kHz two-tone cache
-has a reconstructed producer that reproduces every archived spectral bin exactly.
-Draft9 consolidates duplicate prose without changing section or figure order;
-the proposed-removals list recommends no scientific deletions. Coauthor approval,
-declarations, and release alignment remain pending;
+\textbf{Placement decisions, 5 October 2026.} K authorized moving LaNMM methods beside
+their results in Appendix E and promoting the equal-RMS carrier control from S13 to
+Figure 11 at its use in the QIF/PING results; S3, S10, and S11 remain supplementary.
+The transduction split preserves the seven Theory subsections: \S2.4 derives the
+envelope and square-law signatures and their spatial maps without a forward dependency
+on a measurement procedure. Methods \S3.1 collects the lock-in estimator, amplitude-slope
+measurement, and harmonic-gain correction; Results refers to that procedure. All
+23 figures, equations, examples, and qualifications remain. The reading baseline is
+draft9 including the competing-interests statement (\texttt{8016065}). Coauthor
+confirmation, remaining funding declarations, and release alignment remain pending;
 see \path{todo.md}.}
 \end{document}
