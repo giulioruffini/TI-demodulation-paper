@@ -1,11 +1,11 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
-- [ ] obtain Klaus's half-step checks at spike cutoffs 200 and 400; retain the reported cutoff sensitivity until joint convergence is tested
-- [ ] Giulio: review v0.15.0-draft5's two-regime QIF comparison and decide whether to promote S13; authorize coauthor circulation when ready
+- [ ] Giulio: review v0.15.0-draft6's two-regime QIF comparison and decide whether to promote S13; authorize coauthor circulation when ready
 - [ ] obtain missing funding/conflict declarations; confirm all author roles and affiliations, actual AI-tool versions, and approval of the submission version by every author
 - [ ] Giulio: decide the optional Theory order, LaNMM methods placement, and S3/S10/S11 promotion; preserve content and order until then
 - [ ] after review and authorization: push, align the public code/archive, cut Calliope/Zenodo, re-sync Overleaf, and circulate the coauthor request (all HOLD)
 - [ ] migrate the paper folder at the next coordinated version boundary; run the layout checker before and after, with no concurrent session editing
+- [x] verify all six cutoff/time-step summaries; retain cutoff sensitivity as a stated limitation and close the requested R7 diagnostics (October 5)
 - [x] reproduce cutoff-100/200/400 summaries and the 3.2 s carrier-window control; report sensitivity and retain the original rasters (October 5)
 - [x] integrate both QIF amplitudes and equal-RMS mean-field controls as S13; reproduce cache summaries and full-period S10 stability (October 5)
 - [x] reproduce the E-only DC-shift diagnostic and amplitude-10 mean-field control; publish complete manuscript PDFs atomically (October 5)

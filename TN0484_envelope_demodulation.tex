@@ -86,7 +86,7 @@
 
 \newcommand{\Sig}{\sigma}
 \newcommand{\half}{\tfrac{1}{2}}
-\newcommand{\paperver}{0.15.0-draft5}
+\newcommand{\paperver}{0.15.0-draft6}
 \hypersetup{
   pdftitle={The cortical column as a tuned receiver: a network mechanism for temporal-interference stimulation},
   pdfauthor={Giulio Ruffini, Borja Mercadal, Alex Just, Raul de Palma Aristides, Francesca Castaldo, Nir Grossman, Santiago Canals, Claudio Mirasso},
@@ -1154,7 +1154,7 @@ establish phase capture (\S\ref{sec:vocab}).
 We also run both conditions at $A_f=10$ per tone with the same measurement
 settings. For $\bar\eta=0.85$, separate checks double the population size,
 double the measurement window, or halve the integration step; further runs raise
-$V_{\rm peak}$ to $200$ and $400$ at the published step. An equal-RMS
+$V_{\rm peak}$ to $200$ and $400$ at both time steps. An equal-RMS
 mean-field control replaces the two tones by one $300$~Hz carrier with peak
 amplitude $\sqrt{2}A_f$, using the same duration: both inputs have mean-square
 amplitude $A_f^2$ over these windows. The carrier comparison starts from the
@@ -1519,8 +1519,9 @@ larger depth, $0.128$. Raising the spike cutoff from $V_{\rm peak}=100$ to
 $200$ and $400$ gives depths $0.127$ and $0.139$, while the mean-rate increase
 stays at $2.8$--$2.9\%$. At the original cutoff, doubling the population gives
 $0.083$ and halving the time step gives $0.093$. The response is therefore
-sensitive to the finite spike cutoff; the agreement at $200$ does not by itself
-establish joint convergence in cutoff and time step.
+sensitive to the finite spike cutoff. Halving the step at cutoffs $200$ and
+$400$ gives depths $0.121$ and $0.141$, respectively: cutoff dependence persists,
+and quantitative convergence remains unestablished at this population size.
 At the plotted cutoff, the pooled spike-phase vector strength is $0.046$;
 median per-neuron phase consistency remains negative in field-off and field-on
 windows at all three cutoffs. At
@@ -2522,8 +2523,9 @@ Hann window over $800$~ms after $800$~ms settling. Both waveforms induce gamma
 at the larger amplitude, while TI produces the additional beat response.
 The carrier's apparent $55$~Hz line falls below $10^{-4}$ with a $3.2$~s window,
 while TI's persists. The carrier comparison is a mean-field result. The spiking
-panels retain $V_{\rm peak}=100$; raising this cutoff to $200$ increases the
-$A_f=10$ beat depth to $0.127$ (\S\ref{sec:qif}).}
+panels retain $V_{\rm peak}=100$; at cutoffs $200$--$400$, the $A_f=10$
+depth ranges from $0.121$ to $0.141$ across the two tested steps
+(\S\ref{sec:qif}).}
 \label{fig:qif_regimes}
 \end{figure}
 

@@ -1,5 +1,12 @@
 # Submission-readiness review — v0.14.6
 
+**Draft6 update (October 5).** Both-step checks at cutoffs 200 and 400 are verified.
+The higher-cutoff depths span 0.121–0.141, and the cutoff-400 overshoot survives
+time-step refinement. The requested R7 diagnostics are complete at the stated
+claim scope; quantitative cutoff convergence remains a limitation, not an asserted
+result. See [the draft6 record](docs/revision_2026-10-05_v0150draft6.md).
+
+
 **Draft5 update (October 5).** Cutoff checks locate sensitivity of the weak-drive
 spiking depth: 0.093, 0.127, and 0.139 at cutoffs 100, 200, and 400, versus the
 mean-field 0.128. Agreement at 200 is not a joint convergence test. The longer

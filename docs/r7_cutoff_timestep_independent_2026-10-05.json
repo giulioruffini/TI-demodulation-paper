@@ -1,0 +1,198 @@
+{
+  "cutoff_timestep_checks": [
+    {
+      "file": "qif_raster_twotone_a10.npz",
+      "sha256": "1bdbb170c4da993a2e1f99c3054ea8f5eeb2ed8f995c11040764dec1129fe749",
+      "N": 8000,
+      "dt_ms": 0.0025,
+      "conditions": {
+        "forced": {
+          "off": {
+            "rate": 0.0526640625,
+            "beat_depth": 0.0013472501659191984,
+            "pooled_VS": 0.0005026187845918943,
+            "pooled_PPC": -2.7143012652562904e-06,
+            "median_cell_PPC": -0.01834856718183962
+          },
+          "on": {
+            "rate": 0.054120156250000016,
+            "beat_depth": 0.09263853381364229,
+            "pooled_VS": 0.045993785002414966,
+            "pooled_PPC": 0.0021125472635724193,
+            "median_cell_PPC": -0.015778577689973084
+          },
+          "rate_change_pct": 2.764871680759562,
+          "depth_to_rate_change": 3.3505545468277482
+        },
+        "entrain": {
+          "off": {
+            "rate": 0.05239045239632005,
+            "beat_depth": 5.408524795801169e-06,
+            "pooled_VS": 0.01307854716949073,
+            "pooled_PPC": 0.0001681015603239601,
+            "median_cell_PPC": -0.02249342635498816
+          },
+          "on": {
+            "rate": 0.05321671108585617,
+            "beat_depth": 0.02297851451293323,
+            "pooled_VS": 0.015422212385548029,
+            "pooled_PPC": 0.00023494374653113852,
+            "median_cell_PPC": -0.022508175332999477
+          },
+          "rate_change_pct": 1.5771169206283853,
+          "depth_to_rate_change": 1.4569949895520546
+        }
+      },
+      "V_peak": 100
+    },
+    {
+      "file": "qif_raster_twotone_a10_dt2.npz",
+      "sha256": "fce9997a28e50404b364aebc2ba312ab7a0e4e0ebea2e888a0557ba57bc23a85",
+      "N": 8000,
+      "dt_ms": 0.00125,
+      "conditions": {
+        "forced": {
+          "off": {
+            "rate": 0.05266859374999999,
+            "beat_depth": 0.0009655834132851731,
+            "pooled_VS": 0.0007378004064413576,
+            "pooled_PPC": -2.422321347581819e-06,
+            "median_cell_PPC": -0.01844119508276057
+          },
+          "on": {
+            "rate": 0.05412468749999999,
+            "beat_depth": 0.09278716310891097,
+            "pooled_VS": 0.04596141000502669,
+            "pooled_PPC": 0.002109570446973844,
+            "median_cell_PPC": -0.015780833099996384
+          },
+          "rate_change_pct": 2.764633809878392,
+          "depth_to_rate_change": 3.35621892408935
+        }
+      },
+      "V_peak": 100
+    },
+    {
+      "file": "qif_raster_twotone_a10_vp200.npz",
+      "sha256": "e9d002e9b5ee08c45607d6385ab2006632011777131859a893cc1be0cc1a5f91",
+      "N": 8000,
+      "dt_ms": 0.0025,
+      "conditions": {
+        "forced": {
+          "off": {
+            "rate": 0.05147937500000001,
+            "beat_depth": 0.0011297818986150696,
+            "pooled_VS": 0.0005573911682742301,
+            "pooled_PPC": -2.7245194893551137e-06,
+            "median_cell_PPC": -0.020039042997813564
+          },
+          "on": {
+            "rate": 0.05293796875,
+            "beat_depth": 0.1269358214915371,
+            "pooled_VS": 0.06251889906921919,
+            "pooled_PPC": 0.0039056727009595077,
+            "median_cell_PPC": -0.015277274947845776
+          },
+          "rate_change_pct": 2.8333555914383135,
+          "depth_to_rate_change": 4.480052622943098
+        }
+      },
+      "V_peak": 200
+    },
+    {
+      "file": "qif_raster_twotone_a10_vp200_dt2.npz",
+      "sha256": "22b7c323412599ea9a9b4222acfcd92c7119ad2cf89b37fb6c478a658041d934",
+      "N": 8000,
+      "dt_ms": 0.00125,
+      "conditions": {
+        "forced": {
+          "off": {
+            "rate": 0.05148250000000001,
+            "beat_depth": 0.0023187973598543386,
+            "pooled_VS": 0.0011258894522116014,
+            "pooled_PPC": -1.767390202695589e-06,
+            "median_cell_PPC": -0.0199697020415637
+          },
+          "on": {
+            "rate": 0.05293671875,
+            "beat_depth": 0.12079560790239002,
+            "pooled_VS": 0.060678613796500046,
+            "pooled_PPC": 0.003678953393780453,
+            "median_cell_PPC": -0.015316023079720168
+          },
+          "rate_change_pct": 2.824685572767427,
+          "depth_to_rate_change": 4.276426695663795
+        }
+      },
+      "V_peak": 200
+    },
+    {
+      "file": "qif_raster_twotone_a10_vp400.npz",
+      "sha256": "9e2235fc9021af34085acbed025c23d55dde331d417308359d232d5ad5b2b872",
+      "N": 8000,
+      "dt_ms": 0.0025,
+      "conditions": {
+        "forced": {
+          "off": {
+            "rate": 0.050909218750000006,
+            "beat_depth": 0.0015129494657770805,
+            "pooled_VS": 0.0006455995760573708,
+            "pooled_PPC": -2.652398049450008e-06,
+            "median_cell_PPC": -0.020619118338503682
+          },
+          "on": {
+            "rate": 0.052382500000000005,
+            "beat_depth": 0.13932912265124145,
+            "pooled_VS": 0.06931834137105485,
+            "pooled_PPC": 0.004802063907933939,
+            "median_cell_PPC": -0.014724438744679666
+          },
+          "rate_change_pct": 2.89393804535647,
+          "depth_to_rate_change": 4.814516429430995
+        }
+      },
+      "V_peak": 400
+    },
+    {
+      "file": "qif_raster_twotone_a10_vp400_dt2.npz",
+      "sha256": "9059e5683044586e97780cbf77a671777c63f9f0f0b6a780d00d1df69ffabd7b",
+      "N": 8000,
+      "dt_ms": 0.00125,
+      "conditions": {
+        "forced": {
+          "off": {
+            "rate": 0.05091359375,
+            "beat_depth": 0.0009474195752817024,
+            "pooled_VS": 0.0008518551350793799,
+            "pooled_PPC": -2.343275006440669e-06,
+            "median_cell_PPC": -0.020592639577905816
+          },
+          "on": {
+            "rate": 0.052385,
+            "beat_depth": 0.14081290601530777,
+            "pooled_VS": 0.0696999398955709,
+            "pooled_PPC": 0.004855113378847464,
+            "median_cell_PPC": -0.014700242454786053
+          },
+          "rate_change_pct": 2.8900066595672236,
+          "depth_to_rate_change": 4.8724076655378505
+        }
+      },
+      "V_peak": 400
+    }
+  ],
+  "step_changes": [
+    {
+      "V_peak": 100,
+      "depth_change_pct": 0.16044003413058228
+    },
+    {
+      "V_peak": 200,
+      "depth_change_pct": -4.837258322353433
+    },
+    {
+      "V_peak": 400,
+      "depth_change_pct": 1.0649484729624126
+    }
+  ]
+}

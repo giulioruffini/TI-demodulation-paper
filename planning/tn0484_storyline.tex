@@ -1,6 +1,6 @@
 % TN0484 / WP0185: abstract and storyline. Build from the project root:
 %   ~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex
-% Map mode: rows follow the v0.15.0-draft5 manuscript order and numbering (TN build; the JNE build
+% Map mode: rows follow the v0.15.0-draft6 manuscript order and numbering (TN build; the JNE build
 % moves the appendices and figures S1--S13 to the supplement). Prepared 2026-10-03.
 \documentclass[11pt,a4paper,landscape]{article}
 \usepackage[T1]{fontenc}
@@ -18,7 +18,7 @@
 \newcommand{\wpnumber}{TN0484 / WP0185}
 \newcommand{\papertitle}{The cortical column as a tuned receiver}
 \newcommand{\storylinedate}{5 October 2026}
-\newcommand{\baselinelabel}{v0.15.0-draft5}
+\newcommand{\baselinelabel}{v0.15.0-draft6}
 \newcommand{\abstractfile}{tn0484_abstract.tex}
 \newcommand{\storylineauthors}{Giulio Ruffini}
 % -----------------------------------------------------------------------------
@@ -69,9 +69,9 @@
 \end{minipage}
 \end{center}
 \vspace{5mm}
-{\footnotesize\color{muted}The abstract is the TN abstract of v0.15.0-draft5. K authorized the weak-field
+{\footnotesize\color{muted}The abstract is the TN abstract of v0.15.0-draft6. K authorized the weak-field
 effective-response framing on 3 October 2026; the JNE build keeps a structured abstract with
-the same claims. Draft5 adds cutoff and spectral-leakage checks to the amplitude-10 comparison and
+the same claims. Draft6 includes cutoff, half-step, and spectral-leakage checks to the amplitude-10 comparison and
 equal-power mean-field controls,
 while retaining the finite-amplitude QIF examples. Section order and the original
 figures remain; Figure S13 adds the comparison. The placement
@@ -279,8 +279,8 @@ lock-in read-out and the pinned-operating-point protocol recur across models.
   weak per-neuron locking; these runs do not test weak-input scaling or establish gating.
   At $A_f=10$, the stable-state spiking depth is $0.093$ with rate $+2.8\%$;
   retain the cutoff sensitivity: depths $0.093/0.127/0.139$ at spike cutoffs
-  $100/200/400$, versus mean-field $0.128$. Joint cutoff/step convergence remains
-  unestablished. In the equal-RMS mean-field comparison,
+  $100/200/400$, versus mean-field $0.128$. At half step, the higher-cutoff depths are $0.121/0.141$; cutoff dependence
+  persists and quantitative convergence remains unestablished. In the equal-RMS mean-field comparison,
   both waveforms induce gamma at the larger amplitude; TI adds a resolved beat component.
   A fourfold longer window suppresses the carrier's apparent $55$~Hz line below $10^{-4}$.
   Add a complementary comparison (S13); retain the original threshold-crossing

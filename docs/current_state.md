@@ -1,5 +1,17 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v0.15.0-draft6 — half-step cutoff checks complete (2026-10-05)
+
+Klaus's `f1831cd` is integrated as `5ecc5ac`. All six cutoff/time-step cache
+summaries are independently verified. At half step, the depths are 0.121 and
+0.141 for cutoffs 200 and 400. The overshoot survives refinement, so the earlier
+Euler-step attribution is withdrawn in Klaus's note; the manuscript reports
+persistent cutoff dependence without assigning its residual solely to one cause.
+No more R7 simulations are requested for the retained claims. Record:
+`revision_2026-10-05_v0150draft6.md`. Author review, declarations, and the optional
+placement decisions remain; release and circulation are held.
+
+
 ## v0.15.0-draft5 — spike cutoff and spectral leakage (2026-10-05)
 
 Klaus's `b1a1c4c` is integrated as `8f03544`. Three cutoff summaries and four

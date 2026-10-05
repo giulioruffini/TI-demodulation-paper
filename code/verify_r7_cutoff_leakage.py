@@ -16,6 +16,32 @@ from verify_r7_followups import cache_check
 HERE = Path(__file__).resolve().parent
 
 
+def cutoff_timestep_check():
+    """Compare both time steps at each cutoff without rerunning old controls."""
+    reference = json.loads((HERE.parent/'docs/r7_qif_amp10_vpeak_dt_2026-10-05.json').read_text())
+    rows, changes = [], []
+    for cutoff, suffix in ((100, ''), (200, '_vp200'), (400, '_vp400')):
+        pair = []
+        for step in ('', '_dt2'):
+            path = HERE/f'qif_raster_twotone_a10{suffix}{step}.npz'
+            row = cache_check(path)
+            metadata = np.load(path, allow_pickle=True)['meta'].item()
+            row['V_peak'] = cutoff
+            assert metadata['VPEAK'] == cutoff
+            expected = reference[len(rows)]
+            assert row['dt_ms'] == expected['dt_ms']
+            result = row['conditions']['forced']
+            for value, key in ((result['off']['rate'], 'rate_off'),
+                               (result['on']['rate'], 'rate_on'),
+                               (result['on']['beat_depth'], 'beat_depth'),
+                               (result['rate_change_pct'], 'rate_change_pct')):
+                assert abs(value-expected[key]) < 1e-10
+            pair.append(result['on']['beat_depth'])
+            rows.append(row)
+        changes.append(dict(V_peak=cutoff, depth_change_pct=100*(pair[1]/pair[0]-1)))
+    return dict(cutoff_timestep_checks=rows, step_changes=changes)
+
+
 def check():
     cutoffs = []
     reference = json.loads((HERE.parent/'docs/r7_qif_amp10_vpeak_2026-10-05.json').read_text())
@@ -73,7 +99,10 @@ def check():
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--json', required=True, type=Path)
+    parser.add_argument('--timesteps-only', action='store_true',
+                        help='verify both time steps at all three cutoffs from their caches')
     args = parser.parse_args()
-    result = check()
+    result = cutoff_timestep_check() if args.timesteps_only else check()
     args.json.write_text(json.dumps(result, indent=2)+'\n')
-    print('Three cutoff summaries and four carrier-window spectra verified.')
+    print('Six cutoff/time-step summaries verified.' if args.timesteps_only else
+          'Three cutoff summaries and four carrier-window spectra verified.')
