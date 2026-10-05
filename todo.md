@@ -1,10 +1,11 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
 - [ ] Giulio: review draft9's DC spatial argument and shorter prose in the JNE working edition, using the fixed draft8 redline; decide whether to promote S13 and authorize coauthor circulation when ready
-- [ ] obtain missing funding/conflict declarations; confirm all author roles and affiliations, actual AI-tool versions, and approval of the submission version by every author
+- [ ] obtain missing funding declarations; confirm the supplied competing-interests statement, author roles and affiliations, actual AI-tool versions, and the submission version with every author
 - [ ] Giulio: decide the optional Theory order, LaNMM methods placement, and S3/S10/S11 promotion; preserve content and order until then
 - [ ] after review and authorization: push, align the public code/archive, cut Calliope/Zenodo, re-sync Overleaf, and circulate the coauthor request (all HOLD)
 - [ ] migrate the paper folder at the next coordinated version boundary; run the layout checker before and after, with no concurrent session editing
+- [x] add Giulio's competing-interests statement, matching the NE byline and his confirmed co-founder/shareholder disclosure (October 5)
 - [x] close Klaus's independent DC scope review; retain draft9's assumptions and record qualifications to the proposed extensions (October 5)
 - [x] add the qualified DC spatial-map argument, consolidate duplicate prose, and record section counts and retained content in draft9 (October 5)
 - [x] integrate Klaus's shared abstract and table explanations; use one JNE reading copy and one fixed-baseline redline (October 5)

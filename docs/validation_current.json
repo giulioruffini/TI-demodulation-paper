@@ -12,13 +12,13 @@
   "outputs": [
     {
       "path": "TN0484_jne.pdf",
-      "bytes": 1616958,
-      "sha256": "29eeb42ae02efbf90908f4f5a936c670808ebe06510f0fa42363a0f7a7e556cd"
+      "bytes": 1617034,
+      "sha256": "134298bcb2435e8fee38e82f94337486d63344391abc336e30fa56e3de35cdbb"
     },
     {
       "path": "docs/redline_last_read.pdf",
-      "bytes": 1684410,
-      "sha256": "4ce075df8f9127b71711150bc1a3c0805798839d01bbd4bcabbb38fd2f84261a"
+      "bytes": 1684849,
+      "sha256": "f3c4b6c5bc6cc0b12afce44fe3e10fd0684797f5b2b140bd079bc8e45380f981"
     },
     {
       "path": "build/storyline/tn0484_storyline.pdf",
@@ -102,5 +102,27 @@
       3
     ]
   },
-  "numerical_reruns": "None; analytic DC argument and exposition only"
+  "numerical_reruns": "None; analytic DC argument and exposition only",
+  "declaration_update": {
+    "date": "2026-10-05",
+    "source_baseline": "b48697c",
+    "scope": "Only the competing-interests source block changed; draft9 science, order, abstract, and version unchanged.",
+    "word_counts": "Earlier section counts remain the record of the scientific revision before this declaration update.",
+    "rebuilt": [
+      "TN0484_jne.pdf",
+      "docs/redline_last_read.pdf"
+    ],
+    "not_rebuilt": "TN, supplement, and storyline retain their earlier validation; the declaration is JNE-only.",
+    "verified_pdf_text": true,
+    "visually_inspected": {
+      "jne": [
+        29,
+        30
+      ],
+      "redline": [
+        31
+      ]
+    },
+    "source_provenance": "WP0215 journal_version/declarations.tex and revisions/v0.5.4/REVISION.md (Giulio-confirmed co-founder/shareholder interests)"
+  }
 }

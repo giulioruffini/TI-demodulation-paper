@@ -111,3 +111,11 @@ Klaus's evidence is preserved at commit `e563b4a` on `dc-term-focality`, in `doc
 - Equal local RMS matches the static quadratic mean, not an entire spatial map produced by arbitrary different montages, nor every convex detector. The peer note's fourth-moment counterexample establishes the latter limit: for two equal nearby distinct tones of amplitude \(a\), \(\langle v^4\rangle=9a^4/4\), compared with \(3a^4/2\) for an equal-RMS single tone. The convex-composition spatial theorem and RMS equivalence are separate statements.
 
 The review is closed for the paragraph as written. No figure, numerical cache, manuscript source, PDF, word-count record, or reading baseline changed during this closure. The existing clean-build and retention checks therefore remain applicable; no builds or simulations were repeated. Optional generalizations in the peer note remain outside the manuscript.
+
+## Competing-interests statement, October 5
+
+Giulio's instruction relayed by Klaus at 16:49 replaces the provisional declaration with the standard employment and ownership disclosure. The Neuroelectrics affiliation in the byline applies to Giulio Ruffini, Borja Mercadal, Alex Just, and Francesca Castaldo. The statement names them as employees, describes the company's transcranial electrical stimulation devices, identifies Giulio as a co-founder and shareholder, and states that the other authors declare no competing interests.
+
+The ownership phrasing follows `WP0215-Simulation-Phenomenally-Itself/journal_version/declarations.tex`; that paper's `revisions/v0.5.4/REVISION.md` records Giulio's confirmation of the co-founder/shareholder interests. The sources are under `BCOM WPs and Blogs/working_drafts/`. The manuscript diff is confined to the competing-interests block, including its provenance comments. Scientific content, placements, and version are unchanged. The earlier section counts describe the scientific revision before this declaration update.
+
+The JNE article and fixed-baseline redline were rebuilt: 34 and 35 pages, no errors, undefined references, or overfull boxes. Extracted PDF text matches the new statement; JNE pages 29–30 and redline page 31 were visually inspected. Other editions were not rebuilt for this JNE-only declaration. Author confirmation of the submission version and all release holds remain in place.
