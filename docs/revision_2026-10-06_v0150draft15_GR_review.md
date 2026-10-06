@@ -66,8 +66,12 @@ proposed in this pass.
 
 ## Validation and holds
 
-Current page counts, the final abstract count, hashes, build diagnostics, visual
-checks, and peer-review status are recorded in `validation_current.json`.
+The JNE article has 41 pages, the supplement 20, the private combined TN 56,
+the storyline 11, and the redline 46. The shared abstract has 296 words.
+All builds have zero errors, undefined references, overfull boxes, and duplicate
+labels. Hashes, visual checks, and peer-review status are recorded in
+`validation_current.json`. A bounded read-only check of commit `af29999` was
+requested from Klaus; no verdict was available when this record was written.
 The JNE article and supplement are built from the same source; the combined TN
 is a private validation build. No numerical rerun is needed because the model
 code, cached data, and existing figures are unchanged. The storyline follows the

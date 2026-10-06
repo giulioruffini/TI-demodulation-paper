@@ -296,13 +296,24 @@
     "manuscript_prose_checker_findings": 0,
     "note_prose_checker_findings": "Two Markdown table-separator false positives; no prose issue.",
     "substantive_removals": [],
-    "independent_fidelity_check": "To be requested on the committed revision; no verdict claimed.",
+    "independent_fidelity_check": {
+      "reviewer": "klaus-484-TI-helper",
+      "target_commit": "af29999",
+      "status": "requested; peer-message spooled, no review verdict received",
+      "scope": "Annotation resolution, retention under structural moves, schematic against model equations, abstract DC scope, and carrier-test literature qualification."
+    },
     "held_actions": [
       "GitHub push",
       "Calliope/Zenodo cut",
       "Overleaf sync",
       "coauthor email"
-    ]
+    ],
+    "committed_as": "af29999",
+    "review_shelf_verified": {
+      "article": "41 pages, byte-identical to TN0484_jne.pdf",
+      "redline": "46 pages, byte-identical to docs/redline_last_read.pdf",
+      "annotated_original": "preserved"
+    }
   },
   "focality_integration_revision": {
     "date": "2026-10-06",

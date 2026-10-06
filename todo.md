@@ -1,5 +1,7 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
+- [ ] integrate any concrete findings from Klaus's bounded fidelity check of af29999; manuscript, schematic, DC wording, and carrier-test attribution
+
 - [ ] review Ricardo's real-montage FEM comparison if supplied before submission; retain the proposed comparison otherwise
 - [ ] review the reorganized draft15 and its length report; the added schematic and explanations increase the article by one page; scientific removals require Giulio's approval
 - [ ] Giulio: review the corrected JNE working edition and fixed-baseline redline; authorize coauthor circulation when ready
