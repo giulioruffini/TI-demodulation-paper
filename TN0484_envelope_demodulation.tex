@@ -86,11 +86,11 @@
 
 \newcommand{\Sig}{\sigma}
 \newcommand{\half}{\tfrac{1}{2}}
-\newcommand{\paperver}{0.15.0-draft11}
+\newcommand{\paperver}{0.15.0-draft12}
 \hypersetup{
   pdftitle={The cortical column as a tuned receiver: a network mechanism for temporal-interference stimulation},
   pdfauthor={Giulio Ruffini, Borja Mercadal, Alex Just, Raul de Palma Aristides, Francesca Castaldo, Nir Grossman, Santiago Canals, Claudio Mirasso},
-  pdfsubject={TN0484 / WP0185, version \paperver, October 5, 2026}
+  pdfsubject={TN0484 / WP0185, version \paperver, October 6, 2026}
 }
 
 \begin{document}
@@ -116,7 +116,7 @@ $^{4}$Instituto de Neurociencias (UMH-CSIC), Sant Joan d'Alacant, Spain\\
 $^{5}$Department of Brain Sciences and UK Dementia Research Institute,\\
 Imperial College London, London, United Kingdom\\[6pt]
 E-mail: \texttt{giulio.ruffini@neuroelectrics.com}\\[4pt]
-Working draft v\paperver\quad 2026-10-05
+Working draft v\paperver\quad 2026-10-06
 \end{minipage}\\[8pt]
 \begin{minipage}{0.86\textwidth}\centering\footnotesize\color{negray}
 \textbf{ORCID iDs:}\ %
@@ -143,7 +143,7 @@ a network mechanism for temporal-interference stimulation}\\[10pt]
 & Santiago Canals, and Claudio Mirasso \\
 \textbf{Affiliations:} & Neuroelectrics\,/\,BCOM\,/\,IFISC (UIB-CSIC)\,/\,IN (UMH-CSIC)\\
 & Imperial College London (Brain Sciences and UK Dementia Research Institute) \\
-\textbf{Date:} & 2026-10-05 \qquad \textbf{Version:} \paperver \\
+\textbf{Date:} & 2026-10-06 \qquad \textbf{Version:} \paperver \\
 \textbf{DOI:} & \href{https://doi.org/10.5281/zenodo.21009618}{10.5281/zenodo.21009618} \\
 \end{tabular}\\[4pt]
 {\color{neblue}\rule{\textwidth}{1pt}}
@@ -288,7 +288,12 @@ and a laminar model extends the calculation to two resonant bands at low carrier
 Related neural-mass accounts use the same nonlinear mixing for endogenous
 cross-frequency coupling and nested amplitude modulation
 \cite{ruffini2025cfc,ruffini2025ham}. Here the input is external, making the
-field-to-cell coupling an additional requirement.
+field-to-cell coupling an additional requirement. Our mesoscale model represents
+access, detection, and amplification as stages in series, each with its own test.
+Carrier-frequency sweeps of membrane polarization test access; independent variation
+of the two local carrier amplitudes tests detection; beat-frequency sweeps across
+operating states test amplification. Equal-power unmodulated-carrier controls
+separate the steady operating-point shift from the beat-locked response.
 
 \begin{figure}[t!]
 \centering

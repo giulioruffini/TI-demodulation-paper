@@ -10,7 +10,7 @@ Archived at Zenodo: **[doi:10.5281/zenodo.21009618](https://doi.org/10.5281/zeno
 Licensed **CC-BY-4.0** (see [`LICENSE`](LICENSE)); machine-readable citation in
 [`CITATION.cff`](CITATION.cff).
 
-The current working edition is the **JNE article, v0.15.0-draft11**:
+The current working edition is the **JNE article, v0.15.0-draft12**:
 [TN0484_jne.pdf](TN0484_jne.pdf). Run `./build.sh` to update it. The TN and
 supplement are generated from the same manuscript for an authorized Calliope cut;
 they are not separate working editions. Older versioned PDFs are historical snapshots.
@@ -26,6 +26,14 @@ October 5 placement instruction.
 
 As checked on October 2, [Calliope WP0185](https://calliope.bcom.one/papers/WP0185)
 still lists v0.12.0 (July 21). Release and circulation remain held.
+
+v0.15.0-draft12 installs Giulio's approved abstract framing the mesoscale model
+as access, detection, and amplification in series, each with its own test.
+The Introduction's closing paragraph and storyline use the same framing.
+The DC spatial claim states its homogeneous-compartment and uniform-response
+assumptions; independent control of gain is tied to the Jansen--Rit sweep with
+a fixed field-free operating point. Theory, Results, figures, and numerical data
+are unchanged. See the [revision record](docs/revision_2026-10-06_v0150draft12_abstract.md).
 
 v0.15.0-draft11 integrates the text and numerical findings from Klaus's Landau
 review of `0c394df`. It corrects PEIX, citation scope, and access geometry, then
@@ -159,7 +167,7 @@ with a [redline against v0.14.2](docs/redline_v0142_to_v0143.pdf).
 [planning/tn0484_storyline.tex](planning/tn0484_storyline.tex) (section-by-section argument
 map), compiled to [build/storyline/tn0484_storyline.pdf](build/storyline/tn0484_storyline.pdf)
 with `~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex`.
-Its source maps v0.15.0-draft10 and records the completed placement decisions.
+Its source maps v0.15.0-draft12 and records the completed placement decisions.
 The
 [general practice](../../giulio-personal-handbook/dos-and-donts.md#abstract-and-storyline-planning)
 is maintained in the personal handbook.

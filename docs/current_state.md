@@ -1,5 +1,19 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v0.15.0-draft12 — Access, detection, and amplification in series (2026-10-06)
+
+Giulio's approved abstract now identifies the paper as a mesoscale model with
+three stages in series and a test for each stage. The Introduction's closing
+paragraph and storyline follow the same framing. The abstract's DC claim is
+scoped to a homogeneous tissue compartment with uniform access and detection;
+independent adjustment of gain is scoped to the Jansen--Rit column at a fixed
+field-free operating point. The approved wording is otherwise unchanged.
+Theory onward is byte-identical to draft11: the membrane-once point, coupling
+sweeps, and near-Hopf response-ratio detail remain. Titles, numerical code,
+caches, figures, and bibliography are unchanged. See
+`revision_2026-10-06_v0150draft12_abstract.md` for the checks and build record.
+All release holds remain.
+
 ## v0.15.0-draft11 — Landau text and numerical corrections (2026-10-05)
 
 The text pass (`dc96c25`) and Klaus's numerical follow-ups (`139dd74`, `9190b9c`,

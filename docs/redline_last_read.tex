@@ -1,7 +1,7 @@
 \documentclass[11pt,a4paper]{article}
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-q8namel6/old.tex   Mon Oct  5 20:11:29 2026
-%DIF ADD /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-q8namel6/new.tex   Mon Oct  5 20:11:29 2026
+%DIF DEL /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-cez7ydih/old.tex   Tue Oct  6 13:46:56 2026
+%DIF ADD /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-cez7ydih/new.tex   Tue Oct  6 13:46:56 2026
 \usepackage[margin=2.3cm]{geometry}
 \usepackage{lmodern}        % classic Computer Modern look, vectorized (T1)
 \usepackage[T1]{fontenc}
@@ -92,12 +92,16 @@
 %DIF 89c89
 %DIF < \newcommand{\paperver}{0.15.0-draft9}
 %DIF -------
-\newcommand{\paperver}{0.15.0-draft11} %DIF >
+\newcommand{\paperver}{0.15.0-draft12} %DIF >
 %DIF -------
 \hypersetup{
   pdftitle={The cortical column as a tuned receiver: a network mechanism for temporal-interference stimulation},
   pdfauthor={Giulio Ruffini, Borja Mercadal, Alex Just, Raul de Palma Aristides, Francesca Castaldo, Nir Grossman, Santiago Canals, Claudio Mirasso},
-  pdfsubject={TN0484 / WP0185, version \paperver, October 5, 2026}
+%DIF 93c93
+%DIF <   pdfsubject={TN0484 / WP0185, version \paperver, October 5, 2026}
+%DIF -------
+  pdfsubject={TN0484 / WP0185, version \paperver, October 6, 2026} %DIF >
+%DIF -------
 }
 %DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
 %DIF CFONT PREAMBLE %DIF PREAMBLE
@@ -164,8 +168,9 @@ $^{4}$Instituto de Neurociencias (UMH-CSIC), Sant Joan d'Alacant, Spain\\
 $^{5}$Department of Brain Sciences and UK Dementia Research Institute,\\
 Imperial College London, London, United Kingdom\\[6pt]
 E-mail: \texttt{giulio.ruffini@neuroelectrics.com}\\[4pt]
-Working draft v\paperver\quad 2026-10-05
-\end{minipage}\\[8pt]
+Working draft v\paperver\quad \DIFdelbegin \DIFdel{2026-10-05
+}\DIFdelend \DIFaddbegin \DIFadd{2026-10-06
+}\DIFaddend \end{minipage}\\[8pt]
 \begin{minipage}{0.86\textwidth}\centering\footnotesize\color{negray}
 \textbf{ORCID iDs:}\ %
 G.~Ruffini \href{https://orcid.org/0000-0003-3084-0177}{0000-0003-3084-0177};\ %
@@ -191,7 +196,7 @@ a network mechanism for temporal-interference stimulation}\\[10pt]
 & Santiago Canals, and Claudio Mirasso \\
 \textbf{Affiliations:} & Neuroelectrics\,/\,BCOM\,/\,IFISC (UIB-CSIC)\,/\,IN (UMH-CSIC)\\
 & Imperial College London (Brain Sciences and UK Dementia Research Institute) \\
-\textbf{Date:} & 2026-10-05 \qquad \textbf{Version:} \paperver \\
+\textbf{Date:} & \DIFdelbegin \DIFdel{2026-10-05 }\DIFdelend \DIFaddbegin \DIFadd{2026-10-06 }\DIFaddend \qquad \textbf{Version:} \paperver \\
 \textbf{DOI:} & \href{https://doi.org/10.5281/zenodo.21009618}{10.5281/zenodo.21009618} \\
 \end{tabular}\\[4pt]
 {\color{neblue}\rule{\textwidth}{1pt}}
@@ -216,62 +221,102 @@ S1, S2, \dots
 
 \noindent
 \ifjne
-\textbf{Objective.} Temporal-interference (TI) stimulation requires field-to-membrane
-access, nonlinear generation of a difference-frequency component absent from the
-field, and amplification of that component. We connect these stages for weak
-perturbations of ongoing activity.\
-\textbf{Approach.} Single-neuron TI models already demonstrate axonal ion-channel
-rectification. We represent candidate fast access through axonal compartments,
-including nodes and the axon initial segment, by a short effective membrane time.
-Periaxonal circuitry motivates separate axonal and somatic voltage responses.
-We analyze mixing and recurrent gain in a Jansen--Rit
-column, an exact quadratic integrate-and-fire mean field, and its spiking network.\
-\textbf{Main results.} For a smooth response with a nonzero second-order term,
-cellular contributions combine into a beat proportional to the product of the
-effective carrier amplitudes. A static rate curve mixes through its curvature;
-the exact mean field recovers this description when membrane relaxation is fast
-relative to the input, leaving dynamic synapses. Otherwise mixing depends on
-frequency. Membrane attenuation enters once, through access. Near a Hopf bifurcation,
+\textbf{Objective.} Temporal-interference (TI) stimulation \DIFdelbegin \DIFdel{requires field-to-membrane
+access, nonlinear generation of a difference-frequency component }\DIFdelend \DIFaddbegin \DIFadd{can act on neural
+populations only if three stages work in series: the kilohertz field must reach a
+nonlinear membrane (access), the membrane must generate the difference frequency
+}\DIFaddend absent from the field \DIFdelbegin \DIFdel{, and amplification of that component}\DIFdelend \DIFaddbegin \DIFadd{(detection), and the circuit must amplify that weak component
+(amplification). We build a mesoscale model that represents all three stages and
+derive what each contributes}\DIFaddend .\DIFdelbegin \DIFdel{We connect these stages for weak
+perturbations of ongoing activity.}\DIFdelend \
+\textbf{Approach.} \DIFdelbegin \DIFdel{Single-neuron TI models already demonstrate axonal ion-channel
+rectification
+. We represent candidate fast access through axonal compartments,
+including }\DIFdelend \DIFaddbegin \DIFadd{Following single-neuron TI models that locate rectification
+in }\DIFaddend nodes and the axon initial segment, \DIFaddbegin \DIFadd{we represent access }\DIFaddend by a short effective
+membrane time. \DIFdelbegin \DIFdel{Periaxonal circuitry motivates separate axonal and somatic voltage responses.
+We analyze mixing and recurrent gain }\DIFdelend \DIFaddbegin \DIFadd{We analyze detection and amplification }\DIFaddend in a Jansen--Rit column, an
+exact \DIFdelbegin \DIFdel{quadratic integrate-and-fire mean field , and its }\DIFdelend \DIFaddbegin \DIFadd{mean field of quadratic integrate-and-fire neurons, and the corresponding
+}\DIFaddend spiking network.\
+\textbf{Main results.} For \DIFdelbegin \DIFdel{a smooth response with a nonzero second-order term,
+cellular contributions combine into a beat }\DIFdelend \DIFaddbegin \DIFadd{weak fields the detector is quadratic. The beat is
+}\DIFaddend proportional to the product of the \DIFdelbegin \DIFdel{effective carrier amplitudes }\DIFdelend \DIFaddbegin \DIFadd{two local carrier amplitudes and is accompanied
+by a steady operating-point shift proportional to their summed squares}\DIFaddend . A static
+rate curve \DIFdelbegin \DIFdel{mixes through its curvature;
+}\DIFdelend \DIFaddbegin \DIFadd{and }\DIFaddend the exact mean field \DIFdelbegin \DIFdel{recovers this description when membrane relaxation is fast
+}\DIFdelend \DIFaddbegin \DIFadd{give the same product law, and the mean field
+adds frequency dependence when the membrane is slow }\DIFaddend relative to the input\DIFdelbegin \DIFdel{, leaving dynamic synapses. Otherwise mixing depends on
+frequency. Membrane attenuation enters once, through access. }\DIFdelend \DIFaddbegin \DIFadd{. }\DIFaddend Near a
+Hopf bifurcation \DIFdelbegin \DIFdel{,
 the network amplifies the generated beat as $1/\gamma$ within linear response,
 where $\gamma$ is modal damping. Coupling sweeps separate this gain from leading-order
-beat generation. Rate modulation \DIFdelbegin \DIFdel{grows faster than }\DIFdelend \DIFaddbegin \DIFadd{initially outgrows }\DIFaddend the mean-rate change\DIFdelbegin \DIFdel{near resonance}\DIFdelend \DIFaddbegin \DIFadd{; closer to
-the Hopf, rectification of the amplified oscillation accelerates the mean shift}\DIFaddend .
+beat generation. Rate modulation grows faster than the mean-rate change near resonance.
 Spiking simulations distinguish beat modulation below the oscillatory threshold from
-gamma induced when rectification crosses it. An equal-power mean-field carrier
-control separates induction from the beat response.\
-\textbf{Significance.} Fast access, cellular mixing, and slow circuit resonance form
+gamma induced when rectification crosses it. An equal-power mean-field carrier control separates induction from the beat response}\DIFdelend \DIFaddbegin \DIFadd{the circuit amplifies the beat as the inverse of the modal damping,
+and synaptic coupling sets this gain independently of detection in the Jansen--Rit
+column with its field-free operating point held fixed. The amplified response
+appears mainly in envelope-locked timing, with a much smaller change in mean rate.
+At stronger fields the steady shift alone can drive a gamma circuit across its
+oscillation threshold, and an unmodulated carrier of equal power does the same}\DIFaddend .\
+\textbf{Significance.} \DIFdelbegin \DIFdel{Fast access, cellular mixing, and slow circuit resonance form
 a consistent candidate mechanism; its field-to-voltage transfer and response at
 human field strengths require calibration. The product law makes envelope-only
-dosimetry conditional on transduction. Within linear response, TI and direct
-low-frequency stimulation share the amplifier when coupling, readout, and state
-are matched, so resonance alone gives TI no efficiency advantage.
+dosimetry conditional on transduction. Within linear response, TI and }\DIFdelend \DIFaddbegin \DIFadd{The model expresses TI efficacy as the product of three
+separately measurable factors. In the weak-field regime, dose follows the product
+of carrier amplitudes rather than the envelope minimum, the steady shift cannot be
+focused by the montage within a homogeneous tissue compartment with uniform access
+and detection, and TI shares its circuit amplifier with }\DIFaddend direct low-frequency
+stimulation\DIFdelbegin \DIFdel{share the amplifier when coupling, readout, and state
+are matched,
+so resonance alone gives TI no efficiency advantage}\DIFdelend \DIFaddbegin \DIFadd{. Carrier sweeps, independent-amplitude tests, beat sweeps across states,
+and equal-power controls each test one stage}\DIFaddend .
 \else
-Temporal-interference (TI) stimulation requires field-to-membrane
-access, nonlinear generation of a difference-frequency component absent from the
-field, and amplification of that component. We connect these stages for weak
-perturbations of ongoing activity.\ Single-neuron TI models already demonstrate axonal ion-channel
-rectification. We represent candidate fast access through axonal compartments,
-including nodes and the axon initial segment, by a short effective membrane time.
-Periaxonal circuitry motivates separate axonal and somatic voltage responses.
-We analyze mixing and recurrent gain in a Jansen--Rit
-column, an exact quadratic integrate-and-fire mean field, and its spiking network.\ For a smooth response with a nonzero second-order term,
-cellular contributions combine into a beat proportional to the product of the
-effective carrier amplitudes. A static rate curve mixes through its curvature;
-the exact mean field recovers this description when membrane relaxation is fast
-relative to the input, leaving dynamic synapses. Otherwise mixing depends on
-frequency. Membrane attenuation enters once, through access. Near a Hopf bifurcation,
+Temporal-interference (TI) stimulation \DIFdelbegin \DIFdel{requires field-to-membrane
+access, nonlinear generation of a difference-frequency component }\DIFdelend \DIFaddbegin \DIFadd{can act on neural
+populations only if three stages work in series: the kilohertz field must reach a
+nonlinear membrane (access), the membrane must generate the difference frequency
+}\DIFaddend absent from the field \DIFdelbegin \DIFdel{, and amplification of that component}\DIFdelend \DIFaddbegin \DIFadd{(detection), and the circuit must amplify that weak component
+(amplification). We build a mesoscale model that represents all three stages and
+derive what each contributes}\DIFaddend .\DIFdelbegin \DIFdel{We connect these stages for weak
+perturbations of ongoing activity.}\DIFdelend \ \DIFdelbegin \DIFdel{Single-neuron TI models already demonstrate axonal ion-channel
+rectification
+. We represent candidate fast access through axonal compartments,
+including }\DIFdelend \DIFaddbegin \DIFadd{Following single-neuron TI models that locate rectification
+in }\DIFaddend nodes and the axon initial segment, \DIFaddbegin \DIFadd{we represent access }\DIFaddend by a short effective
+membrane time. \DIFdelbegin \DIFdel{Periaxonal circuitry motivates separate axonal and somatic voltage responses.
+We analyze mixing and recurrent gain }\DIFdelend \DIFaddbegin \DIFadd{We analyze detection and amplification }\DIFaddend in a Jansen--Rit column, an
+exact \DIFdelbegin \DIFdel{quadratic integrate-and-fire mean field , and its }\DIFdelend \DIFaddbegin \DIFadd{mean field of quadratic integrate-and-fire neurons, and the corresponding
+}\DIFaddend spiking network.\ For \DIFdelbegin \DIFdel{a smooth response with a nonzero second-order term,
+cellular contributions combine into a beat }\DIFdelend \DIFaddbegin \DIFadd{weak fields the detector is quadratic. The beat is
+}\DIFaddend proportional to the product of the \DIFdelbegin \DIFdel{effective carrier amplitudes }\DIFdelend \DIFaddbegin \DIFadd{two local carrier amplitudes and is accompanied
+by a steady operating-point shift proportional to their summed squares}\DIFaddend . A static
+rate curve \DIFdelbegin \DIFdel{mixes through its curvature;
+}\DIFdelend \DIFaddbegin \DIFadd{and }\DIFaddend the exact mean field \DIFdelbegin \DIFdel{recovers this description when membrane relaxation is fast
+}\DIFdelend \DIFaddbegin \DIFadd{give the same product law, and the mean field
+adds frequency dependence when the membrane is slow }\DIFaddend relative to the input\DIFdelbegin \DIFdel{, leaving dynamic synapses. Otherwise mixing depends on
+frequency. Membrane attenuation enters once, through access. }\DIFdelend \DIFaddbegin \DIFadd{. }\DIFaddend Near a
+Hopf bifurcation \DIFdelbegin \DIFdel{,
 the network amplifies the generated beat as $1/\gamma$ within linear response,
 where $\gamma$ is modal damping. Coupling sweeps separate this gain from leading-order
-beat generation. Rate modulation \DIFdelbegin \DIFdel{grows faster than }\DIFdelend \DIFaddbegin \DIFadd{initially outgrows }\DIFaddend the mean-rate change\DIFdelbegin \DIFdel{near resonance}\DIFdelend \DIFaddbegin \DIFadd{; closer to
-the Hopf, rectification of the amplified oscillation accelerates the mean shift}\DIFaddend .
+beat generation. Rate modulation grows faster than the mean-rate change near resonance.
 Spiking simulations distinguish beat modulation below the oscillatory threshold from
-gamma induced when rectification crosses it. An equal-power mean-field carrier
-control separates induction from the beat response.\ Fast access, cellular mixing, and slow circuit resonance form
+gamma induced when rectification crosses it. An equal-power mean-field carrier control separates induction from the beat response}\DIFdelend \DIFaddbegin \DIFadd{the circuit amplifies the beat as the inverse of the modal damping,
+and synaptic coupling sets this gain independently of detection in the Jansen--Rit
+column with its field-free operating point held fixed. The amplified response
+appears mainly in envelope-locked timing, with a much smaller change in mean rate.
+At stronger fields the steady shift alone can drive a gamma circuit across its
+oscillation threshold, and an unmodulated carrier of equal power does the same}\DIFaddend .\ \DIFdelbegin \DIFdel{Fast access, cellular mixing, and slow circuit resonance form
 a consistent candidate mechanism; its field-to-voltage transfer and response at
 human field strengths require calibration. The product law makes envelope-only
-dosimetry conditional on transduction. Within linear response, TI and direct
-low-frequency stimulation share the amplifier when coupling, readout, and state
-are matched, so resonance alone gives TI no efficiency advantage.
+dosimetry conditional on transduction. Within linear response, TI and }\DIFdelend \DIFaddbegin \DIFadd{The model expresses TI efficacy as the product of three
+separately measurable factors. In the weak-field regime, dose follows the product
+of carrier amplitudes rather than the envelope minimum, the steady shift cannot be
+focused by the montage within a homogeneous tissue compartment with uniform access
+and detection, and TI shares its circuit amplifier with }\DIFaddend direct low-frequency
+stimulation\DIFdelbegin \DIFdel{share the amplifier when coupling, readout, and state
+are matched,
+so resonance alone gives TI no efficiency advantage}\DIFdelend \DIFaddbegin \DIFadd{. Carrier sweeps, independent-amplitude tests, beat sweeps across states,
+and equal-power controls each test one stage}\DIFaddend .
 \fi
 
 \smallskip
@@ -389,7 +434,13 @@ and a laminar model extends the calculation to two resonant bands at low carrier
 Related neural-mass accounts use the same nonlinear mixing for endogenous
 cross-frequency coupling and nested amplitude modulation
 \cite{ruffini2025cfc,ruffini2025ham}. Here the input is external, making the
-field-to-cell coupling an additional requirement.
+field-to-cell coupling an additional requirement. \DIFaddbegin \DIFadd{Our mesoscale model represents
+access, detection, and amplification as stages in series, each with its own test.
+Carrier-frequency sweeps of membrane polarization test access; independent variation
+of the two local carrier amplitudes tests detection; beat-frequency sweeps across
+operating states test amplification. Equal-power unmodulated-carrier controls
+separate the steady operating-point shift from the beat-locked response.
+}\DIFaddend
 
 \begin{figure}[t!]
 \centering

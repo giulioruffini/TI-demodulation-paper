@@ -1,14 +1,14 @@
 {
-  "version": "0.15.0-draft11",
+  "version": "0.15.0-draft12",
   "review_baseline": "0c394df",
   "redline_baseline": "8016065",
-  "status": "Landau correction cycle and published PEIX verification closed; author and length review pending",
+  "status": "Approved three-stage abstract integrated; prior Landau numerical and published PEIX checks retained. Author and length review pending.",
   "outputs": {
     "jne": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.log",
       "pages": 36,
-      "sha256": "babfc842dea3379390f954398cf330ab298c76cc5d7b08326c8be132ba170aeb",
+      "sha256": "303207cf64d774db2de1999685e937e4e388acd71e46c8e92e3c24867cfa4dfe",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -17,10 +17,10 @@
       }
     },
     "tn_validation": {
-      "path": "/tmp/tn0484_draft11_numerics/tn/tn_validation.pdf",
-      "log": "/tmp/tn0484_draft11_numerics/tn/tn_validation.log",
+      "path": "/tmp/tn0484_draft12_abstract/tn/tn_validation.pdf",
+      "log": "/tmp/tn0484_draft12_abstract/tn/tn_validation.log",
       "pages": 54,
-      "sha256": "7b1b00471fa763c009a56ce99a42e678a35a7a6c3cb581dfcd19c99a3835eb5a",
+      "sha256": "82165703d38c81cd7d25071c4fa30f111aa8d98d5afd34c27bf93ca0ceae2667",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -29,10 +29,10 @@
       }
     },
     "supp_validation": {
-      "path": "/tmp/tn0484_draft11_numerics/supp/supp_validation.pdf",
-      "log": "/tmp/tn0484_draft11_numerics/supp/supp_validation.log",
+      "path": "/tmp/tn0484_draft12_abstract/supp/supp_validation.pdf",
+      "log": "/tmp/tn0484_draft12_abstract/supp/supp_validation.log",
       "pages": 20,
-      "sha256": "5c52f55794e2785c1edc2adedb422f7c868c2bc587fe9fc017b76b6335d6db68",
+      "sha256": "09cd3f7dcd9485e0055273e4b905b923ce3105090e3e44ee2040e58fd6f99761",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -44,7 +44,7 @@
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.log",
       "pages": 10,
-      "sha256": "8d0a1b0595f1ad6712c3beae4fa0581b52df1324ad65c9841eb9a93b8922bf69",
+      "sha256": "05a970f2f645749dd4599332144d2c1181d0f22ee12f428fc9906cd97086395c",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -55,8 +55,8 @@
     "redline": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.log",
-      "pages": 38,
-      "sha256": "441b0b73eb0a1de49fb89aaa9d772e57e31f20ad923573d6eff0cbafa00de787",
+      "pages": 39,
+      "sha256": "20eb7022144cef6bd4abec150300a691f93a5dec67e992ec4d17f5e3585857c6",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -102,29 +102,26 @@
   "visual_inspection": {
     "jne_pages": [
       1,
-      16,
-      23,
-      24,
-      28
+      4
     ],
-    "supp_pages": [
-      18
+    "tn_validation_pages": [
+      1
+    ],
+    "storyline_pages": [
+      1,
+      2
     ],
     "redline_pages": [
-      24,
-      25
+      1,
+      2
     ],
-    "figures": [
-      "fig_nmm2_jcurve",
-      "fig_timing_not_rate"
-    ],
-    "findings": "No visible clipping or text collisions. Figcheck flags only off-axis ticks. S10/S11 captions match the plotted inputs and conventions."
+    "findings": "No clipping or text collisions. All three abstracts fit on their first page; the storyline introductory record stays on that page after a small type-size and leading adjustment."
   },
   "source_sha256": {
-    "TN0484_envelope_demodulation.tex": "e2dddaa5ceccbcf3e50c84ec3da2bc11c06c3034103ee7432841bc6733405579",
+    "TN0484_envelope_demodulation.tex": "1cb2310330e6a6ecd7811f7d1fdd7ecf75f69267cc06f612b69e2bae73083fe8",
     "references.bib": "8ee2a664fc78b990a6811d1bb9fef0d1c4eb68d4f5f2ee52f167604b94f96907",
-    "planning/tn0484_abstract.tex": "de3f0afb61932b907f3fe2991fc5d8ff1f292623f48a29c2e738cd836420c5df",
-    "planning/tn0484_storyline.tex": "2935152c522f938b43708a6c33f5ee45543bed881d17b3457b3990152e54c902"
+    "planning/tn0484_abstract.tex": "bf3c3adeebf30abffe1f294a32489fb7f31e123413f6e6f5ff52bdc103afd1c1",
+    "planning/tn0484_storyline.tex": "74a215999edd1e033e2f522a451baba866ffc4515026707dc492a3574e2756ab"
   },
   "producer_commits": [
     "139dd74",
@@ -208,5 +205,23 @@
       "units_and_rounding_reported": "The S10 rate axes correctly convert ms^-1 to Hz by multiplying by 1000. Full-sweep exponent 0.7055 is printed as 0.71; amplitude-check bound 1.104 as 11%; the stated 0.1% sideband bound covers the independent check below 0.05%.",
       "remaining_discrepancies_reported": []
     }
+  },
+  "current_revision": {
+    "date": "2026-10-06",
+    "baseline_commit": "01f4cbb",
+    "authorization": "Giulio-approved abstract relayed by klaus-484-TI-helper at 13:41 CEST",
+    "approved_abstract_verbatim_except_scope_clauses": true,
+    "scope_clauses": [
+      "in the Jansen--Rit column with its field-free operating point held fixed",
+      "within a homogeneous tissue compartment with uniform access and detection"
+    ],
+    "body_from_theory_unchanged": true,
+    "titles_headings_labels_citations_and_captions_unchanged": true,
+    "code_caches_figures_and_bibliography_unchanged": true,
+    "rendered_abstract_identical_in_three_formats": true,
+    "word_counts": "docs/word_counts_draft11_to_draft12.json",
+    "abstract_words": 321,
+    "prose_checker_findings": 0,
+    "new_numerical_tests": "Not required: only the abstract, Introduction closing paragraph, storyline framing, and version metadata changed."
   }
 }

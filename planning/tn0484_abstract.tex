@@ -2,35 +2,35 @@
 % Shared by the JNE article, TN, and storyline; edit these four macros.
 % JNE adds run-in headings; TN and storyline print the same text without them.
 
-\newcommand{\absObjective}{Temporal-interference (TI) stimulation requires field-to-membrane
-access, nonlinear generation of a difference-frequency component absent from the
-field, and amplification of that component. We connect these stages for weak
-perturbations of ongoing activity.}
+\newcommand{\absObjective}{Temporal-interference (TI) stimulation can act on neural
+populations only if three stages work in series: the kilohertz field must reach a
+nonlinear membrane (access), the membrane must generate the difference frequency
+absent from the field (detection), and the circuit must amplify that weak component
+(amplification). We build a mesoscale model that represents all three stages and
+derive what each contributes.}
 
-\newcommand{\absApproach}{Single-neuron TI models already demonstrate axonal ion-channel
-rectification. We represent candidate fast access through axonal compartments,
-including nodes and the axon initial segment, by a short effective membrane time.
-Periaxonal circuitry motivates separate axonal and somatic voltage responses.
-We analyze mixing and recurrent gain in a Jansen--Rit
-column, an exact quadratic integrate-and-fire mean field, and its spiking network.}
+\newcommand{\absApproach}{Following single-neuron TI models that locate rectification
+in nodes and the axon initial segment, we represent access by a short effective
+membrane time. We analyze detection and amplification in a Jansen--Rit column, an
+exact mean field of quadratic integrate-and-fire neurons, and the corresponding
+spiking network.}
 
-\newcommand{\absResults}{For a smooth response with a nonzero second-order term,
-cellular contributions combine into a beat proportional to the product of the
-effective carrier amplitudes. A static rate curve mixes through its curvature;
-the exact mean field recovers this description when membrane relaxation is fast
-relative to the input, leaving dynamic synapses. Otherwise mixing depends on
-frequency. Membrane attenuation enters once, through access. Near a Hopf bifurcation,
-the network amplifies the generated beat as $1/\gamma$ within linear response,
-where $\gamma$ is modal damping. Coupling sweeps separate this gain from leading-order
-beat generation. Rate modulation initially outgrows the mean-rate change; closer to
-the Hopf, rectification of the amplified oscillation accelerates the mean shift.
-Spiking simulations distinguish beat modulation below the oscillatory threshold from
-gamma induced when rectification crosses it. An equal-power mean-field carrier
-control separates induction from the beat response.}
+\newcommand{\absResults}{For weak fields the detector is quadratic. The beat is
+proportional to the product of the two local carrier amplitudes and is accompanied
+by a steady operating-point shift proportional to their summed squares. A static
+rate curve and the exact mean field give the same product law, and the mean field
+adds frequency dependence when the membrane is slow relative to the input. Near a
+Hopf bifurcation the circuit amplifies the beat as the inverse of the modal damping,
+and synaptic coupling sets this gain independently of detection in the Jansen--Rit
+column with its field-free operating point held fixed. The amplified response
+appears mainly in envelope-locked timing, with a much smaller change in mean rate.
+At stronger fields the steady shift alone can drive a gamma circuit across its
+oscillation threshold, and an unmodulated carrier of equal power does the same.}
 
-\newcommand{\absSignificance}{Fast access, cellular mixing, and slow circuit resonance form
-a consistent candidate mechanism; its field-to-voltage transfer and response at
-human field strengths require calibration. The product law makes envelope-only
-dosimetry conditional on transduction. Within linear response, TI and direct
-low-frequency stimulation share the amplifier when coupling, readout, and state
-are matched, so resonance alone gives TI no efficiency advantage.}
+\newcommand{\absSignificance}{The model expresses TI efficacy as the product of three
+separately measurable factors. In the weak-field regime, dose follows the product
+of carrier amplitudes rather than the envelope minimum, the steady shift cannot be
+focused by the montage within a homogeneous tissue compartment with uniform access
+and detection, and TI shares its circuit amplifier with direct low-frequency
+stimulation. Carrier sweeps, independent-amplitude tests, beat sweeps across states,
+and equal-power controls each test one stage.}

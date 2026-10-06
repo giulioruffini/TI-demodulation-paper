@@ -1,6 +1,6 @@
 % TN0484 / WP0185: abstract and storyline. Build from the project root:
 %   ~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex
-% Map mode: rows follow the v0.15.0-draft11 manuscript order and numbering (TN build; the JNE build
+% Map mode: rows follow the v0.15.0-draft12 manuscript order and numbering (TN build; the JNE build
 % moves the appendices and figures S1--S12 to the supplement). Prepared 2026-10-03.
 \documentclass[11pt,a4paper,landscape]{article}
 \usepackage[T1]{fontenc}
@@ -17,8 +17,8 @@
 % ---- paper identity ---------------------------------------------------------
 \newcommand{\wpnumber}{TN0484 / WP0185}
 \newcommand{\papertitle}{The cortical column as a tuned receiver}
-\newcommand{\storylinedate}{5 October 2026}
-\newcommand{\baselinelabel}{v0.15.0-draft11}
+\newcommand{\storylinedate}{6 October 2026}
+\newcommand{\baselinelabel}{v0.15.0-draft12}
 \newcommand{\abstractfile}{tn0484_abstract.tex}
 \newcommand{\storylineauthors}{Giulio Ruffini}
 % -----------------------------------------------------------------------------
@@ -64,7 +64,7 @@
 \begin{minipage}{180mm}
 {\large\sffamily\bfseries\color{ink}Abstract\par}
 \vspace{3mm}
-\fontsize{12}{15.4}\selectfont
+\fontsize{11.5}{14.2}\selectfont
 \IfFileExists{\abstractfile}{\input{\abstractfile}}{\input{planning/\abstractfile}}
 \absObjective\ \absApproach\ \absResults\ \absSignificance
 \end{minipage}
@@ -77,7 +77,9 @@ decisions relayed on 5 October: LaNMM methods join their results in Appendix E;
 transduction laws remain in Theory, with their measurement procedure in Methods;
 the equal-RMS carrier control moves from S13 to Figure 11. All scientific content
 is retained. Draft11 corrects notation, citation scope, and the access argument,
-and integrates the critical-mode and genuine two-tone checks. The closing record
+and integrates the critical-mode and genuine two-tone checks. Draft12 presents the
+mesoscale model as access, detection, and amplification in series, each with its own
+test, in the shared abstract and the Introduction's closing paragraph. The closing record
 gives the reasons for the placements.}
 
 \newpage
@@ -85,7 +87,11 @@ gives the reasons for the placements.}
 A two-tone field carries no power at its beat frequency. Access converts the applied field
 into local membrane polarization; nonlinear detection generates the beat; the network selects
 and amplifies that generated input. The Introduction develops these stages in that order,
-with their mechanisms and evidence. Axonal TI rectification is established in prior models;
+with their mechanisms and evidence. The mesoscale model represents the stages in series,
+with carrier-frequency sweeps of membrane polarization testing access, independent-amplitude
+sweeps testing detection, and beat-frequency sweeps across operating states testing
+amplification. Equal-power carrier controls separate the steady shift from beat-locked
+activity. Axonal TI rectification is established in prior models;
 short effective membrane times were already tested in a TI gamma-network model
 (Esmaeilpour et al., 2021). Our contribution is the separation of mixing from
 recurrent gain, the exact QIF mean field, the product law, and the shared TI/tACS amplifier.
@@ -111,7 +117,8 @@ its static transfer is an adiabatic limit, not a consequence of small amplitude 
   Cellular contributions enter an effective quadratic response, and cellular tuning remains
   distinct from the recurrent amplifier. Retain the candidate positively and name its calibration gap.
 & States the physical sequence: field-to-membrane access, beat generation, then amplification.
-  Places each reference beside the stage it supports. Announces the ladder (JR column, QIF mean field, spiking
+  Places each reference beside the stage it supports and closes with a separate test for each.
+  Announces the ladder (JR column, QIF mean field, spiking
   network, laminar column) once. The transfer curve must be defined before its curvature
   can mix, so \S2.1 follows.
 & Fig.~1 (receiver concept). Cohen 2020; Kole 2008 (AIS); Mirzakhalili 2020; Luff 2024 (mixer); Vieira
