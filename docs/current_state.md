@@ -1,5 +1,14 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## v0.15.0-draft13 — The shared abstract is 297 words (2026-10-06)
+
+The four macros now contain Klaus's supplied 297-word abstract, within the
+300-word budget. The scope conditions on DC focality and independent control
+of gain remain. The manuscript body and storyline map are unchanged from
+`cc0bab9`; only the shared abstract and version metadata changed. All formats
+were rebuilt, with the reading baseline still fixed at `8016065`. See
+`revision_2026-10-06_v0150draft13_abstract.md`. Release holds remain.
+
 ## v0.15.0-draft12 — Access, detection, and amplification in series (2026-10-06)
 
 Giulio's approved abstract now identifies the paper as a mesoscale model with

@@ -1,14 +1,14 @@
 {
-  "version": "0.15.0-draft12",
+  "version": "0.15.0-draft13",
   "review_baseline": "0c394df",
   "redline_baseline": "8016065",
-  "status": "Approved three-stage abstract integrated; prior Landau numerical and published PEIX checks retained. Author and length review pending.",
+  "status": "Shared abstract reduced to 297 words; prior numerical fidelity and published PEIX checks retained. Author and article-length review pending.",
   "outputs": {
     "jne": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.log",
       "pages": 36,
-      "sha256": "303207cf64d774db2de1999685e937e4e388acd71e46c8e92e3c24867cfa4dfe",
+      "sha256": "c9b20f959dab64ab784d18b5dd6a585095da39ff9fb16e2743867e930720181d",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -17,10 +17,10 @@
       }
     },
     "tn_validation": {
-      "path": "/tmp/tn0484_draft12_abstract/tn/tn_validation.pdf",
-      "log": "/tmp/tn0484_draft12_abstract/tn/tn_validation.log",
+      "path": "/tmp/tn0484_draft13_abstract/tn/tn_validation.pdf",
+      "log": "/tmp/tn0484_draft13_abstract/tn/tn_validation.log",
       "pages": 54,
-      "sha256": "82165703d38c81cd7d25071c4fa30f111aa8d98d5afd34c27bf93ca0ceae2667",
+      "sha256": "63b587d8b37c2397d5f231f14ac248d072fb8dd15de6d2a8c75c3ab75aaaddcf",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -29,10 +29,10 @@
       }
     },
     "supp_validation": {
-      "path": "/tmp/tn0484_draft12_abstract/supp/supp_validation.pdf",
-      "log": "/tmp/tn0484_draft12_abstract/supp/supp_validation.log",
+      "path": "/tmp/tn0484_draft13_abstract/supp/supp_validation.pdf",
+      "log": "/tmp/tn0484_draft13_abstract/supp/supp_validation.log",
       "pages": 20,
-      "sha256": "09cd3f7dcd9485e0055273e4b905b923ce3105090e3e44ee2040e58fd6f99761",
+      "sha256": "177887c34dc300b1355382aa91227b2efe8a2125aa0a47d439b318e5debc44bc",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -44,7 +44,7 @@
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.log",
       "pages": 10,
-      "sha256": "05a970f2f645749dd4599332144d2c1181d0f22ee12f428fc9906cd97086395c",
+      "sha256": "32b26f94fd93f0155d1553c8168def9143d75479aa16690ec7005ed47397e093",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -56,7 +56,7 @@
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.log",
       "pages": 39,
-      "sha256": "20eb7022144cef6bd4abec150300a691f93a5dec67e992ec4d17f5e3585857c6",
+      "sha256": "639b2e9aa04bff8edff8b61224bfb5772243a9d39f669033e19d39b6fabacb40",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -101,27 +101,24 @@
   ],
   "visual_inspection": {
     "jne_pages": [
-      1,
-      4
+      1
     ],
     "tn_validation_pages": [
       1
     ],
     "storyline_pages": [
-      1,
-      2
+      1
     ],
     "redline_pages": [
-      1,
       2
     ],
-    "findings": "No clipping or text collisions. All three abstracts fit on their first page; the storyline introductory record stays on that page after a small type-size and leading adjustment."
+    "findings": "The abstract fits on the first page in each format, with no clipping or text collisions."
   },
   "source_sha256": {
-    "TN0484_envelope_demodulation.tex": "1cb2310330e6a6ecd7811f7d1fdd7ecf75f69267cc06f612b69e2bae73083fe8",
+    "TN0484_envelope_demodulation.tex": "4d28b7c4b8f05fb849cf7a463ed5abd588d4a62031bb8c6c8f1224a44b765ae4",
     "references.bib": "8ee2a664fc78b990a6811d1bb9fef0d1c4eb68d4f5f2ee52f167604b94f96907",
-    "planning/tn0484_abstract.tex": "bf3c3adeebf30abffe1f294a32489fb7f31e123413f6e6f5ff52bdc103afd1c1",
-    "planning/tn0484_storyline.tex": "74a215999edd1e033e2f522a451baba866ffc4515026707dc492a3574e2756ab"
+    "planning/tn0484_abstract.tex": "fa6d581b7b8089f1897dde0b32239b9840477401ff300118c9d86142f5170b4f",
+    "planning/tn0484_storyline.tex": "ad6d0421fde9d306b81941063df43c90bf93dea9e2b6fab5e22e46444609a721"
   },
   "producer_commits": [
     "139dd74",
@@ -208,20 +205,16 @@
   },
   "current_revision": {
     "date": "2026-10-06",
-    "baseline_commit": "01f4cbb",
-    "authorization": "Giulio-approved abstract relayed by klaus-484-TI-helper at 13:41 CEST",
-    "approved_abstract_verbatim_except_scope_clauses": true,
-    "scope_clauses": [
-      "in the Jansen--Rit column with its field-free operating point held fixed",
-      "within a homogeneous tissue compartment with uniform access and detection"
-    ],
-    "body_from_theory_unchanged": true,
-    "titles_headings_labels_citations_and_captions_unchanged": true,
-    "code_caches_figures_and_bibliography_unchanged": true,
+    "baseline_commit": "cc0bab9",
+    "authorization": "297-word abstract supplied by klaus-484-TI-helper through Giulio at 13:53 CEST",
+    "supplied_abstract_installed_verbatim": true,
+    "abstract_words": 297,
+    "requested_abstract_limit": 300,
+    "manuscript_source_unchanged_except_version": true,
+    "titles_headings_labels_citations_captions_code_caches_and_figures_unchanged": true,
     "rendered_abstract_identical_in_three_formats": true,
-    "word_counts": "docs/word_counts_draft11_to_draft12.json",
-    "abstract_words": 321,
+    "word_counts": "docs/word_counts_draft12_to_draft13.json",
     "prose_checker_findings": 0,
-    "new_numerical_tests": "Not required: only the abstract, Introduction closing paragraph, storyline framing, and version metadata changed."
+    "new_numerical_tests": "Not required: only the shared abstract and version metadata changed."
   }
 }

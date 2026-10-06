@@ -1,0 +1,21 @@
+{
+  "before": "cc0bab9",
+  "after": "0.15.0-draft13",
+  "method": "TeXcount text + headings + captions, excluding math, bibliography, and front matter; shared abstract recounted, byte-identical body retains verified counts.",
+  "abstract": {
+    "before": 321,
+    "after": 297,
+    "change": -24
+  },
+  "article": {
+    "before": 13766,
+    "after": 13742,
+    "change": -24
+  },
+  "supplement": {
+    "before": 4457,
+    "after": 4457,
+    "change": 0
+  },
+  "requested_abstract_limit": 300
+}
