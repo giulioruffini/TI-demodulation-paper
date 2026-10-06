@@ -1,0 +1,56 @@
+{
+  "integral_checks": [
+    {
+      "a": 1,
+      "b": 1,
+      "envelope_mean": 1.2732395447351625,
+      "quadratic_mean": 1.0,
+      "envelope_excursion": 2,
+      "quadratic_excursion": 2
+    },
+    {
+      "a": 2,
+      "b": 0,
+      "envelope_mean": 2.0,
+      "quadratic_mean": 2.0,
+      "envelope_excursion": 0,
+      "quadratic_excursion": 0
+    },
+    {
+      "a": 10,
+      "b": 0.2,
+      "envelope_mean": 10.0010000250025,
+      "quadratic_mean": 50.02000000000001,
+      "envelope_excursion": 0.4,
+      "quadratic_excursion": 4.0
+    },
+    {
+      "a": 1,
+      "b": -0.7,
+      "envelope_mean": 1.1268286675869728,
+      "quadratic_mean": 0.745,
+      "envelope_excursion": 1.4,
+      "quadratic_excursion": 1.4
+    },
+    {
+      "a": 0.3,
+      "b": 1.4,
+      "envelope_mean": 1.4161180911253632,
+      "quadratic_mean": 1.025,
+      "envelope_excursion": 0.6,
+      "quadratic_excursion": 0.84
+    }
+  ],
+  "center_means": {
+    "envelope": 1.2732395447351628,
+    "quadratic": 1.0
+  },
+  "edge_means": {
+    "envelope": 2.0,
+    "quadratic": 2.0
+  },
+  "off_target_vs_target": {
+    "envelope_modulation": 0.2,
+    "quadratic_modulation": 2.0
+  }
+}
