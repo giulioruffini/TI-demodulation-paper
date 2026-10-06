@@ -86,7 +86,7 @@
 
 \newcommand{\Sig}{\sigma}
 \newcommand{\half}{\tfrac{1}{2}}
-\newcommand{\paperver}{0.15.0-draft14}
+\newcommand{\paperver}{0.15.0-draft15}
 \hypersetup{
   pdftitle={The cortical column as a tuned receiver: a network mechanism for temporal-interference stimulation},
   pdfauthor={Giulio Ruffini, Borja Mercadal, Alex Just, Raul de Palma Aristides, Francesca Castaldo, Nir Grossman, Santiago Canals, Claudio Mirasso},
@@ -745,25 +745,80 @@ with amplitude after onset. A single harmonic ratio cannot distinguish all
 three; amplitude dependence is the primary test.
 
 Beyond harmonics and amplitude scaling, the transduction class fixes the spatial map.
-Define the excursion as
-$\mathcal{M}[y]\equiv\max_t y-\min_t y$ of a periodic quantity $y(t)$. The conventional TI envelope map is
-$\mathcal{M}[\mathcal A]=2\min(\varepsilon_1,\varepsilon_2)$, whereas the square-law detector
-responds to $\mathcal{M}[\half \mathcal A^2]=2\varepsilon_1\varepsilon_2$, so the two are related
-pointwise by
+Write $\mathbf x$ for position and $\varepsilon_j(\mathbf x)$ for the signed local
+polarization of tone $j$, projected along a fixed direction. These amplitudes vary
+in space and are held fixed only during the temporal averages at one location.
+The nonnegative envelope is
+\[
+\mathcal A(\mathbf x,t)=\sqrt{\varepsilon_1(\mathbf x)^2+\varepsilon_2(\mathbf x)^2
++2\varepsilon_1(\mathbf x)\varepsilon_2(\mathbf x)\cos\Omega t}.
+\]
+The conventional TI map describes its excursion,
+$\mathcal{M}[y]\equiv\max_t y-\min_t y$, along the chosen direction \cite{grossman2017}.
+Table~\ref{tab:transduction-maps} compares this envelope with the squared-envelope
+signal. The columns are geometric maps before detector gains: an ideal envelope
+follower multiplies $\mathcal A$ by a constant, whereas the weak quadratic response
+change is $g''(v^*)\mathcal A^2/4$ (Eq.~\eqref{eq:cycavg}).
+Envelope following is an additional response assumption; the conventional
+envelope-excursion map alone does not specify a neuron's mean output.
+
+\begin{table}[ht]
+\centering\small
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.22\textwidth}
+ >{\raggedright\arraybackslash}p{0.34\textwidth}
+ >{\raggedright\arraybackslash}p{0.36\textwidth}@{}}
+\toprule
+ & Envelope following & Quadratic detection \\
+\midrule
+Slow signal & $\mathcal A(\mathbf x,t)$ & $\tfrac12\mathcal A(\mathbf x,t)^2$ \\
+Mean (DC) & $\overline{\mathcal A}(\mathbf x)$
+ & $\mathcal I(\mathbf x)=\dfrac{\varepsilon_1^2+\varepsilon_2^2}{2}$ \\
+Modulation excursion & $2\min(|\varepsilon_1|,|\varepsilon_2|)$
+ & $2|\varepsilon_1\varepsilon_2|$ \\
+Units before detector gain & mV & mV$^2$ \\
+\bottomrule
+\end{tabular}
+\caption{Envelope and quadratic maps at the same position $\mathbf x$.
+Carrier averaging of the detector response gives the slow signal, up to its gain;
+averaging over a beat period then gives the mean. Excursion means maximum minus
+minimum, not Fourier amplitude.}
+\label{tab:transduction-maps}
+\end{table}
+
+The envelope mean is
+\[
+\overline{\mathcal A}(\mathbf x)=\frac{1}{2\pi}\int_0^{2\pi}
+\sqrt{\varepsilon_1(\mathbf x)^2+\varepsilon_2(\mathbf x)^2
++2\varepsilon_1(\mathbf x)\varepsilon_2(\mathbf x)\cos\vartheta}\,\mathrm d\vartheta,
+\]
+where $\vartheta$ is beat phase. At a matched site with
+$\varepsilon_1=\varepsilon_2=\varepsilon>0$, the envelope and quadratic means are
+$4\varepsilon/\pi$ and $\varepsilon^2$, respectively. The applied field has no DC
+component: these means describe the ideal detector outputs after multiplication
+by their gains, and the quadratic response change takes the sign of $g''$.
+Even one carrier gives either ideal detector a mean output, but no beat modulation;
+adaptation can alter the physiological mean response.
+
+The excursion maps in Table~\ref{tab:transduction-maps} are related pointwise by
 \begin{equation}
-\mathcal{M}\big[\tfrac12\mathcal A^2\big]=\max(\varepsilon_1,\varepsilon_2)\;\mathcal{M}[\mathcal A].
+\mathcal{M}\big[\tfrac12\mathcal A^2\big]=\max(|\varepsilon_1|,|\varepsilon_2|)\;\mathcal{M}[\mathcal A].
 \label{eq:reweight}
 \end{equation}
 The square-law map is the conventional envelope-excursion map multiplied, at each point,
-by the dominant local polarization. It therefore does not preserve conventional TI
-focality. Where the dominant carrier is larger superficially than at depth,
+by the dominant local polarization magnitude. It need not preserve the spatial contrast
+of the conventional TI map. Both maps can nevertheless have a central modulation
+maximum, as the illustrative line profile in Fig.~\ref{fig:spatial_maps}a shows;
+the quadratic profile is broader in that example. Where the dominant carrier is larger superficially than at depth,
 this reweighting degrades deep-to-superficial contrast. As an illustrative example, at
 $(\varepsilon_1,\varepsilon_2)=(10,1)$ superficially against $(0.5,0.5)$ at a matched
 deep target, $\mathcal{M}[\mathcal A]$ favors the superficial point by $2\times$ and
 $\mathcal{M}[\half \mathcal A^2]$ by $40\times$. The magnitude of the degradation is not fixed by
 this algebra and must be evaluated from the actual vector field distribution; a
 sufficiently weak second carrier can suppress the superficial product instead. The
-product law is not an account of TI focality.
+product law is not an account of TI focality. A finite-element comparison on a real
+TI montage can test the predicted reweighting by evaluating both maps from the
+same local polarizations; the line profile is not such a head-model calculation.
 
 The accompanying mean shift has a different spatial map. Writing
 $Y_{\rm DC}=\Sig''(\varepsilon_1^2+\varepsilon_2^2)/4$ for the local DC source
@@ -777,14 +832,26 @@ A common access factor cancels from this local ratio. In the polarization
 mean-square map $\mathcal I=(\varepsilon_1^2+\varepsilon_2^2)/2$, the example
 above gives $50.5$ superficially and $0.25$ at depth, a $202$-fold contrast;
 the beat/DC ratios are $0.20$ and $1$, respectively. The geometric restriction
-can be made explicit in a homogeneous, isotropic, source-free conductor. Writing $\mathbf x$ for position and $\phi_j$ for the potential of tone $j$, the
+can be made explicit in a homogeneous, isotropic, source-free conductor. Writing $\phi_j$ for the potential of tone $j$, the
 potentials $\phi_j$, each component of $\mathbf E_j=-\nabla\phi_j$, and the
 signed polarizations $\varepsilon_j=\boldsymbol\lambda\cdot\mathbf E_j$ for
 spatially fixed coupling $\boldsymbol\lambda$ are harmonic. Thus
 $\nabla^2\mathcal I=\sum_j|\nabla\varepsilon_j|^2\ge0$: the intensity map is
 subharmonic and has no strict interior maximum. A montage can shape each
 carrier field, but the maximum of this map lies on the region's boundary;
-conductivity interfaces are such boundaries. Spatially varying access, orientation,
+conductivity interfaces are such boundaries.
+
+The envelope mean has the same restriction. At each beat phase $\vartheta$,
+$\mathcal A$ is the Euclidean norm of
+$(\varepsilon_1+\varepsilon_2\cos\vartheta,\,\varepsilon_2\sin\vartheta)$,
+a vector of harmonic functions. A norm is convex, so this envelope is subharmonic;
+averaging over $\vartheta$ preserves that property. Thus both idealized mean maps
+lack a strict interior maximum under these conditions (Fig.~\ref{fig:spatial_maps}b).
+This does not prohibit a beat maximum: the product instead obeys
+$\nabla^2(\varepsilon_1\varepsilon_2)=2\nabla\varepsilon_1\cdot\nabla\varepsilon_2$,
+whose sign is unrestricted. Within the homogeneous model, interior selectivity
+must therefore come from the oscillatory response rather than from either mean map.
+Spatially varying access, orientation,
 or curvature can change the physiological DC map, so the intensity result does
 not extend to those weights. For isotropically distributed unit orientations
 $\mathbf n$ with orientation-independent access and curvature,
@@ -795,7 +862,7 @@ but retain the DC intensity. At equal local RMS polarization, an unmodulated
 carrier gives the same mean shift in this static quadratic limit; dynamic
 detectors require their frequency-dependent coefficients.
 
-The selectivity this mechanism does supply is dynamical rather than spatial. Writing
+The network supplies dynamical selectivity in addition to this spatial weighting. Writing
 $R_\Omega(\mathbf{x})$ for the complex demodulated response at the envelope frequency $\Omega$
 produced at location $\mathbf{x}$, and $G_{\mathbf{x}}(\Omega)$ for the local network
 susceptibility there,
@@ -2670,6 +2737,20 @@ as the rate measurements and are normalized to each spectrum's maximum. Modulati
 reported rather than the off$\to$on lock-in ratio, whose denominator is the field-free
 floor.}
 \label{fig:qif_timing}
+\end{figure}
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{fig_spatial_maps.pdf}
+\caption{\textbf{Envelope and quadratic spatial maps.} Illustrative line profile:
+$\varepsilon_1(x)=\varepsilon_0(1+x/L_x)$ and
+$\varepsilon_2(x)=\varepsilon_0(1-x/L_x)$ on $-L_x\le x\le L_x$, with polarization scale
+$\varepsilon_0>0$ (mV) and length $L_x>0$ (m). Each curve is divided by its own value at $x=0$.
+\emph{(a)} Modulation is $1-|x/L_x|$ for envelope following and $1-(x/L_x)^2$ for quadratic
+detection: both peak centrally, but the quadratic profile is broader here.
+\emph{(b)} Both means increase toward the edges. This is a line profile, not a head model
+or a demonstration of three-dimensional focusing.}
+\label{fig:spatial_maps}
 \end{figure}
 
 % The supplement cites a handful of works (locking metrics, normal-form theory)

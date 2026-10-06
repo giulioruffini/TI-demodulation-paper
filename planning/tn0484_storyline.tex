@@ -1,7 +1,7 @@
 % TN0484 / WP0185: abstract and storyline. Build from the project root:
 %   ~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex
-% Map mode: rows follow the v0.15.0-draft14 manuscript order and numbering (TN build; the JNE build
-% keeps Appendix A and moves later appendices and figures S1--S12 to the supplement). Prepared 2026-10-03.
+% Map mode: rows follow the v0.15.0-draft15 manuscript order and numbering (TN build; the JNE build
+% keeps Appendix A and moves later appendices and figures S1--S13 to the supplement). Prepared 2026-10-03.
 \documentclass[11pt,a4paper,landscape]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -18,7 +18,7 @@
 \newcommand{\wpnumber}{TN0484 / WP0185}
 \newcommand{\papertitle}{The cortical column as a tuned receiver}
 \newcommand{\storylinedate}{6 October 2026}
-\newcommand{\baselinelabel}{v0.15.0-draft14}
+\newcommand{\baselinelabel}{v0.15.0-draft15}
 \newcommand{\abstractfile}{tn0484_abstract.tex}
 \newcommand{\storylineauthors}{Giulio Ruffini}
 % -----------------------------------------------------------------------------
@@ -175,19 +175,26 @@ its static transfer is an adiabatic limit, not a consequence of small amplitude 
   and $\mathcal R_{\rm det}$ (Eq.~17), whose inverse needs the relative sign or a branch choice.
   Smooth square-law detection has a vanishing weak-field harmonic ratio; a threshold
   detector instead has an onset and an amplitude-dependent ratio. Each harmonic is
-  multiplied by its network gain. Excursion map
+  multiplied by its network gain. Table~2 compares slow signals, means, and
+  excursions of envelope following and quadratic detection, before detector gains.
+  Excursion map
   (Eq.~18): product law, $2\times$ versus $40\times$ example; not an account of focality.
   DC intensity sums without cross-frequency cancellation after beat averaging:
   $202\times$ superficial/deep contrast in the example; local beat/DC at most one.
+  Both idealized mean maps are subharmonic: the envelope is a norm of harmonic
+  components at each beat phase, and averaging preserves subharmonicity.
   Retain the maximum-principle assumptions (homogeneous isotropic conductor, fixed
   coupling), the distinction from spatially weighted physiological response,
   and isotropic-orientation cancellation of the beat for orthogonal fields.
   Equal-RMS equivalence is scoped to second order with equal DC coefficients at the carriers.
-  Spatial response (Eq.~19) and signed vector coupling.
+  Spatial response (Eq.~19) and signed vector coupling. Figure~S13 shows a central
+  beat maximum in both models and means rising toward the edges; it is a line profile,
+  not a head model. A real-montage finite-element comparison remains a prediction.
 & Derives the detector's amplitude, harmonic, and spatial signatures
   and separates spatial from dynamical selectivity. Generation gives a weak drive; \S2.5
   explains what makes it large.
-& App.~D (bound and step detector); Fig.~6b (slope 1.99); Table~3 (predictions).\\[2pt]
+& App.~D (bound and step detector); Fig.~6b (slope 1.99); Fig.~S13;
+  Tables~2 (spatial maps) and~4 (predictions).\\[2pt]
 \midrule
 \place{\S2.5}{Amplification: synaptic low-pass and network resonance}
 & Synaptic transfer $H_s$ (16~Hz corner; 0.7 at 10~Hz, 2.5\% at 100~Hz). One-mode reduction,
@@ -200,7 +207,7 @@ its static transfer is an adiabatic limit, not a consequence of small amplitude 
 \midrule
 \place{\S2.6}{Carrier access depends on the effective membrane response}
 & Point-membrane $H_m$ (Eq.~22); $|H_m|^2\approx10^{-4}$ at 1~kHz for 16~ms, 0.39 and 0.14 at 1 and 2~kHz for
-  0.2~ms, labeled as assumed. Table~2 separates somatic measurements, Cohen's approximately
+  0.2~ms, labeled as assumed. Table~3 separates somatic measurements, Cohen's approximately
   1~ms minimum axonal decay, assumed fast access, prior 1/0.4~ms TI network parameters,
   channel kinetics, and synaptic filtering.
   Cohen is cited here as well as in the Introduction and Discussion. AC space constant (Eq.~23), one tenth
@@ -354,10 +361,10 @@ lock-in read-out and the pinned-operating-point protocol recur across models.
 \place{\S4.9}{Falsifiable predictions}
 & Four predictions with tests: access versus mixing by carrier sweep; state and carrier
   dependence; transduction class by amplitude slope and harmonic ratio off resonance;
-  frequency selectivity. Table~3 against existing evidence; synaptic block tests network
+  frequency selectivity. Table~4 against existing evidence; synaptic block tests network
   involvement without excluding a cellular detector.
 & Converts the mechanism into falsifiable statements and bridges to the Discussion.
-& Table~3; Vieira 2024; Caldas-Martinez 2024; Opancar 2025.\\[2pt]
+& Table~4; Vieira 2024; Caldas-Martinez 2024; Opancar 2025.\\[2pt]
 \end{xltabular}\endgroup
 
 {\footnotesize\color{muted}LaNMM, laminar neural mass model; tACS, transcranial alternating-current
@@ -406,8 +413,8 @@ laminar extension, and the metrics.
 & ---\\[2pt]
 \midrule
 \place{App.~A--B}{Notation and units; model equations}
-& Table~4 (symbols, meaning, units, and definition locations; shared with the
-  supplement and included in the JNE article); JR equations (Eq.~27) and Table~5.
+& Table~5 (symbols, meaning, units, and definition locations; shared with the
+  supplement and included in the JNE article); JR equations (Eq.~27) and Table~6.
 & Recovery aids; definitions remain local.
 & ---\\[2pt]
 \midrule
@@ -435,9 +442,10 @@ laminar extension, and the metrics.
 \midrule
 \place{App.~F--G}{Vocabulary metrics; supplementary figures}
 & Dominance screen versus capture test; folded-rate metric versus gamma-amplitude gating; frequency-dominance protocol.
-  Figures S2--S12 support \S4.2--4.8 and the Discussion.
+  Figures S2--S12 support \S4.2--4.8 and the Discussion; S13 compares the geometric
+  maps derived in \S2.4.
 & Metrics behind the three terms; the figure bank for the JNE supplement.
-& Figs.~S2--S12.\\[2pt]
+& Figs.~S2--S13.\\[2pt]
 \end{xltabular}\endgroup
 
 \vspace{4pt}
@@ -449,8 +457,11 @@ The transduction split preserves the seven Theory subsections: \S2.4 derives the
 envelope and square-law signatures and their spatial maps without a forward dependency
 on a measurement procedure. Methods \S3.1 collects the lock-in estimator, amplitude-slope
 measurement, and harmonic-gain correction; Results refers to that procedure. All
-23 figures, equations, examples, and qualifications remain. The reading baseline is
-draft9 including the competing-interests statement (\texttt{8016065}). Coauthor
+23 original figures, equations, examples, and qualifications remain. On October 6,
+K authorized adding the focality note's comparison table to \S2.4 and its line
+profile as Figure S13, with no new appendix. Both idealized mean maps obey the
+scoped maximum principle; the beat maps retain their distinct spatial weighting.
+The reading baseline is draft13 (\texttt{c620335}). Coauthor
 confirmation, remaining funding declarations, and release alignment remain pending;
 see \path{todo.md}.}
 \end{document}

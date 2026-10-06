@@ -1,14 +1,14 @@
 {
-  "version": "0.15.0-draft14",
+  "version": "0.15.0-draft15",
   "review_baseline": "0c394df",
   "redline_baseline": "c620335",
-  "status": "Notation table added as the first JNE appendix; article and supplement notation and units reconciled. Equation and figure numbering, numerical results, and the abstract retained. Transduction revision and author review pending.",
+  "status": "Focality note integrated into Section 2.4 with comparison Table 2, scoped envelope-mean proof, and supplementary Figure S13. Remaining author annotations and abstract focality wording await review.",
   "outputs": {
     "jne": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.log",
-      "pages": 39,
-      "sha256": "da039692a66d039b3a6733564abcb1146ad3d6ec381b49cc8c7291f294343e6b",
+      "pages": 40,
+      "sha256": "6f78f6da6574f49b0500a4b08d890d5de2d8dcc3a5616749ceef8b2f18574c13",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -20,7 +20,7 @@
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne_supplement.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne_supplement.log",
       "pages": 20,
-      "sha256": "05e443149356fb0bfff2f2a71182752b840f7c9d0f045db02f26ce656e198e0d",
+      "sha256": "22dd29478460ab4a117d0408ee181e9d264aa8daf56891ab3a082d3c521de4f6",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -29,10 +29,10 @@
       }
     },
     "tn_validation": {
-      "path": "/tmp/tn0484_draft14/build/tn_validation.pdf",
-      "log": "/tmp/tn0484_draft14/build/tn_validation.log",
-      "pages": 54,
-      "sha256": "53b9afbc2f03e2bfae6e447231fc838c6fae82c0bc93e96d86abc90869c7cf50",
+      "path": "/tmp/tn0484_draft15/build/tn_validation.pdf",
+      "log": "/tmp/tn0484_draft15/build/tn_validation.log",
+      "pages": 55,
+      "sha256": "b86cf73c71b527083439b2819b72ce29f515798d8a5164f1e397e113da231edc",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -44,7 +44,7 @@
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.log",
       "pages": 10,
-      "sha256": "27d358a99aaaf07ff08cccb0548f56b791a967a5e445b5af342fdf2b9d8355b4",
+      "sha256": "da88eda5880a7a67288c3bd3c2ec855ed3ac2adcf920d1543ca7f6e382c8dcfd",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -55,8 +55,8 @@
     "redline": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.log",
-      "pages": 41,
-      "sha256": "f3a028d369a67c256a5c7c95de2f94eef82e77e7735554aadb3043c7ab92a886",
+      "pages": 42,
+      "sha256": "cfff3e5479b997efcb5c83dabdad03073a63b02750f9419dfefa8c1b82e1a706",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -67,24 +67,27 @@
   },
   "retention": {
     "fig_labels": {
-      "count": 23,
-      "numbers_unchanged": true
+      "original_count": 23,
+      "original_numbers_unchanged": true,
+      "added": "fig:spatial_maps = S13",
+      "current_count": 24
     },
     "eq_labels": {
       "count": 32,
       "numbers_unchanged": true
     },
     "notation_table": {
-      "article_number": 4,
+      "article_number": 5,
       "supplement_number": 1,
-      "shared_source": "planning/tn0484_notation.tex",
-      "other_table_numbers_unchanged": true
+      "shared_source": "planning/tn0484_notation.tex"
     },
+    "new_table": "tab:transduction-maps = 2; later article tables shift by one",
     "cited_works": 60,
     "review_report_preserved": true,
     "simulation_producers_and_caches_unchanged": true,
-    "figure_changes": "Figure 7 and Figure S10 labels only; data and normalizations unchanged.",
-    "abstract_source_unchanged": true
+    "existing_figures_unchanged": true,
+    "abstract_source_unchanged": true,
+    "existing_two_site_example_verbatim": true
   },
   "bibliography": {
     "n_cited": 60,
@@ -103,43 +106,33 @@
   ],
   "visual_inspection": {
     "jne_pages": [
-      5,
-      8,
-      14,
-      16,
-      37,
-      38,
-      39
+      10,
+      11,
+      12,
+      38
     ],
     "supplement_pages": [
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8
+      19
     ],
     "redline_pages": [
-      1,
-      8,
-      9,
-      39,
-      40,
-      41
+      12,
+      13
     ],
     "figures": [
-      "fig_mpr_crossover",
-      "fig_nmm2_jcurve"
+      "fig_spatial_maps"
     ],
-    "findings": "The shared table is present and legible in both editions. Updated equations and labels were checked in the rendered pages; no clipping. Plot overlap flags refer only to tick labels outside the visible axes."
+    "findings": "Table 2 is next to Eq. 18; both mean-map qualifications are legible. Figure S13 uses the original line profiles and normalization with the length label changed to L_x. No clipping or collisions.",
+    "storyline_pages": [
+      4,
+      10
+    ]
   },
   "source_sha256": {
-    "TN0484_envelope_demodulation.tex": "b8d0f3bffb262ca64de6043aeb7d5fcb7e00c874311f15d29cb23e9d126d5608",
+    "TN0484_envelope_demodulation.tex": "c9be94ffae2ab2ca7b17ff7e58b33da461d25352ca12d01acbd2888b275d76a6",
     "references.bib": "8ee2a664fc78b990a6811d1bb9fef0d1c4eb68d4f5f2ee52f167604b94f96907",
     "planning/tn0484_abstract.tex": "fa6d581b7b8089f1897dde0b32239b9840477401ff300118c9d86142f5170b4f",
-    "planning/tn0484_storyline.tex": "f4907892876ec9a4778626bdfb3e058a47865f5452b29e80701c17f2175049ff",
-    "planning/tn0484_notation.tex": "c37f37bae2a18726db666a405535ba76b2321760a7fb2a9accfdbfe727c3c886"
+    "planning/tn0484_storyline.tex": "f5eabba70bcfbd22141c41a4617709bc8456c3036da6db35eb4fc47a281c7a36",
+    "planning/tn0484_notation.tex": "de90ef6cd6f29659556b2f8a13b2e32b6763031b5c70e8ee0a751117347e0bb3"
   },
   "producer_commits": [
     "139dd74",
@@ -226,18 +219,16 @@
   },
   "current_revision": {
     "date": "2026-10-06",
-    "baseline_commit": "c620335",
-    "authorization": "Giulio notation request relayed by klaus-484-TI-helper at 17:45 CEST",
+    "baseline_commit": "a2aacd6",
+    "authorization": "Giulio focality integration decision relayed by klaus-484-TI-helper at 17:52 CEST",
     "abstract_words": 297,
-    "requested_abstract_limit": 300,
     "abstract_unchanged": true,
-    "notation_audit": "docs/notation_audit_2026-10-06_draft14.json",
-    "rename_record": "docs/revision_2026-10-06_v0150draft14_notation.md",
-    "independent_audit_commit": "bee566d",
-    "article_prose_checker_findings": 0,
-    "notation_prose_checker_findings": 0,
-    "record_prose_checker_false_positive": "Markdown table separator counted as three em dashes; retained.",
-    "new_numerical_tests": "Not required: notation, units, and figure labels only. Existing computed results and caches retained.",
+    "audit": "docs/focality_integration_audit_2026-10-06_draft15.json",
+    "revision_record": "docs/revision_2026-10-06_v0150draft15_focality.md",
+    "manuscript_prose_checker_findings": 0,
+    "figure_collision_size_check": "clean; original producer with --paper",
+    "new_numerical_tests": "The existing line-profile producer reran its temporal-integral checks; no new neural simulations.",
+    "independent_integration_check": "Requested from Klaus; no verdict received yet. Original note review already passed.",
     "held_actions": [
       "GitHub push",
       "Calliope/Zenodo cut",

@@ -1,5 +1,6 @@
 """Illustrative spatial maps for the TI comparison note; no head-model claim."""
 from pathlib import Path
+import argparse
 import json
 import sys
 import numpy as np
@@ -10,6 +11,11 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 HERE = Path(__file__).resolve().parent
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--paper', action='store_true', help='Write the manuscript figure with length symbol L_x.')
+args = parser.parse_args()
+OUTPUT = HERE.parents[1] / 'figures' if args.paper else HERE
+STEM = 'fig_spatial_maps' if args.paper else 'spatial_maps'
 xi = np.linspace(-1, 1, 801)
 a, b = 1 + xi, 1 - xi
 env_mod = 2 * np.minimum(a, b)
@@ -41,7 +47,7 @@ for ax, ys, title, ylim in [
     (axs[1], [env_mean/env_mean[center],quad_mean/quad_mean[center]], '(b) Mean (DC)',(.93,2.07))]:
     for y,c,ls,label in zip(ys,colors,['-','--'],['Envelope follower','Quadratic detector']):
         ax.plot(xi,y,color=c,ls=ls,lw=2,label=label)
-    ax.set(xlim=(-1,1),ylim=ylim,xlabel=r'Position $x/L$',ylabel='Relative to center')
+    ax.set(xlim=(-1,1),ylim=ylim,xlabel=r'Position $x/L_x$' if args.paper else r'Position $x/L$',ylabel='Relative to center')
     ax.set_title(title,loc='left',pad=7)
     ax.set_xticks([-1,-.5,0,.5,1])
     ax.spines[['right','top']].set_visible(False)
@@ -53,8 +59,8 @@ fig.tight_layout(w_pad=2.3)
 sys.path.insert(0,'/Users/giulio/.agents/skills/figcheck/scripts')
 import overlap
 overlap.check(fig,placed_frac=1.0,name='ti_spatial_maps',min_pt=7.5)
-fig.savefig(HERE/'spatial_maps.pdf')
-fig.savefig(HERE/'spatial_maps.png',dpi=180)
+fig.savefig(OUTPUT/(STEM+'.pdf'))
+fig.savefig(OUTPUT/(STEM+'.png'),dpi=180)
 (HERE/'map_checks.json').write_text(json.dumps({'integral_checks':checks,
     'center_means':{'envelope':float(env_mean[center]),'quadratic':float(quad_mean[center])},
     'edge_means':{'envelope':float(env_mean[0]),'quadratic':float(quad_mean[0])},

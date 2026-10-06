@@ -64,3 +64,21 @@ of sigmoid curvature can produce extrema in the physiological DC response even
 when the unweighted quadratic map has none. The PDF retains its narrower true
 statements and its existing spatial-curvature qualification. It is unchanged
 from commit `4904c6e`.
+
+## Manuscript integration
+
+On October 6, Giulio authorized integrating the comparison table and mean-map
+argument into Section 2.4, and the line profile as supplementary Figure S13.
+The reading note remains internal and its PDF is unchanged. The manuscript
+retains its existing two-site example rather than adding the note's second one.
+
+From the project root, regenerate the manuscript figure with:
+
+```sh
+MPLCONFIGDIR=/tmp/tn0484-focality-mpl .venv/bin/python notes/2026-10-06_ti_focality/make_spatial_maps.py --paper
+```
+
+This uses the same curves and normalization, writes
+`figures/fig_spatial_maps.{pdf,png}`, and changes the axis length symbol to `L_x`
+because `L` denotes a logistic function in the paper. The default command still
+builds the note's original assets. No FEM head-model result is included.

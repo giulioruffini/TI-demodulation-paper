@@ -10,7 +10,7 @@ Archived at Zenodo: **[doi:10.5281/zenodo.21009618](https://doi.org/10.5281/zeno
 Licensed **CC-BY-4.0** (see [`LICENSE`](LICENSE)); machine-readable citation in
 [`CITATION.cff`](CITATION.cff).
 
-The current working edition is the **JNE article, v0.15.0-draft14**:
+The current working edition is the **JNE article, v0.15.0-draft15**:
 [TN0484_jne.pdf](TN0484_jne.pdf). Run `./build.sh` to update it. The TN and
 supplement are generated from the same manuscript for an authorized Calliope cut;
 they are not separate working editions. Older versioned PDFs are historical snapshots.
@@ -31,6 +31,12 @@ still lists v0.12.0 (July 21). Release and circulation remain held.
 v0.15.0-draft14 puts the notation table in the JNE article and separates
 overloaded symbols, normalized MPR variables, and physical units. Equation and
 figure numbers are retained. See the [notation revision record](docs/revision_2026-10-06_v0150draft14_notation.md).
+
+v0.15.0-draft15 integrates the focality note into Section 2.4: Table 2 compares
+the slow signals, means, and excursions of envelope following and quadratic
+detection. Both idealized mean maps obey the stated homogeneous-compartment
+maximum principle; the supplementary line profile is Figure S13. The existing
+two-site example is retained. See the [focality integration record](docs/revision_2026-10-06_v0150draft15_focality.md).
 
 v0.15.0-draft13 uses the supplied 297-word abstract, retaining the DC and coupling
 qualifications within the 300-word budget. The body is unchanged from draft12.
@@ -176,7 +182,7 @@ with a [redline against v0.14.2](docs/redline_v0142_to_v0143.pdf).
 [planning/tn0484_storyline.tex](planning/tn0484_storyline.tex) (section-by-section argument
 map), compiled to [build/storyline/tn0484_storyline.pdf](build/storyline/tn0484_storyline.pdf)
 with `~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex`.
-Its source maps v0.15.0-draft14 and records the completed placement decisions.
+Its source maps v0.15.0-draft15 and records the completed placement decisions.
 The
 [general practice](../../giulio-personal-handbook/dos-and-donts.md#abstract-and-storyline-planning)
 is maintained in the personal handbook.

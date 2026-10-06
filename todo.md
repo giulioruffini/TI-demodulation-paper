@@ -2,6 +2,7 @@
 
 - [ ] act on K's annotations of 2026-10-06 (notes/2026-10-06_K/TN0484 journal (JNE) annotated (2).md)
 - [ ] review the two-page envelope/quadratic TI note and decide the abstract's local-DC versus beat-focality wording
+- [ ] review Ricardo's real-montage FEM comparison if supplied before submission; retain the proposed comparison otherwise
 - [ ] act on K's annotations of 2026-10-06 (notes/2026-10-06_K/TN0484 journal (JNE) annotated.md)
 - [ ] review article length after the Landau additions; retain explanations unless Giulio approves the proposed cuts
 - [ ] Giulio: review the corrected JNE working edition and fixed-baseline redline; authorize coauthor circulation when ready
@@ -9,6 +10,7 @@
 - [ ] after review and authorization: push, align the public code/archive, cut Calliope/Zenodo, re-sync Overleaf, and circulate the coauthor request (all HOLD)
 - [ ] migrate the paper folder at the next coordinated version boundary; run the layout checker before and after, with no concurrent session editing
 - [x] put the shared notation table in JNE Appendix A, reconcile symbols and units across article/supplement/figures, and verify unchanged equation and figure numbering in draft14 (October 6)
+- [x] integrate the focality comparison table and envelope-mean proof into Section 2.4, add the line profile as Figure S13, and preserve the existing two-site example in draft15 (October 6)
 - [x] fit the three-stage abstract to 297 words, retain the DC and coupling qualifiers, and align the Introduction and storyline (October 6)
 - [x] prepare the two-page envelope/quadratic TI note and close Klaus's independent check of its DC maps, focality limits, numerical examples, and attribution (October 6)
 - [x] verify PEIX against the published Neural Computation supplement, Appendix A, pp. 1–2; definition unchanged, reference copy filed (October 5)
