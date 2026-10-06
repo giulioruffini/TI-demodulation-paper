@@ -11,8 +11,8 @@
 # authorized archive cut; do not create per-edit versioned reading copies.
 #
 # JNE counts the article against a ~12,000-word guideline, so the JNE build drops
-# the appendices and supplementary figures and `supp` emits them as a companion
-# file. The TN build keeps everything in one PDF.
+# all appendices after the shared notation table; `supp` emits the full appendices
+# and supplementary figures as a companion. The TN keeps everything in one PDF.
 #
 # The two differ only by the \ifjne switch in the preamble: the TN keeps the
 # Neuroelectrics/BCOM furniture and the prose abstract, the JNE build strips the

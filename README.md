@@ -10,7 +10,7 @@ Archived at Zenodo: **[doi:10.5281/zenodo.21009618](https://doi.org/10.5281/zeno
 Licensed **CC-BY-4.0** (see [`LICENSE`](LICENSE)); machine-readable citation in
 [`CITATION.cff`](CITATION.cff).
 
-The current working edition is the **JNE article, v0.15.0-draft13**:
+The current working edition is the **JNE article, v0.15.0-draft14**:
 [TN0484_jne.pdf](TN0484_jne.pdf). Run `./build.sh` to update it. The TN and
 supplement are generated from the same manuscript for an authorized Calliope cut;
 they are not separate working editions. Older versioned PDFs are historical snapshots.
@@ -20,12 +20,17 @@ The article, TN, and storyline load one abstract from the four macros in
 run-in headings. Every table is introduced and explained in the surrounding text.
 Run `python3 code/build_jne_redline.py` to update the one current [JNE redline](docs/redline_last_read.pdf) against the baseline
 recorded in [planning/review_baseline.json](planning/review_baseline.json), rather
-than creating a new redline for each edit. The fixed reading baseline is draft9
-including the competing-interests statement (`8016065`), as requested in Giulio's
-October 5 placement instruction.
+than creating a new redline for each edit. The fixed reading baseline is draft13 (`c620335`), as requested for the
+October 6 notation pass. The JNE article and supplement both include Appendix A
+from [one notation source](planning/tn0484_notation.tex). The supplement was
+regenerated for this requested pass; the TN remains a private validation build.
 
 As checked on October 2, [Calliope WP0185](https://calliope.bcom.one/papers/WP0185)
 still lists v0.12.0 (July 21). Release and circulation remain held.
+
+v0.15.0-draft14 puts the notation table in the JNE article and separates
+overloaded symbols, normalized MPR variables, and physical units. Equation and
+figure numbers are retained. See the [notation revision record](docs/revision_2026-10-06_v0150draft14_notation.md).
 
 v0.15.0-draft13 uses the supplied 297-word abstract, retaining the DC and coupling
 qualifications within the 300-word budget. The body is unchanged from draft12.
@@ -171,7 +176,7 @@ with a [redline against v0.14.2](docs/redline_v0142_to_v0143.pdf).
 [planning/tn0484_storyline.tex](planning/tn0484_storyline.tex) (section-by-section argument
 map), compiled to [build/storyline/tn0484_storyline.pdf](build/storyline/tn0484_storyline.pdf)
 with `~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex`.
-Its source maps v0.15.0-draft13 and records the completed placement decisions.
+Its source maps v0.15.0-draft14 and records the completed placement decisions.
 The
 [general practice](../../giulio-personal-handbook/dos-and-donts.md#abstract-and-storyline-planning)
 is maintained in the personal handbook.

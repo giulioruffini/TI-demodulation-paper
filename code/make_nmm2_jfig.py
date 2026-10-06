@@ -35,7 +35,7 @@ ax[0].plot(C, Glin*1e3, '-', color='0.45', lw=1.2, label='linear response')
 ax[0].axvline(Chopf, ls='--', color='#b3361f', lw=1.3)
 ax[0].text(Chopf-0.04, Glin.max()*1e3*0.97, 'gamma\nHopf $J^*$', color='#b3361f',
            ha='right', va='top', fontsize=9)
-ax[0].set_xlabel(r'inter-QIF coupling $J\;(=C)$')
+ax[0].set_xlabel(r'inter-QIF coupling $J$')
 ax[0].set_ylabel(r'peak rate modulation $A_\Omega$ (Hz)')
 figstyle.panel(ax[0], "a"); ax[0].grid(alpha=.3); ax[0].legend(fontsize=8, loc='upper left')
 # (b) gain against the critical mode's damping

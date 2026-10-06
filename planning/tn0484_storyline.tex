@@ -1,7 +1,7 @@
 % TN0484 / WP0185: abstract and storyline. Build from the project root:
 %   ~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex
-% Map mode: rows follow the v0.15.0-draft13 manuscript order and numbering (TN build; the JNE build
-% moves the appendices and figures S1--S12 to the supplement). Prepared 2026-10-03.
+% Map mode: rows follow the v0.15.0-draft14 manuscript order and numbering (TN build; the JNE build
+% keeps Appendix A and moves later appendices and figures S1--S12 to the supplement). Prepared 2026-10-03.
 \documentclass[11pt,a4paper,landscape]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -18,7 +18,7 @@
 \newcommand{\wpnumber}{TN0484 / WP0185}
 \newcommand{\papertitle}{The cortical column as a tuned receiver}
 \newcommand{\storylinedate}{6 October 2026}
-\newcommand{\baselinelabel}{v0.15.0-draft13}
+\newcommand{\baselinelabel}{v0.15.0-draft14}
 \newcommand{\abstractfile}{tn0484_abstract.tex}
 \newcommand{\storylineauthors}{Giulio Ruffini}
 % -----------------------------------------------------------------------------
@@ -143,8 +143,8 @@ its static transfer is an adiabatic limit, not a consequence of small amplitude 
 \place{\S2.2}{From applied field to a squared-envelope beat}
 & Quasistatic field; polarization $s(t)$ through parallel entry points with access filters
   (Eqs.~7--8), one compartment response counted once. Taylor expansion (Eqs.~9--10) with the
-  truncation condition $|s|\ll1/\rho\approx1.8$~mV. The square of the envelope (Eq.~11): $A^2$
-  is sinusoidal, $A$ is a rectified cosine. The AM surrogate (Eq.~12), where it is used and
+  truncation condition $|s|\ll1/\rho\approx1.8$~mV. The square of the envelope (Eq.~11): $\mathcal A^2$
+  is sinusoidal, $\mathcal A$ is a rectified cosine. The AM surrogate (Eq.~12), where it is used and
   where it is not. The effective dynamic coefficient $\chi^{(2)}$ combines cellular
   contributions and reduces to $\Sigma''/2$ in the static case. Retain smoothness and
   nonzero second-order response, its possible frequency dependence, and the DC term.
@@ -157,9 +157,9 @@ its static transfer is an adiabatic limit, not a consequence of small amplitude 
   Galan and Gadea 2023.\\[2pt]
 \midrule
 \place{\S2.3}{The exact mean field connects static and dynamic mixing}
-& Single-carrier DC coefficient $C(Q,\omega)$ (Eq.~13), with limits $F''/4$ and $F'/(2\omega^2)$ (Eq.~14), sign change at
-  $\omega_z$ above the inflection. Fixed-excursion coefficient $K(\omega)$ (Eq.~15): the
-  $1/\omega^2$ is the membrane, not a detector filter. The PING $v_E^2$ source matches the
+& Single-carrier DC coefficient $\kappa_{\rm DC}(Q,\tilde\omega)$ (Eq.~13), with limits $F''/4$ and $F'/(2\tilde\omega^2)$ (Eq.~14), sign change at
+  $\tilde\omega_z$ above the inflection. Fixed-excursion coefficient $\kappa_V(Q,\tilde\omega)$ (Eq.~15): the
+  $1/\tilde\omega^2$ is the membrane, not a detector filter. The PING $v_E^2$ source matches the
   propagated second-order beat response to 1.1\%, 0.1\%, 0.03\% at 300, 1000, 2000~Hz
   at four stable points. This is not a full finite-amplitude sweep validation. Carrier and beat take
   different routes to the rate (Table~1).
@@ -169,10 +169,10 @@ its static transfer is an adiabatic limit, not a consequence of small amplitude 
 & Fig.~7; Table~1. Code: \path{static_vs_dynamic_check.py}, \path{mpr_twotone_lines_check.py}.\\[2pt]
 \midrule
 \place{\S2.4}{Transduction class and its signatures}
-& Cycle average (Eq.~16) is even in $A$; nonzero curvature gives a leading square law
-  for a smooth memoryless transfer. Specified ideal rectifiers follow $A$; a step
+& Cycle average (Eq.~16) is even in $\mathcal A$; nonzero curvature gives a leading square law
+  for a smooth memoryless transfer. Specified ideal rectifiers follow $\mathcal A$; a step
   detector follows neither (harmonic ratio 0.151). Harmonic ladder $1/5$, $3/35$, $1/21$
-  and $r_{\rm det}$ (Eq.~17), whose inverse needs the relative sign or a branch choice.
+  and $\mathcal R_{\rm det}$ (Eq.~17), whose inverse needs the relative sign or a branch choice.
   Smooth square-law detection has a vanishing weak-field harmonic ratio; a threshold
   detector instead has an onset and an amplitude-dependent ratio. Each harmonic is
   multiplied by its network gain. Excursion map
@@ -406,7 +406,8 @@ laminar extension, and the metrics.
 & ---\\[2pt]
 \midrule
 \place{App.~A--B}{Notation and units; model equations}
-& Table~4 (symbols, with the reused-glyph head note); JR equations (Eq.~27) and Table~5.
+& Table~4 (symbols, meaning, units, and definition locations; shared with the
+  supplement and included in the JNE article); JR equations (Eq.~27) and Table~5.
 & Recovery aids; definitions remain local.
 & ---\\[2pt]
 \midrule

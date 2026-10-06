@@ -1,12 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{vinck2010}
-Martin Vinck, Marijn van Wingerden, Thilo Womelsdorf, Pascal Fries, and Cyriel
-  M.~A. Pennartz.
-\newblock The pairwise phase consistency: a bias-free measure of rhythmic
-  neuronal synchronization.
-\newblock {\em NeuroImage}, 51(1):112--122, 2010.
-
 \bibitem{ruffini2025rosetta}
 Francesca Castaldo, Raul de~Palma~Aristides, Pau Clusella, Jordi Garcia-Ojalvo,
   and Giulio Ruffini.
@@ -19,8 +12,7 @@ Giulio Ruffini, Edmundo Lopez-Sola, Raul Palma, Roser Sanchez-Todo, Jakub
   Vohryzek, Francesca Castaldo, and Karl Friston.
 \newblock Cross-frequency coupling as a neural substrate for prediction error
   evaluation: a laminar neural mass modeling approach.
-\newblock {\em bioRxiv}, 2025.
-\newblock Preprint 2025.03.19.644090.
+\newblock {\em Neural Computation}, 38(8):1299--1343, 2026.
 
 \bibitem{sanchezTodo2023}
 Roser Sanchez-Todo, Andr{\'e}~M. Bastos, Edmundo Lopez-Sola, Borja Mercadal,

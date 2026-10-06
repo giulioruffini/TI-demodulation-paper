@@ -22,8 +22,17 @@ def source_at(path, revision=None):
 
 
 def expanded_source(revision=None):
-    """Expose the shared abstract to latexdiff; earlier inline abstracts also work."""
+    """Expand shared inputs and retain the material printed in the JNE edition."""
     source = source_at(SOURCE, revision)
+    # Compare the JNE reading edition. Before draft14 all appendices were hidden;
+    # from draft14 Appendix A is visible and only the later appendices are hidden.
+    # Removing the unprinted tail also prevents latexdiff from treating the old
+    # three-column supplement table as an in-place four-column article table edit.
+    for marker in [r"\ifappendices" + "\n" + r"\clearpage" + "\n" + r"\appendix",
+                   r"\ifappendices" + "\n" + r"\renewcommand{\thefigure}"]:
+        if marker in source:
+            source = source[:source.index(marker)] + r"\end{document}" + "\n"
+            break
     include = r"\input{planning/tn0484_abstract.tex}"
     if include in source:
         definitions = source_at(ABSTRACT, revision)
@@ -38,6 +47,11 @@ def expanded_source(revision=None):
             source = re.sub(
                 r"\\" + match.group(1) + r"\b", lambda _: value, source
             )
+    # Include the notation source so its table is visible in the comparison.
+    notation = "planning/tn0484_notation.tex"
+    token = r"\input{" + notation + "}"
+    if token in source:
+        source = source.replace(token, source_at(notation, revision))
     # Join adjacent inline math spans only in the comparison inputs.
     return source.replace("$$", "")
 

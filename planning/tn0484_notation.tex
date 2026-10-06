@@ -1,0 +1,111 @@
+% One notation source for the article, supplement, and full TN.
+Table~\ref{\notationtablelabel} groups the symbols by their role in the calculation.
+JR and LaNMM voltages are in mV and rates in s$^{-1}$. QIF voltages and current-like
+drives are dimensionless model variables; QIF rates are physical rates, integrated
+in ms$^{-1}$ and converted to Hz where indicated. A tilde marks the dimensionless
+membrane-time variables of the uncoupled MPR calculation. All frequencies and time
+constants in a formula must use the same time unit. A star marks a fixed point or,
+on a bifurcation parameter, its critical value. Subscripts E and I identify
+excitatory and inhibitory populations; they are not field or current variables.
+
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.13}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.20\textwidth}
+ >{\raggedright\arraybackslash}p{0.40\textwidth}
+ >{\raggedright\arraybackslash}p{0.15\textwidth}
+ >{\raggedright\arraybackslash}p{0.19\textwidth}@{}}
+\caption{Notation and units. ``Normalized'' means dimensionless in the stated
+model scaling; output units depend on the named observable. Numbered references
+identify main-text definitions; lettered locations identify appendices (in the
+supplement for the JNE edition).}
+\label{\notationtablelabel}\\
+\toprule
+Symbol & Meaning & Units & Defined in \\
+\midrule
+\endfirsthead
+\multicolumn{4}{@{}l}{\textit{Table \thetable\ continued}}\\
+\toprule
+Symbol & Meaning & Units & Defined in \\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r@{}}{\textit{Continued on next page}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+\multicolumn{4}{@{}l}{\textbf{Field and access}}\\*
+$E(t),\mathbf E_j$ & Applied field; vector field of tone $j=1,2$ & V/m & Eq.~\eqref{eq:coupling} \\
+$s(t),\varepsilon_j,\varepsilon$ & Local polarization; tone amplitudes; common amplitude ($\varepsilon_{\rm TI}$ and $\varepsilon_{\rm tACS}$ label the waveform) & mV & Eqs.~\eqref{eq:am}, \eqref{eq:doors} \\
+$\mathcal A(t)$ & Nonnegative instantaneous polarization envelope & mV & Eq.~\eqref{eq:sqenv} \\
+$f_1,f_2,f_c$ & Tone frequencies and their center & Hz & Eq.~\eqref{eq:am} \\
+$\omega_j,\omega_c$ & Angular frequencies $2\pi f_j,2\pi f_c$ & rad/s & Eqs.~\eqref{eq:am}, \eqref{eq:doors} \\
+$\Delta f,\Omega$ & Beat frequency $f_2-f_1$; $\Omega=2\pi\Delta f$ & Hz; rad/s & Eq.~\eqref{eq:am} \\
+$m$ & AM-surrogate modulation depth & dimensionless & Eq.~\eqref{eq:amsur} \\
+$\Lambda[E],\lambda_0,\lambda_f$ & Field-induced polarization; static and frequency-dependent coupling & mV; mV/(V/m) & Eqs.~\eqref{eq:nmm1}, \eqref{eq:doors} \\
+$\boldsymbol\lambda^k_0,\boldsymbol\lambda^k_f$ & Coupling vectors for compartment $k$ & mV/(V/m) & Eq.~\eqref{eq:doors} \\
+$H_k,H_m$ & Compartment access transfer; point-membrane transfer & dimensionless & \S\ref{sec:coupling}, \S\ref{sec:khz} \\
+$\tau_m,\tau$ & Membrane time; access-filter time in kHz controls & ms & Eqs.~\eqref{eq:mpr}, \eqref{eq:khz} \\
+$f_{\rm char}$ & Characteristic frequency $1/(2\pi\tau)$ & Hz & Table~\ref{tab:doors} \\
+$\ell(\omega),\ell_0$ & Frequency-dependent and static cable space constants & $\mu$m & Eq.~\eqref{eq:lambda} \\
+$\mathbf V,\mathsf C_m,\mathsf G_m$ & Compartment voltages, capacitance and conductance matrices & V; F; S & \S\ref{sec:coupling} \\
+$\mathbf I^0,\mathbf p_E$ & Endogenous currents; field-to-current vector & A; A/(V/m) & \S\ref{sec:coupling} \\
+$\mathbf x,\phi_j,\mathbf n$ & Position, field potential, unit cell orientation & m; V; unit vector & \S\ref{sec:transduction} \\
+$\mathcal I$ & Mean-square local polarization $(\varepsilon_1^2+\varepsilon_2^2)/2$ & mV$^2$ & \S\ref{sec:transduction} \\
+\addlinespace
+\multicolumn{4}{@{}l}{\textbf{Detection}}\\*
+$\Sig,\Sig',\Sig''$ & JR/LaNMM rate curve, slope and curvature & s$^{-1}$; s$^{-1}$mV$^{-1}$; s$^{-1}$mV$^{-2}$ & Eq.~\eqref{eq:sigmoid} \\
+$e_0,v_0,\rho$ & Half the rate ceiling, inflection voltage, inverse voltage scale & s$^{-1}$; mV; mV$^{-1}$ & Eq.~\eqref{eq:sigmoid} \\
+$\mathrm{PEIX}$ & Signed sigmoid saturation index & dimensionless & Eq.~\eqref{eq:peix} \\
+$Y_\Omega,Y_{\rm DC}$ & Complex beat amplitude and signed mean shift before recurrence & detector-output units & Eqs.~\eqref{eq:demod}, \eqref{eq:taylor} \\
+$\chi^{(2)}$ & Dynamic coefficient mapping a polarization product to a rate beat & s$^{-1}$mV$^{-2}$ & \S\ref{sec:coupling} \\
+$g,T,Y_{\rm LF}$ & Memoryless response, envelope transduction, carrier-averaged output & specified output units & Eq.~\eqref{eq:cycavg} \\
+$c_1,c_2,c_4$ & Linear, quadratic and quartic envelope coefficients & output/(mV)$^{1,2,4}$ & \S\ref{sec:transduction} \\
+$\mathcal R_{\rm det},\mathcal R_{\rm meas}$ & Second/fundamental harmonic magnitude ratios before and after the network & dimensionless & Eq.~\eqref{eq:rdet} \\
+$\mathcal M[y]$ & Peak-to-peak excursion of the quantity $y$ & units of $y$ & Eq.~\eqref{eq:reweight} \\
+$F(Q),F',F''$ & MPR steady-rate curve and drive derivatives & normalized & Eq.~\eqref{eq:Fmpr} \\
+$Q,q$ & Mean total drive $\bar\eta+I$; single-cell drive $\eta+I$ & normalized & Eq.~\eqref{eq:Fmpr} \\
+$I_{\rm ac},\tilde\omega$ & Single-tone current amplitude; angular frequency $\omega\tau_m$ & normalized & \S\ref{sec:dynamic} \\
+$\kappa_{\rm DC},\kappa_V$ & Mean-rate mixing per squared current or squared voltage excursion & normalized & Eqs.~\eqref{eq:crossover}, \eqref{eq:kfixed} \\
+$d,\nu,\tilde\omega_z$ & MPR relaxation, ringing and zero-crossing angular frequencies & membrane-time units & \S\ref{sec:dynamic} \\
+$\mathsf J,\mathbf h,H_v$ & Reduced MPR Jacobian, unit-current response and voltage transfer & normalized & \S\ref{sec:dynamic} \\
+$\mathbf b_2,\mathsf I_2$ & Quadratic DC source per $I_{\rm ac}^2$; identity matrix & normalized & \S\ref{sec:dynamic} \\
+$\eta_{\rm det},\mathcal R_{\rm lin}$ & TI/direct-drive source ratio; linear TI/tACS output ratio & dimensionless & App.~\ref{app:bound}; \S\ref{sec:jcurve} \\
+$\delta,\zeta$ & Threshold offset; sigmoid rate divided by $2e_0$ & mV; dimensionless & \S\ref{sec:transduction}; App.~\ref{app:bound} \\
+$u,\xi,\beta,k_{\rm ell}^2$ & Reduced amplitude $\rho\varepsilon$, offset $\rho(v^*-v_0)$, threshold ratio, elliptic parameter & dimensionless & App.~\ref{app:bound} \\
+$L,\psi,\mathsf K,\mathsf E$ & Unit logistic, normalized waveform, complete elliptic integrals & dimensionless & App.~\ref{app:bound} \\
+\addlinespace
+\multicolumn{4}{@{}l}{\textbf{Network}}\\*
+$r_X,v_X$ & Population firing rate and mean potential, indexed by $X$ & s$^{-1}$; mV in JR/LaNMM, normalized in QIF & \S\ref{sec:nmm} \\
+$\tilde t,\tilde r,\tilde f$ & Membrane-time coordinate, population rate and single-cell rate & normalized & Eqs.~\eqref{eq:mpr}, \eqref{eq:Fmpr} \\
+$r_{\rm syn},r_E^{\rm syn},r_I^{\rm syn}$ & Synaptically filtered firing rates & same rate units as input & Eqs.~\eqref{eq:slow_synapse}, \eqref{eq:nmm2-ping} \\
+$u_{\rm PSP},u_{X\leftarrow Y},\hat L$ & Postsynaptic potential and inverse synaptic operator & mV; maps mV to s$^{-1}$ & Eq.~\eqref{eq:nmm1} \\
+$A,B,a,b$ & JR excitatory/inhibitory PSP gains and inverse synaptic times & mV; s$^{-1}$ & \S\ref{sec:nmm}; App.~\ref{app:models} \\
+$C,C_{1\ldots4},C_{X\leftarrow Y}$ & JR connectivity scale and pathway weights & dimensionless & \S\ref{sec:nmm}; App.~\ref{app:models} \\
+$y_0,y_1,y_2,v$ & JR PSPs; voltage readout $v=y_1-y_2$ & mV & App.~\ref{app:models} \\
+$p,p_H,C^*$ & JR external rate and its upper Hopf value; critical connectivity & s$^{-1}$; dimensionless for $C^*$ & \S\ref{sec:jr-methods}, \S\ref{sec:jcurve} \\
+$\eta_j,\bar\eta,\Delta$ & QIF excitabilities, Lorentzian center and half-width & normalized & Eq.~\eqref{eq:mpr} \\
+$I,I_E,I_j,A_f,\lambda_I$ & QIF input, E-population input, tone amplitudes, forcing amplitude and field coupling & normalized; $\lambda_I$ in (V/m)$^{-1}$ & Eqs.~\eqref{eq:mpr}, \eqref{eq:nmm2-ping} \\
+$J,J^*,w_{XY}$ & QIF coupling, critical coupling and relative pathway weights & dimensionless & Eq.~\eqref{eq:nmm2-ping} \\
+$\tau_E,\tau_I,\tau_a,\tau_g,\tau_s$ & E/I membrane and excitatory/inhibitory/generic synaptic times & ms & Eqs.~\eqref{eq:slow_synapse}, \eqref{eq:nmm2-ping} \\
+$\hat K_a,\hat K_g,H_s$ & QIF synaptic rate filters; JR rate-to-voltage transfer & dimensionless; mV\,s for $H_s$ & \S\ref{sec:nmm2-methods}, \S\ref{sec:carrier} \\
+$\mu_\pm,\gamma,\omega_0,f_0$ & Modal eigenvalues, damping, angular and ordinary modal frequency & s$^{-1}$ (ms$^{-1}$ where stated); Hz for $f_0$ & Eq.~\eqref{eq:gain} \\
+$\tau_{\rm rel},\tau_{\rm rev},\mathcal Q$ & Population relaxation time, $1/\gamma$, and mode quality factor & time; dimensionless for $\mathcal Q$ & \S\ref{sec:nmm}, \S\ref{sec:carrier}, \S\ref{sec:discussion} \\
+$D,G,R_\Omega$ & Beat-source coefficient, recurrent transfer, complex observed beat response & input/output-dependent & Eq.~\eqref{eq:receiver} \\
+$V_j,V_{\rm peak},N$ & Single-QIF voltage, spike cutoff and neurons per population & normalized; count & \S\ref{sec:qif-methods} \\
+$\delta\eta_E,\delta\eta_E^*$ & Rectified E-drive shift and its Hopf threshold & normalized & \S\ref{sec:qif-methods} \\
+$P_1,P_2,r_P,\varphi_X$ & Deep/superficial pyramidal populations; JR and LaNMM pyramidal rates & labels; s$^{-1}$ for rates & \S\ref{sec:nmm}; \S\ref{sec:lanmm-methods} \\
+$z,\alpha,\mathcal F,\varepsilon_{\rm SL}$ & Stuart--Landau mode, growth rate, forcing and forcing amplitude & normalized mode; s$^{-1}$ for the others & App.~\ref{app:sl} \\
+\addlinespace
+\multicolumn{4}{@{}l}{\textbf{Measurement}}\\*
+$L_{\cos},L_{\sin},A_\Omega$ & Signed lock-in quadratures and nonnegative amplitude & measured voltage or rate units & Eq.~\eqref{eq:lockin} \\
+$A_{\rm open}$ & Magnitude of the open-loop rate beat & s$^{-1}$ & \S\ref{sec:jcurve} \\
+$w_k,t_k,v_k,\bar v$ & Hann weights, sample times, voltage samples and weighted mean & 1; s; mV; mV & Eq.~\eqref{eq:lockin} \\
+$A_{\rm test},\theta_0$ & Amplitude and phase of the lock-in test tone & readout units; rad & \S\ref{sec:transduction-methods} \\
+$\Delta t,N_{\rm grid}$ & Integration step and number of parameter combinations & s or ms; count & \S\ref{sec:jr-methods} \\
+$A_\Omega/\langle r_E\rangle$ & Beat-locked population modulation depth & dimensionless & \S\ref{sec:qif-methods} \\
+$\mathrm{PPC}$ & Pairwise phase consistency of single-neuron spike phases & dimensionless & \S\ref{sec:qif-methods} \\
+$f_{\rm out},S(f_c)$ & Dominant output frequency; LaNMM mean off-alpha lock-in & Hz; mV & App.~\ref{sec:vocab}; \S\ref{sec:lanmm-methods} \\
+\end{longtable}
+\endgroup

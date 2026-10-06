@@ -1,4 +1,4 @@
-"""fig_mpr_crossover: (a) the uncoupled MPR detector coefficient C(Q, w) from the static
+"""fig_mpr_crossover: (a) the uncoupled MPR detector coefficient kappa_DC(Q, w) from the static
 curvature F''/4 at slow carriers to the Kapitza limit F'/(2 w^2) at fast ones, with
 finite-amplitude simulations; (b) the error of the fast-carrier form for the manuscript's
 PING at four operating points and three carriers. Reads ping_fast_carrier_check.json
@@ -21,12 +21,12 @@ NEGREEN = "#1a9850"
 
 fig, (a1, a2) = plt.subplots(1, 2, figsize=(11.0, 4.0), gridspec_kw=dict(width_ratios=[1.35, 1]))
 
-# ---- (a) uncoupled MPR: C(Q, w)/... vs w tau
+# ---- (a) uncoupled MPR: kappa_DC(Q, w)/... vs w tau
 w = np.logspace(-1.3, 2.3, 400)
 Qi = D / np.sqrt(3)
-for Q, col, lab in ((0.0, NEBLUE, r"$Q^*=0$ (below inflection, $F''>0$)"),
-                    (Qi, NEGREEN, r"$Q^*=\Delta/\sqrt{3}$ (inflection, $F''=0$)"),
-                    (3.0, NERED, r"$Q^*=3$ (above inflection, $F''<0$)")):
+for Q, col, lab in ((0.0, NEBLUE, r"$Q=0$ (below inflection, $F''>0$)"),
+                    (Qi, NEGREEN, r"$Q=\Delta/\sqrt{3}$ (inflection, $F''=0$)"),
+                    (3.0, NERED, r"$Q=3$ (above inflection, $F''<0$)")):
     C = np.array([C_closed(Q, x) for x in w])
     a1.plot(w, C, color=col, lw=1.8, label=lab)
     a1.axhline(Fpp(Q) / 4, color=col, lw=0.9, ls=":", alpha=0.8)
@@ -36,13 +36,13 @@ for Q, col, lab in ((0.0, NEBLUE, r"$Q^*=0$ (below inflection, $F''>0$)"),
         a1.plot([p["w"] for p in pts], [p["sim"] for p in pts], "o", color=col, ms=6, mfc="white", mew=1.5)
 wz = J["limits"]["3.0"]["w_zero"]
 a1.axvline(wz, color=NERED, lw=0.8, alpha=0.5)
-a1.text(wz * 1.08, -0.0046, r"sign change $\omega_z$", color=NERED, fontsize=8, rotation=90, va="bottom")
+a1.text(wz * 1.08, -0.0046, r"sign change $\tilde\omega_z$", color=NERED, fontsize=8, rotation=90, va="bottom")
 a1.axhline(0, color="0.6", lw=0.8)
 a1.set_xscale("log"); a1.set_xlim(w[0], w[-1]); a1.set_ylim(-0.005, 0.02)
-a1.set_xlabel(r"carrier angular frequency $\omega_c\tau$")
-a1.set_ylabel(r"DC rate shift / $a^2$  ($\tau=1$ units)")
-a1.text(0.06, 0.0165, r"$\frac{1}{4} F''(Q^*)$: static curvature", color=NEBLUE, fontsize=8)
-a1.text(14.0, 0.0011, r"$F'(Q^*)/(2\omega^2)$: fast carrier", color=NEBLUE, fontsize=8, rotation=-33)
+a1.set_xlabel(r"normalized carrier frequency $\tilde\omega=\omega\tau_m$")
+a1.set_ylabel(r"$\kappa_{\rm DC}$ (normalized units)")
+a1.text(0.06, 0.0165, r"$\frac{1}{4} F''(Q)$: static curvature", color=NEBLUE, fontsize=8)
+a1.text(14.0, 0.0082, r"$F'(Q)/(2\tilde\omega^2)$", color=NEBLUE, fontsize=8)
 for f_hz, lab in ((300.0, "300 Hz"), (1000.0, "1 kHz")):      # carriers used in the paper, for tau = tau_E = 15 ms
     x = 2 * np.pi * f_hz * TE * 1e-3
     a1.axvline(x, color="0.75", lw=0.8, ls=":")
@@ -59,7 +59,7 @@ for (key, rows), col in zip(states.items(), cols):
     rows = sorted(rows, key=lambda r: r["fc_Hz"])
     fc = [r["fc_Hz"] for r in rows]; err = [100 * r["relative_error"] for r in rows]
     a2.loglog(fc, err, "o-", color=col, lw=1.4, ms=5,
-              label=rf"$C={key[0]:g}$, $\bar\eta={key[1]:g}$ ($\gamma={rows[0]['gamma_per_ms']:.3f}$/ms)")
+              label=rf"$J={key[0]:g}$, $\bar\eta={key[1]:g}$ ($\gamma={rows[0]['gamma_per_ms']:.3f}$/ms)")
 fc = np.array([300.0, 2000.0]); a2.loglog(fc, 1.0 * (300.0 / fc) ** 2, "--", color="0.5", lw=1.0, label=r"$\propto f_c^{-2}$")
 a2.set_xlabel(r"carrier frequency $f_c$ (Hz)"); a2.set_ylabel("error of the fast-carrier source (%)")
 from matplotlib.ticker import NullLocator, NullFormatter, FixedLocator, FixedFormatter
