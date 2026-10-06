@@ -251,7 +251,13 @@
       "status": "requested via peer-message; spooled, no verdict received",
       "scope": "Only the two new Table 4 rows, local-polarization wording and monotone-detector bound; no full review or computations.",
       "target_commit": "8dc6eca",
-      "sent_at": "2026-10-06 20:38 CEST"
+      "sent_at": "2026-10-06 20:38 CEST",
+      "prior_bound_scope_agreement": {
+        "target_commit": "dc8e3c6",
+        "reported_at": "2026-10-06 20:27 CEST",
+        "result": "agrees with all scope qualifications; no disagreement",
+        "draft17_integration_check_still_pending": true
+      }
     },
     "review_shelf_verified": {
       "article": "40 pages, byte-identical to TN0484_jne.pdf",
@@ -508,7 +514,22 @@
       "correction": "The earlier logistic-only scope was unnecessarily narrow. Larger common matched polarization cannot exceed the class bound; unequal true polarization instead violates the comparison.",
       "manuscript_changed": false,
       "remaining_action": null,
-      "integrated_in": "0.15.0-draft17"
+      "integrated_in": "0.15.0-draft17",
+      "independent_review": {
+        "reviewer": "klaus-484-TI-helper",
+        "reported_at": "2026-10-06 20:27 CEST",
+        "target_commit": "dc8e3c6",
+        "target_note": "docs/detector_bound_scope_2026-10-06.md",
+        "result": "agrees with all scope qualifications; no disagreement",
+        "qualifications": [
+          "Carrier-averaged comparison",
+          "Scale-invariant optimum under true matched local polarization",
+          "Unmeasured polarization can invalidate experimental matching, not exceed the matched-polarization ceiling",
+          "Microvolt widths belong to the illustrative logistic calculation",
+          "0.348 is a numerical evaluation, not a certified bound"
+        ],
+        "scope_boundary": "Agreement concerns the bound-scope note. It is not a fidelity verdict on draft17 or its two new prediction rows."
+      }
     }
   },
   "landau_review_baseline": "0c394df"

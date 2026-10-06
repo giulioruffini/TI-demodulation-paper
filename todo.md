@@ -9,7 +9,7 @@
 - [ ] after review and authorization: push, align the public code/archive, cut Calliope/Zenodo, re-sync Overleaf, and circulate the coauthor request (all HOLD)
 - [ ] migrate the paper folder at the next coordinated version boundary; run the layout checker before and after, with no concurrent session editing
 - [x] apply the approved readability review: separate TI/tACS Results, relocate derivations and protocols, consolidate predictions, retain CUT? passages (October 6)
-- [x] close the draft16 Table 4 gap and integrate the verified carrier-polarization and monotone-bound clarifications in draft17 (October 6)
+- [x] close the draft16 Table 4 gap and integrate the carrier/bound clarifications in draft17; Klaus agrees with the bound-scope note (October 6)
 - [x] record Klaus's af29999 and e07b44a fidelity reports, preserving their different scopes (October 6)
 - [x] verify published Luff Fig. 1 and Methods for annotation 20: seven carrier conditions, no matched carrier-polarization analysis (October 6)
 - [x] close Klaus's scoped draft15 focality integration check at 972d9ea; the broader review is now the draft16 check

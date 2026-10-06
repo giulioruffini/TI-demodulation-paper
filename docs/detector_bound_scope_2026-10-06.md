@@ -36,3 +36,5 @@ Proposed closing sentences for the next manuscript checkpoint:
 Retain the existing explanation of the sharp-threshold limit and its illustrative widths. No new simulation is needed; the manuscript remains at the reviewed commit until the combined fidelity report arrives.
 
 Integrated in draft17 after the combined draft16 fidelity report; see `revision_2026-10-06_v0150draft17_fidelity.md`.
+
+Klaus independently agreed with all scope qualifications at 20:27, reviewing `dc8e3c6`. This closes the conceptual scope question; the later draft17 integration check remains separate.
