@@ -9,6 +9,7 @@
 - [ ] after review and authorization: push, align the public code/archive, cut Calliope/Zenodo, re-sync Overleaf, and circulate the coauthor request (all HOLD)
 - [ ] migrate the paper folder at the next coordinated version boundary; run the layout checker before and after, with no concurrent session editing
 - [x] apply the approved readability review: separate TI/tACS Results, relocate derivations and protocols, consolidate predictions, retain CUT? passages (October 6)
+- [x] record Klaus's af29999 annotation/schematic fidelity pass; keep the later draft16 readability check pending (October 6)
 - [x] verify published Luff Fig. 1 and Methods for annotation 20: seven carrier conditions, no matched carrier-polarization analysis (October 6)
 - [x] close Klaus's scoped draft15 focality integration check at 972d9ea; the broader review is now the draft16 check
 - [x] address the 26 annotations in Giulio's GR review PDF: split envelope/DC subsections, group NMM2 Results, move predictions to Discussion, and clarify local explanations (October 6)

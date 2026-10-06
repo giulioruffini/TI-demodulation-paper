@@ -388,7 +388,7 @@
         "Explicitly identify g = Sigma for the JR column.",
         "Replace the negative focality-summary sentence with a positive statement about computing focality from the product map."
       ],
-      "later_revision_check": "The broader check requested on af29999 remains pending; this earlier report does not close it.",
+      "later_revision_check": "Broader annotation/schematic check on af29999 passed, reported at 19:42; combined draft16 e07b44a review remains pending.",
       "committed_confirmation": {
         "reported_at": "2026-10-06 18:55 CEST",
         "target_commit": "972d9ea",
@@ -440,8 +440,25 @@
     "independent_fidelity_check": {
       "reviewer": "klaus-484-TI-helper",
       "target_commit": "af29999",
-      "status": "superseded by the requested combined draft16 check; no separate verdict received",
-      "scope": "Annotation resolution, retention under structural moves, schematic against model equations, abstract DC scope, and carrier-test literature qualification."
+      "status": "pass on draft15 af29999; later draft16 review remains pending",
+      "scope": "Annotation resolution, retention under structural moves, schematic against model equations, abstract DC scope, and carrier-test literature qualification.",
+      "reported_at": "2026-10-06 19:42 CEST",
+      "recorded_at": "2026-10-06 20:20 CEST",
+      "review_record": "docs/draft15_fidelity_2026-10-06.md",
+      "comparison_baseline": "56070fa",
+      "sentence_diff_reported": {
+        "removed_verbatim": 39,
+        "added_verbatim": 52
+      },
+      "retention_verdict": "Every low-overlap removed sentence survives reworded or relocated. Only two bridge sentences were removed; their content remains elsewhere.",
+      "schematic_verdict": "Figure byte-identical to c7ce5e0; caption consistent with JR and PING equations.",
+      "abstract_dc_verdict": "Correct under uniform conductivity, access and detection in a source-free compartment; magnitude covers either curvature sign.",
+      "required_corrections_reported": [],
+      "optional_suggestions": {
+        "abstract": "Repeat the no-interior-focus consequence if word budget permits; not applied because the consequence is already explained in Theory.",
+        "carrier_test": "Make local-polarization normalization explicit; use the published Luff protocol check in docs/carrier_polarization_literature_2026-10-06.md instead of the proposed few-pairs wording."
+      },
+      "scope_boundary": "This verdict closes the earlier annotation and schematic pass only. It does not close the combined readability review requested on e07b44a."
     },
     "held_actions": [
       "GitHub push",
