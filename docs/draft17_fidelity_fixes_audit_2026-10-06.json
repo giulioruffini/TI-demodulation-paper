@@ -1,0 +1,91 @@
+{
+  "baseline_commit": "e07b44a",
+  "word_count_command": "texcount -sum=1,1,1,0,0,0,0 -1",
+  "main_section_counts": [
+    {
+      "section": "Introduction",
+      "before": 758,
+      "after": 758,
+      "change": 0
+    },
+    {
+      "section": "Theory",
+      "before": 4444,
+      "after": 4444,
+      "change": 0
+    },
+    {
+      "section": "Methods",
+      "before": 2913,
+      "after": 2913,
+      "change": 0
+    },
+    {
+      "section": "Results",
+      "before": 3123,
+      "after": 3123,
+      "change": 0
+    },
+    {
+      "section": "Discussion",
+      "before": 1866,
+      "after": 2091,
+      "change": 225
+    },
+    {
+      "section": "Conclusion",
+      "before": 279,
+      "after": 279,
+      "change": 0
+    }
+  ],
+  "main_sections_before": 13383,
+  "main_sections_after": 13608,
+  "abstract_words": 296,
+  "abstract_sha256": "853f47a0db90c442b80a26fb7deb070a9491a6808b6e267f1816a0e6b980a3a6",
+  "labels_lost": [],
+  "labels_added": [],
+  "equation_labels": 32,
+  "figure_labels": 25,
+  "cited_keys": 60,
+  "equation_bodies_changed": [
+    "eq:etasup"
+  ],
+  "equation_change": "eq:etasup uses approximate equality for the numerically estimated maximum.",
+  "cut_candidates": [
+    {
+      "start": "The transfer curve summarizes",
+      "retained_verbatim": true
+    },
+    {
+      "start": "Cohen et al.'s periaxonal circuit provides",
+      "retained_verbatim": true
+    },
+    {
+      "start": "Channel kinetics contribute",
+      "retained_verbatim": true
+    },
+    {
+      "start": "At $\\bar\\eta=1.5$, gamma activity",
+      "retained_verbatim": true
+    },
+    {
+      "start": "Table~\\ref{tab:doors} summarizes",
+      "retained_verbatim": true
+    },
+    {
+      "start": "Weak amplitude alone does not",
+      "retained_verbatim": true
+    },
+    {
+      "start": "For scale, a reverberation time",
+      "retained_verbatim": true
+    }
+  ],
+  "new_prediction_rows": [
+    "Independent carrier amplitudes",
+    "Equal-power carrier control"
+  ],
+  "new_scientific_calculations": false,
+  "counting_note": "Counts include each one-word main-section heading; all other prose, subheadings and captions use the stated TeXcount weights. Math expressions are excluded."
+}

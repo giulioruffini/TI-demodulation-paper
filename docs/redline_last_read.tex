@@ -1,7 +1,7 @@
 \documentclass[11pt,a4paper]{article}
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-00g5r42l/old.tex   Tue Oct  6 20:09:10 2026
-%DIF ADD /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-00g5r42l/new.tex   Tue Oct  6 20:09:10 2026
+%DIF DEL /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-4edw39bn/old.tex   Tue Oct  6 20:32:32 2026
+%DIF ADD /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-4edw39bn/new.tex   Tue Oct  6 20:32:32 2026
 \usepackage[margin=2.3cm]{geometry}
 \usepackage{lmodern}        % classic Computer Modern look, vectorized (T1)
 \usepackage[T1]{fontenc}
@@ -97,7 +97,7 @@
 %DIF 89c89
 %DIF < \newcommand{\paperver}{0.15.0-draft13}
 %DIF -------
-\newcommand{\paperver}{0.15.0-draft16} %DIF >
+\newcommand{\paperver}{0.15.0-draft17} %DIF >
 %DIF -------
 \hypersetup{
   pdftitle={The cortical column as a tuned receiver: a network mechanism for temporal-interference stimulation},
@@ -2732,13 +2732,22 @@ recurrence can amplify its output. A measured PLV effect cannot be compared
 directly with this drive ratio; a polarization-calibrated amplitude sweep with
 the same readout would test the estimate}\DIFaddend .
 
-For comparison, the matched-peak efficiency over the logistic family has a supremum
-of approximately $0.348$ (App.~\ref{app:bound}). Approaching it at weak fields
-requires a transfer curve narrowed to microvolt scales; the limiting detector is
-step-like and has a second-harmonic ratio near $0.15$, distinct from both weak
-square-law detection and linear envelope following. This bound applies to that
-memoryless family and matching convention, not to the dynamic QIF detector or to
-all cellular mechanisms. The unequal-current TI ratio and the matched-depth
+For comparison, the \DIFaddbegin \DIFadd{carrier-averaged, }\DIFaddend matched-peak\DIFdelbegin \DIFdel{efficiency over the logistic family has a
+supremum
+of approximately }\DIFdelend \DIFaddbegin \DIFadd{, open-loop drive ratio has a
+numerically estimated supremum of }\DIFaddend $0.348$ \DIFaddbegin \DIFadd{over bounded nondecreasing memoryless
+transfers }\DIFaddend (App.~\ref{app:bound}). \DIFdelbegin \DIFdel{Approaching it at weak fields
+requires a transfer curve narrowed to microvolt scales; the }\DIFdelend \DIFaddbegin \DIFadd{The positive-mixture-of-steps argument extends
+the logistic result to this class. Approaching it requires an active transition
+sharp relative to the input; for the logistic family at the illustrative
+polarizations, this means microvolt widths. The }\DIFaddend limiting detector is step-like
+and has a second-harmonic ratio near $0.15$, distinct from both weak
+square-law detection and linear envelope following. This bound \DIFdelbegin \DIFdel{applies to that
+memoryless family and matching convention, not to }\DIFdelend \DIFaddbegin \DIFadd{does not cover
+}\DIFaddend the dynamic QIF detector or \DIFdelbegin \DIFdel{to
+}\DIFdelend all cellular mechanisms. \DIFaddbegin \DIFadd{A larger common matched
+polarization does not exceed the class bound; unequal actual polarizations can
+instead invalidate the matching. }\DIFaddend The unequal-current TI ratio and the matched-depth
 AM-tACS control do not measure this matched-peak, open-loop ratio.
 \DIFaddbegin \DIFadd{Thus approaching the ceiling would require leaving the smooth weak-input regime
 used here; within that regime, local curvature determines the generated drive.
@@ -2798,23 +2807,34 @@ qualitative comparisons; their quantitative reanalysis remains to be done.}}
 carrier-independent in the static limit and fast-carrier QIF asymptote, provided
 no other circuit mode is excited. Access restores dependence at fixed applied
 field; detector dynamics can add it near the crossover.
-}& \DIFadd{Carrier sweeps change network sensitivity \cite{esmaeilpour2021} and single-cell
-mixing \cite{luff2024mixer}; thresholds depend on $f_c$
+}& \DIFadd{Carrier-frequency comparisons show changes in network sensitivity
+\cite{esmaeilpour2021} and subthreshold single-cell mixing \cite{luff2024mixer},
+without holding measured local carrier polarizations fixed. Thresholds depend on $f_c$
 \cite{opancar2025,peripheral2023}, and bare kHz fields have limited effects on
 hippocampal oscillations \cite{esmaeilpour2020}.
 }& \DIFadd{Measure each local polarization while sweeping $f_c$ at fixed beat and state;
 normalize the weak beat by their product. Hold network gain fixed or measure it
 independently to separate access from residual detector dependence. Measure any
 residual cutoff rather than assigning it to a compartment. }\\[4pt]
+\DIFadd{\textbf{Independent carrier amplitudes.} At fixed detector and network gains,
+quadratic modulation excursion follows $2|\varepsilon_1\varepsilon_2|$;
+an ideal envelope follower tracks $2\min(|\varepsilon_1|,|\varepsilon_2|)$
+(Eq.~\eqref{eq:reweight}, Table~\ref{tab:transduction-maps}).
+}& \DIFadd{The unequal-amplitude spatial example separates these maps; a biological test
+with independent local-polarization calibration is not supplied here.
+}& \DIFadd{Hold the weaker polarization fixed and vary the stronger, then swap tones.
+Keep both inputs weak, frequencies fixed, and the operating state controlled.
+Reconstruct the slow-response excursion after correcting network filtering;
+a beat lock-in alone does not measure the envelope's full excursion. }\\[4pt]
 \DIFadd{\textbf{State and carrier dependence.} The static sigmoid follows $\Sig''$ and
 reverses sign at its inflection (PEIX$=0$). Fast-carrier QIF mixes in voltage and
 reads the source through rate and network susceptibility; its DC term follows
 $F'$ without the same sign rule (\S\ref{sec:dynamic}).
 }& \DIFadd{Cell-type-specific responses (PV versus pyramidal) are reported
 \cite{caldas2024}; the detector coefficient remains model-dependent}\DIFaddend .
-\DIFdelbegin \DIFdel{Building on existing axonal TI mechanisms,
-we represent candidate fast accessthrough nodes and the
-AIS }\DIFdelend \DIFaddbegin & \DIFadd{Vary tonic drive and carrier frequency at fixed beat; measure beat amplitude
+\DIFdelbegin \DIFdel{Building on existing axonal TI mechanisms, we represent candidate fast access
+through nodes and the AIS by a short effective membrane time,
+}\DIFdelend \DIFaddbegin & \DIFadd{Vary tonic drive and carrier frequency at fixed beat; measure beat amplitude
 and phase. Compare with the predicted coefficient after accounting for network
 susceptibility. Amplitude changes alone do not isolate detection. }\\[4pt]
 \DIFadd{\textbf{Transduction class.} At a matched site, weak smooth detection with nonzero
@@ -2838,51 +2858,70 @@ peaks and then falls as the amplified oscillation rectifies
 (\S\ref{sec:timing}--\ref{sec:qif}).
 }& \DIFadd{Qualitatively consistent with TI altering spike timing more than mean rate in
 primates \cite{vieira2024}.
-}& \DIFadd{Compare beat lock-in with mean-rate change in commensurate effect measures,
+}& \DIFadd{Compare beat lock-in }\DIFaddend with \DIFdelbegin \DIFdel{periaxonal
+circuitry motivating separate axonal and somatic responses.
+Their TI transfer
+and the response at human field strengths require calibration.
+}\DIFdelend \DIFaddbegin \DIFadd{mean-rate change in commensurate effect measures,
 retaining the finite-amplitude qualification. }\\[4pt]
 \DIFadd{\textbf{Network readout.} Population nonlinearity and synaptic recurrence contribute
 to the measured response.
 }& \DIFadd{Most pyramidal TI responses vanish under synaptic blockade \cite{caldas2024},
 supporting network involvement without excluding cellular mixing.
 }& \DIFadd{Test whether synaptic blockade reduces recurrent amplification while preserving
-a cellular detector. }\\
+a cellular detector. }\\[4pt]
+\DIFadd{\textbf{Equal-power carrier control.} At second order, equal local RMS
+polarization gives the same steady source when the carriers see the same DC
+coefficient. TI also supplies a beat; either waveform can induce an oscillation
+if the mean shift crosses a bifurcation.
+}& \DIFadd{Demonstrated in the PING mean field (Fig.~\ref{fig:qif_regimes}c,d).
+The corresponding spiking-network and in vivo controls are not provided here.
+}& \DIFadd{Compare two tones with one carrier of matched RMS polarization and duration,
+checking the DC coefficient across the carrier interval. Measure mean activity,
+intrinsic oscillations, and beat lock-in separately to distinguish the steady
+shift from the beat response. }\\
 \end{longtable}
 \endgroup
+\DIFaddend
 
-\section{\DIFadd{Conclusion}}
-\DIFadd{For weak perturbations of ongoing activity, a nonzero second-order response makes
-the TI beat proportional to the product of the local carrier polarizations,
+\DIFaddbegin \section{\DIFadd{Conclusion}}
+\DIFaddend For weak perturbations of ongoing activity, \DIFdelbegin \DIFdel{smooth nonlinearities with a nonzero
+}\DIFdelend \DIFaddbegin \DIFadd{a nonzero }\DIFaddend second-order \DIFdelbegin \DIFdel{response generate the beat through effective quadratic mixing. The population models realize this description and
+amplify the generated drive near a network
+resonance. A large response alone establishes neither efficient
+detectionnor the microscopic mixer. }%DIFDELCMD <
+
+%DIFDELCMD < %%%
+\DIFdel{Fast population relaxation gives }\DIFdelend \DIFaddbegin \DIFadd{response makes
+the TI beat proportional to }\DIFaddend the \DIFdelbegin \DIFdel{NMM2 slow-synapse limit, a nonlinear static
+rate map with dynamic synapses. Its curvature describes carrier mixing only when
+relaxation is also fast relative to the carrier; otherwise the dynamic response
+applies.
+Fast access and slow recurrent resonance can coexist,with each physical
+filter represented once. }%DIFDELCMD <
+
+%DIFDELCMD < %%%
+\DIFdel{In the weak square-law regime, beat generation depends on the }\DIFdelend product of the \DIFdelbegin \DIFdel{effective carrier inputs,
+not only on the envelope excursion. }\DIFdelend \DIFaddbegin \DIFadd{local carrier polarizations,
 rather than the envelope minimum. Its steady source follows their summed squares;
 the magnitude of this source and the ideal envelope mean have no strict interior
 maximum in a compartment uniform in conductivity, access, and detection. Fast access through nodes or the
-AIS is represented }\DIFaddend by a short effective membrane time, with periaxonal circuitry
-motivating \DIFdelbegin \DIFdel{separate }\DIFdelend \DIFaddbegin \DIFadd{distinct }\DIFaddend axonal and somatic responses. \DIFdelbegin \DIFdel{Their }\DIFdelend \DIFaddbegin \DIFadd{Its }\DIFaddend TI transfer and the \DIFaddbegin \DIFadd{absolute
-}\DIFaddend response at human field strengths require calibration.
+AIS is represented by a short effective membrane time, with periaxonal circuitry
+motivating distinct axonal and somatic responses. Its TI transfer and the absolute
+response at human field strengths require calibration.
+}
 
-\DIFdelbegin \DIFdel{For weak perturbations of ongoing activity, smooth nonlinearities with a nonzero
-second-order response generate the beat through effective quadratic mixing.
-The population models realize this description and amplify the generated drive
-near a network resonance. A large response alone establishes neither efficient
-detection nor the microscopic mixer. }%DIFDELCMD <
+\DIFaddend TI and \DIFdelbegin \DIFdel{a }\DIFdelend direct low-frequency \DIFdelbegin \DIFdel{drive share the downstream amplifier when }\DIFdelend \DIFaddbegin \DIFadd{stimulation share the circuit amplifier when the
+generated }\DIFaddend input, observable, and \DIFaddbegin \DIFadd{operating }\DIFaddend state are matched and both responses
+\DIFdelbegin \DIFdel{remain linear, so resonance alone }\DIFdelend \DIFaddbegin \DIFadd{are linear. Resonance alone then }\DIFaddend gives TI no efficiency advantage\DIFdelbegin \DIFdel{. Finite-amplitude }\DIFdelend \DIFaddbegin \DIFadd{; finite-amplitude
+}\DIFaddend responses near the Hopf can depart from that ratio. \DIFdelbegin \DIFdel{Measuring local carrier }\DIFdelend \DIFaddbegin \DIFadd{Fast population relaxation
+recovers a static rate map with dynamic synapses, but static carrier mixing
+requires relaxation faster than the carrier as well. Fast access and slow network
+resonance can coexist, with each filter counted once; a large response alone
+identifies neither an efficient detector nor its microscopic mechanism.
+}
 
-%DIFDELCMD < %%%
-\DIFdelend \DIFaddbegin \DIFadd{TI and direct low-frequency stimulation share the circuit amplifier when the
-generated input, observable, and operating state are matched and both responses
-are linear. Resonance alone then gives TI no efficiency advantage; finite-amplitude
-responses near the Hopf can depart from that ratio. }\DIFaddend Fast population relaxation
-\DIFdelbegin \DIFdel{gives the NMM2 slow-synapse limit, a nonlinear }\DIFdelend \DIFaddbegin \DIFadd{recovers a }\DIFaddend static rate map with dynamic synapses\DIFdelbegin \DIFdel{. Its curvature describes carrier mixing
-only when
-relaxation is also fast relative to the carrier ; otherwise the dynamic response
-applies}\DIFdelend \DIFaddbegin \DIFadd{, but static carrier mixing
-requires relaxation faster than the carrier as well}\DIFaddend . Fast access and slow \DIFdelbegin \DIFdel{recurrent }\DIFdelend \DIFaddbegin \DIFadd{network
-}\DIFaddend resonance can coexist, with each \DIFdelbegin \DIFdel{physical
-filter represented once}\DIFdelend \DIFaddbegin \DIFadd{filter counted once; a large response alone
-identifies neither an efficient detector nor its microscopic mechanism}\DIFaddend .
-
-In the \DIFdelbegin \DIFdel{weak square-law regime, beat generation depends on the product of the effective carrier inputs, not only on the envelope excursion. TI and a direct
-low-frequency drive share the downstream amplifier when input, observable, and
-state are matched and both responses remain linear, so resonance alone gives TI no efficiency advantage. Finite-amplitude responses near the Hopf can depart from
-that ratio. Measuring local carrier }\DIFdelend \DIFaddbegin \DIFadd{pinned JR sweep, beat-locked rate modulation grows more than the mean-rate
+\DIFadd{In the pinned JR sweep, beat-locked rate modulation grows more than the mean-rate
 shift toward the Hopf. Their ratio peaks and then falls as the amplified response
 itself rectifies, so timing can dominate without the mean shift vanishing.
 }

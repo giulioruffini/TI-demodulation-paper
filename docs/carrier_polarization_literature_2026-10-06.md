@@ -25,3 +25,5 @@ Table 4 already specifies the required normalization and makes no priority claim
 > Carrier-frequency comparisons show changes in network sensitivity [esmaeilpour2021] and subthreshold single-cell mixing [luff2024mixer], without holding measured local carrier polarizations fixed. Excitation thresholds depend on carrier frequency [opancar2025, peripheral2023], and bare kilohertz fields have limited effects on hippocampal oscillations [esmaeilpour2020].
 
 Retain the present test cell, including independent control of network gain. If a priority sentence is later added, limit it to the studies checked and retain “to our knowledge.” No manuscript change or rebuild was needed to record this evidence.
+
+Integrated in draft17 after the combined draft16 fidelity report; see `revision_2026-10-06_v0150draft17_fidelity.md`.

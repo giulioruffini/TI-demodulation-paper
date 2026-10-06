@@ -1,16 +1,16 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
-- [ ] integrate Klaus's draft16 fidelity check and the verified carrier-polarization wording in docs/carrier_polarization_literature_2026-10-06.md
-- [ ] align the Discussion bound with the existing monotone-transfer proof and matching assumptions in docs/detector_bound_scope_2026-10-06.md
+- [ ] obtain Klaus's scoped check of draft17's two added test rows and detector-bound wording
 - [ ] Giulio: decide the seven retained CUT? passages and the biological-rectifier sentence in docs/revision_2026-10-06_v0150draft16_readability.md
 - [ ] review Ricardo's real-montage FEM comparison if supplied before submission; retain the proposed comparison otherwise
-- [ ] review draft16 and its fixed draft13 redline; the main sections are shorter, with derivations retained in the supplement
+- [ ] review draft17 and its fixed draft13 redline, including the independent-amplitude and equal-power test rows
 - [ ] Giulio: review the corrected JNE working edition and fixed-baseline redline; authorize coauthor circulation when ready
 - [ ] obtain missing funding declarations; confirm the supplied competing-interests statement, author roles and affiliations, actual AI-tool versions, and the submission version with every author
 - [ ] after review and authorization: push, align the public code/archive, cut Calliope/Zenodo, re-sync Overleaf, and circulate the coauthor request (all HOLD)
 - [ ] migrate the paper folder at the next coordinated version boundary; run the layout checker before and after, with no concurrent session editing
 - [x] apply the approved readability review: separate TI/tACS Results, relocate derivations and protocols, consolidate predictions, retain CUT? passages (October 6)
-- [x] record Klaus's af29999 annotation/schematic fidelity pass; keep the later draft16 readability check pending (October 6)
+- [x] close the draft16 Table 4 gap and integrate the verified carrier-polarization and monotone-bound clarifications in draft17 (October 6)
+- [x] record Klaus's af29999 and e07b44a fidelity reports, preserving their different scopes (October 6)
 - [x] verify published Luff Fig. 1 and Methods for annotation 20: seven carrier conditions, no matched carrier-polarization analysis (October 6)
 - [x] close Klaus's scoped draft15 focality integration check at 972d9ea; the broader review is now the draft16 check
 - [x] address the 26 annotations in Giulio's GR review PDF: split envelope/DC subsections, group NMM2 Results, move predictions to Discussion, and clarify local explanations (October 6)

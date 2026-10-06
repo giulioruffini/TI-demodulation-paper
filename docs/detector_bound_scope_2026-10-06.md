@@ -34,3 +34,5 @@ Proposed closing sentences for the next manuscript checkpoint:
 > The step-mixture argument extends the numerically estimated ceiling of 0.348 to bounded nondecreasing memoryless transfers, for this carrier-averaged, matched-peak, open-loop comparison. A generated-drive ratio above it at verified matched local polarization would fall outside these assumptions. Unmeasured differences in polarization can instead invalidate the experimental matching; a PLV ratio does not measure this drive ratio.
 
 Retain the existing explanation of the sharp-threshold limit and its illustrative widths. No new simulation is needed; the manuscript remains at the reviewed commit until the combined fidelity report arrives.
+
+Integrated in draft17 after the combined draft16 fidelity report; see `revision_2026-10-06_v0150draft17_fidelity.md`.

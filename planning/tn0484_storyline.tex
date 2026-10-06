@@ -1,6 +1,6 @@
 % TN0484 / WP0185: abstract and storyline. Build from the project root:
 %   ~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex
-% Map mode: rows follow the v0.15.0-draft16 manuscript order and numbering (TN build; the JNE build
+% Map mode: rows follow the v0.15.0-draft17 manuscript order and numbering (TN build; the JNE build
 % keeps Appendix A and moves later appendices and figures S1--S13 to the supplement). Prepared 2026-10-03.
 \documentclass[11pt,a4paper,landscape]{article}
 \usepackage[T1]{fontenc}
@@ -18,7 +18,7 @@
 \newcommand{\wpnumber}{TN0484 / WP0185}
 \newcommand{\papertitle}{The cortical column as a tuned receiver}
 \newcommand{\storylinedate}{6 October 2026}
-\newcommand{\baselinelabel}{v0.15.0-draft16}
+\newcommand{\baselinelabel}{v0.15.0-draft17}
 \newcommand{\abstractfile}{tn0484_abstract.tex}
 \newcommand{\storylineauthors}{Giulio Ruffini}
 % -----------------------------------------------------------------------------
@@ -93,7 +93,7 @@ beat modulation and induced gamma. The reading redline remains against draft13.}
 
 {\footnotesize\color{muted}\textbf{Approved readability revision.}
 This pass gives TI versus tACS its own Results subsection after the JR chain;
-NMM2 and QIF follow. The AM-surrogate protocol is in to Methods. The compartment
+NMM2 and QIF follow. The AM-surrogate protocol is in Methods. The compartment
 matrix, QIF derivation, and cable estimate are in the model appendix; their
 results remain in Theory. The eight-state PING comparison belongs with the NMM2
 Results. Predictions are consolidated in their Discussion table with each test
@@ -163,7 +163,7 @@ its static transfer is an adiabatic limit, not a consequence of small amplitude 
 & Quasistatic field; polarization $s(t)$ through parallel entry points with access filters
   (Eqs.~7--8), one compartment response counted once. Taylor expansion (Eqs.~9--10) with the
   truncation condition $|s|\ll1/\rho\approx1.8$~mV. The squared-envelope map is derived
-  in \S2.5; the AM-surrogate protocol is in \S3.2. The effective dynamic coefficient $\chi^{(2)}$ combines cellular
+  in \S2.5; the AM-surrogate protocol is in \S3.1. The effective dynamic coefficient $\chi^{(2)}$ combines cellular
   contributions and reduces to $\Sigma''/2$ in the static case. Retain smoothness and
   nonzero second-order response, its possible frequency dependence, and the DC term.
   Static predictions: $\varepsilon^2$ scaling, $\Sigma''$ law, carrier independence
@@ -439,8 +439,10 @@ laminar extension, and the metrics.
   $\mathcal R_{\rm det}\simeq|\Sigma''|\varepsilon/4\Sigma'$; $\mathcal Q\sim10$. Vieira's unmatched-current
   two-pair TI result (0.34, CI 0.04--0.65) is separate from the matched-depth AM control
   (PLV 0.10 versus 0.20). The illustrative 0.1~mV budget gives 0.8\% at $v^*=8.30$~mV;
-  drive and PLV are different observables. The 0.348 supremum and its
-  scope. Limitations: Plovie 2025, noise, columns, cascaded synapses cannot solve access,
+  drive and PLV are different observables. The numerical 0.348 ceiling extends by positive
+  step mixtures to bounded nondecreasing memoryless transfers, for the carrier-averaged,
+  matched-peak, open-loop comparison. Larger common matched polarization does not evade it.
+  Limitations: Plovie 2025, noise, columns, cascaded synapses cannot solve access,
   mixed human results.
 & Reinterprets each result in physiological terms and places every caveat where it bites.
   Retain each level (anatomical access, mixing, time scales, dosimetry,
@@ -449,11 +451,13 @@ laminar extension, and the metrics.
 & Fig.~S3 (tACS); Cohen 2020; Luff 2024 (PWM-TI); Semenov 2025; Vieira 2024; App.~D.\\[2pt]
 \midrule
 \place{\S5.1}{Falsifiable predictions}
-& Four predictions with tests: access versus mixing by carrier sweep; state and carrier
-  dependence; transduction class by amplitude slope and harmonic ratio off resonance;
-  frequency selectivity. Table~4 against existing evidence; synaptic block tests network
-  involvement without excluding a cellular detector. The table now contains the
-  complete procedures and qualifications formerly in the duplicate enumeration.
+& Carrier sweeps with measured local polarization; independent-amplitude tests of product
+  versus minimum at fixed weaker tone; state and carrier dependence; amplitude slope and
+  harmonic ratio off resonance; beat-frequency selectivity; timing versus rate; synaptic
+  blockade; equal-power carrier controls. The independent-amplitude test reconstructs the
+  slow excursion, which is not a single beat lock-in. Equal-RMS evidence is from the PING
+  mean field, with spiking-network and in vivo controls still needed. Table~4 preserves
+  network-gain calibration, weak-input conditions, and existing carrier comparisons.
 & Converts the mechanism into falsifiable statements within the Discussion; distinguishes existing carrier sweeps from an access-corrected test.
 & Table~4; Vieira 2024; Caldas-Martinez 2024; Opancar 2025.\\[2pt]
 \midrule
@@ -478,6 +482,7 @@ laminar extension, and the metrics.
   $\mathcal R_{\rm det}\le\rho\varepsilon/4$ (Eq.~31); family supremum $0.3479$ at
   $\delta/2\varepsilon=0.523$ (Eq.~33), a step detector with harmonic ratio 0.151; the
   microvolt width is an idealization, and the maximum is numerical, not certified.
+  The nonnegative direct coefficient makes the positive-step-mixture extension valid.
 & C supports \S2.7 (susceptibility is not detection); D supports \S2.4 and the Discussion's
   efficiency paragraphs.
 & \path{threshold_bound_check.py}.\\[2pt]
@@ -505,16 +510,11 @@ laminar extension, and the metrics.
 
 \vspace{4pt}
 {\footnotesize\color{muted}
-\textbf{Placement decisions through 6 October 2026.} LaNMM methods remain beside
-its results in Appendix E; the equal-RMS control remains in the main article and
-S3, S10, and S11 remain supplementary. Theory now separates detector laws (\S2.4),
-envelope oscillations and spatial weighting (\S2.5), and the mean shift (\S2.6).
-Methods \S3.2 defines the amplitude and harmonic tests before their measurement
-procedure; \S3.1 holds the waveform protocol. The JR chain and its separate
-shared-amplifier result precede the NMM2 mean field, coupling results, and spiking
-network; predictions belong to Discussion \S5.1. The approved model schematic follows
-\S2.1. QIF cutoff diagnostics move to Methods; the main result retains its convergence
-qualification. All existing equations, figures, examples, and numerical results remain.
+\textbf{Placement decisions through 6 October 2026.} The map above records the
+approved section and method locations. LaNMM methods remain beside their results
+in Appendix E; the equal-RMS control remains in the main article, and S3, S10,
+and S11 remain supplementary. Existing equations, figures, examples, numerical
+results, and the QIF convergence qualification are retained.
 The abstract's mean-map clause states the boundary consequence for the generated drive with its uniformity
 conditions. The reading baseline is draft13 (\texttt{c620335}). Coauthor confirmation,
 remaining funding declarations, the seven retained CUT? passages, and release alignment remain pending; see \path{todo.md}.}

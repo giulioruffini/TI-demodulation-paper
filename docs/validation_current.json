@@ -1,14 +1,14 @@
 {
-  "version": "0.15.0-draft16",
-  "review_baseline": "0c394df",
+  "version": "0.15.0-draft17",
+  "review_baseline": "e07b44a",
   "redline_baseline": "c620335",
-  "status": "Draft16 combines the annotated-review and approved schematic integration with the approved readability review. Scientific content is retained; seven CUT? passages remain verbatim for Giulio. Combined fidelity check and author/release decisions remain pending.",
+  "status": "Draft17 adds the two stage tests missing from Table 4 and aligns detector-bound scope with the appendix. Clean builds; no scientific-content cuts or numerical changes. Author decisions, scoped follow-up review and release holds remain.",
   "outputs": {
     "jne": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.log",
       "pages": 40,
-      "sha256": "ab27e2c5a1558f7d82d81491c1c2c6b574968d182ac3678947451b23d9e61718",
+      "sha256": "9e2ec320600f1d3c7b66297b13509dbdafaa988f67fbd6dffe451abcb704b9eb",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -20,7 +20,7 @@
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne_supplement.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne_supplement.log",
       "pages": 21,
-      "sha256": "984f7ce4e29212b8327cf71e25b1d6ce2f149f35bb4e42e6927d8bdc50b8274a",
+      "sha256": "8b9ebc97d3b9de364eb90a0ee7e653c919ac11f36de378b6b1c2ca2fb3d9dab6",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -32,7 +32,7 @@
       "path": "/tmp/tn0484_draft15_revision/build/tn_validation.pdf",
       "log": "/tmp/tn0484_draft15_revision/build/tn_validation.log",
       "pages": 57,
-      "sha256": "c09caf6f452f78ab1bb9d44e14ae9c9ad0326eef6c0b5bf5281d441f0ea584f6",
+      "sha256": "e63e5c238a002b72bbb3548a2175d2c3cfee3d371b4278778648085f74af34d2",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -44,7 +44,7 @@
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.log",
       "pages": 11,
-      "sha256": "9f6ffe228b33470757056ad661f2a45768438b2cc68553a3ffd8bb2308246368",
+      "sha256": "46f67209827d5ce0d0a472b1321c8ee207a3d25f9b840a33ca23fa7dadbb3e43",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -56,7 +56,7 @@
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.log",
       "pages": 48,
-      "sha256": "34dbf698b5c1f677379aa425f6c7a4b0448be7f6dc6a174df8cfc42becbe4c70",
+      "sha256": "f44055848e179dd66a198c41ac59f9838d2a36c54b8b8d204063be6bd1a00d16",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -66,104 +66,19 @@
     }
   },
   "retention": {
-    "editing_baseline": "22ce445",
+    "editing_baseline": "e07b44a",
     "fig_labels": {
       "count": 25,
       "numbers_unchanged": true
     },
     "eq_labels": {
       "count": 32,
-      "numbers_unchanged": false,
-      "renumbering": {
-        "eq:sqenv": {
-          "before": "11",
-          "after": "16"
-        },
-        "eq:amsur": {
-          "before": "12",
-          "after": "23"
-        },
-        "eq:crossover": {
-          "before": "13",
-          "after": "11"
-        },
-        "eq:crossover_limits": {
-          "before": "14",
-          "after": "12"
-        },
-        "eq:kfixed": {
-          "before": "15",
-          "after": "13"
-        },
-        "eq:cycavg": {
-          "before": "16",
-          "after": "14"
-        },
-        "eq:rdet": {
-          "before": "17",
-          "after": "15"
-        },
-        "eq:reweight": {
-          "before": "18",
-          "after": "17"
-        },
-        "eq:spatial": {
-          "before": "19",
-          "after": "18"
-        },
-        "eq:gain": {
-          "before": "20",
-          "after": "19"
-        },
-        "eq:receiver": {
-          "before": "21",
-          "after": "20"
-        },
-        "eq:khz": {
-          "before": "22",
-          "after": "21"
-        },
-        "eq:lambda": {
-          "before": "23",
-          "after": "4"
-        },
-        "eq:peix": {
-          "before": "24",
-          "after": "22"
-        },
-        "eq:lockin": {
-          "before": "25",
-          "after": "24"
-        },
-        "eq:nmm2-ping": {
-          "before": "26",
-          "after": "25"
-        },
-        "eq:sl": {
-          "before": "4",
-          "after": "5"
-        },
-        "eq:etabound": {
-          "before": "5",
-          "after": "6"
-        },
-        "eq:reduced": {
-          "before": "6",
-          "after": "7"
-        },
-        "eq:etasup": {
-          "before": "7",
-          "after": "8"
-        },
-        "eq:lanmm_drive": {
-          "before": "8",
-          "after": "9"
-        }
-      },
+      "numbers_unchanged": true,
+      "renumbering": {},
       "bodies_changed": [
-        "eq:sqenv"
+        "eq:etasup"
       ],
-      "change": "Equivalent notation only; all equations retained."
+      "change": "Approximate equality marks the numerical supremum; no new or removed equation."
     },
     "cited_works": 60,
     "notation_table": {
@@ -195,39 +110,32 @@
   "visual_inspection": {
     "jne_pages": [
       1,
-      3,
-      4,
-      8,
-      10,
-      11,
-      14,
-      24,
-      26,
-      27,
       30,
       31,
-      37,
-      40
+      32
     ],
     "supplement_pages": [
-      5,
-      6
+      1,
+      8,
+      9
     ],
     "redline_pages": [
-      12,
-      24,
-      34
+      36,
+      38,
+      39
     ],
     "storyline_pages": [
+      9,
+      10,
       11
     ],
-    "findings": "The reorganized article, consolidated prediction table, relocated derivations, notation locations and fixed-baseline redline render without clipping or collisions. Latest title shows draft16. Existing figures are unchanged."
+    "findings": "Rebuilt pages checked for the two new prediction rows, bound scope, equation approximation, table continuations, and final storyline placement note; no clipping or overlaps."
   },
   "source_sha256": {
-    "TN0484_envelope_demodulation.tex": "a72d422bd3f4ee0809569a8642ea0f7f893cea76e3948c3a39352c82a95e37d5",
+    "TN0484_envelope_demodulation.tex": "1d9681a0993697b0b53786a5d44b67a660eb189621bdf5900781aec0268e4e42",
     "references.bib": "8ee2a664fc78b990a6811d1bb9fef0d1c4eb68d4f5f2ee52f167604b94f96907",
     "planning/tn0484_abstract.tex": "853f47a0db90c442b80a26fb7deb070a9491a6808b6e267f1816a0e6b980a3a6",
-    "planning/tn0484_storyline.tex": "56010a8669114511b13b1bb23d5ad36541eaf241902d671315e9a2b0fa7f8b1b",
+    "planning/tn0484_storyline.tex": "212f48cf987baef67991951d54c575f9c730b426f93c2f7cae3da4d04a8776fa",
     "planning/tn0484_notation.tex": "3f5815400d8fa51affcd8fba240ed454adc52ea925c5e7b2b3a6141911cd2efa",
     "figures_src/fig_models_ti.tex": "a07d94124ba4f22561bca098134d6d194d717918dbb0fab37ad6381bbbd558be",
     "figures_src/fig_models_ti_caption.tex": "0b4e8a163826956987cdcac4fd36ffc01403869476fd0bd6f74fbb37f8bf266e"
@@ -317,66 +225,36 @@
   },
   "current_revision": {
     "date": "2026-10-06",
-    "baseline_commit": "22ce445",
-    "authorization": "Giulio readability approval relayed at 18:43; subsequent 18:55 message names the combined annotation, schematic and readability pass draft16.",
-    "review_commit": "90273a6",
+    "baseline_commit": "e07b44a",
+    "authorization": "Klaus draft16 fidelity gap under the approved revision brief, plus the recorded carrier-polarization and detector-bound follow-ups.",
     "abstract_words": 296,
     "abstract_unchanged": true,
-    "audit": "docs/readability_audit_draft16_2026-10-06.json",
-    "revision_record": "docs/revision_2026-10-06_v0150draft16_readability.md",
-    "word_counts": "docs/word_counts_draft16_readability.json",
-    "schematic_source_commit": "c7ce5e0",
-    "schematic_retained_from": "af29999 (caption clarifies the filtered y0, inverse times, tau_X, f0, and arrow colors)",
-    "manuscript_prose_checker_findings": 0,
-    "note_prose_checker_findings": "Two Markdown table-separator false positives.",
+    "audit": "docs/draft17_fidelity_fixes_audit_2026-10-06.json",
+    "revision_record": "docs/revision_2026-10-06_v0150draft17_fidelity.md",
     "substantive_removals": [],
     "cut_candidates_retained": 7,
-    "independent_fidelity_check": {
-      "reviewer": "klaus-484-TI-helper",
-      "status": "requested via peer-message; spooled, no verdict received",
-      "scope": "Approved moves and compression, retention, scope of efficiency/DC claims, annotation and schematic integration; no new computations.",
-      "target_commit": "e07b44a",
-      "sent_at": "2026-10-06 20:12 CEST"
-    },
+    "new_prediction_rows": [
+      "Independent carrier amplitudes",
+      "Equal-power carrier control"
+    ],
+    "new_numerical_work": false,
+    "existing_producer_rerun": "threshold_bound_check.py, recorded in docs/detector_bound_scope_2026-10-06.md",
+    "manuscript_prose_checker_findings": 0,
     "held_actions": [
       "GitHub push",
       "Calliope/Zenodo cut",
       "Overleaf sync",
       "coauthor email"
     ],
+    "independent_fidelity_check": {
+      "reviewer": "klaus-484-TI-helper",
+      "status": "to request after commit",
+      "scope": "Only the two new Table 4 rows, local-polarization wording and monotone-detector bound; no full review or computations."
+    },
     "review_shelf_verified": {
       "article": "40 pages, byte-identical to TN0484_jne.pdf",
       "redline": "48 pages, byte-identical to docs/redline_last_read.pdf",
       "annotated_original": "preserved"
-    },
-    "committed_as": "e07b44a",
-    "carrier_polarization_literature_check": {
-      "checked_on": "2026-10-06",
-      "record": "docs/carrier_polarization_literature_2026-10-06.md",
-      "peer_report": "klaus-484-TI-helper, 2026-10-06 19:10 CEST",
-      "directly_verified": "Published Luff 2024, Figure 1 and STAR Methods",
-      "doi": "10.1016/j.celrep.2024.114274",
-      "result": "Seven carrier conditions; no matched local carrier-polarization analysis reported. Proposed distinction is the normalization, not a first carrier sweep.",
-      "manuscript_changed": false,
-      "pdfs_rebuilt": false,
-      "remaining_action": "Consider the clarified Table 4 evidence cell with the combined draft16 fidelity fixes."
-    },
-    "detector_bound_scope_followup": {
-      "checked_on": "2026-10-06",
-      "record": "docs/detector_bound_scope_2026-10-06.md",
-      "peer_report": "klaus-484-TI-helper, 2026-10-06 19:44 CEST",
-      "analytic_check": "Positive step mixture and nonnegative direct-drive coefficient extend the carrier-averaged, matched-peak, open-loop bound to bounded nondecreasing memoryless transfers.",
-      "existing_producer_rerun": ".venv/bin/python code/threshold_bound_check.py",
-      "printed_results": {
-        "beta_opt": 0.523163,
-        "ratio_quadrature": 0.347928,
-        "ratio_elliptic": 0.347928,
-        "second_harmonic_ratio": 0.15087
-      },
-      "numerical_certification": false,
-      "correction": "The earlier logistic-only scope was unnecessarily narrow. Larger common matched polarization cannot exceed the class bound; unequal true polarization instead violates the comparison.",
-      "manuscript_changed": false,
-      "remaining_action": "Reconcile the Discussion with the existing appendix argument at the combined fidelity-fix checkpoint."
     }
   },
   "focality_integration_revision": {
@@ -558,5 +436,77 @@
       "existing_two_site_example_verbatim": true,
       "original_labels_retained": true
     }
-  }
+  },
+  "readability_revision": {
+    "date": "2026-10-06",
+    "baseline_commit": "22ce445",
+    "authorization": "Giulio readability approval relayed at 18:43; subsequent 18:55 message names the combined annotation, schematic and readability pass draft16.",
+    "review_commit": "90273a6",
+    "abstract_words": 296,
+    "abstract_unchanged": true,
+    "audit": "docs/readability_audit_draft16_2026-10-06.json",
+    "revision_record": "docs/revision_2026-10-06_v0150draft16_readability.md",
+    "word_counts": "docs/word_counts_draft16_readability.json",
+    "schematic_source_commit": "c7ce5e0",
+    "schematic_retained_from": "af29999 (caption clarifies the filtered y0, inverse times, tau_X, f0, and arrow colors)",
+    "manuscript_prose_checker_findings": 0,
+    "note_prose_checker_findings": "Two Markdown table-separator false positives.",
+    "substantive_removals": [],
+    "cut_candidates_retained": 7,
+    "independent_fidelity_check": {
+      "reviewer": "klaus-484-TI-helper",
+      "status": "pass with one concrete gap, addressed in draft17",
+      "scope": "Approved moves and compression, retention, scope of efficiency/DC claims, annotation and schematic integration; no new computations.",
+      "target_commit": "e07b44a",
+      "sent_at": "2026-10-06 20:12 CEST",
+      "reported_at": "2026-10-06 20:14 CEST",
+      "method": "Sentence diff (200 gone, 150 new, 84 below 60% overlap), scientific spot checks, schematic identity and Discussion scope check.",
+      "required_gap": "Table 4 omitted independent-amplitude and equal-power controls promised in the abstract and Introduction.",
+      "resolution": "Added both rows in draft17; optional separate shared-amplifier row not added.",
+      "record": "docs/revision_2026-10-06_v0150draft17_fidelity.md"
+    },
+    "held_actions": [
+      "GitHub push",
+      "Calliope/Zenodo cut",
+      "Overleaf sync",
+      "coauthor email"
+    ],
+    "review_shelf_verified": {
+      "article": "40 pages, byte-identical to TN0484_jne.pdf",
+      "redline": "48 pages, byte-identical to docs/redline_last_read.pdf",
+      "annotated_original": "preserved"
+    },
+    "committed_as": "e07b44a",
+    "carrier_polarization_literature_check": {
+      "checked_on": "2026-10-06",
+      "record": "docs/carrier_polarization_literature_2026-10-06.md",
+      "peer_report": "klaus-484-TI-helper, 2026-10-06 19:10 CEST",
+      "directly_verified": "Published Luff 2024, Figure 1 and STAR Methods",
+      "doi": "10.1016/j.celrep.2024.114274",
+      "result": "Seven carrier conditions; no matched local carrier-polarization analysis reported. Proposed distinction is the normalization, not a first carrier sweep.",
+      "manuscript_changed": false,
+      "pdfs_rebuilt": false,
+      "remaining_action": null,
+      "integrated_in": "0.15.0-draft17"
+    },
+    "detector_bound_scope_followup": {
+      "checked_on": "2026-10-06",
+      "record": "docs/detector_bound_scope_2026-10-06.md",
+      "peer_report": "klaus-484-TI-helper, 2026-10-06 19:44 CEST",
+      "analytic_check": "Positive step mixture and nonnegative direct-drive coefficient extend the carrier-averaged, matched-peak, open-loop bound to bounded nondecreasing memoryless transfers.",
+      "existing_producer_rerun": ".venv/bin/python code/threshold_bound_check.py",
+      "printed_results": {
+        "beta_opt": 0.523163,
+        "ratio_quadrature": 0.347928,
+        "ratio_elliptic": 0.347928,
+        "second_harmonic_ratio": 0.15087
+      },
+      "numerical_certification": false,
+      "correction": "The earlier logistic-only scope was unnecessarily narrow. Larger common matched polarization cannot exceed the class bound; unequal true polarization instead violates the comparison.",
+      "manuscript_changed": false,
+      "remaining_action": null,
+      "integrated_in": "0.15.0-draft17"
+    }
+  },
+  "landau_review_baseline": "0c394df"
 }

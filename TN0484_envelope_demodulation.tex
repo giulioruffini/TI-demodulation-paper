@@ -86,7 +86,7 @@
 
 \newcommand{\Sig}{\sigma}
 \newcommand{\half}{\tfrac{1}{2}}
-\newcommand{\paperver}{0.15.0-draft16}
+\newcommand{\paperver}{0.15.0-draft17}
 \hypersetup{
   pdftitle={The cortical column as a tuned receiver: a network mechanism for temporal-interference stimulation},
   pdfauthor={Giulio Ruffini, Borja Mercadal, Alex Just, Raul de Palma Aristides, Francesca Castaldo, Nir Grossman, Santiago Canals, Claudio Mirasso},
@@ -1910,13 +1910,17 @@ recurrence can amplify its output. A measured PLV effect cannot be compared
 directly with this drive ratio; a polarization-calibrated amplitude sweep with
 the same readout would test the estimate.
 
-For comparison, the matched-peak efficiency over the logistic family has a supremum
-of approximately $0.348$ (App.~\ref{app:bound}). Approaching it at weak fields
-requires a transfer curve narrowed to microvolt scales; the limiting detector is
-step-like and has a second-harmonic ratio near $0.15$, distinct from both weak
-square-law detection and linear envelope following. This bound applies to that
-memoryless family and matching convention, not to the dynamic QIF detector or to
-all cellular mechanisms. The unequal-current TI ratio and the matched-depth
+For comparison, the carrier-averaged, matched-peak, open-loop drive ratio has a
+numerically estimated supremum of $0.348$ over bounded nondecreasing memoryless
+transfers (App.~\ref{app:bound}). The positive-mixture-of-steps argument extends
+the logistic result to this class. Approaching it requires an active transition
+sharp relative to the input; for the logistic family at the illustrative
+polarizations, this means microvolt widths. The limiting detector is step-like
+and has a second-harmonic ratio near $0.15$, distinct from both weak
+square-law detection and linear envelope following. This bound does not cover
+the dynamic QIF detector or all cellular mechanisms. A larger common matched
+polarization does not exceed the class bound; unequal actual polarizations can
+instead invalidate the matching. The unequal-current TI ratio and the matched-depth
 AM-tACS control do not measure this matched-peak, open-loop ratio.
 Thus approaching the ceiling would require leaving the smooth weak-input regime
 used here; within that regime, local curvature determines the generated drive.
@@ -1963,14 +1967,25 @@ qualitative comparisons; their quantitative reanalysis remains to be done.}
 carrier-independent in the static limit and fast-carrier QIF asymptote, provided
 no other circuit mode is excited. Access restores dependence at fixed applied
 field; detector dynamics can add it near the crossover.
-& Carrier sweeps change network sensitivity \cite{esmaeilpour2021} and single-cell
-mixing \cite{luff2024mixer}; thresholds depend on $f_c$
+& Carrier-frequency comparisons show changes in network sensitivity
+\cite{esmaeilpour2021} and subthreshold single-cell mixing \cite{luff2024mixer},
+without holding measured local carrier polarizations fixed. Thresholds depend on $f_c$
 \cite{opancar2025,peripheral2023}, and bare kHz fields have limited effects on
 hippocampal oscillations \cite{esmaeilpour2020}.
 & Measure each local polarization while sweeping $f_c$ at fixed beat and state;
 normalize the weak beat by their product. Hold network gain fixed or measure it
 independently to separate access from residual detector dependence. Measure any
 residual cutoff rather than assigning it to a compartment. \\[4pt]
+\textbf{Independent carrier amplitudes.} At fixed detector and network gains,
+quadratic modulation excursion follows $2|\varepsilon_1\varepsilon_2|$;
+an ideal envelope follower tracks $2\min(|\varepsilon_1|,|\varepsilon_2|)$
+(Eq.~\eqref{eq:reweight}, Table~\ref{tab:transduction-maps}).
+& The unequal-amplitude spatial example separates these maps; a biological test
+with independent local-polarization calibration is not supplied here.
+& Hold the weaker polarization fixed and vary the stronger, then swap tones.
+Keep both inputs weak, frequencies fixed, and the operating state controlled.
+Reconstruct the slow-response excursion after correcting network filtering;
+a beat lock-in alone does not measure the envelope's full excursion. \\[4pt]
 \textbf{State and carrier dependence.} The static sigmoid follows $\Sig''$ and
 reverses sign at its inflection (PEIX$=0$). Fast-carrier QIF mixes in voltage and
 reads the source through rate and network susceptibility; its DC term follows
@@ -2008,7 +2023,17 @@ to the measured response.
 & Most pyramidal TI responses vanish under synaptic blockade \cite{caldas2024},
 supporting network involvement without excluding cellular mixing.
 & Test whether synaptic blockade reduces recurrent amplification while preserving
-a cellular detector. \\
+a cellular detector. \\[4pt]
+\textbf{Equal-power carrier control.} At second order, equal local RMS
+polarization gives the same steady source when the carriers see the same DC
+coefficient. TI also supplies a beat; either waveform can induce an oscillation
+if the mean shift crosses a bifurcation.
+& Demonstrated in the PING mean field (Fig.~\ref{fig:qif_regimes}c,d).
+The corresponding spiking-network and in vivo controls are not provided here.
+& Compare two tones with one carrier of matched RMS polarization and duration,
+checking the DC coefficient across the carrier interval. Measure mean activity,
+intrinsic oscillations, and beat lock-in separately to distinguish the steady
+shift from the beat response. \\
 \end{longtable}
 \endgroup
 
@@ -2244,8 +2269,10 @@ polarization amplitude $\varepsilon$ each with a direct in-band drive of amplitu
 $2\varepsilon$, matching peak polarization. Their leading drive amplitudes are
 $|\Sig''|\varepsilon^2/2$ and $2\Sig'\varepsilon$, so
 $\mathcal R_{\rm det}\simeq|\Sig''|\varepsilon/(4\Sig')$.
-This ratio concerns the specified transfer family and input matching, not TI in
-general or the dynamic detector of \S\ref{sec:dynamic}.
+The weak-input formula concerns the logistic family. The step-mixture argument
+below extends the exact carrier-averaged bound to bounded nondecreasing
+memoryless transfers, with the same operating point, matched peak polarization,
+and open-loop readout. It does not cover the dynamic detector of \S\ref{sec:dynamic}.
 
 Writing $\zeta=\Sig/(2e_0)\in(0,1)$ gives
 $\Sig'=2e_0\rho\zeta(1-\zeta)$ and
@@ -2276,7 +2303,7 @@ independent of field strength. Evaluating the exact cycle response rather than i
 quadratic truncation and optimizing $\xi$ at each $u$, the ratio rises monotonically over the
 range explored and converges to the hard-threshold limit
 \begin{equation}
-\sup_{\rho,\,v^*}\mathcal R_{\rm det}=0.3479 ,
+\sup_{\rho,\,v^*}\mathcal R_{\rm det}\approx0.3479 ,
 \label{eq:etasup}
 \end{equation}
 approached as $\rho\to\infty$ at a threshold offset $\delta$ (the distance from the
@@ -2315,9 +2342,12 @@ with elliptic parameter $k_{\rm ell}^2=1-\beta^2$ and $\mathsf K,\mathsf E$
 the complete elliptic integrals, giving $0.3479$ at $\beta=0.523$ by direct quadrature and
 by the elliptic form alike (\texttt{threshold\_bound\_check.py}). At that optimum the
 step's second-to-first harmonic magnitude ratio is $0.151$, not the $1/5$ of a linear
-envelope follower. A bounded nondecreasing transfer is a positive mixture of shifted steps
-and both Fourier coefficients are linear in the transfer, so the step optimum bounds the
-family; the maximum itself is a numerical evaluation, not a certified bound.
+envelope follower. A bounded nondecreasing transfer is, up to a constant, a positive
+mixture of shifted steps. Both signed Fourier coefficients are linear in the
+transfer, and each step's direct-drive coefficient is nonnegative. The triangle
+inequality therefore bounds the mixture's amplitude ratio by the largest step
+ratio, whenever the denominator is nonzero. This extends the result beyond the
+logistic family; the maximum itself is a numerical evaluation, not a certified bound.
 
 \section{Extension: the laminar column at low carriers}\label{app:lanmm}
 The two-band laminar column (LaNMM, \S\ref{sec:nmm}) adds a resonant intermediary
