@@ -27,6 +27,13 @@ Ben~H. Jansen and Vincent~G. Rit.
   mathematical model of coupled cortical columns.
 \newblock {\em Biological Cybernetics}, 73(4):357--366, 1995.
 
+\bibitem{ruffini2021nmm2}
+Giulio Ruffini.
+\newblock Analysis and extension of exact mean-field theory with dynamic
+  synaptic currents.
+\newblock {\em bioRxiv}, 2021.
+\newblock Preprint 2021.09.01.458563 (NMM2).
+
 \bibitem{pikovsky2001}
 Arkady Pikovsky, Michael Rosenblum, and J{\"u}rgen Kurths.
 \newblock {\em Synchronization: A Universal Concept in Nonlinear Sciences}.

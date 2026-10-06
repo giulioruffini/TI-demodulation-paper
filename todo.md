@@ -1,12 +1,14 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
-- [ ] integrate findings from Klaus's fidelity check of af29999; consider his optional g-to-sigmoid definition and positive focality wording in that pass
+- [ ] integrate Klaus's fidelity check of the combined draft16; the earlier focality and schematic checks are closed
+- [ ] Giulio: decide the seven retained CUT? passages and the biological-rectifier sentence in docs/revision_2026-10-06_v0150draft16_readability.md
 - [ ] review Ricardo's real-montage FEM comparison if supplied before submission; retain the proposed comparison otherwise
-- [ ] review the reorganized draft15 and its length report; the added schematic and explanations increase the article by one page; scientific removals require Giulio's approval
+- [ ] review draft16 and its fixed draft13 redline; the main sections are shorter, with derivations retained in the supplement
 - [ ] Giulio: review the corrected JNE working edition and fixed-baseline redline; authorize coauthor circulation when ready
 - [ ] obtain missing funding declarations; confirm the supplied competing-interests statement, author roles and affiliations, actual AI-tool versions, and the submission version with every author
 - [ ] after review and authorization: push, align the public code/archive, cut Calliope/Zenodo, re-sync Overleaf, and circulate the coauthor request (all HOLD)
 - [ ] migrate the paper folder at the next coordinated version boundary; run the layout checker before and after, with no concurrent session editing
+- [x] apply the approved readability review: separate TI/tACS Results, relocate derivations and protocols, consolidate predictions, retain CUT? passages (October 6)
 - [x] close Klaus's scoped draft15 focality integration check reported at 18:42: no discrepancies; retain the later af29999 review as pending
 - [x] address the 26 annotations in Giulio's GR review PDF: split envelope/DC subsections, group NMM2 Results, move predictions to Discussion, and clarify local explanations (October 6)
 - [x] integrate the approved JR/NMM2 model schematic with draft14 notation and a defined caption (October 6)

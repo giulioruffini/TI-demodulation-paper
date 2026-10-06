@@ -1,14 +1,14 @@
 {
-  "version": "0.15.0-draft15",
+  "version": "0.15.0-draft16",
   "review_baseline": "0c394df",
   "redline_baseline": "c620335",
-  "status": "Draft15 addresses all 26 annotations in the GR review copy, integrates the approved model schematic, separates envelope and DC theory, groups NMM2 results, and moves predictions to Discussion. Author reading and release declarations remain pending.",
+  "status": "Draft16 combines the annotated-review and approved schematic integration with the approved readability review. Scientific content is retained; seven CUT? passages remain verbatim for Giulio. Combined fidelity check and author/release decisions remain pending.",
   "outputs": {
     "jne": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.log",
-      "pages": 41,
-      "sha256": "1e747f355b5cb4ec833785cf63ebca180b3bd9c312f68a2546a350f840a8db46",
+      "pages": 40,
+      "sha256": "ab27e2c5a1558f7d82d81491c1c2c6b574968d182ac3678947451b23d9e61718",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -19,8 +19,8 @@
     "supplement": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne_supplement.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne_supplement.log",
-      "pages": 20,
-      "sha256": "b9c85b3ed8276cb471274b94aeae131993898eefadbec1072e4bf3812b2d7e38",
+      "pages": 21,
+      "sha256": "984f7ce4e29212b8327cf71e25b1d6ce2f149f35bb4e42e6927d8bdc50b8274a",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -31,8 +31,8 @@
     "tn_validation": {
       "path": "/tmp/tn0484_draft15_revision/build/tn_validation.pdf",
       "log": "/tmp/tn0484_draft15_revision/build/tn_validation.log",
-      "pages": 56,
-      "sha256": "dae35e3f58529823ad357e59641cb0be63428a9ab967c18b85183160fe151709",
+      "pages": 57,
+      "sha256": "c09caf6f452f78ab1bb9d44e14ae9c9ad0326eef6c0b5bf5281d441f0ea584f6",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -44,7 +44,7 @@
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.log",
       "pages": 11,
-      "sha256": "5388902f4f06c3ae9a8a5e805dcdfc4e3607d883ff92d571719e5f7cff864dca",
+      "sha256": "9f6ffe228b33470757056ad661f2a45768438b2cc68553a3ffd8bb2308246368",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -55,8 +55,8 @@
     "redline": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.log",
-      "pages": 46,
-      "sha256": "e8f746ba0a269f739ffe5ff00a24a34c5a97b3864e6f32ee5b2594dbfce737e2",
+      "pages": 48,
+      "sha256": "34dbf698b5c1f677379aa425f6c7a4b0448be7f6dc6a174df8cfc42becbe4c70",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -66,73 +66,116 @@
     }
   },
   "retention": {
+    "editing_baseline": "22ce445",
     "fig_labels": {
-      "original_count": 24,
-      "original_numbers_unchanged": false,
-      "added": "fig:models = 2",
-      "current_count": 25,
-      "renumbering": {
-        "fig:bif": {
-          "before": "2",
-          "after": "3"
-        },
-        "fig:demod": {
-          "before": "3",
-          "after": "4"
-        },
-        "fig:res": {
-          "before": "4",
-          "after": "5"
-        },
-        "fig:carrier": {
-          "before": "5",
-          "after": "6"
-        },
-        "fig:opp": {
-          "before": "6",
-          "after": "7"
-        },
-        "fig:crossover": {
-          "before": "7",
-          "after": "9"
-        },
-        "fig:nmm2_res": {
-          "before": "8",
-          "after": "10"
-        },
-        "fig:jcurve": {
-          "before": "9",
-          "after": "8"
-        },
-        "fig:qif_raster": {
-          "before": "10",
-          "after": "11"
-        },
-        "fig:qif_regimes": {
-          "before": "11",
-          "after": "12"
-        }
-      },
-      "supplementary_numbers_unchanged": true
+      "count": 25,
+      "numbers_unchanged": true
     },
     "eq_labels": {
       "count": 32,
-      "numbers_unchanged": true,
-      "numbered_bodies_unchanged": true
+      "numbers_unchanged": false,
+      "renumbering": {
+        "eq:sqenv": {
+          "before": "11",
+          "after": "16"
+        },
+        "eq:amsur": {
+          "before": "12",
+          "after": "23"
+        },
+        "eq:crossover": {
+          "before": "13",
+          "after": "11"
+        },
+        "eq:crossover_limits": {
+          "before": "14",
+          "after": "12"
+        },
+        "eq:kfixed": {
+          "before": "15",
+          "after": "13"
+        },
+        "eq:cycavg": {
+          "before": "16",
+          "after": "14"
+        },
+        "eq:rdet": {
+          "before": "17",
+          "after": "15"
+        },
+        "eq:reweight": {
+          "before": "18",
+          "after": "17"
+        },
+        "eq:spatial": {
+          "before": "19",
+          "after": "18"
+        },
+        "eq:gain": {
+          "before": "20",
+          "after": "19"
+        },
+        "eq:receiver": {
+          "before": "21",
+          "after": "20"
+        },
+        "eq:khz": {
+          "before": "22",
+          "after": "21"
+        },
+        "eq:lambda": {
+          "before": "23",
+          "after": "4"
+        },
+        "eq:peix": {
+          "before": "24",
+          "after": "22"
+        },
+        "eq:lockin": {
+          "before": "25",
+          "after": "24"
+        },
+        "eq:nmm2-ping": {
+          "before": "26",
+          "after": "25"
+        },
+        "eq:sl": {
+          "before": "4",
+          "after": "5"
+        },
+        "eq:etabound": {
+          "before": "5",
+          "after": "6"
+        },
+        "eq:reduced": {
+          "before": "6",
+          "after": "7"
+        },
+        "eq:etasup": {
+          "before": "7",
+          "after": "8"
+        },
+        "eq:lanmm_drive": {
+          "before": "8",
+          "after": "9"
+        }
+      },
+      "bodies_changed": [
+        "eq:sqenv"
+      ],
+      "change": "Equivalent notation only; all equations retained."
     },
+    "cited_works": 60,
     "notation_table": {
-      "article_number": 5,
-      "supplement_number": 1,
+      "article_number": "5",
+      "supplement_number": "1",
       "shared_source": "planning/tn0484_notation.tex"
     },
-    "new_table": "No new table in this revision; transduction-map Table 2 retained from earlier draft15 integration.",
-    "cited_works": 60,
-    "review_report_preserved": true,
     "simulation_producers_and_caches_unchanged": true,
     "existing_figures_unchanged": true,
-    "abstract_source_unchanged": false,
-    "existing_two_site_example_verbatim": true,
-    "original_labels_retained": true
+    "abstract_source_unchanged": true,
+    "original_labels_retained": true,
+    "cut_candidates_verbatim": true
   },
   "bibliography": {
     "n_cited": 60,
@@ -152,49 +195,40 @@
   "visual_inspection": {
     "jne_pages": [
       1,
-      7,
+      3,
+      4,
+      8,
+      10,
       11,
-      12,
-      13,
-      16,
-      19,
+      14,
+      24,
       26,
       27,
-      28,
+      30,
       31,
-      32,
-      39,
-      40,
-      41
+      37,
+      40
     ],
     "supplement_pages": [
-      3,
-      19
+      5,
+      6
     ],
     "redline_pages": [
-      1,
-      7,
       12,
-      13,
-      17,
-      35
+      24,
+      34
     ],
     "storyline_pages": [
-      10,
       11
     ],
-    "figures": [
-      "fig_models_ti",
-      "fig_spatial_maps retained"
-    ],
-    "findings": "Approved schematic and notation are legible; the envelope table, separate DC section, new section order, Methods explanation, interpretation paragraphs, and article notation appendix render without clipping or collisions. The redline includes the schematic caption and remains against draft13."
+    "findings": "The reorganized article, consolidated prediction table, relocated derivations, notation locations and fixed-baseline redline render without clipping or collisions. Latest title shows draft16. Existing figures are unchanged."
   },
   "source_sha256": {
-    "TN0484_envelope_demodulation.tex": "37695a83c8d8afc77f4c4c38e2b12532db1045e2e991aa1fe34eaa466410a64f",
+    "TN0484_envelope_demodulation.tex": "a72d422bd3f4ee0809569a8642ea0f7f893cea76e3948c3a39352c82a95e37d5",
     "references.bib": "8ee2a664fc78b990a6811d1bb9fef0d1c4eb68d4f5f2ee52f167604b94f96907",
     "planning/tn0484_abstract.tex": "853f47a0db90c442b80a26fb7deb070a9491a6808b6e267f1816a0e6b980a3a6",
-    "planning/tn0484_storyline.tex": "8f7d9cf3b5a1bdf97eb4be3779ad3fab9455d48d97143533fd078173d723ab40",
-    "planning/tn0484_notation.tex": "51cf43c903317769d7f637245cd0c0a87801b41d45dd78b285e9124615adc18a",
+    "planning/tn0484_storyline.tex": "56010a8669114511b13b1bb23d5ad36541eaf241902d671315e9a2b0fa7f8b1b",
+    "planning/tn0484_notation.tex": "3f5815400d8fa51affcd8fba240ed454adc52ea925c5e7b2b3a6141911cd2efa",
     "figures_src/fig_models_ti.tex": "a07d94124ba4f22561bca098134d6d194d717918dbb0fab37ad6381bbbd558be",
     "figures_src/fig_models_ti_caption.tex": "0b4e8a163826956987cdcac4fd36ffc01403869476fd0bd6f74fbb37f8bf266e"
   },
@@ -283,24 +317,24 @@
   },
   "current_revision": {
     "date": "2026-10-06",
-    "baseline_commit": "56070fa",
-    "authorization": "Giulio annotated-review brief and schematic approval relayed by Klaus at 18:30 CEST; actual 26-annotation PDF inspected.",
+    "baseline_commit": "22ce445",
+    "authorization": "Giulio readability approval relayed at 18:43; subsequent 18:55 message names the combined annotation, schematic and readability pass draft16.",
+    "review_commit": "90273a6",
     "abstract_words": 296,
-    "abstract_unchanged": false,
-    "audit": "docs/gr_review_audit_2026-10-06.json",
-    "annotation_record": "docs/gr_review_annotation_resolution_2026-10-06.md",
-    "revision_record": "docs/revision_2026-10-06_v0150draft15_GR_review.md",
-    "word_counts": "docs/word_counts_draft15_GR_review.json",
+    "abstract_unchanged": true,
+    "audit": "docs/readability_audit_draft16_2026-10-06.json",
+    "revision_record": "docs/revision_2026-10-06_v0150draft16_readability.md",
+    "word_counts": "docs/word_counts_draft16_readability.json",
     "schematic_source_commit": "c7ce5e0",
-    "schematic_initial_approved_proposal": "57bd255",
+    "schematic_retained_from": "af29999 (caption clarifies the filtered y0, inverse times, tau_X, f0, and arrow colors)",
     "manuscript_prose_checker_findings": 0,
-    "note_prose_checker_findings": "Two Markdown table-separator false positives; no prose issue.",
+    "note_prose_checker_findings": "Two Markdown table-separator false positives.",
     "substantive_removals": [],
+    "cut_candidates_retained": 7,
     "independent_fidelity_check": {
       "reviewer": "klaus-484-TI-helper",
-      "target_commit": "af29999",
-      "status": "requested; peer-message spooled, no review verdict received",
-      "scope": "Annotation resolution, retention under structural moves, schematic against model equations, abstract DC scope, and carrier-test literature qualification."
+      "status": "to request on the committed combined revision",
+      "scope": "Approved moves and compression, retention, scope of efficiency/DC claims, annotation and schematic integration; no new computations."
     },
     "held_actions": [
       "GitHub push",
@@ -308,10 +342,9 @@
       "Overleaf sync",
       "coauthor email"
     ],
-    "committed_as": "af29999",
     "review_shelf_verified": {
-      "article": "41 pages, byte-identical to TN0484_jne.pdf",
-      "redline": "46 pages, byte-identical to docs/redline_last_read.pdf",
+      "article": "40 pages, byte-identical to TN0484_jne.pdf",
+      "redline": "48 pages, byte-identical to docs/redline_last_read.pdf",
       "annotated_original": "preserved"
     }
   },
@@ -341,7 +374,14 @@
         "Explicitly identify g = Sigma for the JR column.",
         "Replace the negative focality-summary sentence with a positive statement about computing focality from the product map."
       ],
-      "later_revision_check": "The broader check requested on af29999 remains pending; this earlier report does not close it."
+      "later_revision_check": "The broader check requested on af29999 remains pending; this earlier report does not close it.",
+      "committed_confirmation": {
+        "reported_at": "2026-10-06 18:55 CEST",
+        "target_commit": "972d9ea",
+        "result": "pass",
+        "scope": "Section 2.4 identical to the earlier checked working text; spatial-map caption L-to-L_x and units consistent."
+      },
+      "optional_wording_status": "Both suggestions applied in draft16."
     },
     "held_actions": [
       "GitHub push",
@@ -367,5 +407,108 @@
       "Overleaf sync",
       "coauthor email"
     ]
+  },
+  "gr_review_revision": {
+    "date": "2026-10-06",
+    "baseline_commit": "56070fa",
+    "authorization": "Giulio annotated-review brief and schematic approval relayed by Klaus at 18:30 CEST; actual 26-annotation PDF inspected.",
+    "abstract_words": 296,
+    "abstract_unchanged": false,
+    "audit": "docs/gr_review_audit_2026-10-06.json",
+    "annotation_record": "docs/gr_review_annotation_resolution_2026-10-06.md",
+    "revision_record": "docs/revision_2026-10-06_v0150draft15_GR_review.md",
+    "word_counts": "docs/word_counts_draft15_GR_review.json",
+    "schematic_source_commit": "c7ce5e0",
+    "schematic_initial_approved_proposal": "57bd255",
+    "manuscript_prose_checker_findings": 0,
+    "note_prose_checker_findings": "Two Markdown table-separator false positives; no prose issue.",
+    "substantive_removals": [],
+    "independent_fidelity_check": {
+      "reviewer": "klaus-484-TI-helper",
+      "target_commit": "af29999",
+      "status": "superseded by the requested combined draft16 check; no separate verdict received",
+      "scope": "Annotation resolution, retention under structural moves, schematic against model equations, abstract DC scope, and carrier-test literature qualification."
+    },
+    "held_actions": [
+      "GitHub push",
+      "Calliope/Zenodo cut",
+      "Overleaf sync",
+      "coauthor email"
+    ],
+    "committed_as": "af29999",
+    "review_shelf_verified": {
+      "article": "41 pages, byte-identical to TN0484_jne.pdf",
+      "redline": "46 pages, byte-identical to docs/redline_last_read.pdf",
+      "annotated_original": "preserved"
+    },
+    "retention": {
+      "fig_labels": {
+        "original_count": 24,
+        "original_numbers_unchanged": false,
+        "added": "fig:models = 2",
+        "current_count": 25,
+        "renumbering": {
+          "fig:bif": {
+            "before": "2",
+            "after": "3"
+          },
+          "fig:demod": {
+            "before": "3",
+            "after": "4"
+          },
+          "fig:res": {
+            "before": "4",
+            "after": "5"
+          },
+          "fig:carrier": {
+            "before": "5",
+            "after": "6"
+          },
+          "fig:opp": {
+            "before": "6",
+            "after": "7"
+          },
+          "fig:crossover": {
+            "before": "7",
+            "after": "9"
+          },
+          "fig:nmm2_res": {
+            "before": "8",
+            "after": "10"
+          },
+          "fig:jcurve": {
+            "before": "9",
+            "after": "8"
+          },
+          "fig:qif_raster": {
+            "before": "10",
+            "after": "11"
+          },
+          "fig:qif_regimes": {
+            "before": "11",
+            "after": "12"
+          }
+        },
+        "supplementary_numbers_unchanged": true
+      },
+      "eq_labels": {
+        "count": 32,
+        "numbers_unchanged": true,
+        "numbered_bodies_unchanged": true
+      },
+      "notation_table": {
+        "article_number": 5,
+        "supplement_number": 1,
+        "shared_source": "planning/tn0484_notation.tex"
+      },
+      "new_table": "No new table in this revision; transduction-map Table 2 retained from earlier draft15 integration.",
+      "cited_works": 60,
+      "review_report_preserved": true,
+      "simulation_producers_and_caches_unchanged": true,
+      "existing_figures_unchanged": true,
+      "abstract_source_unchanged": false,
+      "existing_two_site_example_verbatim": true,
+      "original_labels_retained": true
+    }
   }
 }

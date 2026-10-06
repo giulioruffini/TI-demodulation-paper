@@ -1,0 +1,162 @@
+{
+  "baseline_commit": "22ce445",
+  "review_commit": "90273a6",
+  "redline_baseline": "c620335",
+  "labels_lost": [],
+  "labels_added": [
+    "app:access",
+    "app:mpr-mixing",
+    "sec:tacs-results",
+    "sec:vocab-methods",
+    "sec:waveforms"
+  ],
+  "equation_labels": 32,
+  "numbered_equation_bodies_changed": [
+    "eq:sqenv"
+  ],
+  "equation_change_explanation": {
+    "eq:sqenv": "Equivalent notation after relocation: half A^2 = LPF[s^2]; same DC and product terms, with fixed-location spatial arguments stated in prose."
+  },
+  "cited_works": 60,
+  "cited_works_lost": [],
+  "cut_candidates": [
+    {
+      "start": "The transfer curve summarizes",
+      "retained_verbatim": true,
+      "before_line": 396,
+      "after_line": 371
+    },
+    {
+      "start": "Cohen et al.'s periaxonal circuit provides",
+      "retained_verbatim": true,
+      "before_line": 990,
+      "after_line": 899
+    },
+    {
+      "start": "Channel kinetics contribute",
+      "retained_verbatim": true,
+      "before_line": 1072,
+      "after_line": 966
+    },
+    {
+      "start": "At $\\bar\\eta=1.5$, gamma activity",
+      "retained_verbatim": true,
+      "before_line": 1840,
+      "after_line": 1755
+    },
+    {
+      "start": "Table~\\ref{tab:doors} summarizes",
+      "retained_verbatim": true,
+      "before_line": 1886,
+      "after_line": 1795
+    },
+    {
+      "start": "Weak amplitude alone does not",
+      "retained_verbatim": true,
+      "before_line": 1908,
+      "after_line": 1817
+    },
+    {
+      "start": "For scale, a reverberation time",
+      "retained_verbatim": true,
+      "before_line": 1972,
+      "after_line": 1879
+    }
+  ],
+  "abstract_sha256": "853f47a0db90c442b80a26fb7deb070a9491a6808b6e267f1816a0e6b980a3a6",
+  "scientific_qualifications": [
+    "The 0.348 supremum remains scoped to the specified matched-peak, open-loop logistic family.",
+    "PLV effects are not treated as generated-drive ratios.",
+    "The DC restriction concerns a magnitude under uniform conductivity, access and detection; it does not rule out a beat maximum.",
+    "The carrier control remains a mean-field calculation; the finite spike-cutoff caveat remains."
+  ],
+  "equation_renumbering": {
+    "eq:sqenv": {
+      "before": "11",
+      "after": "16"
+    },
+    "eq:amsur": {
+      "before": "12",
+      "after": "23"
+    },
+    "eq:crossover": {
+      "before": "13",
+      "after": "11"
+    },
+    "eq:crossover_limits": {
+      "before": "14",
+      "after": "12"
+    },
+    "eq:kfixed": {
+      "before": "15",
+      "after": "13"
+    },
+    "eq:cycavg": {
+      "before": "16",
+      "after": "14"
+    },
+    "eq:rdet": {
+      "before": "17",
+      "after": "15"
+    },
+    "eq:reweight": {
+      "before": "18",
+      "after": "17"
+    },
+    "eq:spatial": {
+      "before": "19",
+      "after": "18"
+    },
+    "eq:gain": {
+      "before": "20",
+      "after": "19"
+    },
+    "eq:receiver": {
+      "before": "21",
+      "after": "20"
+    },
+    "eq:khz": {
+      "before": "22",
+      "after": "21"
+    },
+    "eq:lambda": {
+      "before": "23",
+      "after": "4"
+    },
+    "eq:peix": {
+      "before": "24",
+      "after": "22"
+    },
+    "eq:lockin": {
+      "before": "25",
+      "after": "24"
+    },
+    "eq:nmm2-ping": {
+      "before": "26",
+      "after": "25"
+    },
+    "eq:sl": {
+      "before": "4",
+      "after": "5"
+    },
+    "eq:etabound": {
+      "before": "5",
+      "after": "6"
+    },
+    "eq:reduced": {
+      "before": "6",
+      "after": "7"
+    },
+    "eq:etasup": {
+      "before": "7",
+      "after": "8"
+    },
+    "eq:lanmm_drive": {
+      "before": "8",
+      "after": "9"
+    }
+  },
+  "figure_numbers_unchanged": true,
+  "all_existing_numbered_equations_retained": true,
+  "notation_locations_updated": true
+}

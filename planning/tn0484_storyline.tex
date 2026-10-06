@@ -1,6 +1,6 @@
 % TN0484 / WP0185: abstract and storyline. Build from the project root:
 %   ~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex
-% Map mode: rows follow the v0.15.0-draft15 manuscript order and numbering (TN build; the JNE build
+% Map mode: rows follow the v0.15.0-draft16 manuscript order and numbering (TN build; the JNE build
 % keeps Appendix A and moves later appendices and figures S1--S13 to the supplement). Prepared 2026-10-03.
 \documentclass[11pt,a4paper,landscape]{article}
 \usepackage[T1]{fontenc}
@@ -18,7 +18,7 @@
 \newcommand{\wpnumber}{TN0484 / WP0185}
 \newcommand{\papertitle}{The cortical column as a tuned receiver}
 \newcommand{\storylinedate}{6 October 2026}
-\newcommand{\baselinelabel}{v0.15.0-draft15}
+\newcommand{\baselinelabel}{v0.15.0-draft16}
 \newcommand{\abstractfile}{tn0484_abstract.tex}
 \newcommand{\storylineauthors}{Giulio Ruffini}
 % -----------------------------------------------------------------------------
@@ -91,6 +91,16 @@ the model definitions. Numerical qualifications are retained; the QIF cutoff
 diagnostics move to Methods so its Results can lead with the distinction between
 beat modulation and induced gamma. The reading redline remains against draft13.}
 
+{\footnotesize\color{muted}\textbf{Approved readability revision.}
+This pass gives TI versus tACS its own Results subsection after the JR chain;
+NMM2 and QIF follow. The AM-surrogate protocol is in to Methods. The compartment
+matrix, QIF derivation, and cable estimate are in the model appendix; their
+results remain in Theory. The eight-state PING comparison belongs with the NMM2
+Results. Predictions are consolidated in their Discussion table with each test
+retained. Passages marked CUT? remain pending an explicit decision. The Conclusion
+states the product/DC law, shared amplifier, timing response, and carrier control.
+Numerical scope and the fixed draft13 redline are retained.}
+
 \newpage
 \pagetitle{Problem and theory}{First argument block: Sections 1--2}
 A two-tone field carries no power at its beat frequency. Access converts the applied field
@@ -137,7 +147,7 @@ its static transfer is an adiabatic limit, not a consequence of small amplitude 
 & JR synaptic filter and sigmoid (Eqs.~2--3); NMM1 with the direct field term
   $\Lambda[E]$ (Eq.~3). The MPR mean field (Eq.~4) and its static curve $F(Q)$ (Eq.~5),
   inflection at $Q=\Delta/\sqrt3$, nonlinear even at zero recurrence and unbounded.
-  Retain its derivation from the single-cell square-root rate and threshold recruitment.
+  Retain threshold recruitment here and the single-cell square-root rate in App.~B.2.
   The slow-synapse reduction (Eq.~6) and its two conditions:
   $\tau_{\rm rel}\ll\tau_s$ makes the transfer static for synaptic input; $\omega_c\tau_{\rm rel}\ll1$
   is the stronger condition for a carrier. Effective curvature collects static mixing;
@@ -152,9 +162,8 @@ its static transfer is an adiabatic limit, not a consequence of small amplitude 
 \place{\S2.2}{From applied field to a squared-envelope beat}
 & Quasistatic field; polarization $s(t)$ through parallel entry points with access filters
   (Eqs.~7--8), one compartment response counted once. Taylor expansion (Eqs.~9--10) with the
-  truncation condition $|s|\ll1/\rho\approx1.8$~mV. The square of the envelope (Eq.~11): $\mathcal A^2$
-  is sinusoidal, $\mathcal A$ is a rectified cosine. The AM surrogate (Eq.~12), where it is used and
-  where it is not. The effective dynamic coefficient $\chi^{(2)}$ combines cellular
+  truncation condition $|s|\ll1/\rho\approx1.8$~mV. The squared-envelope map is derived
+  in \S2.5; the AM-surrogate protocol is in \S3.2. The effective dynamic coefficient $\chi^{(2)}$ combines cellular
   contributions and reduces to $\Sigma''/2$ in the static case. Retain smoothness and
   nonzero second-order response, its possible frequency dependence, and the DC term.
   Static predictions: $\varepsilon^2$ scaling, $\Sigma''$ law, carrier independence
@@ -166,11 +175,10 @@ its static transfer is an adiabatic limit, not a consequence of small amplitude 
   Galan and Gadea 2023.\\[2pt]
 \midrule
 \place{\S2.3}{The exact mean field connects static and dynamic mixing}
-& Single-carrier DC coefficient $\kappa_{\rm DC}(Q,\tilde\omega)$ (Eq.~13), with limits $F''/4$ and $F'/(2\tilde\omega^2)$ (Eq.~14), sign change at
-  $\tilde\omega_z$ above the inflection. Fixed-excursion coefficient $\kappa_V(Q,\tilde\omega)$ (Eq.~15): the
-  $1/\tilde\omega^2$ is the membrane, not a detector filter. The PING $v_E^2$ source matches the
-  propagated second-order beat response to 1.1\%, 0.1\%, 0.03\% at 300, 1000, 2000~Hz
-  at four stable points. This is not a full finite-amplitude sweep validation. Carrier and beat take
+& Single-carrier DC coefficient $\kappa_{\rm DC}(Q,\tilde\omega)$ (Eq.~11), with limits $F''/4$ and $F'/(2\tilde\omega^2)$ (Eq.~12), sign change at
+  $\tilde\omega_z$ above the inflection. Fixed-excursion coefficient $\kappa_V(Q,\tilde\omega)$ (Eq.~13): the
+  $1/\tilde\omega^2$ is the membrane, not a detector filter. The Jacobian and phasor
+  derivation is in App.~B.2; numerical agreement with the full PING response is in \S4.8. Carrier and beat take
   different routes to the rate (Table~1).
 & Connects the static and dynamic QIF descriptions, with membrane access counted once.
   Retain the distinction between the DC calculation and the two-tone beat source.
@@ -178,24 +186,25 @@ its static transfer is an adiabatic limit, not a consequence of small amplitude 
 & Fig.~9; Table~1. Code: \path{static_vs_dynamic_check.py}, \path{mpr_twotone_lines_check.py}.\\[2pt]
 \midrule
 \place{\S2.4}{Detector laws and harmonic signatures}
-& Cycle average (Eq.~16) is even in $\mathcal A$; nonzero curvature gives a leading square law
+& Cycle average (Eq.~14) is even in $\mathcal A$; nonzero curvature gives a leading square law
   for a smooth memoryless transfer. Specified ideal rectifiers follow $\mathcal A$; a step
   detector follows neither (harmonic ratio 0.151). Harmonic ladder $1/5$, $3/35$, $1/21$
-  and $\mathcal H_{\rm det}$ (Eq.~17), whose inverse needs a sign or branch choice.
+  and $\mathcal H_{\rm det}$ (Eq.~15), whose inverse needs a sign or branch choice.
   The square-law harmonic ratio vanishes at weak input; a threshold detector has an
   onset and an amplitude-dependent ratio. The network weights each harmonic by its gain.
 & Separates detector classes by amplitude scaling and harmonics. Their different spatial
   predictions follow in a dedicated subsection, rather than being compressed into this one.
-& App.~D; Fig.~7b (slope 1.99); measurement procedure in \S3.1.\\[2pt]
+& App.~D; Fig.~7b (slope 1.99); measurement procedure in \S3.2.\\[2pt]
 \midrule
 \place{\S2.5}{Envelope oscillations and spatial weighting}
 & Spatially varying signed polarizations $\varepsilon_j(\mathbf x)$ and their nonnegative
-  envelope. Table~2 compares slow signals, means, and excursions before detector gains.
-  Excursion map (Eq.~18): the quadratic product weights the envelope minimum by the larger
+  envelope and its square (Eq.~16): the square is sinusoidal, the envelope is a rectified
+  cosine at matched tones. Table~2 compares slow signals, means, and excursions before detector gains.
+  Excursion map (Eq.~17): the quadratic product weights the envelope minimum by the larger
   carrier. Retain the $2\times$ versus $40\times$ two-site example and its geometric limits.
   Both beat maps can peak centrally; Fig.~S13a is a line profile, not a head model.
   A real-montage finite-element comparison remains a prediction. Spatial response
-  (Eq.~19) includes curvature, network gain, and signed vector coupling.
+  (Eq.~18) includes curvature, network gain, and signed vector coupling.
 & Explains how the same applied field yields different dose maps under the two detector
   laws. The product need not preserve envelope-map contrast, and network tuning adds
   dynamical selectivity. The mean component requires its own spatial analysis.
@@ -214,24 +223,24 @@ its static transfer is an adiabatic limit, not a consequence of small amplitude 
 & Restricts mean-map focusing without excluding an interior beat maximum. Conductivity
   interfaces are compartment boundaries. Variable access, curvature, or orientation can
   change the physiological map; adaptation can change the mean response.
-& Fig.~S13b; Table~2; equal-RMS control in \S4.8.\\[2pt]
+& Fig.~S13b; Table~2; equal-RMS control in \S4.9.\\[2pt]
 \midrule
 \place{\S2.7}{Amplification: synaptic low-pass and network resonance}
 & Synaptic transfer $H_s$ (16~Hz corner; 0.7 at 10~Hz, 2.5\% at 100~Hz). One-mode reduction,
   $\mu_\pm=-\gamma\pm i\omega_0$, $\mathcal Q=\omega_0/2\gamma$, gain $\propto1/\gamma$
-  (Eq.~20); entrainment above the Hopf. Receiver equation (Eq.~21) with $D$ and $G$ and their
+  (Eq.~19); entrainment above the Hopf. Receiver equation (Eq.~20) with $D$ and $G$ and their
   normalization for JR and QIF. The cubic normal form has no quadratic mixer.
 & Supplies the second factor of the receiver and the claim that a large susceptibility is
   not evidence of detection. The carrier must still reach the mixer, which \S2.8 quantifies.
 & Fig.~6; Figs.~5 and 8; App.~C.\\[2pt]
 \midrule
 \place{\S2.8}{Carrier access depends on the effective membrane response}
-& Point-membrane $H_m$ (Eq.~22); $|H_m|^2\approx10^{-4}$ at 1~kHz for 16~ms, 0.39 and 0.14 at 1 and 2~kHz for
+& Point-membrane $H_m$ (Eq.~21); $|H_m|^2\approx10^{-4}$ at 1~kHz for 16~ms, 0.39 and 0.14 at 1 and 2~kHz for
   0.2~ms, labeled as assumed. Table~3 separates somatic measurements, Cohen's approximately
   1~ms minimum axonal decay, assumed fast access, prior 1/0.4~ms TI network parameters,
   channel kinetics, and synaptic filtering.
-  Cohen is cited here as well as in the Introduction and Discussion. AC space constant (Eq.~23), one tenth
-  at 1~kHz; at a long sealed cable end this gives quadratic suppression of about $10^{-2}$.
+  Cohen is cited here as well as in the Introduction and Discussion. The cable derivation (Eq.~29) is in App.~B.1; its sealed-end
+  quadratic suppression of about $10^{-2}$ at 1~kHz remains here.
   Channel kinetics belong in the effective mixing response, counted once;
   no universal gate cutoff follows from QIF. Carrier sweeps constrain access plus mixing;
   beat sweeps probe the amplifier. The plotted simulations retain finite membrane times;
@@ -243,7 +252,7 @@ its static transfer is an adiabatic limit, not a consequence of small amplitude 
 & Figs.~S5, S6, S9; Deitcher 2017; Eyal 2016; Cohen 2020; Discussion comparison with Luff and Semenov.\\[2pt]
 \midrule
 \place{\S2.9}{Operating-point dependence}
-& Signed PEIX (Eq.~24) is zero at the inflection and approaches $\pm1$ in saturation;
+& Signed PEIX (Eq.~22) is zero at the inflection and approaches $\pm1$ in saturation;
   the normalized slope is $1-|\mathrm{PEIX}|$. Static mixing vanishes at the inflection;
   slope and curvature play distinct roles in the memoryless detector.
   The fast-carrier QIF DC coefficient follows $F'$;
@@ -270,8 +279,17 @@ lock-in read-out and the pinned-operating-point protocol recur across models.
 \begingroup\fontsize{9.4}{11.4}\selectfont
 \begin{xltabular}{\linewidth}{@{}L{38mm}Y L{62mm}L{46mm}@{}}\toprule
 \maphead
-\place{\S3.1}{Amplitude scaling and harmonic measurements}
-& Lock-in (Eq.~25): Hann window, weighted-mean subtraction, physical-amplitude
+\place{\S3.1}{Waveforms and matched-source controls}
+& AM surrogate (Eq.~23): one central line and two sidebands, with the same leading
+  beat as two tones but a $3/4$ DC source and an extra second harmonic at $m=1$.
+  Retain waveform-specific uses, open-loop control, and two-tone reruns of
+  mean-shift-dependent comparisons.
+& States the protocol after the detector laws; DC and harmonic claims cannot rely
+  on leading-beat equivalence alone.
+& Fig.~7d; \S4.6--4.8.\\[2pt]
+\midrule
+\place{\S3.2}{Amplitude scaling and harmonic measurements}
+& Lock-in (Eq.~24): Hann window, weighted-mean subtraction, physical-amplitude
   normalization, and finite-window leakage limits. Amplitude-slope test at fixed
   coupling and linear downstream gain. Harmonic ratio corrected by
   $|G(2\Omega)/G(\Omega)|$: at resonance and $\mathcal Q=10$, 20\% reads 0.7\%.
@@ -281,17 +299,17 @@ lock-in read-out and the pinned-operating-point protocol recur across models.
   the estimator and the restrictions on interpreting a measured harmonic ratio.
 & Fig.~7b; \S2.4; \S4.4 and \S5.1.\\[2pt]
 \midrule
-\place{\S3.2}{Jansen--Rit: integration, lock-in, controls}
+\place{\S3.3}{Jansen--Rit: integration, lock-in, controls}
 & Field enters only the pyramidal sigmoid; the read-out $v=y_1-y_2$ is not fed the field.
   RK4 steps with $<1\%$ convergence; settling and windows. Upper Hopf at $p\approx315.70$,
   $f_0\approx11.16$~Hz; alpha cycle between Hopf points near 90 and 316.
-  The SNIC near 114 belongs to the larger cycle. The estimator in \S3.1 retains DC subtraction to $10^{-8}$.
+  The SNIC near 114 belongs to the larger cycle. The estimator in \S3.2 retains DC subtraction to $10^{-8}$.
   Open-loop detector versus closed-loop column; square law, linearization, finite-difference checks.
 & Specifies the JR integrator and lock-in; run-specific reproduction limits remain recorded.
 & Fig.~3; Grimbert and Faugeras 2006; \path{run_all.py}.\\[2pt]
 \midrule
-\place{\S3.3--3.4}{NMM2 PING and QIF network}
-& PING (Eq.~26): weights $(1,1,1,2)$, $\bar\eta_H=1.110$,
+\place{\S3.4--3.5}{NMM2 PING and QIF network}
+& PING (Eq.~25): weights $(1,1,1,2)$, $\bar\eta_H=1.110$,
   $f_0=54$~Hz, field as current $I_E=\lambda_I E$ so the membrane computes access with
   $\tau_m=\tau_E$; two criticality knobs. Critical-mode continuation and a
   $15$--$90$~Hz linear-response grid for the coupling sweep;
@@ -302,9 +320,9 @@ lock-in read-out and the pinned-operating-point protocol recur across models.
   consistency; the 45\% threshold sensitivity of phase concentration.
 & Fixes the models whose results follow and states which comparisons are perturbative.
   The LaNMM method now accompanies its results in App.~E.1.
-& Eq.~26; Rosetta Stone PING parameters; Vinck 2010.\\[2pt]
+& Eq.~25; Rosetta Stone PING parameters; Vinck 2010.\\[2pt]
 \midrule
-\place{\S3.5--3.6}{Coupling sweeps, tACS control, vocabulary}
+\place{\S3.6--3.7}{Coupling sweeps, tACS control, vocabulary}
 & Pinning: solve $p(C)$ for fixed $v^*$, read $\gamma,\omega_0$ from the Jacobian; tACS control
   at $\varepsilon=0.1$~mV. The JR coupling figure uses the AM surrogate at 0.3~mV
   and $m=1$; the timing figure uses genuine two tones. TI/tACS and endpoint controls
@@ -335,12 +353,7 @@ lock-in read-out and the pinned-operating-point protocol recur across models.
 \place{\S4.5}{Coupling sets the gain at fixed detection}
 & Pinned JR coupling curve: $\sim30\times$ growth, $1/\gamma$ then saturation; the same gain--$\gamma$
   trend via $p$; stable-focus side only. Frequency and modal projections vary too.
-  The TI/tACS ratio cancels the common transfer in linear response (0.143 predicted);
-  the surrogate ratio rises to 0.24 and 0.47 near the Hopf (two tones: 0.24 and 0.46). Retain the
-  unequal-input and field-free-pinning qualifications; matched-source tACS follows TI
-  with ratios 0.99, 0.94, 0.92 for the surrogate and 0.99, 0.93, 0.90 for two tones
-  at three tested couplings. Both driven means can shift.
-  Do not infer a universal efficiency gain.
+
 & The mesoscale claim: network gain grows near a weakly damped mode while the JR
   local curvature is fixed; parameter paths need not have identical finite-distance gain.
 & Fig.~8; Fig.~S3; Clusella 2023.\\[2pt]
@@ -355,20 +368,33 @@ lock-in read-out and the pinned-operating-point protocol recur across models.
   over; retain finite-amplitude rectification and both waveform controls.
 & Fig.~S11; Vieira 2024.\\[2pt]
 \midrule
-\place{\S4.7}{Exact mean-field confirmation}
+\place{\S4.7}{TI and tACS share the linear amplifier}
+& The TI/tACS ratio cancels the common transfer in linear response (0.143 predicted);
+  the surrogate ratio rises to 0.24 and 0.47 near the Hopf (two tones: 0.24 and 0.46). Retain the
+  unequal-input and field-free-pinning qualifications; matched-source tACS follows TI
+  with ratios 0.99, 0.94, 0.92 for the surrogate and 0.99, 0.93, 0.90 for two tones
+  at three tested couplings. Both driven means can shift.
+  Do not infer a universal efficiency gain.
+& Separates the shared-amplifier result from the coupling-sweep protocol: resonance
+  gives no TI advantage in linear response; stronger finite-amplitude responses saturate first.
+& Fig.~S3; the three matched-source controls.\\[2pt]
+\midrule
+\place{\S4.8}{Exact mean-field confirmation}
 & PING generates and amplifies the beat through $v_E^2$; diagonal ridge with operating point;
   the fast-carrier source predicts the second-order response within 1.1\% at four
-  tested stable states; this does not bound source variation across every sweep.
+  tested stable states, and within 0.1\%/0.03\% at 1/2~kHz; this does not bound
+  source variation across every sweep.
   NMM2 has two competing modes: the critical mode dominates at low coupling and
   near the Hopf, the $55$~Hz mode in between. The near-Hopf linear exponent is 1.02
   over a 5.8-fold damping range; the full-sweep exponent is 0.71. Retain finite-amplitude
   departures and the $A_f=2$ check. The $50.5$~Hz endpoint remains attracting for
-  both waveforms despite the DC-only screen; the peak figure is remeasured on a finer grid.
+  both waveforms despite the DC-only screen; endpoint diagnostics are in Methods.
+  The peak figure is remeasured on a finer grid.
 & Confirms detection and amplification in a neuron-derived mean field; the dominant mode
   can change across a coupling sweep, so the local near-Hopf law has a stated range.
 & Figs.~9, 10; Figs.~S8, S10; Clusella 2023.\\[2pt]
 \midrule
-\place{\S4.8}{QIF responses separate beat modulation from induced gamma}
+\place{\S4.9}{QIF responses separate beat modulation from induced gamma}
 & QIF: at $\bar\eta=0.85$, stimulation
   induces gamma through a rectified E-drive shift beyond the E-only Hopf; at $1.5$, gamma dominates a smaller beat component. Phase folding
   suppresses that gamma. Retain sidebands, beat depths $0.29/0.23$, rate $+8$--$11\%$, and
@@ -426,22 +452,24 @@ laminar extension, and the metrics.
 & Four predictions with tests: access versus mixing by carrier sweep; state and carrier
   dependence; transduction class by amplitude slope and harmonic ratio off resonance;
   frequency selectivity. Table~4 against existing evidence; synaptic block tests network
-  involvement without excluding a cellular detector.
+  involvement without excluding a cellular detector. The table now contains the
+  complete procedures and qualifications formerly in the duplicate enumeration.
 & Converts the mechanism into falsifiable statements within the Discussion; distinguishes existing carrier sweeps from an access-corrected test.
 & Table~4; Vieira 2024; Caldas-Martinez 2024; Opancar 2025.\\[2pt]
 \midrule
 \place{\S6}{Conclusion}
-& Effective quadratic mixing generates, resonance amplifies, and a large response does not
-  identify a microscopic mixer. Static and dynamic descriptions connected by time scales; each filter
-  once. Product law; shared amplifier within linear response; fast access represented by
-  an effective membrane time, building on prior axonal TI mechanisms. Its TI-field transfer
-  and human-field response await calibration.
-& Restates access, detection, time-scale reduction, and amplification without new claims.
+& Product law and DC map; shared linear amplifier; timing over mean-rate change;
+  field-induced gamma versus beat. Retain the calibrated-access requirement,
+  static-versus-dynamic condition, and one-filter accounting. The equal-power
+  carrier control is a mean-field result, and a large output alone does not identify its mixer.
+& Restates the headline results with their scope and measurement requirements.
 & ---\\[2pt]
 \midrule
 \place{App.~A--B}{Notation and units; model equations}
 & Table~5 (symbols, meaning, units, and definition locations; shared with the
-  supplement and included in the JNE article); JR equations (Eq.~27) and Table~6.
+  supplement and included in the JNE article); JR equations (Eq.~26) and Table~6.
+  App.~B.1 now holds the compartment matrix with SI units and the passive-cable
+  estimate; B.2 holds the single-cell rate and dynamic MPR Jacobian/phasor derivation.
 & Recovery aids; definitions remain local.
 & ---\\[2pt]
 \midrule
@@ -469,7 +497,7 @@ laminar extension, and the metrics.
 \midrule
 \place{App.~F--G}{Vocabulary metrics; supplementary figures}
 & Dominance screen versus capture test; folded-rate metric versus gamma-amplitude gating; frequency-dominance protocol.
-  Figures S2--S12 support \S4.2--4.8 and the Discussion; S13 compares the geometric
+  Figures S2--S12 support \S4.2--4.9 and the Discussion; S13 compares the geometric
   maps derived in \S2.5--2.6.
 & Metrics behind the three terms; the figure bank for the JNE supplement.
 & Figs.~S2--S13.\\[2pt]
@@ -481,12 +509,13 @@ laminar extension, and the metrics.
 its results in Appendix E; the equal-RMS control remains in the main article and
 S3, S10, and S11 remain supplementary. Theory now separates detector laws (\S2.4),
 envelope oscillations and spatial weighting (\S2.5), and the mean shift (\S2.6).
-Methods \S3.1 defines the amplitude and harmonic tests before their measurement
-procedure. JR Results precede the NMM2 mean field, coupling results, and spiking
+Methods \S3.2 defines the amplitude and harmonic tests before their measurement
+procedure; \S3.1 holds the waveform protocol. The JR chain and its separate
+shared-amplifier result precede the NMM2 mean field, coupling results, and spiking
 network; predictions belong to Discussion \S5.1. The approved model schematic follows
 \S2.1. QIF cutoff diagnostics move to Methods; the main result retains its convergence
 qualification. All existing equations, figures, examples, and numerical results remain.
 The abstract's mean-map clause states the boundary consequence for the generated drive with its uniformity
 conditions. The reading baseline is draft13 (\texttt{c620335}). Coauthor confirmation,
-remaining funding declarations, and release alignment remain pending; see \path{todo.md}.}
+remaining funding declarations, the seven retained CUT? passages, and release alignment remain pending; see \path{todo.md}.}
 \end{document}
