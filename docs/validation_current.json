@@ -326,7 +326,23 @@
     "manuscript_prose_checker_findings": 0,
     "figure_collision_size_check": "clean; original producer with --paper",
     "new_numerical_tests": "The existing line-profile producer reran its temporal-integral checks; no new neural simulations.",
-    "independent_integration_check": "Requested from Klaus; no verdict received yet. Original note review already passed.",
+    "independent_integration_check": {
+      "reviewer": "klaus-484-TI-helper",
+      "reported_at": "2026-10-06 18:42 CEST",
+      "result": "scoped pass; no discrepancies",
+      "review_target": "Draft15 working source, former Section 2.4 and fig:spatial_maps caption; no commit pin reported.",
+      "comparison_source": "notes/2026-10-06_ti_focality/ti_envelope_quadratic.tex",
+      "scope": [
+        "Signed projected spatial amplitudes, excursions and product reweighting",
+        "Geometric maps versus physical detector gains, units and matched-site means",
+        "Envelope-mean subharmonicity, fixed-coupling assumptions, beat-map distinction and figure caption"
+      ],
+      "optional_wording_suggestions": [
+        "Explicitly identify g = Sigma for the JR column.",
+        "Replace the negative focality-summary sentence with a positive statement about computing focality from the product map."
+      ],
+      "later_revision_check": "The broader check requested on af29999 remains pending; this earlier report does not close it."
+    },
     "held_actions": [
       "GitHub push",
       "Calliope/Zenodo cut",

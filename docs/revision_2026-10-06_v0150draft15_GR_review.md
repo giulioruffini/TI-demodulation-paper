@@ -80,3 +80,19 @@ new order and the redline remains against `c620335`.
 GitHub push, Calliope/Zenodo cut, Overleaf sync, and coauthor circulation remain
 on hold. The revision addresses the annotated review; it is not a submission
 or a claim that all author declarations are complete.
+
+## Earlier focality check received
+
+Klaus's report dated October 6, 18:42 confirms the earlier draft15 focality
+integration against the reading note: signed amplitudes, gains and units,
+matched-site means, subharmonicity assumptions, and the Figure S13 caption
+agree. He reported no discrepancy. This check precedes the reorganized
+`af29999` revision and does not close that later fidelity request.
+
+His optional suggestions are to identify the generic transfer g with the JR
+sigmoid explicitly and to state positively that focality must be computed from
+the product map. The current text already follows the negative summary with
+the proposed finite-element comparison, but retains that summary sentence.
+Both suggestions are recorded for the next prose pass; his broader readability
+review was not supplied as an approved editing brief. No manuscript or PDF
+changed when this scoped review was recorded.
