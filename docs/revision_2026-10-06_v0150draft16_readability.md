@@ -121,3 +121,8 @@ calculation was run, because code, figure data, and simulation caches are unchan
 GitHub push, Calliope/Zenodo cut, Overleaf synchronization, and coauthor circulation
 remain on hold. This revision does not close author declarations or authorize
 submission.
+
+The combined revision is committed as `e07b44a`. A bounded read-only fidelity
+check was requested from Klaus on that commit; the message was spooled, and no
+verdict had been received when this record was written. It supersedes the earlier
+`af29999` integration check and the separate request about Discussion wording.
