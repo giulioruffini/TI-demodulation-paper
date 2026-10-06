@@ -52,6 +52,10 @@ def expanded_source(revision=None):
     token = r"\input{" + notation + "}"
     if token in source:
         source = source.replace(token, source_at(notation, revision))
+    caption = "figures_src/fig_models_ti_caption.tex"
+    token = r"\input{" + caption + "}"
+    if token in source:
+        source = source.replace(token, source_at(caption, revision))
     # Join adjacent inline math spans only in the comparison inputs.
     return source.replace("$$", "")
 

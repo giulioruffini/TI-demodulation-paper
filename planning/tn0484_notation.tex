@@ -45,14 +45,14 @@ $\Delta f,\Omega$ & Beat frequency $f_2-f_1$; $\Omega=2\pi\Delta f$ & Hz; rad/s 
 $m$ & AM-surrogate modulation depth & dimensionless & Eq.~\eqref{eq:amsur} \\
 $\Lambda[E],\lambda_0,\lambda_f$ & Field-induced polarization; static and frequency-dependent coupling & mV; mV/(V/m) & Eqs.~\eqref{eq:nmm1}, \eqref{eq:doors} \\
 $\boldsymbol\lambda^k_0,\boldsymbol\lambda^k_f$ & Coupling vectors for compartment $k$ & mV/(V/m) & Eq.~\eqref{eq:doors} \\
-$H_k,H_m$ & Compartment access transfer; point-membrane transfer & dimensionless & \S\ref{sec:coupling}, \S\ref{sec:khz} \\
+$H,H_k,H_m$ & Dominant-compartment access transfer, indexed transfer, and point-membrane transfer & dimensionless & Fig.~\ref{fig:models}; \S\ref{sec:coupling}, \S\ref{sec:khz} \\
 $\tau_m,\tau$ & Membrane time; access-filter time in kHz controls & ms & Eqs.~\eqref{eq:mpr}, \eqref{eq:khz} \\
 $f_{\rm char}$ & Characteristic frequency $1/(2\pi\tau)$ & Hz & Table~\ref{tab:doors} \\
 $\ell(\omega),\ell_0$ & Frequency-dependent and static cable space constants & $\mu$m & Eq.~\eqref{eq:lambda} \\
 $\mathbf V,\mathsf C_m,\mathsf G_m$ & Compartment voltages, capacitance and conductance matrices & V; F; S & \S\ref{sec:coupling} \\
 $\mathbf I^0,\mathbf p_E$ & Endogenous currents; field-to-current vector & A; A/(V/m) & \S\ref{sec:coupling} \\
-$\mathbf x,\phi_j,\mathbf n$ & Position, field potential, unit cell orientation & m; V; unit vector & \S\ref{sec:transduction} \\
-$\mathcal I$ & Mean-square local polarization $(\varepsilon_1^2+\varepsilon_2^2)/2$ & mV$^2$ & \S\ref{sec:transduction} \\
+$\mathbf x,\phi_j,\mathbf n$ & Position, field potential, unit cell orientation & m; V; unit vector & \S\ref{sec:envelope}, \S\ref{sec:dc} \\
+$\mathcal I$ & Mean-square local polarization $(\varepsilon_1^2+\varepsilon_2^2)/2$ & mV$^2$ & \S\ref{sec:dc} \\
 \addlinespace
 \multicolumn{4}{@{}l}{\textbf{Detection}}\\*
 $\Sig,\Sig',\Sig''$ & JR/LaNMM rate curve, slope and curvature & s$^{-1}$; s$^{-1}$mV$^{-1}$; s$^{-1}$mV$^{-2}$ & Eq.~\eqref{eq:sigmoid} \\
@@ -82,11 +82,13 @@ $\tilde t,\tilde r,\tilde f$ & Membrane-time coordinate, population rate and sin
 $r_{\rm syn},r_E^{\rm syn},r_I^{\rm syn}$ & Synaptically filtered firing rates & same rate units as input & Eqs.~\eqref{eq:slow_synapse}, \eqref{eq:nmm2-ping} \\
 $u_{\rm PSP},u_{X\leftarrow Y},\hat L$ & Postsynaptic potential and inverse synaptic operator & mV; maps mV to s$^{-1}$ & Eq.~\eqref{eq:nmm1} \\
 $A,B,a,b$ & JR excitatory/inhibitory PSP gains and inverse synaptic times & mV; s$^{-1}$ & \S\ref{sec:nmm}; App.~\ref{app:models} \\
+$h_e,h_i$ & JR excitatory and inhibitory synaptic impulse responses & mV & Fig.~\ref{fig:models} \\
 $C,C_{1\ldots4},C_{X\leftarrow Y}$ & JR connectivity scale and pathway weights & dimensionless & \S\ref{sec:nmm}; App.~\ref{app:models} \\
 $y_0,y_1,y_2,v$ & JR PSPs; voltage readout $v=y_1-y_2$ & mV & App.~\ref{app:models} \\
 $p,p_H,C^*$ & JR external rate and its upper Hopf value; critical connectivity & s$^{-1}$; dimensionless for $C^*$ & \S\ref{sec:jr-methods}, \S\ref{sec:jcurve} \\
 $\eta_j,\bar\eta,\Delta$ & QIF excitabilities, Lorentzian center and half-width & normalized & Eq.~\eqref{eq:mpr} \\
 $I,I_E,I_j,A_f,\lambda_I$ & QIF input, E-population input, tone amplitudes, forcing amplitude and field coupling & normalized; $\lambda_I$ in (V/m)$^{-1}$ & Eqs.~\eqref{eq:mpr}, \eqref{eq:nmm2-ping} \\
+$\mathcal U_j$ & Total synaptic and field drive to QIF neuron $j$ & normalized & Fig.~\ref{fig:models} \\
 $J,J^*,w_{XY}$ & QIF coupling, critical coupling and relative pathway weights & dimensionless & Eq.~\eqref{eq:nmm2-ping} \\
 $\tau_E,\tau_I,\tau_a,\tau_g,\tau_s$ & E/I membrane and excitatory/inhibitory/generic synaptic times & ms & Eqs.~\eqref{eq:slow_synapse}, \eqref{eq:nmm2-ping} \\
 $\hat K_a,\hat K_g,H_s$ & QIF synaptic rate filters; JR rate-to-voltage transfer & dimensionless; mV\,s for $H_s$ & \S\ref{sec:nmm2-methods}, \S\ref{sec:carrier} \\

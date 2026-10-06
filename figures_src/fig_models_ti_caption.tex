@@ -1,0 +1,32 @@
+% Proposed caption and placement (Klaus, 2026-10-06; revised after Kaiti's review 2026-10-06).
+% Place after the model definitions in Theory (sec:nmm), before the first JR result.
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{fig_models_ti.pdf}
+\caption{\textbf{Where the TI field enters each model.} Both panels show the same three
+stages, with each filter counted once. Access converts the two-tone field into the input
+that reaches the nonlinearity; detection generates the beat; the recurrent circuit
+amplifies it. Dashed outlines mark the recurrent amplifier, whose small-signal gain grows
+as the inverse modal damping $1/\gamma$ near a Hopf bifurcation; $f_0$ is the mode's frequency.
+\emph{(a)} Jansen--Rit column. Access multiplies the field by the static coupling
+$\lambda_0$ and the access filter $H(\omega)$; the resulting polarization $s(t)$ enters
+the pyramidal sigmoid, whose curvature $\sigma''(v^*)$ mixes the tones. The pyramidal
+firing is filtered by the excitatory synaptic kernel $h_e$ (inverse time $a$, gain $A$)
+to give $y_0$. The interneurons receive $C_1y_0$ and $C_3y_0$, respectively, and
+return the potentials $y_1$ (through $h_e$, connectivity $C_2$) and $y_2$ (through the
+inhibitory kernel $h_i$, inverse time $b$, gain $B$, connectivity $C_4$). The external input is
+$p$, and $v=y_1-y_2$ is the LFP proxy.
+\emph{(b)} NMM2 PING circuit. The field enters the excitatory voltage equation as the
+current $I_E=\lambda_I E$, of amplitude $A_f$ per tone; the excitatory membrane, with time
+constant $\tau_E$, integrates it before the quadratic term $v_E^2$ mixes the tones.
+Excitatory (AMPA, $\tau_a$) and inhibitory (GABA, $\tau_g$) synapses with global coupling
+$J$ and pathway weights $w_{XY}$ (target $X$, source $Y$) close a gamma loop with a Hopf
+bifurcation at $J^*$. The population equations are the exact Montbri\'o--Paz\'o--Roxin
+(MPR) mean field, in the limit $N\to\infty$, of the network of $N$ quadratic
+integrate-and-fire neurons at right, with membrane time $\tau_X$ for $X\in\{E,I\}$
+and $\mathcal U_j(t)$ the total
+synaptic and field input to neuron $j$; the finite network is simulated directly in
+\S\ref{sec:qif}. Blue arrows are excitatory, red circle-ended connections inhibitory,
+and green arrows carry the applied field input.}
+\label{fig:models}
+\end{figure}

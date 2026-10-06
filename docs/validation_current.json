@@ -2,13 +2,13 @@
   "version": "0.15.0-draft15",
   "review_baseline": "0c394df",
   "redline_baseline": "c620335",
-  "status": "Draft15 focality integration retained; harmonic ratios H_det/H_meas separated from TI/direct-drive ratios R_det/R_lin. Remaining author annotations and abstract focality wording await review.",
+  "status": "Draft15 addresses all 26 annotations in the GR review copy, integrates the approved model schematic, separates envelope and DC theory, groups NMM2 results, and moves predictions to Discussion. Author reading and release declarations remain pending.",
   "outputs": {
     "jne": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.log",
-      "pages": 40,
-      "sha256": "6bdc3dc0748211191c73a1ab073d3d01690d970c6df10dec6111a4c179c20369",
+      "pages": 41,
+      "sha256": "1e747f355b5cb4ec833785cf63ebca180b3bd9c312f68a2546a350f840a8db46",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -20,7 +20,7 @@
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne_supplement.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne_supplement.log",
       "pages": 20,
-      "sha256": "ca262004c163ba4dc0b67735dd5d2424d264393ddfb0ab4edf4733525cdb4585",
+      "sha256": "b9c85b3ed8276cb471274b94aeae131993898eefadbec1072e4bf3812b2d7e38",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -29,10 +29,10 @@
       }
     },
     "tn_validation": {
-      "path": "/tmp/tn0484_draft15_ratios/build/tn_validation.pdf",
-      "log": "/tmp/tn0484_draft15_ratios/build/tn_validation.log",
-      "pages": 55,
-      "sha256": "e649f6d1a27ae45f6af4ebaa0bd251c6df3f0ef502abe427d8b6a15cb2794bc6",
+      "path": "/tmp/tn0484_draft15_revision/build/tn_validation.pdf",
+      "log": "/tmp/tn0484_draft15_revision/build/tn_validation.log",
+      "pages": 56,
+      "sha256": "dae35e3f58529823ad357e59641cb0be63428a9ab967c18b85183160fe151709",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -43,8 +43,8 @@
     "storyline": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.log",
-      "pages": 10,
-      "sha256": "bd73b502208a753db6fb4802157796d4746eef66df6cd99544791e8300c09a67",
+      "pages": 11,
+      "sha256": "5388902f4f06c3ae9a8a5e805dcdfc4e3607d883ff92d571719e5f7cff864dca",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -55,8 +55,8 @@
     "redline": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.log",
-      "pages": 42,
-      "sha256": "7573859ac1f5a321a5ad211482af36e31123079d806c07f504fa296184eb90f1",
+      "pages": 46,
+      "sha256": "e8f746ba0a269f739ffe5ff00a24a34c5a97b3864e6f32ee5b2594dbfce737e2",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -67,27 +67,72 @@
   },
   "retention": {
     "fig_labels": {
-      "original_count": 23,
-      "original_numbers_unchanged": true,
-      "added": "fig:spatial_maps = S13",
-      "current_count": 24
+      "original_count": 24,
+      "original_numbers_unchanged": false,
+      "added": "fig:models = 2",
+      "current_count": 25,
+      "renumbering": {
+        "fig:bif": {
+          "before": "2",
+          "after": "3"
+        },
+        "fig:demod": {
+          "before": "3",
+          "after": "4"
+        },
+        "fig:res": {
+          "before": "4",
+          "after": "5"
+        },
+        "fig:carrier": {
+          "before": "5",
+          "after": "6"
+        },
+        "fig:opp": {
+          "before": "6",
+          "after": "7"
+        },
+        "fig:crossover": {
+          "before": "7",
+          "after": "9"
+        },
+        "fig:nmm2_res": {
+          "before": "8",
+          "after": "10"
+        },
+        "fig:jcurve": {
+          "before": "9",
+          "after": "8"
+        },
+        "fig:qif_raster": {
+          "before": "10",
+          "after": "11"
+        },
+        "fig:qif_regimes": {
+          "before": "11",
+          "after": "12"
+        }
+      },
+      "supplementary_numbers_unchanged": true
     },
     "eq_labels": {
       "count": 32,
-      "numbers_unchanged": true
+      "numbers_unchanged": true,
+      "numbered_bodies_unchanged": true
     },
     "notation_table": {
       "article_number": 5,
       "supplement_number": 1,
       "shared_source": "planning/tn0484_notation.tex"
     },
-    "new_table": "tab:transduction-maps = 2; later article tables shift by one",
+    "new_table": "No new table in this revision; transduction-map Table 2 retained from earlier draft15 integration.",
     "cited_works": 60,
     "review_report_preserved": true,
     "simulation_producers_and_caches_unchanged": true,
     "existing_figures_unchanged": true,
-    "abstract_source_unchanged": true,
-    "existing_two_site_example_verbatim": true
+    "abstract_source_unchanged": false,
+    "existing_two_site_example_verbatim": true,
+    "original_labels_retained": true
   },
   "bibliography": {
     "n_cited": 60,
@@ -106,48 +151,52 @@
   ],
   "visual_inspection": {
     "jne_pages": [
-      10,
+      1,
+      7,
       11,
       12,
-      38
+      13,
+      16,
+      19,
+      26,
+      27,
+      28,
+      31,
+      32,
+      39,
+      40,
+      41
     ],
     "supplement_pages": [
+      3,
       19
     ],
     "redline_pages": [
+      1,
+      7,
       12,
-      13
+      13,
+      17,
+      35
+    ],
+    "storyline_pages": [
+      10,
+      11
     ],
     "figures": [
-      "fig_spatial_maps"
+      "fig_models_ti",
+      "fig_spatial_maps retained"
     ],
-    "findings": "Table 2 is next to Eq. 18; both mean-map qualifications are legible. Figure S13 uses the original line profiles and normalization with the length label changed to L_x. No clipping or collisions.",
-    "storyline_pages": [
-      4,
-      10
-    ],
-    "ratio_followup": {
-      "article_pages": [
-        10,
-        31,
-        38,
-        39
-      ],
-      "supplement_pages": [
-        7
-      ],
-      "redline_pages": [
-        11
-      ],
-      "findings": "Harmonic and drive-ratio symbols render correctly in equations, prose, and the notation table; no clipping or overlaps."
-    }
+    "findings": "Approved schematic and notation are legible; the envelope table, separate DC section, new section order, Methods explanation, interpretation paragraphs, and article notation appendix render without clipping or collisions. The redline includes the schematic caption and remains against draft13."
   },
   "source_sha256": {
-    "TN0484_envelope_demodulation.tex": "58f51447cbca7ab4c025bf5a7947d92e72fcf2dfea4752149ba696c699775a42",
+    "TN0484_envelope_demodulation.tex": "37695a83c8d8afc77f4c4c38e2b12532db1045e2e991aa1fe34eaa466410a64f",
     "references.bib": "8ee2a664fc78b990a6811d1bb9fef0d1c4eb68d4f5f2ee52f167604b94f96907",
-    "planning/tn0484_abstract.tex": "fa6d581b7b8089f1897dde0b32239b9840477401ff300118c9d86142f5170b4f",
-    "planning/tn0484_storyline.tex": "1e4cd01b273e6f2687cc2e0800685d6bf8c1c5e4c6e9855eca64357290adbb8f",
-    "planning/tn0484_notation.tex": "46989b32ffd2827487a6d6c0acdd04080e0aedc1a9000ace7735f211b050d0af"
+    "planning/tn0484_abstract.tex": "853f47a0db90c442b80a26fb7deb070a9491a6808b6e267f1816a0e6b980a3a6",
+    "planning/tn0484_storyline.tex": "8f7d9cf3b5a1bdf97eb4be3779ad3fab9455d48d97143533fd078173d723ab40",
+    "planning/tn0484_notation.tex": "51cf43c903317769d7f637245cd0c0a87801b41d45dd78b285e9124615adc18a",
+    "figures_src/fig_models_ti.tex": "a07d94124ba4f22561bca098134d6d194d717918dbb0fab37ad6381bbbd558be",
+    "figures_src/fig_models_ti_caption.tex": "0b4e8a163826956987cdcac4fd36ffc01403869476fd0bd6f74fbb37f8bf266e"
   },
   "producer_commits": [
     "139dd74",
@@ -234,14 +283,20 @@
   },
   "current_revision": {
     "date": "2026-10-06",
-    "baseline_commit": "972d9ea",
-    "authorization": "Klaus 18:03 notation follow-up under Giulio notation-pass instruction",
-    "abstract_words": 297,
-    "abstract_unchanged": true,
-    "audit": "docs/notation_ratios_audit_2026-10-06.json",
-    "revision_record": "docs/notation_ratios_2026-10-06.md",
-    "changes": "Harmonic R_det/R_meas to H_det/H_meas; efficiency eta_det to R_det. Figure 7 already correct. No changes to numerical data or scientific claims.",
+    "baseline_commit": "56070fa",
+    "authorization": "Giulio annotated-review brief and schematic approval relayed by Klaus at 18:30 CEST; actual 26-annotation PDF inspected.",
+    "abstract_words": 296,
+    "abstract_unchanged": false,
+    "audit": "docs/gr_review_audit_2026-10-06.json",
+    "annotation_record": "docs/gr_review_annotation_resolution_2026-10-06.md",
+    "revision_record": "docs/revision_2026-10-06_v0150draft15_GR_review.md",
+    "word_counts": "docs/word_counts_draft15_GR_review.json",
+    "schematic_source_commit": "c7ce5e0",
+    "schematic_initial_approved_proposal": "57bd255",
     "manuscript_prose_checker_findings": 0,
+    "note_prose_checker_findings": "Two Markdown table-separator false positives; no prose issue.",
+    "substantive_removals": [],
+    "independent_fidelity_check": "To be requested on the committed revision; no verdict claimed.",
     "held_actions": [
       "GitHub push",
       "Calliope/Zenodo cut",
@@ -268,5 +323,22 @@
       "coauthor email"
     ],
     "committed_as": "972d9ea"
+  },
+  "ratio_notation_revision": {
+    "date": "2026-10-06",
+    "baseline_commit": "972d9ea",
+    "authorization": "Klaus 18:03 notation follow-up under Giulio notation-pass instruction",
+    "abstract_words": 297,
+    "abstract_unchanged": true,
+    "audit": "docs/notation_ratios_audit_2026-10-06.json",
+    "revision_record": "docs/notation_ratios_2026-10-06.md",
+    "changes": "Harmonic R_det/R_meas to H_det/H_meas; efficiency eta_det to R_det. Figure 7 already correct. No changes to numerical data or scientific claims.",
+    "manuscript_prose_checker_findings": 0,
+    "held_actions": [
+      "GitHub push",
+      "Calliope/Zenodo cut",
+      "Overleaf sync",
+      "coauthor email"
+    ]
   }
 }

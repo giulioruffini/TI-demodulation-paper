@@ -1,15 +1,14 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
-- [ ] review Klaus's corrected JR/NMM2 schematic on fig-models-ti; integrate only after Giulio approves the separate proposal
-- [ ] act on K's annotations of 2026-10-06 (notes/2026-10-06_K/TN0484 journal (JNE) annotated (2).md)
-- [ ] review the two-page envelope/quadratic TI note and decide the abstract's local-DC versus beat-focality wording
 - [ ] review Ricardo's real-montage FEM comparison if supplied before submission; retain the proposed comparison otherwise
-- [ ] act on K's annotations of 2026-10-06 (notes/2026-10-06_K/TN0484 journal (JNE) annotated.md)
-- [ ] review article length after the Landau additions; retain explanations unless Giulio approves the proposed cuts
+- [ ] review the reorganized draft15 and its length report; the added schematic and explanations increase the article by one page; scientific removals require Giulio's approval
 - [ ] Giulio: review the corrected JNE working edition and fixed-baseline redline; authorize coauthor circulation when ready
 - [ ] obtain missing funding declarations; confirm the supplied competing-interests statement, author roles and affiliations, actual AI-tool versions, and the submission version with every author
 - [ ] after review and authorization: push, align the public code/archive, cut Calliope/Zenodo, re-sync Overleaf, and circulate the coauthor request (all HOLD)
 - [ ] migrate the paper folder at the next coordinated version boundary; run the layout checker before and after, with no concurrent session editing
+- [x] address the 26 annotations in Giulio's GR review PDF: split envelope/DC subsections, group NMM2 Results, move predictions to Discussion, and clarify local explanations (October 6)
+- [x] integrate the approved JR/NMM2 model schematic with draft14 notation and a defined caption (October 6)
+- [x] state the generated steady-drive boundary restriction separately from beat focality in the shared abstract and Theory (October 6)
 - [x] put the shared notation table in JNE Appendix A, reconcile symbols and units across article/supplement/figures, and verify unchanged equation and figure numbering in draft14 (October 6)
 - [x] distinguish harmonic ratios H_det/H_meas from drive ratios R_det/R_lin throughout draft15 and the shared notation table (October 6)
 - [x] integrate the focality comparison table and envelope-mean proof into Section 2.4, add the line profile as Figure S13, and preserve the existing two-site example in draft15 (October 6)

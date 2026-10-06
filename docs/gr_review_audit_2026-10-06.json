@@ -1,0 +1,438 @@
+{
+  "baseline_commit": "56070fa",
+  "redline_baseline": "c620335",
+  "source_sha256": "37695a83c8d8afc77f4c4c38e2b12532db1045e2e991aa1fe34eaa466410a64f",
+  "all_original_labels_retained": true,
+  "added_labels": [
+    "fig:models",
+    "sec:dc",
+    "sec:envelope"
+  ],
+  "cited_keys_retained": true,
+  "cited_key_count": 60,
+  "numbered_equation_bodies_unchanged": true,
+  "equation_environments": 31,
+  "equation_label_count": 32,
+  "equation_number_changes": {},
+  "all_original_figures_retained": true,
+  "figure_count_before": 24,
+  "figure_count_after": 25,
+  "changed_original_captions": [
+    "fig:qif_regimes"
+  ],
+  "figure_renumbering": {
+    "fig:bif": {
+      "before": "2",
+      "after": "3"
+    },
+    "fig:demod": {
+      "before": "3",
+      "after": "4"
+    },
+    "fig:res": {
+      "before": "4",
+      "after": "5"
+    },
+    "fig:carrier": {
+      "before": "5",
+      "after": "6"
+    },
+    "fig:opp": {
+      "before": "6",
+      "after": "7"
+    },
+    "fig:crossover": {
+      "before": "7",
+      "after": "9"
+    },
+    "fig:nmm2_res": {
+      "before": "8",
+      "after": "10"
+    },
+    "fig:jcurve": {
+      "before": "9",
+      "after": "8"
+    },
+    "fig:qif_raster": {
+      "before": "10",
+      "after": "11"
+    },
+    "fig:qif_regimes": {
+      "before": "11",
+      "after": "12"
+    }
+  },
+  "two_site_example_verbatim": true,
+  "qif_cutoff_diagnostics_relocated_verbatim": true,
+  "carrier_leakage_diagnostics_relocated_verbatim": true,
+  "existing_figures_and_caches_unchanged": true,
+  "abstract_words": 296,
+  "annotation_source": {
+    "source": "/Users/giulio/Claude/desk/review/TN0484 journal (JNE)_GR review.pdf",
+    "sha256": "092be2e878a87890431334d3b019473bb796128a681e692a8fb4f8ca42968274",
+    "pages": 36,
+    "annotations": [
+      {
+        "index": 1,
+        "page": 1,
+        "type": "Highlight",
+        "content": "",
+        "rect": [
+          65.1969985961914,
+          621.4136352539062,
+          530.1046752929688,
+          644.5953979492188
+        ],
+        "quote": "no montage can focus the steady shift inside a compartment uniform in conductivity,"
+      },
+      {
+        "index": 2,
+        "page": 7,
+        "type": "Stamp",
+        "content": "Low pass filtering \u2026? This will be done by synapses\u2026",
+        "rect": [
+          442.7200927734375,
+          -0.2376708984375,
+          571.7495727539062,
+          103.95050048828125
+        ],
+        "quote": "re the full transfer\noss term generates\nAveraging over the\nLow pass \ufb01ltering \u2026? \nThis will be done by \nsynapses\u2026"
+      },
+      {
+        "index": 3,
+        "page": 7,
+        "type": "Highlight",
+        "content": "",
+        "rect": [
+          65.1969985961914,
+          97.67608642578125,
+          530.0850830078125,
+          121.97918701171875
+        ],
+        "quote": "Averaging over the carrier"
+      },
+      {
+        "index": 4,
+        "page": 10,
+        "type": "Highlight",
+        "content": "",
+        "rect": [
+          65.1969985961914,
+          487.9396057128906,
+          530.1112060546875,
+          679.1834106445312
+        ],
+        "quote": "Beyond harmonics and amplitude scaling, the transduction class fixes the spatial map. Define the\ntalied subsetion on \nill ti\n! It i excursion as M[y] \u2261maxt y \u2212mint y of a periodic quantity y(t). The conventional TI envelope\nop oscillation! It is a \nrtant point to clairy map is M[A] = 2 min(\u03b51, \u03b52), whereas the square-law detector responds to M[ 1\n2\np\ny\ndagotically. 1\n2A2] = 2\u03b51\u03b52, so the two are related pointwise by M\n\u00021\n2 1\n2A2\u0003 = max(\u03b51, \u03b52) M[A].\n(18) The square-law map is the conventional envelope-excursion map multiplied, at each point, by the dominant local polarization. It therefore does not preserve conventional TI focality. Where the dominant carrier is larger superficially than at depth, this reweighting degrades deep-to-superficial contrast. As an illustrative example, at (\u03b51, \u03b52) = (10, 1) superficially against (0.5, 0.5) at a matched deep target, M[A] favors the superficial point by 2\u00d7 and M[ 1\n2i 1\n2A2] by 40\u00d7. The magnitude of the degradation is not fixed by this algebra and must be evaluated from the actual vector field distribution; a sufficiently weak second carrier can suppress the superficial product instead. The product law is not an account of TI focality."
+      },
+      {
+        "index": 5,
+        "page": 10,
+        "type": "Circle",
+        "content": "this deserves to be a cleaer detalied subsetion on the envelop oscillation! It is a very important point to clairy pedagotically.",
+        "rect": [
+          20.515979766845703,
+          454.2040100097656,
+          138.25399780273438,
+          543.7132568359375
+        ],
+        "quote": "harmonic ratio\nthree; amplitud\nBeyond harmon\nexcursion as M\nmap is M[A] =\nthe two are rela\nthis deserves to be a \ncleaer detalied subsetion on \nthe envelop oscillation! It is a \nvery important point to clairy \npedagotically."
+      },
+      {
+        "index": 6,
+        "page": 10,
+        "type": "Circle",
+        "content": "Another subsection\u2026 the DC part ",
+        "rect": [
+          20.636560440063477,
+          682.0198974609375,
+          138.37460327148438,
+          771.5291137695312
+        ],
+        "quote": "The accompany\nlocal DC source\nCarrier averagin\nleaving a sum o\nADC \u0338= 0, |A\u2126/A\naccess factor can\nl\nb\nAnother subsection\u2026 the DC \npart"
+      },
+      {
+        "index": 7,
+        "page": 11,
+        "type": "Stamp",
+        "content": "What \u201cmass\u201d. You mean the JR NMM node??",
+        "rect": [
+          149.1479949951172,
+          446.5333251953125,
+          278.177490234375,
+          550.7215576171875
+        ],
+        "quote": "suppresses the carrier afte\nse has transfer function Hs\nquency a/(2\u03c0) \u224816 Hz. It\nreducing a 100 Hz compo\nxcite a responsive mode, th\nve.\necovered beat component int\nmass about its fixed point g\nWhat \u201cmass\u201d. You mean \nthe JR NMM node??"
+      },
+      {
+        "index": 8,
+        "page": 11,
+        "type": "Highlight",
+        "content": "",
+        "rect": [
+          142.14219665527344,
+          540.9942016601562,
+          165.30540466308594,
+          552.3592529296875
+        ],
+        "quote": "mass"
+      },
+      {
+        "index": 9,
+        "page": 12,
+        "type": "Highlight",
+        "content": "",
+        "rect": [
+          307.90399169921875,
+          119.5941162109375,
+          316.93560791015625,
+          130.48822021484375
+        ],
+        "quote": "D"
+      },
+      {
+        "index": 10,
+        "page": 14,
+        "type": "Highlight",
+        "content": "",
+        "rect": [
+          65.1969985961914,
+          316.44659423828125,
+          530.1112060546875,
+          353.17742919921875
+        ],
+        "quote": "Under a linear downstream response and fixed coupling, an amplitude sweep distinguishes a quadratic effective drive from one proportional to the envelope. These tests assess the smooth- transfer assumption of \u00a72.2 using the signatures derived in \u00a72.4."
+      },
+      {
+        "index": 11,
+        "page": 14,
+        "type": "Stamp",
+        "content": "Explain WHY you are even talking about this.",
+        "rect": [
+          346.1828918457031,
+          220.5032958984375,
+          475.21240234375,
+          324.6915283203125
+        ],
+        "quote": "c detecto t e sa\ne s\nts\nependence is the falsifiable\ns\n, an amplitude sweep dist\nExplain WHY you are even \ntalking about this."
+      },
+      {
+        "index": 12,
+        "page": 14,
+        "type": "Stamp",
+        "content": "what harmonic test?",
+        "rect": [
+          118.54989624023438,
+          537.1875,
+          247.57940673828125,
+          641.3756103515625
+        ],
+        "quote": "ed signal). The finite-windo\nanish, so we subtract \u00afv expli\nthe JR kHz analysis (\u00a72.6).\ng slope of the envelope-loc\natic laws of \u00a72.4 without re\nnt, performed in the model\nmonic test, apply Eq. (25) a\nwhat harmonic test?"
+      },
+      {
+        "index": 13,
+        "page": 14,
+        "type": "Highlight",
+        "content": "",
+        "rect": [
+          102.58789825439453,
+          629.609619140625,
+          146.8625030517578,
+          639.242431640625
+        ],
+        "quote": "harmonic"
+      },
+      {
+        "index": 14,
+        "page": 22,
+        "type": "Highlight",
+        "content": "",
+        "rect": [
+          65.1969985961914,
+          366.263427734375,
+          462.287109375,
+          375.8634033203125
+        ],
+        "quote": "4.5 Exact mean-field confirmation: the NMM2 PING gamma generator"
+      },
+      {
+        "index": 15,
+        "page": 22,
+        "type": "Stamp",
+        "content": "Move near other NMM2?",
+        "rect": [
+          302.552490234375,
+          265.18218994140625,
+          431.58209228515625,
+          369.37042236328125
+        ],
+        "quote": "der a current carrier, Eq. (13\nthe static limit 1\n4F \u2032\u2032; dashed\naged over whole carrier period\nThe top axis converts \u03c9\u03c4 to a\nof the fast-carrier difference-fre\nng points (\u03b3 the damping of t\nMM2 PING gamma gene\nMove near other NMM2?"
+      },
+      {
+        "index": 16,
+        "page": 25,
+        "type": "Highlight",
+        "content": "",
+        "rect": [
+          65.1969985961914,
+          70.6654052734375,
+          472.9627990722656,
+          80.26544189453125
+        ],
+        "quote": "4.8 QIF responses distinguish beat modulation from field-induced gamma"
+      },
+      {
+        "index": 17,
+        "page": 25,
+        "type": "Stamp",
+        "content": "Blah blah blah, but what is the message of this section! Not easy to fathom! ABridge, sharpen the message.",
+        "rect": [
+          215.19639587402344,
+          -25.3487548828125,
+          344.22589111328125,
+          78.83941650390625
+        ],
+        "quote": "ish beat modulation fro\nBlah blah \nblah, but what is the \nmessage of this section! \nNot easy to fathom! \nABridge, sharpen the \nmessage."
+      },
+      {
+        "index": 18,
+        "page": 26,
+        "type": "Highlight",
+        "content": "",
+        "rect": [
+          65.1969985961914,
+          535.0424194335938,
+          261.34588623046875,
+          544.6424560546875
+        ],
+        "quote": "4.9 Falsifiable predictions and tests"
+      },
+      {
+        "index": 19,
+        "page": 26,
+        "type": "Stamp",
+        "content": "These are not Results. This is part of the Discussion!",
+        "rect": [
+          256.5790100097656,
+          453.5472106933594,
+          385.6084899902344,
+          557.7354125976562
+        ],
+        "quote": "h is line amplitude divided by\nwn. Insets in (b,d) fold the ra\nh condition\u2019s mean. This aver\nonent on a common 0\u20132 scale.\ns\nh\nith\ni\nt l\nThese are not Results. \nThis is part of the \nDiscussion!"
+      },
+      {
+        "index": 20,
+        "page": 26,
+        "type": "Stamp",
+        "content": "This has not already been done in the literature?",
+        "rect": [
+          408.6333923339844,
+          538.8187255859375,
+          537.6629028320312,
+          643.0068969726562
+        ],
+        "quote": "dle.\natic limit and in the fast-\nocal polarization, provided\nfield, access restores fre-\ncrossover. Test: measure\nresponse before and after\nThis has not already been \ndone in the literature?"
+      },
+      {
+        "index": 21,
+        "page": 28,
+        "type": "Stamp",
+        "content": "In general, shorten (Blah blah) and SHARPEN the messages. ",
+        "rect": [
+          166.26919555664062,
+          493.94921875,
+          295.2987060546875,
+          598.137451171875
+        ],
+        "quote": "r\nrelation not tested h\ndata\nnism\u2019s predictions confronted w\ne findings; quantitative reanaly\nIn general, shorten (Blah \nblah) and SHARPEN the \nmessages."
+      },
+      {
+        "index": 22,
+        "page": 30,
+        "type": "Stamp",
+        "content": "What?? And what is the conclusion as far as we are concerned??",
+        "rect": [
+          399.7861022949219,
+          352.73992919921875,
+          528.8156127929688,
+          456.9281005859375
+        ],
+        "quote": "e-locking effect ratio of 0.34\n, without correcting for TI\ne single-pair AM-tACS con-\nlular modulation depth. Of\nn the latter group, median\nS, against 0.043 at baseline.\nmeasurements show a weaker\npolarization at the cellular\nWhat?? And what is the \nconclusion as far as we are \nconcerned??"
+      },
+      {
+        "index": 23,
+        "page": 30,
+        "type": "Highlight",
+        "content": "",
+        "rect": [
+          65.1969985961914,
+          429.631103515625,
+          530.1068115234375,
+          466.41741943359375
+        ],
+        "quote": "These measurements show a weaker AM effect, but matched extracellular depth does not ensure matched polarization at the cellular mixer, and PLV depends on baseline locking and state."
+      },
+      {
+        "index": 24,
+        "page": 30,
+        "type": "Stamp",
+        "content": "What?? And what is the conclusion as far as we are concerned??",
+        "rect": [
+          419.9870910644531,
+          445.14630126953125,
+          549.0166015625,
+          549.33447265625
+        ],
+        "quote": "arization at the cellular\n\u03bb0 = 0.5 mV per V/m,\nmV, rounded to 0.1 mV\nn in the recorded cells.\nthe effect ratio in the\nnt observables, so their\nude exponent\nWhat?? And what is the \nconclusion as far as we are \nconcerned??"
+      },
+      {
+        "index": 25,
+        "page": 30,
+        "type": "Stamp",
+        "content": "What?? And what is the conclusion as far as we are concerned??",
+        "rect": [
+          333.4495849609375,
+          527.2785034179688,
+          462.4790954589844,
+          631.4667358398438
+        ],
+        "quote": ",f\nd PLV are different observa\ns the input-amplitude expon\ngistic family has a supremu\nquires a transfer curve narro\nsecond-harmonic ratio near\npe following. This bound a\nhe dynamic QIF detector o\nWhat?? And what is the \nconclusion as far as we are \nconcerned??"
+      },
+      {
+        "index": 26,
+        "page": 30,
+        "type": "Highlight",
+        "content": "",
+        "rect": [
+          65.1969985961914,
+          531.3046264648438,
+          530.1046752929688,
+          554.4864501953125
+        ],
+        "quote": "Generated drive and PLV are different observables, so their comparison neither calibrates this detector nor identifies the input-amplitude exponent."
+      }
+    ]
+  },
+  "reviewed_unmatched_original_paragraphs": 26,
+  "substantive_removals": [],
+  "deduplications": [
+    "Repeated 44/34-cycle and 800-ms settings in QIF Results remain in Methods and the raster caption.",
+    "Generic Discussion pointers to the Introduction and to the separation of drive and response repeat statements retained locally.",
+    "D = sigma\u2033/2 is defined immediately before the receiver equation instead of repeated after it."
+  ],
+  "literature_check": {
+    "annotation": 20,
+    "sources": [
+      {
+        "doi": "10.1016/j.brs.2020.11.007",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/33186778/",
+        "locations": "Abstract and Figure 2 caption: carrier-frequency comparisons at fixed 5-Hz modulation; Figure 3: membrane-time sensitivity."
+      },
+      {
+        "doi": "10.1016/j.celrep.2024.114274",
+        "url": "https://synthneuro.org/wp-content/uploads/2024/08/2406luff.pdf",
+        "locations": "Results, printed p. 2; STAR Methods, pp. 13-14: extracellular two-tone current varied across carrier frequencies, stimulation artifact masks input-tone voltage."
+      }
+    ],
+    "decision": "Credit existing carrier-frequency comparisons and specify normalization by the two measured local polarizations, fixed beat/state, and unchanged or independently measured network gain; do not claim priority."
+  }
+}

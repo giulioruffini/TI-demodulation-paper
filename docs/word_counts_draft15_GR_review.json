@@ -1,0 +1,46 @@
+{
+  "before": {
+    "Introduction": 973,
+    "Theory": 4747,
+    "Methods": 2540,
+    "Results": 3799,
+    "Discussion": 1441,
+    "Conclusion": 230,
+    "QIF subsection incl captions": 980,
+    "main_total": 13730
+  },
+  "after": {
+    "Introduction": 973,
+    "Theory": 5113,
+    "Methods": 2699,
+    "Results": 3232,
+    "Discussion": 1960,
+    "Conclusion": 230,
+    "QIF subsection incl captions": 897,
+    "main_total": 14207
+  },
+  "abstract_words": 296,
+  "method": "TeXcount -sum=1,1,1,0,0,0,0 -1 on each expanded JNE section: text, headings, and captions, excluding math-token counts. Default -sum results retained separately for comparison with earlier notes. Abstract count uses the four macro bodies.",
+  "texcount_default_sum": {
+    "before": {
+      "Introduction": 996,
+      "Theory": 5131,
+      "Methods": 2823,
+      "Results": 4178,
+      "Discussion": 1490,
+      "Conclusion": 230,
+      "QIF subsection incl captions": 1094,
+      "main_total": 14848
+    },
+    "after": {
+      "Introduction": 996,
+      "Theory": 5537,
+      "Methods": 3005,
+      "Results": 3574,
+      "Discussion": 2026,
+      "Conclusion": 230,
+      "QIF subsection incl captions": 991,
+      "main_total": 15368
+    }
+  }
+}
