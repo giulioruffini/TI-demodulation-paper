@@ -50,6 +50,12 @@ access, and detection; for a signed quadratic response it concerns magnitude.
 The proposed universal 35% ceiling was not adopted: the computed supremum applies
 to the specified matched-peak, open-loop logistic family. The Discussion states
 what approaching it would require and keeps dynamic detectors outside that bound.
+Follow-up at 20:23: the appendix's existing positive-mixture argument also bounds
+bounded nondecreasing memoryless transfers under the same carrier-averaged
+comparison. The logistic-only restriction was unnecessarily narrow; the derivation
+and the next wording correction are recorded in
+`detector_bound_scope_2026-10-06.md`. This follow-up does not change the manuscript
+under review or make the numerical optimum a certified bound.
 The proposed inference from phase-locking effects to a stronger detector was also
 not adopted. PLV is an output statistic, not the generated-drive ratio; the
 illustrative 0.8% estimate now ends with its consequence for the assumed JR access

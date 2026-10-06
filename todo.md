@@ -1,6 +1,7 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
 - [ ] integrate Klaus's draft16 fidelity check and the verified carrier-polarization wording in docs/carrier_polarization_literature_2026-10-06.md
+- [ ] align the Discussion bound with the existing monotone-transfer proof and matching assumptions in docs/detector_bound_scope_2026-10-06.md
 - [ ] Giulio: decide the seven retained CUT? passages and the biological-rectifier sentence in docs/revision_2026-10-06_v0150draft16_readability.md
 - [ ] review Ricardo's real-montage FEM comparison if supplied before submission; retain the proposed comparison otherwise
 - [ ] review draft16 and its fixed draft13 redline; the main sections are shorter, with derivations retained in the supplement

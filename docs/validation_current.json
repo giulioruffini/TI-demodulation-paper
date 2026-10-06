@@ -360,6 +360,23 @@
       "manuscript_changed": false,
       "pdfs_rebuilt": false,
       "remaining_action": "Consider the clarified Table 4 evidence cell with the combined draft16 fidelity fixes."
+    },
+    "detector_bound_scope_followup": {
+      "checked_on": "2026-10-06",
+      "record": "docs/detector_bound_scope_2026-10-06.md",
+      "peer_report": "klaus-484-TI-helper, 2026-10-06 19:44 CEST",
+      "analytic_check": "Positive step mixture and nonnegative direct-drive coefficient extend the carrier-averaged, matched-peak, open-loop bound to bounded nondecreasing memoryless transfers.",
+      "existing_producer_rerun": ".venv/bin/python code/threshold_bound_check.py",
+      "printed_results": {
+        "beta_opt": 0.523163,
+        "ratio_quadrature": 0.347928,
+        "ratio_elliptic": 0.347928,
+        "second_harmonic_ratio": 0.15087
+      },
+      "numerical_certification": false,
+      "correction": "The earlier logistic-only scope was unnecessarily narrow. Larger common matched polarization cannot exceed the class bound; unequal true polarization instead violates the comparison.",
+      "manuscript_changed": false,
+      "remaining_action": "Reconcile the Discussion with the existing appendix argument at the combined fidelity-fix checkpoint."
     }
   },
   "focality_integration_revision": {
