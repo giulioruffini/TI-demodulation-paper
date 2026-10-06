@@ -349,7 +349,18 @@
       "redline": "48 pages, byte-identical to docs/redline_last_read.pdf",
       "annotated_original": "preserved"
     },
-    "committed_as": "e07b44a"
+    "committed_as": "e07b44a",
+    "carrier_polarization_literature_check": {
+      "checked_on": "2026-10-06",
+      "record": "docs/carrier_polarization_literature_2026-10-06.md",
+      "peer_report": "klaus-484-TI-helper, 2026-10-06 19:10 CEST",
+      "directly_verified": "Published Luff 2024, Figure 1 and STAR Methods",
+      "doi": "10.1016/j.celrep.2024.114274",
+      "result": "Seven carrier conditions; no matched local carrier-polarization analysis reported. Proposed distinction is the normalization, not a first carrier sweep.",
+      "manuscript_changed": false,
+      "pdfs_rebuilt": false,
+      "remaining_action": "Consider the clarified Table 4 evidence cell with the combined draft16 fidelity fixes."
+    }
   },
   "focality_integration_revision": {
     "date": "2026-10-06",
