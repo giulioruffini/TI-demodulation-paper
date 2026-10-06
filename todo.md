@@ -1,5 +1,6 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
+- [ ] review Klaus's corrected JR/NMM2 schematic on fig-models-ti; integrate only after Giulio approves the separate proposal
 - [ ] act on K's annotations of 2026-10-06 (notes/2026-10-06_K/TN0484 journal (JNE) annotated (2).md)
 - [ ] review the two-page envelope/quadratic TI note and decide the abstract's local-DC versus beat-focality wording
 - [ ] review Ricardo's real-montage FEM comparison if supplied before submission; retain the proposed comparison otherwise
