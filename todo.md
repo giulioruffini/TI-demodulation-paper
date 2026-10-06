@@ -8,7 +8,7 @@
 - [ ] after review and authorization: push, align the public code/archive, cut Calliope/Zenodo, re-sync Overleaf, and circulate the coauthor request (all HOLD)
 - [ ] migrate the paper folder at the next coordinated version boundary; run the layout checker before and after, with no concurrent session editing
 - [x] fit the three-stage abstract to 297 words, retain the DC and coupling qualifiers, and align the Introduction and storyline (October 6)
-- [x] prepare a two-page LaTeX comparison of spatial envelope and quadratic TI maps, their DC components, and focality limits (October 6)
+- [x] prepare the two-page envelope/quadratic TI note and close Klaus's independent check of its DC maps, focality limits, numerical examples, and attribution (October 6)
 - [x] verify PEIX against the published Neural Computation supplement, Appendix A, pp. 1–2; definition unchanged, reference copy filed (October 5)
 - [x] close Klaus's extended fidelity check of b436a9c; text, Methods, prediction table, captions, cache identity, and figure units agree (October 5)
 - [x] integrate and independently check Landau items 1/5/6/18/19/21/29; bracket NMM2 peaks, use two-tone timing data, and qualify the mean-shift and gain claims (October 5)

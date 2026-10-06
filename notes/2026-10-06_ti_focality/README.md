@@ -46,5 +46,21 @@ PDF text coordinates confirm separation of the final body lines and footers.
 
 Giulio authorized a direct peer check. The supplied name `klaus-282-TI-helper`
 did not resolve; the live TI helper is `klaus-484-TI-helper`, who was sent the
-bounded mathematical and attribution review. Delivery was confirmed; review
-completion will be recorded separately when received.
+bounded mathematical and attribution review.
+
+## Independent review closed
+
+Klaus returned a passing review on October 6 (message timestamp 17:14). He
+independently checked signed-amplitude examples, both means and excursions, the
+normalized spatial profiles, and the fivefold/twofold reversal. He confirmed the
+attribution to Grossman and both Laplacian identities. The envelope-mean proof
+uses A = norm(a + b cos(theta), b sin(theta)); both components are harmonic.
+
+No corrections were required. His optional qualifications are recorded here:
+the strong maximum principle excludes any interior maximum unless the map is
+constant on the connected compartment; constant anisotropic conductivity is
+also covered after a linear coordinate change; and spatial changes in the sign
+of sigmoid curvature can produce extrema in the physiological DC response even
+when the unweighted quadratic map has none. The PDF retains its narrower true
+statements and its existing spatial-curvature qualification. It is unchanged
+from commit `4904c6e`.
