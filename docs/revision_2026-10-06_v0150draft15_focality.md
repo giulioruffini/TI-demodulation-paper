@@ -3,6 +3,9 @@
 October 6, 2026. Baseline: draft14, `a2aacd6`, on `two-tone-validation`.
 Giulio's integration decision was relayed by Klaus at 17:52. The current JNE
 redline remains against the last specified reading baseline, draft13 `c620335`.
+This record and its source audit describe the integration committed as `972d9ea`.
+The later ratio-symbol changes are recorded separately in
+`notation_ratios_2026-10-06.md`.
 
 Section 2.4 now contains the reading note's comparison table, adapted to signed
 local polarizations `epsilon_1(x)` and `epsilon_2(x)`. Table 2, on article page 11,

@@ -719,11 +719,11 @@ t)$ contains only DC and $\Omega$. For the mixed family $T(\mathcal A)=c_1\mathc
 $c_1\ne0$ and a nonzero fundamental, the
 pre-network ratio is
 \begin{equation}
-\mathcal R_{\rm det}\equiv\left|\frac{Y_{2\Omega}}{Y_\Omega}\right|
+\mathcal H_{\rm det}\equiv\left|\frac{Y_{2\Omega}}{Y_\Omega}\right|
 =\frac{1/5}{\left|1+\tfrac{3\pi}{4}\,c_2\varepsilon/c_1\right|},
 \label{eq:rdet}
 \end{equation}
-so measuring $\mathcal R_{\rm det}$ constrains $c_2\varepsilon/c_1$ within this family.
+so measuring $\mathcal H_{\rm det}$ constrains $c_2\varepsilon/c_1$ within this family.
 The inverse has two branches unless the sign of the fundamental relative to
 the linear term is known; for $c_2/c_1\ge0$ it is unique.
 
@@ -733,7 +733,7 @@ $c_2=g''(v^*)/4$ and $c_4=g^{(4)}(v^*)/64$ are the coefficients in
 Eq.~\eqref{eq:cycavg}. The square-law signature is a
 \emph{vanishing} ratio in the weak-field limit, not an exact zero. The recurrent
 network also multiplies each harmonic by its frequency-dependent gain $G$,
-$\mathcal R_{\rm meas}=\mathcal R_{\rm det}\,|G(2\Omega)/G(\Omega)|$.
+$\mathcal H_{\rm meas}=\mathcal H_{\rm det}\,|G(2\Omega)/G(\Omega)|$.
 Near resonance, harmonic suppression can make an envelope follower appear square-law.
 
 An amplitude sweep tests the scaling rather than one ratio. An
@@ -1139,8 +1139,8 @@ calibration; the $\varepsilon^2$ control of \S\ref{sec:results-curvature} is tha
 measurement, performed in the model.
 
 For the harmonic test, apply Eq.~\eqref{eq:lockin} at $\Omega$ and $2\Omega$ over
-the same settled window. Their amplitude ratio estimates $\mathcal R_{\rm meas}$;
-correcting for $|G(2\Omega)/G(\Omega)|$ gives $\mathcal R_{\rm det}$. Inferring a mixture
+the same settled window. Their amplitude ratio estimates $\mathcal H_{\rm meas}$;
+correcting for $|G(2\Omega)/G(\Omega)|$ gives $\mathcal H_{\rm det}$. Inferring a mixture
 coefficient through Eq.~\eqref{eq:rdet} additionally requires the mixed family
 $T(\mathcal A)=c_1\mathcal A+c_2\mathcal A^2$ and a known sign branch. A threshold response can give a
 similar ratio at one amplitude, so the amplitude sweep must also be checked.
@@ -2038,7 +2038,7 @@ been reported at $2$~mA \cite{huang2017,huang2017corr}. These static couplings d
 not fix the coupling at kHz. For equal TI carrier polarizations $\varepsilon$,
 the JR beat drive is $\Sig''\varepsilon^2/2$, whereas a direct drive of the same
 peak polarization gives $2\Sig'\varepsilon$. Their leading amplitude ratio is
-$\eta_{\rm det}\simeq|\Sig''|\varepsilon/(4\Sig')$: the relative efficiency decreases
+$\mathcal R_{\rm det}\simeq|\Sig''|\varepsilon/(4\Sig')$: the relative efficiency decreases
 as the input is weakened in this perturbative regime. A larger recurrent gain
 amplifies both drives.
 
@@ -2068,7 +2068,7 @@ $\lambda_0=0.5$~mV per V/m, $f_c=2$~kHz, and the assumed $\tau_m=0.2$~ms.
 Then $\varepsilon=\lambda_0E_j|H_m|\approx0.092$~mV, rounded to $0.1$~mV for
 scale; this is an assumed coupling budget, not an inferred polarization in
 the recorded cells. At $v^*=8.30$~mV the JR detector gives
-$\eta_{\rm det}\approx0.8\%$ for $0.1$~mV, below the effect ratio in the
+$\mathcal R_{\rm det}\approx0.8\%$ for $0.1$~mV, below the effect ratio in the
 matched-depth AM-tACS control. Generated drive and PLV are different observables,
 so their comparison neither calibrates this detector nor identifies the
 input-amplitude exponent.
@@ -2275,7 +2275,7 @@ For the logistic family of memoryless transfers, compare balanced TI tones of
 polarization amplitude $\varepsilon$ each with a direct in-band drive of amplitude
 $2\varepsilon$, matching peak polarization. Their leading drive amplitudes are
 $|\Sig''|\varepsilon^2/2$ and $2\Sig'\varepsilon$, so
-$\eta_{\rm det}\simeq|\Sig''|\varepsilon/(4\Sig')$.
+$\mathcal R_{\rm det}\simeq|\Sig''|\varepsilon/(4\Sig')$.
 This ratio concerns the specified transfer family and input matching, not TI in
 general or the dynamic detector of \S\ref{sec:dynamic}.
 
@@ -2284,7 +2284,7 @@ $\Sig'=2e_0\rho\zeta(1-\zeta)$ and
 $\Sig''=2e_0\rho^2\zeta(1-\zeta)(1-2\zeta)$. Since
 $|\mathrm{PEIX}|=1-4\zeta(1-\zeta)=(1-2\zeta)^2$, the leading ratio satisfies
 \begin{equation}
-\eta_{\rm det}\simeq\frac{\rho\,\varepsilon}{4}\sqrt{|\mathrm{PEIX}|}
+\mathcal R_{\rm det}\simeq\frac{\rho\,\varepsilon}{4}\sqrt{|\mathrm{PEIX}|}
 \;\le\;\frac{\rho\,\varepsilon}{4}.
 \label{eq:etabound}
 \end{equation}
@@ -2308,7 +2308,7 @@ independent of field strength. Evaluating the exact cycle response rather than i
 quadratic truncation and optimizing $\xi$ at each $u$, the ratio rises monotonically over the
 range explored and converges to the hard-threshold limit
 \begin{equation}
-\sup_{\rho,\,v^*}\eta_{\rm det}=0.3479 ,
+\sup_{\rho,\,v^*}\mathcal R_{\rm det}=0.3479 ,
 \label{eq:etasup}
 \end{equation}
 approached as $\rho\to\infty$ at a threshold offset $\delta$ (the distance from the
@@ -2342,7 +2342,7 @@ The limit is a step detector, not an envelope follower. For a unit step at offse
 $\delta$ the carrier-averaged transduction is $\pi^{-1}\arccos(\delta/\mathcal A)$ for $\mathcal A>\delta$
 and zero below; with $\beta=\delta/2\varepsilon$ its tACS fundamental is
 $(2/\pi)\sqrt{1-\beta^2}$ and its TI coefficient reduces by parts to
-$\eta_{\rm det}=2\beta\,[\mathsf K(k_{\rm ell}^2)-\mathsf E(k_{\rm ell}^2)]/(\pi\sqrt{1-\beta^2})$
+$\mathcal R_{\rm det}=2\beta\,[\mathsf K(k_{\rm ell}^2)-\mathsf E(k_{\rm ell}^2)]/(\pi\sqrt{1-\beta^2})$
 with elliptic parameter $k_{\rm ell}^2=1-\beta^2$ and $\mathsf K,\mathsf E$
 the complete elliptic integrals, giving $0.3479$ at $\beta=0.523$ by direct quadrature and
 by the elliptic form alike (\texttt{threshold\_bound\_check.py}). At that optimum the

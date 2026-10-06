@@ -1,7 +1,7 @@
 \documentclass[11pt,a4paper]{article}
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-c1ekk109/old.tex   Tue Oct  6 18:49:01 2026
-%DIF ADD /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-c1ekk109/new.tex   Tue Oct  6 18:49:01 2026
+%DIF DEL /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-hkqxqtqg/old.tex   Tue Oct  6 19:00:51 2026
+%DIF ADD /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-hkqxqtqg/new.tex   Tue Oct  6 19:00:51 2026
 \usepackage[margin=2.3cm]{geometry}
 \usepackage{lmodern}        % classic Computer Modern look, vectorized (T1)
 \usepackage[T1]{fontenc}
@@ -890,11 +890,11 @@ pre-network ratio is
 %DIFDELCMD < %%%
 }\end{displaymath}%DIFAUXCMD
 \DIFdelend \DIFaddbegin \begin{equation}
-\DIFadd{\mathcal R_{\rm det}\equiv\left|\frac{Y_{2\Omega}}{Y_\Omega}\right|
+\DIFadd{\mathcal H_{\rm det}\equiv\left|\frac{Y_{2\Omega}}{Y_\Omega}\right|
 =\frac{1/5}{\left|1+\tfrac{3\pi}{4}\,c_2\varepsilon/c_1\right|},
 \label{eq:rdet}
 }\end{equation}\DIFaddend
-so measuring \DIFdelbegin \DIFdel{$r_{\rm det}$ }\DIFdelend \DIFaddbegin \DIFadd{$\mathcal R_{\rm det}$ }\DIFaddend constrains $c_2\varepsilon/c_1$ within this family.
+so measuring \DIFdelbegin \DIFdel{$r_{\rm det}$ }\DIFdelend \DIFaddbegin \DIFadd{$\mathcal H_{\rm det}$ }\DIFaddend constrains $c_2\varepsilon/c_1$ within this family.
 The inverse has two branches unless the sign of the fundamental relative to
 the linear term is known; for $c_2/c_1\ge0$ it is unique.
 
@@ -905,7 +905,7 @@ Eq.~\eqref{eq:cycavg}. The square-law signature is a
 \emph{vanishing} ratio in the weak-field limit, not an exact zero. The recurrent
 network also multiplies each harmonic by its \DIFdelbegin \DIFdel{own gain ,
 $r_{\rm meas}=r_{\rm det}\,|G(2\Omega)/G(\Omega)|$}\DIFdelend \DIFaddbegin \DIFadd{frequency-dependent gain $G$,
-$\mathcal R_{\rm meas}=\mathcal R_{\rm det}\,|G(2\Omega)/G(\Omega)|$}\DIFaddend .
+$\mathcal H_{\rm meas}=\mathcal H_{\rm det}\,|G(2\Omega)/G(\Omega)|$}\DIFaddend .
 Near resonance, harmonic suppression can make an envelope follower appear square-law.
 
 An amplitude sweep tests the scaling rather than one ratio. An
@@ -1347,8 +1347,8 @@ calibration; the $\varepsilon^2$ control of \S\ref{sec:results-curvature} is tha
 measurement, performed in the model.
 
 For the harmonic test, apply Eq.~\eqref{eq:lockin} at $\Omega$ and $2\Omega$ over
-the same settled window. Their amplitude ratio estimates \DIFdelbegin \DIFdel{$r_{\rm meas}$}\DIFdelend \DIFaddbegin \DIFadd{$\mathcal R_{\rm meas}$}\DIFaddend ;
-correcting for $|G(2\Omega)/G(\Omega)|$ gives \DIFdelbegin \DIFdel{$r_{\rm det}$}\DIFdelend \DIFaddbegin \DIFadd{$\mathcal R_{\rm det}$}\DIFaddend . Inferring a mixture
+the same settled window. Their amplitude ratio estimates \DIFdelbegin \DIFdel{$r_{\rm meas}$}\DIFdelend \DIFaddbegin \DIFadd{$\mathcal H_{\rm meas}$}\DIFaddend ;
+correcting for $|G(2\Omega)/G(\Omega)|$ gives \DIFdelbegin \DIFdel{$r_{\rm det}$}\DIFdelend \DIFaddbegin \DIFadd{$\mathcal H_{\rm det}$}\DIFaddend . Inferring a mixture
 coefficient through Eq.~\eqref{eq:rdet} additionally requires the mixed family
 \DIFdelbegin \DIFdel{$T(A)=c_1A+c_2A^2$ }\DIFdelend \DIFaddbegin \DIFadd{$T(\mathcal A)=c_1\mathcal A+c_2\mathcal A^2$ }\DIFaddend and a known sign branch. A threshold response can give a
 similar ratio at one amplitude, so the amplitude sweep must also be checked.
@@ -2263,7 +2263,7 @@ been reported at $2$~mA \cite{huang2017,huang2017corr}. These static couplings d
 not fix the coupling at kHz. For equal TI carrier polarizations $\varepsilon$,
 the JR beat drive is $\Sig''\varepsilon^2/2$, whereas a direct drive of the same
 peak polarization gives $2\Sig'\varepsilon$. Their leading amplitude ratio is
-$\eta_{\rm det}\simeq|\Sig''|\varepsilon/(4\Sig')$: the relative efficiency decreases
+\DIFdelbegin \DIFdel{$\eta_{\rm det}\simeq|\Sig''|\varepsilon/(4\Sig')$}\DIFdelend \DIFaddbegin \DIFadd{$\mathcal R_{\rm det}\simeq|\Sig''|\varepsilon/(4\Sig')$}\DIFaddend : the relative efficiency decreases
 as the input is weakened in this perturbative regime. A larger recurrent gain
 amplifies both drives.
 
@@ -2293,7 +2293,7 @@ $\lambda_0=0.5$~mV per V/m, $f_c=2$~kHz, and the assumed $\tau_m=0.2$~ms.
 Then $\varepsilon=\lambda_0E_j|H_m|\approx0.092$~mV, rounded to $0.1$~mV for
 scale; this is an assumed coupling budget, not an inferred polarization in
 the recorded cells. At $v^*=8.30$~mV the JR detector gives
-$\eta_{\rm det}\approx0.8\%$ for $0.1$~mV, below the effect ratio in the
+\DIFdelbegin \DIFdel{$\eta_{\rm det}\approx0.8\%$ }\DIFdelend \DIFaddbegin \DIFadd{$\mathcal R_{\rm det}\approx0.8\%$ }\DIFaddend for $0.1$~mV, below the effect ratio in the
 matched-depth AM-tACS control. Generated drive and PLV are different observables,
 so their comparison neither calibrates this detector nor identifies the
 input-amplitude exponent.
@@ -2486,7 +2486,7 @@ supplement for the JNE edition).}}
 \DIFadd{$\chi^{(2)}$ }& \DIFadd{Dynamic coefficient mapping a polarization product to a rate beat }& \DIFadd{s$^{-1}$mV$^{-2}$ }& \DIFadd{\S\ref{sec:coupling} }\\
 \DIFadd{$g,T,Y_{\rm LF}$ }& \DIFadd{Memoryless response, envelope transduction, carrier-averaged output }& \DIFadd{specified output units }& \DIFadd{Eq.~\eqref{eq:cycavg} }\\
 \DIFadd{$c_1,c_2,c_4$ }& \DIFadd{Linear, quadratic and quartic envelope coefficients }& \DIFadd{output/(mV)$^{1,2,4}$ }& \DIFadd{\S\ref{sec:transduction} }\\
-\DIFadd{$\mathcal R_{\rm det},\mathcal R_{\rm meas}$ }& \DIFadd{Second/fundamental harmonic magnitude ratios before and after the network }& \DIFadd{dimensionless }& \DIFadd{Eq.~\eqref{eq:rdet} }\\
+\DIFadd{$\mathcal H_{\rm det},\mathcal H_{\rm meas}$ }& \DIFadd{Second/fundamental harmonic magnitude ratios before and after the network }& \DIFadd{dimensionless }& \DIFadd{Eq.~\eqref{eq:rdet} }\\
 \DIFadd{$\mathcal M[y]$ }& \DIFadd{Peak-to-peak excursion of the quantity $y$ }& \DIFadd{units of $y$ }& \DIFadd{Eq.~\eqref{eq:reweight} }\\
 \DIFadd{$F(Q),F',F''$ }& \DIFadd{MPR steady-rate curve and drive derivatives }& \DIFadd{normalized }& \DIFadd{Eq.~\eqref{eq:Fmpr} }\\
 \DIFadd{$Q,q$ }& \DIFadd{Mean total drive $\bar\eta+I$; single-cell drive $\eta+I$ }& \DIFadd{normalized }& \DIFadd{Eq.~\eqref{eq:Fmpr} }\\
@@ -2495,7 +2495,7 @@ supplement for the JNE edition).}}
 \DIFadd{$d,\nu,\tilde\omega_z$ }& \DIFadd{MPR relaxation, ringing and zero-crossing angular frequencies }& \DIFadd{membrane-time units }& \DIFadd{\S\ref{sec:dynamic} }\\
 \DIFadd{$\mathsf J,\mathbf h,H_v$ }& \DIFadd{Reduced MPR Jacobian, unit-current response and voltage transfer }& \DIFadd{normalized }& \DIFadd{\S\ref{sec:dynamic} }\\
 \DIFadd{$\mathbf b_2,\mathsf I_2$ }& \DIFadd{Quadratic DC source per $I_{\rm ac}^2$; identity matrix }& \DIFadd{normalized }& \DIFadd{\S\ref{sec:dynamic} }\\
-\DIFadd{$\eta_{\rm det},\mathcal R_{\rm lin}$ }& \DIFadd{TI/direct-drive source ratio; linear TI/tACS output ratio }& \DIFadd{dimensionless }& \DIFadd{App.~\ref{app:bound}; \S\ref{sec:jcurve} }\\
+\DIFadd{$\mathcal R_{\rm det},\mathcal R_{\rm lin}$ }& \DIFadd{TI/direct-drive source ratio; linear TI/tACS output ratio }& \DIFadd{dimensionless }& \DIFadd{App.~\ref{app:bound}; \S\ref{sec:jcurve} }\\
 \DIFadd{$\delta,\zeta$ }& \DIFadd{Threshold offset; sigmoid rate divided by $2e_0$ }& \DIFadd{mV; dimensionless }& \DIFadd{\S\ref{sec:transduction}; App.~\ref{app:bound} }\\
 \DIFadd{$u,\xi,\beta,k_{\rm ell}^2$ }& \DIFadd{Reduced amplitude $\rho\varepsilon$, offset $\rho(v^*-v_0)$, threshold ratio, elliptic parameter }& \DIFadd{dimensionless }& \DIFadd{App.~\ref{app:bound} }\\
 \DIFadd{$L,\psi,\mathsf K,\mathsf E$ }& \DIFadd{Unit logistic, normalized waveform, complete elliptic integrals }& \DIFadd{dimensionless }& \DIFadd{App.~\ref{app:bound} }\\

@@ -2,13 +2,13 @@
   "version": "0.15.0-draft15",
   "review_baseline": "0c394df",
   "redline_baseline": "c620335",
-  "status": "Focality note integrated into Section 2.4 with comparison Table 2, scoped envelope-mean proof, and supplementary Figure S13. Remaining author annotations and abstract focality wording await review.",
+  "status": "Draft15 focality integration retained; harmonic ratios H_det/H_meas separated from TI/direct-drive ratios R_det/R_lin. Remaining author annotations and abstract focality wording await review.",
   "outputs": {
     "jne": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.log",
       "pages": 40,
-      "sha256": "6f78f6da6574f49b0500a4b08d890d5de2d8dcc3a5616749ceef8b2f18574c13",
+      "sha256": "6bdc3dc0748211191c73a1ab073d3d01690d970c6df10dec6111a4c179c20369",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -20,7 +20,7 @@
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne_supplement.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne_supplement.log",
       "pages": 20,
-      "sha256": "22dd29478460ab4a117d0408ee181e9d264aa8daf56891ab3a082d3c521de4f6",
+      "sha256": "ca262004c163ba4dc0b67735dd5d2424d264393ddfb0ab4edf4733525cdb4585",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -29,10 +29,10 @@
       }
     },
     "tn_validation": {
-      "path": "/tmp/tn0484_draft15/build/tn_validation.pdf",
-      "log": "/tmp/tn0484_draft15/build/tn_validation.log",
+      "path": "/tmp/tn0484_draft15_ratios/build/tn_validation.pdf",
+      "log": "/tmp/tn0484_draft15_ratios/build/tn_validation.log",
       "pages": 55,
-      "sha256": "b86cf73c71b527083439b2819b72ce29f515798d8a5164f1e397e113da231edc",
+      "sha256": "e649f6d1a27ae45f6af4ebaa0bd251c6df3f0ef502abe427d8b6a15cb2794bc6",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -44,7 +44,7 @@
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.log",
       "pages": 10,
-      "sha256": "da88eda5880a7a67288c3bd3c2ec855ed3ac2adcf920d1543ca7f6e382c8dcfd",
+      "sha256": "bd73b502208a753db6fb4802157796d4746eef66df6cd99544791e8300c09a67",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -56,7 +56,7 @@
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.log",
       "pages": 42,
-      "sha256": "cfff3e5479b997efcb5c83dabdad03073a63b02750f9419dfefa8c1b82e1a706",
+      "sha256": "7573859ac1f5a321a5ad211482af36e31123079d806c07f504fa296184eb90f1",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -125,14 +125,29 @@
     "storyline_pages": [
       4,
       10
-    ]
+    ],
+    "ratio_followup": {
+      "article_pages": [
+        10,
+        31,
+        38,
+        39
+      ],
+      "supplement_pages": [
+        7
+      ],
+      "redline_pages": [
+        11
+      ],
+      "findings": "Harmonic and drive-ratio symbols render correctly in equations, prose, and the notation table; no clipping or overlaps."
+    }
   },
   "source_sha256": {
-    "TN0484_envelope_demodulation.tex": "c9be94ffae2ab2ca7b17ff7e58b33da461d25352ca12d01acbd2888b275d76a6",
+    "TN0484_envelope_demodulation.tex": "58f51447cbca7ab4c025bf5a7947d92e72fcf2dfea4752149ba696c699775a42",
     "references.bib": "8ee2a664fc78b990a6811d1bb9fef0d1c4eb68d4f5f2ee52f167604b94f96907",
     "planning/tn0484_abstract.tex": "fa6d581b7b8089f1897dde0b32239b9840477401ff300118c9d86142f5170b4f",
-    "planning/tn0484_storyline.tex": "f5eabba70bcfbd22141c41a4617709bc8456c3036da6db35eb4fc47a281c7a36",
-    "planning/tn0484_notation.tex": "de90ef6cd6f29659556b2f8a13b2e32b6763031b5c70e8ee0a751117347e0bb3"
+    "planning/tn0484_storyline.tex": "1e4cd01b273e6f2687cc2e0800685d6bf8c1c5e4c6e9855eca64357290adbb8f",
+    "planning/tn0484_notation.tex": "46989b32ffd2827487a6d6c0acdd04080e0aedc1a9000ace7735f211b050d0af"
   },
   "producer_commits": [
     "139dd74",
@@ -219,6 +234,23 @@
   },
   "current_revision": {
     "date": "2026-10-06",
+    "baseline_commit": "972d9ea",
+    "authorization": "Klaus 18:03 notation follow-up under Giulio notation-pass instruction",
+    "abstract_words": 297,
+    "abstract_unchanged": true,
+    "audit": "docs/notation_ratios_audit_2026-10-06.json",
+    "revision_record": "docs/notation_ratios_2026-10-06.md",
+    "changes": "Harmonic R_det/R_meas to H_det/H_meas; efficiency eta_det to R_det. Figure 7 already correct. No changes to numerical data or scientific claims.",
+    "manuscript_prose_checker_findings": 0,
+    "held_actions": [
+      "GitHub push",
+      "Calliope/Zenodo cut",
+      "Overleaf sync",
+      "coauthor email"
+    ]
+  },
+  "focality_integration_revision": {
+    "date": "2026-10-06",
     "baseline_commit": "a2aacd6",
     "authorization": "Giulio focality integration decision relayed by klaus-484-TI-helper at 17:52 CEST",
     "abstract_words": 297,
@@ -234,6 +266,7 @@
       "Calliope/Zenodo cut",
       "Overleaf sync",
       "coauthor email"
-    ]
+    ],
+    "committed_as": "972d9ea"
   }
 }

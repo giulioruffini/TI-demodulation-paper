@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-06",
+  "baseline_commit": "972d9ea",
+  "scope": "Ratio symbols only; draft15 follow-up to Klaus 18:03 notation check",
+  "replacement_counts": {
+    "TN0484_envelope_demodulation.tex": {
+      "\\mathcal R_{\\rm det}": 4,
+      "\\mathcal R_{\\rm meas}": 2,
+      "\\eta_{\\rm det}": 6
+    },
+    "planning/tn0484_notation.tex": {
+      "\\mathcal R_{\\rm det}": 1,
+      "\\mathcal R_{\\rm meas}": 1,
+      "\\eta_{\\rm det}": 1
+    },
+    "planning/tn0484_storyline.tex": {
+      "\\mathcal R_{\\rm det}": 1,
+      "\\mathcal R_{\\rm meas}": 0,
+      "\\eta_{\\rm det}": 2
+    }
+  },
+  "source_identical_after_exact_substitutions": true,
+  "auxiliary_labels_identical": true,
+  "labels_checked": {
+    "TN0484_jne.aux": 61,
+    "TN0484_jne_supplement.aux": 30
+  },
+  "equation_and_figure_numbering_unchanged": true,
+  "figure_7_already_correct": "kappa_DC (normalized units); omega_tilde = omega tau_m",
+  "figures_and_code_changed": false,
+  "abstract_unchanged": true,
+  "build_pages": {
+    "article": 40,
+    "supplement": 20,
+    "private_tn": 55,
+    "storyline": 10
+  },
+  "build_diagnostics": "No errors, undefined references, overfull boxes, or duplicate-label warnings."
+}
