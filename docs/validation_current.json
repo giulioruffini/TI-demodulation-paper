@@ -248,14 +248,17 @@
     ],
     "independent_fidelity_check": {
       "reviewer": "klaus-484-TI-helper",
-      "status": "to request after commit",
-      "scope": "Only the two new Table 4 rows, local-polarization wording and monotone-detector bound; no full review or computations."
+      "status": "requested via peer-message; spooled, no verdict received",
+      "scope": "Only the two new Table 4 rows, local-polarization wording and monotone-detector bound; no full review or computations.",
+      "target_commit": "8dc6eca",
+      "sent_at": "2026-10-06 20:38 CEST"
     },
     "review_shelf_verified": {
       "article": "40 pages, byte-identical to TN0484_jne.pdf",
       "redline": "48 pages, byte-identical to docs/redline_last_read.pdf",
       "annotated_original": "preserved"
-    }
+    },
+    "committed_as": "8dc6eca"
   },
   "focality_integration_revision": {
     "date": "2026-10-06",

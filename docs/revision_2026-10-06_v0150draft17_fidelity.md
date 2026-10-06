@@ -15,3 +15,5 @@ The abstract is unchanged at 296 words. All 32 equation labels, 25 figure labels
 The storyline includes the two tests and broader detector class. Its closing placement paragraph refers to the detailed map instead of repeating it, keeping the map within eleven pages without dropping a placement decision. The working article, supplement, and fixed-baseline redline are rebuilt and visually checked; final diagnostics and hashes are in `validation_current.json`.
 
 Klaus's preceding report used scientific spot checks across the 200 removed-verbatim and 150 new sentences; it was not an exhaustive verification of every sentence. This revision closes its identified Table 4 gap. A follow-up check can be confined to the two new rows and the bound wording. Author declarations and Giulio's retained-cut decisions remain pending. GitHub push, Calliope/Zenodo cut, Overleaf synchronization, and coauthor circulation remain on hold.
+
+Committed as `8dc6eca`. The scoped read-only check of the new rows and wording was requested from Klaus through peer-message; the request was spooled, with no verdict received at this checkpoint.
