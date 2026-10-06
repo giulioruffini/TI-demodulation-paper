@@ -2,7 +2,7 @@
   "version": "0.15.0-draft17",
   "review_baseline": "e07b44a",
   "redline_baseline": "c620335",
-  "status": "Draft17 adds the two stage tests missing from Table 4 and aligns detector-bound scope with the appendix. Clean builds; no scientific-content cuts or numerical changes. Author decisions, scoped follow-up review and release holds remain.",
+  "status": "Draft17 passed the bounded independent check of the new tests and carrier/bound wording with no discrepancies. Clean builds and retained content. Giulio's cut decisions, author declarations and release authorization remain pending.",
   "outputs": {
     "jne": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
@@ -248,7 +248,7 @@
     ],
     "independent_fidelity_check": {
       "reviewer": "klaus-484-TI-helper",
-      "status": "requested via peer-message; spooled, no verdict received",
+      "status": "pass; no discrepancies",
       "scope": "Only the two new Table 4 rows, local-polarization wording and monotone-detector bound; no full review or computations.",
       "target_commit": "8dc6eca",
       "sent_at": "2026-10-06 20:38 CEST",
@@ -257,6 +257,31 @@
         "reported_at": "2026-10-06 20:27 CEST",
         "result": "agrees with all scope qualifications; no disagreement",
         "draft17_integration_check_still_pending": true
+      },
+      "reported_at": "2026-10-06 20:39 CEST",
+      "required_corrections": [],
+      "checked_items": [
+        "Independent-amplitude excursion maps, swap control and weak-input/state conditions",
+        "Equal-power control: second-order scope, same DC coefficient, beat and bifurcation distinction, mean-field-only evidence",
+        "Carrier row: local-polarization matching absent from the cited comparisons",
+        "Bound: positive step mixture, nonnegative direct coefficients, triangle inequality, boundedness, matched peak, open loop, carrier average, numerical approximation, logistic-only width illustration and dynamic-QIF exclusion"
+      ],
+      "optional_suggestion": {
+        "topic": "Use the beat fundamental instead of reconstructing the full excursion",
+        "reported_by": "Klaus; numerical samples not independently rerun in this record update",
+        "weaker_tone_amplitude": 1,
+        "stronger_to_weaker_ratios": [
+          1,
+          2,
+          10
+        ],
+        "envelope_fundamental_amplitudes_reported": [
+          0.849,
+          0.968,
+          0.999
+        ],
+        "reported_interpretation": "The envelope fundamental rises by at most about 18%, whereas the quadratic beat grows proportionally to the stronger tone. A calibrated lock-in can therefore distinguish the laws without reconstructing the full excursion.",
+        "disposition": "Optional; not integrated. The reviewed excursion-based test is correct and is retained."
       }
     },
     "review_shelf_verified": {
