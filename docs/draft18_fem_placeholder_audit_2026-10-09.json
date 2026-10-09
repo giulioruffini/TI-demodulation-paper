@@ -8,69 +8,94 @@
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.log",
       "pages": 42,
-      "sha256": "f9939c6a188a9fa273214feb6fb7daf546ad57fb625910ec2eb9e251a03f0418",
+      "sha256": "2fa1fc4fe06af7981aaeab3301cc39f595ce4f4078d7bc95321241f98f27ae34",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
         "overfull": 0,
-        "duplicate_labels": 0
+        "duplicate_labels": 0,
+        "rerun_needed": 0
       },
-      "validation_scope": "Final local draft18 bundle for the authorized Klaus handoff; regenerated from the shared source.",
-      "author_metadata_verified": true
+      "validation_scope": "Final local draft18 bundle for Overleaf-only handoff; regenerated from the shared source.",
+      "author_metadata_verified": true,
+      "nonblocking_warnings": {
+        "latexdiff_math_font_size": 0,
+        "float_h_changed_to_ht": 0
+      }
     },
     "supplement": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne_supplement.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne_supplement.log",
       "pages": 21,
-      "sha256": "18be64717b3e5fbb752b3c3b2b9f272b110184041af485348043606371fc4612",
+      "sha256": "23ef844b36d487eb9cd5e7ef0e683d38f8a9accedf4ed68efe5afea47c78519a",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
         "overfull": 0,
-        "duplicate_labels": 0
+        "duplicate_labels": 0,
+        "rerun_needed": 0
       },
-      "validation_scope": "Final local draft18 bundle for the authorized Klaus handoff; regenerated from the shared source.",
-      "author_metadata_verified": true
+      "validation_scope": "Final local draft18 bundle for Overleaf-only handoff; regenerated from the shared source.",
+      "author_metadata_verified": true,
+      "nonblocking_warnings": {
+        "latexdiff_math_font_size": 0,
+        "float_h_changed_to_ht": 0
+      }
     },
     "tn": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_envelope_demodulation.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_envelope_demodulation.log",
       "pages": 59,
-      "sha256": "c45e0ecfbcdba4934d54bbaefabf1e0de1a4ad4f028b4ce5191bd56f37a96f62",
+      "sha256": "0821eaaa7304e6b6101ca98423abac6eeb91b140be71f1e71132d3916e1de287",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
         "overfull": 0,
-        "duplicate_labels": 0
+        "duplicate_labels": 0,
+        "rerun_needed": 0
       },
-      "validation_scope": "Final local draft18 bundle for the authorized Klaus handoff; regenerated from the shared source.",
-      "author_metadata_verified": true
+      "validation_scope": "Final local draft18 bundle for Overleaf-only handoff; regenerated from the shared source.",
+      "author_metadata_verified": true,
+      "nonblocking_warnings": {
+        "latexdiff_math_font_size": 0,
+        "float_h_changed_to_ht": 0
+      }
     },
     "redline": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.log",
       "pages": 51,
-      "sha256": "813fec07c78e3fe0207364a5a2ad67d83011f7559cdb8ae0aeb8c01523b7834d",
+      "sha256": "8da9713fc723d3d717319d19866f3860dd3b4aa37b7bf134aad17b2f9c0ef545",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
         "overfull": 0,
-        "duplicate_labels": 0
+        "duplicate_labels": 0,
+        "rerun_needed": 0
       },
-      "validation_scope": "Final local draft18 bundle for the authorized Klaus handoff; regenerated from the shared source."
+      "validation_scope": "Final local draft18 bundle for Overleaf-only handoff; regenerated from the shared source.",
+      "nonblocking_warnings": {
+        "latexdiff_math_font_size": 23,
+        "float_h_changed_to_ht": 1
+      }
     },
     "storyline": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.log",
       "pages": 13,
-      "sha256": "253ed5b6c3974e9006352ed271e3e687bd0c2ff5c5352523b7da34452d6f5a36",
+      "sha256": "eca06e1ce5516b3733c2089dd89395bf1a5260014d3c7b67c0de3d85a0320708",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
         "overfull": 0,
-        "duplicate_labels": 0
+        "duplicate_labels": 0,
+        "rerun_needed": 0
       },
-      "validation_scope": "Final local draft18 bundle for the authorized Klaus handoff; regenerated from the shared source."
+      "validation_scope": "Final local draft18 bundle for Overleaf-only handoff; regenerated from the shared source.",
+      "nonblocking_warnings": {
+        "latexdiff_math_font_size": 0,
+        "float_h_changed_to_ht": 0
+      }
     }
   },
   "new_labels": {
@@ -146,27 +171,28 @@
   "source_appendix_tail_unchanged": true,
   "visual_inspection": {
     "date": "2026-10-09",
-    "scope": "Red FEM Methods/Results placeholders and framed Figure 8 in JNE and TN; matching redline/storyline pages; refreshed supplement notation.",
+    "scope": "FEM Methods/Results placeholders, framed Figure 8, and separate isotropic comparison in JNE and TN; matching redline and storyline pages.",
     "pages": {
       "jne": [
         16,
-        24
+        23,
+        25
       ],
       "tn": [
         17,
-        25
+        24,
+        26
       ],
       "redline": [
         20,
+        21,
         28,
         29
       ],
       "storyline": [
         7,
-        8
-      ],
-      "supplement": [
-        2
+        8,
+        13
       ]
     },
     "result": "Inspected additions are legible and marked as placeholders; no text clipping or overlap. No out-of-page text in any of the five PDFs."
@@ -181,19 +207,34 @@
   "new_FEM_results_or_values": false,
   "prose_mechanical_findings": 0,
   "release_plan": {
-    "authorized_by": "Giulio, relayed by klaus-484-TI-helper at 2026-10-09 10:41 CEST",
+    "authorized_by": "Giulio, relayed by klaus-484-TI-helper at 2026-10-09 10:49 CEST",
     "responsible_peer": "klaus-484-TI-helper",
     "trigger": "Final draft18 commit and PDF handoff from Kaiti",
     "authorized_actions": [
-      "GitHub push",
-      "Overleaf synchronization",
-      "Calliope update"
+      "Overleaf synchronization"
     ],
     "remaining_holds": [
+      "GitHub push",
+      "Calliope update",
       "Zenodo release",
       "coauthor circulation"
     ],
+    "supersedes": "The broader 10:41 CEST release plan; the permission correction was queued to Klaus before these edits.",
     "external_actions_performed_by_Kaiti": [],
     "FEM_results_status": "awaiting Ricardo Salvador; placeholders only"
+  },
+  "latest_refinement": {
+    "editing_baseline": "7162eea",
+    "authorization": "Klaus 10:49 CEST brief on October 9",
+    "changes": [
+      "Add a separate isotropic orientation average of signed quadratic mixing before taking magnitude",
+      "Use the requested FEM figure-box text",
+      "Restrict the current release plan to Overleaf only"
+    ],
+    "label_numbers_unchanged": true,
+    "scientific_results_unchanged": true,
+    "abstract_unchanged": true,
+    "abstract_words": 296,
+    "external_release_performed": false
   }
 }

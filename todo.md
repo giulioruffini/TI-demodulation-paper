@@ -2,16 +2,16 @@
 
 - [ ] Giulio: decide the seven retained CUT? passages and the biological-rectifier sentence in docs/revision_2026-10-06_v0150draft16_readability.md
 - [ ] Giulio: confirm Ricardo's provisional byline position after Borja; Ricardo: confirm his CRediT line and funding
-- [ ] Ricardo: supply the Ernie/Violante FEM methods, three maps, current-ratio sweep, target-to-cortex ratios, and focus displacements to replace the marked placeholders
+- [ ] Ricardo: supply the Ernie/Violante FEM methods, three maps plus isotropic orientation average, ratio sweep, target-to-cortex ratios, and focus displacements
 - [ ] review draft18 and its fixed draft13 redline, including Ricardo's author details, the steering prediction and Violante comparison, Figure 2's synaptic filters, and the test rows
 - [ ] Giulio: review the corrected JNE working edition and fixed-baseline redline; authorize coauthor circulation when ready
 - [ ] obtain missing funding declarations; confirm the supplied competing-interests statement, author roles and affiliations, actual AI-tool versions, and the submission version with every author
-- [ ] Klaus: after the final draft18 handoff, push, synchronize Overleaf, and update Calliope as authorized October 9; then await Ricardo
-- [ ] keep Zenodo release and coauthor circulation on hold pending explicit authorization
+- [ ] Klaus: synchronize Overleaf only after the final draft18 handoff, then await Ricardo
+- [ ] keep GitHub push, Calliope and Zenodo releases, and coauthor circulation on hold pending explicit authorization
 - [ ] migrate the paper folder at the next coordinated version boundary; run the layout checker before and after, with no concurrent session editing
 - [x] add Ricardo Salvador to draft18 author records and declarations; keep the FEM comparison as a proposed test (October 9)
 - [x] integrate the authorized current-ratio steering prediction with Cassarà credit, corrected Violante reading, Ricardo's conceptualization role, and fixed-orientation FEM test (October 9)
-- [x] reserve the approved FEM Methods and Results locations with red text and a framed figure placeholder, without reporting FEM findings (October 9)
+- [x] reserve the approved FEM Methods and Results locations, including the isotropic comparison, with red text and a framed figure placeholder (October 9)
 - [x] close Klaus's draft18 steering fidelity check: pass; the sole mean-square terminology fix was already in the committed manuscript (October 9)
 - [x] close Klaus's draft17 integration check: both new test rows and carrier/bound wording pass with no discrepancies (October 6)
 - [x] apply the approved readability review: separate TI/tACS Results, relocate derivations and protocols, consolidate predictions, retain CUT? passages (October 6)
