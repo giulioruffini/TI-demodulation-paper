@@ -817,6 +817,19 @@
       "result": "All five scientific refinements accepted; corrected direct Violante contrast acknowledged.",
       "scope": "Acceptance of the interpretation and implementation brief; not a fidelity review of the later integrated manuscript.",
       "Ricardo_reply_status_reported": "Giulio reply draft incorporates all five points; no sending inferred."
+    },
+    "independent_passage_check": {
+      "reviewer": "klaus-484-TI-helper",
+      "reported_at": "2026-10-09 10:41 CEST",
+      "status": "pass; sole wording correction already applied",
+      "frozen_passage_sha256": "9677a17dd0407dc28e0c2dde2c68739920ac403dcd5e03d77545c0269418d9a9",
+      "scope": "Theory steering paragraph, Violante Discussion paragraph, and Table 4 current-ratio row.",
+      "required_correction": "Replace geometric mean with the polarization mean-square map.",
+      "committed_wording": "the mean-square polarization changes by",
+      "correction_present_in": "02c26ac",
+      "retained_in_release_bundle": "4c80377",
+      "current_passages_match_reviewed_snapshot_with_correction": true,
+      "new_manuscript_or_PDF_edit_required": false
     }
   },
   "draft18_fem_placeholders": {

@@ -2,7 +2,6 @@
 
 - [ ] Giulio: decide the seven retained CUT? passages and the biological-rectifier sentence in docs/revision_2026-10-06_v0150draft16_readability.md
 - [ ] Giulio: confirm Ricardo's provisional byline position after Borja; Ricardo: confirm his CRediT line and funding
-- [ ] review Klaus's bounded check of draft18's steering, Violante, and Table 4 additions when it arrives
 - [ ] Ricardo: supply the Ernie/Violante FEM methods, three maps, current-ratio sweep, target-to-cortex ratios, and focus displacements to replace the marked placeholders
 - [ ] review draft18 and its fixed draft13 redline, including Ricardo's author details, the steering prediction and Violante comparison, Figure 2's synaptic filters, and the test rows
 - [ ] Giulio: review the corrected JNE working edition and fixed-baseline redline; authorize coauthor circulation when ready
@@ -13,6 +12,7 @@
 - [x] add Ricardo Salvador to draft18 author records and declarations; keep the FEM comparison as a proposed test (October 9)
 - [x] integrate the authorized current-ratio steering prediction with Cassarà credit, corrected Violante reading, Ricardo's conceptualization role, and fixed-orientation FEM test (October 9)
 - [x] reserve the approved FEM Methods and Results locations with red text and a framed figure placeholder, without reporting FEM findings (October 9)
+- [x] close Klaus's draft18 steering fidelity check: pass; the sole mean-square terminology fix was already in the committed manuscript (October 9)
 - [x] close Klaus's draft17 integration check: both new test rows and carrier/bound wording pass with no discrepancies (October 6)
 - [x] apply the approved readability review: separate TI/tACS Results, relocate derivations and protocols, consolidate predictions, retain CUT? passages (October 6)
 - [x] close the draft16 Table 4 gap and integrate the carrier/bound clarifications in draft17; Klaus agrees with the bound-scope note (October 6)

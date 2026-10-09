@@ -8,8 +8,13 @@ redline remains against draft13 `c620335`. Version and title are unchanged.
 Klaus's delayed 10:33 CEST message accepts all five scientific refinements in
 `0d15d14`, including the direct Violante contrast, and confirms their inclusion
 in Giulio's reply draft to Ricardo. The manuscript additions are committed in
-`02c26ac`. This acceptance concerns the proposed interpretation; the separate
-bounded fidelity check of the integrated passages remains pending.
+`02c26ac`. This acceptance concerns the proposed interpretation. Klaus's
+separate 10:41 CEST fidelity report passes the frozen Theory, Discussion, and
+Table 4 additions with one wording correction: replace "geometric mean" by
+the polarization mean-square map. The integrated text already says "the
+mean-square polarization changes by" in `02c26ac`, retained in `4c80377`.
+The three passages match the reviewed snapshot with that correction, so the
+bounded check is closed without another manuscript or PDF change.
 
 ## Scientific changes
 
