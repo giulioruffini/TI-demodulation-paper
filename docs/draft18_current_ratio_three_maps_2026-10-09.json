@@ -1,0 +1,95 @@
+{
+  "date": "2026-10-09",
+  "baseline": "29208a5",
+  "scope": "Algebraic maps at fixed projected per-current polarizations, access, detector coefficients, and neural state; not FEM output or measured physiological ratios.",
+  "currents_mA": {
+    "before": [
+      2,
+      2
+    ],
+    "after": [
+      1,
+      3
+    ]
+  },
+  "positive_local_ratio": "r=abs(P1)/abs(P2), distinct from the applied current ratio",
+  "formulae": {
+    "envelope": "min(r,3)/(2 min(r,1))",
+    "quadratic_beat": "3/4",
+    "DC": "(r^2+9)/(4(r^2+1))"
+  },
+  "envelope_piecewise": {
+    "0<r<=1": 0.5,
+    "1<r<3": "r/2",
+    "r>=3": 1.5
+  },
+  "DC_limits": {
+    "r_to_zero": 2.25,
+    "r_equals_one": 1.25,
+    "r_to_infinity": 0.25
+  },
+  "zero_maps": "The beat-factor identity is a map equality including zeros; ratios of zero beat values are undefined. DC ratio undefined only when both polarizations vanish.",
+  "signed_grid_checks": {
+    "samples": 2001,
+    "ratio_range": [
+      1e-09,
+      1000000000.0
+    ],
+    "maximum_absolute_error": {
+      "envelope": 0.0,
+      "quadratic_beat": 1.1102230246251565e-16,
+      "DC": 0.0
+    }
+  },
+  "examples": [
+    {
+      "local_abs_per_current_ratio": 0.1,
+      "envelope_factor": 0.5,
+      "quadratic_beat_factor": 0.75,
+      "DC_factor": 2.23019801980198
+    },
+    {
+      "local_abs_per_current_ratio": 0.5,
+      "envelope_factor": 0.5,
+      "quadratic_beat_factor": 0.75,
+      "DC_factor": 1.85
+    },
+    {
+      "local_abs_per_current_ratio": 1,
+      "envelope_factor": 0.5,
+      "quadratic_beat_factor": 0.75,
+      "DC_factor": 1.25
+    },
+    {
+      "local_abs_per_current_ratio": 1.5,
+      "envelope_factor": 0.75,
+      "quadratic_beat_factor": 0.75,
+      "DC_factor": 0.8653846153846154
+    },
+    {
+      "local_abs_per_current_ratio": 2,
+      "envelope_factor": 1.0,
+      "quadratic_beat_factor": 0.75,
+      "DC_factor": 0.65
+    },
+    {
+      "local_abs_per_current_ratio": 3,
+      "envelope_factor": 1.5,
+      "quadratic_beat_factor": 0.75,
+      "DC_factor": 0.45
+    },
+    {
+      "local_abs_per_current_ratio": 10,
+      "envelope_factor": 1.5,
+      "quadratic_beat_factor": 0.75,
+      "DC_factor": 0.2698019801980198
+    },
+    {
+      "local_abs_per_current_ratio": 1000,
+      "envelope_factor": 1.5,
+      "quadratic_beat_factor": 0.75,
+      "DC_factor": 0.250001999998
+    }
+  ],
+  "new_FEM_results": false
+}

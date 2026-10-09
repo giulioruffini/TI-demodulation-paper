@@ -1118,8 +1118,9 @@ measured independently by a weak sweep of direct low-frequency stimulation (tran
 alternating-current stimulation, tACS) and deconvolved.
 
 \subsection{Head model and field computation (R. Salvador; text to come)}\label{sec:fem-methods}
-\textcolor{red}{[PLACEHOLDER: R.~Salvador will specify the Ernie head model,
-tissue conductivities, electrode geometry and currents for the Violante montage,
+\textcolor{red}{[PLACEHOLDER: R.~Salvador will specify the head model from an open
+IXI subject with a FreeSurfer hippocampal label, tissue conductivities,
+electrode geometry and currents for the Violante montage,
 finite-element (FEM) solver and boundary conditions, and field-to-polarization
 conversion. The methods will define the target and cortical regions, spatial
 summary statistics, and focus-displacement measure. The projection direction
@@ -1542,8 +1543,9 @@ the waveform and near-Hopf limitations specified in \S\ref{sec:waveforms}.
 \textcolor{red}{[PLACEHOLDER: Figure~\ref{fig:fem} will compare the envelope
 excursion $2\min(|\varepsilon_1|,|\varepsilon_2|)$, quadratic excursion
 $2|\varepsilon_1\varepsilon_2|$, and quadratic mean
-$(\varepsilon_1^2+\varepsilon_2^2)/2$ on the Violante montage in the Ernie head
-model. R.~Salvador will report the maps for 1:1 and 1:3 pair-current ratios and a
+$(\varepsilon_1^2+\varepsilon_2^2)/2$ on the Violante montage in an IXI subject
+with a FreeSurfer hippocampal label. R.~Salvador will report the maps for 1:1
+and 1:3 pair-current ratios and a
 ratio sweep, together with target-to-cortex ratios and focus displacement in mm
 relative to 1:1. All maps will use the same local polarizations and a projection
 direction held fixed at each location across ratios; an envelope-maximizing
@@ -1555,7 +1557,7 @@ No FEM results are available in this draft.]}
 \centering
 \fbox{\parbox[c][36mm][c]{0.86\textwidth}{\centering\color{red}
 FEM: envelope vs quadratic maps on the Violante montage,
-Ernie head model (R.~Salvador)}}
+IXI subject (FreeSurfer hippocampal label), R.~Salvador}}
 \caption{\textcolor{red}{[PLACEHOLDER: Planned FEM comparison; maps and results
 to be supplied by R.~Salvador. No simulation results are shown.]}}
 \label{fig:fem}
@@ -2075,7 +2077,12 @@ comparisons remain proposed tests.
 & Vary the current ratio at fixed electrodes and compare normalized beat maps
 and target-to-cortex ratios. Keep the projection direction fixed at each site,
 including any direction chosen to maximize the envelope at a reference ratio.
-Measure the DC shift and repeat at lower amplitude to check state dependence. \\[4pt]
+Measure the DC shift and repeat at lower amplitude to check state dependence.
+Changing from $2+2$ to $1+3$~mA multiplies envelope excursion by
+$0.5$--$1.5$ depending on the local polarization ratio, and the quadratic beat
+by $0.75$ everywhere. The DC factor is $1.25$ at equal per-current magnitudes,
+tending to $0.25$ or $2.25$ where the first or second carrier dominates,
+respectively. \\[4pt]
 \textbf{State and carrier dependence.} The static sigmoid follows $\Sig''$ and
 reverses sign at its inflection (PEIX$=0$). Fast-carrier QIF mixes in voltage and
 reads the source through rate and network susceptibility; its DC term follows

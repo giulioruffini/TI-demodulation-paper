@@ -2,7 +2,7 @@
 
 - [ ] Giulio: decide the seven retained CUT? passages and the biological-rectifier sentence in docs/revision_2026-10-06_v0150draft16_readability.md
 - [ ] Giulio: confirm Ricardo's provisional byline position after Borja; Ricardo: confirm his CRediT line and funding
-- [ ] Ricardo: supply the Ernie/Violante FEM methods, three maps plus isotropic orientation average, ratio sweep, target-to-cortex ratios, and focus displacements
+- [ ] Ricardo: supply the IXI/FreeSurfer head model and Violante FEM methods, three maps plus isotropic average, ratio sweep, target-to-cortex ratios, and focus displacements
 - [ ] review draft18 and its fixed draft13 redline, including Ricardo's author details, the steering prediction and Violante comparison, Figure 2's synaptic filters, and the test rows
 - [ ] Giulio: review the corrected JNE working edition and fixed-baseline redline; authorize coauthor circulation when ready
 - [ ] obtain missing funding declarations; confirm the supplied competing-interests statement, author roles and affiliations, actual AI-tool versions, and the submission version with every author
@@ -12,6 +12,7 @@
 - [x] add Ricardo Salvador to draft18 author records and declarations; keep the FEM comparison as a proposed test (October 9)
 - [x] integrate the authorized current-ratio steering prediction with Cassarà credit, corrected Violante reading, Ricardo's conceptualization role, and fixed-orientation FEM test (October 9)
 - [x] reserve the approved FEM Methods and Results locations, including the isotropic comparison, with red text and a framed figure placeholder (October 9)
+- [x] replace Ernie with the IXI/FreeSurfer model and add the three-map current-ratio predictions with the full DC range (October 9)
 - [x] close Klaus's draft18 steering fidelity check: pass; the sole mean-square terminology fix was already in the committed manuscript (October 9)
 - [x] close Klaus's draft17 integration check: both new test rows and carrier/bound wording pass with no discrepancies (October 6)
 - [x] apply the approved readability review: separate TI/tACS Results, relocate derivations and protocols, consolidate predictions, retain CUT? passages (October 6)

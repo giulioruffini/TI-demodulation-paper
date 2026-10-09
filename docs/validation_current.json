@@ -2,13 +2,13 @@
   "version": "0.15.0-draft18",
   "review_baseline": "8dc6eca",
   "redline_baseline": "c620335",
-  "status": "Draft18 is prepared for Klaus to synchronize Overleaf only after the final commit and PDF handoff. GitHub push, Calliope and Zenodo releases, and coauthor circulation remain held. Red placeholders reserve Methods 3.3, Results 4.5, and Figure 8, including a separate isotropic orientation-averaged quadratic beat map. No FEM findings are reported; Ricardo results and author confirmations remain pending.",
+  "status": "Draft18 is prepared for Overleaf-only synchronization by Klaus after the corrected commit and PDF handoff. The FEM placeholders now specify an open IXI subject with a FreeSurfer hippocampal label, and Table 4 includes the three current-ratio scaling predictions with the full DC range. No FEM results are reported. GitHub push, Calliope and Zenodo releases, and coauthor circulation remain held.",
   "outputs": {
     "jne": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.log",
       "pages": 42,
-      "sha256": "2fa1fc4fe06af7981aaeab3301cc39f595ce4f4078d7bc95321241f98f27ae34",
+      "sha256": "616eae2fc45c1030d9613aaa333bca768f65a1c5abb6f4705a9b4af2c264705a",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -27,7 +27,7 @@
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne_supplement.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne_supplement.log",
       "pages": 21,
-      "sha256": "23ef844b36d487eb9cd5e7ef0e683d38f8a9accedf4ed68efe5afea47c78519a",
+      "sha256": "10a09f78159f49e47f3866ecf87dc29ef560677ae63a1a8390c10f04f8f182d1",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -46,7 +46,7 @@
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_envelope_demodulation.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_envelope_demodulation.log",
       "pages": 59,
-      "sha256": "0821eaaa7304e6b6101ca98423abac6eeb91b140be71f1e71132d3916e1de287",
+      "sha256": "9368fe87d4c5808d972d1271a8f03d3e33a514d4a558db354a37ca733088936d",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -65,7 +65,7 @@
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.log",
       "pages": 51,
-      "sha256": "8da9713fc723d3d717319d19866f3860dd3b4aa37b7bf134aad17b2f9c0ef545",
+      "sha256": "5cfea25b10743a8c20df2724409c19a2fe98902c5f69a5300f6501c0427d5d77",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -83,7 +83,7 @@
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.log",
       "pages": 13,
-      "sha256": "eca06e1ce5516b3733c2089dd89395bf1a5260014d3c7b67c0de3d85a0320708",
+      "sha256": "7223103fc2d368cf34e2e79dae4858cc305e0f68de10a4cba71ddd1f29406d1e",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -118,7 +118,7 @@
     "original_labels_retained": true,
     "cut_candidates_verbatim": true,
     "main_manuscript_source_byte_identical": false,
-    "scientific_text_change_scope": "Only the explicitly marked FEM Methods/Results placeholders and framed Figure 8 are added; earlier steering text, scientific findings, shared abstract, and declarations unchanged.",
+    "scientific_text_change_scope": "FEM Methods/Results placeholders and framed Figure 8 are added, with IXI/FreeSurfer as the pending head model; Table 4 includes the envelope, quadratic-beat, and DC factors for the current change. Existing results, shared abstract, and declarations remain unchanged.",
     "modified_existing_figures": [],
     "appendix_change_scope": "No source change to appendices or shared notation; refreshed cross-document references.",
     "table_numbers_unchanged": true,
@@ -169,37 +169,39 @@
   ],
   "visual_inspection": {
     "date": "2026-10-09",
-    "scope": "FEM Methods/Results placeholders, framed Figure 8, and separate isotropic comparison in JNE and TN; matching redline and storyline pages.",
+    "scope": "IXI/FreeSurfer Methods and Results placeholders and framed Figure 8; expanded Table 4 current-ratio row; corresponding redline and storyline passages.",
     "pages": {
       "jne": [
         16,
         23,
-        25
+        25,
+        33
       ],
       "tn": [
         17,
         24,
-        26
+        26,
+        34
       ],
       "redline": [
         20,
-        21,
         28,
-        29
+        29,
+        40
       ],
       "storyline": [
         7,
         8,
-        13
+        12
       ]
     },
-    "result": "Inspected additions are legible and marked as placeholders; no text clipping or overlap. No out-of-page text in any of the five PDFs."
+    "result": "Inspected passages are legible with no clipping or overlap; FEM material is visibly provisional. No out-of-page text in any of the five PDFs."
   },
   "source_sha256": {
-    "TN0484_envelope_demodulation.tex": "66e2addf4b47172d7ecd9e7e2f11cc225cee2630a2fdf5202f66b3a3bb243a8f",
+    "TN0484_envelope_demodulation.tex": "c711bd6870621cbbbb396bd32341ea175ca10450793579cb719dd45733aefaf5",
     "references.bib": "6c89b80405c9999914d57cceb158411ab150b800fc0c6795f02a0332d8e89ed7",
     "planning/tn0484_abstract.tex": "853f47a0db90c442b80a26fb7deb070a9491a6808b6e267f1816a0e6b980a3a6",
-    "planning/tn0484_storyline.tex": "5cf118ac3822d13c37e159b9d501cbfb7052bea9de91cb278d488d02829f6870",
+    "planning/tn0484_storyline.tex": "a83f2f3913e299f73a6fce73582bd8325301f116a2f60d448b2cb696c0b71401",
     "planning/tn0484_notation.tex": "dd066ca147f4a16532913d85f13d28dbee835e67908f2b65eef9ae24ff26fb3b",
     "figures_src/fig_models_ti.tex": "6250c979b717018b4fd5037c3099940fa380b921ee2e9d5cfd66aa1fdaff8600",
     "figures_src/fig_models_ti_caption.tex": "08c72d57c7df8e76e57a6aac84a2f9949c7c82b1badfab4e6df0b4c5676ff8da"
@@ -289,13 +291,14 @@
   },
   "current_revision": {
     "date": "2026-10-09",
-    "baseline_commit": "7162eea",
-    "authorization": "Giulio brief relayed by Klaus at 10:49 CEST",
+    "baseline_commit": "29208a5",
+    "authorization": "Ricardo update relayed by giulio-shell at 2026-10-09 11:06 CEST",
     "abstract_words": 296,
     "abstract_unchanged": true,
     "audit": "docs/draft18_fem_placeholder_audit_2026-10-09.json",
-    "revision_record": "docs/revision_2026-10-09_v0150draft18_fem_placeholders.md",
+    "revision_record": "docs/revision_2026-10-09_v0150draft18_ixi_ratio.md",
     "new_numerical_work": false,
+    "new_algebra_check": "docs/draft18_current_ratio_three_maps_2026-10-09.json",
     "new_FEM_results": false,
     "release_plan": {
       "authorized_by": "Giulio, relayed by klaus-484-TI-helper at 2026-10-09 10:49 CEST",
@@ -890,6 +893,19 @@
       "abstract_unchanged": true,
       "abstract_words": 296,
       "external_release_performed": false
+    },
+    "ixi_and_three_map_refinement": {
+      "editing_baseline": "29208a5",
+      "authorization": "Ricardo update relayed by giulio-shell at 2026-10-09 11:06 CEST",
+      "record": "docs/revision_2026-10-09_v0150draft18_ixi_ratio.md",
+      "head_model": "Open IXI subject with FreeSurfer hippocampal label; subject identifier and completed methods pending",
+      "algebra_record": "docs/draft18_current_ratio_three_maps_2026-10-09.json",
+      "new_FEM_results": false,
+      "label_numbers_unchanged": true,
+      "abstract_unchanged": true,
+      "abstract_words": 296,
+      "DC_range_refinement": "The 1.25-to-0.25 range assumes abs(P1)>=abs(P2); the full spatial range extends to 2.25 as abs(P1)/abs(P2) tends to zero.",
+      "external_release_performed": false
     }
   },
   "draft18_authorship_revision": {
@@ -930,5 +946,18 @@
       "redline": "48 pages, byte-identical to docs/redline_last_read.pdf",
       "annotated_original": "preserved"
     }
+  },
+  "draft18_ixi_ratio_revision": {
+    "editing_baseline": "29208a5",
+    "authorization": "Ricardo update relayed by giulio-shell at 2026-10-09 11:06 CEST",
+    "record": "docs/revision_2026-10-09_v0150draft18_ixi_ratio.md",
+    "head_model": "Open IXI subject with FreeSurfer hippocampal label; subject identifier and completed methods pending",
+    "algebra_record": "docs/draft18_current_ratio_three_maps_2026-10-09.json",
+    "new_FEM_results": false,
+    "label_numbers_unchanged": true,
+    "abstract_unchanged": true,
+    "abstract_words": 296,
+    "DC_range_refinement": "The 1.25-to-0.25 range assumes abs(P1)>=abs(P2); the full spatial range extends to 2.25 as abs(P1)/abs(P2) tends to zero.",
+    "external_release_performed": false
   }
 }

@@ -44,8 +44,10 @@ records his contribution to the steering prediction. See the
 
 Red placeholders reserve the FEM Methods and a Results subsection immediately
 after the JR curvature result, including a framed Figure 8. They describe the
-planned Violante-montage comparison on the Ernie head model, including a separate
-isotropic orientation average, without reporting FEM findings. The final draft18
+planned Violante-montage comparison on an open IXI subject with a FreeSurfer
+hippocampal label, including a separate isotropic orientation average, without
+reporting FEM findings. Table 4 compares the envelope, quadratic-beat, and DC
+scaling predictions for the 1:1 to 1:3 current change. The final draft18
 bundle is prepared for Klaus to synchronize with Overleaf only; GitHub push,
 Calliope and Zenodo releases, and coauthor circulation remain held. See the
 [placeholder and handoff record](docs/revision_2026-10-09_v0150draft18_fem_placeholders.md).

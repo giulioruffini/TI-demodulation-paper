@@ -11,11 +11,17 @@ plan: GitHub push and Calliope remain held. This clarification was relayed
 immediately to Klaus before making the additional edits. This refinement starts
 from `7162eea` and does not change any label numbers.
 
+Ricardo's head-model update, relayed at 11:06 CEST, replaces the earlier Ernie
+placeholder with an open IXI subject and a FreeSurfer hippocampal label. The
+additional current-ratio predictions and their scope are recorded in
+`revision_2026-10-09_v0150draft18_ixi_ratio.md`.
+
 ## Reserved Methods and Results
 
 Methods Section 3.3 is titled "Head model and field computation (R. Salvador;
 text to come)." Its red paragraph is marked `[PLACEHOLDER: ...]`. It reserves
-the Ernie model and Violante montage specification, conductivities, currents,
+the IXI subject with its FreeSurfer hippocampal label, the Violante montage,
+conductivities, currents,
 solver and boundary conditions, field-to-polarization conversion, region and
 summary-statistic definitions, and the focus-displacement measure. It states
 that projection directions remain fixed across current ratios. The separate
@@ -32,8 +38,8 @@ if used, is selected at the reference ratio and then held fixed. A separate
 isotropic orientation-averaged quadratic beat map is also planned.
 
 Figure 8 (`fig:fem`) is a framed text box reading "FEM: envelope vs quadratic
-maps on the Violante montage, Ernie head model
-(R. Salvador)." Its red caption states that maps and results are to come.
+maps on the Violante montage, IXI subject (FreeSurfer hippocampal label),
+R. Salvador." Its red caption states that maps and results are to come.
 Neither subsection reports FEM findings or estimated FEM values. The figure
 contains no simulated map. The abstract is unchanged.
 
