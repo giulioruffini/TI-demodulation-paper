@@ -22,27 +22,39 @@ Ricardo will run the real-montage FEM comparison requested by Giulio on October 
 No FEM data or result is available in this revision. The comparison remains a
 proposed test, and the abstract, scientific body, and appendices are unchanged.
 
-## Placement options for the FEM result
+## Placement proposal for the FEM result
 
-These are proposals for Giulio to decide once the data and their scope are known.
-The scientific argument has not been reordered or expanded in draft18.
+The following proposal was relayed by `giulio-shell` on October 9 at 09:38 CEST
+and remains for Giulio's decision. Nothing is to be implemented until the FEM
+results exist. It places the spatial consequence of the detector law directly
+after the JR curvature result, replacing this note's initial suggestion of a
+subsection immediately before the Discussion.
 
-- Theory Sections 2.5 and 2.6, beside Table 2, retain the definitions of the
-  envelope excursion, quadratic excursion, and quadratic mean. They can refer
-  forward to the FEM comparison without repeating its methods or numerical results.
-- Methods can add a short head-modeling subsection specifying the head model,
-  montage and carrier currents, field-to-polarization assumptions, projection
-  directions, target and cortical masks, and the target-to-cortex statistic.
-- Results can add one subsection immediately before the Discussion, with a
-  single figure comparing the three spatial maps and their target-to-cortex
-  ratios. Detailed slices or montage sensitivity can go in the supplement.
-- Discussion and Table 4 can identify what the FEM result tests about the spatial
-  maps. A field calculation alone does not test the biological detector or measure
-  neural focality. Any abstract or Conclusion change should follow the result.
+- Theory Section 2.5 retains the algebra, `eq:reweight`, and Table 2, and gains
+  one forward pointer to the FEM result.
+- Results gains a subsection directly after the JR curvature/square-law
+  subsection (`sec:results-curvature`, currently Section 4.4). Its title states
+  the finding; for example, "On a realistic montage, the product map changes the
+  target-to-cortex contrast" only if the computed result supports that claim.
+  One figure shows slices of the envelope excursion, quadratic excursion, and
+  quadratic mean for one standard deep-target montage, with target-to-cortex
+  ratios for each map.
+- Methods gains "Head model and field computation," written by Ricardo. It
+  specifies the model, tissues and conductivities, montage and currents,
+  orientation choice, regions of interest, and percentile definitions. Any
+  conversion from field projections to local polarization is stated explicitly.
+- The Discussion dose-map paragraph and Table 4's independent-amplitude row cite
+  the FEM numbers as model evidence. The biological detector test remains a
+  proposed experiment; field maps alone do not measure neural focality.
+- Further montages or orientation variants go in the supplement.
+- The abstract gains at most one clause, only if the ranking change is substantial
+  and the complete abstract remains within 300 words.
+- The illustrative `(10,1)` versus `(0.5,0.5)` example and line profile stay.
+  Relocating the example to the supplement would require Giulio's approval.
 
 If the FEM work arrives after this submission, the existing proposed comparison
-can remain and the head-model analysis can form a companion report. The pending
-placement proposal announced by `giulio-shell` is not presumed approved here.
+can remain and the head-model analysis can form a companion report. The manuscript,
+figures, and builds are unchanged by recording this proposal.
 
 ## Validation and release status
 

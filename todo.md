@@ -2,7 +2,7 @@
 
 - [ ] Giulio: decide the seven retained CUT? passages and the biological-rectifier sentence in docs/revision_2026-10-06_v0150draft16_readability.md
 - [ ] Giulio: confirm Ricardo's provisional byline position after Borja; Ricardo: confirm his CRediT line and funding
-- [ ] Giulio: decide the FEM result placement when Ricardo supplies the maps and target-to-cortex ratios
+- [ ] Giulio: decide the recorded FEM placement proposal (after the JR curvature result) once Ricardo supplies the maps and target-to-cortex ratios
 - [ ] review Ricardo's real-montage FEM comparison if supplied before submission; retain the proposed comparison otherwise
 - [ ] review draft18 and its fixed draft13 redline, including Ricardo's author details and the retained independent-amplitude and equal-power test rows
 - [ ] Giulio: review the corrected JNE working edition and fixed-baseline redline; authorize coauthor circulation when ready
