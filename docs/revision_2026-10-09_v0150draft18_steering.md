@@ -5,6 +5,12 @@ Giulio authorized the additions through the October 9 brief; Klaus clarified
 at 10:31 CEST that the earlier approval covered implementation. The reading
 redline remains against draft13 `c620335`. Version and title are unchanged.
 
+Klaus's delayed 10:33 CEST message accepts all five scientific refinements in
+`0d15d14`, including the direct Violante contrast, and confirms their inclusion
+in Giulio's reply draft to Ricardo. The manuscript additions are committed in
+`02c26ac`. This acceptance concerns the proposed interpretation; the separate
+bounded fidelity check of the integrated passages remains pending.
+
 ## Scientific changes
 
 Section 2.5 now states the factorization after `eq:reweight` and its spatial

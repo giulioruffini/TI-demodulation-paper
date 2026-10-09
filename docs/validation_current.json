@@ -779,6 +779,15 @@
     "editing_baseline": "b8c3dd4",
     "abstract_words": 296,
     "new_fem_results": false,
-    "holds_unchanged": true
+    "holds_unchanged": true,
+    "scientific_review_acceptance": {
+      "reviewer": "klaus-484-TI-helper",
+      "reported_at": "2026-10-09 10:33 CEST",
+      "reviewed_note_commit": "0d15d14",
+      "integrated_manuscript_commit": "02c26ac",
+      "result": "All five scientific refinements accepted; corrected direct Violante contrast acknowledged.",
+      "scope": "Acceptance of the interpretation and implementation brief; not a fidelity review of the later integrated manuscript.",
+      "Ricardo_reply_status_reported": "Giulio reply draft incorporates all five points; no sending inferred."
+    }
   }
 }
