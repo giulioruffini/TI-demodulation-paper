@@ -220,6 +220,14 @@ Adri{\`a} Galan-Gadea, Ricardo Salvador, Fabrice Bartolomei, Fabrice Wendling,
   potential shift induced by {tDCS} in realistic neuron models.
 \newblock {\em Journal of Neural Engineering}, 20(2):026004, 2023.
 
+\bibitem{cassara2025part2}
+Antonino~M. Cassar{\`a}, Taylor~H. Newton, Katie Zhuang, Sabine~J. Regel, Peter
+  Achermann, Alvaro Pascual-Leone, Niels Kuster, and Esra Neufeld.
+\newblock Recommendations for the safe application of temporal interference
+  stimulation in the human brain part {II}: Biophysics, dosimetry, and safety
+  recommendations.
+\newblock {\em Bioelectromagnetics}, 46(1):e22536, 2025.
+
 \bibitem{grimbert2006}
 Fran{\c c}ois Grimbert and Olivier Faugeras.
 \newblock Bifurcation analysis of {J}ansen's neural mass model.
@@ -287,6 +295,15 @@ Charlotte~E. Luff, Patrycja Dzialecka, Emma Acerbo, Adam Williamson, and Nir
 \newblock Pulse-width modulated temporal interference (pwm-ti) brain
   stimulation.
 \newblock {\em Brain Stimulation}, 17(1):92–103, January 2024.
+
+\bibitem{violante2023}
+Ines~R. Violante, Ketevan Alania, Antonino~M. Cassar{\`a}, Esra Neufeld, Emma
+  Acerbo, Romain Carron, Adam Williamson, Danielle~L. Kurtin, Edward Rhodes,
+  Adam Hampshire, Niels Kuster, Edward~S. Boyden, Alvaro Pascual-Leone, and Nir
+  Grossman.
+\newblock Non-invasive temporal interference electrical stimulation of the
+  human hippocampus.
+\newblock {\em Nature Neuroscience}, 26(11):1994--2004, 2023.
 
 \bibitem{missey2026}
 Florian Missey, Emma Acerbo, Adam~S. Dickey, Jan Trajlinek, Ond{\v r}ej

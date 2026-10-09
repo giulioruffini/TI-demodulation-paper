@@ -1,7 +1,7 @@
 \documentclass[11pt,a4paper]{article}
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-6g1c_fl8/old.tex   Fri Oct  9 10:29:46 2026
-%DIF ADD /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-6g1c_fl8/new.tex   Fri Oct  9 10:29:46 2026
+%DIF DEL /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-1nx8eode/old.tex   Fri Oct  9 10:45:20 2026
+%DIF ADD /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-1nx8eode/new.tex   Fri Oct  9 10:45:20 2026
 \usepackage[margin=2.3cm]{geometry}
 \usepackage{lmodern}        % classic Computer Modern look, vectorized (T1)
 \usepackage[T1]{fontenc}
@@ -1087,10 +1087,36 @@ this algebra and must be evaluated from the }\DIFdelend \DIFaddbegin \DIFadd{Foc
 can differ from the envelope map's. Its contrast depends on the }\DIFaddend actual vector
 field distribution\DIFdelbegin \DIFdel{; }\DIFdelend \DIFaddbegin \DIFadd{: }\DIFaddend a sufficiently weak second carrier can suppress the
 superficial product\DIFdelbegin \DIFdel{instead. The
-product law is
-not an account of TI focality. }\DIFdelend \DIFaddbegin \DIFadd{. A finite-element comparison on a real TI montage can
+product law is not an account of TI focality. }\DIFdelend \DIFaddbegin \DIFadd{. A finite-element comparison on a real TI montage can
 quantify this reweighting from the same local polarizations; the illustrative
 line profile is not a head-model calculation.
+}\DIFaddend
+
+\DIFdelbegin \DIFdel{The accompanying mean shift has a different spatial map.
+Writing
+$A_{\rm DC}=\Sig''(\varepsilon_1^2+\varepsilon_2^2)/4$ }\DIFdelend \DIFaddbegin \DIFadd{With one fixed electrode pair per carrier and fixed neural state, changing the
+current ratio rescales the leading quadratic beat map without moving its maxima.
+For fixed frequencies,
+linear access, and fixed projection directions, write
+$\varepsilon_j(\mathbf x)=I_j^{\rm pair}\mathcal P_j(\mathbf x)$, where
+$I_j^{\rm pair}>0$ is the peak pair current (mA) and $\mathcal P_j$ is the signed
+local polarization per unit current (mV/mA). Then
+}\[
+\DIFadd{\mathcal M}[\DIFadd{\tfrac12\mathcal A^2}]
+\DIFadd{=2I_1^{\rm pair}I_2^{\rm pair}|\mathcal P_1\mathcal P_2|.
+}\]
+\DIFadd{The normalized map and its target-to-cortex ratios are unchanged, as
+Cassar\`a et al.\ noted for second-order mixing \cite{cassara2025part2}.
+Fixed detector coefficients and linear network propagation preserve this common
+current factor, including for dynamic mixing and spatially heterogeneous gains.
+Steering within this regime requires changing at least one carrier's field shape,
+for example by redistributing current among several electrodes at that frequency.
+The DC map, however, weights $\mathcal P_1^2$ and $\mathcal P_2^2$ separately by
+the squared currents. It changes with the ratio and can indirectly reshape the
+beat response by shifting local operating points. Threshold effects can also
+break the quadratic prediction; the conventional $2\min$ steering law applies
+when the detector follows the envelope. An interior beat maximum remains
+compatible with the fixed-state product law.
 }
 
 \DIFadd{The network supplies dynamical selectivity in addition to this spatial weighting. Writing
@@ -1106,11 +1132,9 @@ susceptibility there,
 generated at all; the operating point and the network susceptibility set which of the
 driven populations amplifies it. Resonance does not override an unfavorable field
 product, but it can compensate for one.
-}\DIFaddend
+}
 
-\DIFdelbegin \DIFdel{The accompanying mean shift has a different spatial map.
-Writing
-$A_{\rm DC}=\Sig''(\varepsilon_1^2+\varepsilon_2^2)/4$ }\DIFdelend \DIFaddbegin \DIFadd{Equation~\eqref{eq:spatial} is written for scalar projected fields. In general the
+\DIFadd{Equation~\eqref{eq:spatial} is written for scalar projected fields. In general the
 coupling is vectorial and compartment-specific,
 $\varepsilon_i(\mathbf{x})=\boldsymbol{\lambda}\!\cdot\!\mathbf{E}_i(\mathbf{x})$, so the
 mixing product $(\boldsymbol{\lambda}\!\cdot\!\mathbf{E}_1)
@@ -2664,7 +2688,27 @@ envelope following over a finite amplitude range; smoothing or heterogeneity
 can restore quadratic behavior at smaller inputs. The amplitude and harmonic
 tests in \S\ref{sec:transduction-methods} distinguish these regimes.
 
-\DIFdelbegin \DIFdel{Stimulation intensity can also change the mechanism. At high }\DIFdelend \DIFaddbegin \DIFadd{At higher }\DIFaddend intensities, TI and unmodulated kHz fields can have similar excitation
+\DIFdelbegin \DIFdel{Stimulation intensity can also changethe mechanism.
+At high }\DIFdelend \DIFaddbegin \DIFadd{Current-ratio experiments separate envelope geometry from the neural response
+map. Violante et al.\ \cite{violante2023} compared $2+2$~mA (1:1) with
+$1+3$~mA (1:3) through the same electrode pairs. At fixed neural state, the
+quadratic beat would be $3/4$ as large everywhere in the 1:3 condition, whereas
+the mean-square polarization changes by
+$\mathcal I_{1:3}/\mathcal I_{1:1}
+=(\mathcal P_1^2+9\mathcal P_2^2)/[4(\mathcal P_1^2+\mathcal P_2^2)]$:
+a $25\%$ increase only where $|\mathcal P_1|=|\mathcal P_2|$, with decreases
+possible elsewhere. Equal summed currents therefore do not match local RMS
+polarization. Their encoding-stage blood-oxygen-level-dependent (BOLD) response
+differed directly between 1:1 and 1:3 ($P=0.015$), with no stimulation-by-region
+interaction ($P=0.76$). Envelope steering was supported by field models and
+cadaver measurements. The BOLD contrast and reported functional-connectivity
+changes are physiological effects, but neither measures the demodulated neural
+beat map. They therefore do not identify envelope-following detection or a
+DC-mediated state change; a spatial beat measurement at controlled state is
+needed to test the current-ratio prediction.
+}
+
+\DIFadd{At higher }\DIFaddend intensities, TI and unmodulated kHz fields can have similar excitation
 thresholds, with modulation patterning firing rather than lowering the threshold
 \cite{opancar2025,semenov2025}; some peripheral responses do not require envelope
 extraction \cite{peripheral2023}. The weak-input calculation \DIFdelbegin \DIFdel{here concerns
@@ -2846,6 +2890,17 @@ with independent local-polarization calibration is not supplied here.
 Keep both inputs weak, frequencies fixed, and the operating state controlled.
 Reconstruct the slow-response excursion after correcting network filtering;
 a beat lock-in alone does not measure the envelope's full excursion. }\\[4pt]
+\DIFadd{\textbf{Current-ratio steering.} With fixed electrode pairs, frequencies,
+access, and neural state, the quadratic beat map scales with
+$I_1^{\rm pair}I_2^{\rm pair}$; its normalized pattern does not move.
+An envelope follower can instead shift its maximum.
+}& \DIFadd{Cassar\`a et al.\ identify the product-law restriction
+\cite{cassara2025part2}. The realistic-montage and physiological beat-map
+comparisons remain proposed tests.
+}& \DIFadd{Vary the current ratio at fixed electrodes and compare normalized beat maps
+and target-to-cortex ratios. Keep the projection direction fixed at each site,
+including any direction chosen to maximize the envelope at a reference ratio.
+Measure the DC shift and repeat at lower amplitude to check state dependence. }\\[4pt]
 \DIFadd{\textbf{State and carrier dependence.} The static sigmoid follows $\Sig''$ and
 reverses sign at its inflection (PEIX$=0$). Fast-carrier QIF mixes in voltage and
 reads the source through rate and network susceptibility; its DC term follows
@@ -2906,9 +2961,10 @@ shift from the beat response. }\\
 
 \DIFaddbegin \section{\DIFadd{Conclusion}}
 \DIFaddend For weak perturbations of ongoing activity, \DIFdelbegin \DIFdel{smooth nonlinearities with a nonzero
-}\DIFdelend \DIFaddbegin \DIFadd{a nonzero }\DIFaddend second-order \DIFdelbegin \DIFdel{response generate the beat through effective quadratic mixing. The population models realize this description and
-amplify the generated drive near a network
-resonance. A large response alone establishes neither efficient
+}\DIFdelend \DIFaddbegin \DIFadd{a nonzero }\DIFaddend second-order \DIFdelbegin \DIFdel{response generate the beat through effective quadratic mixing.
+The population models realize this description and amplify the generated drive
+near a network resonance.
+A large response alone establishes neither efficient
 detectionnor the microscopic mixer. }%DIFDELCMD <
 
 %DIFDELCMD < %%%
@@ -2989,8 +3045,9 @@ declare no competing interests.
 Using the CRediT taxonomy: \textbf{G.~Ruffini}: conceptualization, methodology, formal
 analysis, software, investigation, visualization, writing (original draft), supervision,
 funding acquisition. \textbf{B.~Mercadal}: validation, visualization, writing (review
-and editing). \DIFaddbegin \DIFadd{\textbf{R.~Salvador}: methodology (head modeling), software, formal
-analysis, visualization (\emph{provisional; to be confirmed by R.~Salvador}).
+and editing). \DIFaddbegin \DIFadd{\textbf{R.~Salvador}: conceptualization (current-ratio steering),
+methodology (head modeling), software, formal analysis, visualization
+(\emph{provisional; to be confirmed by R.~Salvador}).
 }\DIFaddend \textbf{A.~Just}: software, visualization, writing (review and editing).
 \textbf{R.~de Palma Aristides}: software, visualization, writing (review and editing).
 \textbf{F.~Castaldo}: conceptualization, writing (review and editing).
@@ -3068,6 +3125,7 @@ supplement for the JNE edition).}}
 \multicolumn{4}{@{}l}{\textbf{Field and access}}\\*
 \DIFadd{$E(t),E_0,\mathbf E_j$ }& \DIFadd{Applied field, its amplitude, and vector field of tone $j=1,2$ }& \DIFadd{V/m }& \DIFadd{Eq.~\eqref{eq:coupling} }\\
 \DIFadd{$s(t),\varepsilon_j,\varepsilon$ }& \DIFadd{Local polarization; tone amplitudes; common amplitude ($\varepsilon_{\rm TI}$ and $\varepsilon_{\rm tACS}$ label the waveform) }& \DIFadd{mV }& \DIFadd{Eqs.~\eqref{eq:am}, \eqref{eq:doors} }\\
+\DIFadd{$I_j^{\rm pair},\mathcal P_j$ }& \DIFadd{Peak electrode-pair current; signed local polarization per unit current }& \DIFadd{mA; mV/mA }& \DIFadd{\S\ref{sec:envelope} }\\
 \DIFadd{$\mathcal A(t),\overline{\mathcal A}$ }& \DIFadd{Nonnegative polarization envelope and its beat-period mean }& \DIFadd{mV }& \DIFadd{Eq.~\eqref{eq:sqenv}; Table~\ref{tab:transduction-maps} }\\
 \DIFadd{$f_1,f_2,f_c$ }& \DIFadd{Tone frequencies and their center }& \DIFadd{Hz }& \DIFadd{Eq.~\eqref{eq:am} }\\
 \DIFadd{$\omega_j,\omega_c$ }& \DIFadd{Angular frequencies $2\pi f_j,2\pi f_c$ }& \DIFadd{rad/s }& \DIFadd{Eqs.~\eqref{eq:am}, \eqref{eq:doors} }\\

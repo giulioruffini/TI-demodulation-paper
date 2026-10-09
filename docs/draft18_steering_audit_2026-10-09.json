@@ -1,0 +1,117 @@
+{
+  "date": "2026-10-09",
+  "version": "0.15.0-draft18",
+  "editing_baseline": "b8c3dd4",
+  "redline_baseline": "c620335",
+  "authorization": "Giulio approval relayed in the 09:56 brief and clarified by Klaus at 10:31 CEST.",
+  "new_citation": "cassara2025part2",
+  "retained_citations": 60,
+  "cited_keys_added": [
+    "cassara2025part2"
+  ],
+  "cited_keys_lost": [],
+  "abstract_words_texcount_expanded": 296,
+  "abstract_unchanged": true,
+  "numbered_equation_environments_identical": true,
+  "equation_figure_table_number_changes": {},
+  "all_original_labels_retained_in_order": true,
+  "code_caches_figures_unchanged": true,
+  "new_symbols": {
+    "I_j^{pair}": "peak physical electrode-pair current, mA",
+    "mathcal P_j(x)": "signed local polarization per unit current, mV/mA"
+  },
+  "model_factor_checks": {
+    "beat_1to3_over_1to1": 0.75,
+    "DC_ratio_where_unit_current_polarizations_match": 1.25,
+    "DC_ratio_formula": "(P1^2+9P2^2)/(4*(P1^2+P2^2))",
+    "DC_increases_when_abs_P2_over_P1_exceeds": 0.7745966692414834
+  },
+  "literature_scope": {
+    "Violante_encoding_direct_contrast_p": 0.015,
+    "Violante_stimulation_by_region_interaction_p": 0.76,
+    "envelope_steering_evidence": "field models and cadaver measurements",
+    "neural_beat_map_measured": false
+  },
+  "prose_mechanical_findings": 0,
+  "FEM_results_added": false,
+  "outputs": {
+    "jne": {
+      "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
+      "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.log",
+      "pages": 42,
+      "sha256": "414aae3cc45b3ba114a25de3a86544c924667a87fe038f695916d236a02b115c",
+      "diagnostics": {
+        "errors": 0,
+        "undefined": 0,
+        "overfull": 0,
+        "duplicate_labels": 0
+      },
+      "author_metadata_verified": true,
+      "validation_scope": "Rebuilt for the October 9 authorized current-ratio steering additions."
+    },
+    "redline": {
+      "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.pdf",
+      "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.log",
+      "pages": 49,
+      "sha256": "35d34bd1a76b8d74e258407700ffac4e3e322c26421d672424442f325f7d58e8",
+      "diagnostics": {
+        "errors": 0,
+        "undefined": 0,
+        "overfull": 0,
+        "duplicate_labels": 0
+      },
+      "validation_scope": "Rebuilt for the October 9 authorized current-ratio steering additions."
+    },
+    "storyline": {
+      "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.pdf",
+      "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.log",
+      "pages": 12,
+      "sha256": "393588de33cad414d0dcc0a88a6473ff099e6a21a012a88c8e9a87e3d8856f35",
+      "diagnostics": {
+        "errors": 0,
+        "undefined": 0,
+        "overfull": 0,
+        "duplicate_labels": 0
+      },
+      "validation_scope": "Rebuilt for the October 9 authorized current-ratio steering additions."
+    }
+  },
+  "visual_inspection": {
+    "date": "2026-10-09",
+    "scope": "Current-ratio derivation, Violante paragraph, Table 4 row, notation row, corresponding fixed-baseline redline and storyline pages.",
+    "pages": {
+      "jne": [
+        11,
+        29,
+        30,
+        32,
+        40
+      ],
+      "redline": [
+        13,
+        14,
+        36,
+        38,
+        46
+      ],
+      "storyline": [
+        5,
+        10,
+        11
+      ]
+    },
+    "result": "Inspected additions are legible with no overlap or clipping; all three full PDFs have no out-of-page text bounds."
+  },
+  "independent_passage_check": {
+    "reviewer": "klaus-484-TI-helper",
+    "status": "requested",
+    "frozen_passage_sha256": "9677a17dd0407dc28e0c2dde2c68739920ac403dcd5e03d77545c0269418d9a9",
+    "subsequent_wording_correction": "geometric mean changed to mean-square polarization; formulas unchanged."
+  },
+  "holds": [
+    "GitHub push",
+    "Calliope/Zenodo cut",
+    "Overleaf sync",
+    "coauthor circulation"
+  ]
+}

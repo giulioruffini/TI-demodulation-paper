@@ -5,6 +5,11 @@ at 09:56 CEST. Reviewed against draft18 author commit `291a5e2`, with placement
 record `e9601e1`. This note supplies the assessment before Giulio's decision;
 it does not change the manuscript, bibliography, figures, or builds.
 
+Implementation update, October 9: Klaus clarified at 10:31 CEST that Giulio's
+earlier approval covered these additions. The refined argument is integrated
+in draft18; see [the revision record](revision_2026-10-09_v0150draft18_steering.md).
+The assessment below records the review preceding that integration.
+
 The proposed factorization is correct. A quadratic beat map can have an
 interior focus, but changing only the currents of two fixed electrode pairs
 cannot move its normalized spatial pattern at a fixed operating state. The

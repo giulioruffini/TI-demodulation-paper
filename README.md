@@ -33,6 +33,13 @@ provisionally after Borja Mercadal, with his ORCID and a CRediT line for confirm
 The FEM comparison remains a proposed test; no results have been added. See the
 [author revision record](docs/revision_2026-10-09_v0150draft18_authors.md).
 
+Draft18 also states the current-ratio steering restriction for the leading
+quadratic beat at fixed field shapes and neural state, credits Cassarà's prior
+argument, and adds its spatial test. The Violante comparison distinguishes the
+reported BOLD contrast from a measured neural beat map. Ricardo's CRediT line
+records his contribution to the steering prediction. See the
+[steering revision record](docs/revision_2026-10-09_v0150draft18_steering.md).
+
 v0.15.0-draft14 puts the notation table in the JNE article and separates
 overloaded symbols, normalized MPR variables, and physical units. Equation and
 figure numbers are retained. See the [notation revision record](docs/revision_2026-10-06_v0150draft14_notation.md).

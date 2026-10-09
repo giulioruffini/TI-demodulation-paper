@@ -2,15 +2,16 @@
 
 - [ ] Giulio: decide the seven retained CUT? passages and the biological-rectifier sentence in docs/revision_2026-10-06_v0150draft16_readability.md
 - [ ] Giulio: confirm Ricardo's provisional byline position after Borja; Ricardo: confirm his CRediT line and funding
-- [ ] after Giulio's go: integrate the current-ratio steering prediction with Cassarà credit, corrected Violante reading, and fixed-orientation FEM test (docs/current_ratio_steering_review_2026-10-09.md)
+- [ ] review Klaus's bounded check of draft18's steering, Violante, and Table 4 additions when it arrives
 - [ ] Giulio: decide the recorded FEM placement proposal (after the JR curvature result) once Ricardo supplies the maps and target-to-cortex ratios
 - [ ] review Ricardo's real-montage FEM comparison if supplied before submission; retain the proposed comparison otherwise
-- [ ] review draft18 and its fixed draft13 redline, including Ricardo's author details, Figure 2's synaptic low-pass stage, and the independent-amplitude and equal-power test rows
+- [ ] review draft18 and its fixed draft13 redline, including Ricardo's author details, the steering prediction and Violante comparison, Figure 2's synaptic filters, and the test rows
 - [ ] Giulio: review the corrected JNE working edition and fixed-baseline redline; authorize coauthor circulation when ready
 - [ ] obtain missing funding declarations; confirm the supplied competing-interests statement, author roles and affiliations, actual AI-tool versions, and the submission version with every author
 - [ ] after review and authorization: push, align the public code/archive, cut Calliope/Zenodo, re-sync Overleaf, and circulate the coauthor request (all HOLD)
 - [ ] migrate the paper folder at the next coordinated version boundary; run the layout checker before and after, with no concurrent session editing
 - [x] add Ricardo Salvador to draft18 author records and declarations; keep the FEM comparison as a proposed test (October 9)
+- [x] integrate the authorized current-ratio steering prediction with Cassarà credit, corrected Violante reading, Ricardo's conceptualization role, and fixed-orientation FEM test (October 9)
 - [x] close Klaus's draft17 integration check: both new test rows and carrier/bound wording pass with no discrepancies (October 6)
 - [x] apply the approved readability review: separate TI/tACS Results, relocate derivations and protocols, consolidate predictions, retain CUT? passages (October 6)
 - [x] close the draft16 Table 4 gap and integrate the carrier/bound clarifications in draft17; Klaus agrees with the bound-scope note (October 6)

@@ -726,6 +726,30 @@ superficial product. A finite-element comparison on a real TI montage can
 quantify this reweighting from the same local polarizations; the illustrative
 line profile is not a head-model calculation.
 
+With one fixed electrode pair per carrier and fixed neural state, changing the
+current ratio rescales the leading quadratic beat map without moving its maxima.
+For fixed frequencies,
+linear access, and fixed projection directions, write
+$\varepsilon_j(\mathbf x)=I_j^{\rm pair}\mathcal P_j(\mathbf x)$, where
+$I_j^{\rm pair}>0$ is the peak pair current (mA) and $\mathcal P_j$ is the signed
+local polarization per unit current (mV/mA). Then
+\[
+\mathcal M[\tfrac12\mathcal A^2]
+=2I_1^{\rm pair}I_2^{\rm pair}|\mathcal P_1\mathcal P_2|.
+\]
+The normalized map and its target-to-cortex ratios are unchanged, as
+Cassar\`a et al.\ noted for second-order mixing \cite{cassara2025part2}.
+Fixed detector coefficients and linear network propagation preserve this common
+current factor, including for dynamic mixing and spatially heterogeneous gains.
+Steering within this regime requires changing at least one carrier's field shape,
+for example by redistributing current among several electrodes at that frequency.
+The DC map, however, weights $\mathcal P_1^2$ and $\mathcal P_2^2$ separately by
+the squared currents. It changes with the ratio and can indirectly reshape the
+beat response by shifting local operating points. Threshold effects can also
+break the quadratic prediction; the conventional $2\min$ steering law applies
+when the detector follows the envelope. An interior beat maximum remains
+compatible with the fixed-state product law.
+
 The network supplies dynamical selectivity in addition to this spatial weighting. Writing
 $R_\Omega(\mathbf{x})$ for the complex demodulated response at the envelope frequency $\Omega$
 produced at location $\mathbf{x}$, and $G_{\mathbf{x}}(\Omega)$ for the local network
@@ -1839,6 +1863,24 @@ envelope following over a finite amplitude range; smoothing or heterogeneity
 can restore quadratic behavior at smaller inputs. The amplitude and harmonic
 tests in \S\ref{sec:transduction-methods} distinguish these regimes.
 
+Current-ratio experiments separate envelope geometry from the neural response
+map. Violante et al.\ \cite{violante2023} compared $2+2$~mA (1:1) with
+$1+3$~mA (1:3) through the same electrode pairs. At fixed neural state, the
+quadratic beat would be $3/4$ as large everywhere in the 1:3 condition, whereas
+the mean-square polarization changes by
+$\mathcal I_{1:3}/\mathcal I_{1:1}
+=(\mathcal P_1^2+9\mathcal P_2^2)/[4(\mathcal P_1^2+\mathcal P_2^2)]$:
+a $25\%$ increase only where $|\mathcal P_1|=|\mathcal P_2|$, with decreases
+possible elsewhere. Equal summed currents therefore do not match local RMS
+polarization. Their encoding-stage blood-oxygen-level-dependent (BOLD) response
+differed directly between 1:1 and 1:3 ($P=0.015$), with no stimulation-by-region
+interaction ($P=0.76$). Envelope steering was supported by field models and
+cadaver measurements. The BOLD contrast and reported functional-connectivity
+changes are physiological effects, but neither measures the demodulated neural
+beat map. They therefore do not identify envelope-following detection or a
+DC-mediated state change; a spatial beat measurement at controlled state is
+needed to test the current-ratio prediction.
+
 At higher intensities, TI and unmodulated kHz fields can have similar excitation
 thresholds, with modulation patterning firing rather than lowering the threshold
 \cite{opancar2025,semenov2025}; some peripheral responses do not require envelope
@@ -1989,6 +2031,17 @@ with independent local-polarization calibration is not supplied here.
 Keep both inputs weak, frequencies fixed, and the operating state controlled.
 Reconstruct the slow-response excursion after correcting network filtering;
 a beat lock-in alone does not measure the envelope's full excursion. \\[4pt]
+\textbf{Current-ratio steering.} With fixed electrode pairs, frequencies,
+access, and neural state, the quadratic beat map scales with
+$I_1^{\rm pair}I_2^{\rm pair}$; its normalized pattern does not move.
+An envelope follower can instead shift its maximum.
+& Cassar\`a et al.\ identify the product-law restriction
+\cite{cassara2025part2}. The realistic-montage and physiological beat-map
+comparisons remain proposed tests.
+& Vary the current ratio at fixed electrodes and compare normalized beat maps
+and target-to-cortex ratios. Keep the projection direction fixed at each site,
+including any direction chosen to maximize the envelope at a reference ratio.
+Measure the DC shift and repeat at lower amplitude to check state dependence. \\[4pt]
 \textbf{State and carrier dependence.} The static sigmoid follows $\Sig''$ and
 reverses sign at its inflection (PEIX$=0$). Fast-carrier QIF mixes in voltage and
 reads the source through rate and network susceptibility; its DC term follows
@@ -2105,8 +2158,9 @@ declare no competing interests.
 Using the CRediT taxonomy: \textbf{G.~Ruffini}: conceptualization, methodology, formal
 analysis, software, investigation, visualization, writing (original draft), supervision,
 funding acquisition. \textbf{B.~Mercadal}: validation, visualization, writing (review
-and editing). \textbf{R.~Salvador}: methodology (head modeling), software, formal
-analysis, visualization (\emph{provisional; to be confirmed by R.~Salvador}).
+and editing). \textbf{R.~Salvador}: conceptualization (current-ratio steering),
+methodology (head modeling), software, formal analysis, visualization
+(\emph{provisional; to be confirmed by R.~Salvador}).
 \textbf{A.~Just}: software, visualization, writing (review and editing).
 \textbf{R.~de Palma Aristides}: software, visualization, writing (review and editing).
 \textbf{F.~Castaldo}: conceptualization, writing (review and editing).

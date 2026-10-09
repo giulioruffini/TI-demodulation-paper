@@ -2,20 +2,21 @@
   "version": "0.15.0-draft18",
   "review_baseline": "8dc6eca",
   "redline_baseline": "c620335",
-  "status": "Draft18 includes Ricardo Salvador and standard low-pass filter symbols on all seven synaptic pathways in Figure 2. The caption explains post-nonlinearity carrier attenuation. Current-ratio steering awaits Giulio’s go; author confirmations, FEM results, and release authorization remain pending.",
+  "status": "Draft18 includes Ricardo Salvador, standard synaptic low-pass symbols, the authorized fixed-state current-ratio steering prediction with Cassara prior attribution, its Table 4 test, and the corrected Violante comparison. No FEM results added; author confirmations and release authorization remain pending.",
   "outputs": {
     "jne": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.log",
-      "pages": 40,
-      "sha256": "0ec986f820c5eb712f11005b46eb03285503c405e981e39f08fa501bdb8176fd",
+      "pages": 42,
+      "sha256": "414aae3cc45b3ba114a25de3a86544c924667a87fe038f695916d236a02b115c",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
         "overfull": 0,
         "duplicate_labels": 0
       },
-      "author_metadata_verified": true
+      "author_metadata_verified": true,
+      "validation_scope": "Rebuilt for the October 9 authorized current-ratio steering additions."
     },
     "supplement": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne_supplement.pdf",
@@ -29,7 +30,7 @@
         "duplicate_labels": 0
       },
       "author_metadata_verified": true,
-      "validation_scope": "Retained from the October 9 authorship pass; not rebuilt for this Figure 2 update. The working JNE article and fixed-baseline redline are current."
+      "validation_scope": "Retained from the October 9 authorship pass; not rebuilt for routine Figure 2 or current-ratio edits. The JNE article is the working edition; the shared source will regenerate the other editions at an authorized cut."
     },
     "tn_validation": {
       "path": "/var/folders/1v/vw2pwln11hl2pz2h2kt7dgf40000gn/T/tn0484-draft18-validation-043dwuri/tn_validation.pdf",
@@ -43,38 +44,39 @@
         "duplicate_labels": 0
       },
       "author_metadata_verified": true,
-      "validation_scope": "Retained from the October 9 authorship pass; not rebuilt for this Figure 2 update. The working JNE article and fixed-baseline redline are current."
+      "validation_scope": "Retained from the October 9 authorship pass; not rebuilt for routine Figure 2 or current-ratio edits. The JNE article is the working edition; the shared source will regenerate the other editions at an authorized cut."
     },
     "storyline": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.log",
-      "pages": 11,
-      "sha256": "23aa4daae850d967139d12fc5d026f9e775d09b1325d71c218d6affe19b3ee7e",
+      "pages": 12,
+      "sha256": "393588de33cad414d0dcc0a88a6473ff099e6a21a012a88c8e9a87e3d8856f35",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
         "overfull": 0,
         "duplicate_labels": 0
       },
-      "validation_scope": "Retained from the October 9 authorship pass; not rebuilt for this Figure 2 update. The working JNE article and fixed-baseline redline are current."
+      "validation_scope": "Rebuilt for the October 9 authorized current-ratio steering additions."
     },
     "redline": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.log",
-      "pages": 48,
-      "sha256": "7bce19415577346930a71efdc8c56a52c1fa2e99c0dc157d4efb61035296b964",
+      "pages": 49,
+      "sha256": "35d34bd1a76b8d74e258407700ffac4e3e322c26421d672424442f325f7d58e8",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
         "overfull": 0,
         "duplicate_labels": 0
-      }
+      },
+      "validation_scope": "Rebuilt for the October 9 authorized current-ratio steering additions."
     }
   },
   "retention": {
-    "editing_baseline": "8dc6eca",
+    "editing_baseline": "b8c3dd4",
     "scientific_body_byte_identical": false,
-    "appendices_and_AI_declaration_byte_identical": true,
+    "appendices_and_AI_declaration_byte_identical": false,
     "fig_labels": {
       "count": 25,
       "numbers_unchanged": true
@@ -84,27 +86,28 @@
       "numbers_unchanged": true,
       "bodies_changed": []
     },
-    "cited_works": 60,
+    "cited_works": 61,
     "simulation_producers_and_caches_unchanged": true,
-    "existing_figures_unchanged": false,
+    "existing_figures_unchanged": true,
     "abstract_source_unchanged": true,
     "original_labels_retained": true,
     "cut_candidates_verbatim": true,
-    "main_manuscript_source_byte_identical": true,
-    "scientific_text_change_scope": "Figure 2 caption explains conventional low-pass symbols; main manuscript, abstract, equations, and all other captions unchanged.",
-    "modified_existing_figures": [
-      "fig:models (Figure 2)"
-    ]
+    "main_manuscript_source_byte_identical": false,
+    "scientific_text_change_scope": "Added Theory and Discussion paragraphs, one Table 4 row, Ricardo conceptualization credit, a notation row, and Cassara citation; no existing scientific passage removed.",
+    "modified_existing_figures": [],
+    "appendix_change_scope": "One row added to the shared notation table; the main-source AI declaration and appendix tail are unchanged.",
+    "table_numbers_unchanged": true
   },
   "bibliography": {
-    "n_cited": 60,
+    "n_cited": 61,
     "duplicate_keys": [],
     "cited_but_missing_from_bib": [],
     "cited_without_doi_or_url": [
       "depalma2026ti",
       "nahin2001",
       "pikovsky2001"
-    ]
+    ],
+    "n_cited_jne": 59
   },
   "math_checks": [
     "docs/draft11_text_math_2026-10-05.json",
@@ -113,23 +116,36 @@
   ],
   "visual_inspection": {
     "date": "2026-10-09",
-    "scope": "Figure 2 with conventional low-pass symbols, standalone and on article/redline page 7.",
+    "scope": "Current-ratio derivation, Violante paragraph, Table 4 row, notation row, corresponding fixed-baseline redline and storyline pages.",
     "pages": {
       "jne": [
-        7
+        11,
+        29,
+        30,
+        32,
+        40
       ],
       "redline": [
-        7
+        13,
+        14,
+        36,
+        38,
+        46
+      ],
+      "storyline": [
+        5,
+        10,
+        11
       ]
     },
-    "result": "Seven filter symbols verified and LPF lettering absent; no text overlap or clipping on inspected pages."
+    "result": "Inspected additions are legible with no overlap or clipping; all three full PDFs have no out-of-page text bounds."
   },
   "source_sha256": {
-    "TN0484_envelope_demodulation.tex": "5592d9415f60800b79ebb13797830be902199cf1f1c890f79d64caea77bf9fa6",
-    "references.bib": "8ee2a664fc78b990a6811d1bb9fef0d1c4eb68d4f5f2ee52f167604b94f96907",
+    "TN0484_envelope_demodulation.tex": "d08ff1a7118b50db80df2c4d341a05da2e472451a7351904551f7f4ecb7df3be",
+    "references.bib": "6c89b80405c9999914d57cceb158411ab150b800fc0c6795f02a0332d8e89ed7",
     "planning/tn0484_abstract.tex": "853f47a0db90c442b80a26fb7deb070a9491a6808b6e267f1816a0e6b980a3a6",
-    "planning/tn0484_storyline.tex": "4ed19c0cd0fcf3ca0b2853d7944adf7f434083fcacd70ec922a4bfb1f13bc5bb",
-    "planning/tn0484_notation.tex": "3f5815400d8fa51affcd8fba240ed454adc52ea925c5e7b2b3a6141911cd2efa",
+    "planning/tn0484_storyline.tex": "707cbba4bbb3cac0cfe22e5555e04e2b7d414d2710ec1fcc1b415997335cb146",
+    "planning/tn0484_notation.tex": "dd066ca147f4a16532913d85f13d28dbee835e67908f2b65eef9ae24ff26fb3b",
     "figures_src/fig_models_ti.tex": "6250c979b717018b4fd5037c3099940fa380b921ee2e9d5cfd66aa1fdaff8600",
     "figures_src/fig_models_ti_caption.tex": "08c72d57c7df8e76e57a6aac84a2f9949c7c82b1badfab4e6df0b4c5676ff8da"
   },
@@ -756,5 +772,13 @@
       "TN0484 journal (JNE).pdf": true,
       "TN0484 redline.pdf": true
     }
+  },
+  "draft18_current_ratio_revision": {
+    "record": "docs/revision_2026-10-09_v0150draft18_steering.md",
+    "audit": "docs/draft18_steering_audit_2026-10-09.json",
+    "editing_baseline": "b8c3dd4",
+    "abstract_words": 296,
+    "new_fem_results": false,
+    "holds_unchanged": true
   }
 }
