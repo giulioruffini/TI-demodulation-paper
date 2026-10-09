@@ -40,7 +40,7 @@
 \draw[fld] (1.15, 3.85) -- (accA.north);
 \node[stage, anchor=north] at (1.15, 1.8) {access};
 
-\node[pop, minimum width=27mm] (P) at (4.6, 2.35) {pyramidal\\$\sigma(y_1-y_2+s)$};
+\node[pop, minimum width=25mm] (P) at (4.6, 2.35) {pyramidal\\$\sigma(y_1-y_2+s)$};
 \draw[fld] (accA.east) -- node[above, font=\footnotesize, text=negreen] {$s(t)$} (P.west);
 \node[stage, anchor=south east] at ($(P.north)+(0.15,0.12)$) {detection\\$\sigma''(v^*)$};
 
@@ -48,13 +48,16 @@
 \node[pop] (IIN) at (9.0, 1.05) {inhibitory\\interneurons};
 
 % forward: P -> both interneuron populations (y0 through h_e)
-\coordinate (bus) at (6.85, 2.35);
-\draw[line width=0.9pt, neblue] (P.east) -- (bus);
+\node[aux, minimum width=9mm, minimum height=7mm, inner sep=1pt, font=\scriptsize] (lpfA) at (6.38, 2.35) {$h_e$\\LPF};
+\coordinate (bus) at (7.2, 2.35);
+\draw[line width=0.9pt, neblue] (P.east) -- (lpfA.west);
+\draw[line width=0.9pt, neblue] (lpfA.east) -- (bus);
 \draw[exc] (bus) |- (EIN.west);
 \draw[exc] (bus) |- (IIN.west);
-\node[lab, anchor=west] at (6.95, 2.35) {$y_0$ ($h_e$)};
-\node[lab, anchor=south] at (7.3, 3.65) {$C_1y_0$};
-\node[lab, anchor=north] at (7.3, 1.05) {$C_3y_0$};
+\node[lab, anchor=south] at (7.01, 2.36) {$y_0$};
+\node[lab, anchor=south] at (7.55, 3.66) {$C_1y_0$};
+\node[lab, anchor=north] at (7.55, 1.04) {$C_3y_0$};
+\node[stage, anchor=north] at (6.38, 1.9) {low-pass:\\synapses};
 
 % feedback
 \draw[exc] (EIN.north) |- (5.3, 4.65) -- ($(P.north)+(0.7,0)$);
@@ -89,22 +92,25 @@
 \node[pop, minimum width=30mm, font=\footnotesize] (E) at (4.75, 2.35) {E population $(r_E,v_E)$\\$\tau_E\dot v_E=v_E^2+\cdots+I_E$};
 \node[pop, minimum width=27mm] (I) at (9.8, 2.35) {I population\\$(r_I,\,v_I)$, $\tau_I$};
 \draw[fld] (accB.east) -- node[above, pos=0.3, font=\footnotesize, text=negreen] {$I_E$} (E.west);
-\node[stage, anchor=north west] at ($(E.south)+(-0.35,-0.08)$) {detection: $v_E^2$, after $\tau_E$ integration};
+\node[stage, anchor=north] at ($(E.south)+(0.6,-0.08)$) {detection: $v_E^2$,\\after $\tau_E$ integration};
 
-\draw[exc] ($(E.east)+(0,0.25)$) -- node[above, lab] {AMPA, $J w_{IE}$} ($(I.west)+(0,0.25)$);
-\draw[inh] ($(I.west)+(0,-0.25)$) -- node[below, lab] {GABA, $J w_{EI}$} ($(E.east)+(0,-0.25)$);
+\draw[exc] ($(E.east)+(0,0.3)$) -- node[aux, pos=0.5, minimum width=15mm, minimum height=4.4mm, inner sep=1pt, font=\scriptsize] (lpfB1) {AMPA LPF, $\tau_a$} ($(I.west)+(0,0.3)$);
+\draw[inh] ($(I.west)+(0,-0.3)$) -- node[aux, pos=0.5, minimum width=15mm, minimum height=4.4mm, inner sep=1pt, font=\scriptsize] (lpfB2) {GABA LPF, $\tau_g$} ($(E.east)+(0,-0.3)$);
+\node[lab, anchor=south] at (lpfB1.north) {$Jw_{IE}$};
+\node[lab, anchor=north] at (lpfB2.south) {$Jw_{EI}$};
+\node[stage, anchor=south] at ($(lpfB1.north)+(0,0.3)$) {low-pass: synapses};
 \draw[exc] ($(E.north)+(0.05,0)$) to[out=60, in=120, looseness=3.2] node[above, lab] {$J w_{EE}$} ($(E.north)+(0.95,0)$);
 \draw[inh] ($(I.north)+(-0.45,0)$) to[out=60, in=120, looseness=3.2] node[above, lab] {$J w_{II}$} ($(I.north)+(0.45,0)$);
 
-\draw[-{Stealth[length=2.2mm]}, line width=0.9pt, negray] ($(E.south)+(-0.9,0)$) -- ++(0,-0.85)
-   node[below, lab] {rate $r_E$};
+\draw[-{Stealth[length=2.2mm]}, line width=0.9pt, negray] ($(E.south)+(-1.15,0)$) -- ++(0,-0.6)
+   node[below, lab, xshift=-4mm] {rate $r_E$};
 
-\coordinate (topB) at ($(E.north)+(0,1.0)$); \coordinate (botB) at ($(I.south)+(0,-0.6)$);
+\coordinate (topB) at ($(E.north)+(0,1.0)$); \coordinate (botB) at ($(I.south)+(0,-1.15)$);
 \begin{scope}[on background layer]
   \node[draw=nered, dashed, line width=0.6pt, rounded corners=6pt, inner xsep=6pt, inner ysep=6pt,
         fit=(E)(I)(topB)(botB)] (loopB) {};
 \end{scope}
-\node[stage, anchor=north] at (7.2, 0.62) {amplification: E--I loop, gamma Hopf at $J^*$, small-signal gain $\propto1/\gamma$};
+\node[stage, anchor=north] at (7.2, 0.32) {amplification: E--I loop, gamma Hopf at $J^*$, small-signal gain $\propto1/\gamma$};
 
 % QIF inset
 \node[draw=negray, line width=0.6pt, rounded corners=3pt, fill=white, minimum width=4.5cm,

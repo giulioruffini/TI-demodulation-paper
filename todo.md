@@ -5,7 +5,7 @@
 - [ ] after Giulio's go: integrate the current-ratio steering prediction with Cassarà credit, corrected Violante reading, and fixed-orientation FEM test (docs/current_ratio_steering_review_2026-10-09.md)
 - [ ] Giulio: decide the recorded FEM placement proposal (after the JR curvature result) once Ricardo supplies the maps and target-to-cortex ratios
 - [ ] review Ricardo's real-montage FEM comparison if supplied before submission; retain the proposed comparison otherwise
-- [ ] review draft18 and its fixed draft13 redline, including Ricardo's author details and the retained independent-amplitude and equal-power test rows
+- [ ] review draft18 and its fixed draft13 redline, including Ricardo's author details, Figure 2's synaptic low-pass stage, and the independent-amplitude and equal-power test rows
 - [ ] Giulio: review the corrected JNE working edition and fixed-baseline redline; authorize coauthor circulation when ready
 - [ ] obtain missing funding declarations; confirm the supplied competing-interests statement, author roles and affiliations, actual AI-tool versions, and the submission version with every author
 - [ ] after review and authorization: push, align the public code/archive, cut Calliope/Zenodo, re-sync Overleaf, and circulate the coauthor request (all HOLD)
@@ -18,7 +18,7 @@
 - [x] verify published Luff Fig. 1 and Methods for annotation 20: seven carrier conditions, no matched carrier-polarization analysis (October 6)
 - [x] close Klaus's scoped draft15 focality integration check at 972d9ea; subsequent draft16 and draft17 checks also recorded
 - [x] address the 26 annotations in Giulio's GR review PDF: split envelope/DC subsections, group NMM2 Results, move predictions to Discussion, and clarify local explanations (October 6)
-- [x] integrate the approved JR/NMM2 model schematic with draft14 notation and a defined caption (October 6)
+- [x] integrate the approved JR/NMM2 schematic and mark its synaptic low-pass stage; correct the caption and separate the r_E label from the detection annotation (October 6 and 9)
 - [x] state the generated steady-drive boundary restriction separately from beat focality in the shared abstract and Theory (October 6)
 - [x] put the shared notation table in JNE Appendix A, reconcile symbols and units across article/supplement/figures, and verify unchanged equation and figure numbering in draft14 (October 6)
 - [x] distinguish harmonic ratios H_det/H_meas from drive ratios R_det/R_lin throughout draft15 and the shared notation table (October 6)
