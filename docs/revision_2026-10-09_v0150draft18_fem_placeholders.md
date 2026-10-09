@@ -79,3 +79,8 @@ hands them over; it performs no external synchronization or publication.
 GitHub push, Calliope and Zenodo releases, and coauthor circulation remain held.
 Ricardo's FEM methods and results are pending, as are the author confirmations
 already recorded in `todo.md`.
+
+Completion update: Klaus reported the Overleaf-only sync at 11:19 CEST, with
+source `e17e4a9` mirrored as `7006e90` and a standalone 42-page build without
+errors or undefined references. The delivery details are recorded in
+`revision_2026-10-09_v0150draft18_ixi_ratio.md`. All other holds remain in place.

@@ -51,3 +51,19 @@ commit before synchronizing Overleaf. Overleaf remains the only authorized
 destination. GitHub push, Calliope and Zenodo releases, and coauthor circulation
 remain held. The current build hashes and inspection record are in
 `draft18_fem_placeholder_audit_2026-10-09.json`.
+
+## Overleaf synchronization reported complete
+
+At 11:19 CEST, Klaus reported that source commit `e17e4a9` was mirrored as
+`7006e90` in the private Overleaf GitHub repository, fast-forwarding Giulio's
+`22909ed`. The mirror retains Giulio's `\jnetrue` setting. It contains the
+compile-ready source, bibliography, shared abstract and notation, caption,
+figures, Python scripts, article and supplement PDFs, redline, and build files.
+The supplement's auxiliary file is included for cross-document references;
+simulation caches are excluded. Klaus reports a standalone pdflatex/bibtex
+build of 42 pages with no errors or undefined references.
+
+This completion is recorded from Klaus's report, without a second sync or an
+independent remote inspection. The main project GitHub push, Calliope, Zenodo,
+and coauthor circulation remain held. The manuscript and PDFs are unchanged
+by this completion record; Ricardo's FEM work remains pending.

@@ -6,9 +6,9 @@
 - [ ] review draft18 and its fixed draft13 redline, including Ricardo's author details, the steering prediction and Violante comparison, Figure 2's synaptic filters, and the test rows
 - [ ] Giulio: review the corrected JNE working edition and fixed-baseline redline; authorize coauthor circulation when ready
 - [ ] obtain missing funding declarations; confirm the supplied competing-interests statement, author roles and affiliations, actual AI-tool versions, and the submission version with every author
-- [ ] Klaus: synchronize Overleaf only after the final draft18 handoff, then await Ricardo
-- [ ] keep GitHub push, Calliope and Zenodo releases, and coauthor circulation on hold pending explicit authorization
+- [ ] keep the main project GitHub push, Calliope and Zenodo releases, and coauthor circulation on hold pending explicit authorization
 - [ ] migrate the paper folder at the next coordinated version boundary; run the layout checker before and after, with no concurrent session editing
+- [x] record Klaus's Overleaf sync: source e17e4a9, mirror 7006e90, standalone 42-page build without errors or undefined references (October 9)
 - [x] add Ricardo Salvador to draft18 author records and declarations; keep the FEM comparison as a proposed test (October 9)
 - [x] integrate the authorized current-ratio steering prediction with Cassarà credit, corrected Violante reading, Ricardo's conceptualization role, and fixed-orientation FEM test (October 9)
 - [x] reserve the approved FEM Methods and Results locations, including the isotropic comparison, with red text and a framed figure placeholder (October 9)

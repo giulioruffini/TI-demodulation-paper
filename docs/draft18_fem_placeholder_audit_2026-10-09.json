@@ -223,7 +223,8 @@
     ],
     "supersedes": "The broader 10:41 CEST release plan; the permission correction was queued to Klaus before these edits.",
     "external_actions_performed_by_Kaiti": [],
-    "FEM_results_status": "awaiting Ricardo Salvador; placeholders only"
+    "FEM_results_status": "awaiting Ricardo Salvador; placeholders only",
+    "overleaf_completion_record": "overleaf_sync_completion in this file"
   },
   "prior_isotropic_refinement": {
     "editing_baseline": "7162eea",
@@ -251,5 +252,31 @@
     "abstract_words": 296,
     "DC_range_refinement": "The 1.25-to-0.25 range assumes abs(P1)>=abs(P2); the full spatial range extends to 2.25 as abs(P1)/abs(P2) tends to zero.",
     "external_release_performed": false
+  },
+  "overleaf_sync_completion": {
+    "status": "reported complete",
+    "reported_by": "klaus-484-TI-helper",
+    "reported_at": "2026-10-09 11:19 CEST",
+    "source_commit": "e17e4a9c3a849e317243ac3ad18f13f36c5ee1cb",
+    "mirror_commit": "7006e90",
+    "mirror_previous_commit": "22909ed",
+    "destination": "private Overleaf GitHub mirror",
+    "preserved_setting": "\\jnetrue",
+    "subset_MB_reported": 31,
+    "simulation_caches_mirrored": false,
+    "supplement_aux_included": "TN0484_jne_supplement.aux, 11:13 build",
+    "standalone_build_reported": {
+      "method": "pdflatex + bibtex",
+      "pages": 42,
+      "errors": 0,
+      "undefined_references": 0
+    },
+    "verification_scope": "Klaus completion report; no duplicate sync or independent remote inspection by Kaiti",
+    "remaining_holds": [
+      "main project GitHub push",
+      "Calliope update",
+      "Zenodo release",
+      "coauthor circulation"
+    ]
   }
 }

@@ -26,8 +26,10 @@ from [one notation source](planning/tn0484_notation.tex). The article, supplemen
 and full TN have been regenerated together for the draft18 Overleaf handoff.
 
 As checked on October 2, [Calliope WP0185](https://calliope.bcom.one/papers/WP0185)
-still lists v0.12.0 (July 21). After the final draft18 handoff, Klaus is authorized
-to synchronize Overleaf only. GitHub push, Calliope and Zenodo releases, and
+still lists v0.12.0 (July 21). Klaus reports the Overleaf sync completed on
+October 9: draft18 source `e17e4a9` is mirrored as `7006e90`, preserving Giulio's
+JNE build setting. His standalone build has 42 pages with no errors or undefined
+references. The main project GitHub push, Calliope and Zenodo releases, and
 coauthor circulation remain held.
 
 v0.15.0-draft18 adds Ricardo Salvador (Neuroelectrics) to the author records,
@@ -47,9 +49,8 @@ after the JR curvature result, including a framed Figure 8. They describe the
 planned Violante-montage comparison on an open IXI subject with a FreeSurfer
 hippocampal label, including a separate isotropic orientation average, without
 reporting FEM findings. Table 4 compares the envelope, quadratic-beat, and DC
-scaling predictions for the 1:1 to 1:3 current change. The final draft18
-bundle is prepared for Klaus to synchronize with Overleaf only; GitHub push,
-Calliope and Zenodo releases, and coauthor circulation remain held. See the
+scaling predictions for the 1:1 to 1:3 current change. The draft18 Overleaf mirror
+has been updated; Ricardo's FEM methods and results are pending. See the
 [placeholder and handoff record](docs/revision_2026-10-09_v0150draft18_fem_placeholders.md).
 
 v0.15.0-draft14 puts the notation table in the JNE article and separates
