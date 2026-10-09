@@ -22,11 +22,13 @@ Run `python3 code/build_jne_redline.py` to update the one current [JNE redline](
 recorded in [planning/review_baseline.json](planning/review_baseline.json), rather
 than creating a new redline for each edit. The fixed reading baseline is draft13 (`c620335`), as requested for the
 October 6 notation pass. The JNE article and supplement both include Appendix A
-from [one notation source](planning/tn0484_notation.tex). The supplement was
-regenerated for this requested pass; the TN remains a private validation build.
+from [one notation source](planning/tn0484_notation.tex). The article, supplement,
+and full TN have been regenerated together for the draft18 release handoff.
 
 As checked on October 2, [Calliope WP0185](https://calliope.bcom.one/papers/WP0185)
-still lists v0.12.0 (July 21). Release and circulation remain held.
+still lists v0.12.0 (July 21). After the final draft18 handoff, Klaus is authorized
+to push, synchronize Overleaf, and update Calliope. Zenodo release and coauthor
+circulation remain held.
 
 v0.15.0-draft18 adds Ricardo Salvador (Neuroelectrics) to the author records,
 provisionally after Borja Mercadal, with his ORCID and a CRediT line for confirmation.
@@ -39,6 +41,14 @@ argument, and adds its spatial test. The Violante comparison distinguishes the
 reported BOLD contrast from a measured neural beat map. Ricardo's CRediT line
 records his contribution to the steering prediction. See the
 [steering revision record](docs/revision_2026-10-09_v0150draft18_steering.md).
+
+Red placeholders reserve the FEM Methods and a Results subsection immediately
+after the JR curvature result, including a framed Figure 8. They describe the
+planned Violante-montage comparison on the Ernie head model without reporting
+FEM findings. The final draft18 bundle is prepared for Klaus to push, synchronize
+with Overleaf, and update in Calliope after the handoff; Zenodo and coauthor
+circulation remain held. See the
+[placeholder and handoff record](docs/revision_2026-10-09_v0150draft18_fem_placeholders.md).
 
 v0.15.0-draft14 puts the notation table in the JNE article and separates
 overloaded symbols, normalized MPR variables, and physical units. Equation and

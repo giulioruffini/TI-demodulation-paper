@@ -1,7 +1,7 @@
 \documentclass[11pt,a4paper]{article}
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-1nx8eode/old.tex   Fri Oct  9 10:45:20 2026
-%DIF ADD /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-1nx8eode/new.tex   Fri Oct  9 10:45:20 2026
+%DIF DEL /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-toj11mi3/old.tex   Fri Oct  9 10:54:56 2026
+%DIF ADD /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-toj11mi3/new.tex   Fri Oct  9 10:54:56 2026
 \usepackage[margin=2.3cm]{geometry}
 \usepackage{lmodern}        % classic Computer Modern look, vectorized (T1)
 \usepackage[T1]{fontenc}
@@ -1583,7 +1583,17 @@ $|G(2\Omega)/G(\Omega)|\approx1.22$--$1.25$ across $\mathcal{Q}=3$--$30$, or wit
 measured independently by a weak sweep of direct low-frequency stimulation (transcranial
 alternating-current stimulation, tACS) and deconvolved.
 
-\subsection{Single-column Jansen--Rit: integration, lock-in, and controls}\DIFaddbegin \label{sec:jr-methods}
+\DIFaddbegin \subsection{\DIFadd{Head model and field computation (R. Salvador; text to come)}}\label{sec:fem-methods}
+\DIFadd{\textcolor{red}{[PLACEHOLDER: R.~Salvador will specify the Ernie head model,
+tissue conductivities, electrode geometry and currents for the Violante montage,
+finite-element (FEM) solver and boundary conditions, and field-to-polarization
+conversion. The methods will define the target and cortical regions, spatial
+summary statistics, and focus-displacement measure. The projection direction
+at each location will remain fixed across the 1:1 and 1:3 conditions and the
+current-ratio sweep. Head-model details and results are pending.]}
+}
+
+\DIFaddend \subsection{Single-column Jansen--Rit: integration, lock-in, and controls}\DIFaddbegin \label{sec:jr-methods}
 \DIFaddend All symbols and units are collected in Table~\ref{tab:notation}
 (App.~\ref{app:notation}). We integrate the single-column JR model of \S\ref{sec:nmm}
 (\DIFaddbegin \DIFadd{App.~\ref{app:models}, }\DIFaddend Eqs.~\eqref{eq:jr0} \DIFdelbegin \DIFdel{, parameters in }\DIFdelend \DIFaddbegin \DIFadd{and }\DIFaddend Table~\ref{tab:params}) as six first-order
@@ -2043,19 +2053,29 @@ from $1.34$ to $0.0021$~mV (Fig.~\ref{fig:opp}b,c). The open-loop surrogate
 comparison in panel~(d) supports its use for leading-order beat sweeps, with
 the waveform and near-Hopf limitations specified in \S\DIFdelbegin \DIFdel{\ref{sec:coupling}}\DIFdelend \DIFaddbegin \DIFadd{\ref{sec:waveforms}}\DIFaddend .
 
-\subsection{\DIFdelbegin \DIFdel{Exact mean-field confirmation: }\DIFdelend \DIFaddbegin \DIFadd{Coupling sets }\DIFaddend the \DIFdelbegin \DIFdel{NMM2 PING gamma generator}\DIFdelend \DIFaddbegin \DIFadd{gain at fixed detection}\DIFaddend }\DIFdelbegin %DIFDELCMD < \label{sec:nmm2-results}
+\subsection{\DIFdelbegin \DIFdel{Exact mean-field confirmation: the NMM2 PING gamma generator}%DIFDELCMD < \MBLOCKRIGHTBRACE\label{sec:nmm2-results}
 %DIFDELCMD < %%%
 \DIFdel{The exact PING mean field generates and amplifies the beat through its derived
 $v_E^2$ nonlinearity. With a $300$~Hz two-tone field entering the excitatory
-current, the lock-in of $r_E$ shows a growing gamma resonance below the Hopf
+current, the lock-in }\DIFdelend \DIFaddbegin \DIFadd{Realistic-head comparison }\DIFaddend of \DIFdelbegin \DIFdel{$r_E$ shows a growing gamma resonance below the Hopf
 and a response superposed on autonomous gamma above it
 (Figs.~\ref{fig:nmm2_res},~\ref{fig:nmm2_map}). The resonance ridge intensifies
 through the Hopf; its appreciable frequency shift with operating point makes
 it diagonal, unlike the JR sweep shown here \cite{clusella2023}.
-}%DIFDELCMD <
+}\DIFdelend \DIFaddbegin \DIFadd{envelope and quadratic maps}}\label{sec:fem-results}
+\DIFadd{\textcolor{red}{[PLACEHOLDER: Figure~\ref{fig:fem} will compare the envelope
+excursion $2\min(|\varepsilon_1|,|\varepsilon_2|)$, quadratic excursion
+$2|\varepsilon_1\varepsilon_2|$, and quadratic mean
+$(\varepsilon_1^2+\varepsilon_2^2)/2$ on the Violante montage in the Ernie head
+model. R.~Salvador will report the maps for 1:1 and 1:3 pair-current ratios and a
+ratio sweep, together with target-to-cortex ratios and focus displacement in mm
+relative to 1:1. All maps will use the same local polarizations and a projection
+direction held fixed at each location across ratios; an envelope-maximizing
+direction, if used, will be chosen at the reference ratio and then held fixed.
+No FEM results are available in this draft.]}
+}\DIFaddend
 
-%DIFDELCMD < %%%
-\DIFdel{The receiver behavior thus also occurs with a nonlinearity derived from QIF
+\DIFdelbegin \DIFdel{The receiver behavior thus also occurs with a nonlinearity derived from QIF
 spiking dynamics. Its coefficient differs from the sigmoid's: at $300$~Hz the
 population lies on the fast side of its crossover, where carrier voltage
 excursions mix in the voltage equation. The fast-carrier approximation predicts
@@ -2064,12 +2084,15 @@ the second-order response to within $1.1\%$ at the four tested stable points
 }%DIFDELCMD <
 
 %DIFDELCMD < \begin{figure}[t!]
-%DIFDELCMD < \centering
-%DIFDELCMD < \includegraphics[width=\textwidth]{fig_mpr_crossover.pdf}
 %DIFDELCMD < %%%
-%DIFDELCMD < \caption{%
-{%DIFAUXCMD
-\DIFdelFL{\textbf{Static curvature at slow carriers, slope at fast ones.} \emph{(a)}
+\DIFdelendFL \DIFaddbeginFL \begin{figure}[htbp]
+\DIFaddendFL \centering
+\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\textwidth]{fig_mpr_crossover.pdf}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \DIFaddFL{\fbox{\parbox[c][36mm][c]{0.86\textwidth}{\centering\color{red}
+Figure placeholder: FEM envelope vs quadratic maps on the Violante montage,
+Ernie head model (R.~Salvador)}}
+}\DIFaddendFL \caption{\DIFdelbeginFL \DIFdelFL{\textbf{Static curvature at slow carriers, slope at fast ones.} \emph{(a)}
 Second-order DC rate shift of an uncoupled MPR population ($\Delta=1$, $\tau=1$) under a
 current carrier, Eq.~\eqref{eq:crossover}, for operating points below, at and above the
 inflection of $F(Q)$. Dotted: the static limit $\tfrac14F''$; dashed: the fast-carrier
@@ -2079,13 +2102,14 @@ $\omega_z$. The top axis converts $\omega\tau$ to a carrier frequency for
 $\tau=\tau_E=15$~ms. \emph{(b)} PING of Eq.~\eqref{eq:nmm2-ping}: relative error of the
 fast-carrier difference-frequency source against the exact second-order response at four
 stable operating points ($\gamma$ the damping of the gamma mode), two tones centered at
-$300$, $1000$ and $2000$~Hz.}}
-%DIFAUXCMD
-%DIFDELCMD < \label{fig:crossover}
-%DIFDELCMD < \end{figure}
-%DIFDELCMD <
+$300$, $1000$ and $2000$~Hz.}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{\textcolor{red}{[PLACEHOLDER: Planned FEM comparison; maps and results
+to be supplied by R.~Salvador. No simulation results are shown.]}}\DIFaddendFL }
+\DIFdelbeginFL %DIFDELCMD < \label{fig:crossover}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \label{fig:fem}
+\DIFaddendFL \end{figure}
 
-%DIFDELCMD < \begin{figure}[t!]
+\DIFdelbegin %DIFDELCMD < \begin{figure}[t!]
 %DIFDELCMD < \centering
 %DIFDELCMD < \includegraphics[width=\textwidth]{fig_nmm2_resonance_twotone.pdf}
 %DIFDELCMD < %%%
@@ -2109,9 +2133,7 @@ surrogate control (Fig.~\ref{fig:opp}d).}}
 %DIFDELCMD <
 
 %DIFDELCMD < %%%
-\subsection{\DIFdel{What the mesoscale adds: coupling sets the gain at fixed detection}}%DIFAUXCMD
-\addtocounter{subsection}{-1}%DIFAUXCMD
-\DIFdelend \label{sec:jcurve}
+\DIFdelend \subsection{\DIFdelbegin \DIFdel{What the mesoscale adds: coupling }\DIFdelend \DIFaddbegin \DIFadd{Coupling }\DIFaddend sets the gain at fixed detection}\label{sec:jcurve}
 The resonance sweeps above drove the column toward the Hopf with the external input
 $p$, but $p$ also shifts the operating point, entangling detection ($\Sig''$) with
 amplification. To isolate amplification, we vary the JR global connectivity $C$ \DIFdelbegin \DIFdel{(coupling

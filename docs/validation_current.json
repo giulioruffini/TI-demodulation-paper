@@ -2,84 +2,84 @@
   "version": "0.15.0-draft18",
   "review_baseline": "8dc6eca",
   "redline_baseline": "c620335",
-  "status": "Draft18 includes Ricardo Salvador, standard synaptic low-pass symbols, the authorized fixed-state current-ratio steering prediction with Cassara prior attribution, its Table 4 test, and the corrected Violante comparison. No FEM results added; author confirmations and release authorization remain pending.",
+  "status": "Draft18 is prepared for the authorized handoff to Klaus: he will push, synchronize Overleaf, and update Calliope after receiving the commit and PDFs. Red FEM placeholders reserve Methods 3.3, Results 4.5, and Figure 8; no FEM findings are reported. Ricardo results and author confirmations remain pending; Zenodo release and coauthor circulation remain held.",
   "outputs": {
     "jne": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.log",
       "pages": 42,
-      "sha256": "414aae3cc45b3ba114a25de3a86544c924667a87fe038f695916d236a02b115c",
+      "sha256": "f9939c6a188a9fa273214feb6fb7daf546ad57fb625910ec2eb9e251a03f0418",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
         "overfull": 0,
         "duplicate_labels": 0
       },
-      "author_metadata_verified": true,
-      "validation_scope": "Rebuilt for the October 9 authorized current-ratio steering additions."
+      "validation_scope": "Final local draft18 bundle for the authorized Klaus handoff; regenerated from the shared source.",
+      "author_metadata_verified": true
     },
     "supplement": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne_supplement.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne_supplement.log",
       "pages": 21,
-      "sha256": "0a6a27727f8da9994b2394e8736475df787a884f0c5d99d446f0f7b8877f6c15",
+      "sha256": "18be64717b3e5fbb752b3c3b2b9f272b110184041af485348043606371fc4612",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
         "overfull": 0,
         "duplicate_labels": 0
       },
-      "author_metadata_verified": true,
-      "validation_scope": "Retained from the October 9 authorship pass; not rebuilt for routine Figure 2 or current-ratio edits. The JNE article is the working edition; the shared source will regenerate the other editions at an authorized cut."
+      "validation_scope": "Final local draft18 bundle for the authorized Klaus handoff; regenerated from the shared source.",
+      "author_metadata_verified": true
     },
-    "tn_validation": {
-      "path": "/var/folders/1v/vw2pwln11hl2pz2h2kt7dgf40000gn/T/tn0484-draft18-validation-043dwuri/tn_validation.pdf",
-      "log": "/var/folders/1v/vw2pwln11hl2pz2h2kt7dgf40000gn/T/tn0484-draft18-validation-043dwuri/tn_validation.log",
-      "pages": 57,
-      "sha256": "b10e4ba0724f2ee760cbc657063177710b6f52989041940fb9078aff1257e4b3",
+    "tn": {
+      "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_envelope_demodulation.pdf",
+      "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_envelope_demodulation.log",
+      "pages": 59,
+      "sha256": "c45e0ecfbcdba4934d54bbaefabf1e0de1a4ad4f028b4ce5191bd56f37a96f62",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
         "overfull": 0,
         "duplicate_labels": 0
       },
-      "author_metadata_verified": true,
-      "validation_scope": "Retained from the October 9 authorship pass; not rebuilt for routine Figure 2 or current-ratio edits. The JNE article is the working edition; the shared source will regenerate the other editions at an authorized cut."
-    },
-    "storyline": {
-      "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.pdf",
-      "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.log",
-      "pages": 12,
-      "sha256": "393588de33cad414d0dcc0a88a6473ff099e6a21a012a88c8e9a87e3d8856f35",
-      "diagnostics": {
-        "errors": 0,
-        "undefined": 0,
-        "overfull": 0,
-        "duplicate_labels": 0
-      },
-      "validation_scope": "Rebuilt for the October 9 authorized current-ratio steering additions."
+      "validation_scope": "Final local draft18 bundle for the authorized Klaus handoff; regenerated from the shared source.",
+      "author_metadata_verified": true
     },
     "redline": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.log",
-      "pages": 49,
-      "sha256": "35d34bd1a76b8d74e258407700ffac4e3e322c26421d672424442f325f7d58e8",
+      "pages": 51,
+      "sha256": "813fec07c78e3fe0207364a5a2ad67d83011f7559cdb8ae0aeb8c01523b7834d",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
         "overfull": 0,
         "duplicate_labels": 0
       },
-      "validation_scope": "Rebuilt for the October 9 authorized current-ratio steering additions."
+      "validation_scope": "Final local draft18 bundle for the authorized Klaus handoff; regenerated from the shared source."
+    },
+    "storyline": {
+      "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.pdf",
+      "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.log",
+      "pages": 13,
+      "sha256": "253ed5b6c3974e9006352ed271e3e687bd0c2ff5c5352523b7da34452d6f5a36",
+      "diagnostics": {
+        "errors": 0,
+        "undefined": 0,
+        "overfull": 0,
+        "duplicate_labels": 0
+      },
+      "validation_scope": "Final local draft18 bundle for the authorized Klaus handoff; regenerated from the shared source."
     }
   },
   "retention": {
-    "editing_baseline": "b8c3dd4",
+    "editing_baseline": "3bfbfe2",
     "scientific_body_byte_identical": false,
-    "appendices_and_AI_declaration_byte_identical": false,
+    "appendices_and_AI_declaration_byte_identical": true,
     "fig_labels": {
-      "count": 25,
-      "numbers_unchanged": true
+      "count": 26,
+      "numbers_unchanged": false
     },
     "eq_labels": {
       "count": 32,
@@ -93,10 +93,38 @@
     "original_labels_retained": true,
     "cut_candidates_verbatim": true,
     "main_manuscript_source_byte_identical": false,
-    "scientific_text_change_scope": "Added Theory and Discussion paragraphs, one Table 4 row, Ricardo conceptualization credit, a notation row, and Cassara citation; no existing scientific passage removed.",
+    "scientific_text_change_scope": "Only the explicitly marked FEM Methods/Results placeholders and framed Figure 8 are added; earlier steering text, scientific findings, shared abstract, and declarations unchanged.",
     "modified_existing_figures": [],
-    "appendix_change_scope": "One row added to the shared notation table; the main-source AI declaration and appendix tail are unchanged.",
-    "table_numbers_unchanged": true
+    "appendix_change_scope": "No source change to appendices or shared notation; refreshed cross-document references.",
+    "table_numbers_unchanged": true,
+    "figure_number_changes": {
+      "fig:jcurve": [
+        "8",
+        "9"
+      ],
+      "fig:crossover": [
+        "9",
+        "10"
+      ],
+      "fig:nmm2_res": [
+        "10",
+        "11"
+      ],
+      "fig:qif_raster": [
+        "11",
+        "12"
+      ],
+      "fig:qif_regimes": [
+        "12",
+        "13"
+      ]
+    },
+    "new_labels": {
+      "sec:fem-methods": "3.3",
+      "sec:fem-results": "4.5",
+      "fig:fem": "8"
+    },
+    "supplementary_figure_numbers_unchanged": true
   },
   "bibliography": {
     "n_cited": 61,
@@ -116,35 +144,36 @@
   ],
   "visual_inspection": {
     "date": "2026-10-09",
-    "scope": "Current-ratio derivation, Violante paragraph, Table 4 row, notation row, corresponding fixed-baseline redline and storyline pages.",
+    "scope": "Red FEM Methods/Results placeholders and framed Figure 8 in JNE and TN; matching redline/storyline pages; refreshed supplement notation.",
     "pages": {
       "jne": [
-        11,
-        29,
-        30,
-        32,
-        40
+        16,
+        24
+      ],
+      "tn": [
+        17,
+        25
       ],
       "redline": [
-        13,
-        14,
-        36,
-        38,
-        46
+        20,
+        28,
+        29
       ],
       "storyline": [
-        5,
-        10,
-        11
+        7,
+        8
+      ],
+      "supplement": [
+        2
       ]
     },
-    "result": "Inspected additions are legible with no overlap or clipping; all three full PDFs have no out-of-page text bounds."
+    "result": "Inspected additions are legible and marked as placeholders; no text clipping or overlap. No out-of-page text in any of the five PDFs."
   },
   "source_sha256": {
-    "TN0484_envelope_demodulation.tex": "d08ff1a7118b50db80df2c4d341a05da2e472451a7351904551f7f4ecb7df3be",
+    "TN0484_envelope_demodulation.tex": "3dfc866b85532c1feced8054e303f3842578d80a826f881e3e8b5b533728f451",
     "references.bib": "6c89b80405c9999914d57cceb158411ab150b800fc0c6795f02a0332d8e89ed7",
     "planning/tn0484_abstract.tex": "853f47a0db90c442b80a26fb7deb070a9491a6808b6e267f1816a0e6b980a3a6",
-    "planning/tn0484_storyline.tex": "707cbba4bbb3cac0cfe22e5555e04e2b7d414d2710ec1fcc1b415997335cb146",
+    "planning/tn0484_storyline.tex": "29751776cdf07586934ecae01108e1d2c3e95696be39ab1f007c5bac7ffbb8ad",
     "planning/tn0484_notation.tex": "dd066ca147f4a16532913d85f13d28dbee835e67908f2b65eef9ae24ff26fb3b",
     "figures_src/fig_models_ti.tex": "6250c979b717018b4fd5037c3099940fa380b921ee2e9d5cfd66aa1fdaff8600",
     "figures_src/fig_models_ti_caption.tex": "08c72d57c7df8e76e57a6aac84a2f9949c7c82b1badfab4e6df0b4c5676ff8da"
@@ -788,6 +817,32 @@
       "result": "All five scientific refinements accepted; corrected direct Violante contrast acknowledged.",
       "scope": "Acceptance of the interpretation and implementation brief; not a fidelity review of the later integrated manuscript.",
       "Ricardo_reply_status_reported": "Giulio reply draft incorporates all five points; no sending inferred."
+    }
+  },
+  "draft18_fem_placeholders": {
+    "record": "docs/revision_2026-10-09_v0150draft18_fem_placeholders.md",
+    "audit": "docs/draft18_fem_placeholder_audit_2026-10-09.json",
+    "editing_baseline": "3bfbfe2",
+    "labels": {
+      "sec:fem-methods": "3.3",
+      "sec:fem-results": "4.5",
+      "fig:fem": "8"
+    },
+    "release_plan": {
+      "authorized_by": "Giulio, relayed by klaus-484-TI-helper at 2026-10-09 10:41 CEST",
+      "responsible_peer": "klaus-484-TI-helper",
+      "trigger": "Final draft18 commit and PDF handoff from Kaiti",
+      "authorized_actions": [
+        "GitHub push",
+        "Overleaf synchronization",
+        "Calliope update"
+      ],
+      "remaining_holds": [
+        "Zenodo release",
+        "coauthor circulation"
+      ],
+      "external_actions_performed_by_Kaiti": [],
+      "FEM_results_status": "awaiting Ricardo Salvador; placeholders only"
     }
   }
 }

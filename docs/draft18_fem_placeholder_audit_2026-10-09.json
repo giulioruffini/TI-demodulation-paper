@@ -1,0 +1,199 @@
+{
+  "date": "2026-10-09",
+  "version": "0.15.0-draft18",
+  "editing_baseline": "3bfbfe2",
+  "redline_baseline": "c620335",
+  "outputs": {
+    "jne": {
+      "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
+      "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.log",
+      "pages": 42,
+      "sha256": "f9939c6a188a9fa273214feb6fb7daf546ad57fb625910ec2eb9e251a03f0418",
+      "diagnostics": {
+        "errors": 0,
+        "undefined": 0,
+        "overfull": 0,
+        "duplicate_labels": 0
+      },
+      "validation_scope": "Final local draft18 bundle for the authorized Klaus handoff; regenerated from the shared source.",
+      "author_metadata_verified": true
+    },
+    "supplement": {
+      "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne_supplement.pdf",
+      "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne_supplement.log",
+      "pages": 21,
+      "sha256": "18be64717b3e5fbb752b3c3b2b9f272b110184041af485348043606371fc4612",
+      "diagnostics": {
+        "errors": 0,
+        "undefined": 0,
+        "overfull": 0,
+        "duplicate_labels": 0
+      },
+      "validation_scope": "Final local draft18 bundle for the authorized Klaus handoff; regenerated from the shared source.",
+      "author_metadata_verified": true
+    },
+    "tn": {
+      "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_envelope_demodulation.pdf",
+      "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_envelope_demodulation.log",
+      "pages": 59,
+      "sha256": "c45e0ecfbcdba4934d54bbaefabf1e0de1a4ad4f028b4ce5191bd56f37a96f62",
+      "diagnostics": {
+        "errors": 0,
+        "undefined": 0,
+        "overfull": 0,
+        "duplicate_labels": 0
+      },
+      "validation_scope": "Final local draft18 bundle for the authorized Klaus handoff; regenerated from the shared source.",
+      "author_metadata_verified": true
+    },
+    "redline": {
+      "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.pdf",
+      "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.log",
+      "pages": 51,
+      "sha256": "813fec07c78e3fe0207364a5a2ad67d83011f7559cdb8ae0aeb8c01523b7834d",
+      "diagnostics": {
+        "errors": 0,
+        "undefined": 0,
+        "overfull": 0,
+        "duplicate_labels": 0
+      },
+      "validation_scope": "Final local draft18 bundle for the authorized Klaus handoff; regenerated from the shared source."
+    },
+    "storyline": {
+      "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.pdf",
+      "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.log",
+      "pages": 13,
+      "sha256": "253ed5b6c3974e9006352ed271e3e687bd0c2ff5c5352523b7da34452d6f5a36",
+      "diagnostics": {
+        "errors": 0,
+        "undefined": 0,
+        "overfull": 0,
+        "duplicate_labels": 0
+      },
+      "validation_scope": "Final local draft18 bundle for the authorized Klaus handoff; regenerated from the shared source."
+    }
+  },
+  "new_labels": {
+    "sec:fem-methods": "3.3",
+    "sec:fem-results": "4.5",
+    "fig:fem": "8"
+  },
+  "label_number_changes": {
+    "sec:jr-methods": [
+      "3.3",
+      "3.4"
+    ],
+    "sec:nmm2-methods": [
+      "3.4",
+      "3.5"
+    ],
+    "sec:qif-methods": [
+      "3.5",
+      "3.6"
+    ],
+    "sec:vocab-methods": [
+      "3.7",
+      "3.8"
+    ],
+    "sec:jcurve": [
+      "4.5",
+      "4.6"
+    ],
+    "fig:jcurve": [
+      "8",
+      "9"
+    ],
+    "sec:timing": [
+      "4.6",
+      "4.7"
+    ],
+    "sec:tacs-results": [
+      "4.7",
+      "4.8"
+    ],
+    "fig:crossover": [
+      "9",
+      "10"
+    ],
+    "sec:nmm2-results": [
+      "4.8",
+      "4.9"
+    ],
+    "fig:nmm2_res": [
+      "10",
+      "11"
+    ],
+    "sec:qif": [
+      "4.9",
+      "4.10"
+    ],
+    "fig:qif_raster": [
+      "11",
+      "12"
+    ],
+    "fig:qif_regimes": [
+      "12",
+      "13"
+    ]
+  },
+  "all_prior_labels_retained_in_order": true,
+  "equation_numbers_unchanged": true,
+  "table_numbers_unchanged": true,
+  "supplementary_figure_numbers_unchanged": true,
+  "abstract_words_texcount_expanded": 296,
+  "abstract_unchanged": true,
+  "scientific_code_caches_figures_bibliography_unchanged": true,
+  "source_appendix_tail_unchanged": true,
+  "visual_inspection": {
+    "date": "2026-10-09",
+    "scope": "Red FEM Methods/Results placeholders and framed Figure 8 in JNE and TN; matching redline/storyline pages; refreshed supplement notation.",
+    "pages": {
+      "jne": [
+        16,
+        24
+      ],
+      "tn": [
+        17,
+        25
+      ],
+      "redline": [
+        20,
+        28,
+        29
+      ],
+      "storyline": [
+        7,
+        8
+      ],
+      "supplement": [
+        2
+      ]
+    },
+    "result": "Inspected additions are legible and marked as placeholders; no text clipping or overlap. No out-of-page text in any of the five PDFs."
+  },
+  "out_of_page_text": {
+    "jne": [],
+    "supplement": [],
+    "tn": [],
+    "redline": [],
+    "storyline": []
+  },
+  "new_FEM_results_or_values": false,
+  "prose_mechanical_findings": 0,
+  "release_plan": {
+    "authorized_by": "Giulio, relayed by klaus-484-TI-helper at 2026-10-09 10:41 CEST",
+    "responsible_peer": "klaus-484-TI-helper",
+    "trigger": "Final draft18 commit and PDF handoff from Kaiti",
+    "authorized_actions": [
+      "GitHub push",
+      "Overleaf synchronization",
+      "Calliope update"
+    ],
+    "remaining_holds": [
+      "Zenodo release",
+      "coauthor circulation"
+    ],
+    "external_actions_performed_by_Kaiti": [],
+    "FEM_results_status": "awaiting Ricardo Salvador; placeholders only"
+  }
+}

@@ -35,6 +35,13 @@ Guy Eyal, Matthijs~B. Verhoog, Guilherme Testa-Silva, Yair Deitcher,
   neocortical neurons.
 \newblock {\em eLife}, 5:e16553, 2016.
 
+\bibitem{esmaeilpour2021}
+Zeinab Esmaeilpour, Greg Kronberg, Davide Reato, Lucas~C. Parra, and Marom
+  Bikson.
+\newblock Temporal interference stimulation targets deep brain regions by
+  modulating neural oscillations.
+\newblock {\em Brain Stimulation}, 14(1):55--65, 2021.
+
 \bibitem{cohen2020periaxonal}
 Charles C.~H. Cohen, Marko~A. Popovic, Jan Klooster, Marie-Theres Weil, Wiebke
   M{\"o}bius, Klaus-Armin Nave, and Maarten H.~P. Kole.
@@ -116,8 +123,8 @@ Hossein Soroushi, Sara Abbasi, Yun Du, Ning Ning, and Yuming Lei.
 \newblock {\em WIREs Computational Statistics}, 17(3):e70031, 2025.
 
 \bibitem{wangw2026}
-Wei Wang, M.~Florian, C.~Ling, K.~Wei, J.~Jian, H.~Sun, L.~Yan, S.~Hu, and
-  B.~Bi.
+Wenjiang Wang, Florian Missey, Chenxi Ling, Kun Wei, Junhao Jian, Haoxuan Sun,
+  Liujiao Yan, Shaohua Hu, and Bo~Bi.
 \newblock Temporal interference stimulation: a new paradigm for non-invasive
   deep brain stimulation---mechanistic insights, clinical advances, and future
   directions.
@@ -146,15 +153,14 @@ Ryan~B. Budde, Michael~T. Williams, and Pedro~P. Irazoqui.
 Iurii Semenov, Vitalii Kim, Giedre Silkuniene, and Andrei~G. Pakhomov.
 \newblock Excitation and polarization of isolated neurons by high-frequency
   sine waves for temporal interference stimulation.
-\newblock {\em Cell Reports Physical Science}, 2025.
+\newblock {\em Cell Reports Physical Science}, 6(7):102660, 2025.
 
 \bibitem{ruffini2025cfc}
 Giulio Ruffini, Edmundo Lopez-Sola, Raul Palma, Roser Sanchez-Todo, Jakub
   Vohryzek, Francesca Castaldo, and Karl Friston.
 \newblock Cross-frequency coupling as a neural substrate for prediction error
   evaluation: a laminar neural mass modeling approach.
-\newblock {\em bioRxiv}, 2025.
-\newblock Preprint 2025.03.19.644090.
+\newblock {\em Neural Computation}, 38(8):1299--1343, 2026.
 
 \bibitem{ruffini2025ham}
 Giulio Ruffini.
@@ -214,6 +220,14 @@ Adri{\`a} Galan-Gadea, Ricardo Salvador, Fabrice Bartolomei, Fabrice Wendling,
   potential shift induced by {tDCS} in realistic neuron models.
 \newblock {\em Journal of Neural Engineering}, 20(2):026004, 2023.
 
+\bibitem{cassara2025part2}
+Antonino~M. Cassar{\`a}, Taylor~H. Newton, Katie Zhuang, Sabine~J. Regel, Peter
+  Achermann, Alvaro Pascual-Leone, Niels Kuster, and Esra Neufeld.
+\newblock Recommendations for the safe application of temporal interference
+  stimulation in the human brain part {II}: Biophysics, dosimetry, and safety
+  recommendations.
+\newblock {\em Bioelectromagnetics}, 46(1):e22536, 2025.
+
 \bibitem{grimbert2006}
 Fran{\c c}ois Grimbert and Olivier Faugeras.
 \newblock Bifurcation analysis of {J}ansen's neural mass model.
@@ -241,13 +255,6 @@ Adriano B.~L. Tort, Robert Komorowski, Howard Eichenbaum, and Nancy Kopell.
 \newblock Measuring phase-amplitude coupling between neuronal oscillations of
   different frequencies.
 \newblock {\em Journal of Neurophysiology}, 104(2):1195--1210, 2010.
-
-\bibitem{esmaeilpour2020}
-Zeinab Esmaeilpour, Mark Jackson, Greg Kronberg, Tianhe Zhang, Rosana Esteller,
-  Brad Hershey, and Marom Bikson.
-\newblock Limited sensitivity of hippocampal synaptic function or network
-  oscillations to unmodulated kilohertz electric fields.
-\newblock {\em eNeuro}, 7(6):ENEURO.0368--20.2020, 2020.
 
 \bibitem{cifra2026}
 Michal Cifra, Saurabh~Kumar Pandey, Tom{\'a}{\v s} Zakar, Michaela Poplov{\'a},
@@ -282,10 +289,27 @@ Charlotte~E. Luff, Patrycja Dzialecka, Emma Acerbo, Adam Williamson, and Nir
   stimulation.
 \newblock {\em Brain Stimulation}, 17(1):92–103, January 2024.
 
+\bibitem{violante2023}
+Ines~R. Violante, Ketevan Alania, Antonino~M. Cassar{\`a}, Esra Neufeld, Emma
+  Acerbo, Romain Carron, Adam Williamson, Danielle~L. Kurtin, Edward Rhodes,
+  Adam Hampshire, Niels Kuster, Edward~S. Boyden, Alvaro Pascual-Leone, and Nir
+  Grossman.
+\newblock Non-invasive temporal interference electrical stimulation of the
+  human hippocampus.
+\newblock {\em Nature Neuroscience}, 26(11):1994--2004, 2023.
+
 \bibitem{missey2026}
-Florian Missey, Emma Acerbo, Adam~S. Dickey, et~al.
+Florian Missey, Emma Acerbo, Adam~S. Dickey, Jan Trajlinek, Ond{\v r}ej
+  Studni{\v c}ka, Claudia Lubrano, Mariane de~Ara{\'u}jo~e Silva, Evan Brady,
+  Vit V{\v s}iansk{\'y}, Johanna Szabo, Irena Dolezalova, Daniel Fabo, Martin
+  Pail, Claire-Anne Gutekunst, Rosanna Migliore, Michele Migliore, Stanislas
+  Lagarde, Romain Carron, Fariba Karimi, Raul~Castillo Astorga, Antonino~M.
+  Cassara, Niels Kuster, Esra Neufeld, Fabrice Bartolomei, Nigel~P. Pedersen,
+  Robert~E. Gross, Viktor Jirsa, Daniel~L. Drane, Milan Br{\'a}zdil, and Adam
+  Williamson.
 \newblock Non-invasive temporal interference stimulation of the hippocampus
-  suppresses epileptic biomarkers in patients with epilepsy.
+  suppresses epileptic biomarkers in patients with epilepsy: biophysical
+  differences between kilohertz and amplitude modulated stimulation.
 \newblock {\em Brain Stimulation}, 19(1):102981, 2026.
 
 \bibitem{ali2013}
@@ -365,28 +389,19 @@ Paria Mansourinezhad, Rob M~C Mestrom, Debby C~W Klooster, Mathieu Sprengers,
   temporal interference stimulation.
 \newblock {\em Journal of Neural Engineering}, 22(5):051001, September 2025.
 
+\bibitem{esmaeilpour2020}
+Zeinab Esmaeilpour, Mark Jackson, Greg Kronberg, Tianhe Zhang, Rosana Esteller,
+  Brad Hershey, and Marom Bikson.
+\newblock Limited sensitivity of hippocampal synaptic function or network
+  oscillations to unmodulated kilohertz electric fields.
+\newblock {\em eNeuro}, 7(6):ENEURO.0368--20.2020, 2020.
+
 \bibitem{gordon2019}
 Nathan Gordon, Jakob Hohwy, Matthew~J. Davidson, Jeroen J.~A. van Boxtel, and
   Naotsugu Tsuchiya.
 \newblock From intermodulation components to visual perception and
   cognition---a review.
 \newblock {\em NeuroImage}, 199:480--494, 2019.
-
-\bibitem{esmaeilpour2021}
-Zeinab Esmaeilpour, Greg Kronberg, Davide Reato, Lucas~C. Parra, and Marom
-  Bikson.
-\newblock Temporal interference stimulation targets deep brain regions by
-  modulating neural oscillations.
-\newblock {\em Brain Stimulation}, 14(1):55--65, 2021.
-
-\bibitem{violante2023}
-Ines~R. Violante, Ketevan Alania, Antonino~M. Cassar{\`a}, Esra Neufeld, Emma
-  Acerbo, Romain Carron, Adam Williamson, Danielle~L. Kurtin, Edward Rhodes,
-  Adam Hampshire, Niels Kuster, Edward~S. Boyden, Alvaro Pascual-Leone, and Nir
-  Grossman.
-\newblock Non-invasive temporal interference electrical stimulation of the
-  human hippocampus.
-\newblock {\em Nature Neuroscience}, 26(11):1994--2004, 2023.
 
 \bibitem{lachaux1999}
 Jean-Philippe Lachaux, Eugenio Rodriguez, Jacques Martinerie, and Francisco~J.
