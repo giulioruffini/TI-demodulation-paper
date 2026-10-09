@@ -18,7 +18,7 @@
 - [x] verify published Luff Fig. 1 and Methods for annotation 20: seven carrier conditions, no matched carrier-polarization analysis (October 6)
 - [x] close Klaus's scoped draft15 focality integration check at 972d9ea; subsequent draft16 and draft17 checks also recorded
 - [x] address the 26 annotations in Giulio's GR review PDF: split envelope/DC subsections, group NMM2 Results, move predictions to Discussion, and clarify local explanations (October 6)
-- [x] integrate the approved JR/NMM2 schematic and mark its synaptic low-pass stage; correct the caption and separate the r_E label from the detection annotation (October 6 and 9)
+- [x] integrate the approved JR/NMM2 schematic with compact LPF tags on every synaptic pathway, readable lettering, and the matching caption (October 6 and 9)
 - [x] state the generated steady-drive boundary restriction separately from beat focality in the shared abstract and Theory (October 6)
 - [x] put the shared notation table in JNE Appendix A, reconcile symbols and units across article/supplement/figures, and verify unchanged equation and figure numbering in draft14 (October 6)
 - [x] distinguish harmonic ratios H_det/H_meas from drive ratios R_det/R_lin throughout draft15 and the shared notation table (October 6)

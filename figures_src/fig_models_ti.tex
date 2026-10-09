@@ -23,6 +23,8 @@
   lab/.style={font=\footnotesize, text=negray, align=center},
   stage/.style={font=\footnotesize\bfseries, text=nered, align=center},
   title/.style={font=\bfseries, text=neblue, anchor=west},
+  lpf/.style={draw=neblue, line width=0.6pt, rounded corners=1pt, fill=nelight, text=neblue,
+              font=\scriptsize, inner sep=1.2pt, minimum height=3.4mm, sloped=false},
 }
 \newcommand{\beaticon}[3]{% x0, y0, width
   \draw[negreen, line width=0.6pt, domain=0:#3, samples=500, smooth, variable=\t]
@@ -48,7 +50,7 @@
 \node[pop] (IIN) at (9.0, 1.05) {inhibitory\\interneurons};
 
 % forward: P -> both interneuron populations (y0 through h_e)
-\node[aux, minimum width=9mm, minimum height=7mm, inner sep=1pt, font=\scriptsize] (lpfA) at (6.38, 2.35) {$h_e$\\LPF};
+\node[lpf] (lpfA) at (6.4, 2.35) {LPF};
 \coordinate (bus) at (7.2, 2.35);
 \draw[line width=0.9pt, neblue] (P.east) -- (lpfA.west);
 \draw[line width=0.9pt, neblue] (lpfA.east) -- (bus);
@@ -57,13 +59,14 @@
 \node[lab, anchor=south] at (7.01, 2.36) {$y_0$};
 \node[lab, anchor=south] at (7.55, 3.66) {$C_1y_0$};
 \node[lab, anchor=north] at (7.55, 1.04) {$C_3y_0$};
-\node[stage, anchor=north] at (6.38, 1.9) {low-pass:\\synapses};
 
 % feedback
 \draw[exc] (EIN.north) |- (5.3, 4.65) -- ($(P.north)+(0.7,0)$);
-\node[lab, anchor=north] at (6.9, 4.62) {$+\,y_1$: $C_2$ ($h_e$)};
+\node[lpf] at (6.1, 4.65) {LPF};
+\node[lab, anchor=north] at (7.45, 4.62) {$+\,y_1$: $C_2$};
 \draw[inh] (IIN.south) |- (5.3, 0.05) -- ($(P.south)+(0.7,0)$);
-\node[lab, anchor=south] at (6.9, 0.08) {$-\,y_2$: $C_4$ ($h_i$)};
+\node[lpf] at (6.1, 0.05) {LPF};
+\node[lab, anchor=south] at (7.45, 0.08) {$-\,y_2$: $C_4$};
 \node[lab, anchor=west] (pin) at (10.4, 4.65) {input $p$};
 \draw[exc] (pin.west) -- (9.0, 4.65);
 
@@ -92,18 +95,17 @@
 \node[pop, minimum width=30mm, font=\footnotesize] (E) at (4.75, 2.35) {E population $(r_E,v_E)$\\$\tau_E\dot v_E=v_E^2+\cdots+I_E$};
 \node[pop, minimum width=27mm] (I) at (9.8, 2.35) {I population\\$(r_I,\,v_I)$, $\tau_I$};
 \draw[fld] (accB.east) -- node[above, pos=0.3, font=\footnotesize, text=negreen] {$I_E$} (E.west);
-\node[stage, anchor=north] at ($(E.south)+(0.6,-0.08)$) {detection: $v_E^2$,\\after $\tau_E$ integration};
+\node[stage, anchor=north] at ($(E.south)+(0.3,-0.08)$) {detection: $v_E^2$,\\after $\tau_E$ integration};
 
-\draw[exc] ($(E.east)+(0,0.3)$) -- node[aux, pos=0.5, minimum width=15mm, minimum height=4.4mm, inner sep=1pt, font=\scriptsize] (lpfB1) {AMPA LPF, $\tau_a$} ($(I.west)+(0,0.3)$);
-\draw[inh] ($(I.west)+(0,-0.3)$) -- node[aux, pos=0.5, minimum width=15mm, minimum height=4.4mm, inner sep=1pt, font=\scriptsize] (lpfB2) {GABA LPF, $\tau_g$} ($(E.east)+(0,-0.3)$);
-\node[lab, anchor=south] at (lpfB1.north) {$Jw_{IE}$};
-\node[lab, anchor=north] at (lpfB2.south) {$Jw_{EI}$};
-\node[stage, anchor=south] at ($(lpfB1.north)+(0,0.3)$) {low-pass: synapses};
-\draw[exc] ($(E.north)+(0.05,0)$) to[out=60, in=120, looseness=3.2] node[above, lab] {$J w_{EE}$} ($(E.north)+(0.95,0)$);
-\draw[inh] ($(I.north)+(-0.45,0)$) to[out=60, in=120, looseness=3.2] node[above, lab] {$J w_{II}$} ($(I.north)+(0.45,0)$);
+\draw[exc] ($(E.east)+(0,0.3)$) -- node[lpf, pos=0.5] (lpfB1) {LPF} ($(I.west)+(0,0.3)$);
+\draw[inh] ($(I.west)+(0,-0.3)$) -- node[lpf, pos=0.5] (lpfB2) {LPF} ($(E.east)+(0,-0.3)$);
+\node[lab, anchor=south] at (lpfB1.north) {AMPA, $Jw_{IE}$};
+\node[lab, anchor=north] at (lpfB2.south) {GABA, $Jw_{EI}$};
+\draw[exc] ($(E.north)+(0.05,0)$) to[out=60, in=120, looseness=3.2] node[lpf, pos=0.5] {LPF} node[left=3.5mm, pos=0.5, lab] {$J w_{EE}$} ($(E.north)+(0.95,0)$);
+\draw[inh] ($(I.north)+(-0.45,0)$) to[out=60, in=120, looseness=3.2] node[lpf, pos=0.5] {LPF} node[right=3.5mm, pos=0.5, lab] {$J w_{II}$} ($(I.north)+(0.45,0)$);
 
-\draw[-{Stealth[length=2.2mm]}, line width=0.9pt, negray] ($(E.south)+(-1.15,0)$) -- ++(0,-0.6)
-   node[below, lab, xshift=-4mm] {rate $r_E$};
+\draw[-{Stealth[length=2.2mm]}, line width=0.9pt, negray] ($(E.south)+(-1.3,0)$) -- ++(0,-0.6)
+   node[left, lab] {$r_E$};
 
 \coordinate (topB) at ($(E.north)+(0,1.0)$); \coordinate (botB) at ($(I.south)+(0,-1.15)$);
 \begin{scope}[on background layer]

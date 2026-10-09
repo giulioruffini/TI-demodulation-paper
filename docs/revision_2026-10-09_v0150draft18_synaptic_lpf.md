@@ -1,32 +1,33 @@
-# Figure 2 shows the synaptic low-pass stage
+# Figure 2 marks every synaptic pathway with a compact LPF tag
 
-October 9, 2026. Giulio's schematic revision was relayed by `giulio-shell` at
-10:00 CEST. The integration starts from `0d15d14` on `two-tone-validation` and
-uses the TikZ source and assets from `fig-models-ti`, commit `423dba3`.
-The working edition remains v0.15.0-draft18.
+October 9, 2026. Giulio's preference for compact tags was relayed by
+`giulio-shell` at 10:20 CEST, superseding the earlier large-filter-box design.
+This integration starts from `479dc0f` on `two-tone-validation` and uses
+`fig-models-ti`, commit `063a493`. The working edition remains v0.15.0-draft18.
+The earlier boxed version is preserved in commit `479dc0f` and is replaced
+in the current article.
 
-Panel (a) places the excitatory synaptic filter between the pyramidal firing
-rate and the filtered potential y0. Panel (b) labels the AMPA and GABA filters
-on the E–I pathways. Both panels identify synapses as the low-pass stage.
-The second-order filter equations agree with these placements: the synapses
-act on the output of the nonlinear populations.
+Panel (a) has three tags: the pyramidal output before the filtered potential
+y0, the excitatory return after input p merges, and the inhibitory return.
+Panel (b) has four: the AMPA and GABA connections between populations and
+both self-loops. Kernel names and time constants are explained in the caption;
+the repeated red low-pass stage labels are removed. These placements agree
+with the model's second-order synaptic filters.
 
-The caption adds the requested explanation after the modal-gain sentence. It
-says that the filters attenuate the carrier more strongly than the beat and
-transmit the steady shift into the recurrent loop. This replaces “remove,”
-which would imply an exact rejection at finite carrier frequency. It also
-avoids calling h_i a separate LPF box: that return kernel is labeled in the
-diagram but is not boxed. The existing explanations of filtered y0, inverse
-times a and b, membrane time tau_X, frequency f0, and arrow colors are retained.
+The caption describes the compact tags after the modal-gain sentence. It
+retains “attenuate” rather than “remove”: the filters attenuate the carrier
+more strongly than the beat and transmit the steady shift into the recurrent
+loop, without an exact carrier zero. Existing explanations of filtered y0,
+inverse times a and b, membrane time tau_X, frequency f0, and arrow colors
+are retained.
 
-The upstream figure had a small overlap between the rate r_E output label
-and the word “after” in the detection annotation. Their PDF word boxes
-overlapped by 25% of the smaller box. Moving only the rate label 4 mm left
-removed it. The regenerated figure retains its 506.21 × 353.09 pt size.
-The remaining two bounding-box intersections are the superscript/subscript
-parts of v_E squared; visual inspection confirms that they are intentional
-mathematical typesetting. No word is clipped. The LPF labels print at 6.40 pt
-base size in the article, with smaller mathematical subscripts.
+The supplied tiny tag lettering would print at 4.57 pt. The tag font is now
+scriptsize, giving 6.40 pt at its final size in the article. The two self-loop
+weight labels are offset 3.5 mm rather than 2.2 mm to keep them clear of the
+tags. These are the only TikZ changes relative to `063a493`. The seven tags
+remain compact, and the figure retains its 506.21 × 353.09 pt size. No words
+are clipped or overlap. The bounding-box check flags only two intentional
+superscript/subscript intersections in v_E squared, verified in the render.
 
 The JNE article and the redline against draft13 `c620335` were rebuilt, with
 40 and 48 pages. The logs contain no errors, undefined references, overfull
