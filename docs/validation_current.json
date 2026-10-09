@@ -1,50 +1,53 @@
 {
-  "version": "0.15.0-draft17",
-  "review_baseline": "e07b44a",
+  "version": "0.15.0-draft18",
+  "review_baseline": "8dc6eca",
   "redline_baseline": "c620335",
-  "status": "Draft17 passed the bounded independent check of the new tests and carrier/bound wording with no discrepancies. Clean builds and retained content. Giulio's cut decisions, author declarations and release authorization remain pending.",
+  "status": "Draft18 adds Ricardo Salvador to the author records and declarations. Scientific text is unchanged from the reviewed draft17. Author position, CRediT/funding confirmation, FEM results and release authorization remain pending.",
   "outputs": {
     "jne": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.log",
       "pages": 40,
-      "sha256": "9e2ec320600f1d3c7b66297b13509dbdafaa988f67fbd6dffe451abcb704b9eb",
+      "sha256": "dd438dc69060621d788b774d352bafcbefffc22c13acbfaf5eb39ddc4eb1e694",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
         "overfull": 0,
         "duplicate_labels": 0
-      }
+      },
+      "author_metadata_verified": true
     },
     "supplement": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne_supplement.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne_supplement.log",
       "pages": 21,
-      "sha256": "8b9ebc97d3b9de364eb90a0ee7e653c919ac11f36de378b6b1c2ca2fb3d9dab6",
+      "sha256": "0a6a27727f8da9994b2394e8736475df787a884f0c5d99d446f0f7b8877f6c15",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
         "overfull": 0,
         "duplicate_labels": 0
-      }
+      },
+      "author_metadata_verified": true
     },
     "tn_validation": {
-      "path": "/tmp/tn0484_draft15_revision/build/tn_validation.pdf",
-      "log": "/tmp/tn0484_draft15_revision/build/tn_validation.log",
+      "path": "/var/folders/1v/vw2pwln11hl2pz2h2kt7dgf40000gn/T/tn0484-draft18-validation-043dwuri/tn_validation.pdf",
+      "log": "/var/folders/1v/vw2pwln11hl2pz2h2kt7dgf40000gn/T/tn0484-draft18-validation-043dwuri/tn_validation.log",
       "pages": 57,
-      "sha256": "e63e5c238a002b72bbb3548a2175d2c3cfee3d371b4278778648085f74af34d2",
+      "sha256": "b10e4ba0724f2ee760cbc657063177710b6f52989041940fb9078aff1257e4b3",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
         "overfull": 0,
         "duplicate_labels": 0
-      }
+      },
+      "author_metadata_verified": true
     },
     "storyline": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.log",
       "pages": 11,
-      "sha256": "46f67209827d5ce0d0a472b1321c8ee207a3d25f9b840a33ca23fa7dadbb3e43",
+      "sha256": "23aa4daae850d967139d12fc5d026f9e775d09b1325d71c218d6affe19b3ee7e",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -56,7 +59,7 @@
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.log",
       "pages": 48,
-      "sha256": "f44055848e179dd66a198c41ac59f9838d2a36c54b8b8d204063be6bd1a00d16",
+      "sha256": "e5640020ca6c31ed54d18f33ac4956c6b66ae938b3b598e642dff55f242eef89",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -66,7 +69,9 @@
     }
   },
   "retention": {
-    "editing_baseline": "e07b44a",
+    "editing_baseline": "8dc6eca",
+    "scientific_body_byte_identical": true,
+    "appendices_and_AI_declaration_byte_identical": true,
     "fig_labels": {
       "count": 25,
       "numbers_unchanged": true
@@ -74,18 +79,9 @@
     "eq_labels": {
       "count": 32,
       "numbers_unchanged": true,
-      "renumbering": {},
-      "bodies_changed": [
-        "eq:etasup"
-      ],
-      "change": "Approximate equality marks the numerical supremum; no new or removed equation."
+      "bodies_changed": []
     },
     "cited_works": 60,
-    "notation_table": {
-      "article_number": "5",
-      "supplement_number": "1",
-      "shared_source": "planning/tn0484_notation.tex"
-    },
     "simulation_producers_and_caches_unchanged": true,
     "existing_figures_unchanged": true,
     "abstract_source_unchanged": true,
@@ -108,34 +104,34 @@
     "docs/draft11_timing_reproduction_2026-10-05.json"
   ],
   "visual_inspection": {
-    "jne_pages": [
-      1,
-      30,
-      31,
-      32
-    ],
-    "supplement_pages": [
-      1,
-      8,
-      9
-    ],
-    "redline_pages": [
-      36,
-      38,
-      39
-    ],
-    "storyline_pages": [
-      9,
-      10,
-      11
-    ],
-    "findings": "Rebuilt pages checked for the two new prediction rows, bound scope, equation approximation, table continuations, and final storyline placement note; no clipping or overlaps."
+    "date": "2026-10-09",
+    "scope": "Changed title pages and article declarations; headers on the refreshed storyline and fixed-baseline redline. No scientific figure changes.",
+    "pages": {
+      "jne": [
+        1,
+        33
+      ],
+      "supplement": [
+        1
+      ],
+      "tn_validation": [
+        1
+      ],
+      "redline": [
+        1,
+        40
+      ],
+      "storyline": [
+        1
+      ]
+    },
+    "result": "No clipping, overlaps, or missing author/ORCID text on inspected pages."
   },
   "source_sha256": {
-    "TN0484_envelope_demodulation.tex": "1d9681a0993697b0b53786a5d44b67a660eb189621bdf5900781aec0268e4e42",
+    "TN0484_envelope_demodulation.tex": "5592d9415f60800b79ebb13797830be902199cf1f1c890f79d64caea77bf9fa6",
     "references.bib": "8ee2a664fc78b990a6811d1bb9fef0d1c4eb68d4f5f2ee52f167604b94f96907",
     "planning/tn0484_abstract.tex": "853f47a0db90c442b80a26fb7deb070a9491a6808b6e267f1816a0e6b980a3a6",
-    "planning/tn0484_storyline.tex": "212f48cf987baef67991951d54c575f9c730b426f93c2f7cae3da4d04a8776fa",
+    "planning/tn0484_storyline.tex": "4ed19c0cd0fcf3ca0b2853d7944adf7f434083fcacd70ec922a4bfb1f13bc5bb",
     "planning/tn0484_notation.tex": "3f5815400d8fa51affcd8fba240ed454adc52ea925c5e7b2b3a6141911cd2efa",
     "figures_src/fig_models_ti.tex": "a07d94124ba4f22561bca098134d6d194d717918dbb0fab37ad6381bbbd558be",
     "figures_src/fig_models_ti_caption.tex": "0b4e8a163826956987cdcac4fd36ffc01403869476fd0bd6f74fbb37f8bf266e"
@@ -224,72 +220,43 @@
     }
   },
   "current_revision": {
-    "date": "2026-10-06",
-    "baseline_commit": "e07b44a",
-    "authorization": "Klaus draft16 fidelity gap under the approved revision brief, plus the recorded carrier-polarization and detector-bound follow-ups.",
+    "date": "2026-10-09",
+    "baseline_commit": "8dc6eca",
+    "repository_checkpoint": "7d0a93f",
+    "authorization": "Giulio author addition relayed by giulio-shell at 09:38 CEST on October 9.",
     "abstract_words": 296,
     "abstract_unchanged": true,
-    "audit": "docs/draft17_fidelity_fixes_audit_2026-10-06.json",
-    "revision_record": "docs/revision_2026-10-06_v0150draft17_fidelity.md",
-    "substantive_removals": [],
-    "cut_candidates_retained": 7,
-    "new_prediction_rows": [
-      "Independent carrier amplitudes",
-      "Equal-power carrier control"
-    ],
+    "audit": "docs/draft18_authorship_audit_2026-10-09.json",
+    "revision_record": "docs/revision_2026-10-09_v0150draft18_authors.md",
+    "added_author": {
+      "name": "Ricardo Salvador",
+      "affiliation": "Neuroelectrics, Barcelona, Spain",
+      "ORCID": "0000-0003-1235-6533",
+      "position": "after Borja Mercadal; provisional",
+      "CRediT": "methodology (head modeling), software, formal analysis, visualization; provisional, for Ricardo to confirm"
+    },
     "new_numerical_work": false,
-    "existing_producer_rerun": "threshold_bound_check.py, recorded in docs/detector_bound_scope_2026-10-06.md",
-    "manuscript_prose_checker_findings": 0,
+    "new_FEM_results": false,
+    "scientific_text_changed": false,
     "held_actions": [
       "GitHub push",
       "Calliope/Zenodo cut",
       "Overleaf sync",
       "coauthor email"
     ],
-    "independent_fidelity_check": {
-      "reviewer": "klaus-484-TI-helper",
-      "status": "pass; no discrepancies",
-      "scope": "Only the two new Table 4 rows, local-polarization wording and monotone-detector bound; no full review or computations.",
-      "target_commit": "8dc6eca",
-      "sent_at": "2026-10-06 20:38 CEST",
-      "prior_bound_scope_agreement": {
-        "target_commit": "dc8e3c6",
-        "reported_at": "2026-10-06 20:27 CEST",
-        "result": "agrees with all scope qualifications; no disagreement",
-        "draft17_integration_check_still_pending": true
-      },
-      "reported_at": "2026-10-06 20:39 CEST",
-      "required_corrections": [],
-      "checked_items": [
-        "Independent-amplitude excursion maps, swap control and weak-input/state conditions",
-        "Equal-power control: second-order scope, same DC coefficient, beat and bifurcation distinction, mean-field-only evidence",
-        "Carrier row: local-polarization matching absent from the cited comparisons",
-        "Bound: positive step mixture, nonnegative direct coefficients, triangle inequality, boundedness, matched peak, open loop, carrier average, numerical approximation, logistic-only width illustration and dynamic-QIF exclusion"
-      ],
-      "optional_suggestion": {
-        "topic": "Use the beat fundamental instead of reconstructing the full excursion",
-        "reported_by": "Klaus; numerical samples not independently rerun in this record update",
-        "weaker_tone_amplitude": 1,
-        "stronger_to_weaker_ratios": [
-          1,
-          2,
-          10
-        ],
-        "envelope_fundamental_amplitudes_reported": [
-          0.849,
-          0.968,
-          0.999
-        ],
-        "reported_interpretation": "The envelope fundamental rises by at most about 18%, whereas the quadratic beat grows proportionally to the stronger tone. A calibrated lock-in can therefore distinguish the laws without reconstructing the full excursion.",
-        "disposition": "Optional; not integrated. The reviewed excursion-based test is correct and is retained."
-      }
-    },
+    "pending_confirmations": [
+      "Giulio: Ricardo byline position after Borja Mercadal",
+      "Ricardo: provisional CRediT line and funding",
+      "Giulio: placement of future FEM results"
+    ],
+    "prior_review": "Klaus draft17 bounded check remains recorded under draft17_stage_tests_revision; this authorship pass is a local metadata and build check.",
+    "manuscript_prose_checker_findings": 0,
+    "note_prose_checker_findings": 0,
     "review_shelf_verified": {
       "article": "40 pages, byte-identical to TN0484_jne.pdf",
       "redline": "48 pages, byte-identical to docs/redline_last_read.pdf",
       "annotated_original": "preserved"
-    },
-    "committed_as": "8dc6eca"
+    }
   },
   "focality_integration_revision": {
     "date": "2026-10-06",
@@ -557,5 +524,73 @@
       }
     }
   },
-  "landau_review_baseline": "0c394df"
+  "landau_review_baseline": "0c394df",
+  "draft17_stage_tests_revision": {
+    "date": "2026-10-06",
+    "baseline_commit": "e07b44a",
+    "authorization": "Klaus draft16 fidelity gap under the approved revision brief, plus the recorded carrier-polarization and detector-bound follow-ups.",
+    "abstract_words": 296,
+    "abstract_unchanged": true,
+    "audit": "docs/draft17_fidelity_fixes_audit_2026-10-06.json",
+    "revision_record": "docs/revision_2026-10-06_v0150draft17_fidelity.md",
+    "substantive_removals": [],
+    "cut_candidates_retained": 7,
+    "new_prediction_rows": [
+      "Independent carrier amplitudes",
+      "Equal-power carrier control"
+    ],
+    "new_numerical_work": false,
+    "existing_producer_rerun": "threshold_bound_check.py, recorded in docs/detector_bound_scope_2026-10-06.md",
+    "manuscript_prose_checker_findings": 0,
+    "held_actions": [
+      "GitHub push",
+      "Calliope/Zenodo cut",
+      "Overleaf sync",
+      "coauthor email"
+    ],
+    "independent_fidelity_check": {
+      "reviewer": "klaus-484-TI-helper",
+      "status": "pass; no discrepancies",
+      "scope": "Only the two new Table 4 rows, local-polarization wording and monotone-detector bound; no full review or computations.",
+      "target_commit": "8dc6eca",
+      "sent_at": "2026-10-06 20:38 CEST",
+      "prior_bound_scope_agreement": {
+        "target_commit": "dc8e3c6",
+        "reported_at": "2026-10-06 20:27 CEST",
+        "result": "agrees with all scope qualifications; no disagreement",
+        "draft17_integration_check_still_pending": true
+      },
+      "reported_at": "2026-10-06 20:39 CEST",
+      "required_corrections": [],
+      "checked_items": [
+        "Independent-amplitude excursion maps, swap control and weak-input/state conditions",
+        "Equal-power control: second-order scope, same DC coefficient, beat and bifurcation distinction, mean-field-only evidence",
+        "Carrier row: local-polarization matching absent from the cited comparisons",
+        "Bound: positive step mixture, nonnegative direct coefficients, triangle inequality, boundedness, matched peak, open loop, carrier average, numerical approximation, logistic-only width illustration and dynamic-QIF exclusion"
+      ],
+      "optional_suggestion": {
+        "topic": "Use the beat fundamental instead of reconstructing the full excursion",
+        "reported_by": "Klaus; numerical samples not independently rerun in this record update",
+        "weaker_tone_amplitude": 1,
+        "stronger_to_weaker_ratios": [
+          1,
+          2,
+          10
+        ],
+        "envelope_fundamental_amplitudes_reported": [
+          0.849,
+          0.968,
+          0.999
+        ],
+        "reported_interpretation": "The envelope fundamental rises by at most about 18%, whereas the quadratic beat grows proportionally to the stronger tone. A calibrated lock-in can therefore distinguish the laws without reconstructing the full excursion.",
+        "disposition": "Optional; not integrated. The reviewed excursion-based test is correct and is retained."
+      }
+    },
+    "review_shelf_verified": {
+      "article": "40 pages, byte-identical to TN0484_jne.pdf",
+      "redline": "48 pages, byte-identical to docs/redline_last_read.pdf",
+      "annotated_original": "preserved"
+    },
+    "committed_as": "8dc6eca"
+  }
 }

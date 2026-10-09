@@ -1,0 +1,72 @@
+{
+  "manuscript_baseline": "8dc6eca",
+  "repository_baseline": "7d0a93f",
+  "scientific_body_byte_identical": true,
+  "appendices_and_AI_declaration_byte_identical": true,
+  "abstract_byte_identical": true,
+  "labels_identical": true,
+  "equation_labels": 32,
+  "figure_labels": 25,
+  "new_scientific_results": false,
+  "added_author": {
+    "name": "Ricardo Salvador",
+    "affiliation": "Neuroelectrics, Barcelona, Spain",
+    "ORCID": "0000-0003-1235-6533",
+    "position": "after Borja Mercadal; provisional",
+    "CRediT": "methodology (head modeling), software, formal analysis, visualization; provisional, for Ricardo to confirm"
+  },
+  "figure_label_scope": "Manuscript source and included model-schematic caption",
+  "abstract_words": 296,
+  "outputs": {
+    "jne": {
+      "pages": 40,
+      "sha256": "dd438dc69060621d788b774d352bafcbefffc22c13acbfaf5eb39ddc4eb1e694",
+      "diagnostics": {
+        "errors": 0,
+        "undefined": 0,
+        "overfull": 0,
+        "duplicate_labels": 0
+      }
+    },
+    "supplement": {
+      "pages": 21,
+      "sha256": "0a6a27727f8da9994b2394e8736475df787a884f0c5d99d446f0f7b8877f6c15",
+      "diagnostics": {
+        "errors": 0,
+        "undefined": 0,
+        "overfull": 0,
+        "duplicate_labels": 0
+      }
+    },
+    "tn_validation": {
+      "pages": 57,
+      "sha256": "b10e4ba0724f2ee760cbc657063177710b6f52989041940fb9078aff1257e4b3",
+      "diagnostics": {
+        "errors": 0,
+        "undefined": 0,
+        "overfull": 0,
+        "duplicate_labels": 0
+      }
+    },
+    "storyline": {
+      "pages": 11,
+      "sha256": "23aa4daae850d967139d12fc5d026f9e775d09b1325d71c218d6affe19b3ee7e",
+      "diagnostics": {
+        "errors": 0,
+        "undefined": 0,
+        "overfull": 0,
+        "duplicate_labels": 0
+      }
+    },
+    "redline": {
+      "pages": 48,
+      "sha256": "e5640020ca6c31ed54d18f33ac4956c6b66ae938b3b598e642dff55f242eef89",
+      "diagnostics": {
+        "errors": 0,
+        "undefined": 0,
+        "overfull": 0,
+        "duplicate_labels": 0
+      }
+    }
+  }
+}

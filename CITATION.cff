@@ -21,6 +21,10 @@ authors:
     given-names: Borja
     affiliation: "Neuroelectrics"
     orcid: "https://orcid.org/0000-0002-0941-6796"
+  - family-names: Salvador
+    given-names: Ricardo
+    affiliation: "Neuroelectrics"
+    orcid: "https://orcid.org/0000-0003-1235-6533"
   - family-names: Just
     given-names: Alex
     affiliation: "Neuroelectrics"
@@ -51,7 +55,7 @@ identifiers:
     description: "Zenodo archive of this repository (concept DOI, resolves to latest version)"
 repository-code: "https://github.com/giulioruffini/TI-demodulation-paper"
 license: CC-BY-4.0
-version: "0.15.0-draft13"
+version: "0.15.0-draft18"
 # Local draft; date-released will be set when the held release is authorized.
 keywords:
   - temporal interference

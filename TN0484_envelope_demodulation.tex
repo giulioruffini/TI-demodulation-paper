@@ -86,11 +86,11 @@
 
 \newcommand{\Sig}{\sigma}
 \newcommand{\half}{\tfrac{1}{2}}
-\newcommand{\paperver}{0.15.0-draft17}
+\newcommand{\paperver}{0.15.0-draft18}
 \hypersetup{
   pdftitle={The cortical column as a tuned receiver: a network mechanism for temporal-interference stimulation},
-  pdfauthor={Giulio Ruffini, Borja Mercadal, Alex Just, Raul de Palma Aristides, Francesca Castaldo, Nir Grossman, Santiago Canals, Claudio Mirasso},
-  pdfsubject={TN0484 / WP0185, version \paperver, October 6, 2026}
+  pdfauthor={Giulio Ruffini, Borja Mercadal, Ricardo Salvador, Alex Just, Raul de Palma Aristides, Francesca Castaldo, Nir Grossman, Santiago Canals, Claudio Mirasso},
+  pdfsubject={TN0484 / WP0185, version \paperver, October 9, 2026}
 }
 
 \begin{document}
@@ -101,13 +101,15 @@
 % (reconstructed from the Overleaf edit plus the Zenodo deposit, not yet checked
 % by them); confirm corresponding-author email. ORCIDs below verified against
 % the ORCID registry (2026-07-21).
+% Ricardo Salvador's ORCID supplied as registry-verified by giulio-shell on
+% 2026-10-09. Placement after Borja Mercadal is provisional pending Giulio's decision.
 % ---------------------------------------------------------------------------
 \begin{center}
 {\LARGE\bfseries The cortical column as a tuned receiver:\\[4pt]
 a network mechanism for temporal-interference stimulation}\\[16pt]
-{\large Giulio Ruffini$^{1,2}$, Borja Mercadal$^{1}$, Alex Just$^{1}$,\\[2pt]
-Raul de Palma Aristides$^{2}$, Francesca Castaldo$^{1,2}$, Nir Grossman$^{5}$,\\[2pt]
-Santiago Canals$^{2,4}$, and Claudio Mirasso$^{2,3}$}\\[12pt]
+{\large Giulio Ruffini$^{1,2}$, Borja Mercadal$^{1}$, Ricardo Salvador$^{1}$,\\[2pt]
+Alex Just$^{1}$, Raul de Palma Aristides$^{2}$, Francesca Castaldo$^{1,2}$,\\[2pt]
+Nir Grossman$^{5}$, Santiago Canals$^{2,4}$, and Claudio Mirasso$^{2,3}$}\\[12pt]
 \begin{minipage}{0.86\textwidth}\centering\small
 $^{1}$Neuroelectrics, Barcelona, Spain\\
 $^{2}$BCOM, Barcelona, Spain\\
@@ -116,12 +118,13 @@ $^{4}$Instituto de Neurociencias (UMH-CSIC), Sant Joan d'Alacant, Spain\\
 $^{5}$Department of Brain Sciences and UK Dementia Research Institute,\\
 Imperial College London, London, United Kingdom\\[6pt]
 E-mail: \texttt{giulio.ruffini@neuroelectrics.com}\\[4pt]
-Working draft v\paperver\quad 2026-10-06
+Working draft v\paperver\quad 2026-10-09
 \end{minipage}\\[8pt]
 \begin{minipage}{0.86\textwidth}\centering\footnotesize\color{negray}
 \textbf{ORCID iDs:}\ %
 G.~Ruffini \href{https://orcid.org/0000-0003-3084-0177}{0000-0003-3084-0177};\ %
 B.~Mercadal \href{https://orcid.org/0000-0002-0941-6796}{0000-0002-0941-6796};\ %
+R.~Salvador \href{https://orcid.org/0000-0003-1235-6533}{0000-0003-1235-6533};\ %
 A.~Just \href{https://orcid.org/0009-0006-8794-7425}{0009-0006-8794-7425};\ %
 R.~de Palma Aristides \href{https://orcid.org/0000-0002-0255-2293}{0000-0002-0255-2293};\ %
 F.~Castaldo \href{https://orcid.org/0000-0002-4947-4552}{0000-0002-4947-4552};\ %
@@ -138,12 +141,12 @@ C.~Mirasso \href{https://orcid.org/0000-0003-2980-7038}{0000-0003-2980-7038}.
 a network mechanism for temporal-interference stimulation}\\[10pt]
 \begin{tabular}{@{}ll@{}}
 \textbf{Document:} & TN0484 (Neuroelectrics TN)\,/\,WP0185 (BCOM WP) \\
-\textbf{Authors:} & Giulio Ruffini, Borja Mercadal, Alex Just,\\
-& Raul de Palma Aristides, Francesca Castaldo, Nir Grossman,\\
-& Santiago Canals, and Claudio Mirasso \\
+\textbf{Authors:} & Giulio Ruffini, Borja Mercadal, Ricardo Salvador,\\
+& Alex Just, Raul de Palma Aristides, Francesca Castaldo,\\
+& Nir Grossman, Santiago Canals, and Claudio Mirasso \\
 \textbf{Affiliations:} & Neuroelectrics\,/\,BCOM\,/\,IFISC (UIB-CSIC)\,/\,IN (UMH-CSIC)\\
 & Imperial College London (Brain Sciences and UK Dementia Research Institute) \\
-\textbf{Date:} & 2026-10-06 \qquad \textbf{Version:} \paperver \\
+\textbf{Date:} & 2026-10-09 \qquad \textbf{Version:} \paperver \\
 \textbf{DOI:} & \href{https://doi.org/10.5281/zenodo.21009618}{10.5281/zenodo.21009618} \\
 \end{tabular}\\[4pt]
 {\color{neblue}\rule{\textwidth}{1pt}}
@@ -2083,14 +2086,14 @@ caches and a reproducible summary script. The code is released under CC-BY-4.0.
 GR, BM, AJ and FC have received funding from the European Research Council (ERC) under the
 European Union's Horizon 2020 research and innovation programme (grant agreement No 855109,
 GALVANI).
-% TODO before submission: funding for NG (Imperial), SC (IN, UMH-CSIC), and CM (IFISC, UIB-CSIC).
+% TODO before submission: funding for RS (Neuroelectrics), NG (Imperial), SC (IN, UMH-CSIC), and CM (IFISC, UIB-CSIC).
 % IOP requires the funding agency AND grant number disclosed for all support.
 
 \ifjne
 \section*{Competing interests}
 % Wording supplied by Giulio via Klaus, 2026-10-05; all authors confirm at submission.
 % Shareholder wording follows the author-confirmed WP0215 journal declaration.
-Giulio Ruffini, Borja Mercadal, Alex Just, and Francesca Castaldo are employees of
+Giulio Ruffini, Borja Mercadal, Ricardo Salvador, Alex Just, and Francesca Castaldo are employees of
 Neuroelectrics, which develops and sells transcranial electrical stimulation devices.
 Giulio Ruffini is a co-founder and shareholder of Neuroelectrics. The other authors
 declare no competing interests.
@@ -2102,7 +2105,9 @@ declare no competing interests.
 Using the CRediT taxonomy: \textbf{G.~Ruffini}: conceptualization, methodology, formal
 analysis, software, investigation, visualization, writing (original draft), supervision,
 funding acquisition. \textbf{B.~Mercadal}: validation, visualization, writing (review
-and editing). \textbf{A.~Just}: software, visualization, writing (review and editing).
+and editing). \textbf{R.~Salvador}: methodology (head modeling), software, formal
+analysis, visualization (\emph{provisional; to be confirmed by R.~Salvador}).
+\textbf{A.~Just}: software, visualization, writing (review and editing).
 \textbf{R.~de Palma Aristides}: software, visualization, writing (review and editing).
 \textbf{F.~Castaldo}: conceptualization, writing (review and editing).
 \textbf{N.~Grossman}: conceptualization.
