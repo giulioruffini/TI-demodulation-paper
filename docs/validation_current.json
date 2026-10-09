@@ -2,13 +2,13 @@
   "version": "0.15.0-draft18",
   "review_baseline": "8dc6eca",
   "redline_baseline": "c620335",
-  "status": "Draft18 includes Ricardo Salvador and compact LPF tags on all seven synaptic pathways in Figure 2. The caption explains post-nonlinearity carrier attenuation. Current-ratio steering awaits Giulio’s go; author confirmations, FEM results, and release authorization remain pending.",
+  "status": "Draft18 includes Ricardo Salvador and standard low-pass filter symbols on all seven synaptic pathways in Figure 2. The caption explains post-nonlinearity carrier attenuation. Current-ratio steering awaits Giulio’s go; author confirmations, FEM results, and release authorization remain pending.",
   "outputs": {
     "jne": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.log",
       "pages": 40,
-      "sha256": "86e5fb15a1450910349b930110f9dc35866a6e1fef6c3933dde962869cdb484e",
+      "sha256": "0ec986f820c5eb712f11005b46eb03285503c405e981e39f08fa501bdb8176fd",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -62,7 +62,7 @@
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.pdf",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.log",
       "pages": 48,
-      "sha256": "1b54cdc61b7487dbd2cb31a50c1f4943708fdf3ebe650bcc1cb1fb7c9a1d36f3",
+      "sha256": "7bce19415577346930a71efdc8c56a52c1fa2e99c0dc157d4efb61035296b964",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -91,7 +91,7 @@
     "original_labels_retained": true,
     "cut_candidates_verbatim": true,
     "main_manuscript_source_byte_identical": true,
-    "scientific_text_change_scope": "Figure 2 caption explains the compact LPF tags; main manuscript, abstract, equations, and all other captions unchanged.",
+    "scientific_text_change_scope": "Figure 2 caption explains conventional low-pass symbols; main manuscript, abstract, equations, and all other captions unchanged.",
     "modified_existing_figures": [
       "fig:models (Figure 2)"
     ]
@@ -113,7 +113,7 @@
   ],
   "visual_inspection": {
     "date": "2026-10-09",
-    "scope": "Figure 2 with compact LPF tags, standalone and on article/redline page 7.",
+    "scope": "Figure 2 with conventional low-pass symbols, standalone and on article/redline page 7.",
     "pages": {
       "jne": [
         7
@@ -122,7 +122,7 @@
         7
       ]
     },
-    "result": "Seven tags verified; tag lettering is 6.40 pt at article size; no text overlap or clipping on inspected pages."
+    "result": "Seven filter symbols verified and LPF lettering absent; no text overlap or clipping on inspected pages."
   },
   "source_sha256": {
     "TN0484_envelope_demodulation.tex": "5592d9415f60800b79ebb13797830be902199cf1f1c890f79d64caea77bf9fa6",
@@ -130,8 +130,8 @@
     "planning/tn0484_abstract.tex": "853f47a0db90c442b80a26fb7deb070a9491a6808b6e267f1816a0e6b980a3a6",
     "planning/tn0484_storyline.tex": "4ed19c0cd0fcf3ca0b2853d7944adf7f434083fcacd70ec922a4bfb1f13bc5bb",
     "planning/tn0484_notation.tex": "3f5815400d8fa51affcd8fba240ed454adc52ea925c5e7b2b3a6141911cd2efa",
-    "figures_src/fig_models_ti.tex": "7240d6600872a128f2f87042d0a0319d5b52772dd8a513791d7d7067b8cae88a",
-    "figures_src/fig_models_ti_caption.tex": "f172c06c9ab4ec1fe52a2a3593ae7c3bef83a780678373dd91a18549bec582ae"
+    "figures_src/fig_models_ti.tex": "6250c979b717018b4fd5037c3099940fa380b921ee2e9d5cfd66aa1fdaff8600",
+    "figures_src/fig_models_ti_caption.tex": "08c72d57c7df8e76e57a6aac84a2f9949c7c82b1badfab4e6df0b4c5676ff8da"
   },
   "producer_commits": [
     "139dd74",
@@ -684,6 +684,62 @@
         "LPF tag font scriptsize instead of tiny (6.40 pt rather than 4.57 pt when placed)",
         "Self-loop weight labels offset 3.5 mm instead of 2.2 mm to clear the tags"
       ],
+      "remaining_candidates": "v_E^2 superscript/subscript box intersections only"
+    },
+    "caption_refinement": "attenuate rather than remove the carrier",
+    "main_manuscript_unchanged": true,
+    "abstract_unchanged": true,
+    "steering_insertion_applied": false,
+    "held_actions": [
+      "GitHub push",
+      "Calliope/Zenodo cut",
+      "Overleaf sync",
+      "coauthor email"
+    ],
+    "review_shelf_byte_identical": {
+      "TN0484 journal (JNE).pdf": true,
+      "TN0484 redline.pdf": true
+    },
+    "superseded_by": "draft18_synaptic_lpf_symbols_revision; text-tag version retained only in commit ba9bd86"
+  },
+  "draft18_synaptic_lpf_symbols_revision": {
+    "date": "2026-10-09",
+    "baseline_commit": "ba9bd86",
+    "authorization": "Giulio preference relayed by klaus-484-TI-helper at 10:28 CEST, superseding text tags.",
+    "upstream_commit": "4626645",
+    "record": "docs/revision_2026-10-09_v0150draft18_synaptic_lpf.md",
+    "geometry": {
+      "upstream_commit": "4626645",
+      "byte_identical_to_upstream": {
+        "figures/fig_models_ti.pdf": true,
+        "figures/fig_models_ti.png": true,
+        "figures_src/fig_models_ti.tex": true
+      },
+      "symbols": 7,
+      "LPF_text_absent": true,
+      "size_pt": [
+        0.0,
+        0.0,
+        506.21099853515625,
+        353.0899963378906
+      ],
+      "cross_line_word_overlap_candidates": [
+        {
+          "texts": [
+            "v2",
+            "E"
+          ],
+          "fraction": 0.434
+        },
+        {
+          "texts": [
+            "v2",
+            "E,"
+          ],
+          "fraction": 0.423
+        }
+      ],
+      "clipped_words": [],
       "remaining_candidates": "v_E^2 superscript/subscript box intersections only"
     },
     "caption_refinement": "attenuate rather than remove the carrier",

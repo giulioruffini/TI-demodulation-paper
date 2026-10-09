@@ -24,11 +24,12 @@
   stage/.style={font=\footnotesize\bfseries, text=nered, align=center},
   title/.style={font=\bfseries, text=neblue, anchor=west},
   lpf/.style={draw=neblue, line width=0.6pt, rounded corners=1pt, fill=nelight, text=neblue,
-              font=\scriptsize, inner sep=1.2pt, minimum height=3.4mm, sloped=false},
+              font=\tiny, inner sep=1.4pt, minimum height=3.4mm, fill=white, sloped=false},
 }
 \newcommand{\beaticon}[3]{% x0, y0, width
   \draw[negreen, line width=0.6pt, domain=0:#3, samples=500, smooth, variable=\t]
     plot ({#1+\t}, {#2+0.17*(cos(\t*2400) + cos(\t*2600))});}
+\newcommand{\lpficon}{\tikz[baseline=-0.6ex]{\draw[arrows=-, neblue, line width=0.75pt, line cap=round, rounded corners=0.7pt] (0,0.055) -- (0.10,0.055) -- (0.19,-0.055) -- (0.27,-0.055);}}
 \begin{document}
 \begin{tikzpicture}[x=1cm, y=1cm]
 
@@ -50,7 +51,7 @@
 \node[pop] (IIN) at (9.0, 1.05) {inhibitory\\interneurons};
 
 % forward: P -> both interneuron populations (y0 through h_e)
-\node[lpf] (lpfA) at (6.4, 2.35) {LPF};
+\node[lpf] (lpfA) at (6.4, 2.35) {\lpficon};
 \coordinate (bus) at (7.2, 2.35);
 \draw[line width=0.9pt, neblue] (P.east) -- (lpfA.west);
 \draw[line width=0.9pt, neblue] (lpfA.east) -- (bus);
@@ -62,10 +63,10 @@
 
 % feedback
 \draw[exc] (EIN.north) |- (5.3, 4.65) -- ($(P.north)+(0.7,0)$);
-\node[lpf] at (6.1, 4.65) {LPF};
+\node[lpf] at (6.1, 4.65) {\lpficon};
 \node[lab, anchor=north] at (7.45, 4.62) {$+\,y_1$: $C_2$};
 \draw[inh] (IIN.south) |- (5.3, 0.05) -- ($(P.south)+(0.7,0)$);
-\node[lpf] at (6.1, 0.05) {LPF};
+\node[lpf] at (6.1, 0.05) {\lpficon};
 \node[lab, anchor=south] at (7.45, 0.08) {$-\,y_2$: $C_4$};
 \node[lab, anchor=west] (pin) at (10.4, 4.65) {input $p$};
 \draw[exc] (pin.west) -- (9.0, 4.65);
@@ -97,12 +98,12 @@
 \draw[fld] (accB.east) -- node[above, pos=0.3, font=\footnotesize, text=negreen] {$I_E$} (E.west);
 \node[stage, anchor=north] at ($(E.south)+(0.3,-0.08)$) {detection: $v_E^2$,\\after $\tau_E$ integration};
 
-\draw[exc] ($(E.east)+(0,0.3)$) -- node[lpf, pos=0.5] (lpfB1) {LPF} ($(I.west)+(0,0.3)$);
-\draw[inh] ($(I.west)+(0,-0.3)$) -- node[lpf, pos=0.5] (lpfB2) {LPF} ($(E.east)+(0,-0.3)$);
+\draw[exc] ($(E.east)+(0,0.3)$) -- node[lpf, pos=0.5] (lpfB1) {\lpficon} ($(I.west)+(0,0.3)$);
+\draw[inh] ($(I.west)+(0,-0.3)$) -- node[lpf, pos=0.5] (lpfB2) {\lpficon} ($(E.east)+(0,-0.3)$);
 \node[lab, anchor=south] at (lpfB1.north) {AMPA, $Jw_{IE}$};
 \node[lab, anchor=north] at (lpfB2.south) {GABA, $Jw_{EI}$};
-\draw[exc] ($(E.north)+(0.05,0)$) to[out=60, in=120, looseness=3.2] node[lpf, pos=0.5] {LPF} node[left=3.5mm, pos=0.5, lab] {$J w_{EE}$} ($(E.north)+(0.95,0)$);
-\draw[inh] ($(I.north)+(-0.45,0)$) to[out=60, in=120, looseness=3.2] node[lpf, pos=0.5] {LPF} node[right=3.5mm, pos=0.5, lab] {$J w_{II}$} ($(I.north)+(0.45,0)$);
+\draw[exc] ($(E.north)+(0.05,0)$) to[out=60, in=120, looseness=3.2] node[lpf, pos=0.5] {\lpficon} node[left=2.2mm, pos=0.5, lab] {$J w_{EE}$} ($(E.north)+(0.95,0)$);
+\draw[inh] ($(I.north)+(-0.45,0)$) to[out=60, in=120, looseness=3.2] node[lpf, pos=0.5] {\lpficon} node[right=2.2mm, pos=0.5, lab] {$J w_{II}$} ($(I.north)+(0.45,0)$);
 
 \draw[-{Stealth[length=2.2mm]}, line width=0.9pt, negray] ($(E.south)+(-1.3,0)$) -- ++(0,-0.6)
    node[left, lab] {$r_E$};

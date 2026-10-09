@@ -1,33 +1,32 @@
-# Figure 2 marks every synaptic pathway with a compact LPF tag
+# Figure 2 marks every synaptic pathway with a low-pass symbol
 
-October 9, 2026. Giulio's preference for compact tags was relayed by
-`giulio-shell` at 10:20 CEST, superseding the earlier large-filter-box design.
-This integration starts from `479dc0f` on `two-tone-validation` and uses
-`fig-models-ti`, commit `063a493`. The working edition remains v0.15.0-draft18.
-The earlier boxed version is preserved in commit `479dc0f` and is replaced
-in the current article.
+October 9, 2026. Giulio requested the standard low-pass symbol rather than
+the letters LPF, relayed by `klaus-484-TI-helper` at 10:28 CEST. This integration
+starts from `ba9bd86` on `two-tone-validation` and uses `fig-models-ti`, commit
+`4626645`. The working edition remains v0.15.0-draft18. It replaces the large
+filter boxes of `479dc0f` and the compact text tags of `ba9bd86` with the
+conventional flat-then-descending filter icon.
 
-Panel (a) has three tags: the pyramidal output before the filtered potential
+Panel (a) has three symbols: the pyramidal output before the filtered potential
 y0, the excitatory return after input p merges, and the inhibitory return.
 Panel (b) has four: the AMPA and GABA connections between populations and
-both self-loops. Kernel names and time constants are explained in the caption;
-the repeated red low-pass stage labels are removed. These placements agree
+both self-loops. Kernel names and time constants are explained in the caption.
+There are no LPF text tags or red low-pass stage labels. These placements agree
 with the model's second-order synaptic filters.
 
-The caption describes the compact tags after the modal-gain sentence. It
+The caption describes the symbols after the modal-gain sentence. It
 retains “attenuate” rather than “remove”: the filters attenuate the carrier
 more strongly than the beat and transmit the steady shift into the recurrent
 loop, without an exact carrier zero. Existing explanations of filtered y0,
 inverse times a and b, membrane time tau_X, frequency f0, and arrow colors
 are retained.
 
-The supplied tiny tag lettering would print at 4.57 pt. The tag font is now
-scriptsize, giving 6.40 pt at its final size in the article. The two self-loop
-weight labels are offset 3.5 mm rather than 2.2 mm to keep them clear of the
-tags. These are the only TikZ changes relative to `063a493`. The seven tags
-remain compact, and the figure retains its 506.21 × 353.09 pt size. No words
-are clipped or overlap. The bounding-box check flags only two intentional
-superscript/subscript intersections in v_E squared, verified in the render.
+The TikZ source and both figure assets are byte-identical to `4626645`; no
+local layout adjustment was needed. All seven symbols are present and the
+letters LPF are absent from the drawing. The figure retains its 506.21 ×
+353.09 pt size. No words are clipped or overlap. The bounding-box check flags
+only two intentional superscript/subscript intersections in v_E squared,
+verified in the render. The symbols remain legible at the article's placed size.
 
 The JNE article and the redline against draft13 `c620335` were rebuilt, with
 40 and 48 pages. The logs contain no errors, undefined references, overfull
