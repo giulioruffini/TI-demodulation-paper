@@ -38,8 +38,13 @@ As checked on October 2, [Calliope WP0185](https://calliope.bcom.one/papers/WP01
 still lists v0.12.0 (July 21). Klaus reports the Overleaf sync completed on
 October 9: draft18 source `e17e4a9` is mirrored as `7006e90`, preserving Giulio's
 JNE build setting. His standalone build has 42 pages with no errors or undefined
-references. The main project GitHub push, Calliope and Zenodo releases, and
-coauthor circulation remain held.
+references. On October 14, Giulio authorized sharing draft19 with Ricardo.
+The [private GitHub collaboration copy](https://github.com/giulioruffini/TN0484---Temporal-Interference-TI-NMM-demodulation)
+now contains scientific source `afa5e44` as mirror commit `aa18f10`, with the
+current article, supplement, redline, and a FEM contribution guide. Ricardo's
+`ricardosalvador123` account has a pending write-access invitation. The public
+repository, Calliope and Zenodo releases, and circulation to other coauthors
+remain held. See the [sharing record](docs/share_2026-10-14_ricardo.md).
 
 v0.15.0-draft18 adds Ricardo Salvador (Neuroelectrics) to the author records,
 provisionally after Borja Mercadal, with his ORCID and a CRediT line for confirmation.

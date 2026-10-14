@@ -97,3 +97,8 @@ The optional explicit negative JR-source example was already in `15c1d59`.
 Draft19 is local. The earlier Overleaf sync covers draft18 source `e17e4a9`
 mirrored as `7006e90`; it is not a sync of these changes. No new synchronization,
 GitHub push, Calliope cut, Zenodo release, or coauthor circulation is performed.
+
+Later on October 14, Giulio authorized sharing this draft privately with Ricardo.
+That subsequent GitHub update and collaborator invitation are recorded in
+`share_2026-10-14_ricardo.md`; the earlier local-only statement describes the
+revision checkpoint before that authorization.

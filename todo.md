@@ -3,11 +3,13 @@
 - [ ] Giulio: decide the seven retained CUT? passages and the biological-rectifier sentence in docs/revision_2026-10-06_v0150draft16_readability.md
 - [ ] Giulio: confirm Ricardo's provisional byline position after Borja; Ricardo: confirm his CRediT line and funding
 - [ ] Ricardo: supply IXI/FreeSurfer FEM methods, three geometric maps plus isotropic average, ratio sweep, contrasts and displacement; state detector coefficients and operating state for any signed DC-source map
+- [ ] Ricardo: accept the private GitHub write-access invitation sent to ricardosalvador123 on October 14
 - [ ] review draft19 and its fixed draft13 redline, including the signed-source map and geometric-versus-physiological distinction, Ricardo's author details, steering and test rows
-- [ ] Giulio: review the corrected JNE working edition and fixed-baseline redline; authorize coauthor circulation when ready
+- [ ] Giulio: review the corrected JNE working edition and fixed-baseline redline; authorize circulation to other coauthors when ready
 - [ ] obtain missing funding declarations; confirm the supplied competing-interests statement, author roles and affiliations, actual AI-tool versions, and the submission version with every author
-- [ ] keep the main project GitHub push, Calliope and Zenodo releases, and coauthor circulation on hold pending explicit authorization
+- [ ] keep the public GitHub push, Calliope and Zenodo releases, and circulation to other coauthors on hold pending explicit authorization
 - [ ] migrate the paper folder at the next coordinated version boundary; run the layout checker before and after, with no concurrent session editing
+- [x] share draft19 privately as mirror aa18f10 from scientific source afa5e44 and invite Ricardo with write access; verify the shared PDF and standalone builds (October 14)
 - [x] integrate Klaus's sign/map and draft19 text checks: negative pinned JR source, distinct fast/adiabatic QIF limits, and signed-source versus physiological-response terminology (October 14)
 - [x] distinguish mean-square polarization, signed DC source, and circuit mean response in the tables, FEM placeholders and S13; add a shared-scale signed panel (October 14)
 - [x] record Klaus's Overleaf sync: source e17e4a9, mirror 7006e90, standalone 42-page build without errors or undefined references (October 9)
