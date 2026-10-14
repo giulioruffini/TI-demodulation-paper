@@ -8,7 +8,7 @@
 - [ ] obtain missing funding declarations; confirm the supplied competing-interests statement, author roles and affiliations, actual AI-tool versions, and the submission version with every author
 - [ ] keep the main project GitHub push, Calliope and Zenodo releases, and coauthor circulation on hold pending explicit authorization
 - [ ] migrate the paper folder at the next coordinated version boundary; run the layout checker before and after, with no concurrent session editing
-- [x] record Klaus's bounded sign/map check and add the negative static source at the pinned JR operating point; retain QIF regime and coefficient-normalization distinctions (October 14)
+- [x] integrate Klaus's sign/map and draft19 text checks: negative pinned JR source, distinct fast/adiabatic QIF limits, and signed-source versus physiological-response terminology (October 14)
 - [x] distinguish mean-square polarization, signed DC source, and circuit mean response in the tables, FEM placeholders and S13; add a shared-scale signed panel (October 14)
 - [x] record Klaus's Overleaf sync: source e17e4a9, mirror 7006e90, standalone 42-page build without errors or undefined references (October 9)
 - [x] add Ricardo Salvador to draft18 author records and declarations; keep the FEM comparison as a proposed test (October 9)

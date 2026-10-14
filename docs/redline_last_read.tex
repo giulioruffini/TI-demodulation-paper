@@ -1,7 +1,7 @@
 \documentclass[11pt,a4paper]{article}
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-lge4cs9x/old.tex   Wed Oct 14 11:52:31 2026
-%DIF ADD /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-lge4cs9x/new.tex   Wed Oct 14 11:52:31 2026
+%DIF DEL /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-4emde5k3/old.tex   Wed Oct 14 11:55:11 2026
+%DIF ADD /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-4emde5k3/new.tex   Wed Oct 14 11:55:11 2026
 \usepackage[margin=2.3cm]{geometry}
 \usepackage{lmodern}        % classic Computer Modern look, vectorized (T1)
 \usepackage[T1]{fontenc}
@@ -1177,9 +1177,7 @@ adaptation can alter the physiological mean response.
 \DIFdelbegin \DIFdel{The accompanying mean shift has a different spatial map.
 Writing
 $A_{\rm DC}=\Sig''(\varepsilon_1^2+\varepsilon_2^2)/4$ for the local DC }\DIFdelend \DIFaddbegin \DIFadd{For the JR quadratic detector, the local rate }\DIFaddend source in Eq.~\eqref{eq:taylor} \DIFdelbegin \DIFdel{, its sign follows the curvature and }\DIFdelend is
-\DIFdelbegin \DIFdel{independent of
-carrier polarity.
-}\DIFdelend \DIFaddbegin \[
+\DIFdelbegin \DIFdel{independent of carrier polarity.}\DIFdelend \DIFaddbegin \[
 \DIFadd{Y_{\rm DC}(\mathbf x,\mathbf n)
 =\frac{\Sig''(v^*_{\mathbf x})}{2}\,\mathcal I(\mathbf x,\mathbf n),
 \qquad
@@ -1201,11 +1199,13 @@ source and on recurrent feedback; the JR examples in \S\ref{sec:timing} have
 a negative mean-rate shift.
 }
 
-\DIFadd{The coefficient depends on the detector regime. The fast-carrier QIF limit
-produces a positive effective input shift through $v^2$, read through $F'>0$;
-its adiabatic mean-rate shift follows $F''$ and can be negative
-(Eq.~\eqref{eq:crossover_limits}). Thus the positive E-drive shift in
-\S\ref{sec:qif} is a result for that model and regime.
+\DIFadd{The coefficient depends on the detector regime. For an uncoupled QIF population
+at fast carriers, $v^2$ generates a positive effective input shift, and the
+readout through $F'>0$ gives a positive rate shift. In the slow-carrier
+(adiabatic) limit, $\kappa_{\rm DC}\to F''/4$, so the rate shift is negative
+above the inflection of $F$ (Eq.~\eqref{eq:crossover_limits}). The positive
+E-drive shift in \S\ref{sec:qif} is therefore a fast-carrier result for that
+model; the mean-rate response after recurrent feedback need not retain its sign.
 }
 
 \DIFaddend Carrier averaging retains the cross term as the beat;
@@ -1247,9 +1247,9 @@ whose sign is unrestricted. Within the homogeneous model, interior selectivity
 must therefore come from the oscillatory response rather than from either mean map.
 }
 
-\DIFadd{Spatially varying }\DIFaddend access, orientation,
-or curvature can change the physiological DC map, so the intensity result does
-not extend to those weights. For isotropically distributed unit orientations
+\DIFadd{Spatially varying }\DIFaddend access, orientation, or curvature can change the \DIFdelbegin \DIFdel{physiological DC map , so the }\DIFdelend \DIFaddbegin \DIFadd{signed-source
+map and the resulting physiological mean-response map. The }\DIFaddend intensity result does
+not extend to \DIFdelbegin \DIFdel{those weights}\DIFdelend \DIFaddbegin \DIFadd{these weighted responses}\DIFaddend . For isotropically distributed unit orientations
 $\mathbf n$ with orientation-independent access and curvature,
 $\langle(\mathbf n\cdot\mathbf E_j)^2\rangle=|\mathbf E_j|^2/3$
 and $\langle(\mathbf n\cdot\mathbf E_1)(\mathbf n\cdot\mathbf E_2)\rangle

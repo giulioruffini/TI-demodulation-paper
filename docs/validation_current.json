@@ -7,7 +7,7 @@
     "jne": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
       "pages": 43,
-      "sha256": "678e29ff41cff5e88ab71c466c3b1ad38592ee9539b4cc006bfb37be942340bf",
+      "sha256": "a0939ead64f2111be5d55becc3aeffbd43041a9c010fe5f2fee8b3586f7a60d7",
       "version": "0.15.0-draft19",
       "validation_scope": "Local signed-map revision; updated artifact, no external release.",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.log",
@@ -45,7 +45,7 @@
     "redline": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.pdf",
       "pages": 52,
-      "sha256": "c813154bc556c796dc4911117545ef2fca2d0772340fed8e83db1b9ea22a19fd",
+      "sha256": "279be3ee08f1598cdf00359afefc9b213f48904320ffd2266f297d773b6393a5",
       "version": "0.15.0-draft19",
       "validation_scope": "Local signed-map revision; updated artifact, no external release.",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.log",
@@ -169,10 +169,11 @@
       ]
     },
     "result": "Changed passages and figure inspected; labels and captions legible, no clipping or overlap.",
-    "peer_followup": "Article p12 and redline p16 inspected after the concrete negative-source example was added."
+    "peer_followup": "Article p12 and redline p16 inspected after the concrete negative-source example was added.",
+    "regime_followup": "Article pp12-13 and corresponding redline page inspected after separating the two QIF limits and physiological-response terminology."
   },
   "source_sha256": {
-    "TN0484_envelope_demodulation.tex": "78cd1fe658bd57a092dde571a8c53f421147a609a6f9a78a09965d43f68b021d",
+    "TN0484_envelope_demodulation.tex": "7e54e490b8f05d37a576838e062f9de35b4cf5d9fe8a8ee02968f55c1f9076d7",
     "references.bib": "6c89b80405c9999914d57cceb158411ab150b800fc0c6795f02a0332d8e89ed7",
     "planning/tn0484_abstract.tex": "7d880907b2af76264cc44efa866dfeabac68b00189512f4ca252033bfabe2ee2",
     "planning/tn0484_storyline.tex": "1311f0d51375eedb2841d01a24ba49660f9a0b17953496f4ba0e92f8209f853d",
@@ -288,7 +289,15 @@
       "notation_refinement": "kappa_DC is defined per peak current squared; do not identify it directly with a coefficient per mean-square polarization."
     },
     "release_status": "Local only; prior Overleaf authorization covered draft18. All other release holds remain.",
-    "peer_followup_parent": "faeb858"
+    "peer_followup_parent": "faeb858",
+    "textual_check": {
+      "reviewer": "klaus-484-TI-helper",
+      "message_time": "2026-10-14 11:50 CEST",
+      "reviewed_commit": "faeb858",
+      "verdict": "Pass on static sign, orientation, boundary magnitude, steering factors and S13 normalization; QIF-limit wording and physiological-map terminology corrected in this follow-up.",
+      "editing_parent": "15c1d59",
+      "already_present": "Explicit negative static JR source at 8.30 mV."
+    }
   },
   "focality_integration_revision": {
     "date": "2026-10-06",

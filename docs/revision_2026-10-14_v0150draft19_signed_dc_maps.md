@@ -82,6 +82,16 @@ definitions rather than identifying this coefficient directly with the static
 polarization coefficient sigma''/2. The adiabatic qualification is retained:
 finite-frequency values follow the full crossover formula, not F''/4 exactly.
 
+Klaus's subsequent textual check of `faeb858` (message dated 11:50 CEST)
+passes the static sign, boundary statement, steering factors, and S13
+normalization. It identifies an ambiguous antecedent in the QIF paragraph:
+"its adiabatic mean-rate shift" could refer to the fast-carrier limit. The
+paragraph now names the uncoupled population and puts the fast-carrier and
+slow-carrier limits in separate sentences. It also states that recurrence need
+not preserve the source sign. The remaining "physiological DC map" wording is
+replaced with distinct signed-source and physiological mean-response maps.
+The optional explicit negative JR-source example was already in `15c1d59`.
+
 ## Release status
 
 Draft19 is local. The earlier Overleaf sync covers draft18 source `e17e4a9`

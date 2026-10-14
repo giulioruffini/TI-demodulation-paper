@@ -15,7 +15,7 @@
     "jne": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
       "pages": 43,
-      "sha256": "678e29ff41cff5e88ab71c466c3b1ad38592ee9539b4cc006bfb37be942340bf",
+      "sha256": "a0939ead64f2111be5d55becc3aeffbd43041a9c010fe5f2fee8b3586f7a60d7",
       "version": "0.15.0-draft19",
       "validation_scope": "Local signed-map revision; updated artifact, no external release.",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.log",
@@ -53,7 +53,7 @@
     "redline": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.pdf",
       "pages": 52,
-      "sha256": "c813154bc556c796dc4911117545ef2fca2d0772340fed8e83db1b9ea22a19fd",
+      "sha256": "279be3ee08f1598cdf00359afefc9b213f48904320ffd2266f297d773b6393a5",
       "version": "0.15.0-draft19",
       "validation_scope": "Local signed-map revision; updated artifact, no external release.",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.log",
@@ -118,5 +118,13 @@
       0.05
     ],
     "quadratic_DC_source_sinv": -0.00018852113562167893
+  },
+  "draft19_textual_check": {
+    "reviewer": "klaus-484-TI-helper",
+    "message_time": "2026-10-14 11:50 CEST",
+    "reviewed_commit": "faeb858",
+    "verdict": "Pass on static sign, orientation, boundary magnitude, steering factors and S13 normalization; QIF-limit wording and physiological-map terminology corrected in this follow-up.",
+    "editing_parent": "15c1d59",
+    "already_present": "Explicit negative static JR source at 8.30 mV."
   }
 }
