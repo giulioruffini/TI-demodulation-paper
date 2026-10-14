@@ -15,7 +15,7 @@
     "jne": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
       "pages": 43,
-      "sha256": "b473ebd390a034b5420e77f63404d982d5f84eef72a69e169980884c0c96e8ac",
+      "sha256": "678e29ff41cff5e88ab71c466c3b1ad38592ee9539b4cc006bfb37be942340bf",
       "version": "0.15.0-draft19",
       "validation_scope": "Local signed-map revision; updated artifact, no external release.",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.log",
@@ -53,7 +53,7 @@
     "redline": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.pdf",
       "pages": 52,
-      "sha256": "994e32e4efd80530674f9162a8db62cecdc3fcb99f16a3b213bc610342832414",
+      "sha256": "c813154bc556c796dc4911117545ef2fca2d0772340fed8e83db1b9ea22a19fd",
       "version": "0.15.0-draft19",
       "validation_scope": "Local signed-map revision; updated artifact, no external release.",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.log",
@@ -100,6 +100,23 @@
     "jne": true,
     "redline": true
   },
-  "peer_check": "Requested from klaus-484-TI-helper; pending at this checkpoint.",
-  "external_actions_performed": []
+  "peer_check": {
+    "status": "complete; agrees with the planned sign/map distinction",
+    "reviewer": "klaus-484-TI-helper",
+    "message_time": "2026-10-14 11:35 CEST",
+    "reviewed_baseline": "d3a3107",
+    "scope": "Independent algebraic/numerical sign and map scope check, not draft19 textual fidelity.",
+    "integrated": "Explicit negative static source at pinned JR v*=8.30 mV; carrier-polarity invariance; positive F-prime fast-carrier readout.",
+    "notation_refinement": "kappa_DC is defined per peak current squared; do not identify it directly with a coefficient per mean-square polarization."
+  },
+  "external_actions_performed": [],
+  "pinned_JR_source_check": {
+    "vstar_mV": 8.3,
+    "sigma_second_sinv_mVinv2": -0.1508169084973431,
+    "tone_amplitudes_mV": [
+      0.05,
+      0.05
+    ],
+    "quadratic_DC_source_sinv": -0.00018852113562167893
+  }
 }

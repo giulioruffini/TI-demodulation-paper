@@ -7,7 +7,7 @@
     "jne": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
       "pages": 43,
-      "sha256": "b473ebd390a034b5420e77f63404d982d5f84eef72a69e169980884c0c96e8ac",
+      "sha256": "678e29ff41cff5e88ab71c466c3b1ad38592ee9539b4cc006bfb37be942340bf",
       "version": "0.15.0-draft19",
       "validation_scope": "Local signed-map revision; updated artifact, no external release.",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.log",
@@ -45,7 +45,7 @@
     "redline": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.pdf",
       "pages": 52,
-      "sha256": "994e32e4efd80530674f9162a8db62cecdc3fcb99f16a3b213bc610342832414",
+      "sha256": "c813154bc556c796dc4911117545ef2fca2d0772340fed8e83db1b9ea22a19fd",
       "version": "0.15.0-draft19",
       "validation_scope": "Local signed-map revision; updated artifact, no external release.",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.log",
@@ -159,7 +159,8 @@
       ],
       "redline": [
         14,
-        15
+        15,
+        16
       ],
       "storyline": [
         1,
@@ -167,10 +168,11 @@
         13
       ]
     },
-    "result": "Changed passages and figure inspected; labels and captions legible, no clipping or overlap."
+    "result": "Changed passages and figure inspected; labels and captions legible, no clipping or overlap.",
+    "peer_followup": "Article p12 and redline p16 inspected after the concrete negative-source example was added."
   },
   "source_sha256": {
-    "TN0484_envelope_demodulation.tex": "a712ca0cef95cf75aa1c1ec674582ba04391ed755f1a9eb792cc22adc5a12d7d",
+    "TN0484_envelope_demodulation.tex": "78cd1fe658bd57a092dde571a8c53f421147a609a6f9a78a09965d43f68b021d",
     "references.bib": "6c89b80405c9999914d57cceb158411ab150b800fc0c6795f02a0332d8e89ed7",
     "planning/tn0484_abstract.tex": "7d880907b2af76264cc44efa866dfeabac68b00189512f4ca252033bfabe2ee2",
     "planning/tn0484_storyline.tex": "1311f0d51375eedb2841d01a24ba49660f9a0b17953496f4ba0e92f8209f853d",
@@ -276,8 +278,17 @@
       "jne": true,
       "redline": true
     },
-    "peer_check": "Requested from klaus-484-TI-helper; pending at this checkpoint.",
-    "release_status": "Local only; prior Overleaf authorization covered draft18. All other release holds remain."
+    "peer_check": {
+      "status": "complete; agrees with the planned sign/map distinction",
+      "reviewer": "klaus-484-TI-helper",
+      "message_time": "2026-10-14 11:35 CEST",
+      "reviewed_baseline": "d3a3107",
+      "scope": "Independent algebraic/numerical sign and map scope check, not draft19 textual fidelity.",
+      "integrated": "Explicit negative static source at pinned JR v*=8.30 mV; carrier-polarity invariance; positive F-prime fast-carrier readout.",
+      "notation_refinement": "kappa_DC is defined per peak current squared; do not identify it directly with a coefficient per mean-square polarization."
+    },
+    "release_status": "Local only; prior Overleaf authorization covered draft18. All other release holds remain.",
+    "peer_followup_parent": "faeb858"
   },
   "focality_integration_revision": {
     "date": "2026-10-06",

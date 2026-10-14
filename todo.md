@@ -4,11 +4,11 @@
 - [ ] Giulio: confirm Ricardo's provisional byline position after Borja; Ricardo: confirm his CRediT line and funding
 - [ ] Ricardo: supply IXI/FreeSurfer FEM methods, three geometric maps plus isotropic average, ratio sweep, contrasts and displacement; state detector coefficients and operating state for any signed DC-source map
 - [ ] review draft19 and its fixed draft13 redline, including the signed-source map and geometric-versus-physiological distinction, Ricardo's author details, steering and test rows
-- [ ] close Klaus's bounded draft19 check of detector sign, QIF regime, and the boundary-magnitude restriction
 - [ ] Giulio: review the corrected JNE working edition and fixed-baseline redline; authorize coauthor circulation when ready
 - [ ] obtain missing funding declarations; confirm the supplied competing-interests statement, author roles and affiliations, actual AI-tool versions, and the submission version with every author
 - [ ] keep the main project GitHub push, Calliope and Zenodo releases, and coauthor circulation on hold pending explicit authorization
 - [ ] migrate the paper folder at the next coordinated version boundary; run the layout checker before and after, with no concurrent session editing
+- [x] record Klaus's bounded sign/map check and add the negative static source at the pinned JR operating point; retain QIF regime and coefficient-normalization distinctions (October 14)
 - [x] distinguish mean-square polarization, signed DC source, and circuit mean response in the tables, FEM placeholders and S13; add a shared-scale signed panel (October 14)
 - [x] record Klaus's Overleaf sync: source e17e4a9, mirror 7006e90, standalone 42-page build without errors or undefined references (October 9)
 - [x] add Ricardo Salvador to draft18 author records and declarations; keep the FEM comparison as a proposed test (October 9)

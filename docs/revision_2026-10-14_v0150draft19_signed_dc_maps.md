@@ -64,8 +64,23 @@ The original internal reading note and its figure assets remain unchanged.
 No explanation, result, numerical claim, or numbered equation is removed. The
 new detector formula is unnumbered. Klaus was asked for a bounded read-only
 check of signs, orientation, the dynamic QIF exception, and the spatial scope.
-That independent check is pending at this checkpoint; the local algebraic,
-numerical, build, and visual checks above are complete.
+His returned algebraic check, dated 11:35 CEST and based on `d3a3107`, agrees
+with the plan and the static sign, QIF crossover, and homogeneous-boundary
+arguments. It is an independent sign/scope check, not a fidelity review of the
+subsequent draft19 edits. Section 2.6 now states the concrete example: the
+static source is negative at the pinned JR operating point of 8.30 mV.
+Independent substitution gives curvature -0.1508169 s^-1 mV^-2 and source
+-1.88521e-4 s^-1 for two 0.05 mV tones, matching his reported value. Carrier
+polarity reversal is also stated explicitly.
+
+One normalization in his generic dynamic-source suggestion needs qualification:
+the manuscript defines kappa_DC per squared peak current, not per mean-square
+polarization. In its normalized current units the coefficient multiplying the
+mean square is twice kappa_DC; conversion to polarization also needs H_v and
+the physical-rate time scale. The paper therefore retains its existing dynamic
+definitions rather than identifying this coefficient directly with the static
+polarization coefficient sigma''/2. The adiabatic qualification is retained:
+finite-frequency values follow the full crossover formula, not F''/4 exactly.
 
 ## Release status
 
