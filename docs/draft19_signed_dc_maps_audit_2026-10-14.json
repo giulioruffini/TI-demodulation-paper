@@ -1,0 +1,105 @@
+{
+  "date": "2026-10-14",
+  "version": "0.15.0-draft19",
+  "editing_baseline": "d3a3107",
+  "redline_baseline": "c620335",
+  "abstract_words": 296,
+  "label_numbers_unchanged": true,
+  "all_existing_source_labels_retained": true,
+  "cited_keys_unchanged": true,
+  "simulation_code_caches_and_bibliography_unchanged": true,
+  "new_FEM_results": false,
+  "figure_checks": "docs/draft19_spatial_map_checks_2026-10-14.json",
+  "figcheck": "No text collisions, clipping or undersized base text at the stated placement; visual render inspected.",
+  "outputs": {
+    "jne": {
+      "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
+      "pages": 43,
+      "sha256": "b473ebd390a034b5420e77f63404d982d5f84eef72a69e169980884c0c96e8ac",
+      "version": "0.15.0-draft19",
+      "validation_scope": "Local signed-map revision; updated artifact, no external release.",
+      "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.log",
+      "diagnostics": {
+        "errors": 0,
+        "undefined": 0,
+        "overfull": 0,
+        "duplicate_labels": 0,
+        "rerun_needed": 0
+      },
+      "nonblocking_warnings": {
+        "latexdiff_math_font_size": 0,
+        "float_h_changed_to_ht": 1
+      }
+    },
+    "supplement": {
+      "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne_supplement.pdf",
+      "pages": 21,
+      "sha256": "b251b6158a601d4c15a6e1d2fd532e69a89a0a2057879061ef80732fa5675b1b",
+      "version": "0.15.0-draft19",
+      "validation_scope": "Local signed-map revision; updated artifact, no external release.",
+      "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne_supplement.log",
+      "diagnostics": {
+        "errors": 0,
+        "undefined": 0,
+        "overfull": 0,
+        "duplicate_labels": 0,
+        "rerun_needed": 0
+      },
+      "nonblocking_warnings": {
+        "latexdiff_math_font_size": 0,
+        "float_h_changed_to_ht": 0
+      }
+    },
+    "redline": {
+      "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.pdf",
+      "pages": 52,
+      "sha256": "994e32e4efd80530674f9162a8db62cecdc3fcb99f16a3b213bc610342832414",
+      "version": "0.15.0-draft19",
+      "validation_scope": "Local signed-map revision; updated artifact, no external release.",
+      "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.log",
+      "diagnostics": {
+        "errors": 0,
+        "undefined": 0,
+        "overfull": 0,
+        "duplicate_labels": 0,
+        "rerun_needed": 0
+      },
+      "nonblocking_warnings": {
+        "latexdiff_math_font_size": 23,
+        "float_h_changed_to_ht": 2
+      }
+    },
+    "storyline": {
+      "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.pdf",
+      "pages": 13,
+      "sha256": "b1d5adbf41e9388afaa6600249722bf61a5234fc36dc2b1813d40c83b4098491",
+      "version": "0.15.0-draft19",
+      "validation_scope": "Local signed-map revision; updated artifact, no external release.",
+      "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.log",
+      "diagnostics": {
+        "errors": 0,
+        "undefined": 0,
+        "overfull": 0,
+        "duplicate_labels": 0,
+        "rerun_needed": 0
+      },
+      "nonblocking_warnings": {
+        "latexdiff_math_font_size": 0,
+        "float_h_changed_to_ht": 0
+      }
+    },
+    "spatial_map": {
+      "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/figures/fig_spatial_maps.pdf",
+      "pages": 1,
+      "sha256": "cccac97208f907d598cd3c539edd62ba40870b9c3abfe202f6b8cf4e5e3da0bf",
+      "version": "0.15.0-draft19",
+      "validation_scope": "Local signed-map revision; updated artifact, no external release."
+    }
+  },
+  "review_shelf_byte_identical": {
+    "jne": true,
+    "redline": true
+  },
+  "peer_check": "Requested from klaus-484-TI-helper; pending at this checkpoint.",
+  "external_actions_performed": []
+}

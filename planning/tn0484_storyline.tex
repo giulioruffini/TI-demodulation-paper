@@ -1,6 +1,6 @@
 % TN0484 / WP0185: abstract and storyline. Build from the project root:
 %   ~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex
-% Map mode: rows follow the v0.15.0-draft18 manuscript order and numbering (TN build; the JNE build
+% Map mode: rows follow the v0.15.0-draft19 manuscript order and numbering (TN build; the JNE build
 % keeps Appendix A and moves later appendices and figures S1--S13 to the supplement). Prepared 2026-10-03.
 \documentclass[11pt,a4paper,landscape]{article}
 \usepackage[T1]{fontenc}
@@ -17,8 +17,8 @@
 % ---- paper identity ---------------------------------------------------------
 \newcommand{\wpnumber}{TN0484 / WP0185}
 \newcommand{\papertitle}{The cortical column as a tuned receiver}
-\newcommand{\storylinedate}{9 October 2026}
-\newcommand{\baselinelabel}{v0.15.0-draft18}
+\newcommand{\storylinedate}{14 October 2026}
+\newcommand{\baselinelabel}{v0.15.0-draft19}
 \newcommand{\abstractfile}{tn0484_abstract.tex}
 \newcommand{\storylineauthors}{Giulio Ruffini}
 % -----------------------------------------------------------------------------
@@ -199,7 +199,8 @@ its static transfer is an adiabatic limit, not a consequence of small amplitude 
 \place{\S2.5}{Envelope oscillations and spatial weighting}
 & Spatially varying signed polarizations $\varepsilon_j(\mathbf x)$ and their nonnegative
   envelope and its square (Eq.~16): the square is sinusoidal, the envelope is a rectified
-  cosine at matched tones. Table~2 compares slow signals, means, and excursions before detector gains.
+  cosine at matched tones. Table~2 compares slow signals, means, and excursions before detector gains,
+  then gives the signed steady sources after the specified gains.
   Excursion map (Eq.~17): the quadratic product weights the envelope minimum by the larger
   carrier. Retain the $2\times$ versus $40\times$ two-site example and its geometric limits.
   Both beat maps can peak centrally; Fig.~S13a is a line profile, not a head model.
@@ -207,16 +208,20 @@ its static transfer is an adiabatic limit, not a consequence of small amplitude 
   (Eq.~18) includes curvature, network gain, and signed vector coupling.
   With fixed pairs, frequencies, access, orientations, and neural state, the
   current ratio only rescales the quadratic beat map. Steering requires a change
-  in field shape or response regime; the DC map can change state indirectly.
+  in field shape or response regime; the signed steady source can change state indirectly.
 & Explains how the same applied field yields different dose maps under the two detector
   laws. The product need not preserve envelope-map contrast, and network tuning adds
   dynamical selectivity. The mean component requires its own spatial analysis.
 & Table~2; Fig.~S13a; Grossman 2017; Cassar\`a et al.\ 2025, Part II, \S5.7.\\[2pt]
 \midrule
-\place{\S2.6}{The mean shift has a different spatial map}
-& Defines the envelope mean and the quadratic mean, with matched-tone values
-  $4\varepsilon/\pi$ and $\varepsilon^2$. These are detector outputs, not a DC applied field.
-  The quadratic DC source sums intensities after beat averaging: $202\times$ superficial/deep
+\place{\S2.6}{The steady source has a state-dependent sign}
+& Defines the envelope mean and mean-square polarization, with matched-tone values
+  $4\varepsilon/\pi$ and $\varepsilon^2$, before detector gain. The applied field has no DC.
+  The JR source is $Y_{\rm DC}=\Sigma''\mathcal I/2$: positive, negative, or zero
+  according to curvature; the circuit determines the subsequent mean response.
+  Orientation reversal leaves the squares unchanged. Fast-carrier QIF gives a positive
+  input shift, whereas its adiabatic rate shift follows signed $F''$.
+  The geometric mean-square map sums intensities after beat averaging: $202\times$ superficial/deep
   contrast in the example and local beat/DC at most one. Both idealized mean maps are
   subharmonic; the envelope is a norm of harmonic components at each beat phase.
   Retain the homogeneous, isotropic, source-free and fixed-coupling assumptions, the
@@ -225,8 +230,9 @@ its static transfer is an adiabatic limit, not a consequence of small amplitude 
   equal second-order DC coefficients across the carrier interval.
 & Restricts mean-map focusing without excluding an interior beat maximum. Conductivity
   interfaces are compartment boundaries. Variable access, curvature, or orientation can
-  change the physiological map; adaptation can change the mean response.
-& Fig.~S13b; Table~2; equal-RMS control in \S4.10.\\[2pt]
+  change the physiological map; adaptation can change the mean response. A uniform negative
+  coefficient puts the most negative source at the boundary, where its magnitude is largest.
+& Fig.~S13b,c; Table~2; equal-RMS control in \S4.10.\\[2pt]
 \midrule
 \place{\S2.7}{Amplification: synaptic low-pass and network resonance}
 & Synaptic transfer $H_s$ (16~Hz corner; 0.7 at 10~Hz, 2.5\% at 100~Hz). One-mode reduction,
@@ -308,7 +314,9 @@ lock-in read-out and the pinned-operating-point protocol recur across models.
   tissue and solver details, field-to-polarization conversion, region definitions,
   spatial summaries, and focus-displacement measure. Projection directions remain
   fixed across current ratios. The isotropic comparison averages the signed
-  quadratic mixing term before taking its magnitude. No completed FEM method is asserted.}
+  quadratic mixing term before taking its magnitude. Signed DC-source maps must specify
+  detector coefficients and state; mean responses additionally require a circuit model.
+  No completed FEM method is asserted.}
 & Reserves the method for the planned spatial comparison without substituting
   assumptions for Ricardo's head-model specification.
 & \textcolor{red}{Placeholder; Results \S4.5 and Fig.~8.}\\[2pt]
@@ -365,12 +373,14 @@ lock-in read-out and the pinned-operating-point protocol recur across models.
 & Figs.~6, 7; Figs.~S6, S9; Esmaeilpour 2020, 2021.\\[2pt]
 \midrule
 \place{\S4.5}{Realistic-head maps (placeholder)}
-& \textcolor{red}{Envelope excursion, quadratic excursion, and quadratic mean on
+& \textcolor{red}{Envelope excursion, quadratic excursion, and mean-square polarization on
   the Violante montage in an IXI subject with a FreeSurfer hippocampal label;
   1:1, 1:3, and a current-ratio sweep.
   Planned readouts are target-to-cortex ratios and focus displacement in mm, with
   a fixed projection direction at each location. A separate isotropic
-  orientation-averaged quadratic beat map is planned. No FEM findings are reported.}
+  orientation-averaged quadratic beat map is planned. The third map precedes detector gain;
+  signed-source maps require stated detector parameters and a zero-centered color scale.
+  No FEM findings are reported.}
 & Places the planned spatial consequence of the detector law immediately after
   the JR curvature result. The framed figure and paragraph are visibly provisional.
 & \textcolor{red}{Figure~8 placeholder; R.~Salvador.}\\[2pt]
@@ -484,9 +494,10 @@ laminar extension, and the metrics.
   versus minimum at fixed weaker tone; current-ratio steering with fixed pairs and
   projection directions, normalized spatial beat maps, and DC/state controls.
   For $2+2$ versus $1+3$~mA, envelope-excursion factors range from $0.5$ to $1.5$,
-  the quadratic-beat factor is $0.75$ everywhere, and the DC factor is $1.25$
+  the quadratic-beat factor is $0.75$ everywhere, and the mean-square factor is $1.25$
   at equal per-current magnitudes, tending to $0.25$ or $2.25$ when the first or
-  second carrier dominates, respectively. Retain the tests of
+  second carrier dominates, respectively. This geometric factor does not assign
+  excitation or suppression. Retain the tests of
   state and carrier dependence; amplitude slope and
   harmonic ratio off resonance; beat-frequency selectivity; timing versus rate; synaptic
   blockade; equal-power carrier controls. The independent-amplitude test reconstructs the
@@ -552,5 +563,5 @@ and S11 remain supplementary. Existing equations, figures, examples, numerical
 results, and the QIF convergence qualification are retained.
 The abstract's mean-map clause states the boundary consequence for the generated drive with its uniformity
 conditions. The reading baseline is draft13 (\texttt{c620335}). Coauthor confirmation,
-remaining funding declarations and the seven retained CUT? passages remain pending. Red FEM placeholders reserve Methods \S3.3 and Results \S4.5. After the final draft18 handoff, Klaus is authorized to synchronize Overleaf only; Ricardo's results follow later. GitHub push, Calliope and Zenodo releases, and coauthor circulation remain held; see \path{todo.md}.}
+remaining funding declarations and the seven retained CUT? passages remain pending. Red FEM placeholders reserve Methods \S3.3 and Results \S4.5. Draft18 source \texttt{e17e4a9} was synchronized to the Overleaf mirror as \texttt{7006e90}. Draft19 distinguishes geometric intensity, signed source, and circuit response, with a signed-source panel added to Fig.~S13; it remains local. Ricardo's results are pending. The main project GitHub push, Calliope and Zenodo releases, and coauthor circulation remain held; see \path{todo.md}.}
 \end{document}

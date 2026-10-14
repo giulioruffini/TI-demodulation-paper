@@ -1,14 +1,16 @@
 {
-  "version": "0.15.0-draft18",
-  "review_baseline": "8dc6eca",
+  "version": "0.15.0-draft19",
+  "review_baseline": "d3a3107",
   "redline_baseline": "c620335",
-  "status": "Klaus reports the Overleaf-only sync of draft18 source e17e4a9 complete as mirror 7006e90, preserving Giulio's JNE setting. His standalone build is 42 pages with no errors or undefined references. Ricardo's IXI/FreeSurfer FEM work and author confirmations remain pending. The main project GitHub push, Calliope, Zenodo and coauthor circulation remain held.",
+  "status": "Local draft19 distinguishes nonnegative mean-square geometry, signed detector source and network mean response. S13 adds the signed-source panel. Draft18 alone was synced to Overleaf; no draft19 release or sync performed. Ricardo FEM results remain pending.",
   "outputs": {
     "jne": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
+      "pages": 43,
+      "sha256": "b473ebd390a034b5420e77f63404d982d5f84eef72a69e169980884c0c96e8ac",
+      "version": "0.15.0-draft19",
+      "validation_scope": "Local signed-map revision; updated artifact, no external release.",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.log",
-      "pages": 42,
-      "sha256": "616eae2fc45c1030d9613aaa333bca768f65a1c5abb6f4705a9b4af2c264705a",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -16,18 +18,37 @@
         "duplicate_labels": 0,
         "rerun_needed": 0
       },
-      "validation_scope": "Final local draft18 bundle for Overleaf-only handoff; regenerated from the shared source.",
-      "author_metadata_verified": true,
+      "nonblocking_warnings": {
+        "latexdiff_math_font_size": 0,
+        "float_h_changed_to_ht": 1
+      }
+    },
+    "supplement": {
+      "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne_supplement.pdf",
+      "pages": 21,
+      "sha256": "b251b6158a601d4c15a6e1d2fd532e69a89a0a2057879061ef80732fa5675b1b",
+      "version": "0.15.0-draft19",
+      "validation_scope": "Local signed-map revision; updated artifact, no external release.",
+      "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne_supplement.log",
+      "diagnostics": {
+        "errors": 0,
+        "undefined": 0,
+        "overfull": 0,
+        "duplicate_labels": 0,
+        "rerun_needed": 0
+      },
       "nonblocking_warnings": {
         "latexdiff_math_font_size": 0,
         "float_h_changed_to_ht": 0
       }
     },
-    "supplement": {
-      "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne_supplement.pdf",
-      "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne_supplement.log",
-      "pages": 21,
-      "sha256": "10a09f78159f49e47f3866ecf87dc29ef560677ae63a1a8390c10f04f8f182d1",
+    "redline": {
+      "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.pdf",
+      "pages": 52,
+      "sha256": "994e32e4efd80530674f9162a8db62cecdc3fcb99f16a3b213bc610342832414",
+      "version": "0.15.0-draft19",
+      "validation_scope": "Local signed-map revision; updated artifact, no external release.",
+      "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.log",
       "diagnostics": {
         "errors": 0,
         "undefined": 0,
@@ -35,12 +56,36 @@
         "duplicate_labels": 0,
         "rerun_needed": 0
       },
-      "validation_scope": "Final local draft18 bundle for Overleaf-only handoff; regenerated from the shared source.",
-      "author_metadata_verified": true,
+      "nonblocking_warnings": {
+        "latexdiff_math_font_size": 23,
+        "float_h_changed_to_ht": 2
+      }
+    },
+    "storyline": {
+      "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.pdf",
+      "pages": 13,
+      "sha256": "b1d5adbf41e9388afaa6600249722bf61a5234fc36dc2b1813d40c83b4098491",
+      "version": "0.15.0-draft19",
+      "validation_scope": "Local signed-map revision; updated artifact, no external release.",
+      "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.log",
+      "diagnostics": {
+        "errors": 0,
+        "undefined": 0,
+        "overfull": 0,
+        "duplicate_labels": 0,
+        "rerun_needed": 0
+      },
       "nonblocking_warnings": {
         "latexdiff_math_font_size": 0,
         "float_h_changed_to_ht": 0
       }
+    },
+    "spatial_map": {
+      "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/figures/fig_spatial_maps.pdf",
+      "pages": 1,
+      "sha256": "cccac97208f907d598cd3c539edd62ba40870b9c3abfe202f6b8cf4e5e3da0bf",
+      "version": "0.15.0-draft19",
+      "validation_scope": "Local signed-map revision; updated artifact, no external release."
     },
     "tn": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_envelope_demodulation.pdf",
@@ -54,102 +99,27 @@
         "duplicate_labels": 0,
         "rerun_needed": 0
       },
-      "validation_scope": "Final local draft18 bundle for Overleaf-only handoff; regenerated from the shared source.",
+      "validation_scope": "Retained draft18 full TN archive output; intentionally not rebuilt in this local JNE revision.",
       "author_metadata_verified": true,
       "nonblocking_warnings": {
         "latexdiff_math_font_size": 0,
         "float_h_changed_to_ht": 0
-      }
-    },
-    "redline": {
-      "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.pdf",
-      "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.log",
-      "pages": 51,
-      "sha256": "5cfea25b10743a8c20df2724409c19a2fe98902c5f69a5300f6501c0427d5d77",
-      "diagnostics": {
-        "errors": 0,
-        "undefined": 0,
-        "overfull": 0,
-        "duplicate_labels": 0,
-        "rerun_needed": 0
       },
-      "validation_scope": "Final local draft18 bundle for Overleaf-only handoff; regenerated from the shared source.",
-      "nonblocking_warnings": {
-        "latexdiff_math_font_size": 23,
-        "float_h_changed_to_ht": 1
-      }
-    },
-    "storyline": {
-      "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.pdf",
-      "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.log",
-      "pages": 13,
-      "sha256": "7223103fc2d368cf34e2e79dae4858cc305e0f68de10a4cba71ddd1f29406d1e",
-      "diagnostics": {
-        "errors": 0,
-        "undefined": 0,
-        "overfull": 0,
-        "duplicate_labels": 0,
-        "rerun_needed": 0
-      },
-      "validation_scope": "Final local draft18 bundle for Overleaf-only handoff; regenerated from the shared source.",
-      "nonblocking_warnings": {
-        "latexdiff_math_font_size": 0,
-        "float_h_changed_to_ht": 0
-      }
+      "version": "0.15.0-draft18"
     }
   },
   "retention": {
-    "editing_baseline": "3bfbfe2",
-    "scientific_body_byte_identical": false,
-    "appendices_and_AI_declaration_byte_identical": true,
-    "fig_labels": {
-      "count": 26,
-      "numbers_unchanged": false
-    },
-    "eq_labels": {
-      "count": 32,
-      "numbers_unchanged": true,
-      "bodies_changed": []
-    },
-    "cited_works": 61,
+    "editing_baseline": "d3a3107",
+    "all_existing_source_labels_retained": true,
+    "label_numbers_unchanged": true,
+    "cited_keys_unchanged": true,
     "simulation_producers_and_caches_unchanged": true,
-    "existing_figures_unchanged": true,
-    "abstract_source_unchanged": true,
-    "original_labels_retained": true,
-    "cut_candidates_verbatim": true,
-    "main_manuscript_source_byte_identical": false,
-    "scientific_text_change_scope": "FEM Methods/Results placeholders and framed Figure 8 are added, with IXI/FreeSurfer as the pending head model; Table 4 includes the envelope, quadratic-beat, and DC factors for the current change. Existing results, shared abstract, and declarations remain unchanged.",
-    "modified_existing_figures": [],
-    "appendix_change_scope": "No source change to appendices or shared notation; refreshed cross-document references.",
-    "table_numbers_unchanged": true,
-    "figure_number_changes": {
-      "fig:jcurve": [
-        "8",
-        "9"
-      ],
-      "fig:crossover": [
-        "9",
-        "10"
-      ],
-      "fig:nmm2_res": [
-        "10",
-        "11"
-      ],
-      "fig:qif_raster": [
-        "11",
-        "12"
-      ],
-      "fig:qif_regimes": [
-        "12",
-        "13"
-      ]
-    },
-    "new_labels": {
-      "sec:fem-methods": "3.3",
-      "sec:fem-results": "4.5",
-      "fig:fem": "8"
-    },
-    "supplementary_figure_numbers_unchanged": true
+    "modified_existing_figures": [
+      "fig:spatial_maps (S13): original geometric curves retained, signed panel added"
+    ],
+    "new_numbered_equations": [],
+    "removed_results_or_explanations": [],
+    "internal_focality_reading_note_assets_unchanged": true
   },
   "bibliography": {
     "n_cited": 61,
@@ -165,46 +135,49 @@
   "math_checks": [
     "docs/draft11_text_math_2026-10-05.json",
     "docs/draft11_numerical_checks_2026-10-05.json",
-    "docs/draft11_timing_reproduction_2026-10-05.json"
+    "docs/draft11_timing_reproduction_2026-10-05.json",
+    "docs/draft19_spatial_map_checks_2026-10-14.json"
   ],
   "visual_inspection": {
-    "date": "2026-10-09",
-    "scope": "IXI/FreeSurfer Methods and Results placeholders and framed Figure 8; expanded Table 4 current-ratio row; corresponding redline and storyline passages.",
+    "date": "2026-10-14",
+    "scope": "Changed map/table/notation/placeholder passages, signed figure and caption, shared abstract, corresponding redline and storyline.",
     "pages": {
       "jne": [
-        16,
+        1,
+        11,
+        12,
+        13,
+        17,
         23,
         25,
-        33
+        33,
+        41
       ],
-      "tn": [
-        17,
-        24,
-        26,
-        34
+      "supplement": [
+        2,
+        20
       ],
       "redline": [
-        20,
-        28,
-        29,
-        40
+        14,
+        15
       ],
       "storyline": [
-        7,
-        8,
-        12
+        1,
+        5,
+        13
       ]
     },
-    "result": "Inspected passages are legible with no clipping or overlap; FEM material is visibly provisional. No out-of-page text in any of the five PDFs."
+    "result": "Changed passages and figure inspected; labels and captions legible, no clipping or overlap."
   },
   "source_sha256": {
-    "TN0484_envelope_demodulation.tex": "c711bd6870621cbbbb396bd32341ea175ca10450793579cb719dd45733aefaf5",
+    "TN0484_envelope_demodulation.tex": "a712ca0cef95cf75aa1c1ec674582ba04391ed755f1a9eb792cc22adc5a12d7d",
     "references.bib": "6c89b80405c9999914d57cceb158411ab150b800fc0c6795f02a0332d8e89ed7",
-    "planning/tn0484_abstract.tex": "853f47a0db90c442b80a26fb7deb070a9491a6808b6e267f1816a0e6b980a3a6",
-    "planning/tn0484_storyline.tex": "a83f2f3913e299f73a6fce73582bd8325301f116a2f60d448b2cb696c0b71401",
-    "planning/tn0484_notation.tex": "dd066ca147f4a16532913d85f13d28dbee835e67908f2b65eef9ae24ff26fb3b",
+    "planning/tn0484_abstract.tex": "7d880907b2af76264cc44efa866dfeabac68b00189512f4ca252033bfabe2ee2",
+    "planning/tn0484_storyline.tex": "1311f0d51375eedb2841d01a24ba49660f9a0b17953496f4ba0e92f8209f853d",
+    "planning/tn0484_notation.tex": "888c563f53e3acfaf71994d4c5b962ea0c9da81a1e19f67aadd4cf3cb32e7c4f",
     "figures_src/fig_models_ti.tex": "6250c979b717018b4fd5037c3099940fa380b921ee2e9d5cfd66aa1fdaff8600",
-    "figures_src/fig_models_ti_caption.tex": "08c72d57c7df8e76e57a6aac84a2f9949c7c82b1badfab4e6df0b4c5676ff8da"
+    "figures_src/fig_models_ti_caption.tex": "08c72d57c7df8e76e57a6aac84a2f9949c7c82b1badfab4e6df0b4c5676ff8da",
+    "notes/2026-10-06_ti_focality/make_spatial_maps.py": "8b40229ffe01d194bd77137e863eb0a152bcd9b731d94c773850521decacee30"
   },
   "producer_commits": [
     "139dd74",
@@ -290,38 +263,21 @@
     }
   },
   "current_revision": {
-    "date": "2026-10-09",
-    "baseline_commit": "29208a5",
-    "authorization": "Ricardo update relayed by giulio-shell at 2026-10-09 11:06 CEST",
+    "date": "2026-10-14",
+    "baseline_commit": "d3a3107",
+    "authorization": "Giulio requested that the map reflect signed detection rather than imply an always-excitatory DC response.",
     "abstract_words": 296,
-    "abstract_unchanged": true,
-    "audit": "docs/draft18_fem_placeholder_audit_2026-10-09.json",
-    "revision_record": "docs/revision_2026-10-09_v0150draft18_ixi_ratio.md",
-    "new_numerical_work": false,
-    "new_algebra_check": "docs/draft18_current_ratio_three_maps_2026-10-09.json",
+    "audit": "docs/draft19_signed_dc_maps_audit_2026-10-14.json",
+    "revision_record": "docs/revision_2026-10-14_v0150draft19_signed_dc_maps.md",
     "new_FEM_results": false,
-    "release_plan": {
-      "authorized_by": "Giulio, relayed by klaus-484-TI-helper at 2026-10-09 10:49 CEST",
-      "responsible_peer": "klaus-484-TI-helper",
-      "trigger": "Final draft18 commit and PDF handoff from Kaiti",
-      "authorized_actions": [
-        "Overleaf synchronization"
-      ],
-      "remaining_holds": [
-        "GitHub push",
-        "Calliope update",
-        "Zenodo release",
-        "coauthor circulation"
-      ],
-      "supersedes": "The broader 10:41 CEST release plan; the permission correction was queued to Klaus before these edits.",
-      "external_actions_performed_by_Kaiti": [],
-      "FEM_results_status": "awaiting Ricardo Salvador; placeholders only",
-      "overleaf_completion_record": "overleaf_sync_completion in this file"
-    },
+    "new_simulations": false,
+    "algebraic_numeric_check": "Direct full-sigmoid temporal average at opposite-curvature baselines; figure geometry unchanged.",
     "review_shelf_byte_identical": {
       "jne": true,
       "redline": true
-    }
+    },
+    "peer_check": "Requested from klaus-484-TI-helper; pending at this checkpoint.",
+    "release_status": "Local only; prior Overleaf authorization covered draft18. All other release holds remain."
   },
   "focality_integration_revision": {
     "date": "2026-10-06",

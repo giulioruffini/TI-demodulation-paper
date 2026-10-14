@@ -86,11 +86,11 @@
 
 \newcommand{\Sig}{\sigma}
 \newcommand{\half}{\tfrac{1}{2}}
-\newcommand{\paperver}{0.15.0-draft18}
+\newcommand{\paperver}{0.15.0-draft19}
 \hypersetup{
   pdftitle={The cortical column as a tuned receiver: a network mechanism for temporal-interference stimulation},
   pdfauthor={Giulio Ruffini, Borja Mercadal, Ricardo Salvador, Alex Just, Raul de Palma Aristides, Francesca Castaldo, Nir Grossman, Santiago Canals, Claudio Mirasso},
-  pdfsubject={TN0484 / WP0185, version \paperver, October 9, 2026}
+  pdfsubject={TN0484 / WP0185, version \paperver, October 14, 2026}
 }
 
 \begin{document}
@@ -118,7 +118,7 @@ $^{4}$Instituto de Neurociencias (UMH-CSIC), Sant Joan d'Alacant, Spain\\
 $^{5}$Department of Brain Sciences and UK Dementia Research Institute,\\
 Imperial College London, London, United Kingdom\\[6pt]
 E-mail: \texttt{giulio.ruffini@neuroelectrics.com}\\[4pt]
-Working draft v\paperver\quad 2026-10-09
+Working draft v\paperver\quad 2026-10-14
 \end{minipage}\\[8pt]
 \begin{minipage}{0.86\textwidth}\centering\footnotesize\color{negray}
 \textbf{ORCID iDs:}\ %
@@ -146,7 +146,7 @@ a network mechanism for temporal-interference stimulation}\\[10pt]
 & Nir Grossman, Santiago Canals, and Claudio Mirasso \\
 \textbf{Affiliations:} & Neuroelectrics\,/\,BCOM\,/\,IFISC (UIB-CSIC)\,/\,IN (UMH-CSIC)\\
 & Imperial College London (Brain Sciences and UK Dementia Research Institute) \\
-\textbf{Date:} & 2026-10-09 \qquad \textbf{Version:} \paperver \\
+\textbf{Date:} & 2026-10-14 \qquad \textbf{Version:} \paperver \\
 \textbf{DOI:} & \href{https://doi.org/10.5281/zenodo.21009618}{10.5281/zenodo.21009618} \\
 \end{tabular}\\[4pt]
 {\color{neblue}\rule{\textwidth}{1pt}}
@@ -676,9 +676,13 @@ site, $\mathcal A(t)=2\varepsilon|\cos(\Omega t/2)|$, a rectified cosine.
 The conventional TI map describes its excursion,
 $\mathcal{M}[y]\equiv\max_t y-\min_t y$, along the chosen direction \cite{grossman2017}.
 Table~\ref{tab:transduction-maps} compares this envelope with the squared-envelope
-signal; the overbar denotes a beat-period mean. The columns are geometric maps before detector gains: an ideal envelope
-follower multiplies $\mathcal A$ by a constant, whereas the weak quadratic response
-change is $g''(v^*)\mathcal A^2/4$ (Eq.~\eqref{eq:cycavg}).
+signal; the overbar denotes a beat-period mean. The geometric maps precede detector
+gains: an ideal envelope follower multiplies $\mathcal A$ by its specified gain
+$c_1$, whereas the weak quadratic response change is $g''(v^*)\mathcal A^2/4$
+(Eq.~\eqref{eq:cycavg}); for the JR column, $g=\Sig$.
+The last row carries these gains into the signed steady source. In particular,
+the nonnegative mean-square polarization $\mathcal I$ alone does not specify
+excitation or suppression.
 Envelope following is an additional response assumption; the conventional
 envelope-excursion map alone does not specify a neuron's mean output.
 
@@ -692,17 +696,20 @@ envelope-excursion map alone does not specify a neuron's mean output.
  & Envelope following & Quadratic detection \\
 \midrule
 Slow signal & $\mathcal A(\mathbf x,t)$ & $\tfrac12\mathcal A(\mathbf x,t)^2$ \\
-Mean (DC) & $\overline{\mathcal A}(\mathbf x)$
+Mean before gain & $\overline{\mathcal A}(\mathbf x)$
  & $\mathcal I(\mathbf x)=\dfrac{\varepsilon_1^2+\varepsilon_2^2}{2}$ \\
 Modulation excursion & $2\min(|\varepsilon_1|,|\varepsilon_2|)$
  & $2|\varepsilon_1\varepsilon_2|$ \\
 Units before detector gain & mV & mV$^2$ \\
+Signed steady source (output units) & $c_1\overline{\mathcal A}$
+ & $Y_{\rm DC}=\tfrac12g''(v^*)\mathcal I$ \\
 \bottomrule
 \end{tabular}
 \caption{Envelope and quadratic maps at the same position $\mathbf x$.
-Carrier averaging of the detector response gives the slow signal, up to its gain;
-averaging over a beat period then gives the mean. Excursion means maximum minus
-minimum, not Fourier amplitude.}
+The first four rows give geometric quantities before detector gain; the last
+gives the steady source after gain, before recurrent feedback. Its sign depends
+on the detector. Averaging the slow signal over a beat period gives its mean.
+Excursion means maximum minus minimum, not Fourier amplitude.}
 \label{tab:transduction-maps}
 \end{table}
 
@@ -743,8 +750,9 @@ Fixed detector coefficients and linear network propagation preserve this common
 current factor, including for dynamic mixing and spatially heterogeneous gains.
 Steering within this regime requires changing at least one carrier's field shape,
 for example by redistributing current among several electrodes at that frequency.
-The DC map, however, weights $\mathcal P_1^2$ and $\mathcal P_2^2$ separately by
-the squared currents. It changes with the ratio and can indirectly reshape the
+The mean-square polarization map, however, weights $\mathcal P_1^2$ and
+$\mathcal P_2^2$ separately by the squared currents. It changes with the ratio;
+after signed detection, the resulting steady source can indirectly reshape the
 beat response by shifting local operating points. Threshold effects can also
 break the quadratic prediction; the conventional $2\min$ steering law applies
 when the detector follows the envelope. An interior beat maximum remains
@@ -773,11 +781,12 @@ of the projected amplitudes, while its phase inverts with either the sign of $\S
 the relative sign of the two projections. The derivations below take the collinear,
 scalar case.
 
-\subsection{The mean shift has a different spatial map}\label{sec:dc}
-The quadratic detector's steady source adds the two carrier intensities, without
-cross-frequency interference. Under uniform conductivity, access, and detection,
-its largest magnitude lies on compartment boundaries; the envelope-following
-mean obeys the same restriction, as shown below.
+\subsection{The steady source has a state-dependent sign}\label{sec:dc}
+Mean-square polarization is a nonnegative geometric map. Detection converts it
+into a signed steady source, and the circuit converts that source into a mean
+response. Under uniform conductivity, access, and detection, the source's
+largest magnitude lies on compartment boundaries; the envelope-following mean
+obeys the same restriction, as shown below.
 The envelope mean is
 \[
 \overline{\mathcal A}(\mathbf x)=\frac{1}{2\pi}\int_0^{2\pi}
@@ -792,10 +801,33 @@ by their gains, and the quadratic response change takes the sign of $g''$.
 Even one carrier gives either ideal detector a mean output, but no beat modulation;
 adaptation can alter the physiological mean response.
 
-For the JR quadratic detector, writing
-$Y_{\rm DC}=\Sig''(\varepsilon_1^2+\varepsilon_2^2)/4$ for the local DC source
-in Eq.~\eqref{eq:taylor}, its sign follows the curvature and is independent of
-carrier polarity. Carrier averaging retains the cross term as the beat;
+For the JR quadratic detector, the local rate source in Eq.~\eqref{eq:taylor} is
+\[
+Y_{\rm DC}(\mathbf x,\mathbf n)
+=\frac{\Sig''(v^*_{\mathbf x})}{2}\,\mathcal I(\mathbf x,\mathbf n),
+\qquad
+\mathcal I(\mathbf x,\mathbf n)
+=\frac{\varepsilon_1(\mathbf x,\mathbf n)^2+
+\varepsilon_2(\mathbf x,\mathbf n)^2}{2}\ge0.
+\]
+Here $v^*_{\mathbf x}$ is the baseline voltage at position $\mathbf x$ and
+$\mathbf n$ is the unit cell orientation used for both signed polarizations.
+The source $Y_{\rm DC}$ is positive on the convex part of the rate curve,
+negative on its concave part, and zero to this order at the inflection.
+Reversing $\mathbf n$ leaves both squares unchanged; other directions change
+their magnitudes, while the sign remains set by the fixed curvature.
+Figure~\ref{fig:spatial_maps}c shows both signs using one positive normalization.
+The observed mean-rate change also depends on which populations receive the
+source and on recurrent feedback; the JR examples in \S\ref{sec:timing} have
+a negative mean-rate shift.
+
+The coefficient depends on the detector regime. The fast-carrier QIF limit
+produces a positive effective input shift through $v^2$, but its adiabatic
+mean-rate shift follows $F''$ and can be negative
+(Eq.~\eqref{eq:crossover_limits}). Thus the positive E-drive shift in
+\S\ref{sec:qif} is a result for that model and regime.
+
+Carrier averaging retains the cross term as the beat;
 averaging over many beat cycles removes it, leaving a sum of intensities without
 cross-frequency cancellation. At the detector output, where $Y_{\rm DC}\ne0$,
 $|Y_\Omega/Y_{\rm DC}|=2|\varepsilon_1\varepsilon_2|/
@@ -813,6 +845,9 @@ $\nabla^2\mathcal I=\sum_j|\nabla\varepsilon_j|^2\ge0$: the intensity map is
 subharmonic and has no strict interior maximum. A montage can shape each
 carrier field, but the maximum of this map lies on the region's boundary;
 conductivity interfaces are such boundaries.
+For a spatially constant nonzero detector coefficient, this bounds the magnitude
+of $Y_{\rm DC}$. A negative coefficient makes the source most negative at the
+boundary. Spatially varying coefficients require a separately weighted map.
 
 The envelope mean has the same restriction. At each beat phase $\vartheta$,
 $\mathcal A$ is the Euclidean norm of
@@ -1127,7 +1162,9 @@ summary statistics, and focus-displacement measure. The projection direction
 at each location will remain fixed across the 1:1 and 1:3 conditions and the
 current-ratio sweep. A separate isotropic comparison will average the signed
 quadratic mixing term over uniformly distributed orientations before taking
-its magnitude. Head-model details and results are pending.]}
+its magnitude. Any signed DC-source map will state its detector coefficient
+and operating point; a mean-response map additionally requires a circuit model.
+Head-model details and results are pending.]}
 
 \subsection{Single-column Jansen--Rit: integration, lock-in, and controls}\label{sec:jr-methods}
 All symbols and units are collected in Table~\ref{tab:notation}
@@ -1542,7 +1579,7 @@ the waveform and near-Hopf limitations specified in \S\ref{sec:waveforms}.
 \subsection{Realistic-head comparison of envelope and quadratic maps}\label{sec:fem-results}
 \textcolor{red}{[PLACEHOLDER: Figure~\ref{fig:fem} will compare the envelope
 excursion $2\min(|\varepsilon_1|,|\varepsilon_2|)$, quadratic excursion
-$2|\varepsilon_1\varepsilon_2|$, and quadratic mean
+$2|\varepsilon_1\varepsilon_2|$, and mean-square polarization
 $(\varepsilon_1^2+\varepsilon_2^2)/2$ on the Violante montage in an IXI subject
 with a FreeSurfer hippocampal label. R.~Salvador will report the maps for 1:1
 and 1:3 pair-current ratios and a
@@ -1551,15 +1588,21 @@ relative to 1:1. All maps will use the same local polarizations and a projection
 direction held fixed at each location across ratios; an envelope-maximizing
 direction, if used, will be chosen at the reference ratio and then held fixed.
 An isotropic orientation-averaged quadratic beat map will be shown separately.
+The third map is geometric, before detector gain. Any signed DC-source map
+will be presented separately with its assumed detector and operating state,
+using a color scale centered at zero; field geometry alone does not assign
+excitation or suppression.
 No FEM results are available in this draft.]}
 
 \begin{figure}[htbp]
 \centering
 \fbox{\parbox[c][36mm][c]{0.86\textwidth}{\centering\color{red}
-FEM: envelope vs quadratic maps on the Violante montage,
-IXI subject (FreeSurfer hippocampal label), R.~Salvador}}
+FEM: envelope and quadratic modulation, and mean-square polarization\par
+Violante montage, IXI subject (FreeSurfer hippocampal label), R.~Salvador}}
 \caption{\textcolor{red}{[PLACEHOLDER: Planned FEM comparison; maps and results
-to be supplied by R.~Salvador. No simulation results are shown.]}}
+to be supplied by R.~Salvador. Mean-square polarization is geometric; a signed
+DC source requires detector parameters and a mean response additionally
+requires a circuit model. No simulation results are shown.]}}
 \label{fig:fem}
 \end{figure}
 
@@ -2080,9 +2123,10 @@ including any direction chosen to maximize the envelope at a reference ratio.
 Measure the DC shift and repeat at lower amplitude to check state dependence.
 Changing from $2+2$ to $1+3$~mA multiplies envelope excursion by
 $0.5$--$1.5$ depending on the local polarization ratio, and the quadratic beat
-by $0.75$ everywhere. The DC factor is $1.25$ at equal per-current magnitudes,
+by $0.75$ everywhere. The mean-square factor is $1.25$ at equal per-current magnitudes,
 tending to $0.25$ or $2.25$ where the first or second carrier dominates,
-respectively. \\[4pt]
+respectively. This last factor weights the signed DC source; it does not
+specify excitation or suppression. \\[4pt]
 \textbf{State and carrier dependence.} The static sigmoid follows $\Sig''$ and
 reverses sign at its inflection (PEIX$=0$). Fast-carrier QIF mixes in voltage and
 reads the source through rate and network susceptibility; its DC term follows
@@ -2843,11 +2887,18 @@ floor.}
 \caption{\textbf{Envelope and quadratic spatial maps.} Illustrative line profile:
 $\varepsilon_1(x)=\varepsilon_0(1+x/L_x)$ and
 $\varepsilon_2(x)=\varepsilon_0(1-x/L_x)$ on $-L_x\le x\le L_x$, with polarization scale
-$\varepsilon_0>0$ (mV) and length $L_x>0$ (m). Each curve is divided by its own value at $x=0$.
+$\varepsilon_0>0$ (mV) and length $L_x>0$ (m). In (a,b), each geometric curve is
+divided by its own positive value at $x=0$.
 \emph{(a)} Modulation is $1-|x/L_x|$ for envelope following and $1-(x/L_x)^2$ for quadratic
 detection: both peak centrally, but the quadratic profile is broader here.
-\emph{(b)} Both means increase toward the edges. This is a line profile, not a head model
-or a demonstration of three-dimensional focusing.}
+\emph{(b)} The mean envelope and mean-square polarization $\mathcal I$ both
+increase toward the edges; neither includes a signed detector gain.
+\emph{(c)} The static JR rate source $Y_{\rm DC}=\Sig''\mathcal I/2$ for uniform
+positive curvature (solid red) or negative curvature of the same magnitude
+(dashed blue). Both use the same positive scale $|\Sig''|\varepsilon_0^2/2$,
+giving $\pm[1+(x/L_x)^2]$; the gray line marks zero. These are assumed detector
+states before recurrent feedback, not inferred physiological responses.
+This is a line profile, not a head model or a demonstration of three-dimensional focusing.}
 \label{fig:spatial_maps}
 \end{figure}
 

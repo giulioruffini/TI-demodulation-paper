@@ -10,7 +10,7 @@ Archived at Zenodo: **[doi:10.5281/zenodo.21009618](https://doi.org/10.5281/zeno
 Licensed **CC-BY-4.0** (see [`LICENSE`](LICENSE)); machine-readable citation in
 [`CITATION.cff`](CITATION.cff).
 
-The current working edition is the **JNE article, v0.15.0-draft18**:
+The current working edition is the **JNE article, v0.15.0-draft19**:
 [TN0484_jne.pdf](TN0484_jne.pdf). Run `./build.sh` to update it. The TN and
 supplement are generated from the same manuscript for an authorized Calliope cut;
 they are not separate working editions. Older versioned PDFs are historical snapshots.
@@ -23,7 +23,16 @@ recorded in [planning/review_baseline.json](planning/review_baseline.json), rath
 than creating a new redline for each edit. The fixed reading baseline is draft13 (`c620335`), as requested for the
 October 6 notation pass. The JNE article and supplement both include Appendix A
 from [one notation source](planning/tn0484_notation.tex). The article, supplement,
-and full TN have been regenerated together for the draft18 Overleaf handoff.
+and full TN were regenerated together for the draft18 Overleaf handoff. Draft19
+updates the article and the affected supplement; the full TN retains draft18
+until the next coordinated cut.
+
+Draft19 distinguishes the nonnegative mean-square polarization map from the signed
+DC source after detection and the mean response after recurrence. Table 2 includes
+the signed source, and Figure S13 adds positive- and negative-curvature examples
+using the same positive normalization. The FEM placeholders require detector
+parameters for any physiological interpretation of the third map. See the
+[signed-map revision record](docs/revision_2026-10-14_v0150draft19_signed_dc_maps.md).
 
 As checked on October 2, [Calliope WP0185](https://calliope.bcom.one/papers/WP0185)
 still lists v0.12.0 (July 21). Klaus reports the Overleaf sync completed on

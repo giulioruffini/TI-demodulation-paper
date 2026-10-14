@@ -82,3 +82,11 @@ This uses the same curves and normalization, writes
 `figures/fig_spatial_maps.{pdf,png}`, and changes the axis length symbol to `L_x`
 because `L` denotes a logistic function in the paper. The default command still
 builds the note's original assets. No FEM head-model result is included.
+
+Draft19 (October 14) retains the two geometric panels in the manuscript figure
+and adds a signed-source panel for uniform positive and negative sigmoid
+curvature. The common positive normalization preserves the sign. Panel (b)
+now says "Mean before gain"; its curves are the mean envelope and mean-square
+polarization. Paper-mode checks are written to
+`../../docs/draft19_spatial_map_checks_2026-10-14.json`, leaving the original
+reading-note assets and checks unchanged.
