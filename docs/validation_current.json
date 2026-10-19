@@ -1133,7 +1133,14 @@
       33,
       34
     ],
-    "peer_check": "To be requested on the committed text.",
-    "scope_correction_accepted_commit": "fa21fa1"
+    "peer_check": {
+      "target": "klaus-484-TI-helper",
+      "commit": "dbc647e",
+      "status": "spooled; verdict pending",
+      "requested_at": "2026-10-19 18:49 CEST",
+      "scope": "Two Discussion paragraphs: empirical evidence, geometric versus neural maps, beat measurement and carrier control."
+    },
+    "scope_correction_accepted_commit": "fa21fa1",
+    "committed_as": "dbc647e"
   }
 }

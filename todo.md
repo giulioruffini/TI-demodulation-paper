@@ -1,5 +1,9 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
+- [ ] act on K's annotations of 2026-10-19 (notes/2026-10-19_K/TN0484 redline annotated (5).md)
+- [ ] act on K's annotations of 2026-10-19 (notes/2026-10-19_K/TN0484 journal (JNE) annotated (8).md)
+- [ ] act on K's annotations of 2026-10-19 (notes/2026-10-19_K/TN0484 redline annotated (4).md)
+- [ ] act on K's annotations of 2026-10-19 (notes/2026-10-19_K/TN0484 journal (JNE) annotated (7).md)
 - [ ] act on K's annotations of 2026-10-19 (notes/2026-10-19_K/TN0484 redline annotated (3).md)
 - [ ] act on K's annotations of 2026-10-19 (notes/2026-10-19_K/TN0484 journal (JNE) annotated (6).md)
 - [ ] act on K's annotations of 2026-10-19 (notes/2026-10-19_K/TN0484 redline annotated (2).md)
@@ -9,6 +13,7 @@
 - [ ] act on K's annotations of 2026-10-19 (notes/2026-10-19_K/TN0484 journal (JNE) annotated (3).md)
 - [ ] act on K's annotations of 2026-10-19 (notes/2026-10-19_K/TN0484 journal (JNE) annotated (2).md)
 - [ ] act on K's annotations of 2026-10-19 (notes/2026-10-19_K/TN0484 journal (JNE) annotated.md)
+- [ ] Klaus: return the bounded Discussion wording check on dbc647e before the next private-mirror update
 - [ ] Ricardo: confirm field-angle definitions and distinguish interface normal-field estimates from measured projected-field enhancement
 - [ ] Giulio: decide the FEM abstract sentence and offsetting cuts; retain mean-square terminology and the pinned JR operating-point qualification
 - [ ] Giulio: confirm Ricardo's provisional byline position after Borja
