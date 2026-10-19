@@ -299,7 +299,15 @@
       "Ricardo CRediT/funding confirmation",
       "Giulio abstract decision"
     ],
-    "release_status": "Local canonical integration; private PR open; other release holds unchanged"
+    "release_status": "Local canonical integration; private PR open; other release holds unchanged",
+    "integration_commit": "23b515c",
+    "integration_fidelity_request": {
+      "target": "klaus-484-TI-helper",
+      "commit": "23b515c",
+      "status": "spooled by peer-message; acknowledgment and result pending",
+      "request_time": "2026-10-19 16:14 CEST",
+      "scope": "FEM Methods, Results, Figure 8, Theory pointer, Violante paragraph, current-ratio prediction row; read-only"
+    }
   },
   "focality_integration_revision": {
     "date": "2026-10-06",

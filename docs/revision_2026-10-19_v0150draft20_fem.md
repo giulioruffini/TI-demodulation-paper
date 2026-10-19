@@ -123,3 +123,8 @@ coauthors remain held. The full TN PDF retains its draft18 archive build.
 No scientific explanation, example, or numerical result is removed. The
 replaced text consists of the completed placeholders and stale proposed-test
 wording; the only removed graphic is the duplicate envelope bar.
+
+The integration checkpoint is `23b515c`. A bounded read-only fidelity check of
+its FEM sections, figure, and cross-references was queued to Klaus at 16:14 CEST.
+The request has been spooled; acknowledgment and the integration verdict are
+pending. The earlier PR review is not reported as a check of this final text.

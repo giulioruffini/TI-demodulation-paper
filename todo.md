@@ -1,5 +1,6 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
+- [ ] Klaus: return the bounded FEM integration fidelity check on 23b515c before the coordinated private-mirror update
 - [ ] Ricardo: confirm field-angle definitions and distinguish interface normal-field estimates from measured projected-field enhancement; confirm CRediT and funding
 - [ ] Giulio: review draft20 FEM integration and the fixed draft13 redline; decide whether to add a FEM finding to the abstract
 - [ ] coordinate the reviewed FEM integration with private-mirror PR #1; preserve the downstream JNE setting and Ricardo's contribution history
