@@ -1,12 +1,13 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
 - [ ] Ricardo: confirm field-angle definitions and distinguish interface normal-field estimates from measured projected-field enhancement
-- [ ] Giulio: decide the FEM abstract sentence and offsetting cuts; retain mean-square terminology and the pinned JR operating-point qualification
+- [ ] Klaus: check the approved FEM abstract and physiological steady-source interpretation against 1c31a13, the NPZ, and the Violante evidence
 - [ ] Giulio: confirm Ricardo's provisional byline position after Borja
 - [ ] Giulio: decide the seven retained CUT? passages and the biological-rectifier sentence in docs/revision_2026-10-06_v0150draft16_readability.md
 - [ ] confirm the remaining author declarations, actual AI-tool versions, and all authors' approval of the submission version
 - [ ] keep public GitHub, Calliope, Zenodo, and circulation to other coauthors on hold pending explicit authorization
 - [ ] migrate the folder at a coordinated version boundary with no concurrent editors; run the layout checker before and after
+- [x] add the approved FEM abstract sentence at 299 words and connect mean-square polarization to its conditional physiological source prediction (October 19)
 - [x] record Klaus’s bounded Discussion fidelity pass on dbc647e: empirical evidence, FEM numbers, and scope agree; no corrections (October 19)
 - [x] restate the Violante Discussion as observed BOLD effects followed by geometric predictions and the discriminating measurements (October 19)
 - [x] share reviewed draft20 privately as c386e54 from source 1640b2b; merge PR #1 with Ricardo's history and the JNE default preserved (October 19)

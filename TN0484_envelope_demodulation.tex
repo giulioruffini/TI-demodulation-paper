@@ -1769,8 +1769,9 @@ these values at every ratio. Solid bars give raw-map contrasts; hatched bars giv
 the square-root contrasts for the second-order maps. The envelope has one bar
 because it is already first order. The reference is all gray matter outside the
 hippocampal ROI, including other deep gray matter.
-All maps are geometric, before detector gain; the
-mean-square polarization is not a signed source.}
+All maps are geometric, before detector gain; the mean-square polarization
+weights the signed steady rate source $Y_{\rm DC}$ of \S\ref{sec:dc}
+and is not itself a source.}
 \label{fig:fem}
 \end{figure}
 
@@ -2133,12 +2134,35 @@ changes by $\mathcal I_{1:3}/\mathcal I_{1:1}
 exceeding one only where $|\mathcal P_2|>\sqrt{3/5}|\mathcal P_1|
 \approx0.775|\mathcal P_1|$. Its hippocampal mean rises by 24\% and its focus
 moves 4.5~mm posteriorly. Equal summed currents therefore do not match local
-RMS polarization. These are geometric changes on one anatomy: the sign and
-spatial pattern of the steady neural response also depend on detector curvature
-and recurrence. Neither the BOLD contrast nor the reported functional-connectivity
-changes directly measure the beat or the steady source. The voxelwise pattern
-therefore cannot be matched to one of these maps without a neural and hemodynamic
-readout model. A spatially resolved beat measurement at controlled state would
+RMS polarization.
+
+The mean-square map also predicts a physiological effect: at second order it
+sets the steady rate source $Y_{\rm DC}=\tfrac12\Sig''(v^*)\mathcal I$
+(\S\ref{sec:dc}). With spatially uniform, fixed curvature, its 24\% increase
+in hippocampal mean predicts a 24\% larger mean-rate source in magnitude,
+with the sign set by the curvature. Recurrence then determines the final rate
+response. By comparison, the hippocampal mean envelope excursion falls by
+45\%, and both the projected and isotropic quadratic beat maps fall by 25\%.
+A response linear in the quadratic beat thus decreases; its own rectified
+mean shift scales as $(3/4)^2\approx0.56$ at fixed state in the weak-response
+limit (\S\ref{sec:timing}). Of these hippocampal map averages, only the
+mean-square polarization increases under 1:3, consistent with a larger
+magnitude of BOLD reduction if the steady source lowers activity and the
+hemodynamic response preserves that ordering. A slow, approximately linear
+hemodynamic readout suppresses a zero-mean beat at first order while retaining
+a steady activity shift; nonlinear neural or vascular responses can also
+convert the beat into a mean change.
+
+This interpretation remains conditional:
+the envelope excursion rises locally by up to $1.5\times$ where
+$|\mathcal P_1|\geq3|\mathcal P_2|$, allowing a spatially selective or
+thresholded envelope response, and the nonsignificant 1:1--sham difference
+does not establish a null effect. Neither hippocampal curvature nor the
+recurrent and hemodynamic gains are calibrated here; spatially varying
+curvature can also change the mean-source ratio. Neither the BOLD contrast
+nor the reported functional-connectivity changes directly measure the beat
+or the steady source. The voxelwise pattern therefore cannot be matched to
+one of these maps without a neural and hemodynamic readout model. A spatially resolved beat measurement at controlled state would
 test envelope steering against the fixed quadratic pattern; an equal-power
 unmodulated-carrier control would isolate effects of the steady source under
 the second-order matching conditions of \S\ref{sec:dc}.

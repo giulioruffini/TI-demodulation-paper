@@ -2,14 +2,14 @@
   "version": "0.15.0-draft20",
   "review_baseline": "30ba4a6",
   "redline_baseline": "c620335",
-  "status": "FEM integration shared privately as c386e54; subsequent Discussion clarification is local. Abstract proposal held for Giulio. Public release holds unchanged.",
+  "status": "FEM integration shared privately as c386e54; subsequent Discussion and approved FEM abstract revisions are local. Physiological source interpretation added; bounded fidelity check pending. Public release holds unchanged.",
   "outputs": {
     "jne": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
-      "pages": 46,
-      "sha256": "02a3e0152e118be370a3da33cef6ae9f447fe2effa26507b9e8fe186f8c83c56",
+      "pages": 47,
+      "sha256": "9f9b245203c9655c1954c71a1c49bcacc8d466c14cb7f962830dfccdd61e4c53",
       "version": "0.15.0-draft20",
-      "validation_scope": "Draft20 with the plain-logic current-ratio Discussion revision; clean rebuild, abstract unchanged.",
+      "validation_scope": "Approved FEM abstract (299 words) and physiological steady-source Discussion; clean build and visual inspection.",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.log",
       "diagnostics": {
         "errors": 0,
@@ -45,9 +45,9 @@
     "redline": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.pdf",
       "pages": 55,
-      "sha256": "a0ced3ab56da0fbb747c65008ad66dafc763048e3171b66a52052ac6b3eba7ba",
+      "sha256": "22e4252019f3ddcec1acf03672048dd7f15bba561468998b44a1abe6942f66f4",
       "version": "0.15.0-draft20",
-      "validation_scope": "Draft20 with the plain-logic current-ratio Discussion revision; clean rebuild, abstract unchanged.",
+      "validation_scope": "Approved FEM abstract (299 words) and physiological steady-source Discussion; clean build and visual inspection.",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.log",
       "diagnostics": {
         "errors": 0,
@@ -64,9 +64,9 @@
     "storyline": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.pdf",
       "pages": 13,
-      "sha256": "1914188d0960bd5f76dca55cfe8ca76abdae9b2b1a80ec0a624620eaf462a4d1",
+      "sha256": "fc3735d90b465cc5ca7dec0f2d1583dea621ba78ae8584c1eb11e974b4947c09",
       "version": "0.15.0-draft20",
-      "validation_scope": "Draft20 with the plain-logic current-ratio Discussion revision; clean rebuild, abstract unchanged.",
+      "validation_scope": "Approved FEM abstract (299 words) and physiological steady-source Discussion; clean build and visual inspection.",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.log",
       "diagnostics": {
         "errors": 0,
@@ -1127,7 +1127,7 @@
       "change": 100
     },
     "abstract_changed": false,
-    "abstract_status": "Awaiting Giulio confirmation; use mean-square terminology and retain pinned JR qualification.",
+    "abstract_status": "Superseded: approved and incorporated on October 19; see fem_abstract_physiology_revision.",
     "numerical_data_changed": false,
     "visual_pages_jne": [
       33,
@@ -1144,5 +1144,35 @@
     },
     "scope_correction_accepted_commit": "fa21fa1",
     "committed_as": "dbc647e"
+  },
+  "fem_abstract_physiology_revision": {
+    "date": "2026-10-19",
+    "base_commit": "1c31a13",
+    "record": "docs/revision_2026-10-19_fem_abstract_physiology.md",
+    "abstract_words_texcount": 299,
+    "approved_FEM_sentence_verbatim": true,
+    "pinned_JR_and_oscillation_threshold_retained": true,
+    "regional_mean_ratios": {
+      "envelope": 0.5531852842887484,
+      "quadratic_beat": 0.75,
+      "mean_square": 1.2441283335713318,
+      "isotropic_beat": 0.7499999999999999
+    },
+    "source_ratio_condition": "Spatially uniform fixed curvature; final response depends on recurrence and readout.",
+    "beat_rectified_mean_factor_at_fixed_state": 0.5625,
+    "numerical_files_changed": false,
+    "discussion_words_texcount": {
+      "before": 295,
+      "after": 492
+    },
+    "visual_article_pages": [
+      1,
+      27,
+      34
+    ],
+    "visual_redline_pages": [
+      41
+    ],
+    "peer_check": "pending"
   }
 }
