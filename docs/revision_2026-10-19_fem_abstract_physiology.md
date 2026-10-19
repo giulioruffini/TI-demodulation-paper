@@ -84,3 +84,9 @@ This does not change any FEM value or interpretation.
 
 Final threshold wording: 524 words in the full Violante passage; article and
 redline remain 47 and 55 pages, with clean logs. Article page 34 checked.
+
+Klaus’s final follow-up at 20:14 CEST reports PASS on `c632c7e`: the
+32 s window, encoding-evoked BOLD description, 5 Hz beat, and slow-window
+source interpretation match the published study and the model scope. The
+optional envelope refinement was already incorporated in `e20c047`. This
+review cycle is closed; no further manuscript corrections were requested.

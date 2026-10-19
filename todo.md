@@ -1,12 +1,12 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
 - [ ] Ricardo: confirm field-angle definitions and distinguish interface normal-field estimates from measured projected-field enhancement
-- [ ] Klaus: finish the encoding-window wording check on c632c7e; the abstract and physiological-source check on 111f7ab passed
 - [ ] Giulio: confirm Ricardo's provisional byline position after Borja
 - [ ] Giulio: decide the seven retained CUT? passages and the biological-rectifier sentence in docs/revision_2026-10-06_v0150draft16_readability.md
 - [ ] confirm the remaining author declarations, actual AI-tool versions, and all authors' approval of the submission version
 - [ ] keep public GitHub, Calliope, Zenodo, and circulation to other coauthors on hold pending explicit authorization
 - [ ] migrate the folder at a coordinated version boundary with no concurrent editors; run the layout checker before and after
+- [x] record Klaus’s final encoding-window pass on c632c7e; close the FEM abstract and physiological Discussion review cycle (October 19)
 - [x] record Klaus’s fidelity pass on 111f7ab and state both exact envelope-increase thresholds (October 19)
 - [x] add the approved FEM abstract sentence at 299 words and connect mean-square polarization to its conditional physiological source prediction (October 19)
 - [x] record Klaus’s bounded Discussion fidelity pass on dbc647e: empirical evidence, FEM numbers, and scope agree; no corrections (October 19)

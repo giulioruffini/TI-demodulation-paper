@@ -2,7 +2,7 @@
   "version": "0.15.0-draft20",
   "review_baseline": "30ba4a6",
   "redline_baseline": "c620335",
-  "status": "FEM integration shared privately as c386e54; approved FEM abstract and physiological Discussion revisions remain local. Fidelity pass on 111f7ab recorded; exact envelope thresholds adopted; subsequent encoding-window check pending. Public release holds unchanged.",
+  "status": "FEM integration shared privately as c386e54; approved FEM abstract and physiological Discussion revisions remain local. Fidelity checks on 111f7ab and c632c7e passed; optional exact envelope thresholds adopted in e20c047. This review cycle is closed. Public release holds unchanged.",
   "outputs": {
     "jne": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
@@ -1176,12 +1176,19 @@
       41
     ],
     "peer_check": {
-      "status": "PASS on 111f7ab; later encoding-window clarification pending",
+      "status": "PASS on 111f7ab; encoding-window follow-up PASS on c632c7e; review cycle closed",
       "reviewed_commit": "111f7ab",
       "reported_at": "2026-10-19 20:13 CEST",
       "reviewer": "klaus-484-TI-helper",
       "scope": "Abstract, four regional ratios, squared-beat factor, curvature and readout conditions, nonsignificant 1:1-sham interpretation, figure caption.",
-      "optional_refinement_adopted": "Envelope excursion rises for |P1| > 2|P2|, reaching 1.5 at |P1| >= 3|P2|."
+      "optional_refinement_adopted": "Envelope excursion rises for |P1| > 2|P2|, reaching 1.5 at |P1| >= 3|P2|.",
+      "encoding_followup": {
+        "commit": "c632c7e",
+        "reported_at": "2026-10-19 20:14 CEST",
+        "status": "PASS; no further corrections",
+        "scope": "32 s encoding stage, encoding-evoked BOLD, 5 Hz beat, slow-window source interpretation, unchanged abstract and numerical content."
+      },
+      "threshold_refinement_commit": "e20c047"
     },
     "encoding_window_clarification": {
       "base_commit": "111f7ab",
