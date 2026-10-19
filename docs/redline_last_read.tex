@@ -1,7 +1,7 @@
 \documentclass[11pt,a4paper]{article}
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-4emde5k3/old.tex   Wed Oct 14 11:55:11 2026
-%DIF ADD /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-4emde5k3/new.tex   Wed Oct 14 11:55:11 2026
+%DIF DEL /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-quxr04wr/old.tex   Mon Oct 19 16:10:22 2026
+%DIF ADD /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-quxr04wr/new.tex   Mon Oct 19 16:10:22 2026
 \usepackage[margin=2.3cm]{geometry}
 \usepackage{lmodern}        % classic Computer Modern look, vectorized (T1)
 \usepackage[T1]{fontenc}
@@ -97,7 +97,7 @@
 %DIF 89c89
 %DIF < \newcommand{\paperver}{0.15.0-draft13}
 %DIF -------
-\newcommand{\paperver}{0.15.0-draft19} %DIF >
+\newcommand{\paperver}{0.15.0-draft20} %DIF >
 %DIF -------
 \hypersetup{
   pdftitle={The cortical column as a tuned receiver: a network mechanism for temporal-interference stimulation},
@@ -106,7 +106,7 @@
 %DIF <   pdfsubject={TN0484 / WP0185, version \paperver, October 6, 2026}
 %DIF -------
   pdfauthor={Giulio Ruffini, Borja Mercadal, Ricardo Salvador, Alex Just, Raul de Palma Aristides, Francesca Castaldo, Nir Grossman, Santiago Canals, Claudio Mirasso}, %DIF >
-  pdfsubject={TN0484 / WP0185, version \paperver, October 14, 2026} %DIF >
+  pdfsubject={TN0484 / WP0185, version \paperver, October 19, 2026} %DIF >
 %DIF -------
 }
 %DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
@@ -181,7 +181,7 @@ $^{5}$Department of Brain Sciences and UK Dementia Research Institute,\\
 Imperial College London, London, United Kingdom\\[6pt]
 E-mail: \texttt{giulio.ruffini@neuroelectrics.com}\\[4pt]
 Working draft v\paperver\quad \DIFdelbegin \DIFdel{2026-10-06
-}\DIFdelend \DIFaddbegin \DIFadd{2026-10-14
+}\DIFdelend \DIFaddbegin \DIFadd{2026-10-19
 }\DIFaddend \end{minipage}\\[8pt]
 \begin{minipage}{0.86\textwidth}\centering\footnotesize\color{negray}
 \textbf{ORCID iDs:}\ %
@@ -211,7 +211,7 @@ a network mechanism for temporal-interference stimulation}\\[10pt]
 \DIFdelend Santiago Canals, and Claudio Mirasso \\
 \textbf{Affiliations:} & Neuroelectrics\,/\,BCOM\,/\,IFISC (UIB-CSIC)\,/\,IN (UMH-CSIC)\\
 & Imperial College London (Brain Sciences and UK Dementia Research Institute) \\
-\textbf{Date:} & \DIFdelbegin \DIFdel{2026-10-06 }\DIFdelend \DIFaddbegin \DIFadd{2026-10-14 }\DIFaddend \qquad \textbf{Version:} \paperver \\
+\textbf{Date:} & \DIFdelbegin \DIFdel{2026-10-06 }\DIFdelend \DIFaddbegin \DIFadd{2026-10-19 }\DIFaddend \qquad \textbf{Version:} \paperver \\
 \textbf{DOI:} & \href{https://doi.org/10.5281/zenodo.21009618}{10.5281/zenodo.21009618} \\
 \end{tabular}\\[4pt]
 {\color{neblue}\rule{\textwidth}{1pt}}
@@ -660,6 +660,15 @@ $\lambda_f\approx\lambda_0$ to isolate mixing and recurrent amplification;
 \S\ref{sec:khz} restores frequency-dependent access. Fast axonal access motivates
 this limit; compartment anatomy enters the reduced model through
 the coupling and response time, which must be calibrated for the preparation.
+\DIFaddbegin \DIFadd{It also fixes the projection direction. A laminar direction for a pyramidal
+axon initial segment, a local axon direction for a node, or an orientation
+distribution for terminals defines a different access model. Isotropic averaging
+is one possible distribution, not an anatomical consequence of choosing terminals.
+Maximizing a geometric map over orientation gives an upper bound for that map
+at each location; it does not identify the detector's orientation. The FEM
+comparison in \S\ref{sec:fem-methods} therefore holds its chosen direction fixed
+when changing the current ratio.
+}\DIFaddend
 
 Expanding $\Sig$ about \DIFdelbegin \DIFdel{an operating point }\DIFdelend \DIFaddbegin \DIFadd{a field-free operating voltage }\DIFaddend $v^*$ (\DIFaddbegin \DIFadd{mV) (}\DIFaddend a Volterra/Taylor expansion, as
 in \cite{ruffini2025ham}) gives
@@ -1096,10 +1105,11 @@ deep target, \DIFdelbegin \DIFdel{$\mathcal{M}[A]$ }\DIFdelend \DIFaddbegin \DIF
 this algebra and must be evaluated from the }\DIFdelend \DIFaddbegin \DIFadd{Focality must therefore be computed from the product map, whose spatial ranking
 can differ from the envelope map's. Its contrast depends on the }\DIFaddend actual vector
 field distribution\DIFdelbegin \DIFdel{; }\DIFdelend \DIFaddbegin \DIFadd{: }\DIFaddend a sufficiently weak second carrier can suppress the
-superficial product\DIFdelbegin \DIFdel{instead. The
-product law }\DIFdelend \DIFaddbegin \DIFadd{. A finite-element comparison on a real TI montage can
-quantify this reweighting from the same local polarizations; the illustrative
-line profile is not a head-model calculation.
+superficial product\DIFdelbegin \DIFdel{instead. The product law }\DIFdelend \DIFaddbegin \DIFadd{. The finite-element comparison in \S\ref{sec:fem-results}
+quantifies this reweighting on one realistic TI montage: at balanced currents,
+the target-to-reference contrast is 1.22 for the envelope and 1.08 for the
+square root of the quadratic map. This is a milder change than the illustrative
+two-site contrast above; the line profile is not a head-model calculation.
 }
 
 \DIFadd{With one fixed electrode pair per carrier and fixed neural state, changing the
@@ -1627,19 +1637,124 @@ $|G(2\Omega)/G(\Omega)|\approx1.22$--$1.25$ across $\mathcal{Q}=3$--$30$, or wit
 measured independently by a weak sweep of direct low-frequency stimulation (transcranial
 alternating-current stimulation, tACS) and deconvolved.
 
-\DIFaddbegin \subsection{\DIFadd{Head model and field computation (R. Salvador; text to come)}}\label{sec:fem-methods}
-\DIFadd{\textcolor{red}{[PLACEHOLDER: R.~Salvador will specify the head model from an open
-IXI subject with a FreeSurfer hippocampal label, tissue conductivities,
-electrode geometry and currents for the Violante montage,
-finite-element (FEM) solver and boundary conditions, and field-to-polarization
-conversion. The methods will define the target and cortical regions, spatial
-summary statistics, and focus-displacement measure. The projection direction
-at each location will remain fixed across the 1:1 and 1:3 conditions and the
-current-ratio sweep. A separate isotropic comparison will average the signed
-quadratic mixing term over uniformly distributed orientations before taking
-its magnitude. Any signed DC-source map will state its detector coefficient
-and operating point; a mean-response map additionally requires a circuit model.
-Head-model details and results are pending.]}
+\DIFaddbegin \subsection{\DIFadd{Head model and field computation}}\label{sec:fem-methods}
+\DIFadd{The realistic-head comparison of \S\ref{sec:fem-results} uses one open-access subject,
+IXI002 of the IXI dataset}\footnote{\url{https://brain-development.org/ixi-dataset/}}
+\DIFadd{(T1-weighted MRI; female, 35 years). The T1 image was segmented into six tissues
+(scalp, skull, cerebrospinal fluid, gray matter, white matter and eyes) and meshed with
+SimNIBS~3.2.3 \texttt{headreco} \cite{nielsen2018}, with its CAT12 option
+\cite{gaser2024}. Tissue conductivities were 0.33 (scalp), 0.008 (skull), 1.79
+(cerebrospinal fluid), 0.40 (gray matter), 0.15 (white matter) and 0.33~S/m (eyes)
+\cite{salvador2025}. These are low-frequency values; no dispersion correction was
+applied at the kHz carriers. The volume conductor is linear and quasi-static, so the
+carrier frequencies do not enter the maps.
+}
+
+\DIFadd{The electrodes follow the published hippocampal montage of Violante et al.\
+\cite{violante2023}, placed by its recipe on the subject's registered 10--10
+positions. Pair~1 (anterior) joins e1, 25~mm from T9 toward FT9, to e2, 10~mm from AF8
+toward Fp2. Pair~2 (posterior) joins e3, 25~mm from T9 toward TP9, to e4, 10~mm from P8
+toward PO8. Each electrode is a 20-mm disc of 3~mm of gel (4.0~S/m) under 2~mm of metal
+(10~S/m), meshed into the head model with SimNIBS~3.2.3; the resulting mesh has
+$3.64\times10^6$ linear tetrahedra. As a montage sensitivity, the 10--10 rendering of
+this montage, FT7--F8 (anterior) and TP7--P8 (posterior), which Yatsuda et al.\
+\cite{yatsuda2024} used as their starting montage, was meshed and solved in the same
+way. Each montage has its own mesh, carrying only its own four electrodes.
+}
+
+\DIFadd{Each pair was solved once at 1~A. The potential $\phi_j$ (V) satisfies
+$\nabla\!\cdot\!(\sigma_{\rm cond}\nabla\phi_j)=0$, where
+$\sigma_{\rm cond}$ is tissue conductivity (S/m). Current enters and leaves through each
+electrode's metal contact as a Neumann condition, distributed in proportion to nodal
+area; the rest of the scalp carries no normal current, and one pinned node fixes the
+gauge. The linear finite-element system was assembled and solved with Neuroelectrics'
+temporal-interference library, by conjugate gradients with algebraic-multigrid
+preconditioning, to a relative residual of $10^{-8}$. The field
+$-\nabla\phi_j$ was recovered at gray- and white-matter
+nodes by superconvergent patch recovery \cite{zienkiewicz1992}, separately within each
+compartment (446}{\DIFadd{,}}\DIFadd{877 node--compartment pairs). Dividing these fields by the solve
+current gives the field-per-current vectors $\mathbf F_j$, expressed in
+(V/m)/mA to match $I_j^{\rm pair}$; the supplied code instead uses amperes
+consistently. Every current condition is a scaling of these two fields.
+With peak pair currents $I_1^{\rm pair}$ (anterior) and
+$I_2^{\rm pair}$ (posterior) summing to 4~mA, the ratio 1:1 is $2+2$~mA and 1:3 is
+1~mA anterior plus 3~mA posterior, the two conditions of Violante et al. The ratio sweep
+sets the posterior share $I_2^{\rm pair}/(I_1^{\rm pair}+I_2^{\rm pair})$ from 0.1 to
+0.9 in steps of 0.025.
+}
+
+\DIFadd{The field-to-polarization conversion follows \S\ref{sec:envelope}:
+$\varepsilon_j(\mathbf x)=I_j^{\rm pair}\mathcal P_j(\mathbf x)$, with
+$\mathcal P_j=\lambda_0\,\mathbf F_j\!\cdot\!\mathbf n$, one uniform
+static coupling $\lambda_0=0.5$~mV per V/m \cite{radman2009}, and
+$\lambda_f\approx\lambda_0$. A uniform coupling multiplies the envelope map by
+$\lambda_0$ and the two second-order maps by $\lambda_0^2$. Target-to-reference ratios,
+normalized maps and focus positions do not depend on it. Hippocampal couplings of
+$0.12$--$0.18$~mV per V/m \cite{bikson2004,deans2007} would scale the absolute values
+by $0.24$--$0.36$ and $0.06$--$0.13$, respectively.
+}
+
+\DIFadd{The projection direction $\mathbf n(\mathbf x)=\mathbf n^*(\mathbf x)$ is the envelope-maximizing direction at
+the reference ratio 1:1: the closed-form maximizer, over unit vectors, of
+$2\min(|\mathbf F_1\!\cdot\!\mathbf n|,|\mathbf F_2\!\cdot\!\mathbf n|)$
+\cite{grossman2017}. It is chosen once at each node and then held fixed for 1:1, 1:3
+and every ratio of the sweep, and all three maps use it. Along it, the 1:1 envelope map
+equals its maximum over orientation. At any other ratio it is the envelope seen by an
+element with that fixed orientation, which can be below that ratio's own maximum. As an
+orientation sensitivity, every statistic was repeated along a second fixed field, the
+radial direction from the brain centroid. The isotropic comparison averages the signed
+mixing term over uniformly distributed orientations before its magnitude is taken:
+$\langle\varepsilon_1\varepsilon_2\rangle_{\mathbf n}
+=\lambda_0^2I_1^{\rm pair}I_2^{\rm pair}\,\mathbf F_1\!\cdot\!\mathbf F_2/3$, so the
+isotropic beat excursion is
+$\tfrac23\lambda_0^2I_1^{\rm pair}I_2^{\rm pair}|\mathbf F_1\!\cdot\!\mathbf F_2|$.
+Elements whose beats have opposite phase cancel in this average.
+}
+
+\DIFadd{The target is the left hippocampus of a FreeSurfer~6.0.0 \texttt{recon-all}
+segmentation of the same T1 image (\texttt{aseg} label 17, 3903~mm$^3$)
+\cite{fischl2002}. The region of interest (ROI) is the 1}{\DIFadd{,}}\DIFadd{568 gray- and white-matter
+nodes inside it. The reference is the 273}{\DIFadd{,}}\DIFadd{544 gray-matter nodes outside the
+ROI, including other deep gray matter. It serves as a cortical-reference proxy.
+The mesh and the segmentation share one image frame; tissue-volume, centroid and
+white-matter checks confirmed their alignment. As a label sensitivity, the
+Neuromorphometrics atlas hippocampus, warped into the subject with SimNIBS~3.2.3
+\texttt{mni2subject} and the subject's nonlinear MNI transform (1}{\DIFadd{,}}\DIFadd{345 nodes; Dice 0.72
+with the FreeSurfer label), replaced the ROI. As a tissue sensitivity, the ROI was
+restricted to its gray-matter nodes (1}{\DIFadd{,}}\DIFadd{174 with the FreeSurfer label, 1}{\DIFadd{,}}\DIFadd{013 with
+the atlas label).
+}
+
+\DIFadd{The target-to-reference ratio is the ROI 95th percentile divided by the reference
+95th percentile; its mean-based companion divides the ROI mean by the same
+reference percentile. All percentiles and centroids weight nodes equally.
+The quadratic excursion and $\mathcal I$ are second order in the field, whereas
+the envelope excursion is first order. To separate this difference in degree
+from the spatial weighting, each second-order statistic is also given
+degree-matched, computed on the square root of the map. This is a geometric
+comparison; the raw maps remain the respective detector predictions before gain.
+The focus is the centroid of the top 10\% of ROI nodes,
+ranked by the map's own value, with 5, 25 and 50\% as a sensitivity. Ranking makes the
+focus exactly invariant to a uniform positive factor. Its displacement from 1:1 is
+measured along the hippocampal long axis, the first principal axis of the ROI nodes,
+with anterior positive. Field projections still use $\mathbf n^*$, independently
+of this reporting axis. The 1:1 to 1:3 displacement was computed for every combination
+of montage, label, ROI tissue definition and focus fraction (32 per map), each montage
+along its own 1:1 direction.
+}
+
+\DIFadd{No signed DC-source or mean-response map is computed. For a spatially uniform detector
+coefficient, $Y_{\rm DC}=\tfrac12\Sig''(v^*)\mathcal I$ (\S\ref{sec:dc}) is
+$\mathcal I$ rescaled, with the sign of $\Sig''(v^*)$. A nonuniform coefficient would
+require an operating-point map, which a head model does not provide, and a mean
+response would additionally require a circuit model. In particular,
+$\Sig''(v^*)$ is curvature at the population model's operating point, not a
+measurement of the transfer at the axon initial segment. Assigning that
+coefficient to an anatomical detector requires a calibrated access and
+input--output model. The script
+\texttt{code/fem\_quadmaps.py} computes every map and number in
+\S\ref{sec:fem-results} from the stored fields, and \texttt{code/make\_fem\_fig.py}
+draws Fig.~\ref{fig:fem}; \texttt{docs/fem\_ixi002\_violante.md} lists every setting.
 }
 
 \DIFaddend \subsection{Single-column Jansen--Rit: integration, lock-in, and controls}\DIFaddbegin \label{sec:jr-methods}
@@ -2105,49 +2220,88 @@ the waveform and near-Hopf limitations specified in \S\DIFdelbegin \DIFdel{\ref{
 \subsection{\DIFdelbegin \DIFdel{Exact mean-field confirmation: the NMM2 PING gamma generator}%DIFDELCMD < \MBLOCKRIGHTBRACE\label{sec:nmm2-results}
 %DIFDELCMD < %%%
 \DIFdel{The exact PING mean field generates and amplifies the beat through its derived
-$v_E^2$ nonlinearity. With a $300$~Hz two-tone field entering the excitatory
-current, the lock-in }\DIFdelend \DIFaddbegin \DIFadd{Realistic-head comparison }\DIFaddend of \DIFdelbegin \DIFdel{$r_E$ shows a growing gamma resonance below the Hopf
+$v_E^2$ nonlinearity.
+With a $300$~Hz two-tone field entering the excitatory
+current, the
+lock-in }\DIFdelend \DIFaddbegin \DIFadd{Realistic-head comparison }\DIFaddend of \DIFdelbegin \DIFdel{$r_E$ shows a growing gamma resonance below the Hopf
 and a response superposed on autonomous gamma above it
-(Figs.~\ref{fig:nmm2_res},~\ref{fig:nmm2_map}). The resonance ridge intensifies
-through the Hopf; its appreciable frequency shift with operating point makes
-it diagonal, unlike the JR sweep shown here \cite{clusella2023}.
-}\DIFdelend \DIFaddbegin \DIFadd{envelope and quadratic maps}}\label{sec:fem-results}
-\DIFadd{\textcolor{red}{[PLACEHOLDER: Figure~\ref{fig:fem} will compare the envelope
-excursion $2\min(|\varepsilon_1|,|\varepsilon_2|)$, quadratic excursion
-$2|\varepsilon_1\varepsilon_2|$, and mean-square polarization
-$(\varepsilon_1^2+\varepsilon_2^2)/2$ on the Violante montage in an IXI subject
-with a FreeSurfer hippocampal label. R.~Salvador will report the maps for 1:1
-and 1:3 pair-current ratios and a
-ratio sweep, together with target-to-cortex ratios and focus displacement in mm
-relative to 1:1. All maps will use the same local polarizations and a projection
-direction held fixed at each location across ratios; an envelope-maximizing
-direction, if used, will be chosen at the reference ratio and then held fixed.
-An isotropic orientation-averaged quadratic beat map will be shown separately.
-The third map is geometric, before detector gain. Any signed DC-source map
-will be presented separately with its assumed detector and operating state,
-using a color scale centered at zero; field geometry alone does not assign
-excitation or suppression.
-No FEM results are available in this draft.]}
+(Figs.
+~\ref{fig:nmm2_res}, ~\ref{fig:nmm2_map}). The resonance ridge intensifies
+through the Hopf;
+its appreciable frequency shift with operating point makes
+it diagonal, unlike the JR sweep shown here \cite{clusella2023}. }\DIFdelend \DIFaddbegin \DIFadd{envelope and quadratic maps}}\label{sec:fem-results}
+\DIFadd{Changing the current ratio moves the envelope and mean-square foci in opposite
+directions in this head model, while the quadratic beat map only rescales.
+Figure~\ref{fig:fem} compares the three maps of Table~\ref{tab:transduction-maps}, the
+envelope excursion $\mathcal M[\mathcal A]$, the quadratic excursion
+$\mathcal M[\tfrac12\mathcal A^2]$ and the mean-square polarization $\mathcal I$, for
+the Violante montage in IXI002. All three use the same local polarizations, along the direction chosen at
+1:1 and held fixed (\S\ref{sec:fem-methods}).
 }\DIFaddend
 
-\DIFdelbegin \DIFdel{The receiver behavior thus also occurs with a nonlinearity derived from QIF
-spiking dynamics. Its coefficient differs from the sigmoid's: at $300$~Hz the
+\DIFaddbegin \DIFadd{At 1:1 ($2+2$~mA) the hippocampal means are $0.16$~mV, $0.018$~mV$^2$ and
+$0.0094$~mV$^2$, respectively. The target-to-reference ratio is $1.22$ for the envelope
+map, $1.17$ for the quadratic excursion ($1.08$ degree-matched) and $0.92$ for
+$\mathcal I$ ($0.96$). Once degree is matched, the quadratic map therefore favors the
+hippocampus less than the envelope map does, as Eq.~\eqref{eq:reweight} predicts where
+the dominant local polarization is larger in the reference than at the target;
+$\mathcal I$ favors the reference.
+}
+
+\DIFadd{Changing the current ratio separates the three maps (Fig.~\ref{fig:fem}a--c,f). From
+1:1 to 1:3 the quadratic excursion is multiplied by
+$I_1^{\rm pair}I_2^{\rm pair}/(2~\mathrm{mA})^2=0.75$ at every node, to machine
+precision. Its normalized map, its target-to-reference ratio and its focus do not change:
+this is the fixed-state product law of \S\ref{sec:envelope}. The envelope focus moves
+$2.5$~mm anteriorly ($2.2$--$4.0$~mm over the 5--50\% fractions), toward the pair whose
+current falls. Its ratio drops from $1.22$ to $0.95$, and its hippocampal mean falls by
+45\%. The focus of $\mathcal I$ moves $4.5$~mm posteriorly ($2.4$--$8.2$~mm), toward
+the pair whose current rises. Its hippocampal mean rises by 24\%, while its ratio
+changes little ($0.92$ to $0.90$).
+}
+
+\DIFaddend The \DIFdelbegin \DIFdel{receiver behavior thus also occurs with a nonlinearity derived from QIF
+spiking dynamics. Its coefficient differs from the sigmoid's : at $300$~Hz the
 population lies on the fast side of its crossover, where carrier voltage
 excursions mix in the voltage equation. The fast-carrier approximation predicts
 the second-order response to within $1.1\%$ at the four tested stable points
-(\S\ref{sec:dynamic}, Fig.~\ref{fig:crossover}).
-}%DIFDELCMD <
+(\S\ref{sec:dynamic}, Fig.
+~\ref{fig:crossover})}\DIFdelend \DIFaddbegin \DIFadd{sweep shows two kinds of steering (Fig.~\ref{fig:fem}e,f). The envelope ratio peaks
+near balance ($1.24$ at a posterior share of $0.525$) and falls to $0.89$--$0.94$ at
+the extremes. Its focus moves only while the two carriers are comparable inside the
+hippocampus. At a posterior share of $0.6$ or more, the anterior pair is the weaker
+carrier at more than 96\% of hippocampal nodes; at $0.4$ or less, the posterior pair is. The
+envelope map then equals twice the weaker pair's polarization over most of the ROI,
+and its measured focus changes little with further imbalance. The focus of $\mathcal I$ moves
+continuously instead, from $1.5$~mm anterior at a posterior share of $0.1$ to $6.3$~mm
+posterior at $0.9$, while its ratio stays between $0.79$ and $0.94$ ($0.89$--$0.97$
+degree-matched). The quadratic excursion keeps one ratio and one focus across the
+whole sweep.
+}
 
-%DIFDELCMD < \begin{figure}[t!]
+\DIFadd{The isotropic beat map (Fig.~\ref{fig:fem}d,g) has a target-to-reference ratio of $1.18$
+($1.08$ degree-matched), close to that of the fixed-direction quadratic map. It also
+scales with $I_1^{\rm pair}I_2^{\rm pair}$, so the current ratio cannot steer it either.
+}
+
+\DIFadd{The atlas label lowers the absolute ratios (envelope $1.17$, quadratic excursion $1.04$
+at 1:1) but keeps every direction of focus displacement: envelope $2.0$--$3.8$~mm
+anterior, $\mathcal I$ $3.2$--$5.9$~mm posterior, quadratic excursion zero. Along the
+radial direction the displacements also keep their directions (envelope $1.9$--$2.8$~mm
+anterior, $\mathcal I$ $2.0$--$3.7$~mm posterior), but the ratios change more than with
+the label: $1.62$ for the envelope and $1.97$ for the quadratic excursion at 1:1. In
+this subject the assumed orientation, more than the label, sets the absolute contrast.
+Across all 32 combinations of montage, label, ROI tissue definition and focus fraction,
+every envelope shift is anterior ($0.7$--$8.1$~mm), every shift of $\mathcal I$ is
+posterior ($0.5$--$10.6$~mm), and every shift of the quadratic excursion is zero}\DIFaddend .
+
+\DIFdelbegin %DIFDELCMD < \begin{figure}[t!]
+%DIFDELCMD < \centering
+%DIFDELCMD < \includegraphics[width=\textwidth]{fig_mpr_crossover.pdf}
 %DIFDELCMD < %%%
-\DIFdelendFL \DIFaddbeginFL \begin{figure}[htbp]
-\DIFaddendFL \centering
-\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\textwidth]{fig_mpr_crossover.pdf}
-%DIFDELCMD < %%%
-\DIFdelendFL \DIFaddbeginFL \DIFaddFL{\fbox{\parbox[c][36mm][c]{0.86\textwidth}{\centering\color{red}
-FEM: envelope and quadratic modulation, and mean-square polarization\par
-Violante montage, IXI subject (FreeSurfer hippocampal label), R.~Salvador}}
-}\DIFaddendFL \caption{\DIFdelbeginFL \DIFdelFL{\textbf{Static curvature at slow carriers, slope at fast ones.} \emph{(a)}
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdelFL{\textbf{Static curvature at slow carriers, slope at fast ones.} \emph{(a)}
 Second-order DC rate shift of an uncoupled MPR population ($\Delta=1$, $\tau=1$) under a
 current carrier, Eq.~\eqref{eq:crossover}, for operating points below, at and above the
 inflection of $F(Q)$. Dotted: the static limit $\tfrac14F''$; dashed: the fast-carrier
@@ -2157,40 +2311,59 @@ $\omega_z$. The top axis converts $\omega\tau$ to a carrier frequency for
 $\tau=\tau_E=15$~ms. \emph{(b)} PING of Eq.~\eqref{eq:nmm2-ping}: relative error of the
 fast-carrier difference-frequency source against the exact second-order response at four
 stable operating points ($\gamma$ the damping of the gamma mode), two tones centered at
-$300$, $1000$ and $2000$~Hz.}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{\textcolor{red}{[PLACEHOLDER: Planned FEM comparison; maps and results
-to be supplied by R.~Salvador. Mean-square polarization is geometric; a signed
-DC source requires detector parameters and a mean response additionally
-requires a circuit model. No simulation results are shown.]}}\DIFaddendFL }
-\DIFdelbeginFL %DIFDELCMD < \label{fig:crossover}
+$300$, $1000$ and $2000$~Hz.}}
+%DIFAUXCMD
+%DIFDELCMD < \label{fig:crossover}
+%DIFDELCMD < \end{figure}
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \DIFadd{All four maps are geometric quantities before detector gain. $\mathcal I$ is
+nonnegative and does not by itself assign excitation or suppression
+(\S\ref{sec:dc}). These results come from one subject and one montage, with
+quasi-static conductivities and a uniform coupling.
+}\DIFaddend
+
+\DIFdelbegin %DIFDELCMD < \begin{figure}[t!]
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \begin{figure}[htbp]
+\DIFaddendFL \centering
+\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\textwidth]{fig_nmm2_resonance_twotone.pdf}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\textwidth]{fig_fem.pdf}
+\DIFaddendFL \caption{\DIFdelbeginFL \DIFdelFL{\textbf{NMM2 PING gamma resonance (exact mean field, genuine two tones).}
+Lock-in response of }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{\textbf{Envelope and quadratic maps in a realistic head} (IXI002, Violante
+montage, FreeSurfer left hippocampus outlined in gold). \emph{(a--d)} Sagittal plane
+through }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{excitatory rate $r_E$ at }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{hippocampal centroid, anterior to }\DIFaddendFL the \DIFaddbeginFL \DIFaddFL{left: }\DIFaddendFL envelope \DIFdelbeginFL \DIFdelFL{frequency $\Delta f$ under a
+two-tone TI field }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{excursion, quadratic
+excursion and mean-square polarization, all along the 1:1 envelope-maximizing direction
+held fixed, and the isotropic beat excursion. Top row 1:1 }\DIFaddendFL (\DIFdelbeginFL \DIFdelFL{carrier $300$}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{$2+2$}\DIFaddendFL ~\DIFdelbeginFL \DIFdelFL{Hz}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{mA}\DIFaddendFL )\DIFdelbeginFL \DIFdelFL{. \emph{(a)} }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{, bottom row 1:3
+}\DIFaddendFL (\DIFdelbeginFL \DIFdelFL{stable focus}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{1~mA anterior}\DIFaddendFL , \DIFdelbeginFL \DIFdelFL{$\bar\eta<\bar\eta_H=1.110$}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{3~mA posterior}\DIFaddendFL )\DIFdelbeginFL \DIFdelFL{forced resonance }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{. Each column has one color scale, from zero to its
+gray-matter 99th percentile }\DIFaddendFL at \DIFaddbeginFL \DIFaddFL{1:1; $\lambda_0=0.5$~mV per V/m. Circles mark }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{gamma frequency
+}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{focus
+at 1:1 }\DIFaddendFL (\DIFdelbeginFL \DIFdelFL{$f_0\!\approx\!54$~Hz}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{centroid of the top 10\% of hippocampal nodes}\DIFaddendFL ) \DIFaddbeginFL \DIFaddFL{and triangles the focus at 1:3}\DIFaddendFL ,
+\DIFaddbeginFL \DIFaddFL{both projected onto }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{peak growing $0.0014\!\to\!0.0030\!\to\!0.0055$ as }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{plane. \emph{(e)} Hippocampal 95th percentile over reference
+95th percentile across }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{Hopf
+is approached }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{ratio sweep, at 4~mA total. Dashed lines are degree-matched
+}\DIFaddendFL (\DIFdelbeginFL \DIFdelFL{$1/\gamma$ gain}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{square root of the second-order maps}\DIFaddendFL ). \DIFdelbeginFL \DIFdelFL{\emph{(b)} (limit cycle}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{\emph{(f)} Focus displacement from 1:1 along
+the hippocampal long axis}\DIFaddendFL , \DIFdelbeginFL \DIFdelFL{$\bar\eta>\bar\eta_H$}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{anterior positive: top 10\% (line}\DIFaddendFL ) \DIFdelbeginFL \DIFdelFL{response in }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{and }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{autonomous-gamma regime, the peak shifting
+upward with $\bar\eta$ }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{range over
+5--50\% }\DIFaddendFL (\DIFdelbeginFL \DIFdelFL{$56\!\to\!65\!\to\!83$~Hz}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{band}\DIFaddendFL ). The \DIFdelbeginFL \DIFdelFL{input carries no power }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{quadratic excursion's displacement is zero }\DIFaddendFL at \DIFdelbeginFL \DIFdelFL{$\Delta f$; }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{every ratio.
+\emph{(g)} Target-to-reference ratio of }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{response is synthesized by the exact }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{envelope and }\DIFaddendFL quadratic \DIFdelbeginFL \DIFdelFL{$v^2$ nonlinearity, with no
+sigmoid anywhere in }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{excursions along }\DIFaddendFL the
+\DIFdelbeginFL \DIFdelFL{model. Matched AM }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{fixed direction }\DIFaddendFL and \DIFdelbeginFL \DIFdelFL{two-tone drives agree }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{of the isotropic beat excursion, }\DIFaddendFL at \DIFdelbeginFL \DIFdelFL{$\Omega$ to
+$0.07\%$ well below }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{1:1; }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{Hopf and to $4\%$ }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{two beat maps keep
+these values }\DIFaddendFL at \DIFdelbeginFL \DIFdelFL{$\bar\eta=0.9$, consistent with }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{every ratio. Solid bars give raw-map contrasts; hatched bars give
+}\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{JR
+surrogate control (Fig}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{square-root contrasts for the second-order maps}\DIFaddendFL . \DIFdelbeginFL \DIFdelFL{~\ref{fig:opp}d)}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{The envelope has one bar
+because it is already first order}\DIFaddendFL . \DIFaddbeginFL \DIFaddFL{The reference is all gray matter outside the
+hippocampal ROI, including other deep gray matter.
+All maps are geometric, before detector gain; the
+mean-square polarization is not a signed source.}\DIFaddendFL }
+\DIFdelbeginFL %DIFDELCMD < \label{fig:nmm2_res}
 %DIFDELCMD < %%%
 \DIFdelendFL \DIFaddbeginFL \label{fig:fem}
 \DIFaddendFL \end{figure}
 
-\DIFdelbegin %DIFDELCMD < \begin{figure}[t!]
-%DIFDELCMD < \centering
-%DIFDELCMD < \includegraphics[width=\textwidth]{fig_nmm2_resonance_twotone.pdf}
-%DIFDELCMD < %%%
-%DIFDELCMD < \caption{%
-{%DIFAUXCMD
-\DIFdelFL{\textbf{NMM2 PING gamma resonance (exact mean field, genuine two tones).}
-Lock-in response of the excitatory rate $r_E$ at the envelope frequency $\Delta f$ under a
-two-tone TI field (carrier $300$~Hz). \emph{(a)} (stable focus,
-$\bar\eta<\bar\eta_H=1.110$) forced resonance at the gamma frequency
-($f_0\!\approx\!54$~Hz), the peak growing $0.0014\!\to\!0.0030\!\to\!0.0055$ as the Hopf
-is approached ($1/\gamma$ gain). \emph{(b)} (limit cycle,
-$\bar\eta>\bar\eta_H$) response in the autonomous-gamma regime, the peak shifting
-upward with $\bar\eta$ ($56\!\to\!65\!\to\!83$~Hz). The input carries no power at
-$\Delta f$; the response is synthesized by the exact quadratic $v^2$ nonlinearity, with no
-sigmoid anywhere in the model. Matched AM and two-tone drives agree at $\Omega$ to
-$0.07\%$ well below the Hopf and to $4\%$ at $\bar\eta=0.9$, consistent with the JR
-surrogate control (Fig.~\ref{fig:opp}d).}}
-%DIFAUXCMD
-%DIFDELCMD < \label{fig:nmm2_res}
-%DIFDELCMD < \end{figure}
-%DIFDELCMD <
-
-%DIFDELCMD < %%%
-\DIFdelend \subsection{\DIFdelbegin \DIFdel{What the mesoscale adds: coupling }\DIFdelend \DIFaddbegin \DIFadd{Coupling }\DIFaddend sets the gain at fixed detection}\label{sec:jcurve}
+\subsection{\DIFdelbegin \DIFdel{What the mesoscale adds: coupling }\DIFdelend \DIFaddbegin \DIFadd{Coupling }\DIFaddend sets the gain at fixed detection}\label{sec:jcurve}
 The resonance sweeps above drove the column toward the Hopf with the external input
 $p$, but $p$ also shifts the operating point, entangling detection ($\Sig''$) with
 amplification. To isolate amplification, we vary the JR global connectivity $C$ \DIFdelbegin \DIFdel{(coupling
@@ -2767,8 +2940,7 @@ envelope following over a finite amplitude range; smoothing or heterogeneity
 can restore quadratic behavior at smaller inputs. The amplitude and harmonic
 tests in \S\ref{sec:transduction-methods} distinguish these regimes.
 
-\DIFdelbegin \DIFdel{Stimulation intensity can also changethe mechanism.
-At high }\DIFdelend \DIFaddbegin \DIFadd{Current-ratio experiments separate envelope geometry from the neural response
+\DIFdelbegin \DIFdel{Stimulation intensity can also changethe mechanism. At high }\DIFdelend \DIFaddbegin \DIFadd{Current-ratio experiments separate envelope geometry from the neural response
 map. Violante et al.\ \cite{violante2023} compared $2+2$~mA (1:1) with
 $1+3$~mA (1:3) through the same electrode pairs. At fixed neural state, the
 quadratic beat would be $3/4$ as large everywhere in the 1:3 condition, whereas
@@ -2784,7 +2956,12 @@ cadaver measurements. The BOLD contrast and reported functional-connectivity
 changes are physiological effects, but neither measures the demodulated neural
 beat map. They therefore do not identify envelope-following detection or a
 DC-mediated state change; a spatial beat measurement at controlled state is
-needed to test the current-ratio prediction.
+needed to test the current-ratio prediction. Our IXI002 calculation gives an
+anterior envelope-focus displacement of 2.5~mm, consistent in direction with
+their field-model steering, while the mean-square focus moves 4.5~mm posteriorly
+and the quadratic beat focus stays fixed (\S\ref{sec:fem-results}). These are
+different geometric predictions on one anatomy; the BOLD contrast does not
+choose among them.
 }
 
 \DIFadd{At higher }\DIFaddend intensities, TI and unmodulated kHz fields can have similar excitation
@@ -2974,8 +3151,9 @@ access, and neural state, the quadratic beat map scales with
 $I_1^{\rm pair}I_2^{\rm pair}$; its normalized pattern does not move.
 An envelope follower can instead shift its maximum.
 }& \DIFadd{Cassar\`a et al.\ identify the product-law restriction
-\cite{cassara2025part2}. The realistic-montage and physiological beat-map
-comparisons remain proposed tests.
+\cite{cassara2025part2}. The IXI002 comparison (\S\ref{sec:fem-results}) confirms
+the geometric distinction: envelope and mean-square foci move oppositely;
+the quadratic beat map only rescales. A physiological beat-map test remains open.
 }& \DIFadd{Vary the current ratio at fixed electrodes and compare normalized beat maps
 and target-to-cortex ratios. Keep the projection direction fixed at each site,
 including any direction chosen to maximize the envelope at a reference ratio.
@@ -3046,22 +3224,22 @@ shift from the beat response. }\\
 
 \DIFaddbegin \section{\DIFadd{Conclusion}}
 \DIFaddend For weak perturbations of ongoing activity, \DIFdelbegin \DIFdel{smooth nonlinearities with a nonzero
-}\DIFdelend \DIFaddbegin \DIFadd{a nonzero }\DIFaddend second-order \DIFdelbegin \DIFdel{response generate the beat through effective quadratic mixing. The population models realize this description and
-amplify the generated drive near a network
-resonance. A large response alone establishes neither efficient
-detectionnor the microscopic mixer. }%DIFDELCMD <
+}\DIFdelend \DIFaddbegin \DIFadd{a nonzero }\DIFaddend second-order \DIFdelbegin \DIFdel{response generate the beat through effective quadratic mixing.
+The population models realize this description and amplify the generated drive
+near a network resonance. A large response alone establishes neither efficient
+detection nor the microscopic mixer. }%DIFDELCMD <
 
 %DIFDELCMD < %%%
-\DIFdel{Fast population relaxation gives }\DIFdelend \DIFaddbegin \DIFadd{response makes
-the TI beat proportional to }\DIFaddend the \DIFdelbegin \DIFdel{NMM2 slow-synapse limit, a nonlinear static
-rate map with dynamic synapses. Its curvature describes carrier mixing only when
+\DIFdel{Fast population relaxation gives the NMM2 slow-synapse limit,
+a nonlinear static rate map with dynamic synapses. Its curvature describes carrier mixing only when
 relaxation is also fast relative to the carrier; otherwise the dynamic response
 applies.
 Fast access and slow recurrent resonance can coexist,with each physical
 filter represented once. }%DIFDELCMD <
 
 %DIFDELCMD < %%%
-\DIFdel{In the weak square-law regime, beat generation depends on the }\DIFdelend product of the \DIFdelbegin \DIFdel{effective carrier inputs,
+\DIFdel{In the weak square-law regime, beat generation depends on }\DIFdelend \DIFaddbegin \DIFadd{response makes
+the TI beat proportional to }\DIFaddend the product of the \DIFdelbegin \DIFdel{effective carrier inputs,
 not only on the envelope excursion. }\DIFdelend \DIFaddbegin \DIFadd{local carrier polarizations,
 rather than the envelope minimum. Its steady source follows their summed squares;
 the magnitude of this source and the ideal envelope mean have no strict interior
@@ -3102,7 +3280,13 @@ recomputation from replotting cached data. A reconstructed producer with explici
 run settings reproduces every archived spectral bin of the two-tone kHz
 illustration (Fig.~\ref{fig:khz_twotone}) exactly. The LaNMM setup
 is a drawn schematic. The LaNMM carrier comparison has both measurement-window
-caches and a reproducible summary script. The code is released under CC-BY-4.0.
+caches and a reproducible summary script. The \DIFdelbegin \DIFdel{code }\DIFdelend \DIFaddbegin \DIFadd{FEM summary arrays and plotting
+script reproduce Fig.~\ref{fig:fem} without the head model. Recomputing its maps
+from the underlying fields additionally requires Neuroelectrics'
+nonpublic temporal-interference library and the stored IXI002 fields and labels;
+the input hashes and settings are recorded in
+\texttt{docs/fem\_ixi002\_violante.md} and \texttt{code/fem\_quadmaps.json}.
+The code in this paper's repository }\DIFaddend is released under CC-BY-4.0.
 % Release hold: align the public repository/archive with this reviewed draft before submission.
 
 \section*{Acknowledgments}
@@ -3130,7 +3314,7 @@ Using the CRediT taxonomy: \textbf{G.~Ruffini}: conceptualization, methodology, 
 analysis, software, investigation, visualization, writing (original draft), supervision,
 funding acquisition. \textbf{B.~Mercadal}: validation, visualization, writing (review
 and editing). \DIFaddbegin \DIFadd{\textbf{R.~Salvador}: conceptualization (current-ratio steering),
-methodology (head modeling), software, formal analysis, visualization
+methodology (head modeling), software, formal analysis, data curation, visualization
 (\emph{provisional; to be confirmed by R.~Salvador}).
 }\DIFaddend \textbf{A.~Just}: software, visualization, writing (review and editing).
 \textbf{R.~de Palma Aristides}: software, visualization, writing (review and editing).
@@ -3174,7 +3358,8 @@ JR and LaNMM voltages are in mV and rates in s$^{-1}$. QIF voltages and current-
 drives are dimensionless model variables; QIF rates are physical rates, integrated
 in ms$^{-1}$ and converted to Hz where indicated. A tilde marks the dimensionless
 membrane-time variables of the uncoupled MPR calculation. All frequencies and time
-constants in a formula must use the same time unit. A star marks a fixed point or,
+constants in a formula must use the same time unit. In the FEM comparison $\mathbf n^*$ is the direction maximizing the envelope
+at balanced currents, held fixed during the ratio sweep. A star otherwise marks a fixed point or,
 on a bifurcation parameter, its critical value. Subscripts E and I identify
 excitatory and inhibitory populations; they are not field or current variables.
 }
@@ -3210,6 +3395,7 @@ supplement for the JNE edition).}}
 \DIFadd{$E(t),E_0,\mathbf E_j$ }& \DIFadd{Applied field, its amplitude, and vector field of tone $j=1,2$ }& \DIFadd{V/m }& \DIFadd{Eq.~\eqref{eq:coupling} }\\
 \DIFadd{$s(t),\varepsilon_j,\varepsilon$ }& \DIFadd{Local polarization; tone amplitudes; common amplitude ($\varepsilon_{\rm TI}$ and $\varepsilon_{\rm tACS}$ label the waveform) }& \DIFadd{mV }& \DIFadd{Eqs.~\eqref{eq:am}, \eqref{eq:doors} }\\
 \DIFadd{$I_j^{\rm pair},\mathcal P_j$ }& \DIFadd{Peak electrode-pair current; signed local polarization per unit current }& \DIFadd{mA; mV/mA }& \DIFadd{\S\ref{sec:envelope} }\\
+\DIFadd{$\mathbf F_j,\sigma_{\rm cond}$ }& \DIFadd{FEM field per pair current; tissue conductivity }& \DIFadd{(V/m)/mA; S/m }& \DIFadd{\S\ref{sec:fem-methods} }\\
 \DIFadd{$\mathcal A(t),\overline{\mathcal A}$ }& \DIFadd{Nonnegative polarization envelope and its beat-period mean }& \DIFadd{mV }& \DIFadd{Eq.~\eqref{eq:sqenv}; Table~\ref{tab:transduction-maps} }\\
 \DIFadd{$f_1,f_2,f_c$ }& \DIFadd{Tone frequencies and their center }& \DIFadd{Hz }& \DIFadd{Eq.~\eqref{eq:am} }\\
 \DIFadd{$\omega_j,\omega_c$ }& \DIFadd{Angular frequencies $2\pi f_j,2\pi f_c$ }& \DIFadd{rad/s }& \DIFadd{Eqs.~\eqref{eq:am}, \eqref{eq:doors} }\\

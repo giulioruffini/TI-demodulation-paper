@@ -1,32 +1,15 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
+- [ ] Ricardo: confirm field-angle definitions and distinguish interface normal-field estimates from measured projected-field enhancement; confirm CRediT and funding
+- [ ] Giulio: review draft20 FEM integration and the fixed draft13 redline; decide whether to add a FEM finding to the abstract
+- [ ] coordinate the reviewed FEM integration with private-mirror PR #1; preserve the downstream JNE setting and Ricardo's contribution history
+- [ ] Giulio: confirm Ricardo's provisional byline position after Borja
 - [ ] Giulio: decide the seven retained CUT? passages and the biological-rectifier sentence in docs/revision_2026-10-06_v0150draft16_readability.md
-- [ ] Giulio: confirm Ricardo's provisional byline position after Borja; Ricardo: confirm his CRediT line and funding
-- [ ] Ricardo: supply IXI/FreeSurfer FEM methods, three geometric maps plus isotropic average, ratio sweep, contrasts and displacement; state detector coefficients and operating state for any signed DC-source map
-- [ ] Ricardo: accept the private GitHub write-access invitation sent to ricardosalvador123 on October 14
-- [ ] review draft19 and its fixed draft13 redline, including the signed-source map and geometric-versus-physiological distinction, Ricardo's author details, steering and test rows
-- [ ] Giulio: review the corrected JNE working edition and fixed-baseline redline; authorize circulation to other coauthors when ready
-- [ ] obtain missing funding declarations; confirm the supplied competing-interests statement, author roles and affiliations, actual AI-tool versions, and the submission version with every author
-- [ ] keep the public GitHub push, Calliope and Zenodo releases, and circulation to other coauthors on hold pending explicit authorization
-- [ ] migrate the paper folder at the next coordinated version boundary; run the layout checker before and after, with no concurrent session editing
-- [x] share draft19 privately as mirror aa18f10 from scientific source afa5e44 and invite Ricardo with write access; verify the shared PDF and standalone builds (October 14)
-- [x] integrate Klaus's sign/map and draft19 text checks: negative pinned JR source, distinct fast/adiabatic QIF limits, and signed-source versus physiological-response terminology (October 14)
-- [x] distinguish mean-square polarization, signed DC source, and circuit mean response in the tables, FEM placeholders and S13; add a shared-scale signed panel (October 14)
-- [x] record Klaus's Overleaf sync: source e17e4a9, mirror 7006e90, standalone 42-page build without errors or undefined references (October 9)
-- [x] add Ricardo Salvador to draft18 author records and declarations; keep the FEM comparison as a proposed test (October 9)
-- [x] integrate the authorized current-ratio steering prediction with Cassarà credit, corrected Violante reading, Ricardo's conceptualization role, and fixed-orientation FEM test (October 9)
-- [x] reserve the approved FEM Methods and Results locations, including the isotropic comparison, with red text and a framed figure placeholder (October 9)
-- [x] replace Ernie with the IXI/FreeSurfer model and add the three-map current-ratio predictions with the full DC range (October 9)
-- [x] close Klaus's draft18 steering fidelity check: pass; the sole mean-square terminology fix was already in the committed manuscript (October 9)
-- [x] close Klaus's draft17 integration check: both new test rows and carrier/bound wording pass with no discrepancies (October 6)
-- [x] apply the approved readability review: separate TI/tACS Results, relocate derivations and protocols, consolidate predictions, retain CUT? passages (October 6)
-- [x] close the draft16 Table 4 gap and integrate the carrier/bound clarifications in draft17; Klaus agrees with the bound-scope note (October 6)
-- [x] record Klaus's af29999 and e07b44a fidelity reports, preserving their different scopes (October 6)
-- [x] verify published Luff Fig. 1 and Methods for annotation 20: seven carrier conditions, no matched carrier-polarization analysis (October 6)
-- [x] close Klaus's scoped draft15 focality integration check at 972d9ea; subsequent draft16 and draft17 checks also recorded
-- [x] address the 26 annotations in Giulio's GR review PDF: split envelope/DC subsections, group NMM2 Results, move predictions to Discussion, and clarify local explanations (October 6)
-- [x] integrate the approved JR/NMM2 schematic with standard low-pass symbols on all seven synaptic pathways and the matching caption (October 6 and 9)
-- [x] state the generated steady-drive boundary restriction separately from beat focality in the shared abstract and Theory (October 6)
-- [x] put the shared notation table in JNE Appendix A, reconcile symbols and units across article/supplement/figures, and verify unchanged equation and figure numbering in draft14 (October 6)
-- [x] distinguish harmonic ratios H_det/H_meas from drive ratios R_det/R_lin throughout draft15 and the shared notation table (October 6)
-- [x] integrate the focality comparison table and envelope-mean proof into Section 2.4, add the line profile as Figure S13, and preserve the existing two-site example in draft15 (October 6)
+- [ ] obtain author confirmation of funding, competing interests, roles, affiliations, actual AI-tool versions, and the submission version
+- [ ] keep public GitHub, Calliope, Zenodo, and circulation to other coauthors on hold pending explicit authorization
+- [ ] migrate the folder at a coordinated version boundary with no concurrent editors; run the layout checker before and after
+- [x] integrate Ricardo's FEM PR d779094 into Methods 3.3, Results 4.5, and Figure 8; update the theory, Discussion, predictions, notation, and storyline (October 19)
+- [x] check the portable FEM summaries and figure; identify the reference as gray matter outside the ROI and preserve the signed-source distinction (October 19)
+- [x] verify Ricardo's private-repository write access (October 19)
+- [x] share draft19 privately as aa18f10 from source afa5e44; close the fast/adiabatic QIF and signed-map corrections (October 14)
+- [x] integrate author and steering additions, FEM placeholders, notation, focality, readability, and Landau repairs through draft18 (October 9)

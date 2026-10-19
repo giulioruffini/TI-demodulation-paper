@@ -1,6 +1,6 @@
 % TN0484 / WP0185: abstract and storyline. Build from the project root:
 %   ~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex
-% Map mode: rows follow the v0.15.0-draft19 manuscript order and numbering (TN build; the JNE build
+% Map mode: rows follow the v0.15.0-draft20 manuscript order and numbering (TN build; the JNE build
 % keeps Appendix A and moves later appendices and figures S1--S13 to the supplement). Prepared 2026-10-03.
 \documentclass[11pt,a4paper,landscape]{article}
 \usepackage[T1]{fontenc}
@@ -17,8 +17,8 @@
 % ---- paper identity ---------------------------------------------------------
 \newcommand{\wpnumber}{TN0484 / WP0185}
 \newcommand{\papertitle}{The cortical column as a tuned receiver}
-\newcommand{\storylinedate}{14 October 2026}
-\newcommand{\baselinelabel}{v0.15.0-draft19}
+\newcommand{\storylinedate}{19 October 2026}
+\newcommand{\baselinelabel}{v0.15.0-draft20}
 \newcommand{\abstractfile}{tn0484_abstract.tex}
 \newcommand{\storylineauthors}{Giulio Ruffini}
 % -----------------------------------------------------------------------------
@@ -204,7 +204,8 @@ its static transfer is an adiabatic limit, not a consequence of small amplitude 
   Excursion map (Eq.~17): the quadratic product weights the envelope minimum by the larger
   carrier. Retain the $2\times$ versus $40\times$ two-site example and its geometric limits.
   Both beat maps can peak centrally; Fig.~S13a is a line profile, not a head model.
-  A real-montage finite-element comparison remains a prediction. Spatial response
+  The real-montage finite-element comparison in \S4.5 tests this geometry; a
+  physiological beat-map comparison remains a prediction. Spatial response
   (Eq.~18) includes curvature, network gain, and signed vector coupling.
   With fixed pairs, frequencies, access, orientations, and neural state, the
   current ratio only rescales the quadratic beat map. Steering requires a change
@@ -308,18 +309,17 @@ lock-in read-out and the pinned-operating-point protocol recur across models.
   the estimator and the restrictions on interpreting a measured harmonic ratio.
 & Fig.~7b; \S2.4; \S4.4 and \S5.1.\\[2pt]
 \midrule
-\place{\S3.3}{Head model and field computation (placeholder)}
-& \textcolor{red}{R.~Salvador will supply an open IXI subject with a FreeSurfer
-  hippocampal label, Violante montage,
-  tissue and solver details, field-to-polarization conversion, region definitions,
-  spatial summaries, and focus-displacement measure. Projection directions remain
-  fixed across current ratios. The isotropic comparison averages the signed
-  quadratic mixing term before taking its magnitude. Signed DC-source maps must specify
-  detector coefficients and state; mean responses additionally require a circuit model.
-  No completed FEM method is asserted.}
-& Reserves the method for the planned spatial comparison without substituting
-  assumptions for Ricardo's head-model specification.
-& \textcolor{red}{Placeholder; Results \S4.5 and Fig.~8.}\\[2pt]
+\place{\S3.3}{Head model and field computation}
+& IXI002, SimNIBS head model, FreeSurfer hippocampal label, and the Violante
+  montage; linear, nondispersive conductivity and uniform polarization coupling.
+  The direction maximizing the envelope at 1:1 stays fixed across current ratios.
+  Retain the isotropic signed-mixing average, raw and square-root contrasts,
+  node-based percentile and focus definitions, and the 32-condition sensitivity grid.
+  Geometric maps do not supply detector coefficients or a circuit response.
+& Defines the anatomical model and comparisons needed to evaluate the product
+  law without changing orientation as the currents change. This makes the spatial
+  result in \S4.5 reproducible from the supplied FEM outputs.
+& Results \S4.5 and Fig.~8; \path{docs/fem_ixi002_violante.md}.\\[2pt]
 \midrule
 \place{\S3.4}{Jansen--Rit: integration, lock-in, controls}
 & Field enters only the pyramidal sigmoid; the read-out $v=y_1-y_2$ is not fed the field.
@@ -372,18 +372,18 @@ lock-in read-out and the pinned-operating-point protocol recur across models.
   surrogate check; recurrent AM sweeps are explicitly qualified.
 & Figs.~6, 7; Figs.~S6, S9; Esmaeilpour 2020, 2021.\\[2pt]
 \midrule
-\place{\S4.5}{Realistic-head maps (placeholder)}
-& \textcolor{red}{Envelope excursion, quadratic excursion, and mean-square polarization on
-  the Violante montage in an IXI subject with a FreeSurfer hippocampal label;
-  1:1, 1:3, and a current-ratio sweep.
-  Planned readouts are target-to-cortex ratios and focus displacement in mm, with
-  a fixed projection direction at each location. A separate isotropic
-  orientation-averaged quadratic beat map is planned. The third map precedes detector gain;
-  signed-source maps require stated detector parameters and a zero-centered color scale.
-  No FEM findings are reported.}
-& Places the planned spatial consequence of the detector law immediately after
-  the JR curvature result. The framed figure and paragraph are visibly provisional.
-& \textcolor{red}{Figure~8 placeholder; R.~Salvador.}\\[2pt]
+\place{\S4.5}{Realistic-head maps}
+& From 1:1 to 1:3, the envelope focus moves 2.5~mm anterior, the mean-square
+  focus 4.5~mm posterior, and the quadratic and isotropic beat maps rescale by
+  0.75 without moving. The directions persist in all 32 sensitivity combinations;
+  magnitudes depend on orientation and region definitions. At 1:1 the
+  envelope contrast is 1.22, versus 1.08 for the square-root quadratic map.
+  Retain the absolute means, sweep, sensitivity ranges, and the distinction
+  between a geometric mean-square map and a signed physiological response.
+& Gives the spatial consequence of the detector law on one realistic anatomy.
+  Current-ratio steering separates the geometric maps; physiological detection
+  remains to be measured. The following coupling sweep isolates recurrent gain.
+& Figure~8; Ricardo Salvador's FEM contribution, PR~1 (\texttt{d779094}).\\[2pt]
 \midrule
 \place{\S4.6}{Coupling sets the gain at fixed detection}
 & Pinned JR coupling curve: $\sim30\times$ growth, $1/\gamma$ then saturation; the same gain--$\gamma$
@@ -563,5 +563,12 @@ and S11 remain supplementary. Existing equations, figures, examples, numerical
 results, and the QIF convergence qualification are retained.
 The abstract's mean-map clause states the boundary consequence for the generated drive with its uniformity
 conditions. The reading baseline is draft13 (\texttt{c620335}). Coauthor confirmation,
-remaining funding declarations and the seven retained CUT? passages remain pending. Red FEM placeholders reserve Methods \S3.3 and Results \S4.5. Draft18 source \texttt{e17e4a9} was synchronized to the Overleaf mirror as \texttt{7006e90}. Draft19 distinguishes geometric intensity, signed source, and circuit response, with a signed-source panel added to Fig.~S13; it remains local. Ricardo's results are pending. The main project GitHub push, Calliope and Zenodo releases, and coauthor circulation remain held; see \path{todo.md}.}
+remaining funding declarations and the seven retained CUT? passages remain pending.
+Draft20 fills the approved FEM locations with Ricardo's methods, results, and
+Figure~8 from private-mirror PR~1. No earlier result or example is removed.
+The shared abstract is unchanged; whether to include a FEM finding there is
+Giulio's decision. Draft19 distinguished geometric intensity, signed source, and
+circuit response and was shared privately with Ricardo on 14 October.
+The public GitHub push, Calliope and Zenodo releases, and circulation to other
+coauthors remain held; see \path{todo.md}.}
 \end{document}

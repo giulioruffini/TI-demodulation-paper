@@ -10,7 +10,7 @@ Archived at Zenodo: **[doi:10.5281/zenodo.21009618](https://doi.org/10.5281/zeno
 Licensed **CC-BY-4.0** (see [`LICENSE`](LICENSE)); machine-readable citation in
 [`CITATION.cff`](CITATION.cff).
 
-The current working edition is the **JNE article, v0.15.0-draft19**:
+The current working edition is the **JNE article, v0.15.0-draft20**:
 [TN0484_jne.pdf](TN0484_jne.pdf). Run `./build.sh` to update it. The TN and
 supplement are generated from the same manuscript for an authorized Calliope cut;
 they are not separate working editions. Older versioned PDFs are historical snapshots.
@@ -23,14 +23,25 @@ recorded in [planning/review_baseline.json](planning/review_baseline.json), rath
 than creating a new redline for each edit. The fixed reading baseline is draft13 (`c620335`), as requested for the
 October 6 notation pass. The JNE article and supplement both include Appendix A
 from [one notation source](planning/tn0484_notation.tex). The article, supplement,
-and full TN were regenerated together for the draft18 Overleaf handoff. Draft19
-updates the article and the affected supplement; the full TN retains draft18
+and full TN were regenerated together for the draft18 Overleaf handoff. Draft19 and draft20
+update the article and the affected supplement; the full TN retains draft18
 until the next coordinated cut.
+
+Draft20 integrates Ricardo Salvador's FEM contribution from private-mirror PR #1
+(`d779094`) into the reserved Methods 3.3, Results 4.5, and Figure 8. On IXI002,
+changing from 2+2 to 1+3 mA moves the envelope focus 2.5 mm anterior and the
+mean-square focus 4.5 mm posterior; the quadratic and isotropic beat maps only
+rescale by 0.75. These directions hold in all 32 supplied sensitivity combinations.
+The reference denominator is all gray matter outside the hippocampal ROI,
+including other deep structures. The text and figure identify this definition.
+The maps precede detector gain and do not assign excitation or suppression.
+The [integration record](docs/revision_2026-10-19_v0150draft20_fem.md) gives the
+scope, checks, and remaining author clarifications. The shared abstract is unchanged.
 
 Draft19 distinguishes the nonnegative mean-square polarization map from the signed
 DC source after detection and the mean response after recurrence. Table 2 includes
 the signed source, and Figure S13 adds positive- and negative-curvature examples
-using the same positive normalization. The FEM placeholders require detector
+using the same positive normalization. The FEM comparison requires detector
 parameters for any physiological interpretation of the third map. See the
 [signed-map revision record](docs/revision_2026-10-14_v0150draft19_signed_dc_maps.md).
 
@@ -42,13 +53,14 @@ references. On October 14, Giulio authorized sharing draft19 with Ricardo.
 The [private GitHub collaboration copy](https://github.com/giulioruffini/TN0484---Temporal-Interference-TI-NMM-demodulation)
 now contains scientific source `afa5e44` as mirror commit `aa18f10`, with the
 current article, supplement, redline, and a FEM contribution guide. Ricardo's
-`ricardosalvador123` account has a pending write-access invitation. The public
+`ricardosalvador123` account now has write access, verified October 19. The FEM
+integration is local on the canonical branch; the private PR remains open. The public
 repository, Calliope and Zenodo releases, and circulation to other coauthors
 remain held. See the [sharing record](docs/share_2026-10-14_ricardo.md).
 
 v0.15.0-draft18 adds Ricardo Salvador (Neuroelectrics) to the author records,
 provisionally after Borja Mercadal, with his ORCID and a CRediT line for confirmation.
-The FEM comparison remains a proposed test; no results have been added. See the
+At that cut the FEM comparison remained a proposed test; draft20 adds the results. See the
 [author revision record](docs/revision_2026-10-09_v0150draft18_authors.md).
 
 Draft18 also states the current-ratio steering restriction for the leading
@@ -58,13 +70,13 @@ reported BOLD contrast from a measured neural beat map. Ricardo's CRediT line
 records his contribution to the steering prediction. See the
 [steering revision record](docs/revision_2026-10-09_v0150draft18_steering.md).
 
-Red placeholders reserve the FEM Methods and a Results subsection immediately
-after the JR curvature result, including a framed Figure 8. They describe the
+Draft18 reserved red placeholders for the FEM Methods and a Results subsection immediately
+after the JR curvature result, including a framed Figure 8. They described the
 planned Violante-montage comparison on an open IXI subject with a FreeSurfer
 hippocampal label, including a separate isotropic orientation average, without
 reporting FEM findings. Table 4 compares the envelope, quadratic-beat, and DC
 scaling predictions for the 1:1 to 1:3 current change. The draft18 Overleaf mirror
-has been updated; Ricardo's FEM methods and results are pending. See the
+was updated; draft20 now fills those locations. See the
 [placeholder and handoff record](docs/revision_2026-10-09_v0150draft18_fem_placeholders.md).
 
 v0.15.0-draft14 puts the notation table in the JNE article and separates
@@ -221,7 +233,7 @@ with a [redline against v0.14.2](docs/redline_v0142_to_v0143.pdf).
 [planning/tn0484_storyline.tex](planning/tn0484_storyline.tex) (section-by-section argument
 map), compiled to [build/storyline/tn0484_storyline.pdf](build/storyline/tn0484_storyline.pdf)
 with `~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex`.
-Its source maps v0.15.0-draft15 and records the completed placement decisions.
+Its source maps v0.15.0-draft20 and records the completed placement decisions.
 The
 [general practice](../../giulio-personal-handbook/dos-and-donts.md#abstract-and-storyline-planning)
 is maintained in the personal handbook.

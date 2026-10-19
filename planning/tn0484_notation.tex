@@ -4,7 +4,8 @@ JR and LaNMM voltages are in mV and rates in s$^{-1}$. QIF voltages and current-
 drives are dimensionless model variables; QIF rates are physical rates, integrated
 in ms$^{-1}$ and converted to Hz where indicated. A tilde marks the dimensionless
 membrane-time variables of the uncoupled MPR calculation. All frequencies and time
-constants in a formula must use the same time unit. A star marks a fixed point or,
+constants in a formula must use the same time unit. In the FEM comparison $\mathbf n^*$ is the direction maximizing the envelope
+at balanced currents, held fixed during the ratio sweep. A star otherwise marks a fixed point or,
 on a bifurcation parameter, its critical value. Subscripts E and I identify
 excitatory and inhibitory populations; they are not field or current variables.
 
@@ -39,6 +40,7 @@ Symbol & Meaning & Units & Defined in \\
 $E(t),E_0,\mathbf E_j$ & Applied field, its amplitude, and vector field of tone $j=1,2$ & V/m & Eq.~\eqref{eq:coupling} \\
 $s(t),\varepsilon_j,\varepsilon$ & Local polarization; tone amplitudes; common amplitude ($\varepsilon_{\rm TI}$ and $\varepsilon_{\rm tACS}$ label the waveform) & mV & Eqs.~\eqref{eq:am}, \eqref{eq:doors} \\
 $I_j^{\rm pair},\mathcal P_j$ & Peak electrode-pair current; signed local polarization per unit current & mA; mV/mA & \S\ref{sec:envelope} \\
+$\mathbf F_j,\sigma_{\rm cond}$ & FEM field per pair current; tissue conductivity & (V/m)/mA; S/m & \S\ref{sec:fem-methods} \\
 $\mathcal A(t),\overline{\mathcal A}$ & Nonnegative polarization envelope and its beat-period mean & mV & Eq.~\eqref{eq:sqenv}; Table~\ref{tab:transduction-maps} \\
 $f_1,f_2,f_c$ & Tone frequencies and their center & Hz & Eq.~\eqref{eq:am} \\
 $\omega_j,\omega_c$ & Angular frequencies $2\pi f_j,2\pi f_c$ & rad/s & Eqs.~\eqref{eq:am}, \eqref{eq:doors} \\

@@ -1,15 +1,15 @@
 {
-  "version": "0.15.0-draft19",
-  "review_baseline": "d3a3107",
+  "version": "0.15.0-draft20",
+  "review_baseline": "30ba4a6",
   "redline_baseline": "c620335",
-  "status": "Draft19 scientific source afa5e44 is shared in the private GitHub mirror as aa18f10. The current article, supplement and redline are included; Ricardo has a pending write-access invitation. Public GitHub, Calliope, Zenodo and circulation to other coauthors remain held.",
+  "status": "Ricardo FEM PR d779094 integrated locally on two-tone-validation. Private PR #1 remains open; public GitHub, Calliope, Zenodo, and other-coauthor circulation remain held.",
   "outputs": {
     "jne": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
-      "pages": 43,
-      "sha256": "a0939ead64f2111be5d55becc3aeffbd43041a9c010fe5f2fee8b3586f7a60d7",
-      "version": "0.15.0-draft19",
-      "validation_scope": "Local signed-map revision; updated artifact, no external release.",
+      "pages": 46,
+      "sha256": "893ee57be3ac6a85da60073213c22e81c90efcef93a9f65e0d9852b54b470ae7",
+      "version": "0.15.0-draft20",
+      "validation_scope": "FEM integration; final builds and rendered changed pages checked. No FEM solve rerun.",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.log",
       "diagnostics": {
         "errors": 0,
@@ -26,9 +26,9 @@
     "supplement": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne_supplement.pdf",
       "pages": 21,
-      "sha256": "b251b6158a601d4c15a6e1d2fd532e69a89a0a2057879061ef80732fa5675b1b",
-      "version": "0.15.0-draft19",
-      "validation_scope": "Local signed-map revision; updated artifact, no external release.",
+      "sha256": "cac0408ae75c40d1641e248639740fa70598ef432340dffec76f92f84a39f695",
+      "version": "0.15.0-draft20",
+      "validation_scope": "FEM integration; final builds and rendered changed pages checked. No FEM solve rerun.",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne_supplement.log",
       "diagnostics": {
         "errors": 0,
@@ -44,10 +44,10 @@
     },
     "redline": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.pdf",
-      "pages": 52,
-      "sha256": "279be3ee08f1598cdf00359afefc9b213f48904320ffd2266f297d773b6393a5",
-      "version": "0.15.0-draft19",
-      "validation_scope": "Local signed-map revision; updated artifact, no external release.",
+      "pages": 55,
+      "sha256": "5a4bb8f1eeddef934322d69294d15757be0106bbe9c8fe1e8e19e8a073c51b01",
+      "version": "0.15.0-draft20",
+      "validation_scope": "FEM integration; final builds and rendered changed pages checked. No FEM solve rerun.",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.log",
       "diagnostics": {
         "errors": 0,
@@ -58,15 +58,15 @@
       },
       "nonblocking_warnings": {
         "latexdiff_math_font_size": 23,
-        "float_h_changed_to_ht": 2
+        "float_h_changed_to_ht": 1
       }
     },
     "storyline": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.pdf",
       "pages": 13,
-      "sha256": "b1d5adbf41e9388afaa6600249722bf61a5234fc36dc2b1813d40c83b4098491",
-      "version": "0.15.0-draft19",
-      "validation_scope": "Local signed-map revision; updated artifact, no external release.",
+      "sha256": "21b95b14fe90959b842845400b4303b149c772e4a27ded63740ba0f4585cce9e",
+      "version": "0.15.0-draft20",
+      "validation_scope": "FEM integration; final builds and rendered changed pages checked. No FEM solve rerun.",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.log",
       "diagnostics": {
         "errors": 0,
@@ -109,20 +109,23 @@
     }
   },
   "retention": {
-    "editing_baseline": "d3a3107",
+    "editing_baseline": "30ba4a6",
     "all_existing_source_labels_retained": true,
-    "label_numbers_unchanged": true,
-    "cited_keys_unchanged": true,
-    "simulation_producers_and_caches_unchanged": true,
+    "label_set_unchanged": true,
+    "existing_cited_keys_retained": true,
+    "existing_simulation_producers_and_caches_unchanged": true,
+    "new_FEM_producer_and_data_identical_to_PR": "d779094",
     "modified_existing_figures": [
-      "fig:spatial_maps (S13): original geometric curves retained, signed panel added"
+      "fig:fem (reserved Figure 8): placeholder filled with FEM results"
     ],
     "new_numbered_equations": [],
     "removed_results_or_explanations": [],
-    "internal_focality_reading_note_assets_unchanged": true
+    "removed_duplicate_graphics": [
+      "Envelope degree-matched bar in panel g (identical to raw first-order bar)"
+    ]
   },
   "bibliography": {
-    "n_cited": 61,
+    "n_cited": 67,
     "duplicate_keys": [],
     "cited_but_missing_from_bib": [],
     "cited_without_doi_or_url": [
@@ -130,7 +133,15 @@
       "nahin2001",
       "pikovsky2001"
     ],
-    "n_cited_jne": 59
+    "n_cited_jne": 65,
+    "six_added_keys": [
+      "nielsen2018",
+      "gaser2024",
+      "fischl2002",
+      "salvador2025",
+      "zienkiewicz1992",
+      "yatsuda2024"
+    ]
   },
   "math_checks": [
     "docs/draft11_text_math_2026-10-05.json",
@@ -139,48 +150,48 @@
     "docs/draft19_spatial_map_checks_2026-10-14.json"
   ],
   "visual_inspection": {
-    "date": "2026-10-14",
-    "scope": "Changed map/table/notation/placeholder passages, signed figure and caption, shared abstract, corresponding redline and storyline.",
+    "date": "2026-10-19",
+    "scope": "FEM figure, Methods, Results, theoretical pointer, Discussion, notation, supplement cover, redline additions and storyline map.",
     "pages": {
       "jne": [
         1,
+        7,
         11,
-        12,
-        13,
         17,
-        23,
-        25,
+        18,
+        26,
+        27,
         33,
-        41
+        34,
+        44
       ],
       "supplement": [
-        2,
-        20
+        1
       ],
       "redline": [
-        14,
-        15,
-        16
+        32
       ],
       "storyline": [
-        1,
-        5,
-        13
+        7,
+        8
       ]
     },
-    "result": "Changed passages and figure inspected; labels and captions legible, no clipping or overlap.",
-    "peer_followup": "Article p12 and redline p16 inspected after the concrete negative-source example was added.",
-    "regime_followup": "Article pp12-13 and corresponding redline page inspected after separating the two QIF limits and physiological-response terminology."
+    "result": "Inspected rendered pages; no clipping or overlap in the changed content. Figure passes the text collision and 6 pt printed-size checks."
   },
   "source_sha256": {
-    "TN0484_envelope_demodulation.tex": "7e54e490b8f05d37a576838e062f9de35b4cf5d9fe8a8ee02968f55c1f9076d7",
-    "references.bib": "6c89b80405c9999914d57cceb158411ab150b800fc0c6795f02a0332d8e89ed7",
+    "TN0484_envelope_demodulation.tex": "8a17520fcb653e491fe15a793d67eaedca17d8b618bd74ce8f1cbf27f4b91760",
+    "references.bib": "5ab2be4337c081b3bb275bff11743204c451396185cd7b9d4f307be9d21e7144",
     "planning/tn0484_abstract.tex": "7d880907b2af76264cc44efa866dfeabac68b00189512f4ca252033bfabe2ee2",
-    "planning/tn0484_storyline.tex": "1311f0d51375eedb2841d01a24ba49660f9a0b17953496f4ba0e92f8209f853d",
-    "planning/tn0484_notation.tex": "888c563f53e3acfaf71994d4c5b962ea0c9da81a1e19f67aadd4cf3cb32e7c4f",
+    "planning/tn0484_storyline.tex": "e052dbadcaf93e271c136f87952499a11e5bd5a99685d00c3b7311ef02149c90",
+    "planning/tn0484_notation.tex": "d739fcdee8a1657fc2b4f8183b1ed4513a5b43a2ad7e88032c15f9e485c24348",
     "figures_src/fig_models_ti.tex": "6250c979b717018b4fd5037c3099940fa380b921ee2e9d5cfd66aa1fdaff8600",
     "figures_src/fig_models_ti_caption.tex": "08c72d57c7df8e76e57a6aac84a2f9949c7c82b1badfab4e6df0b4c5676ff8da",
-    "notes/2026-10-06_ti_focality/make_spatial_maps.py": "8b40229ffe01d194bd77137e863eb0a152bcd9b731d94c773850521decacee30"
+    "notes/2026-10-06_ti_focality/make_spatial_maps.py": "8b40229ffe01d194bd77137e863eb0a152bcd9b731d94c773850521decacee30",
+    "code/fem_quadmaps.py": "76007685b8a9f7aaaf589747661a60f72eeac32d8525979a4843d2fcf838d224",
+    "code/fem_quadmaps.npz": "9e15bb73cea3c484826686664fa10bafe2cc804b01d41cc129b2b5f0966f0646",
+    "code/fem_quadmaps.json": "3c53464218a3f14cd65640410aaab46b67acb1bc0e4d3cf65472e26330f1fae3",
+    "code/make_fem_fig.py": "a9f39f09c82bd9e483fe8df37dc4b0eb21a1552f9b9d0cf0dfccc18fa132379d",
+    "code/check_fem_integration.py": "e0eb07599bb0689beeb2dfb178df2fe09d288e978cc60ac63b1afc733a3e7624"
   },
   "producer_commits": [
     "139dd74",
@@ -266,38 +277,29 @@
     }
   },
   "current_revision": {
-    "date": "2026-10-14",
-    "baseline_commit": "d3a3107",
-    "authorization": "Giulio requested that the map reflect signed detection rather than imply an always-excitatory DC response.",
-    "abstract_words": 296,
-    "audit": "docs/draft19_signed_dc_maps_audit_2026-10-14.json",
-    "revision_record": "docs/revision_2026-10-14_v0150draft19_signed_dc_maps.md",
-    "new_FEM_results": false,
-    "new_simulations": false,
-    "algebraic_numeric_check": "Direct full-sigmoid temporal average at opposite-curvature baselines; figure geometry unchanged.",
-    "review_shelf_byte_identical": {
-      "jne": true,
-      "redline": true
-    },
-    "peer_check": {
-      "status": "complete; agrees with the planned sign/map distinction",
+    "date": "2026-10-19",
+    "baseline_commit": "30ba4a6",
+    "contribution_commit": "d7790943ae8ed9186c7a6233cc7698f58efeb992",
+    "authorization": "Integrate Ricardo FEM contribution into the approved reserved sections; user continued the task.",
+    "abstract_words_texcount": 296,
+    "abstract_changed": false,
+    "revision_record": "docs/revision_2026-10-19_v0150draft20_fem.md",
+    "audit": "docs/fem_integration_checks_2026-10-19.json",
+    "figure_check": "docs/fem_figcheck_2026-10-19.json",
+    "new_FEM_results": true,
+    "new_simulations_run_here": false,
+    "peer_review": {
       "reviewer": "klaus-484-TI-helper",
-      "message_time": "2026-10-14 11:35 CEST",
-      "reviewed_baseline": "d3a3107",
-      "scope": "Independent algebraic/numerical sign and map scope check, not draft19 textual fidelity.",
-      "integrated": "Explicit negative static source at pinned JR v*=8.30 mV; carrier-polarity invariance; positive F-prime fast-carrier readout.",
-      "notation_refinement": "kappa_DC is defined per peak current squared; do not identify it directly with a coefficient per mean-square polarization."
+      "reviewed_commit": "d779094",
+      "note": "notes/2026-10-19_klaus/fem_pr1_review.md",
+      "scope": "PR review before integration, not final-text fidelity"
     },
-    "release_status": "Privately shared with Ricardo on October 14: GitHub mirror aa18f10; invitation pending acceptance. No public release or separate Overleaf website sync.",
-    "peer_followup_parent": "faeb858",
-    "textual_check": {
-      "reviewer": "klaus-484-TI-helper",
-      "message_time": "2026-10-14 11:50 CEST",
-      "reviewed_commit": "faeb858",
-      "verdict": "Pass on static sign, orientation, boundary magnitude, steering factors and S13 normalization; QIF-limit wording and physiological-map terminology corrected in this follow-up.",
-      "editing_parent": "15c1d59",
-      "already_present": "Explicit negative static JR source at 8.30 mV."
-    }
+    "pending": [
+      "Ricardo field-angle and interface estimate definitions",
+      "Ricardo CRediT/funding confirmation",
+      "Giulio abstract decision"
+    ],
+    "release_status": "Local canonical integration; private PR open; other release holds unchanged"
   },
   "focality_integration_revision": {
     "date": "2026-10-06",
@@ -1009,6 +1011,41 @@
     },
     "authorization": "Giulio: yes, please, Ricardo will help",
     "public_release_performed": false,
-    "overleaf_website_sync_performed": false
+    "overleaf_website_sync_performed": false,
+    "ricardo_access_verified_2026_10_19": "write"
+  },
+  "draft19_signed_map_revision": {
+    "date": "2026-10-14",
+    "baseline_commit": "d3a3107",
+    "authorization": "Giulio requested that the map reflect signed detection rather than imply an always-excitatory DC response.",
+    "abstract_words": 296,
+    "audit": "docs/draft19_signed_dc_maps_audit_2026-10-14.json",
+    "revision_record": "docs/revision_2026-10-14_v0150draft19_signed_dc_maps.md",
+    "new_FEM_results": false,
+    "new_simulations": false,
+    "algebraic_numeric_check": "Direct full-sigmoid temporal average at opposite-curvature baselines; figure geometry unchanged.",
+    "review_shelf_byte_identical": {
+      "jne": true,
+      "redline": true
+    },
+    "peer_check": {
+      "status": "complete; agrees with the planned sign/map distinction",
+      "reviewer": "klaus-484-TI-helper",
+      "message_time": "2026-10-14 11:35 CEST",
+      "reviewed_baseline": "d3a3107",
+      "scope": "Independent algebraic/numerical sign and map scope check, not draft19 textual fidelity.",
+      "integrated": "Explicit negative static source at pinned JR v*=8.30 mV; carrier-polarity invariance; positive F-prime fast-carrier readout.",
+      "notation_refinement": "kappa_DC is defined per peak current squared; do not identify it directly with a coefficient per mean-square polarization."
+    },
+    "release_status": "Privately shared with Ricardo on October 14: GitHub mirror aa18f10; invitation pending acceptance. No public release or separate Overleaf website sync.",
+    "peer_followup_parent": "faeb858",
+    "textual_check": {
+      "reviewer": "klaus-484-TI-helper",
+      "message_time": "2026-10-14 11:50 CEST",
+      "reviewed_commit": "faeb858",
+      "verdict": "Pass on static sign, orientation, boundary magnitude, steering factors and S13 normalization; QIF-limit wording and physiological-map terminology corrected in this follow-up.",
+      "editing_parent": "15c1d59",
+      "already_present": "Explicit negative static JR source at 8.30 mV."
+    }
   }
 }
