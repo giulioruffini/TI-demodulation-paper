@@ -1136,9 +1136,11 @@
     "peer_check": {
       "target": "klaus-484-TI-helper",
       "commit": "dbc647e",
-      "status": "spooled; verdict pending",
+      "status": "PASS; no discrepancies",
       "requested_at": "2026-10-19 18:49 CEST",
-      "scope": "Two Discussion paragraphs: empirical evidence, geometric versus neural maps, beat measurement and carrier control."
+      "scope": "Two Discussion paragraphs: empirical evidence, geometric versus neural maps, beat measurement and carrier control.",
+      "reported_at": "2026-10-19 18:49 CEST",
+      "verified": "Empirical contrasts and voxel percentages; FEM displacements, factors, and threshold; geometric versus neural response scope; separate beat measurement and carrier control; RMS mismatch retained."
     },
     "scope_correction_accepted_commit": "fa21fa1",
     "committed_as": "dbc647e"

@@ -46,5 +46,8 @@ redline, and storyline build to 46, 55, and 13 pages, with no errors, undefined
 references, overfull boxes, duplicate labels, or outstanding rerun requests.
 Article pages 33--34 and redline page 41 were inspected. The abstract is
 byte-identical to the preceding version; the supplement and numerical files
-are unchanged. Klaus accepted the scope correction in `fa21fa1`; a bounded read-only check of the final wording in `dbc647e` was requested
-at 18:49 CEST. The request was spooled; the verdict is pending.
+are unchanged. Klaus accepted the scope correction in `fa21fa1` and reported a bounded
+read-only fidelity pass on `dbc647e` at 18:49 CEST. The empirical contrasts,
+voxel percentages, FEM displacements and factors, ratio threshold, and scope
+qualifications agree with the cited evidence; no corrections were requested.
+The abstract wording and cuts remain pending Giulio’s decision.

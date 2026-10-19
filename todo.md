@@ -1,5 +1,19 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
+- [ ] act on K's annotations of 2026-10-19 (notes/2026-10-19_K/TN0484 redline annotated (12).md)
+- [ ] act on K's annotations of 2026-10-19 (notes/2026-10-19_K/TN0484 journal (JNE) annotated (15).md)
+- [ ] act on K's annotations of 2026-10-19 (notes/2026-10-19_K/TN0484 redline annotated (11).md)
+- [ ] act on K's annotations of 2026-10-19 (notes/2026-10-19_K/TN0484 journal (JNE) annotated (14).md)
+- [ ] act on K's annotations of 2026-10-19 (notes/2026-10-19_K/TN0484 redline annotated (10).md)
+- [ ] act on K's annotations of 2026-10-19 (notes/2026-10-19_K/TN0484 journal (JNE) annotated (13).md)
+- [ ] act on K's annotations of 2026-10-19 (notes/2026-10-19_K/TN0484 redline annotated (9).md)
+- [ ] act on K's annotations of 2026-10-19 (notes/2026-10-19_K/TN0484 journal (JNE) annotated (12).md)
+- [ ] act on K's annotations of 2026-10-19 (notes/2026-10-19_K/TN0484 redline annotated (8).md)
+- [ ] act on K's annotations of 2026-10-19 (notes/2026-10-19_K/TN0484 journal (JNE) annotated (11).md)
+- [ ] act on K's annotations of 2026-10-19 (notes/2026-10-19_K/TN0484 redline annotated (7).md)
+- [ ] act on K's annotations of 2026-10-19 (notes/2026-10-19_K/TN0484 journal (JNE) annotated (10).md)
+- [ ] act on K's annotations of 2026-10-19 (notes/2026-10-19_K/TN0484 redline annotated (6).md)
+- [ ] act on K's annotations of 2026-10-19 (notes/2026-10-19_K/TN0484 journal (JNE) annotated (9).md)
 - [ ] act on K's annotations of 2026-10-19 (notes/2026-10-19_K/TN0484 redline annotated (5).md)
 - [ ] act on K's annotations of 2026-10-19 (notes/2026-10-19_K/TN0484 journal (JNE) annotated (8).md)
 - [ ] act on K's annotations of 2026-10-19 (notes/2026-10-19_K/TN0484 redline annotated (4).md)
@@ -13,7 +27,6 @@
 - [ ] act on K's annotations of 2026-10-19 (notes/2026-10-19_K/TN0484 journal (JNE) annotated (3).md)
 - [ ] act on K's annotations of 2026-10-19 (notes/2026-10-19_K/TN0484 journal (JNE) annotated (2).md)
 - [ ] act on K's annotations of 2026-10-19 (notes/2026-10-19_K/TN0484 journal (JNE) annotated.md)
-- [ ] Klaus: return the bounded Discussion wording check on dbc647e before the next private-mirror update
 - [ ] Ricardo: confirm field-angle definitions and distinguish interface normal-field estimates from measured projected-field enhancement
 - [ ] Giulio: decide the FEM abstract sentence and offsetting cuts; retain mean-square terminology and the pinned JR operating-point qualification
 - [ ] Giulio: confirm Ricardo's provisional byline position after Borja
@@ -21,6 +34,7 @@
 - [ ] confirm the remaining author declarations, actual AI-tool versions, and all authors' approval of the submission version
 - [ ] keep public GitHub, Calliope, Zenodo, and circulation to other coauthors on hold pending explicit authorization
 - [ ] migrate the folder at a coordinated version boundary with no concurrent editors; run the layout checker before and after
+- [x] record Klaus’s bounded Discussion fidelity pass on dbc647e: empirical evidence, FEM numbers, and scope agree; no corrections (October 19)
 - [x] restate the Violante Discussion as observed BOLD effects followed by geometric predictions and the discriminating measurements (October 19)
 - [x] share reviewed draft20 privately as c386e54 from source 1640b2b; merge PR #1 with Ricardo's history and the JNE default preserved (October 19)
 - [x] record Klaus's fidelity pass on FEM integration 23b515c and resolve his two optional wording notes (October 19)
