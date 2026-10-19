@@ -66,3 +66,21 @@ Source: https://synthneuro.org/wp-content/uploads/2023/12/2310violanteFULL.pdf
 After this clarification the passage is 525 words. The article remains
 47 pages and the redline 55, with clean final logs; article pages 33–34
 were inspected. The abstract remains 299 words.
+
+
+## Fidelity pass and exact envelope threshold
+
+Klaus reported PASS on `111f7ab` at 20:13 CEST: the approved abstract sentence,
+retained scope conditions, all four regional ratios, the squared-beat factor,
+and the physiological qualifications match the sources. His plain abstract
+count is 297; texcount gives 299. The encoding clarification in `c632c7e` was
+sent separately and is not covered by that verdict.
+
+His optional threshold precision is adopted. For r = |P1|/|P2|, the envelope
+excursion ratio is min(r, 3) / [2 min(r, 1)]. It is 0.5 for r at most 1,
+r/2 between 1 and 3, and 1.5 from 3 onward. It therefore exceeds one only for
+r > 2 and reaches 1.5 at r >= 3. The revised sentence states both thresholds.
+This does not change any FEM value or interpretation.
+
+Final threshold wording: 524 words in the full Violante passage; article and
+redline remain 47 and 55 pages, with clean logs. Article page 34 checked.

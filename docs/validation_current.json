@@ -2,14 +2,14 @@
   "version": "0.15.0-draft20",
   "review_baseline": "30ba4a6",
   "redline_baseline": "c620335",
-  "status": "FEM integration shared privately as c386e54; subsequent Discussion and approved FEM abstract revisions are local. Physiological source interpretation added; bounded fidelity check pending. Public release holds unchanged.",
+  "status": "FEM integration shared privately as c386e54; approved FEM abstract and physiological Discussion revisions remain local. Fidelity pass on 111f7ab recorded; exact envelope thresholds adopted; subsequent encoding-window check pending. Public release holds unchanged.",
   "outputs": {
     "jne": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
       "pages": 47,
-      "sha256": "b97e4d2a29eea3275cf9cf01cf2f3e95aa41923682d2da75772e65e7700f5af1",
+      "sha256": "c60186eb0e26179d9bfeeeaea67e623cc8bd2f5b4e1bffa77f400438907150ae",
       "version": "0.15.0-draft20",
-      "validation_scope": "Approved FEM abstract and physiological source prediction, with encoding-window BOLD clarification; clean build and visual inspection.",
+      "validation_scope": "Approved FEM abstract and physiological source prediction, encoding-window BOLD clarification, exact envelope thresholds; clean build.",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.log",
       "diagnostics": {
         "errors": 0,
@@ -45,9 +45,9 @@
     "redline": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.pdf",
       "pages": 55,
-      "sha256": "8210a649e52854b27c544e40076ce5dfa95c71419d285de03be76d8f41a210ad",
+      "sha256": "46c7e2bd5f9cbb2e5caf65c19daf9da337ecf59ecc4fc4631d67fc2f30a7dd2a",
       "version": "0.15.0-draft20",
-      "validation_scope": "Approved FEM abstract and physiological source prediction, with encoding-window BOLD clarification; clean build and visual inspection.",
+      "validation_scope": "Approved FEM abstract and physiological source prediction, encoding-window BOLD clarification, exact envelope thresholds; clean build.",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.log",
       "diagnostics": {
         "errors": 0,
@@ -1164,7 +1164,8 @@
     "discussion_words_texcount": {
       "before": 295,
       "after": 492,
-      "after_encoding_clarification": 525
+      "after_encoding_clarification": 525,
+      "current": 524
     },
     "visual_article_pages": [
       1,
@@ -1174,7 +1175,14 @@
     "visual_redline_pages": [
       41
     ],
-    "peer_check": "pending",
+    "peer_check": {
+      "status": "PASS on 111f7ab; later encoding-window clarification pending",
+      "reviewed_commit": "111f7ab",
+      "reported_at": "2026-10-19 20:13 CEST",
+      "reviewer": "klaus-484-TI-helper",
+      "scope": "Abstract, four regional ratios, squared-beat factor, curvature and readout conditions, nonsignificant 1:1-sham interpretation, figure caption.",
+      "optional_refinement_adopted": "Envelope excursion rises for |P1| > 2|P2|, reaching 1.5 at |P1| >= 3|P2|."
+    },
     "encoding_window_clarification": {
       "base_commit": "111f7ab",
       "source": "https://synthneuro.org/wp-content/uploads/2023/12/2310violanteFULL.pdf",
