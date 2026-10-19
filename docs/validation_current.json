@@ -2,14 +2,14 @@
   "version": "0.15.0-draft20",
   "review_baseline": "30ba4a6",
   "redline_baseline": "c620335",
-  "status": "Draft20 FEM integration reviewed and shared privately with Ricardo as c386e54 from source 1640b2b; PR #1 merged preserving his contribution history. Public GitHub, Calliope, Zenodo, and other-coauthor circulation remain held.",
+  "status": "FEM integration shared privately as c386e54; subsequent Discussion clarification is local. Abstract proposal held for Giulio. Public release holds unchanged.",
   "outputs": {
     "jne": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
       "pages": 46,
-      "sha256": "7b4d67cd19fd0425db3562845cb674a5467122e50d49e16eed89dc2dfd7fa611",
+      "sha256": "02a3e0152e118be370a3da33cef6ae9f447fe2effa26507b9e8fe186f8c83c56",
       "version": "0.15.0-draft20",
-      "validation_scope": "Reviewed FEM integration, confirmed declarations, and optional unit/reference wording follow-up; no new numerical computation.",
+      "validation_scope": "Draft20 with the plain-logic current-ratio Discussion revision; clean rebuild, abstract unchanged.",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.log",
       "diagnostics": {
         "errors": 0,
@@ -45,9 +45,9 @@
     "redline": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.pdf",
       "pages": 55,
-      "sha256": "74a7a32ae3827a5af19ca918cc0c021e0fd010f7074c72d7c6c7e48a00b9bf40",
+      "sha256": "a0ced3ab56da0fbb747c65008ad66dafc763048e3171b66a52052ac6b3eba7ba",
       "version": "0.15.0-draft20",
-      "validation_scope": "Reviewed FEM integration, confirmed declarations, and optional unit/reference wording follow-up; no new numerical computation.",
+      "validation_scope": "Draft20 with the plain-logic current-ratio Discussion revision; clean rebuild, abstract unchanged.",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.log",
       "diagnostics": {
         "errors": 0,
@@ -64,9 +64,9 @@
     "storyline": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.pdf",
       "pages": 13,
-      "sha256": "21b95b14fe90959b842845400b4303b149c772e4a27ded63740ba0f4585cce9e",
+      "sha256": "1914188d0960bd5f76dca55cfe8ca76abdae9b2b1a80ec0a624620eaf462a4d1",
       "version": "0.15.0-draft20",
-      "validation_scope": "FEM integration; final builds and rendered changed pages checked. No FEM solve rerun.",
+      "validation_scope": "Draft20 with the plain-logic current-ratio Discussion revision; clean rebuild, abstract unchanged.",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/storyline/tn0484_storyline.log",
       "diagnostics": {
         "errors": 0,
@@ -181,13 +181,14 @@
     },
     "result": "Inspected rendered pages; no clipping or overlap in the changed content. Figure passes the text collision and 6 pt printed-size checks.",
     "declarations_followup": "Confirmed Ricardo roles and GALVANI support: article page 38; fixed draft13 redline checked after rebuild.",
-    "fidelity_followup": "Article Methods page 17 and prediction table page 36 inspected after unit/reference wording changes; no clipping or overlap."
+    "fidelity_followup": "Article Methods page 17 and prediction table page 36 inspected after unit/reference wording changes; no clipping or overlap.",
+    "discussion_followup": "JNE pages 33-34 inspected after replacing the current-ratio Discussion paragraph."
   },
   "source_sha256": {
-    "TN0484_envelope_demodulation.tex": "c4eb9a0190292f790d8547082d2762894ade34130d7c03da0aa566d62f9f1c79",
+    "TN0484_envelope_demodulation.tex": "3b5f5f43528fa4fad7343b32e39e75cee193c47afaddfbed3098dfc491d581dd",
     "references.bib": "5ab2be4337c081b3bb275bff11743204c451396185cd7b9d4f307be9d21e7144",
     "planning/tn0484_abstract.tex": "7d880907b2af76264cc44efa866dfeabac68b00189512f4ca252033bfabe2ee2",
-    "planning/tn0484_storyline.tex": "e052dbadcaf93e271c136f87952499a11e5bd5a99685d00c3b7311ef02149c90",
+    "planning/tn0484_storyline.tex": "14b5cf8dcdb43fec8b9dcefed9197d68ef32e401419b5ec8bcd6f960cebca456",
     "planning/tn0484_notation.tex": "d739fcdee8a1657fc2b4f8183b1ed4513a5b43a2ad7e88032c15f9e485c24348",
     "figures_src/fig_models_ti.tex": "6250c979b717018b4fd5037c3099940fa380b921ee2e9d5cfd66aa1fdaff8600",
     "figures_src/fig_models_ti_caption.tex": "08c72d57c7df8e76e57a6aac84a2f9949c7c82b1badfab4e6df0b4c5676ff8da",
@@ -1106,5 +1107,33 @@
       "editing_parent": "15c1d59",
       "already_present": "Explicit negative static JR source at 8.30 mV."
     }
+  },
+  "discussion_revision": {
+    "date": "2026-10-19",
+    "baseline_commit": "c97746e",
+    "proposal": "notes/2026-10-19_klaus/discussion_violante_rewrite.md",
+    "record": "docs/revision_2026-10-19_discussion_violante.md",
+    "source_verified": "Published Violante full PDF, article pp. 1995, 1997-1998 and Fig. 3",
+    "FEM_npz_recomputed": {
+      "msp_mean_factor": 1.2441283335713318,
+      "env_focus_mm": 2.543558221161487,
+      "msp_focus_mm": -4.492278090892206,
+      "quad_focus_mm": 0,
+      "threshold_sqrt_3_over_5": 0.7745966692414834
+    },
+    "paragraph_words_texcount": {
+      "before": 195,
+      "after": 295,
+      "change": 100
+    },
+    "abstract_changed": false,
+    "abstract_status": "Awaiting Giulio confirmation; use mean-square terminology and retain pinned JR qualification.",
+    "numerical_data_changed": false,
+    "visual_pages_jne": [
+      33,
+      34
+    ],
+    "peer_check": "To be requested on the committed text.",
+    "scope_correction_accepted_commit": "fa21fa1"
   }
 }

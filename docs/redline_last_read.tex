@@ -1,7 +1,7 @@
 \documentclass[11pt,a4paper]{article}
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-ws2f9w35/old.tex   Mon Oct 19 16:25:12 2026
-%DIF ADD /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-ws2f9w35/new.tex   Mon Oct 19 16:25:12 2026
+%DIF DEL /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-vvjwhysk/old.tex   Mon Oct 19 18:46:33 2026
+%DIF ADD /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-vvjwhysk/new.tex   Mon Oct 19 18:46:33 2026
 \usepackage[margin=2.3cm]{geometry}
 \usepackage{lmodern}        % classic Computer Modern look, vectorized (T1)
 \usepackage[T1]{fontenc}
@@ -2939,28 +2939,39 @@ envelope following over a finite amplitude range; smoothing or heterogeneity
 can restore quadratic behavior at smaller inputs. The amplitude and harmonic
 tests in \S\ref{sec:transduction-methods} distinguish these regimes.
 
-\DIFdelbegin \DIFdel{Stimulation intensity can also changethe mechanism. At high }\DIFdelend \DIFaddbegin \DIFadd{Current-ratio experiments separate envelope geometry from the neural response
-map. Violante et al.\ \cite{violante2023} compared $2+2$~mA (1:1) with
-$1+3$~mA (1:3) through the same electrode pairs. At fixed neural state, the
-quadratic beat would be $3/4$ as large everywhere in the 1:3 condition, whereas
-the mean-square polarization changes by
-$\mathcal I_{1:3}/\mathcal I_{1:1}
-=(\mathcal P_1^2+9\mathcal P_2^2)/[4(\mathcal P_1^2+\mathcal P_2^2)]$:
-a $25\%$ increase only where $|\mathcal P_1|=|\mathcal P_2|$, with decreases
-possible elsewhere. Equal summed currents therefore do not match local RMS
-polarization. Their encoding-stage blood-oxygen-level-dependent (BOLD) response
-differed directly between 1:1 and 1:3 ($P=0.015$), with no stimulation-by-region
-interaction ($P=0.76$). Envelope steering was supported by field models and
-cadaver measurements. The BOLD contrast and reported functional-connectivity
-changes are physiological effects, but neither measures the demodulated neural
-beat map. They therefore do not identify envelope-following detection or a
-DC-mediated state change; a spatial beat measurement at controlled state is
-needed to test the current-ratio prediction. Our IXI002 calculation gives an
-anterior envelope-focus displacement of 2.5~mm, consistent in direction with
-their field-model steering, while the mean-square focus moves 4.5~mm posteriorly
-and the quadratic beat focus stays fixed (\S\ref{sec:fem-results}). These are
-different geometric predictions on one anatomy; the BOLD contrast does not
-choose among them.
+\DIFdelbegin \DIFdel{Stimulation intensity can also change the mechanism. At high }\DIFdelend \DIFaddbegin \DIFadd{Violante et al.\ \cite{violante2023} demonstrated envelope steering and a
+change in hippocampal physiology using different measurements. Their field
+models and cadaver recordings supported anterior envelope steering when the
+current ratio changed from $2+2$~mA (1:1) to $1+3$~mA (1:3) through the same
+electrode pairs. In participants, 1:3 reduced the encoding-stage
+blood-oxygen-level-dependent (BOLD) response relative to sham ($P=0.006$) and
+1:1 ($P=0.015$); 1:1 did not differ significantly from sham ($P=0.953$).
+The reduction was nominally largest anteriorly, but the stimulation-by-region
+interaction was not significant ($P=0.76$). The voxelwise sham--1:3 comparison
+found significant reductions in 30\% of anterior, 25\% of posterior, and 2\% of
+middle hippocampal voxels. Significant BOLD reductions thus extended beyond
+the anterior envelope focus.
+}
+
+\DIFadd{All three geometric maps change between these current conditions, so a condition
+difference alone cannot identify the detector. In our IXI002 calculation
+(\S\ref{sec:fem-results}, Fig.~\ref{fig:fem}), the envelope focus moves 2.5~mm
+anteriorly, whereas the quadratic beat retains its pattern and falls to $3/4$
+of its value everywhere at fixed neural state. The mean-square polarization
+changes by $\mathcal I_{1:3}/\mathcal I_{1:1}
+=(\mathcal P_1^2+9\mathcal P_2^2)/[4(\mathcal P_1^2+\mathcal P_2^2)]$,
+exceeding one only where $|\mathcal P_2|>\sqrt{3/5}|\mathcal P_1|
+\approx0.775|\mathcal P_1|$. Its hippocampal mean rises by 24\% and its focus
+moves 4.5~mm posteriorly. Equal summed currents therefore do not match local
+RMS polarization. These are geometric changes on one anatomy: the sign and
+spatial pattern of the steady neural response also depend on detector curvature
+and recurrence. Neither the BOLD contrast nor the reported functional-connectivity
+changes directly measure the beat or the steady source. The voxelwise pattern
+therefore cannot be matched to one of these maps without a neural and hemodynamic
+readout model. A spatially resolved beat measurement at controlled state would
+test envelope steering against the fixed quadratic pattern; an equal-power
+unmodulated-carrier control would isolate effects of the steady source under
+the second-order matching conditions of \S\ref{sec:dc}.
 }
 
 \DIFadd{At higher }\DIFaddend intensities, TI and unmodulated kHz fields can have similar excitation
