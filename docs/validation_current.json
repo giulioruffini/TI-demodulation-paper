@@ -7,9 +7,9 @@
     "jne": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
       "pages": 47,
-      "sha256": "9f9b245203c9655c1954c71a1c49bcacc8d466c14cb7f962830dfccdd61e4c53",
+      "sha256": "b97e4d2a29eea3275cf9cf01cf2f3e95aa41923682d2da75772e65e7700f5af1",
       "version": "0.15.0-draft20",
-      "validation_scope": "Approved FEM abstract (299 words) and physiological steady-source Discussion; clean build and visual inspection.",
+      "validation_scope": "Approved FEM abstract and physiological source prediction, with encoding-window BOLD clarification; clean build and visual inspection.",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.log",
       "diagnostics": {
         "errors": 0,
@@ -45,9 +45,9 @@
     "redline": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.pdf",
       "pages": 55,
-      "sha256": "22e4252019f3ddcec1acf03672048dd7f15bba561468998b44a1abe6942f66f4",
+      "sha256": "8210a649e52854b27c544e40076ce5dfa95c71419d285de03be76d8f41a210ad",
       "version": "0.15.0-draft20",
-      "validation_scope": "Approved FEM abstract (299 words) and physiological steady-source Discussion; clean build and visual inspection.",
+      "validation_scope": "Approved FEM abstract and physiological source prediction, with encoding-window BOLD clarification; clean build and visual inspection.",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.log",
       "diagnostics": {
         "errors": 0,
@@ -1163,7 +1163,8 @@
     "numerical_files_changed": false,
     "discussion_words_texcount": {
       "before": 295,
-      "after": 492
+      "after": 492,
+      "after_encoding_clarification": 525
     },
     "visual_article_pages": [
       1,
@@ -1173,6 +1174,15 @@
     "visual_redline_pages": [
       41
     ],
-    "peer_check": "pending"
+    "peer_check": "pending",
+    "encoding_window_clarification": {
+      "base_commit": "111f7ab",
+      "source": "https://synthneuro.org/wp-content/uploads/2023/12/2310violanteFULL.pdf",
+      "verified": "32 s encoding-stage stimulation; encoding-evoked BOLD contrast; a slow source can add to the evoked response or alter its operating point.",
+      "article_pages_checked": [
+        33,
+        34
+      ]
+    }
   }
 }

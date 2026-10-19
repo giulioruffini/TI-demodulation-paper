@@ -49,3 +49,20 @@ Article pages 1, 27, and 34 and redline page 41 were inspected. The supplement
 is unchanged at 21 pages. Klaus’s bounded fidelity check of this revision is
 pending. The private mirror still contains the preceding FEM integration;
 public-release holds are unchanged.
+
+
+## Encoding-stage readout clarification
+
+Klaus’s 20:09 CEST message specifies the experimental readout. Checked against
+the published PDF (article page 1995 and reporting-summary design specification):
+TI was confined to the 32 s encoding stage of each task block, with ramping at
+the ends. The Discussion now describes the contrast as encoding-evoked BOLD
+and the steady source as a slow shift during that window, which can add to the
+evoked response or alter its operating point. The low-pass comparison is with
+the 5 Hz beat. This is a local scope clarification; the 299-word abstract,
+figures, numerical outputs, and reported statistics are unchanged.
+Source: https://synthneuro.org/wp-content/uploads/2023/12/2310violanteFULL.pdf
+
+After this clarification the passage is 525 words. The article remains
+47 pages and the redline 55, with clean final logs; article pages 33–34
+were inspected. The abstract remains 299 words.

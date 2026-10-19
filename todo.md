@@ -1,7 +1,7 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
 - [ ] Ricardo: confirm field-angle definitions and distinguish interface normal-field estimates from measured projected-field enhancement
-- [ ] Klaus: check the approved FEM abstract and physiological steady-source interpretation against 1c31a13, the NPZ, and the Violante evidence
+- [ ] Klaus: check the approved FEM abstract and physiological steady-source interpretation including the encoding-window clarification, against the NPZ and the Violante evidence
 - [ ] Giulio: confirm Ricardo's provisional byline position after Borja
 - [ ] Giulio: decide the seven retained CUT? passages and the biological-rectifier sentence in docs/revision_2026-10-06_v0150draft16_readability.md
 - [ ] confirm the remaining author declarations, actual AI-tool versions, and all authors' approval of the submission version
