@@ -45,3 +45,13 @@ or moves posteriorly.
 ```
 
 Net length: about +110 words over the current paragraph.
+
+## Correction (Kaiti, 2026-10-19 18:45, accepted)
+
+The closing sentence overstated: a beat measurement has two outcomes under the two detector
+laws (focus moves anteriorly, or stays fixed at three quarters strength). The posterior shift
+belongs to the mean-square polarization, which weights the steady source and is not a beat
+focus; the steady-source route is tested separately, by an equal-power unmodulated carrier
+control. The mean-square focus is also not a neural-response focus without detector and
+network assumptions, and the three maps changing does not by itself guarantee a BOLD
+condition difference under every account. Kaiti integrates with these scopes.
