@@ -2,12 +2,12 @@
 
 - [ ] Ricardo: confirm field-angle definitions and distinguish interface normal-field estimates from measured projected-field enhancement
 - [ ] Giulio: review draft20 FEM integration and the fixed draft13 redline; decide whether to add a FEM finding to the abstract
-- [ ] coordinate the reviewed FEM integration with private-mirror PR #1; preserve the downstream JNE setting and Ricardo's contribution history
 - [ ] Giulio: confirm Ricardo's provisional byline position after Borja
 - [ ] Giulio: decide the seven retained CUT? passages and the biological-rectifier sentence in docs/revision_2026-10-06_v0150draft16_readability.md
 - [ ] confirm the remaining author declarations, actual AI-tool versions, and all authors' approval of the submission version
 - [ ] keep public GitHub, Calliope, Zenodo, and circulation to other coauthors on hold pending explicit authorization
 - [ ] migrate the folder at a coordinated version boundary with no concurrent editors; run the layout checker before and after
+- [x] share reviewed draft20 privately as c386e54 from source 1640b2b; merge PR #1 with Ricardo's history and the JNE default preserved (October 19)
 - [x] record Klaus's fidelity pass on FEM integration 23b515c and resolve his two optional wording notes (October 19)
 - [x] record Giulio's confirmation of Ricardo's authorship and CRediT roles; add RS to the GALVANI ERC 855109 acknowledgment (October 19)
 - [x] integrate Ricardo's FEM PR d779094 into Methods 3.3, Results 4.5, and Figure 8; update the theory, Discussion, predictions, notation, and storyline (October 19)

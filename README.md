@@ -53,12 +53,13 @@ October 9: draft18 source `e17e4a9` is mirrored as `7006e90`, preserving Giulio'
 JNE build setting. His standalone build has 42 pages with no errors or undefined
 references. On October 14, Giulio authorized sharing draft19 with Ricardo.
 The [private GitHub collaboration copy](https://github.com/giulioruffini/TN0484---Temporal-Interference-TI-NMM-demodulation)
-now contains scientific source `afa5e44` as mirror commit `aa18f10`, with the
-current article, supplement, redline, and a FEM contribution guide. Ricardo's
-`ricardosalvador123` account now has write access, verified October 19. The FEM
-integration is local on the canonical branch; the private PR remains open. The public
+now contains draft20 scientific source `1640b2b` as mirror commit `c386e54`, with the
+reviewed article, supplement, redline, and integrated FEM contribution. Ricardo's
+original commit `d779094` is preserved in its history, and private PR #1 is merged.
+His `ricardosalvador123` account has write access, verified October 19. The public
 repository, Calliope and Zenodo releases, and circulation to other coauthors
-remain held. See the [sharing record](docs/share_2026-10-14_ricardo.md).
+remain held. No separate Overleaf website pull was performed. See the
+[October 19 sharing record](docs/share_2026-10-19_ricardo.md).
 
 v0.15.0-draft18 adds Ricardo Salvador (Neuroelectrics) to the author records,
 provisionally after Borja Mercadal, with his ORCID and a CRediT line for confirmation.

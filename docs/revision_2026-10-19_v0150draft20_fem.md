@@ -120,10 +120,15 @@ Klaus's initial review applies to `d779094`, before these integration edits.
 It verifies the supplied numerical headlines and reports a successful build.
 Its note remains at `notes/2026-10-19_klaus/fem_pr1_review.md`.
 
-Ricardo's private-repository write access was verified on October 19. The
-canonical integration is local; PR #1 remains open for the coordinated
-downstream update. Public GitHub, Calliope, Zenodo, and circulation to other
-coauthors remain held. The full TN PDF retains its draft18 archive build.
+Ricardo's private-repository write access was verified on October 19. After the
+fidelity pass, the private mirror advanced to `c386e54`, preserving his original
+`d779094` commit and integrating canonical scientific source `1640b2b`. GitHub
+reports PR #1 merged. The article and supplement build independently from the
+shared subset and match the reviewed PDFs page for page; the shared PDFs are
+byte-identical to the canonical files. Public GitHub, Calliope, Zenodo, and
+circulation to other coauthors remain held. No separate Overleaf website pull
+was performed. The full TN PDF retains its draft18 archive build. The sharing
+record is `docs/share_2026-10-19_ricardo.md`.
 
 No scientific explanation, example, or numerical result is removed. The
 replaced text consists of the completed placeholders and stale proposed-test

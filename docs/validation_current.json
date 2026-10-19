@@ -2,7 +2,7 @@
   "version": "0.15.0-draft20",
   "review_baseline": "30ba4a6",
   "redline_baseline": "c620335",
-  "status": "Ricardo FEM PR d779094 integrated locally on two-tone-validation. Private PR #1 remains open; public GitHub, Calliope, Zenodo, and other-coauthor circulation remain held.",
+  "status": "Draft20 FEM integration reviewed and shared privately with Ricardo as c386e54 from source 1640b2b; PR #1 merged preserving his contribution history. Public GitHub, Calliope, Zenodo, and other-coauthor circulation remain held.",
   "outputs": {
     "jne": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
@@ -303,7 +303,7 @@
       "Ricardo field-angle and interface estimate definitions",
       "Giulio abstract decision"
     ],
-    "release_status": "Local canonical integration; private PR open; other release holds unchanged",
+    "release_status": "Privately shared as c386e54; PR #1 merged; no separate Overleaf website pull; other release holds unchanged.",
     "integration_commit": "23b515c",
     "integration_fidelity_request": {
       "target": "klaus-484-TI-helper",
@@ -349,6 +349,15 @@
         "Use target/reference consistently; specify cortex-only reference for deep-selectivity test"
       ],
       "scope": "Peer pass applies to 23b515c. Later CRediT/funding and the listed wording changes were checked locally, not re-reviewed by Klaus."
+    },
+    "final_scientific_source_commit": "1640b2b",
+    "private_share": {
+      "mirror_commit": "c386e542e476793f1dc7b013e894906079dc45de",
+      "source_commit": "1640b2b",
+      "record": "docs/share_2026-10-19_ricardo.json",
+      "PR_1_merged": true,
+      "contribution_history_preserved": true,
+      "builds_and_remote_article_verified": true
     }
   },
   "focality_integration_revision": {
