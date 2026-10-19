@@ -7,9 +7,9 @@
     "jne": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.pdf",
       "pages": 46,
-      "sha256": "893ee57be3ac6a85da60073213c22e81c90efcef93a9f65e0d9852b54b470ae7",
+      "sha256": "43ec01aea699469c689286e5ddef3bc765a7b38f57fa8110de4d7858d93286c3",
       "version": "0.15.0-draft20",
-      "validation_scope": "FEM integration; final builds and rendered changed pages checked. No FEM solve rerun.",
+      "validation_scope": "FEM integration followed by confirmed Ricardo CRediT and GALVANI acknowledgment; final declarations and fixed-baseline redline rebuilt. No new computation.",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/TN0484_jne.log",
       "diagnostics": {
         "errors": 0,
@@ -45,9 +45,9 @@
     "redline": {
       "path": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.pdf",
       "pages": 55,
-      "sha256": "5a4bb8f1eeddef934322d69294d15757be0106bbe9c8fe1e8e19e8a073c51b01",
+      "sha256": "6860b86bec475eb25078b4f79f69639039a6f99df8adce8cf42a018636b230eb",
       "version": "0.15.0-draft20",
-      "validation_scope": "FEM integration; final builds and rendered changed pages checked. No FEM solve rerun.",
+      "validation_scope": "FEM integration followed by confirmed Ricardo CRediT and GALVANI acknowledgment; final declarations and fixed-baseline redline rebuilt. No new computation.",
       "log": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/docs/redline_last_read.log",
       "diagnostics": {
         "errors": 0,
@@ -163,23 +163,26 @@
         27,
         33,
         34,
+        38,
         44
       ],
       "supplement": [
         1
       ],
       "redline": [
-        32
+        32,
+        46
       ],
       "storyline": [
         7,
         8
       ]
     },
-    "result": "Inspected rendered pages; no clipping or overlap in the changed content. Figure passes the text collision and 6 pt printed-size checks."
+    "result": "Inspected rendered pages; no clipping or overlap in the changed content. Figure passes the text collision and 6 pt printed-size checks.",
+    "declarations_followup": "Confirmed Ricardo roles and GALVANI support: article page 38; fixed draft13 redline checked after rebuild."
   },
   "source_sha256": {
-    "TN0484_envelope_demodulation.tex": "8a17520fcb653e491fe15a793d67eaedca17d8b618bd74ce8f1cbf27f4b91760",
+    "TN0484_envelope_demodulation.tex": "f70ecd5ec4218e4f3cc1d19234d4fa2012fca90d383d310838cf5c105edd36df",
     "references.bib": "5ab2be4337c081b3bb275bff11743204c451396185cd7b9d4f307be9d21e7144",
     "planning/tn0484_abstract.tex": "7d880907b2af76264cc44efa866dfeabac68b00189512f4ca252033bfabe2ee2",
     "planning/tn0484_storyline.tex": "e052dbadcaf93e271c136f87952499a11e5bd5a99685d00c3b7311ef02149c90",
@@ -296,7 +299,6 @@
     },
     "pending": [
       "Ricardo field-angle and interface estimate definitions",
-      "Ricardo CRediT/funding confirmation",
       "Giulio abstract decision"
     ],
     "release_status": "Local canonical integration; private PR open; other release holds unchanged",
@@ -307,6 +309,23 @@
       "status": "spooled by peer-message; acknowledgment and result pending",
       "request_time": "2026-10-19 16:14 CEST",
       "scope": "FEM Methods, Results, Figure 8, Theory pointer, Violante paragraph, current-ratio prediction row; read-only"
+    },
+    "author_confirmation": {
+      "reported_at": "2026-10-19 16:04 CEST",
+      "confirmed_by": "Giulio Ruffini; relayed by klaus-484-TI-helper",
+      "author": "Ricardo Salvador",
+      "authorship_confirmed": true,
+      "roles": [
+        "conceptualization (current-ratio steering)",
+        "methodology (head modeling)",
+        "software",
+        "formal analysis",
+        "data curation",
+        "visualization"
+      ],
+      "funding": "GALVANI ERC Synergy 855109; no other grant to add",
+      "provisional_roles_marker_removed": true,
+      "remaining_scope": "Existing byline-position decision and all authors final-version approval are separate."
     }
   },
   "focality_integration_revision": {

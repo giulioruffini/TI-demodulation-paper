@@ -47,8 +47,13 @@ projection direction. It also states that population curvature at the model's
 operating point is not a measured AIS transfer. Calibrating an anatomical
 detector requires access and input-output information beyond FEM geometry.
 
-Ricardo's CRediT line gains data curation and retains its confirmation marker.
-His byline position and funding remain subject to the existing confirmations.
+Giulio confirmed Ricardo's authorship and CRediT roles through Klaus's October 19,
+16:04 message: conceptualization (current-ratio steering), methodology (head
+modeling), software, formal analysis, data curation, and visualization. The
+provisional marker is removed. RS joins the GALVANI ERC Synergy 855109 funding
+acknowledgment; no other grant is added. His placement after Borja remains the
+existing provisional byline position. Approval of the final submission version
+remains an item for all authors.
 The shared abstract is unchanged. A possible FEM addition, for Giulio's
 decision, is: "On one realistic head, changing the current ratio moves the
 envelope and mean-square foci in opposite directions, while the quadratic beat

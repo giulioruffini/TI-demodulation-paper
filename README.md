@@ -37,6 +37,8 @@ including other deep structures. The text and figure identify this definition.
 The maps precede detector gain and do not assign excitation or suppression.
 The [integration record](docs/revision_2026-10-19_v0150draft20_fem.md) gives the
 scope, checks, and remaining author clarifications. The shared abstract is unchanged.
+Giulio has confirmed Ricardo's CRediT roles and support through GALVANI ERC
+Synergy 855109; the declarations include both without a provisional marker.
 
 Draft19 distinguishes the nonnegative mean-square polarization map from the signed
 DC source after detection and the mean response after recurrence. Table 2 includes
