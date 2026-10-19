@@ -754,7 +754,7 @@ local polarization per unit current (mV/mA). Then
 \mathcal M[\tfrac12\mathcal A^2]
 =2I_1^{\rm pair}I_2^{\rm pair}|\mathcal P_1\mathcal P_2|.
 \]
-The normalized map and its target-to-cortex ratios are unchanged, as
+The normalized map and its ratios between fixed target and reference regions are unchanged, as
 Cassar\`a et al.\ noted for second-order mixing \cite{cassara2025part2}.
 Fixed detector coefficients and linear network propagation preserve this common
 current factor, including for dynamic mixing and spatially heterogeneous gains.
@@ -1201,8 +1201,7 @@ $-\nabla\phi_j$ was recovered at gray- and white-matter
 nodes by superconvergent patch recovery \cite{zienkiewicz1992}, separately within each
 compartment (446{,}877 node--compartment pairs). Dividing these fields by the solve
 current gives the field-per-current vectors $\mathbf F_j$, expressed in
-(V/m)/mA to match $I_j^{\rm pair}$; the supplied code instead uses amperes
-consistently. Every current condition is a scaling of these two fields.
+(V/m)/mA to match $I_j^{\rm pair}$. Every current condition is a scaling of these two fields.
 With peak pair currents $I_1^{\rm pair}$ (anterior) and
 $I_2^{\rm pair}$ (posterior) summing to 4~mA, the ratio 1:1 is $2+2$~mA and 1:3 is
 1~mA anterior plus 3~mA posterior, the two conditions of Violante et al. The ratio sweep
@@ -2293,7 +2292,8 @@ An envelope follower can instead shift its maximum.
 the geometric distinction: envelope and mean-square foci move oppositely;
 the quadratic beat map only rescales. A physiological beat-map test remains open.
 & Vary the current ratio at fixed electrodes and compare normalized beat maps
-and target-to-cortex ratios. Keep the projection direction fixed at each site,
+and target-to-reference ratios, using a cortex-only reference to test deep-target
+selectivity. Keep the projection direction fixed at each site,
 including any direction chosen to maximize the envelope at a reference ratio.
 Measure the DC shift and repeat at lower amplitude to check state dependence.
 Changing from $2+2$ to $1+3$~mA multiplies envelope excursion by

@@ -116,7 +116,7 @@ The 58-77 degree range likewise needs its reference axes, summary statistic,
 ROI, and reproducible location. Per-hypothesis montage optimization remains a
 follow-up outside this paper.
 
-Klaus's existing review applies to `d779094`, before these integration edits.
+Klaus's initial review applies to `d779094`, before these integration edits.
 It verifies the supplied numerical headlines and reports a successful build.
 Its note remains at `notes/2026-10-19_klaus/fem_pr1_review.md`.
 
@@ -129,7 +129,17 @@ No scientific explanation, example, or numerical result is removed. The
 replaced text consists of the completed placeholders and stale proposed-test
 wording; the only removed graphic is the duplicate envelope bar.
 
-The integration checkpoint is `23b515c`. A bounded read-only fidelity check of
-its FEM sections, figure, and cross-references was queued to Klaus at 16:14 CEST.
-The request has been spooled; acknowledgment and the integration verdict are
-pending. The earlier PR review is not reported as a check of this final text.
+Klaus's read-only fidelity check of the integration checkpoint `23b515c` passed
+(message dated October 19, 16:16 CEST). He verified that the producer, JSON and
+NPZ are byte-identical to Ricardo's contribution, the figure edits affect only
+presentation, and all numbers in Methods, Results, the figure caption, Theory,
+Discussion, and the prediction row match the supplied outputs. He withdrew
+the raw-quadratic color concern after inspecting a higher-resolution rendering.
+
+His two optional wording notes are applied after that reviewed checkpoint.
+The remark about amperes in the producer moves from Methods to the settings
+document, which also links the producer's field notation to the manuscript's.
+Theory now states invariance for any fixed target and reference regions. The
+prediction row uses the same terminology and specifies a cortex-only reference
+for a test of deep-target selectivity. The FEM reference remains all gray
+matter outside the ROI; no mask, array, or numerical result changes.

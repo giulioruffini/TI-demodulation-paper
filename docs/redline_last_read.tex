@@ -1,7 +1,7 @@
 \documentclass[11pt,a4paper]{article}
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-dpzygkcj/old.tex   Mon Oct 19 16:21:27 2026
-%DIF ADD /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-dpzygkcj/new.tex   Mon Oct 19 16:21:27 2026
+%DIF DEL /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-ws2f9w35/old.tex   Mon Oct 19 16:25:12 2026
+%DIF ADD /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-ws2f9w35/new.tex   Mon Oct 19 16:25:12 2026
 \usepackage[margin=2.3cm]{geometry}
 \usepackage{lmodern}        % classic Computer Modern look, vectorized (T1)
 \usepackage[T1]{fontenc}
@@ -1123,7 +1123,7 @@ local polarization per unit current (mV/mA). Then
 \DIFadd{\mathcal M}[\DIFadd{\tfrac12\mathcal A^2}]
 \DIFadd{=2I_1^{\rm pair}I_2^{\rm pair}|\mathcal P_1\mathcal P_2|.
 }\]
-\DIFadd{The normalized map and its target-to-cortex ratios are unchanged, as
+\DIFadd{The normalized map and its ratios between fixed target and reference regions are unchanged, as
 Cassar\`a et al.\ noted for second-order mixing \cite{cassara2025part2}.
 Fixed detector coefficients and linear network propagation preserve this common
 current factor, including for dynamic mixing and spatially heterogeneous gains.
@@ -1674,8 +1674,7 @@ $-\nabla\phi_j$ was recovered at gray- and white-matter
 nodes by superconvergent patch recovery \cite{zienkiewicz1992}, separately within each
 compartment (446}{\DIFadd{,}}\DIFadd{877 node--compartment pairs). Dividing these fields by the solve
 current gives the field-per-current vectors $\mathbf F_j$, expressed in
-(V/m)/mA to match $I_j^{\rm pair}$; the supplied code instead uses amperes
-consistently. Every current condition is a scaling of these two fields.
+(V/m)/mA to match $I_j^{\rm pair}$. Every current condition is a scaling of these two fields.
 With peak pair currents $I_1^{\rm pair}$ (anterior) and
 $I_2^{\rm pair}$ (posterior) summing to 4~mA, the ratio 1:1 is $2+2$~mA and 1:3 is
 1~mA anterior plus 3~mA posterior, the two conditions of Violante et al. The ratio sweep
@@ -3155,7 +3154,8 @@ An envelope follower can instead shift its maximum.
 the geometric distinction: envelope and mean-square foci move oppositely;
 the quadratic beat map only rescales. A physiological beat-map test remains open.
 }& \DIFadd{Vary the current ratio at fixed electrodes and compare normalized beat maps
-and target-to-cortex ratios. Keep the projection direction fixed at each site,
+and target-to-reference ratios, using a cortex-only reference to test deep-target
+selectivity. Keep the projection direction fixed at each site,
 including any direction chosen to maximize the envelope at a reference ratio.
 Measure the DC shift and repeat at lower amplitude to check state dependence.
 Changing from $2+2$ to $1+3$~mA multiplies envelope excursion by

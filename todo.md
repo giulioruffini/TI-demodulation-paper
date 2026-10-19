@@ -1,6 +1,5 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
-- [ ] Klaus: return the bounded FEM integration fidelity check on 23b515c before the coordinated private-mirror update
 - [ ] Ricardo: confirm field-angle definitions and distinguish interface normal-field estimates from measured projected-field enhancement
 - [ ] Giulio: review draft20 FEM integration and the fixed draft13 redline; decide whether to add a FEM finding to the abstract
 - [ ] coordinate the reviewed FEM integration with private-mirror PR #1; preserve the downstream JNE setting and Ricardo's contribution history
@@ -9,6 +8,7 @@
 - [ ] confirm the remaining author declarations, actual AI-tool versions, and all authors' approval of the submission version
 - [ ] keep public GitHub, Calliope, Zenodo, and circulation to other coauthors on hold pending explicit authorization
 - [ ] migrate the folder at a coordinated version boundary with no concurrent editors; run the layout checker before and after
+- [x] record Klaus's fidelity pass on FEM integration 23b515c and resolve his two optional wording notes (October 19)
 - [x] record Giulio's confirmation of Ricardo's authorship and CRediT roles; add RS to the GALVANI ERC 855109 acknowledgment (October 19)
 - [x] integrate Ricardo's FEM PR d779094 into Methods 3.3, Results 4.5, and Figure 8; update the theory, Discussion, predictions, notation, and storyline (October 19)
 - [x] check the portable FEM summaries and figure; identify the reference as gray matter outside the ROI and preserve the signed-source distinction (October 19)

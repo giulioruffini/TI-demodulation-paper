@@ -61,6 +61,12 @@ Total 4 mA (peak pair currents). 1:1 = 2 + 2 mA; 1:3 = 1 mA anterior + 3 mA post
 Sweep (primary montage): posterior share `I_2 / (I_1 + I_2)` = 0.100 to 0.900 in steps
 of 0.025.
 
+The manuscript denotes the field per unit current by `F_j`, in (V/m)/mA, and
+expresses pair currents in mA. The producer uses amperes throughout and denotes
+its fields per unit current by `E_j`, in (V/m)/A. Thus the manuscript's `F_j`
+equals the producer's `E_j / 1000`; multiplying by the corresponding current
+gives the same applied field.
+
 ## Orientation
 
 - **Primary, held fixed:** `n*(x)`, the direction that maximizes the envelope excursion at
@@ -82,6 +88,10 @@ of 0.025.
 
 Mesh-image alignment with the aseg was checked by tag volume ratio, tag centroid hit
 (worst, CSF 0.852 against 0.85) and WM centroid inside the aseg brain (0.998). All passed.
+
+The output key `cortex` includes deep gray matter outside the ROI. The manuscript
+therefore calls it the reference region and reports target-to-reference ratios;
+it is not a cortex-only mask. The output keys remain unchanged.
 
 ## Statistics
 
