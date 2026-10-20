@@ -78,6 +78,12 @@ def main():
             cwd=ROOT, text=True, capture_output=True, check=True,
         )
         text = "\n".join(line.rstrip() for line in result.stdout.splitlines()) + "\n"
+        # A separate review build supplies its own settled supplement labels.
+        review_dir = Path(config["working_edition"]).parent
+        if review_dir != Path("."):
+            text = text.replace(
+                r"\externaldocument[][nocite]{TN0484_jne_supplement}",
+                r"\externaldocument[][nocite]{" + str(review_dir / "TN0484_jne_supplement") + "}")
         # latexdiff can retain a label inside a deleted, unnumbered formula.
         # After a move to the supplement, that stale label collides with the
         # current external label. Keep the deleted formula, without its label.
@@ -101,7 +107,7 @@ def main():
                 subprocess.run(command, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, check=True)
                 subprocess.run(["bibtex", job], cwd=stage, env=environment,
                                stdout=log, stderr=subprocess.STDOUT, check=True)
-                for _ in range(2):
+                for _ in range(3):
                     subprocess.run(command, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, check=True)
         except subprocess.CalledProcessError:
             # TemporaryDirectory removes the failed stage; retain diagnostics first.

@@ -1,24 +1,12 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
-- [ ] Giulio: finish draft20 annotations and approve the whole-paper legibility plan in notes/2026-10-20_kaiti/legibility_pass_proposal.md; preserve the live annotated PDF
+- [ ] read the separate draft21 article and Klaus’s reader check; preserve the annotated root draft20 PDF
 - [ ] Ricardo: supply points_2_3.json, its producer/revision, and HippUnfold version; verify masks and orientation denominators before numerical integration
 - [ ] Giulio: confirm Ricardo's provisional byline position after Borja
 - [ ] Giulio: decide the seven retained CUT? passages and the biological-rectifier sentence in docs/revision_2026-10-06_v0150draft16_readability.md
 - [ ] confirm the remaining author declarations, actual AI-tool versions, and all authors' approval of the submission version
 - [ ] keep public GitHub, Calliope, Zenodo, and circulation to other coauthors on hold pending explicit authorization
 - [ ] migrate the folder at a coordinated version boundary with no concurrent editors; run the layout checker before and after
-- [x] close the interface-bound check: distinguish own-optimum bounds from fixed projections and withdraw the numerical lower-bound inference (October 20)
-- [x] review Ricardo’s orientation/interface report and prepare scoped additions; manuscript unchanged pending provenance (October 20)
-- [x] record Klaus’s final encoding-window pass on c632c7e; close the FEM abstract and physiological Discussion review cycle (October 19)
-- [x] record Klaus’s fidelity pass on 111f7ab and state both exact envelope-increase thresholds (October 19)
-- [x] add the approved FEM abstract sentence at 299 words and connect mean-square polarization to its conditional physiological source prediction (October 19)
-- [x] record Klaus’s bounded Discussion fidelity pass on dbc647e: empirical evidence, FEM numbers, and scope agree; no corrections (October 19)
-- [x] restate the Violante Discussion as observed BOLD effects followed by geometric predictions and the discriminating measurements (October 19)
-- [x] share reviewed draft20 privately as c386e54 from source 1640b2b; merge PR #1 with Ricardo's history and the JNE default preserved (October 19)
-- [x] record Klaus's fidelity pass on FEM integration 23b515c and resolve his two optional wording notes (October 19)
-- [x] record Giulio's confirmation of Ricardo's authorship and CRediT roles; add RS to the GALVANI ERC 855109 acknowledgment (October 19)
-- [x] integrate Ricardo's FEM PR d779094 into Methods 3.3, Results 4.5, and Figure 8; update the theory, Discussion, predictions, notation, and storyline (October 19)
-- [x] check the portable FEM summaries and figure; identify the reference as gray matter outside the ROI and preserve the signed-source distinction (October 19)
-- [x] verify Ricardo's private-repository write access (October 19)
-- [x] share draft19 privately as aa18f10 from source afa5e44; close the fast/adiabatic QIF and signed-map corrections (October 14)
-- [x] integrate author and steering additions, FEM placeholders, notation, focality, readability, and Landau repairs through draft18 (October 9)
+- [x] revise the entire paper for legibility, build draft21 separately, and redline against draft20 (October 20)
+- [x] preserve all existing labels and cited references; relocate coefficient derivations and run diagnostics to the supplement (October 20)
+- [x] integrate and verify Ricardo’s FEM results and the approved physiological Discussion and abstract (October 19)

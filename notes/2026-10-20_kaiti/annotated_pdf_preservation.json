@@ -1,0 +1,6 @@
+{
+  "file": "TN0484_jne.pdf",
+  "sha256": "ddea986af751de95c68493924386b3098fdad25a2f6676f4337566b194f1396d",
+  "policy": "User finished annotating; leave this file untouched and build separately in build/review.",
+  "source_baseline": "e20c047"
+}

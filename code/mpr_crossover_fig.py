@@ -36,13 +36,13 @@ for Q, col, lab in ((0.0, NEBLUE, r"$Q=0$ (below inflection, $F''>0$)"),
         a1.plot([p["w"] for p in pts], [p["sim"] for p in pts], "o", color=col, ms=6, mfc="white", mew=1.5)
 wz = J["limits"]["3.0"]["w_zero"]
 a1.axvline(wz, color=NERED, lw=0.8, alpha=0.5)
-a1.text(wz * 1.08, -0.0046, r"sign change $\tilde\omega_z$", color=NERED, fontsize=8, rotation=90, va="bottom")
+a1.text(wz * 1.08, -0.0046, r"sign change", color=NERED, fontsize=8, rotation=90, va="bottom")
 a1.axhline(0, color="0.6", lw=0.8)
 a1.set_xscale("log"); a1.set_xlim(w[0], w[-1]); a1.set_ylim(-0.005, 0.02)
-a1.set_xlabel(r"normalized carrier frequency $\tilde\omega=\omega\tau_m$")
+a1.set_xlabel(r"carrier frequency $\omega\tau_m$")
 a1.set_ylabel(r"$\kappa_{\rm DC}$ (normalized units)")
 a1.text(0.06, 0.0165, r"$\frac{1}{4} F''(Q)$: static curvature", color=NEBLUE, fontsize=8)
-a1.text(14.0, 0.0082, r"$F'(Q)/(2\tilde\omega^2)$", color=NEBLUE, fontsize=8)
+a1.text(14.0, 0.0082, r"$F'(Q)/[2(\omega\tau_m)^2]$", color=NEBLUE, fontsize=8)
 for f_hz, lab in ((300.0, "300 Hz"), (1000.0, "1 kHz")):      # carriers used in the paper, for tau = tau_E = 15 ms
     x = 2 * np.pi * f_hz * TE * 1e-3
     a1.axvline(x, color="0.75", lw=0.8, ls=":")
@@ -73,6 +73,7 @@ figstyle.panel(a2, "b")
 
 fig.tight_layout()
 figstyle.scale_text(fig, placed_frac=1.0)
+fig.canvas.draw()
 overlap.check(fig, placed_frac=1.0, name="mpr_crossover_fig.py")
 for ext in ("pdf", "png"):
     fig.savefig(os.path.join(FIGS, f"fig_mpr_crossover.{ext}"), dpi=300, bbox_inches="tight")

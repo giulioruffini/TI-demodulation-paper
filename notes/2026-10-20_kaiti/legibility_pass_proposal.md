@@ -1,6 +1,6 @@
 # Draft20: proposed whole-paper legibility repair
 
-20 October 2026. Scope proposal only, awaiting Giulio’s go. Source text is
+20 October 2026. Approved by Giulio later the same day; the proposal below records the pre-edit plan. Giulio subsequently confirmed that annotation was finished and requested a separate revision. Source text is
 unchanged from `e20c047`; current repository head before this note is
 `67a2b17`. I read the live annotated PDF through page 15 and visually checked
 the marked pages 5 and 8. The PDF has uncommitted annotations and must not be

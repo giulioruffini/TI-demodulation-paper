@@ -10,22 +10,22 @@ Archived at Zenodo: **[doi:10.5281/zenodo.21009618](https://doi.org/10.5281/zeno
 Licensed **CC-BY-4.0** (see [`LICENSE`](LICENSE)); machine-readable citation in
 [`CITATION.cff`](CITATION.cff).
 
-The current working edition is the **JNE article, v0.15.0-draft20**:
-[TN0484_jne.pdf](TN0484_jne.pdf). Run `./build.sh` to update it. The TN and
-supplement are generated from the same manuscript for an authorized Calliope cut;
-they are not separate working editions. Older versioned PDFs are historical snapshots.
+The current reading revision is the **JNE article, v0.15.0-draft21**:
+[article](build/review/TN0484_jne.pdf),
+[supplement](build/review/TN0484_jne_supplement.pdf), and
+[redline against draft20](build/review/redline_draft20.pdf).
+The root `TN0484_jne.pdf` is Giulio's annotated draft20. Preserve it: do not run
+`./build.sh` over that file during this review. Build the separate revision with
+`python3 notes/2026-10-20_kaiti/build_review.py`.
 
-The article, TN, and storyline load one abstract from the four macros in
-[planning/tn0484_abstract.tex](planning/tn0484_abstract.tex); only the article adds
-run-in headings. Every table is introduced and explained in the surrounding text.
-Run `python3 code/build_jne_redline.py` to update the one current [JNE redline](docs/redline_last_read.pdf) against the baseline
-recorded in [planning/review_baseline.json](planning/review_baseline.json), rather
-than creating a new redline for each edit. The fixed reading baseline is draft13 (`c620335`), as requested for the
-October 6 notation pass. The JNE article and supplement both include Appendix A
-from [one notation source](planning/tn0484_notation.tex). The article, supplement,
-and full TN were regenerated together for the draft18 Overleaf handoff. Draft19 and draft20
-update the article and the affected supplement; the full TN retains draft18
-until the next coordinated cut.
+Draft21 revises the whole paper for legibility, moves detailed coefficients and
+run diagnostics to the supplement, and shortens captions. The approved abstract
+is unchanged. The [revision record](docs/revision_2026-10-20_draft21_legibility.md)
+lists the relocations and checks. One abstract and one notation source remain
+shared between editions; the full TN will be regenerated at an authorized cut.
+Run `python3 code/build_jne_redline.py` to update the review redline against
+`e20c047` (draft20), as recorded in
+[planning/review_baseline.json](planning/review_baseline.json).
 
 Draft20 integrates Ricardo Salvador's FEM contribution from private-mirror PR #1
 (`d779094`) into the reserved Methods 3.3, Results 4.5, and Figure 8. On IXI002,

@@ -2,8 +2,8 @@
 Table~\ref{\notationtablelabel} groups the symbols by their role in the calculation.
 JR and LaNMM voltages are in mV and rates in s$^{-1}$. QIF voltages and current-like
 drives are dimensionless model variables; QIF rates are physical rates, integrated
-in ms$^{-1}$ and converted to Hz where indicated. A tilde marks the dimensionless
-membrane-time variables of the uncoupled MPR calculation. All frequencies and time
+in ms$^{-1}$ and converted to Hz where indicated. The uncoupled MPR derivation explicitly uses membrane-time units; the main
+population equations retain physical time and rate. All frequencies and time
 constants in a formula must use the same time unit. In the FEM comparison $\mathbf n^*$ is the direction maximizing the envelope
 at balanced currents, held fixed during the ratio sweep. A star otherwise marks a fixed point or,
 on a bifurcation parameter, its critical value. Subscripts E and I identify
@@ -69,9 +69,9 @@ $\mathcal H_{\rm det},\mathcal H_{\rm meas}$ & Second/fundamental harmonic magni
 $\mathcal M[y]$ & Peak-to-peak excursion of the quantity $y$ & units of $y$ & Eq.~\eqref{eq:reweight} \\
 $F(Q),F',F''$ & MPR steady-rate curve and drive derivatives & normalized & Eq.~\eqref{eq:Fmpr} \\
 $Q,q$ & Mean total drive $\bar\eta+I$; single-cell drive $\eta+I$ & normalized & Eq.~\eqref{eq:Fmpr}; App.~\ref{app:mpr-mixing} \\
-$I_{\rm ac},\tilde\omega$ & Single-tone current amplitude; angular frequency $\omega\tau_m$ & normalized & \S\ref{sec:dynamic} \\
+$I_{\rm ac}$ & Single-tone current amplitude & normalized & \S\ref{sec:dynamic} \\
 $\kappa_{\rm DC},\kappa_V$ & Mean-rate mixing per squared current or squared voltage excursion & normalized & Eqs.~\eqref{eq:crossover}, \eqref{eq:kfixed} \\
-$d,\nu,\tilde\omega_z$ & MPR relaxation, ringing and zero-crossing angular frequencies & membrane-time units & \S\ref{sec:dynamic} \\
+$d,\nu,\omega_z$ & MPR relaxation, ringing and zero-crossing angular frequencies & membrane-time units & App.~\ref{app:mpr-coefficients} \\
 $\mathsf J,\mathbf h,H_v$ & Reduced MPR Jacobian, unit-current response and voltage transfer & normalized & \S\ref{sec:dynamic}; App.~\ref{app:mpr-mixing} \\
 $\mathbf b_2,\mathsf I_2$ & Quadratic DC source per $I_{\rm ac}^2$; identity matrix & normalized & App.~\ref{app:mpr-mixing} \\
 $\mathcal R_{\rm det},\mathcal R_{\rm lin}$ & TI/direct-drive source ratio; linear TI/tACS output ratio & dimensionless & App.~\ref{app:bound}; \S\ref{sec:tacs-results} \\
@@ -81,7 +81,7 @@ $L,\psi,\mathsf K,\mathsf E$ & Unit logistic, normalized waveform, complete elli
 \addlinespace
 \multicolumn{4}{@{}l}{\textbf{Network}}\\*
 $r_X,v_X$ & Population firing rate and mean potential, indexed by $X$ & s$^{-1}$; mV in JR/LaNMM, normalized in QIF & \S\ref{sec:nmm} \\
-$\tilde t,\tilde r,\tilde f$ & Membrane-time coordinate, population rate and single-cell rate & normalized & Eq.~\eqref{eq:mpr}; App.~\ref{app:mpr-mixing} \\
+$t,r,f$ (MPR derivation) & Time, population rate and single-cell rate in the stated membrane-time convention & normalized locally & App.~\ref{app:mpr-coefficients} \\
 $r_{\rm syn},r_E^{\rm syn},r_I^{\rm syn}$ & Synaptically filtered firing rates & same rate units as input & Eqs.~\eqref{eq:slow_synapse}, \eqref{eq:nmm2-ping} \\
 $u_{\rm PSP},u_{X\leftarrow Y},\hat L$ & Postsynaptic potential and inverse synaptic operator & mV; maps mV to s$^{-1}$ & Eq.~\eqref{eq:nmm1} \\
 $A,B,a,b$ & JR excitatory/inhibitory PSP gains and inverse synaptic times & mV; s$^{-1}$ & \S\ref{sec:nmm}; App.~\ref{app:models} \\
@@ -100,7 +100,7 @@ $\tau_{\rm rel},\tau_{\rm rev},\mathcal Q$ & Population relaxation time, $1/\gam
 $D,G,R_\Omega$ & Beat-source coefficient, recurrent transfer, complex observed beat response & input/output-dependent & Eq.~\eqref{eq:receiver} \\
 $V_j,V_{\rm peak},N$ & Single-QIF voltage, spike cutoff and neurons per population & normalized; count & \S\ref{sec:qif-methods} \\
 $\delta\eta_E,\delta\eta_E^*$ & Rectified E-drive shift and its Hopf threshold & normalized & \S\ref{sec:qif-methods}, \S\ref{sec:qif} \\
-$P_1,P_2,r_P,\varphi_X$ & Deep/superficial pyramidal populations; JR and LaNMM pyramidal rates & labels; s$^{-1}$ for rates & \S\ref{sec:nmm}; \S\ref{sec:lanmm-methods} \\
+$P_1,P_2,r_P,\varphi_X$ & Deep/superficial pyramidal populations; JR and LaNMM pyramidal rates & labels; s$^{-1}$ for rates & \S\ref{sec:timing}; \S\ref{sec:lanmm-methods} \\
 $z,\alpha,\mathcal F,\varepsilon_{\rm SL}$ & Stuart--Landau mode, growth rate, forcing and forcing amplitude & normalized mode; s$^{-1}$ for the others & App.~\ref{app:sl} \\
 \addlinespace
 \multicolumn{4}{@{}l}{\textbf{Measurement}}\\*
