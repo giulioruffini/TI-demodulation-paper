@@ -1,5 +1,6 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
+- [ ] Giulio: finish draft20 annotations and approve the opening/Theory legibility scope in notes/2026-10-20_kaiti/legibility_pass_proposal.md; preserve the live annotated PDF
 - [ ] Ricardo: supply points_2_3.json, its producer/revision, and HippUnfold version; verify masks and orientation denominators before numerical integration
 - [ ] Giulio: confirm Ricardo's provisional byline position after Borja
 - [ ] Giulio: decide the seven retained CUT? passages and the biological-rectifier sentence in docs/revision_2026-10-06_v0150draft16_readability.md
