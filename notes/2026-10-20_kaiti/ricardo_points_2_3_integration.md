@@ -47,10 +47,9 @@ amplitude ratio is `(r - 0.9)/(1 - 0.9) = 35.75`, while the norm ratio is
 3.2423. Cancellation in the denominator invalidates the projected bound.
 Identical carrier vectors supply the same example for the projected envelope
 and the square of that ratio for the quadratic maps. This example concerns
-an arbitrary fixed projection; whether an additional bound holds for the
-specific envelope-optimal direction chosen on the GM side requires its own
-argument. Klaus has been asked to check that special case. Do not attach a
-universal 4.5/20 upper-bound label to the reported projected jumps meanwhile.
+an arbitrary fixed projection; the low-side envelope-optimal direction also admits violations, as shown by
+the exact example below. Do not attach a universal 4.5/20 upper-bound label
+to the reported projected jumps.
 
 The 20% and 46% normal fractions give `j = 2.538` if treated as the fractions
 at one paired location with a continuous tangential component. They are
@@ -156,3 +155,46 @@ statistic as a separate proximity limitation in the analysis record.
 
 No new email is authorized by this note. Klaus is preparing Giulio’s reply;
 Giulio sends it. Public release holds remain unchanged.
+
+
+## Analytic check closed
+
+Klaus’s `c84bd01` establishes the magnitude and own-orientation-maximum bounds
+and accepts the corrections to the median inversion and fraction denominators.
+For a nonnegative degree-k homogeneous map f, let M be its maximum over unit
+orientation. Since n dot (T E_j) = |T n| m dot E_j, where m = T n / |T n|,
+`M_low <= r^k M_high`. Choosing n proportional to T-inverse times a high-side
+maximizer gives `M_low >= M_high`. Thus the optimized excursion and intensity
+maps have ratios in [1, r^k], under the common isotropic interface transform.
+The directional-grid overshoots in Klaus’s diagnostic are numerical errors in
+approximating the maxima; the analytic inequalities do not require that grid.
+
+An exact two-dimensional example closes the special case of a projection
+chosen to maximize the envelope on the low-conductivity side. Set r = 4.5,
+T = diag(r, 1), n = (1,1)/sqrt(2), E1_low = n,
+E1_high = T-inverse n, and E2_high = k(1,-1). Then E2_low = k(r,-1).
+For k >= sqrt(2)/(r-1), n is an exact low-side envelope maximizer: its first
+projection is 1 and its second is at least 1, attaining the upper bound set
+by |E1_low| = 1. Held fixed on the high side, however, its second projection
+is zero and its first is (1 + 1/r)/2. Small perturbations of E2_high make the
+high-side envelope and quadratic excursions arbitrarily small while their
+low-side values remain nonzero. Their ratios therefore have no finite bound.
+
+For the mean-square map, the ratio in this same construction is
+
+    [1 + k^2 (r-1)^2 / 2] / [(1 + 1/r)^2 / 4].
+
+It grows without bound with k. At k = 2 it is 68.2809917355, above r squared
+= 20.25; the high-side projections are (0.6111111111, 0), and the low-side
+projections are (1, 4.9497474683). These values were checked directly with
+NumPy. This is an analytic counterexample, not an estimate of the hippocampal
+field distribution.
+
+Only signed projections or signed beat coefficients can have negative ratios.
+Envelope excursion, quadratic excursion, and mean-square maps are nonnegative;
+their ratios are nonnegative when defined. The correction concerns the absence
+of a universal conductivity-ratio ceiling, not negative values of these maps.
+
+The bounded analytic review is closed. Ricardo’s measured table remains a
+reported numerical result awaiting its JSON/producer; no manuscript change is
+needed before that provenance arrives.

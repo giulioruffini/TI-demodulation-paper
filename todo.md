@@ -1,12 +1,12 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
 - [ ] Ricardo: supply points_2_3.json, its producer/revision, and HippUnfold version; verify masks and orientation denominators before numerical integration
-- [ ] Klaus: check projected-interface upper bounds and the unsupported lower-bound inference in notes/2026-10-20_kaiti/ricardo_points_2_3_integration.md
 - [ ] Giulio: confirm Ricardo's provisional byline position after Borja
 - [ ] Giulio: decide the seven retained CUT? passages and the biological-rectifier sentence in docs/revision_2026-10-06_v0150draft16_readability.md
 - [ ] confirm the remaining author declarations, actual AI-tool versions, and all authors' approval of the submission version
 - [ ] keep public GitHub, Calliope, Zenodo, and circulation to other coauthors on hold pending explicit authorization
 - [ ] migrate the folder at a coordinated version boundary with no concurrent editors; run the layout checker before and after
+- [x] close the interface-bound check: distinguish own-optimum bounds from fixed projections and withdraw the numerical lower-bound inference (October 20)
 - [x] review Ricardo’s orientation/interface report and prepare scoped additions; manuscript unchanged pending provenance (October 20)
 - [x] record Klaus’s final encoding-window pass on c632c7e; close the FEM abstract and physiological Discussion review cycle (October 19)
 - [x] record Klaus’s fidelity pass on 111f7ab and state both exact envelope-increase thresholds (October 19)
