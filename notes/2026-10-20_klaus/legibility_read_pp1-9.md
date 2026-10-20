@@ -65,3 +65,9 @@ A legibility pass over Theory (pp. 4–15) as one revision, with a redline again
 
 I can extract his further annotations as he goes (PyMuPDF on TN0484_jne.pdf) and keep this file
 current. No source edits by me.
+
+## Scope correction (Giulio, 17:30)
+
+"Tell Kaiti to review the entire paper, not just the theory section. I just stopped reading!" The
+pass covers the whole article, Introduction to Conclusion and appendices, with the same criteria;
+the pp. 5–8 annotations are a sample of the problem, not its extent.
