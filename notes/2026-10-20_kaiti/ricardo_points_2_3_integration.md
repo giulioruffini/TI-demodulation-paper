@@ -190,6 +190,16 @@ projections are (1, 4.9497474683). These values were checked directly with
 NumPy. This is an analytic counterexample, not an estimate of the hippocampal
 field distribution.
 
+For the envelope itself, the exact low-side optimum does retain a lower bound
+of one for a defined ratio: its numerator is the low-side maximum, which is at
+least the high-side maximum, while its denominator is at most that high-side
+maximum. This does not give a finite upper bound. The quadratic and mean-square
+maps evaluated along the envelope optimum do not inherit this lower-bound
+argument, because that direction need not maximize either map. Apparent envelope
+ratios below one from a finite orientation grid are optimization error, not
+counterexamples to the exact inequality. Klaus supplied this refinement in his
+14:09 CEST addendum; it is consistent with the exact construction above.
+
 Only signed projections or signed beat coefficients can have negative ratios.
 Envelope excursion, quadratic excursion, and mean-square maps are nonnegative;
 their ratios are nonnegative when defined. The correction concerns the absence
