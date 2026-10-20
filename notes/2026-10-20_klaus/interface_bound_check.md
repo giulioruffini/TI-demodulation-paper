@@ -55,3 +55,14 @@ interquartile ranges.
   reports"; corrected to "available at each map's own optimal orientation". Relative to n* the beat and
   𝓘 fractions would be larger than 0.11 and 0.12, since those maps along n* are already below their
   own maxima.
+
+## Addendum (14:10): the GM-side envelope-optimal n*, Kaiti's open case
+
+With n* the envelope maximizer of the low (gray-matter) side, held on both sides, the envelope map's
+numerator is M(L1, L2), its own maximum on the low side, and the denominator 2 min(|n*·E1|, |n*·E2|) is
+at most M(E1, E2) ≤ M(L1, L2). So the envelope ratio along this n* is ≥ 1 exactly, with no upper bound
+(numerically: minimum 0.994 over 20,000 cases, the shortfall being the 4,000-point direction grid;
+exceedances of r in 19%). For the quadratic and 𝓘 maps along the same n* neither bound holds, since n*
+maximizes neither map on either side (2.1–2.4% below 1, 11% above r²). Kaiti's two-dimensional
+counterexample (r = 4.475, E_high = (1, 1), ν = (1, 0), n = (1, −0.9)/√1.81) reproduces: projection
+ratio 35.75, magnitude ratio 3.242 < r.
