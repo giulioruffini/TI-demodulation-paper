@@ -1,4 +1,4 @@
-# Draft20 opening: proposed legibility repair
+# Draft20: proposed whole-paper legibility repair
 
 20 October 2026. Scope proposal only, awaiting Giulio’s go. Source text is
 unchanged from `e20c047`; current repository head before this note is
@@ -18,16 +18,26 @@ The scientific qualifications have accumulated as answers to individual review
 items rather than as steps in the argument. The preceding fidelity checks
 verified retention and correctness, not this reading experience.
 
+Giulio subsequently clarified that he stopped reading at pages 8–9: those
+annotations are a sample of the problem, not a limit on the requested review.
+The scope below supersedes the opening/Theory-only proposal.
+
 ## Proposed scope
 
-Revise the Introduction’s transitions and Theory (current pages 3–15), plus
-only the destination paragraphs in Methods/Appendix B and the model-figure
-caption. Keep the approved abstract, numerical results, figures, and Discussion
-outside this pass. No new science or simulations; Ricardo’s pending additions
-remain separate. Propose one coherent change for review rather than a sequence
-of local patches.
+Review the entire paper: abstract, Introduction, Theory, Methods, Results,
+Discussion, Conclusion, captions, tables, notation appendix, and supplement.
+Revise the prose and organization as one scientific argument. Preserve all
+results, evidence, equations, examples, and necessary qualifications; propose
+substantive removals separately. Review the approved abstract for consistency
+and readability while retaining its approved claims and 300-word limit.
+No new science or simulations; Ricardo’s pending additions remain separate.
 
-The main reading route should be:
+First read the whole draft20 without editing, then update the existing
+storyline with each section's claim, purpose, dependencies, and any proposed
+relocation. The opening diagnosis above is based on pages 1–15, not a completed
+whole-paper review.
+
+The proposed Theory reading route remains:
 
 1. The field establishes two local carrier polarizations. Define access once,
    with its physical meaning; distinguish the electromagnetic approximation
@@ -60,11 +70,25 @@ single-neuron interpretation of curvature, shared-amplifier qualifications,
 PEIX definitions, and the fast-access sensitivity argument. Model-specific
 implementation details move to their existing Methods homes.
 
-## Local repairs within that scope
+## Repairs throughout the paper
 
-- Make Introduction and Theory readable without forward section pointers.
-  A reference may supply optional supporting detail; it must not substitute
-  for the explanation needed at that point. Keep bibliographic attribution.
+- Remove forward section pointers throughout. Supply the explanation where
+  needed or relocate the material; delete sentences whose sole purpose is to
+  point elsewhere. Keep bibliographic attribution and useful backward references.
+- Make Methods explain what each procedure tests before giving its settings.
+  Keep model-specific implementation details together and distinguish measured
+  quantities from derived sources and model predictions.
+- Make each Results subsection lead with its scientific finding, then give
+  the evidence and its conditions. Explain what each figure adds to the argument.
+- Make Discussion connect the findings to the biological question and the
+  literature. Integrate limitations beside the inferences they constrain.
+  Remove repeated derivations by consolidation, preserving their explanation
+  in one appropriate location.
+- Make the Conclusion state the paper's supported findings and remaining
+  calibration questions in connected prose.
+- Shorten all captions while retaining what is needed to read each figure:
+  panels, quantities, units, conditions, and the relevant comparison. Move
+  procedural detail to Methods; do not strip captions of essential definitions.
 - Integrate qualifications into the relevant physical statements. Preserve
   membrane filtering once, finite response time, the nonzero mixing condition,
   and model-specific frequency dependence; do not delete these conditions
@@ -92,12 +116,13 @@ Giulio finishes and authorizes this pass. The current manuscript text is
 `e20c047`; later commits only record reviews and preparation. Preserve the
 annotated PDF separately. Do not change `planning/review_baseline.json` yet.
 
-After revision, read Introduction and Theory continuously from the rendered
-PDF without jumping to Methods, appendices, or Results. Verify that each
+After revision, read the entire rendered article continuously, then the
+supplement, without relying on knowledge of the revision history. Verify that each
 paragraph supplies what the next needs and that each displayed equation is
 introduced and interpreted. Then run notation, retention, reference, and build
-checks. Give Klaus a bounded independent reader’s pass before another numerical
-audit. Record every relocation and any proposed substantive deletion; keep
+checks. Give Klaus an independent whole-paper reader’s pass on the frozen
+revision, checking argument and legibility rather than another numerical audit.
+Record every relocation and any proposed substantive deletion; keep
 unapproved deletions out of the manuscript.
 
 Approval is pending because Giulio explicitly asked for a proposed scope before
