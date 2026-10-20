@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.25)  20 OCT 2026 17:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.25)  20 OCT 2026 18:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **\def\jnebuild{}\input{/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.lat
-ex-redline-c7xvaurb/redline_draft20.tex}
+ex-redline-91umrgiq/redline_draft20.tex}
 
-(/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-c7xvaurb/red
+(/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-91umrgiq/red
 line_draft20.tex (/usr/local/texlive/2024/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
 (/usr/local/texlive/2024/texmf-dist/tex/latex/base/size11.clo
@@ -493,7 +493,7 @@ File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count310
 \l__pdf_internal_box=\box64
 )
-(/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-c7xvaurb/red
+(/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-91umrgiq/red
 line_draft20.aux)
 \openout1 = `redline_draft20.aux'.
 
@@ -574,9 +574,9 @@ e
 ))
 Package hyperref Info: Link coloring OFF on input line 147.
 
-(/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-c7xvaurb/red
+(/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-91umrgiq/red
 line_draft20.out)
-(/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-c7xvaurb/red
+(/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-91umrgiq/red
 line_draft20.out)
 \@outlinefile=\write3
 \openout3 = `redline_draft20.out'.
@@ -652,7 +652,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 al/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/202
 4/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2024/texmf-dist/f
 onts/enc/dvips/lm/lm-mathit.enc}]
-(/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-c7xvaurb/red
+(/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-91umrgiq/red
 line_draft20.toc)
 \tf@toc=\write4
 \openout4 = `redline_draft20.toc'.
@@ -662,7 +662,7 @@ line_draft20.toc)
 {/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}] [3
 
 ]
-<figures/fig_concept.pdf, id=307, 845.55902pt x 332.44202pt>
+<figures/fig_concept.pdf, id=308, 845.55902pt x 332.44202pt>
 File: figures/fig_concept.pdf Graphic file (type pdf)
 <use figures/fig_concept.pdf>
 Package pdftex.def Info: figures/fig_concept.pdf  used on input line 387.
@@ -685,150 +685,145 @@ LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 473.
 
 
 [5{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
-[6]
+<figures/fig_models_ti.pdf, id=474, 508.10928pt x 354.41408pt>
+File: figures/fig_models_ti.pdf Graphic file (type pdf)
+<use figures/fig_models_ti.pdf>
+Package pdftex.def Info: figures/fig_models_ti.pdf  used on input line 523.
+(pdftex.def)             Requested size: 466.62503pt x 325.48625pt.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 560.
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 652.
+[6 <./figures/fig_models_ti.pdf>]
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 655.
 
 
+[7]
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-658.
-(/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmss.fd
+661.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [7]
+)
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 714.
-
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 723.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 717.
 
 
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 743.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 726.
 
 
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 832.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 746.
 
 
-[8
-pdfTeX warning (ext4): destination with the same identifier (name{subsection.2.
-3}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.832 }\]
-         %DIFAUXCMD]
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 837.
-
-
-
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 864.
-
-
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 866.
-
+[8]
 pdfTeX warning (ext4): destination with the same identifier (name{subsection.2.
 3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.893 ...elope oscillations and spatial weighting}
-                                                  \label{sec:envelope} [9]
-[10] [11] [12] [13]
+l.819 ...l{Detector laws and harmonic signatures}}
+                                                  %DIFAUXCMD
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 835.
 
-[14] [15] [16] [17] [18] [19]
-<figures/fig_bifurcation_sigmoid.pdf, id=712, 819.96713pt x 295.56563pt>
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 840.
+
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 867.
+
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 869.
+[9]
+pdfTeX warning (ext4): destination with the same identifier (name{subsection.2.
+3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.896 ...elope oscillations and spatial weighting}
+                                                  \label{sec:envelope} [10]
+[11] [12] [13] [14] [15] [16] [17] [18] [19] [20]
+<figures/fig_bifurcation_sigmoid.pdf, id=800, 819.96713pt x 295.56563pt>
 File: figures/fig_bifurcation_sigmoid.pdf Graphic file (type pdf)
 <use figures/fig_bifurcation_sigmoid.pdf>
 Package pdftex.def Info: figures/fig_bifurcation_sigmoid.pdf  used on input lin
-e 1733.
+e 1749.
 (pdftex.def)             Requested size: 466.62503pt x 168.20355pt.
- [20]
-<figures/fig_models_ti.pdf, id=734, 508.10928pt x 354.41408pt>
-File: figures/fig_models_ti.pdf Graphic file (type pdf)
-<use figures/fig_models_ti.pdf>
-Package pdftex.def Info: figures/fig_models_ti.pdf  used on input line 1798.
-(pdftex.def)             Requested size: 466.62503pt x 325.48625pt.
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 1810.
-
- [21 <./figures/fig_bifurcation_sigmoid.pdf>] [22 <./figures/fig_models_ti.pdf>
-] [23] [24]
-<figures/fig_demodulation_twotone.pdf, id=981, 751.92802pt x 448.3959pt>
+ [21 <./figures/fig_bifurcation_sigmoid.pdf>] [22] [23] [24]
+<figures/fig_demodulation_twotone.pdf, id=986, 751.92802pt x 448.3959pt>
 File: figures/fig_demodulation_twotone.pdf Graphic file (type pdf)
 <use figures/fig_demodulation_twotone.pdf>
 Package pdftex.def Info: figures/fig_demodulation_twotone.pdf  used on input li
-ne 2033.
+ne 2035.
 (pdftex.def)             Requested size: 466.62503pt x 278.26257pt.
-<figures/fig_resonance.pdf, id=986, 730.50117pt x 273.36682pt>
+<figures/fig_resonance.pdf, id=991, 730.50117pt x 273.36682pt>
 File: figures/fig_resonance.pdf Graphic file (type pdf)
 <use figures/fig_resonance.pdf>
-Package pdftex.def Info: figures/fig_resonance.pdf  used on input line 2070.
+Package pdftex.def Info: figures/fig_resonance.pdf  used on input line 2072.
 (pdftex.def)             Requested size: 466.62503pt x 174.62463pt.
-<figures/fig_carrier_independence.pdf, id=997, 798.03908pt x 291.72047pt>
+<figures/fig_carrier_independence.pdf, id=1002, 798.03908pt x 291.72047pt>
 File: figures/fig_carrier_independence.pdf Graphic file (type pdf)
 <use figures/fig_carrier_independence.pdf>
 Package pdftex.def Info: figures/fig_carrier_independence.pdf  used on input li
-ne 2105.
+ne 2107.
 (pdftex.def)             Requested size: 466.62503pt x 170.57344pt.
  [25
 pdfTeX warning (ext4): destination with the same identifier (name{subsection.4.
 2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.2126 
+l.2138 
        ]
-<figures/fig_curvature_twotone.pdf, id=1012, 880.37752pt x 556.32213pt>
+<figures/fig_curvature_twotone.pdf, id=1015, 880.37752pt x 556.32213pt>
 File: figures/fig_curvature_twotone.pdf Graphic file (type pdf)
 <use figures/fig_curvature_twotone.pdf>
 Package pdftex.def Info: figures/fig_curvature_twotone.pdf  used on input line 
-2139.
+2141.
 (pdftex.def)             Requested size: 466.62503pt x 294.8663pt.
  [26 <./figures/fig_demodulation_twotone.pdf>] [27 <./figures/fig_resonance.pdf
 > <./figures/fig_carrier_independence.pdf>] [28 <./figures/fig_curvature_twoton
 e.pdf>]
-<figures/fig_fem.pdf, id=1333, 734.98682pt x 614.6801pt>
+<figures/fig_fem.pdf, id=1336, 734.98682pt x 614.6801pt>
 File: figures/fig_fem.pdf Graphic file (type pdf)
 <use figures/fig_fem.pdf>
-Package pdftex.def Info: figures/fig_fem.pdf  used on input line 2229.
+Package pdftex.def Info: figures/fig_fem.pdf  used on input line 2231.
 (pdftex.def)             Requested size: 466.62503pt x 390.25188pt.
-<figures/fig_jcurve.pdf, id=1338, 789.83209pt x 282.8806pt>
+<figures/fig_jcurve.pdf, id=1341, 789.83209pt x 282.8806pt>
 File: figures/fig_jcurve.pdf Graphic file (type pdf)
 <use figures/fig_jcurve.pdf>
-Package pdftex.def Info: figures/fig_jcurve.pdf  used on input line 2283.
+Package pdftex.def Info: figures/fig_jcurve.pdf  used on input line 2285.
 (pdftex.def)             Requested size: 466.62503pt x 167.12254pt.
- [29] [30 <./figures/fig_fem.pdf>] [31 <./figures/fig_jcurve.pdf>]
-<figures/fig_mpr_crossover.pdf, id=1546, 806.26195pt x 295.24246pt>
-File: figures/fig_mpr_crossover.pdf Graphic file (type pdf)
-<use figures/fig_mpr_crossover.pdf>
-Package pdftex.def Info: figures/fig_mpr_crossover.pdf  used on input line 2371
-.
-(pdftex.def)             Requested size: 466.62503pt x 170.87132pt.
-<figures/fig_nmm2_resonance_twotone.pdf, id=1551, 799.88086pt x 293.47697pt>
+ [29] [30 <./figures/fig_fem.pdf>]
+<figures/fig_nmm2_resonance_twotone.pdf, id=1471, 799.88086pt x 293.47697pt>
 File: figures/fig_nmm2_resonance_twotone.pdf Graphic file (type pdf)
 <use figures/fig_nmm2_resonance_twotone.pdf>
 Package pdftex.def Info: figures/fig_nmm2_resonance_twotone.pdf  used on input 
-line 2388.
+line 2393.
 (pdftex.def)             Requested size: 466.62503pt x 171.20193pt.
- [32 <./figures/fig_mpr_crossover.pdf> <./figures/fig_nmm2_resonance_twotone.pd
-f>]
-<figures/fig_qif_raster_twotone.pdf, id=1754, 728.73744pt x 437.45767pt>
+<figures/fig_mpr_crossover.pdf, id=1474, 806.26195pt x 295.24246pt>
+File: figures/fig_mpr_crossover.pdf Graphic file (type pdf)
+<use figures/fig_mpr_crossover.pdf>
+Package pdftex.def Info: figures/fig_mpr_crossover.pdf  used on input line 2411
+.
+(pdftex.def)             Requested size: 466.62503pt x 170.87132pt.
+ [31 <./figures/fig_jcurve.pdf>] [32 <./figures/fig_nmm2_resonance_twotone.pdf>
+ <./figures/fig_mpr_crossover.pdf>]
+<figures/fig_qif_raster_twotone.pdf, id=1761, 728.73744pt x 437.45767pt>
 File: figures/fig_qif_raster_twotone.pdf Graphic file (type pdf)
 <use figures/fig_qif_raster_twotone.pdf>
 Package pdftex.def Info: figures/fig_qif_raster_twotone.pdf  used on input line
- 2473.
+ 2495.
 (pdftex.def)             Requested size: 466.62503pt x 280.11879pt.
-<figures/fig_qif_regimes.pdf, id=1757, 736.51437pt x 510.37909pt>
+<figures/fig_qif_regimes.pdf, id=1764, 736.51437pt x 510.37909pt>
 File: figures/fig_qif_regimes.pdf Graphic file (type pdf)
 <use figures/fig_qif_regimes.pdf>
-Package pdftex.def Info: figures/fig_qif_regimes.pdf  used on input line 2497.
+Package pdftex.def Info: figures/fig_qif_regimes.pdf  used on input line 2519.
 (pdftex.def)             Requested size: 466.62503pt x 323.35507pt.
  [33] [34 <./figures/fig_qif_raster_twotone.pdf>] [35 <./figures/fig_qif_regime
 s.pdf>] [36] [37] [38] [39] [40] [41] [42]
-(/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-c7xvaurb/red
+(/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-91umrgiq/red
 line_draft20.bbl [43] [44] [45]
 Underfull \hbox (badness 1028) in paragraph at lines 329--335
 []\T1/lmr/m/n/10.95 Michal Cifra, Saurabh Ku-mar Pandey, Tomá² Za-kar, Michaela
@@ -839,7 +834,7 @@ Underfull \hbox (badness 1028) in paragraph at lines 329--335
 
 
 ] [49] [50]
-(/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-c7xvaurb/red
+(/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-91umrgiq/red
 line_draft20.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
@@ -855,7 +850,7 @@ Here is how much of TeX's memory you used:
  37387 multiletter control sequences out of 15000+600000
  704782 words of font info for 128 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,13n,82p,4639b,622s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,13n,82p,5254b,620s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/lo
 cal/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texliv
 e/2024/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/local/texlive/2024/texm
@@ -889,10 +884,10 @@ texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist
 1/public/lm/lmtt9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/am
 sfonts/symbols/msam10.pfb>
 Output written on "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-re
-dline-c7xvaurb/redline_draft20.pdf" (50 pages, 2798949 bytes).
+dline-91umrgiq/redline_draft20.pdf" (50 pages, 2802326 bytes).
 PDF statistics:
- 2476 PDF objects out of 2487 (max. 8388607)
- 1484 compressed objects within 15 object streams
+ 2484 PDF objects out of 2487 (max. 8388607)
+ 1491 compressed objects within 15 object streams
  200 named destinations out of 1000 (max. 500000)
  402 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.25)  20 OCT 2026 17:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.25)  20 OCT 2026 18:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -610,9 +610,9 @@ al/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/202
 4/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2024/texmf-dist/f
 onts/enc/dvips/lm/lm-mathit.enc}] (./planning/tn0484_notation.tex
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 40.
+(Font)              <9> on input line 39.
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-55.
+54.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -637,7 +637,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: figures/fig_lanmm_field_p2_twotone.pdf Graphic file (type pdf)
 <use figures/fig_lanmm_field_p2_twotone.pdf>
 Package pdftex.def Info: figures/fig_lanmm_field_p2_twotone.pdf  used on input 
-line 2781.
+line 2773.
 (pdftex.def)             Requested size: 401.2978pt x 329.40987pt.
  [13] [14 <./figures/fig_lanmm_field_p2_twotone.pdf>] [15
 
@@ -645,65 +645,65 @@ line 2781.
 <figures/fig_lanmm_setup.png, id=460, 855.94781pt x 702.37407pt>
 File: figures/fig_lanmm_setup.png Graphic file (type png)
 <use figures/fig_lanmm_setup.png>
-Package pdftex.def Info: figures/fig_lanmm_setup.png  used on input line 2851.
+Package pdftex.def Info: figures/fig_lanmm_setup.png  used on input line 2843.
 (pdftex.def)             Requested size: 396.63411pt x 325.46452pt.
 <figures/fig_tacs_jcurve.pdf, id=461, 679.31758pt x 288.40701pt>
 File: figures/fig_tacs_jcurve.pdf Graphic file (type pdf)
 <use figures/fig_tacs_jcurve.pdf>
-Package pdftex.def Info: figures/fig_tacs_jcurve.pdf  used on input line 2865.
+Package pdftex.def Info: figures/fig_tacs_jcurve.pdf  used on input line 2857.
 (pdftex.def)             Requested size: 429.29416pt x 182.25626pt.
 <figures/fig_entrainment.pdf, id=466, 731.95111pt x 261.36234pt>
 File: figures/fig_entrainment.pdf Graphic file (type pdf)
 <use figures/fig_entrainment.pdf>
-Package pdftex.def Info: figures/fig_entrainment.pdf  used on input line 2881.
+Package pdftex.def Info: figures/fig_entrainment.pdf  used on input line 2873.
 (pdftex.def)             Requested size: 466.62503pt x 166.62126pt.
 <figures/fig_khz.pdf, id=469, 581.87039pt x 347.56485pt>
 File: figures/fig_khz.pdf Graphic file (type pdf)
 <use figures/fig_khz.pdf>
-Package pdftex.def Info: figures/fig_khz.pdf  used on input line 2898.
+Package pdftex.def Info: figures/fig_khz.pdf  used on input line 2890.
 (pdftex.def)             Requested size: 345.30508pt x 206.26535pt.
 <figures/fig_khz_twotone.pdf, id=470, 800.79088pt x 284.32318pt>
 File: figures/fig_khz_twotone.pdf Graphic file (type pdf)
 <use figures/fig_khz_twotone.pdf>
-Package pdftex.def Info: figures/fig_khz_twotone.pdf  used on input line 2911.
+Package pdftex.def Info: figures/fig_khz_twotone.pdf  used on input line 2903.
 (pdftex.def)             Requested size: 443.29234pt x 157.39342pt.
 <figures/fig_lanmm_field_p1_twotone.pdf, id=471, 802.6856pt x 658.86159pt>
 File: figures/fig_lanmm_field_p1_twotone.pdf Graphic file (type pdf)
 <use figures/fig_lanmm_field_p1_twotone.pdf>
 Package pdftex.def Info: figures/fig_lanmm_field_p1_twotone.pdf  used on input 
-line 2922.
+line 2914.
 (pdftex.def)             Requested size: 401.2978pt x 329.39981pt.
 <figures/fig_nmm2_map.pdf, id=478, 450.46042pt x 326.55392pt>
 File: figures/fig_nmm2_map.pdf Graphic file (type pdf)
 <use figures/fig_nmm2_map.pdf>
-Package pdftex.def Info: figures/fig_nmm2_map.pdf  used on input line 2943.
+Package pdftex.def Info: figures/fig_nmm2_map.pdf  used on input line 2935.
 (pdftex.def)             Requested size: 335.97058pt x 243.56448pt.
 <figures/fig_khz_direct.pdf, id=481, 680.00485pt x 259.0211pt>
 File: figures/fig_khz_direct.pdf Graphic file (type pdf)
 <use figures/fig_khz_direct.pdf>
-Package pdftex.def Info: figures/fig_khz_direct.pdf  used on input line 2957.
+Package pdftex.def Info: figures/fig_khz_direct.pdf  used on input line 2949.
 (pdftex.def)             Requested size: 466.62503pt x 177.74062pt.
 <figures/fig_nmm2_jcurve.pdf, id=482, 680.52333pt x 293.79237pt>
 File: figures/fig_nmm2_jcurve.pdf Graphic file (type pdf)
 <use figures/fig_nmm2_jcurve.pdf>
-Package pdftex.def Info: figures/fig_nmm2_jcurve.pdf  used on input line 2972.
+Package pdftex.def Info: figures/fig_nmm2_jcurve.pdf  used on input line 2964.
 (pdftex.def)             Requested size: 429.29416pt x 185.33672pt.
 <figures/fig_timing_not_rate.pdf, id=483, 675.60406pt x 257.20203pt>
 File: figures/fig_timing_not_rate.pdf Graphic file (type pdf)
 <use figures/fig_timing_not_rate.pdf>
 Package pdftex.def Info: figures/fig_timing_not_rate.pdf  used on input line 29
-88.
+80.
 (pdftex.def)             Requested size: 466.62503pt x 177.64226pt.
 <figures/fig_qif_timing_twotone.pdf, id=484, 996.31616pt x 273.55652pt>
 File: figures/fig_qif_timing_twotone.pdf Graphic file (type pdf)
 <use figures/fig_qif_timing_twotone.pdf>
 Package pdftex.def Info: figures/fig_qif_timing_twotone.pdf  used on input line
- 3004.
+ 2996.
 (pdftex.def)             Requested size: 466.62503pt x 128.1166pt.
 <figures/fig_spatial_maps.pdf, id=485, 484.209pt x 191.5155pt>
 File: figures/fig_spatial_maps.pdf Graphic file (type pdf)
 <use figures/fig_spatial_maps.pdf>
-Package pdftex.def Info: figures/fig_spatial_maps.pdf  used on input line 3025.
+Package pdftex.def Info: figures/fig_spatial_maps.pdf  used on input line 3017.
 
 (pdftex.def)             Requested size: 466.62503pt x 184.56581pt.
  [16
@@ -758,7 +758,7 @@ l/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2
 ist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2024/texmf-dist/fonts/t
 ype1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/publi
 c/amsfonts/symbols/msam10.pfb>
-Output written on TN0484_jne_supplement.pdf (23 pages, 2184074 bytes).
+Output written on TN0484_jne_supplement.pdf (23 pages, 2184760 bytes).
 PDF statistics:
  1471 PDF objects out of 1728 (max. 8388607)
  718 compressed objects within 8 object streams

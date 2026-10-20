@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.25)  20 OCT 2026 17:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.25)  20 OCT 2026 18:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -620,116 +620,119 @@ onts/enc/dvips/lm/lm-mathit.enc}]
 {/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}] [3
 
 ]
-<figures/fig_concept.pdf, id=285, 845.55902pt x 332.44202pt>
+<figures/fig_concept.pdf, id=286, 845.55902pt x 332.44202pt>
 File: figures/fig_concept.pdf Graphic file (type pdf)
 <use figures/fig_concept.pdf>
 Package pdftex.def Info: figures/fig_concept.pdf  used on input line 279.
 (pdftex.def)             Requested size: 466.62503pt x 183.46252pt.
- [4 <./figures/fig_concept.pdf>] [5{/usr/local/texlive/2024/texmf-dist/fonts/en
-c/dvips/lm/lm-mathex.enc}] [6] [7]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 581.
- [8] [9] [10] [11] [12]
-[13] [14] [15]
-<figures/fig_bifurcation_sigmoid.pdf, id=599, 819.96713pt x 295.56563pt>
-File: figures/fig_bifurcation_sigmoid.pdf Graphic file (type pdf)
-<use figures/fig_bifurcation_sigmoid.pdf>
-Package pdftex.def Info: figures/fig_bifurcation_sigmoid.pdf  used on input lin
-e 1176.
-(pdftex.def)             Requested size: 466.62503pt x 168.20355pt.
- [16] (./figures_src/fig_models_ti_caption.tex
-<figures/fig_models_ti.pdf, id=616, 508.10928pt x 354.41408pt>
+ [4 <./figures/fig_concept.pdf>]
+(./figures_src/fig_models_ti_caption.tex
+<figures/fig_models_ti.pdf, id=424, 508.10928pt x 354.41408pt>
 File: figures/fig_models_ti.pdf Graphic file (type pdf)
 <use figures/fig_models_ti.pdf>
 Package pdftex.def Info: figures/fig_models_ti.pdf  used on input line 3.
 (pdftex.def)             Requested size: 466.62503pt x 325.48625pt.
-) [17 <./figures/fig_bifurcation_sigmoid.pdf>] [18 <./figures/fig_models_ti.pdf
->] [19]
-<figures/fig_demodulation_twotone.pdf, id=840, 751.92802pt x 448.3959pt>
+) [5{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc} <./fi
+gures/fig_models_ti.pdf>] [6] [7]
+[8]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 583.
+ [9] [10]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[11] [12] [13] [14] [15] [16]
+<figures/fig_bifurcation_sigmoid.pdf, id=669, 819.96713pt x 295.56563pt>
+File: figures/fig_bifurcation_sigmoid.pdf Graphic file (type pdf)
+<use figures/fig_bifurcation_sigmoid.pdf>
+Package pdftex.def Info: figures/fig_bifurcation_sigmoid.pdf  used on input lin
+e 1171.
+(pdftex.def)             Requested size: 466.62503pt x 168.20355pt.
+ [17 <./figures/fig_bifurcation_sigmoid.pdf>]
+[18] [19]
+<figures/fig_demodulation_twotone.pdf, id=826, 751.92802pt x 448.3959pt>
 File: figures/fig_demodulation_twotone.pdf Graphic file (type pdf)
 <use figures/fig_demodulation_twotone.pdf>
 Package pdftex.def Info: figures/fig_demodulation_twotone.pdf  used on input li
-ne 1390.
+ne 1378.
 (pdftex.def)             Requested size: 466.62503pt x 278.26257pt.
-<figures/fig_resonance.pdf, id=843, 730.50117pt x 273.36682pt>
+<figures/fig_resonance.pdf, id=829, 730.50117pt x 273.36682pt>
 File: figures/fig_resonance.pdf Graphic file (type pdf)
 <use figures/fig_resonance.pdf>
-Package pdftex.def Info: figures/fig_resonance.pdf  used on input line 1416.
+Package pdftex.def Info: figures/fig_resonance.pdf  used on input line 1404.
 (pdftex.def)             Requested size: 466.62503pt x 174.62463pt.
  [20]
-<figures/fig_carrier_independence.pdf, id=853, 798.03908pt x 291.72047pt>
+<figures/fig_carrier_independence.pdf, id=842, 798.03908pt x 291.72047pt>
 File: figures/fig_carrier_independence.pdf Graphic file (type pdf)
 <use figures/fig_carrier_independence.pdf>
 Package pdftex.def Info: figures/fig_carrier_independence.pdf  used on input li
-ne 1440.
+ne 1428.
 (pdftex.def)             Requested size: 466.62503pt x 170.57344pt.
-
-[21 <./figures/fig_demodulation_twotone.pdf> <./figures/fig_resonance.pdf>]
-<figures/fig_curvature_twotone.pdf, id=1002, 880.37752pt x 556.32213pt>
+ [21 <./figures/fig_demodulation_twotone.pdf> <./figures/fig_resonance.pdf>]
+<figures/fig_curvature_twotone.pdf, id=991, 880.37752pt x 556.32213pt>
 File: figures/fig_curvature_twotone.pdf Graphic file (type pdf)
 <use figures/fig_curvature_twotone.pdf>
 Package pdftex.def Info: figures/fig_curvature_twotone.pdf  used on input line 
-1473.
+1461.
 (pdftex.def)             Requested size: 466.62503pt x 294.8663pt.
-
-[22 <./figures/fig_carrier_independence.pdf>] [23 <./figures/fig_curvature_twot
-one.pdf>]
-<figures/fig_fem.pdf, id=1178, 734.98682pt x 614.6801pt>
+ [22 <./figures/fig_carrier_independence.pdf>] [23 <./figures/fig_curvature_two
+tone.pdf>]
+<figures/fig_fem.pdf, id=1168, 734.98682pt x 614.6801pt>
 File: figures/fig_fem.pdf Graphic file (type pdf)
 <use figures/fig_fem.pdf>
-Package pdftex.def Info: figures/fig_fem.pdf  used on input line 1554.
+Package pdftex.def Info: figures/fig_fem.pdf  used on input line 1542.
 (pdftex.def)             Requested size: 466.62503pt x 390.25188pt.
  [24 <./figures/fig_fem.pdf>]
-<figures/fig_jcurve.pdf, id=1291, 789.83209pt x 282.8806pt>
+<figures/fig_jcurve.pdf, id=1282, 789.83209pt x 282.8806pt>
 File: figures/fig_jcurve.pdf Graphic file (type pdf)
 <use figures/fig_jcurve.pdf>
-Package pdftex.def Info: figures/fig_jcurve.pdf  used on input line 1588.
+Package pdftex.def Info: figures/fig_jcurve.pdf  used on input line 1576.
 (pdftex.def)             Requested size: 466.62503pt x 167.12254pt.
  [25 <./figures/fig_jcurve.pdf>]
-<figures/fig_mpr_crossover.pdf, id=1386, 806.26195pt x 295.24246pt>
-File: figures/fig_mpr_crossover.pdf Graphic file (type pdf)
-<use figures/fig_mpr_crossover.pdf>
-Package pdftex.def Info: figures/fig_mpr_crossover.pdf  used on input line 1675
-.
-(pdftex.def)             Requested size: 466.62503pt x 170.87132pt.
-<figures/fig_nmm2_resonance_twotone.pdf, id=1391, 799.88086pt x 293.47697pt>
+<figures/fig_nmm2_resonance_twotone.pdf, id=1376, 799.88086pt x 293.47697pt>
 File: figures/fig_nmm2_resonance_twotone.pdf Graphic file (type pdf)
 <use figures/fig_nmm2_resonance_twotone.pdf>
 Package pdftex.def Info: figures/fig_nmm2_resonance_twotone.pdf  used on input 
-line 1691.
+line 1663.
 (pdftex.def)             Requested size: 466.62503pt x 171.20193pt.
- [26]
-[27 <./figures/fig_mpr_crossover.pdf> <./figures/fig_nmm2_resonance_twotone.pdf
->]
-<figures/fig_qif_raster_twotone.pdf, id=1601, 728.73744pt x 437.45767pt>
+<figures/fig_mpr_crossover.pdf, id=1379, 806.26195pt x 295.24246pt>
+File: figures/fig_mpr_crossover.pdf Graphic file (type pdf)
+<use figures/fig_mpr_crossover.pdf>
+Package pdftex.def Info: figures/fig_mpr_crossover.pdf  used on input line 1681
+.
+(pdftex.def)             Requested size: 466.62503pt x 170.87132pt.
+ [26 <./figures/fig_nmm2_resonance_twotone.pdf>] [27 <./figures/fig_mpr_crossov
+er.pdf>]
+<figures/fig_qif_raster_twotone.pdf, id=1592, 728.73744pt x 437.45767pt>
 File: figures/fig_qif_raster_twotone.pdf Graphic file (type pdf)
 <use figures/fig_qif_raster_twotone.pdf>
 Package pdftex.def Info: figures/fig_qif_raster_twotone.pdf  used on input line
- 1774.
+ 1760.
 (pdftex.def)             Requested size: 466.62503pt x 280.11879pt.
-<figures/fig_qif_regimes.pdf, id=1602, 736.51437pt x 510.37909pt>
+<figures/fig_qif_regimes.pdf, id=1593, 736.51437pt x 510.37909pt>
 File: figures/fig_qif_regimes.pdf Graphic file (type pdf)
 <use figures/fig_qif_regimes.pdf>
-Package pdftex.def Info: figures/fig_qif_regimes.pdf  used on input line 1791.
+Package pdftex.def Info: figures/fig_qif_regimes.pdf  used on input line 1777.
 (pdftex.def)             Requested size: 466.62503pt x 323.35507pt.
  [28 <./figures/fig_qif_raster_twotone.pdf>] [29 <./figures/fig_qif_regimes.pdf
->] [30] [31] [32] [33] [34] [35] (./TN0484_jne.bbl [36] [37] [38]
+>] [30] [31] [32] [33] [34] (./TN0484_jne.bbl [35] [36] [37]
+[38]
 Underfull \hbox (badness 1028) in paragraph at lines 322--328
 []\T1/lmr/m/n/10.95 Michal Cifra, Saurabh Ku-mar Pandey, Tomá² Za-kar, Michaela
  Poplová, Daniela G.
  []
 
-[39] [40]) [41] (./planning/tn0484_notation.tex
+[39]) [40] (./planning/tn0484_notation.tex
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-55.
+54.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [42
+) [41
 
 
-] [43])
-[44] (./TN0484_jne.aux)
+] [42])
+[43] (./TN0484_jne.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -738,8 +741,8 @@ Package rerunfilecheck Info: File `TN0484_jne.out' has not changed.
 (rerunfilecheck)             Checksum: 97CBF39AF20F9AB6388C8CA7446DC91A;10974.
  ) 
 Here is how much of TeX's memory you used:
- 14061 strings out of 474116
- 221426 string characters out of 5743682
+ 14060 strings out of 474116
+ 221419 string characters out of 5743682
  2001187 words of memory out of 5000000
  35986 multiletter control sequences out of 15000+600000
  672432 words of font info for 116 fonts, out of 8000000 for 9000
@@ -770,10 +773,10 @@ l/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2
 ist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/
 type1/public/lm/lmtt9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/publi
 c/amsfonts/symbols/msam10.pfb>
-Output written on TN0484_jne.pdf (44 pages, 2555235 bytes).
+Output written on TN0484_jne.pdf (43 pages, 2553260 bytes).
 PDF statistics:
- 2257 PDF objects out of 2487 (max. 8388607)
- 1301 compressed objects within 14 object streams
- 192 named destinations out of 1000 (max. 500000)
+ 2244 PDF objects out of 2487 (max. 8388607)
+ 1290 compressed objects within 13 object streams
+ 191 named destinations out of 1000 (max. 500000)
  378 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -157,9 +157,8 @@ a network mechanism for temporal-interference stimulation}\\[10pt]
 \begin{center}
 {\large\bfseries Supplementary Material}\\[4pt]
 \begin{minipage}{0.86\textwidth}\centering\small
-Appendices and supplementary figures accompanying the article. Section, equation and
-figure numbers referenced here follow the main text; supplementary figures are numbered
-S1, S2, \dots
+Appendices and supplementary figures accompanying the article. Supplement equations and figures are numbered S1, S2, \dots;
+references to article equations are marked as main-text references.
 \end{minipage}
 \end{center}
 \vspace{8pt}
@@ -261,7 +260,8 @@ already include spiking. Direct carrier-evoked spiking and conduction block
 \cite{opancar2025,peripheral2023,semenov2025} lie outside this expansion; the
 finite-amplitude network examples are identified separately.
 
-Our mesoscale model separates the cellular beat source from recurrent gain.
+Our mesoscale model separates access, the cellular beat source, and recurrent gain
+(Fig.~\ref{fig:concept}).
 A Jansen--Rit column establishes the weak-input product law; an exact QIF
 mean field and its spiking network test how membrane dynamics and recurrent
 activity modify the response. A laminar extension adds two resonant bands
@@ -316,6 +316,10 @@ populations, with field input to the pyramidal sigmoid and local field potential
 postsynaptic potentials onto the pyramidal population. Its external input rate is
 $p$ (s$^{-1}$), and $C$ is the dimensionless connectivity scale.
 
+Figure~\ref{fig:models} locates the field input, nonlinear detector, and
+recurrent amplifier in the JR and QIF circuits.
+\input{figures_src/fig_models_ti_caption.tex}
+
 \subsection{From applied field to a squared-envelope beat component}\label{sec:coupling}
 We neglect electromagnetic propagation and induction in the applied field
 $E(t)$ (V/m), while retaining the membrane's finite charging response. Let $s(t)$ be the polarization (mV) after the cellular access response;
@@ -337,9 +341,7 @@ where $\boldsymbol\lambda^k_0$ is the static polarization vector of compartment 
 and $H_k$ its access filter
 \cite{ruffini2025rosetta,galangadea2023}. Equation~\eqref{eq:doors} uses amplitude
 gains and assumes aligned compartment phases; a general sum requires the complex
-transfers, including their relative phases. The access filter is included in the supplied polarization or computed by
-the membrane equation when its input is current; applying both would count
-the same attenuation twice.
+transfers, including their relative phases. The supplied polarization includes the access response.
 
 For a dominant entry point, define $\lambda_f(\omega)=\lambda_0|H(\omega)|$.
 Then $\varepsilon_j=\lambda_f(\omega_j)E_j$ denotes the
@@ -687,8 +689,7 @@ Synaptic filtering suppresses the carrier after the nonlinearity has generated
 the beat. Each JR excitatory synapse has transfer function
 $H_s(\omega)=Aa/(i\omega+a)^2$, a second-order low-pass with characteristic
 frequency $a/(2\pi)\approx16$~Hz. It passes a $10$~Hz component with relative
-amplitude about $0.7$, while reducing a $100$~Hz component to about $2.5\%$
-(Fig.~\ref{fig:carrier}). Provided the carrier does not itself excite a responsive
+amplitude about $0.7$, while reducing a $100$~Hz component to about $2.5\%$. Provided the carrier does not itself excite a responsive
 mode, the loop therefore reads predominantly the generated low-frequency drive.
 
 % fig:carrier moved to Results (Theory is equations-only)
@@ -778,9 +779,8 @@ case $\tau_m=0.2$~ms gives $|H_m|^2\approx0.39$ at $1$~kHz and $0.14$ at $2$~kHz
 (Fig.~\ref{fig:khz}). This assumed time represents the fast-compartment hypothesis
 in Eq.~\eqref{eq:doors}, or motivates a shorter membrane time in a QIF reduction;
 it has not been measured under TI at the AIS or a node.
-In the latter description, the approach to a static transfer is governed by
-Eq.~\eqref{eq:slow_synapse}; the membrane filter must not be applied again outside
-the QIF equations. A short access time improves carrier transmission without,
+A QIF reduction computes the access filter within its membrane equation,
+so no additional membrane filter is applied to its current input. A short access time improves carrier transmission without,
 by itself, specifying the mixing coefficient or the remaining circuit resonance.
 Table~\ref{tab:doors} separates measured decays, assumed access times,
 strong-pulse charging, cellular detection, and downstream synaptic filtering.
@@ -841,7 +841,7 @@ downstream amplifier.
 \subsection{Operating-point dependence}\label{sec:opp}
 Because $Y_\Omega\propto\Sig''(v^*)$, demodulation is governed by the curvature at
 the operating point, and in particular by how far $v^*$ sits from the sigmoid
-inflection (Fig.~\ref{fig:opp}). The Population Excitation--Inhibition Index (PEIX)
+inflection. The Population Excitation--Inhibition Index (PEIX)
 of \cite{ruffini2025cfc} measures signed departure from maximal sigmoid slope:
 \begin{equation}
 \mathrm{PEIX}(v^*)=\operatorname{sign}(v^*-v_0)
@@ -939,8 +939,9 @@ detector. The dynamic rate equation attenuates the carriers once more, after
 this mixing; it does not add that attenuation to the generated beat.
 The exact coefficients and carrier exponents are derived in the supplement.
 
-In membrane-time units, the fast-carrier QIF voltage source has $D=1$;
-$G$ then includes its conversion through the voltage and rate dynamics.
+For the QIF mixer, the role of $\Sig''/2$ is played by the unit coefficient
+of $v^2$ in membrane-time units. The voltage and rate dynamics that convert
+this source into a rate beat belong to the response $G$.
 QIF thus provides a cellular realization of quadratic detection, with its
 own frequency dependence. Other smooth cellular mechanisms can contribute
 to the same effective second-order coefficient. Their weak-input product law
@@ -955,24 +956,18 @@ three-line waveform
 s(t)=\varepsilon\,[\,1+m\cos\Omega t\,]\cos\omega_c t,\qquad \omega_c=2\pi f_c ,
 \label{eq:amsur}
 \end{equation}
-with dimensionless modulation depth $m$, because it parameterizes a sweep by one amplitude. It is not
-the physical signal: it carries a line at $\omega_c$ that the two-tone sum lacks. The two
-agree at $\Omega$ to leading order (the surrogate gives
-$Y_\Omega=\half\Sig''\varepsilon^2m$) and are \emph{not} equivalent beyond it. For matched genuine tones $\mathrm{LPF}[s^2]=\varepsilon^2(1+\cos\Omega t)$,
-whereas for the $m=1$ AM surrogate
-$\mathrm{LPF}[s^2]=\varepsilon^2(\tfrac34+\cos\Omega t+\tfrac14\cos2\Omega t)$: the same
-$\Omega$ amplitude, but a different DC term and a spurious second harmonic at $25\%$ of
-the fundamental. Genuine two tones are used for the demodulation demonstration
-(Fig.~\ref{fig:demod}), the curvature and square-law controls (Fig.~\ref{fig:opp}), the
-laminar maps (Figs.~\ref{fig:lanmm_p2},~\ref{fig:lanmm_p1}) and the kHz demonstration.
-The AM surrogate is retained for dense resonance and coupling sweeps;
-Fig.~\ref{fig:opp}d verifies open-loop agreement at $\Omega$ at one operating point.
-That agreement does not extend to the mean shift or second harmonic, the latter
-being a diagnostic of transduction class (\S\ref{sec:transduction}). We therefore
-repeat the mean-shift-dependent comparisons with two tones: the timing-versus-rate
-figure uses them, as do controls of the TI/tACS ratios and NMM2 endpoint.
-The corresponding Results report both waveforms, whose different DC terms can
-shift the recurrent operating state.
+with dimensionless modulation depth $m$. This AM surrogate parameterizes dense
+resonance and coupling sweeps by one amplitude. It contains a central carrier
+line absent from genuine TI, but matches its leading beat source:
+$Y_\Omega=\half\Sig''\varepsilon^2m$. For matched genuine tones,
+$\mathrm{LPF}[s^2]=\varepsilon^2(1+\cos\Omega t)$; for the $m=1$ surrogate,
+$\mathrm{LPF}[s^2]=\varepsilon^2(\tfrac34+\cos\Omega t+\tfrac14\cos2\Omega t)$.
+Thus the mean source differs, and the surrogate adds a second harmonic at
+$25\%$ of the fundamental. We use genuine tones for the demodulation,
+curvature, square-law, laminar, and kHz demonstrations, and wherever mean shifts
+or harmonics enter the comparison: timing versus rate and the TI/tACS and
+NMM2 endpoint controls. Open-loop agreement at the beat is checked at one
+operating point; it does not imply equal driven operating states.
 
 \subsection{Amplitude scaling and harmonic measurements}\label{sec:transduction-methods}
 These measurements distinguish quadratic detection from envelope following,
@@ -1150,7 +1145,7 @@ $1.5\times10^{-5}$~s for the $2$~kHz output spectrum. Halving each step changes 
 reported lock-in amplitudes by less than $1\%$. The $10$~kHz figures quoted in
 \S\ref{sec:khz} are analytic evaluations of Eq.~\eqref{eq:khz}, not simulations.
 
-The resonance sweep in Fig.~\ref{fig:res} uses $10$~s of settling and a $20$~s
+The resonance sweep uses $10$~s of settling and a $20$~s
 measurement window. Long windows reduce transients from weakly damped modes and
 average beating when autonomous activity persists. Other runs use the windows
 specified in their scripts.
@@ -1189,8 +1184,7 @@ saddle-node of limit cycles (SNLC).
 We compare the \emph{open-loop detector}, the firing-rate sigmoid at a fixed
 operating point $v^*$ without recurrence, with the \emph{closed-loop} column, the full recurrent
 Jansen--Rit with its feedback. The open-loop detector passes the two-tone field through
-$\Sig$ at $v^*$ and applies Eq.~\eqref{eq:lockin}, isolating the pure demodulation law
-(Figs.~\ref{fig:carrier},~\ref{fig:opp},~\ref{fig:khz}); its signed in-phase
+$\Sig$ at $v^*$ and applies Eq.~\eqref{eq:lockin}, isolating the pure demodulation law; its signed in-phase
 component $L_{\cos}$ verifies the curvature law, including its sign.
 The \emph{bifurcation
 diagram} records the field-free min/max of $v$ vs.\ $p$, each run initialized at
@@ -1226,7 +1220,6 @@ is the dimensionless global synaptic gain and the relative weights $(w_{EE},w_{E
 use target $X$ and source $Y$ in $w_{XY}$ and set the E and I rows: the $E$ membrane sees $J\,(r_E^{\rm syn}-r_I^{\rm syn})$ and the $I$ membrane
 $J\,(r_E^{\rm syn}-2r_I^{\rm syn})$, the only asymmetry being the doubled $I\!\to\!I$ weight $w_{II}=2$.
 
-\input{figures_src/fig_models_ti_caption.tex}
 
 In the schematic, $\mathcal U_j(t)$ is the total synaptic and field input
 to QIF neuron $j$, and $J^*$ denotes a coupling-induced Hopf.
@@ -1275,14 +1268,9 @@ normalizes peak response divided by $A_f^2$ and linear gain to its value at
 $A_f=2$, $J=15.53$. These normalizations compare gain variation with the detector coefficient
 allowed to vary along this unpinned sweep.
 
-We check the stability of the driven $J$-curve endpoint by integrating the full
-variational matrix along its trajectory. At carrier $300$~Hz and beat $50.5$~Hz,
-the AM input repeats every $2$~s. After $8$~s of settling, we compute the
-perturbation multipliers over that period and repeat over the next period.
-Moduli below one indicate decay of perturbations to the periodic response.
-Two-tone controls at $J=16.5663$ and $16.5901$, both with a $50.5$~Hz beat,
-use $5$~s settling, direct perturbation decay, and an $8$~s finite-time
-Lyapunov estimate.
+Stability of the driven endpoint is checked using period-to-period perturbation
+multipliers, direct perturbation decay, and a finite-time Lyapunov estimate;
+settings and results are given in Appendix~\ref{app:ping-stability}.
 
 \subsection{QIF spiking network (microscale of NMM2)}\label{sec:qif-methods}
 NMM2 is the exact infinite-population mean field of all-to-all QIF neurons
@@ -1672,22 +1660,6 @@ $300$~Hz, $0.1\%$ at $1$~kHz, and $0.03\%$ at $2$~kHz
 
 \begin{figure}[t!]
 \centering
-\includegraphics[width=\textwidth]{fig_mpr_crossover.pdf}
-\caption{\textbf{Static curvature at slow carriers, slope at fast ones.} \emph{(a)}
-Second-order DC rate shift of an uncoupled MPR population ($\Delta=1$) under a
-current carrier, Eq.~\eqref{eq:crossover}, for operating points below, at and above the
-inflection of $F(Q)$. Dotted: the static limit $\tfrac14F''$; dashed: the fast-carrier
-limit $F'/[2(\omega\tau_m)^2]$; circles: RK4 integrations at $I_{\rm ac}=0.05$ averaged over whole carrier
-periods (relative error below $10^{-3}$). Above the inflection the sign changes with carrier frequency. The horizontal coordinate is $\omega\tau_m$; the carrier markers
-use $\tau_m=\tau_E=15$~ms. \emph{(b)} PING of Eq.~\eqref{eq:nmm2-ping}: relative error of the
-fast-carrier difference-frequency source against the exact second-order response at four
-stable operating points ($\gamma$ the damping of the gamma mode), two tones centered at
-$300$, $1000$ and $2000$~Hz.}
-\label{fig:crossover}
-\end{figure}
-
-\begin{figure}[t!]
-\centering
 \includegraphics[width=\textwidth]{fig_nmm2_resonance_twotone.pdf}
 \caption{\textbf{NMM2 PING gamma resonance (exact mean field, genuine two tones).}
 Lock-in response of the excitatory rate $r_E$ at the envelope frequency $\Delta f$ under a
@@ -1704,6 +1676,22 @@ surrogate control (Fig.~\ref{fig:opp}d).}
 \label{fig:nmm2_res}
 \end{figure}
 
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{fig_mpr_crossover.pdf}
+\caption{\textbf{Static curvature at slow carriers, slope at fast ones.} \emph{(a)}
+Second-order DC rate shift of an uncoupled MPR population ($\Delta=1$) under a
+current carrier, Eq.~\eqref{eq:crossover}, for operating points below, at and above the
+inflection of $F(Q)$. Dotted: the static limit $\tfrac14F''$; dashed: the fast-carrier
+limit $F'/[2(\omega\tau_m)^2]$; circles: RK4 integrations at $I_{\rm ac}=0.05$ averaged over whole carrier
+periods (relative error below $10^{-3}$). Above the inflection the sign changes with carrier frequency. The horizontal coordinate is $\omega\tau_m$; the carrier markers
+use $\tau_m=\tau_E=15$~ms. \emph{(b)} PING of Eq.~\eqref{eq:nmm2-ping}: relative error of the
+fast-carrier difference-frequency source against the exact second-order response at four
+stable operating points ($\gamma$ the damping of the gamma mode), two tones centered at
+$300$, $1000$ and $2000$~Hz.}
+\label{fig:crossover}
+\end{figure}
+
 In NMM2 PING, $J$ is the mean inter-neuron QIF synaptic weight.
 Sweeping $J$ at fixed background drive toward the gamma Hopf reveals two
 competing modes (Fig.~\ref{fig:nmm2_jcurve}). A second mode near $55$~Hz carries
@@ -1713,16 +1701,14 @@ about $50$~Hz. In that near-Hopf interval,
 $0.0014\lesssim\gamma\lesssim0.0081$~ms$^{-1}$, the linear gain scales as
 $1/\gamma$ with a fitted exponent of $1.02$ over a $5.8$-fold damping range.
 The full-sweep exponent is $0.71$, so a single-mode law does not describe the
-whole curve. This refines the coupling-controlled sensitivity expected in QIF
-networks \cite{clusella2023}: both coupling and rectifier are derived, but the
-dominant mode can change.
+whole curve. Coupling-dependent sensitivity \cite{clusella2023} therefore
+includes changes in which mode carries the peak.
 
 At $A_f=8$, the simulated response exceeds the normalized linear reference by
 up to $48\%$ in the amplitude check, then saturates. At a quarter of that
 amplitude ($A_f=2$, one sixteenth of the power), the departures stay within
-$11\%$ at the nine tested couplings. The fully forced endpoint remains attracting under both waveforms, even
-where a DC-only approximation predicts instability; $\gamma$ describes the
-field-free mode. The gain reference includes the state-dependent detector.
+$11\%$ at the nine tested couplings. The driven endpoint remains attracting under both waveforms
+(Appendix~\ref{app:ping-stability}).
 The alpha JR and gamma NMM2 circuits share the $1/\gamma$ gain scaling of their critical mode despite their different
 mixers, with amplification adjustable through coupling.
 
@@ -1855,7 +1841,7 @@ measured by Semenov et al.\ under strong microsecond field pulses
 \cite{semenov2025} concerns a different response mode from intracellular
 current charging or periaxonal conduction. A $10$--$100$-fold reduction in
 QIF membrane time is therefore a sensitivity hypothesis, whose population
-consequence follows from the slow-synapse limit without adding a periaxonal circuit.
+consequence follows from the slow-synapse limit.
 
 The quadratic law specifies the leading mixing operation, not its coefficient.
 QIF derives one realization; cellular mixing measured or modeled in single
@@ -1997,7 +1983,7 @@ the same readout; a measured PLV ratio alone does not supply it.
 
 For comparison, the carrier-averaged, matched-peak, open-loop drive ratio has a
 numerically estimated supremum of $0.348$ over bounded nondecreasing memoryless
-transfers (Eq.~\eqref{eq:etasup}). The positive-mixture-of-steps argument extends
+transfers (Appendix~\ref{app:bound}, Eq.~\eqref{eq:etasup}). The positive-mixture-of-steps argument extends
 the logistic result to this class. Approaching it requires an active transition
 sharp relative to the input; for the logistic family at the illustrative
 polarizations, this means microvolt widths. The limiting detector is step-like
@@ -2106,12 +2092,7 @@ and target-to-reference ratios, using a cortex-only reference to test deep-targe
 selectivity. Keep the projection direction fixed at each site,
 including any direction chosen to maximize the envelope at a reference ratio.
 Measure the DC shift and repeat at lower amplitude to check state dependence.
-Changing from $2+2$ to $1+3$~mA multiplies envelope excursion by
-$0.5$--$1.5$ depending on the local polarization ratio, and the quadratic beat
-by $0.75$ everywhere. The mean-square factor is $1.25$ at equal per-current magnitudes,
-tending to $0.25$ or $2.25$ where the first or second carrier dominates,
-respectively. This last factor weights the signed DC source; it does not
-specify excitation or suppression. \\[4pt]
+ \\[4pt]
 \textbf{State and carrier dependence.} The static sigmoid follows $\Sig''$ and
 reverses sign at its inflection (PEIX$=0$). Fast-carrier QIF mixes in voltage and
 reads the source through rate and network susceptibility; its DC term follows
@@ -2270,6 +2251,8 @@ for the content of the published article.
 \input{planning/tn0484_notation.tex}
 
 \ifappendices
+\renewcommand{\theequation}{S\arabic{equation}}
+\setcounter{equation}{0}
 \renewcommand{\thefigure}{S\arabic{figure}}
 \setcounter{figure}{0}
 
@@ -2404,12 +2387,12 @@ gives the mixing coefficient at fixed voltage excursion,
 \end{equation}
 This coefficient tends to $F'/2$ at high frequency. The $1/\omega^2$ suppression
 at fixed current comes from $|H_v|^2$, the membrane filtering already represented
-by Eq.~\eqref{eq:doors}; it is not an additional detector filter. A static curve
+by \ifsupp main-text\fi\ Eq.~\eqref{eq:doors}; it is not an additional detector filter. A static curve
 placed after the same membrane has the same leading carrier roll-off, although
 its mixing coefficient and sign can differ. The steady-state curvature is
 $F''=4r^*(3d^2-\nu^2)/(d^2+\nu^2)^3$, so the inflection occurs at $\nu^2=3d^2$.
 
-For nearby fast tones, the quadratic terms in Eq.~\eqref{eq:mpr} contribute at
+For nearby fast tones, the quadratic terms in \ifsupp main-text\fi\ Eq.~\eqref{eq:mpr} contribute at
 different orders: $v^2$ at $\omega^{-2}$, $r v$ at $\omega^{-3}$, and $r^2$ at
 $\omega^{-4}$. Table~\ref{tab:exponents} compares the carrier and beat routes to
 the firing rate for a static curve and a dynamic population with the same membrane access.
@@ -2447,7 +2430,7 @@ $F'/2$, but is not the full finite-$\Omega$ network prefactor. Thus the dynamic
 rate attenuates the carrier twice while forming the beat between those stages.
 
 \subsection{Single-cell rate and dynamic MPR mixing}\label{app:mpr-mixing}
-The MPR steady-rate curve $F$ of \S\ref{sec:dynamic}, Eq.~\eqref{eq:Fmpr}, averages the single-neuron rate $f(q)=\sqrt q/\pi$ for
+The MPR steady-rate curve $F$ of \S\ref{sec:dynamic}, \ifsupp main-text\fi\ Eq.~\eqref{eq:Fmpr}, averages the single-neuron rate $f(q)=\sqrt q/\pi$ for
 $q>0$, and $f(q)=0$ otherwise, over the excitability distribution. Here $\eta$ is
 the neuron's excitability and $q=\eta+I$ its constant total drive.
 
@@ -2470,6 +2453,15 @@ The mean second-order correction is $-I_{\rm ac}^2\mathsf J^{-1}\mathbf b_2$;
 its rate component gives Eq.~\eqref{eq:crossover}.
 
 \subsection{Stability of the driven PING endpoint}\label{app:ping-stability}
+We check the stability of the driven $J$-curve endpoint by integrating the full
+variational matrix along its trajectory. At carrier $300$~Hz and beat $50.5$~Hz,
+the AM input repeats every $2$~s. After $8$~s of settling, we compute the
+perturbation multipliers over that period and repeat over the next period.
+Moduli below one indicate decay of perturbations to the periodic response.
+Two-tone controls at $J=16.5663$ and $16.5901$, both with a $50.5$~Hz beat,
+use $5$~s settling, direct perturbation decay, and an $8$~s finite-time
+Lyapunov estimate.
+
 Although a DC-only averaged calculation predicts an unstable endpoint, the full
 periodically forced solution remains attracting: its largest perturbation
 multiplier is $0.034$ over the $2$~s forcing period. Increasing settling from
@@ -2505,7 +2497,7 @@ column with the field-free operating point $v^*$ pinned: for
 each global connectivity $C$ we solve the field-free fixed-point relation analytically
 for the external drive $p(C)$ that holds $v^*$ (hence $\Sig''(v^*)$) fixed, vary $C$
 toward the alpha Hopf, and read $\gamma,\omega_0$ from the $6\times6$ Jacobian. The field
-is the AM surrogate of Eq.~\eqref{eq:amsur} for Fig.~\ref{fig:jcurve}, genuine two
+is the AM surrogate of \ifsupp main-text\fi\ Eq.~\eqref{eq:amsur} for Fig.~\ref{fig:jcurve}, genuine two
 tones for the timing comparison (Fig.~\ref{fig:timing}), or a direct in-band sinusoid $s(t)=\varepsilon\cos\Omega t$
 ($\varepsilon=0.1$~mV) for the tACS control (Fig.~\ref{fig:tacs}), each read out by the
 lock-in of $v$ at $\Delta f$, except in the timing comparison, which reads the
@@ -2541,7 +2533,7 @@ the form $z=\varepsilon_{\rm SL} z_1+\varepsilon_{\rm SL}^3z_3+\cdots$. There is
 source: the first-order response contains only the applied frequencies, and the
 cubic first contributes at order $\varepsilon_{\rm SL}^3$. Thus the normal form has a
 resonant linear susceptibility but lacks the quadratic difference-frequency
-generation of Eq.~\eqref{eq:demod}. This statement concerns the weak-input
+generation of \ifsupp main-text\fi\ Eq.~\eqref{eq:demod}. This statement concerns the weak-input
 expansion; it is not an exclusion of every higher-order intermodulation or
 strong-drive response.
 
@@ -2686,7 +2678,7 @@ over $(f_c,\Delta f)$ at fixed $\varepsilon$, built on the LaNMM module of
 change, alpha power minus the unstimulated ($\varepsilon=0$) baseline, on a zero-centered
 scale; over most of the $P_1$-driven grids the change is negative. For the
 alpha resonance we instead drive the deep $P_1$ loop directly and sweep its input against
-$\Delta f$, reading the lock-in (Eq.~\eqref{eq:lockin}) of $v_{P_1}$ at $\Delta f$.
+$\Delta f$, reading the lock-in (\ifsupp main-text\fi\ Eq.~\eqref{eq:lockin}) of $v_{P_1}$ at $\Delta f$.
 
 The additional carrier comparison below uses the lock-in
 of $v_{P_1}$, averaged at each carrier over 17 beats: $7$--$9$ and
@@ -2813,7 +2805,7 @@ $5$~Hz beat. Neither study tests this low-carrier resonance prediction.
 \section{Vocabulary and metrics}\label{sec:vocab}
 \emph{Forced response.} Below the Hopf the column does not oscillate on its own;
 we quantify its response by the lock-in amplitude at the beat $\Delta f$
-(Eq.~\eqref{eq:lockin}). There is no autonomous rhythm to entrain in the stable-focus
+(\ifsupp main-text\fi\ Eq.~\eqref{eq:lockin}). There is no autonomous rhythm to entrain in the stable-focus
 J-curve, timing, and tACS sweeps.
 
 \emph{Frequency dominance and entrainment.} Above the Hopf the column free-runs
