@@ -11,3 +11,4 @@
 - [x] preserve all existing labels and cited references; relocate coefficient derivations and run diagnostics to the supplement (October 20)
 - [x] integrate and verify Ricardo’s FEM results and the approved physiological Discussion and abstract (October 19)
 - [x] address Klaus’s six reader-check items; disambiguate supplement equations and verify figure citation order (October 20)
+- [x] record Klaus’s PASS on the six draft21 repairs at 2ee0cb1; reader-check cycle closed (October 20)

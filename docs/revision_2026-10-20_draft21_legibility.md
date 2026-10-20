@@ -119,3 +119,13 @@ The source check `notes/2026-10-20_kaiti/check_reading_references.py` verifies
 figure first-citation order, baseline label/citation retention, and preservation
 of the annotated PDF. Article and supplement builds remain clean (43/23 pages).
 No new scientific content or numerical changes were introduced.
+
+## Independent repair check closed
+
+Klaus reported PASS on `2ee0cb1` at 18:09 CEST on October 20. His spot check
+covered the rebuilt 43-page article and supplement: S-prefixed equation
+references, the Appendix D pointer, main-text equation attribution, all thirteen
+figure first citations, the restored schematic, the QIF explanation, and the
+remaining prose/protocol/table repairs. He reported no further items. This
+closes the reader-check repair cycle; it is not a new scientific validation or
+release authorization. Holds remain unchanged.
