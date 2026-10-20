@@ -67,3 +67,15 @@ both directions. The Gmail draft asks him to confirm.
    Ricardo to add both to the PR branch.
 7. **CRediT** unchanged (methodology, software, formal analysis, data curation, visualization already
    listed).
+
+## Correction (Kaiti, 2026-10-20 14:05, accepted)
+
+- The "one physics observation" above is withdrawn as stated: j ≈ 2.54 from the marginal medians is an
+  illustration under a common-node idealization, not a measured normal jump, and does not make the
+  measured jumps a resolution-limited lower bound. A bound needs paired per-node components and a
+  convergence check; the Gmail draft was revised accordingly.
+- Item 4: the laminar fractions 0.29 / 0.11 / 0.12 are relative to each map's own orientation maximum,
+  not to the envelope-maximizing n*. Wording corrected in the draft.
+- Ricardo's "these ratios bound the brightening of a map from above" holds for the magnitude and for
+  own-maximum maps, not for a fixed projection direction; derivation and numerics in
+  `interface_bound_check.md`.
