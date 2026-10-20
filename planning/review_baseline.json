@@ -1,8 +1,8 @@
 {
-  "working_edition": "build/review/TN0484_jne.pdf",
-  "redline": "build/review/redline_draft20.pdf",
+  "working_edition": "TN0484_jne.pdf",
+  "redline": "docs/redline_last_read.pdf",
   "baseline_commit": "e20c047",
   "baseline_version": "0.15.0-draft20",
-  "baseline_status": "Giulio finished annotating draft20 on October 20 and authorized a separate whole-paper legibility revision. Preserve the annotated root PDF.",
+  "baseline_status": "Giulio finished annotating draft20 and authorized the canonical root PDFs to show reviewed draft21. The exact annotated draft20 is archived in notes/2026-10-20_kaiti; comparison baseline remains e20c047.",
   "policy": "Keep this baseline fixed across edits; advance only when Giulio identifies a later version as read. Regenerate TN and supplement for an authorized archive cut."
 }

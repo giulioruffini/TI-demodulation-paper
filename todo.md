@@ -1,6 +1,6 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
-- [ ] read the corrected draft21 article; preserve the annotated root draft20 PDF
+- [ ] read the corrected draft21 article at TN0484_jne.pdf; annotated draft20 is archived in notes/2026-10-20_kaiti
 - [ ] Ricardo: supply points_2_3.json, its producer/revision, and HippUnfold version; verify masks and orientation denominators before numerical integration
 - [ ] Giulio: confirm Ricardo's provisional byline position after Borja
 - [ ] Giulio: decide the seven retained CUT? passages and the biological-rectifier sentence in docs/revision_2026-10-06_v0150draft16_readability.md
@@ -12,3 +12,4 @@
 - [x] integrate and verify Ricardo’s FEM results and the approved physiological Discussion and abstract (October 19)
 - [x] address Klaus’s six reader-check items; disambiguate supplement equations and verify figure citation order (October 20)
 - [x] record Klaus’s PASS on the six draft21 repairs at 2ee0cb1; reader-check cycle closed (October 20)
+- [x] restore draft21 article, supplement, and redline to canonical paths after archiving the annotated draft20 (October 20)

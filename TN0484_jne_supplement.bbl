@@ -7,20 +7,6 @@ Francesca Castaldo, Raul de~Palma~Aristides, Pau Clusella, Jordi Garcia-Ojalvo,
 \newblock {\em Physics Reports}, 1189:1--49, 2026.
 \newblock arXiv:2512.10982.
 
-\bibitem{ruffini2025cfc}
-Giulio Ruffini, Edmundo Lopez-Sola, Raul Palma, Roser Sanchez-Todo, Jakub
-  Vohryzek, Francesca Castaldo, and Karl Friston.
-\newblock Cross-frequency coupling as a neural substrate for prediction error
-  evaluation: a laminar neural mass modeling approach.
-\newblock {\em Neural Computation}, 38(8):1299--1343, 2026.
-
-\bibitem{sanchezTodo2023}
-Roser Sanchez-Todo, Andr{\'e}~M. Bastos, Edmundo Lopez-Sola, Borja Mercadal,
-  Emiliano Santarnecchi, Earl~K. Miller, Gustavo Deco, and Giulio Ruffini.
-\newblock A physical neural mass model framework for the analysis of
-  oscillatory generators from laminar electrophysiological recordings.
-\newblock {\em NeuroImage}, 270:119938, 2023.
-
 \bibitem{jansen1995}
 Ben~H. Jansen and Vincent~G. Rit.
 \newblock Electroencephalogram and visual evoked potential generation in a
@@ -38,6 +24,20 @@ Giulio Ruffini.
 Arkady Pikovsky, Michael Rosenblum, and J{\"u}rgen Kurths.
 \newblock {\em Synchronization: A Universal Concept in Nonlinear Sciences}.
 \newblock Cambridge University Press, 2001.
+
+\bibitem{ruffini2025cfc}
+Giulio Ruffini, Edmundo Lopez-Sola, Raul Palma, Roser Sanchez-Todo, Jakub
+  Vohryzek, Francesca Castaldo, and Karl Friston.
+\newblock Cross-frequency coupling as a neural substrate for prediction error
+  evaluation: a laminar neural mass modeling approach.
+\newblock {\em Neural Computation}, 38(8):1299--1343, 2026.
+
+\bibitem{sanchezTodo2023}
+Roser Sanchez-Todo, Andr{\'e}~M. Bastos, Edmundo Lopez-Sola, Borja Mercadal,
+  Emiliano Santarnecchi, Earl~K. Miller, Gustavo Deco, and Giulio Ruffini.
+\newblock A physical neural mass model framework for the analysis of
+  oscillatory generators from laminar electrophysiological recordings.
+\newblock {\em NeuroImage}, 270:119938, 2023.
 
 \bibitem{gordon2019}
 Nathan Gordon, Jakob Hohwy, Matthew~J. Davidson, Jeroen J.~A. van Boxtel, and

@@ -129,3 +129,15 @@ figure first citations, the restored schematic, the QIF explanation, and the
 remaining prose/protocol/table repairs. He reported no further items. This
 closes the reader-check repair cycle; it is not a new scientific validation or
 release authorization. Holds remain unchanged.
+
+
+## Canonical reading copies restored
+
+At 21:13 CEST Giulio reported opening the root article and finding the preserved
+draft20. After annotation had finished, leaving that file at the canonical reading
+path made the revision difficult to find. The exact annotated PDF was archived as
+`notes/2026-10-20_kaiti/TN0484_jne_draft20_GR_annotated_before_root_update.pdf`,
+with the original SHA-256 unchanged. The root article and supplement and
+`docs/redline_last_read.pdf` were rebuilt from the reviewed draft21 source.
+`build/review/` remains unchanged. The source and scientific content did not change;
+the public-release holds remain in effect.

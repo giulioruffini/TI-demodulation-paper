@@ -1,6 +1,7 @@
 {
-  "file": "TN0484_jne.pdf",
+  "file": "notes/2026-10-20_kaiti/TN0484_jne_draft20_GR_annotated_before_root_update.pdf",
   "sha256": "ddea986af751de95c68493924386b3098fdad25a2f6676f4337566b194f1396d",
-  "policy": "User finished annotating; leave this file untouched and build separately in build/review.",
-  "source_baseline": "e20c047"
+  "policy": "Annotation finished; archived exact root PDF before authorized restoration of the canonical root draft21 on October 20. build/review remains unchanged.",
+  "source_baseline": "e20c047",
+  "original_file": "TN0484_jne.pdf"
 }

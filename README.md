@@ -10,13 +10,14 @@ Archived at Zenodo: **[doi:10.5281/zenodo.21009618](https://doi.org/10.5281/zeno
 Licensed **CC-BY-4.0** (see [`LICENSE`](LICENSE)); machine-readable citation in
 [`CITATION.cff`](CITATION.cff).
 
-The current reading revision is the **JNE article, v0.15.0-draft21**:
-[article](build/review/TN0484_jne.pdf),
-[supplement](build/review/TN0484_jne_supplement.pdf), and
-[redline against draft20](build/review/redline_draft20.pdf).
-The root `TN0484_jne.pdf` is Giulio's annotated draft20. Preserve it: do not run
-`./build.sh` over that file during this review. Build the separate revision with
-`python3 notes/2026-10-20_kaiti/build_review.py`.
+The current working edition is the **JNE article, v0.15.0-draft21**:
+[article](TN0484_jne.pdf), [supplement](TN0484_jne_supplement.pdf), and
+[redline against draft20](docs/redline_last_read.pdf).
+Run `./build.sh jne` and `./build.sh supp` to update the canonical PDFs.
+Giulio's annotated draft20 is preserved in
+[the review archive](notes/2026-10-20_kaiti/TN0484_jne_draft20_GR_annotated_before_root_update.pdf).
+The separate `build/review/` copies remain unchanged as the completed reader-check
+snapshot; the root files are the current reading copies.
 
 Draft21 revises the whole paper for legibility, moves detailed coefficients and
 run diagnostics to the supplement, and shortens captions. The approved abstract

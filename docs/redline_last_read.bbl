@@ -325,13 +325,6 @@ Adriano B.~L. Tort, Robert Komorowski, Howard Eichenbaum, and Nancy Kopell.
   different frequencies.
 \newblock {\em Journal of Neurophysiology}, 104(2):1195--1210, 2010.
 
-\bibitem{esmaeilpour2020}
-Zeinab Esmaeilpour, Mark Jackson, Greg Kronberg, Tianhe Zhang, Rosana Esteller,
-  Brad Hershey, and Marom Bikson.
-\newblock Limited sensitivity of hippocampal synaptic function or network
-  oscillations to unmodulated kilohertz electric fields.
-\newblock {\em eNeuro}, 7(6):ENEURO.0368--20.2020, 2020.
-
 \bibitem{cifra2026}
 Michal Cifra, Saurabh~Kumar Pandey, Tom{\'a}{\v s} Zakar, Michaela Poplov{\'a},
   Daniela~G. Blanco~Campoy, Ji{\v r}{\'i} Pr{\r u}{\v s}a, Daniel Havelka,
@@ -398,6 +391,11 @@ Matthew~R. Krause, Pedro~G. Vieira, and Christopher~C. Pack.
   orchestrate complex brain activity?
 \newblock {\em PLOS Biology}, 21(1):e3001973, January 2023.
 
+\bibitem{wilting2018}
+Jens Wilting and Viola Priesemann.
+\newblock Inferring collective dynamical states from widely unobserved systems.
+\newblock {\em Nature Communications}, 9(1), June 2018.
+
 \bibitem{huang2017}
 Yu~Huang, Anli~A Liu, Belen Lafon, Daniel Friedman, Michael Dayan, Xiuyuan
   Wang, Marom Bikson, Werner~K Doyle, Orrin Devinsky, and Lucas~C Parra.
@@ -411,11 +409,6 @@ Yu~Huang, Anli~A Liu, Belen Lafon, Daniel Friedman, Michael Dayan, Xiuyuan
 \newblock Correction: measurements and models of electric fields in the in
   vivo human brain during transcranial electric stimulation.
 \newblock {\em eLife}, 7, February 2018.
-
-\bibitem{wilting2018}
-Jens Wilting and Viola Priesemann.
-\newblock Inferring collective dynamical states from widely unobserved systems.
-\newblock {\em Nature Communications}, 9(1), June 2018.
 
 \bibitem{plovie2025}
 Tom Plovie, Ruben Schoeters, Thomas Tarnaud, Wout Joseph, and Emmeric Tanghe.
@@ -436,5 +429,12 @@ Paria Mansourinezhad, Rob M~C Mestrom, Debby C~W Klooster, Mathieu Sprengers,
 \newblock Systematic review of experimental studies in humans on transcranial
   temporal interference stimulation.
 \newblock {\em Journal of Neural Engineering}, 22(5):051001, September 2025.
+
+\bibitem{esmaeilpour2020}
+Zeinab Esmaeilpour, Mark Jackson, Greg Kronberg, Tianhe Zhang, Rosana Esteller,
+  Brad Hershey, and Marom Bikson.
+\newblock Limited sensitivity of hippocampal synaptic function or network
+  oscillations to unmodulated kilohertz electric fields.
+\newblock {\em eNeuro}, 7(6):ENEURO.0368--20.2020, 2020.
 
 \end{thebibliography}
