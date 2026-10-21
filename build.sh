@@ -64,12 +64,12 @@ build() {
 }
 
 case "${1:-jne}" in
-  tn)   build "${SRC}" ""              "Technical Note" ;;
+  tn)   build "${SRC}" "\\def\\tnbuild{}" "Technical Note" ;;
   jne)  build "TN0484_jne" "\\def\\jnebuild{}" "JNE article" ;;
   supp) build "TN0484_jne_supplement" "\\def\\suppbuild{}" "JNE supplement" ;;
-  both) build "${SRC}" ""              "Technical Note"
+  both) build "${SRC}" "\\def\\tnbuild{}" "Technical Note"
         build "TN0484_jne" "\\def\\jnebuild{}" "JNE article" ;;
-  all)  build "${SRC}" ""              "Technical Note"
+  all)  build "${SRC}" "\\def\\tnbuild{}" "Technical Note"
         build "TN0484_jne" "\\def\\jnebuild{}" "JNE cross-reference labels" labels
         build "TN0484_jne_supplement" "\\def\\suppbuild{}" "JNE supplement"
         build "TN0484_jne" "\\def\\jnebuild{}" "JNE article"

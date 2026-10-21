@@ -25,7 +25,8 @@
 
 % ---------------------------------------------------------------------------
 % Build switch. \jnefalse -> Neuroelectrics/BCOM Technical Note (TN0484/WP0185).
-%                \jnetrue  -> Journal of Neural Engineering manuscript.
+%                \jnetrue  -> Journal of Neural Engineering manuscript (default: the
+%                working edition; typesetting this file in TeXShop gives the article).
 % One source, two outputs: the TN keeps its branding and the full appendices;
 % the JNE build strips the house furniture and uses the structured abstract.
 % Never fork this file -- switch the flag.
@@ -35,7 +36,8 @@
 %   pdflatex -jobname=TN0484_jne "\def\jnebuild{}\input{<this file>}" ).
 % ---------------------------------------------------------------------------
 \newif\ifjne
-\jnefalse
+\jnetrue
+\ifdefined\tnbuild\jnefalse\fi
 \ifdefined\jnebuild\jnetrue\fi
 
 % ---------------------------------------------------------------------------
