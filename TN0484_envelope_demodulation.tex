@@ -981,6 +981,15 @@ does not fix the coefficient's magnitude, phase, or carrier dependence.
 
 \section{Methods}
 
+\label{sec:vocab-methods}
+A \emph{forced response} is the beat-driven component measured by lock-in; a purely
+forced regime requires stability under stimulation. \emph{Entrainment} means
+frequency and phase capture of a self-sustained oscillator \cite{pikovsky2001}.
+Our frequency-dominance screen does not establish that capture. \emph{Gating}
+means modulation of a persisting rhythm's amplitude \cite{canolty2010,tort2010};
+a rate fold alone does not establish it. Detailed criteria are in the supplement
+(\S\ref{sec:vocab}).
+
 \subsection{Stimulation waveforms and matched-source controls}\label{sec:waveforms}
 Dense perturbative sweeps use the
 three-line waveform
@@ -1002,15 +1011,6 @@ NMM2 endpoint controls. Open-loop agreement at the beat is checked at one
 operating point; it does not imply equal driven operating states.
 
 \subsection{Amplitude scaling and harmonic measurements}\label{sec:transduction-methods}
-\label{sec:vocab-methods}
-A \emph{forced response} is the beat-driven component measured by lock-in; a purely
-forced regime requires stability under stimulation. \emph{Entrainment} means
-frequency and phase capture of a self-sustained oscillator \cite{pikovsky2001}.
-Our frequency-dominance screen does not establish that capture. \emph{Gating}
-means modulation of a persisting rhythm's amplitude \cite{canolty2010,tort2010};
-a rate fold alone does not establish it. Detailed criteria are in the supplement
-(\S\ref{sec:vocab}).
-
 We sweep amplitude at fixed coupling and operating state, measuring the
 fundamental and second harmonic to test the laws of \S\ref{sec:transduction}.
 
@@ -1160,7 +1160,7 @@ We use the Rosetta Stone formulation \cite{ruffini2025rosetta}, which places thi
 derived mean field on the same footing as the JR and laminar models. For
 population $X\in\{E,I\}$ (excitatory or inhibitory), $r_X$ is the physical
 firing rate (ms$^{-1}$ in the integration), $v_X$ the dimensionless mean QIF
-voltage, and $\tau_X$ the membrane time (ms). Dots denote physical-time derivatives:
+voltage, and $\tau_X$ the membrane time (ms). Dots denote physical-time derivatives.
 \begin{equation}
 \begin{aligned}
 \tau_E\dot r_E&=\Delta/(\pi\tau_E)+2r_Ev_E, &\quad

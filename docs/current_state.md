@@ -7,7 +7,8 @@ unchanged in Methods. The article is 43 pages and the topic-organized supplement
 27 pages. Main narrative count falls from 14,977 to 13,019 words including
 headings/captions; article appendices add 1,503. The complete article still
 exceeds the normal journal length. The revision and checks are recorded in
-`revision_2026-10-21_draft22_prose.md`. Klaus's fidelity check is pending.
+`revision_2026-10-21_draft22_prose.md`. Klaus's fidelity/reference check passed (`f3baf98`); his vocabulary-placement
+suggestion is applied verbatim at the opening of Methods.
 The 0.348 bound remains in its existing Discussion/supplement locations pending
 Giulio's placement decision. The approved abstract, author order, numerical
 results, and draft20 reading baseline are unchanged.

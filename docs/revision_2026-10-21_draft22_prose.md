@@ -44,7 +44,7 @@ material and figures. All 13 supplementary figure numbers are preserved, with
 figures placed by topic. The article imports supplementary labels and the
 supplement imports article labels. `./build.sh journal` settles both sets of
 cross-references without rebuilding or replacing the canonical TN. A temporary TN
-build verifies the inline route; the pre-existing canonical TN files remain untouched.
+build verifies the inline route; the canonical TN is not an output of that command. See the preservation note below.
 
 ## Length
 
@@ -87,3 +87,24 @@ current redline was rebuilt against `e20c047`. No simulation, data cache, figure
 asset, or reference entry changed. Klaus's independent fidelity/reference check
 is requested on the committed revision; its outcome is recorded below when received.
 Public GitHub, Calliope, Zenodo, and further coauthor circulation remain held.
+
+## Independent check and final placement repair
+
+Klaus reported PASS in `f3baf98`, with his detailed review in
+`notes/2026-10-21_klaus/draft22_fidelity_check.md`. He checked sentence-level
+retention, both builds, references, the agreed conditions, and numerical details;
+he found no missing scientific statement, number, or qualification. His one
+placement suggestion is applied: the vocabulary paragraph moves verbatim from
+Methods 3.2 to the opening of Methods. Its content and definitions are unchanged.
+A final read also restored the reported somatic time range and measurement
+uncertainty to the supplementary access evidence (`0818802`) and corrected the
+grammar of a supplementary pointer. Counts above include those corrections;
+Klaus's note quotes the preceding count, one word smaller.
+
+During his independent TN build, Klaus restored the canonical TN artifacts to
+Git HEAD, replacing their pre-existing modified working copies. Kaiti recovered
+the exact original PDF and paired BBL from the automatic snapshot cache and
+restored them, leaving their prior dirty status intact. Blob identifiers, SHA-256
+hashes, and provenance are recorded in
+`notes/2026-10-21_kaiti/preexisting_tn_restoration.json`. Those recovered artifacts
+are deliberately excluded from this revision's commits.

@@ -1,6 +1,5 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
-- [ ] Klaus: run the fidelity/reference check on draft22 against the agreed retention list
 - [ ] Giulio: decide the efficiency-bound placement and any further length reduction after the draft22 recount
 - [ ] read draft22 at TN0484_jne.pdf; the tDCS/tACS comparison is now Section 2.6
 - [ ] Giulio: decide whether to expand DC at its first occurrence in "DC-like" in the abstract
@@ -9,17 +8,8 @@
 - [ ] confirm the remaining author declarations, actual AI-tool versions, and all authors' approval of the submission version
 - [ ] keep public GitHub, Calliope, Zenodo, and circulation to other coauthors on hold pending explicit authorization
 - [ ] migrate the folder at a coordinated version boundary with no concurrent editors; run the layout checker before and after
+- [x] close Klaus’s draft22 fidelity/reference check and apply his vocabulary-placement suggestion (October 21)
 - [x] apply the approved prose pass, keep PING in Methods, rebuild article/supplement/redline, and verify edition routing (October 21)
 - [x] place Ricardo Salvador second in the manuscript and author records as instructed October 21
 - [x] review all Klaus R/P/C prose proposals against the current journal source and October 20 decisions; record Kaiti's verdict and current word count
 - [x] reconcile the prose plan with Klaus, distinguish article appendices from supplementary files, and record the remaining bound-placement choice
-- [x] verify Klaus's removal of Alex Just, update the current-state record, and refresh the redline (October 21)
-- [x] verify the approved abstract reader repairs in 62772c7: 300 words, source/PDF agreement, and unchanged science (October 21)
-- [x] verify and record IOP's normal 300-word abstract limit and abbreviation requirements (October 21)
-- [x] add and verify the TI/tDCS/tACS comparison, clarify AIS threshold modulation, retain a 299-word abstract, and rebuild the journal article and redline (October 21)
-- [x] revise the entire paper for legibility, build draft21 separately, and redline against draft20 (October 20)
-- [x] preserve all existing labels and cited references; relocate coefficient derivations and run diagnostics to the supplement (October 20)
-- [x] integrate and verify Ricardo’s FEM results and the approved physiological Discussion and abstract (October 19)
-- [x] address Klaus’s six reader-check items; disambiguate supplement equations and verify figure citation order (October 20)
-- [x] record Klaus’s PASS on the six draft21 repairs at 2ee0cb1; reader-check cycle closed (October 20)
-- [x] restore draft21 article, supplement, and redline to canonical paths after archiving the annotated draft20 (October 20)

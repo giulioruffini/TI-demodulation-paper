@@ -1,7 +1,7 @@
 \documentclass[11pt,a4paper]{article}
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-7xw7iplp/old.tex   Wed Oct 21 15:17:20 2026
-%DIF ADD /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-7xw7iplp/new.tex   Wed Oct 21 15:17:20 2026
+%DIF DEL /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-4lorye_t/old.tex   Wed Oct 21 15:25:03 2026
+%DIF ADD /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-4lorye_t/new.tex   Wed Oct 21 15:25:03 2026
 \usepackage[margin=2.3cm]{geometry}
 \usepackage{lmodern}        % classic Computer Modern look, vectorized (T1)
 \usepackage[T1]{fontenc}
@@ -1650,7 +1650,17 @@ does not fix the coefficient's magnitude, phase, or carrier dependence.
 
 \DIFaddend \section{Methods}
 
-\subsection{Stimulation waveforms and matched-source controls}\label{sec:waveforms}
+\DIFaddbegin \label{sec:vocab-methods}
+\DIFadd{A \emph{forced response} is the beat-driven component measured by lock-in; a purely
+forced regime requires stability under stimulation. \emph{Entrainment} means
+frequency and phase capture of a self-sustained oscillator \cite{pikovsky2001}.
+Our frequency-dominance screen does not establish that capture. \emph{Gating}
+means modulation of a persisting rhythm's amplitude \cite{canolty2010,tort2010};
+a rate fold alone does not establish it. Detailed criteria are in the supplement
+(\S\ref{sec:vocab}).
+}
+
+\DIFaddend \subsection{Stimulation waveforms and matched-source controls}\label{sec:waveforms}
 Dense perturbative sweeps use the
 three-line waveform
 \begin{equation}
@@ -1690,23 +1700,14 @@ shift the recurrent operating state.
 \subsection{Amplitude scaling and harmonic measurements}\label{sec:transduction-methods}
 \DIFdelbegin \DIFdel{These measurements distinguish quadratic detection from envelope following,
 which predict different dose maps and cannot be identified from a beat response
-at one amplitude. With fixed coupling and a linear downstream response, an
-amplitude sweep tests whether the generated beat scales as $\varepsilon^2$ or
-$\varepsilon$. The harmonic test compares the response at the second harmonic, $2\Omega$, with the
-fundamental at $\Omega$. After correcting for network gain,
+at one amplitude . With }\DIFdelend \DIFaddbegin \DIFadd{We sweep amplitude at }\DIFaddend fixed coupling and \DIFdelbegin \DIFdel{a linear downstream response, an
+amplitude sweep tests whether the
+generated beat scales as $\varepsilon^2$ or
+$\varepsilon$. The harmonic test compares the response at the second harmonic ,
+$2\Omega$, with the fundamental at $\Omega$. After correcting for network gain,
 their ratio tends to zero for weak quadratic detection but to $1/5$ for ideal envelope following. Together these
 measurements test the smooth-transfer assumption of \S\ref{sec:coupling}
-using the signatures derived in \S}\DIFdelend \DIFaddbegin \label{sec:vocab-methods}
-\DIFadd{A \emph{forced response} is the beat-driven component measured by lock-in; a purely
-forced regime requires stability under stimulation. \emph{Entrainment} means
-frequency and phase capture of a self-sustained oscillator \cite{pikovsky2001}.
-Our frequency-dominance screen does not establish that capture. \emph{Gating}
-means modulation of a persisting rhythm's amplitude \cite{canolty2010,tort2010};
-a rate fold alone does not establish it. Detailed criteria are in the supplement
-(\S\ref{sec:vocab}).
-}
-
-\DIFadd{We sweep amplitude at fixed coupling and operating state, measuring the
+using the signatures derived in \S}\DIFdelend \DIFaddbegin \DIFadd{operating state, measuring the
 fundamental and second harmonic to test the laws of \S}\DIFaddend \ref{sec:transduction}.
 
 The response at the envelope frequency is read out with a software lock-in
@@ -2039,8 +2040,9 @@ We use the Rosetta Stone formulation \cite{ruffini2025rosetta}, which places thi
 derived mean field on the same footing as \DIFdelbegin \DIFdel{JR and LaNMM (\S\ref{sec:nmm})}\DIFdelend \DIFaddbegin \DIFadd{the JR and laminar models}\DIFaddend . For
 population $X\in\{E,I\}$ (excitatory or inhibitory), $r_X$ is the physical
 firing rate (ms$^{-1}$ in the integration), $v_X$ the dimensionless mean QIF
-voltage, and $\tau_X$ the membrane time (ms). Dots denote physical-time derivatives:
-\begin{equation}
+voltage, and $\tau_X$ the membrane time (ms). Dots denote physical-time derivatives\DIFdelbegin \DIFdel{:
+}\DIFdelend \DIFaddbegin \DIFadd{.
+}\DIFaddend \begin{equation}
 \begin{aligned}
 \tau_E\dot r_E&=\Delta/(\pi\tau_E)+2r_Ev_E, &\quad
 \tau_E\dot v_E&=v_E^2+\bar\eta-(\pi\tau_E r_E)^2+\tau_E J\,(r_E^{\rm syn}-r_I^{\rm syn})+I_E(t),\\[2pt]
