@@ -4,7 +4,7 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
 **Paper:** *The cortical column as a tuned receiver: a network mechanism for
-temporal-interference stimulation* — G. Ruffini, R. Salvador, B. Mercadal, A. Just,
+temporal-interference stimulation* — G. Ruffini, R. Salvador, B. Mercadal,
 R. de Palma Aristides, F. Castaldo, N. Grossman, S. Canals, C. Mirasso.
 Archived at Zenodo: **[doi:10.5281/zenodo.21009618](https://doi.org/10.5281/zenodo.21009618)**.
 Licensed **CC-BY-4.0** (see [`LICENSE`](LICENSE)); machine-readable citation in
