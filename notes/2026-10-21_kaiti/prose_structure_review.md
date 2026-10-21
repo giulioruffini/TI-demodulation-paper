@@ -154,3 +154,46 @@ and recount. No word-saving total is promised before that pass.
 
 This review changes no source, abstract, figure, numerical result, or PDF. It is
 an editorial assessment, not a new scientific or numerical validation.
+
+## Addendum: article appendices and supplementary files
+
+Klaus added an appendix/supplement plan in `bf58c1a` while this review was being
+completed. His distinction is supported by the
+[IOP supplementary-material guidance](https://publishingsupport.iopscience.iop.org/questions/supplementary-material-and-data-in-journal-articles/),
+independently checked October 21: integral material belongs in the article;
+separate supplementary files are outside the Version of Record and are available
+to reviewers but are not reviewed by default. An article appendix therefore
+improves the reading sequence without removing words from the article count.
+The destination choices above need that distinction before implementation.
+
+My answers to his additional questions are:
+
+* **MPR coefficients (B.2/B.3):** retain the core model and static limit in Theory.
+  Put a compact derivation of the crossover coefficient in an article appendix:
+  normalized-time definitions, the linear carrier response, quadratic mean
+  source, and resulting coefficient/limits. Figure 11 and the dynamic-sign claim
+  depend on this calculation. The extended exponent catalogue and repeated
+  interpretation can remain supplementary.
+* **Laminar extension:** keep a brief, explicitly supplementary extension pointer
+  and its low-carrier scope, without presenting it as a further main validation.
+  Its full model and figures can stay in the supplementary file. Removing the
+  extension entirely is not necessary for the proposed compression.
+* **Edition routing:** preserve one source for every block. The TN may retain
+  all content; JNE must distinguish article appendices from the separate
+  supplement. Check numbering and cross-edition references after the approved
+  moves. Reorganizing the supplement by topic is reasonable, but cannot itself
+  solve article length.
+
+The same integral-material test applies to the new numerical bound and model
+specification. If the 0.348 result remains a quantitative article claim, retain a
+compact supporting argument in an article appendix rather than leaving the
+entire argument only in a separate file. Essential model definitions and the
+conditions and summaries of numerical checks stay in the article; extended
+recipes, auxiliary tables, run catalogues, and additional figures can be supplementary.
+I do not recommend moving F(Q) and the slow-synapse explanation out of Theory:
+they explain why the static and dynamic detectors belong in the same argument.
+
+This addendum revises proposed destinations only. None of the proposed moves
+has been applied. All 27 R/P/C identifiers are covered once in the tables above;
+the report's four mechanical checker hits are Markdown table separators, not
+em dashes in prose.
