@@ -114,5 +114,21 @@ changed in 62772c7. The numerical checks recorded above continue to apply.
 
 The 44-page journal article builds without errors or undefined references. The
 review redline is refreshed against the unchanged e20c047 baseline. Klaus's
-separate check of IOP guidance on the abstract limit is pending; no claim about
-whether the limit is mandatory is made here.
+separate check of IOP guidance was pending when this fidelity pass closed.
+
+## IOP guidance verified at 14:32
+
+Klaus supplied the result, independently checked against the
+[JNE author guidance](https://publishingsupport.iopscience.iop.org/journals/journal-of-neural-engineering/)
+on October 21, 2026, under Article structure / Abstract. The guidance says the
+abstract should normally stay within 300 words and that longer abstracts may
+be returned for rewriting. This is the working submission cap, rather than
+a claim of automatic rejection at word 301. The abstract must be self-contained,
+with no undefined abbreviations or references to tables, figures, equations,
+or bibliography entries.
+
+The installed abstract remains 300 words by TeXcount. "DC-like" appears before
+direct current is expanded in the following sentence; Klaus has referred this
+wording to Giulio. No abstract or manuscript change was made in recording the
+guidance. The guidance-check TODO is closed; the DC wording decision is tracked
+separately.

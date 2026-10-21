@@ -20,8 +20,13 @@ restorations of "resonant" gain and "approximately" 2–5%. Kaiti's fidelity
 check passes: the rendered abstract matches the four source macros, the steady
 source is named consistently, and the amplitude convention and scientific scope
 are retained. No body equations, parameters, or numerical data changed.
-Klaus is checking IOP's wording on the JNE abstract limit; that guidance check
-does not block the installed 300-word abstract.
+Klaus's IOP-guidance check is closed and independently verified against the
+[JNE author guidance](https://publishingsupport.iopscience.iop.org/journals/journal-of-neural-engineering/)
+on October 21. The publisher normally limits abstracts to 300 words and may
+return longer abstracts for rewriting; 300 remains the working cap. Acronyms
+must be defined. The first use of "DC-like" precedes the expansion of direct
+current in the next sentence; that wording remains unchanged pending Giulio's
+decision. No table, figure, equation, or reference citations occur in the abstract.
 
 The review baseline stays draft20 at e20c047. Public GitHub, Calliope, Zenodo,
 and further circulation remain held. Earlier entries below are historical.
