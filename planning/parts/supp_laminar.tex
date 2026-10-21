@@ -1,0 +1,156 @@
+\section{Extension: the laminar column at low carriers}\label{app:lanmm}
+The two-band laminar column (LaNMM) adds a resonant intermediary
+between the field and the slow generator. These sweeps use $25$--$80$~Hz carriers
+and polarizations up to $3$~mV on $P_2$, exceeding the sigmoid scale
+$1/\rho\approx1.8$~mV. They describe nonlinear frequency selection below TI's
+kHz range. The weak-field square law is tested separately in JR at
+$0.05$--$0.2$~mV, one to two orders of magnitude below that scale
+(Fig.~\ref{fig:opp}b).
+
+\subsection{Model and measurements}\label{sec:lanmm-methods}
+The laminar extension (LaNMM)
+\cite{ruffini2025cfc,sanchezTodo2023} adds coupled alpha and gamma circuits: deep
+pyramidal $P_1$, spiny-stellate (SS), and somatostatin (SST) populations, and a
+superficial pyramidal $P_2$/PV circuit.
+We simulate this laminar neural mass model (LaNMM). We integrate the full 28-variable column
+\cite{ruffini2025cfc,sanchezTodo2023}, with the field entering as in the single
+JR column, as a membrane polarization added inside the sigmoid argument of the target
+population. Its output rate $\varphi_X$ (s$^{-1}$) is
+\begin{equation}
+\varphi_X(t)=\Sig\!\big(v_X(t)+s(t)\big),\qquad X\in\{P_1,P_2\},
+\label{eq:lanmm_drive}
+\end{equation}
+with $s(t)$ the AM or two-tone field of \S\ref{sec:coupling} (amplitude $\varepsilon$ in
+mV, beat $\Omega=2\pi\Delta f$, carrier $\omega_c=2\pi f_c$) and all three external drives
+held flat at their baselines (Fig.~\ref{fig:lanmm_setup}). A perturbation of an external
+input \emph{rate} would require clipping at zero
+once its excursion exceeds the baseline, and a hard clip is a half-wave rectifier---a
+diode detector placed upstream of the sigmoid, which would inject a line at $\Delta f$
+into the drive before the population nonlinearity received it. A signed membrane
+polarization carries no such constraint and none is applied. Because the LaNMM and JR
+sigmoids share the voltage scale $1/\rho\approx1.8$~mV, $\varepsilon$ is directly
+comparable between the two models.
+
+Integration is a vectorized fixed-step RK4
+($\Delta t=10^{-4}$~s) advancing the whole parameter grid simultaneously, as in the JR
+sweeps. The maps report the
+alpha-band ($8$--$12$~Hz) power of the $P_1$ and $P_2$ membrane potentials as the mean
+squared magnitude of the Hann-windowed fast Fourier transform (FFT) over the band, in arbitrary units, over a
+post-transient window. This measure includes autonomous and driven activity and
+does not isolate a phase-coherent response to stimulation.
+
+Two sweeps probe the column: an amplitude--beat sweep over
+$(\varepsilon,\Delta f)$ at fixed carrier, and a carrier--beat sweep
+over $(f_c,\Delta f)$ at fixed $\varepsilon$, built on the LaNMM module of
+\cite{ruffini2025cfc}. The maps
+(Figs.~\ref{fig:lanmm_p2},~\ref{fig:lanmm_p1}) show the \emph{signed} stimulation-induced
+change, alpha power minus the unstimulated ($\varepsilon=0$) baseline, on a zero-centered
+scale; over most of the $P_1$-driven grids the change is negative. For the
+alpha resonance we instead drive the deep $P_1$ loop directly and sweep its input against
+$\Delta f$, reading the lock-in (\ifsupp main-text\fi\ Eq.~\eqref{eq:lockin}) of $v_{P_1}$ at $\Delta f$.
+
+The additional carrier comparison below uses the lock-in
+of $v_{P_1}$, averaged at each carrier over 17 beats: $7$--$9$ and
+$12.25$--$14$~Hz in $0.25$~Hz steps. These lie more than $1.5$~Hz from the
+field-free alpha peak near $10.6$~Hz. We denote this arithmetic mean by $S(f_c)$.
+The carrier grid is $25$--$80$~Hz in $1$~Hz steps, with equal tone amplitudes
+$\varepsilon=1.5$~mV for $P_2$ drive and $0.5$~mV for $P_1$ drive. After $2$~s
+of settling, we compare $3$ and $10$~s measurement windows. Field-free controls
+give mean background amplitudes of $0.0048$ and $0.0012$~mV over the same beats.
+This background includes a persistent component near $8$~Hz, so it is not solely
+finite-window leakage. The statistic compares carrier profiles within each drive
+condition; the unequal amplitudes do not support a direct sensitivity comparison
+between targets.
+
+\subsection{Frequency selection and carrier dependence}\label{sec:lanmm-results}
+Driving either population with the two-tone field of Eq.~\eqref{eq:lanmm_drive}
+and reading alpha-band power in the deep ($P_1$, alpha) and superficial ($P_2$,
+gamma) pyramidal potentials recovers the beat resonance
+(\S\ref{sec:lanmm-methods}, Fig.~\ref{fig:lanmm_setup}). Direct $P_1$ drive reproduces the JR
+alpha-band resonance on both stable-focus and limit-cycle sides; that sweep
+and its code are in the repository. The additional result is carrier selectivity
+through the coupled gamma circuit.
+
+Sweeping the field amplitude $\varepsilon$ and beat frequency $\Delta f$ at a fixed
+carrier produces a region of enhanced alpha-band power: the response in $P_1$ is largest
+when $\Delta f$ matches the deep alpha ($\sim$10~Hz) and grows with $\varepsilon$
+(Figs.~\ref{fig:lanmm_p2}a,b and~\ref{fig:lanmm_p1}a,b). The dominant-frequency
+contours identify where the output is close to the beat, without establishing
+phase locking of the autonomous rhythm. Away from the enhancement region the drive
+\emph{reduces} alpha-band power: with the field on $P_1$, $95\%$ of the amplitude--beat
+grid and $97\%$ of the carrier--beat grid lie below the field-free baseline
+(Fig.~\ref{fig:lanmm_p1}), the drive pulling the autonomous alpha out of the $8$--$12$~Hz
+band or suppressing it; with the field on $P_2$ the fractions are $44\%$ and $31\%$
+(Fig.~\ref{fig:lanmm_p2}).
+
+The carrier dependence illustrates the two coupling limits of
+\S\ref{sec:coupling}--\S\ref{sec:khz} within this model's $25$--$80$~Hz carrier
+range. When the field is delivered to the superficial loop ($P_2$), alpha-band
+power enhancement in $P_1$ is largest in the gamma carrier band with
+$\Delta f$ near the $P_1$ alpha (Fig.~\ref{fig:lanmm_p2}c,d). At
+$\Delta f=10$~Hz, the carrier maximum is $44$~Hz. This selectivity is consistent with a double
+resonance: the fast loop acts as a tuned
+radio-frequency (RF) front end whose dynamics affect the carrier dependence of
+the deep response. With direct $P_1$ drive, a ridge near the column's own alpha
+persists across the carrier range (Fig.~\ref{fig:lanmm_p1}c). That ridge contains
+autonomous activity and is not a measurement of the demodulated component alone.
+
+The lock-in also contains the autonomous rhythm when the beat is close to alpha;
+its maximum over beats cannot isolate the driven response. We therefore compare
+the off-alpha statistic $S(f_c)$ defined in \S\ref{sec:lanmm-methods}
+(Table~\ref{tab:lanmm-carrier}).
+With $P_2$ drive it peaks near $39$~Hz and falls to about $16$--$17\%$ of that
+peak at a $25$~Hz carrier. With $P_1$ drive it peaks at $25$~Hz and spans about
+$42$--$68\%$ of that peak over $30$--$80$~Hz. These are properties of the
+specified amplitudes and beat average, not universal carrier-rejection factors.
+Single-beat profiles have deeper minima, including a dip near a $45$~Hz carrier
+under direct $P_1$ drive: the gamma circuit can affect the response in either
+stimulation condition.
+
+\begin{table}[t!]
+\centering\small
+\caption{\textbf{LaNMM carrier profiles measured away from alpha.}
+$S(f_c)$ is the mean lock-in amplitude of $v_{P_1}$ over the 17 beats specified
+in \S\ref{sec:lanmm-methods}. Percentages are normalized to each row's own carrier maximum;
+the range and median use carriers from $30$ to $80$~Hz.}
+\label{tab:lanmm-carrier}
+\begin{tabular}{@{}llrrrr@{}}
+\toprule
+Drive & Window & Peak $S$ (mV) & Peak $f_c$ (Hz) & Range (\%) & Median (\%)\\
+\midrule
+$P_2$, $1.5$ mV & $3$ s  & $0.450$ & $39$ & $23$--$100$ & $42$\\
+$P_2$, $1.5$ mV & $10$ s & $0.450$ & $39$ & $23$--$100$ & $42$\\
+$P_1$, $0.5$ mV & $3$ s  & $0.092$ & $25$ & $42$--$68$  & $53$\\
+$P_1$, $0.5$ mV & $10$ s & $0.091$ & $25$ & $42$--$67$  & $52$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The carrier peaks and aggregate ranges persist with the longer window, although
+individual normalized values change by up to $3.1$ percentage points for $P_2$
+drive and $9.6$ for $P_1$ drive. The smallest $S$ exceeds its mean field-free
+background by factors of about $16$ and $8$, respectively, with the $3$~s window,
+and $62$ and $32$ with $10$~s. Some individual beat--carrier points remain near or below
+background; the comparison concerns the mean over beats, not each grid point.
+TI's kHz carriers lie outside this model's range. Within it, the carrier can
+excite a network mode and affect the detected response, qualifying the inert-carrier
+limit of \S\ref{sec:carrier} and linking it to frequency-tagging and
+intermodulation paradigms \cite{gordon2019}.
+
+\input{planning/parts/figure_lanmm_p2}
+
+
+Within the $25$--$80$~Hz carrier range and at the finite polarizations used here,
+the LaNMM shows alpha-band power changes concentrated near the intrinsic alpha,
+amplitude-dependent widening of the frequency-dominance region, and enhanced
+responses when superficial drive passes through the gamma circuit. The power
+maps include autonomous and driven activity; they do not isolate TI efficacy.
+The gamma-carrier preference, around $40$~Hz rather than kHz, remains a separate
+prediction to test. Esmaeilpour et al.\ \cite{esmaeilpour2021} swept
+$0.1$--$2$~kHz carriers at a fixed $5$~Hz beat against carbachol-induced gamma,
+finding decreasing sensitivity with carrier frequency. Those carriers did not
+sample the gamma band. Violante et al.\ \cite{violante2023} also used a fixed
+$5$~Hz beat. Neither study tests this low-carrier resonance prediction.
+
+\input{planning/parts/figure_lanmm_setup}
+\input{planning/parts/figure_lanmm_p1}

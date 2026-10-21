@@ -5,14 +5,14 @@
 #   ./build.sh jne      same working article  -> TN0484_jne.pdf
 #   ./build.sh tn       Technical Note        -> TN0484_envelope_demodulation.pdf
 #   ./build.sh supp     JNE supplement         -> TN0484_jne_supplement.pdf
+#   ./build.sh journal  JNE article + supplement with settled cross-references
 #   ./build.sh both     TN + JNE
 #   ./build.sh all      TN + JNE + supplement
 # Routine edits update the JNE article. Regenerate TN and supplement for an
 # authorized archive cut; do not create per-edit versioned reading copies.
 #
-# JNE counts the article against a ~12,000-word guideline, so the JNE build drops
-# all appendices after the shared notation table; `supp` emits the full appendices
-# and supplementary figures as a companion. The TN keeps everything in one PDF.
+# JNE retains notation and compact model derivations as article appendices.
+# `supp` emits additional material organized by topic. The TN keeps all material.
 #
 # The two differ only by the \ifjne switch in the preamble: the TN keeps the
 # Neuroelectrics/BCOM furniture and the prose abstract, the JNE build strips the
@@ -67,6 +67,10 @@ case "${1:-jne}" in
   tn)   build "${SRC}" "\\def\\tnbuild{}" "Technical Note" ;;
   jne)  build "TN0484_jne" "\\def\\jnebuild{}" "JNE article" ;;
   supp) build "TN0484_jne_supplement" "\\def\\suppbuild{}" "JNE supplement" ;;
+  journal) build "TN0484_jne" "\\def\\jnebuild{}" "JNE cross-reference labels" labels
+        build "TN0484_jne_supplement" "\\def\\suppbuild{}" "JNE supplement labels" labels
+        build "TN0484_jne" "\\def\\jnebuild{}" "JNE article"
+        build "TN0484_jne_supplement" "\\def\\suppbuild{}" "JNE supplement (settled references)" ;;
   both) build "${SRC}" "\\def\\tnbuild{}" "Technical Note"
         build "TN0484_jne" "\\def\\jnebuild{}" "JNE article" ;;
   all)  build "${SRC}" "\\def\\tnbuild{}" "Technical Note"
@@ -74,5 +78,5 @@ case "${1:-jne}" in
         build "TN0484_jne_supplement" "\\def\\suppbuild{}" "JNE supplement"
         build "TN0484_jne" "\\def\\jnebuild{}" "JNE article"
         build "TN0484_jne_supplement" "\\def\\suppbuild{}" "JNE supplement (settled references)" ;;
-  *)    echo "usage: $0 [tn|jne|supp|both|all]" >&2; exit 2 ;;
+  *)    echo "usage: $0 [tn|jne|supp|journal|both|all]" >&2; exit 2 ;;
 esac

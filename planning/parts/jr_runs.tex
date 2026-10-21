@@ -1,0 +1,20 @@
+\subsection{JR integration and measurement windows}\label{supp:jr-runs}
+We integrate with a fixed-step fourth-order Runge--Kutta (RK4) scheme,
+$\Delta t=2\times10^{-4}$~s (50 samples per carrier cycle at $100$~Hz; reduced to
+$10^{-4}$~s for carrier sweeps up to $300$~Hz). The kHz-carrier runs of
+Fig.~\ref{fig:khz_direct} use $\Delta t=2\times10^{-5}$~s for the carrier sweep to
+$4$~kHz (25 samples per carrier cycle at $2$~kHz, 12.5 at $4$~kHz) and
+$1.5\times10^{-5}$~s for the $2$~kHz output spectrum. Halving each step changes the
+reported lock-in amplitudes by less than $1\%$. The $10$~kHz figures quoted in
+\S\ref{sec:khz} are analytic evaluations of Eq.~\eqref{eq:khz}, not simulations.
+
+The resonance sweep uses $10$~s of settling and a $20$~s
+measurement window. Long windows reduce transients from weakly damped modes and
+average beating when autonomous activity persists. Other runs use the windows
+specified in their scripts.
+The two-tone $2$~kHz example (Fig.~\ref{fig:khz_twotone}) uses $p=400$~s$^{-1}$,
+$C=135$, and $0.5$~mV per tone with $\tau=0.2$~ms. From a zero initial state,
+it settles for $4$~s and records $4$~s at $\Delta t=1.5\times10^{-5}$~s,
+sampling before each RK4 step. Its amplitude spectra use plain-mean subtraction
+and a Hann window. Parameter sweeps advance all $N_{\rm grid}$ combinations simultaneously
+in a vectorized $(N_{\rm grid},6)$ state array.

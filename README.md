@@ -10,21 +10,23 @@ Archived at Zenodo: **[doi:10.5281/zenodo.21009618](https://doi.org/10.5281/zeno
 Licensed **CC-BY-4.0** (see [`LICENSE`](LICENSE)); machine-readable citation in
 [`CITATION.cff`](CITATION.cff).
 
-The current working edition is the **JNE article, v0.15.0-draft21**:
+The current working edition is the **JNE article, v0.15.0-draft22**:
 [article](TN0484_jne.pdf), [supplement](TN0484_jne_supplement.pdf), and
 [redline against draft20](docs/redline_last_read.pdf).
-Run `./build.sh jne` and `./build.sh supp` to update the canonical PDFs.
+Run `./build.sh journal` to update both canonical PDFs and settle their cross-references.
 Giulio's annotated draft20 is preserved in
 [the review archive](notes/2026-10-20_kaiti/TN0484_jne_draft20_GR_annotated_before_root_update.pdf).
 The separate `build/review/` copies remain unchanged as the completed reader-check
 snapshot; the root files are the current reading copies.
 
-The October 21 update adds the approved TI/tDCS/tACS source-amplitude comparison
-to the abstract and Section 2.5, distinguishes per-carrier, total-peak, and RMS
-matching, and places Ricardo Salvador second in the author records. The journal
-article and review redline are rebuilt; the full TN and supplement retain their
-previous compiled versions. See the
-[revision record](docs/revision_2026-10-21_dc_direct_comparison.md).
+The approved October 21 prose pass retains the full PING system in Methods,
+consolidates repeated explanations, and groups supplementary procedures and checks
+by topic. The tDCS/tACS comparison has its own Theory subsection. The narrative
+is 13.1% shorter; integral model material now appears in article Appendix B, so
+the complete article remains above the normal journal length. The approved
+abstract and author order are unchanged. See the
+[draft22 revision record](docs/revision_2026-10-21_draft22_prose.md) and
+[current storyline](build/storyline/tn0484_storyline.pdf).
 
 Draft21 revises the whole paper for legibility, moves detailed coefficients and
 run diagnostics to the supplement, and shortens captions. The approved abstract

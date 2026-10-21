@@ -1,0 +1,78 @@
+REVISION 24d34c1
+MAIN NARRATIVE
+File: count.tex
+Encoding: ascii
+Sum count: 14977
+Words in text: 13332
+Words in headers: 227
+Words outside text (captions, etc.): 1418
+Number of headers: 39
+Number of floats/tables/figures: 15
+Number of math inlines: 1055
+Number of math displayed: 32
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  674+1+67 (1/1/18/1) Section: Introduction
+  4194+65+240 (11/3/310/27) Section: Theory
+  3299+50+84 (9/1/260/3) Section: Methods
+  2441+76+892 (10/10/370/1) Section: Results
+  2522+34+135 (7/0/97/0) Section: Discussion}\label{sec:discussion
+  202+1+0 (1/0/0/0) Section: Conclusion
+
+
+ARTICLE APPENDICES
+File: count.tex
+Encoding: ascii
+Sum count: 897
+Words in text: 859
+Words in headers: 3
+Words outside text (captions, etc.): 35
+Number of headers: 2
+Number of floats/tables/figures: 0
+Number of math inlines: 120
+Number of math displayed: 0
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  0+0+0 (1/0/0/0) Section
+  859+3+35 (1/0/120/0) Section: Notation and units}\label{app:notation
+
+
+REVISION working tree
+MAIN NARRATIVE
+File: count.tex
+Encoding: ascii
+Sum count: 13018
+Words in text: 11465
+Words in headers: 221
+Words outside text (captions, etc.): 1332
+Number of headers: 38
+Number of floats/tables/figures: 16
+Number of math inlines: 885
+Number of math displayed: 29
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  620+1+67 (1/1/18/1) Section: Introduction
+  3924+65+218 (11/3/280/24) Section: Theory
+  2211+44+81 (8/1/198/3) Section: Methods
+  2192+76+916 (10/11/315/1) Section: Results
+  2316+34+50 (7/0/74/0) Section: Discussion}\label{sec:discussion
+  202+1+0 (1/0/0/0) Section: Conclusion
+
+
+ARTICLE APPENDICES
+File: count.tex
+Encoding: ascii
+Sum count: 1503
+Words in text: 1430
+Words in headers: 28
+Words outside text (captions, etc.): 45
+Number of headers: 7
+Number of floats/tables/figures: 1
+Number of math inlines: 195
+Number of math displayed: 7
+Subcounts:
+  text+headers+captions (#headers/#floats/#inlines/#displayed)
+  0+0+0 (1/0/0/0) Section
+  859+3+42 (1/0/120/0) Section: Notation and units}\label{app:notation
+  571+25+3 (5/1/75/7) Section: Simulated models: equations and parameters}\label{app:models
+

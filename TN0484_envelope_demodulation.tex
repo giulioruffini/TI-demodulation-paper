@@ -45,15 +45,15 @@
 % figures, as a standalone companion file. Selected from the command line via
 %   ./build.sh supp
 % JNE counts the main article against a ~12,000-word guideline; splitting the
-% back matter into a separate file brings the article itself under it without
-% removing any content. The TN build (neither flag) keeps everything in one PDF.
+% additional material into a separate file shortens the narrative. Integral
+% model definitions remain article appendices. The TN keeps everything in one PDF.
 % ---------------------------------------------------------------------------
 \newif\ifsupp
 \suppfalse
 \ifdefined\suppbuild\supptrue\jnetrue\fi
 
-% The notation appendix appears in every edition; the remaining appendices
-% travel with the TN and supplement only.
+% Notation and compact model derivations are article appendices.
+% Additional topic-organized material travels with the TN and supplement.
 \newif\ifappendices
 \ifsupp\appendicestrue\else\ifjne\appendicesfalse\else\appendicestrue\fi\fi
 
@@ -88,7 +88,7 @@
 
 \newcommand{\Sig}{\sigma}
 \newcommand{\half}{\tfrac{1}{2}}
-\newcommand{\paperver}{0.15.0-draft21}
+\newcommand{\paperver}{0.15.0-draft22}
 \hypersetup{
   pdftitle={The cortical column as a tuned receiver: a network mechanism for temporal-interference stimulation},
   pdfauthor={Giulio Ruffini, Ricardo Salvador, Borja Mercadal, Raul de Palma Aristides, Francesca Castaldo, Nir Grossman, Santiago Canals, Claudio Mirasso},
@@ -159,7 +159,7 @@ a network mechanism for temporal-interference stimulation}\\[10pt]
 \begin{center}
 {\large\bfseries Supplementary Material}\\[4pt]
 \begin{minipage}{0.86\textwidth}\centering\small
-Appendices and supplementary figures accompanying the article. Supplement equations and figures are numbered S1, S2, \dots;
+Additional methods, derivations, and figures accompanying the article. Sections, equations, and figures use S-prefixed numbers;
 references to article equations are marked as main-text references.
 \end{minipage}
 \end{center}
@@ -262,19 +262,14 @@ already include spiking. Direct carrier-evoked spiking and conduction block
 \cite{opancar2025,peripheral2023,semenov2025} lie outside this expansion; the
 finite-amplitude network examples are identified separately.
 
-Our mesoscale model separates access, the cellular beat source, and recurrent gain
-(Fig.~\ref{fig:concept}).
-A Jansen--Rit column establishes the weak-input product law; an exact QIF
-mean field and its spiking network test how membrane dynamics and recurrent
-activity modify the response. A laminar extension adds two resonant bands
-at low carriers. Fast population relaxation gives a static transfer curve
-with dynamic synapses; slower relaxation requires a dynamic detector. Related neural-mass models describe
-endogenous cross-frequency coupling and nested amplitude modulation
-\cite{ruffini2025cfc,ruffini2025ham}; an external field additionally requires
-field-to-cell access. Each stage has a separate test: carrier sweeps of local
-polarization test access, independent variation of the carrier amplitudes tests
-detection, and beat sweeps across states test amplification. Equal-power
-unmodulated-carrier controls distinguish the steady shift from the beat response.
+The JR column establishes the weak-input product law; an exact QIF mean field
+and its spiking network test how membrane dynamics and recurrence modify the
+response (Fig.~\ref{fig:concept}). Fast population relaxation gives a static
+rate curve with dynamic synapses; slower relaxation requires a dynamic detector.
+Related models describe endogenous cross-frequency coupling
+\cite{ruffini2025cfc,ruffini2025ham}; an applied field also requires access.
+A supplementary laminar extension tests two resonant bands at low carriers
+(\S\ref{app:lanmm}), outside TI's kHz regime.
 
 \begin{figure}[t!]
 \centering
@@ -524,21 +519,12 @@ break the quadratic prediction; the conventional $2\min$ steering law applies
 when the detector follows the envelope. An interior beat maximum remains
 compatible with the fixed-state product law.
 
-The network supplies dynamical selectivity in addition to this spatial weighting. Writing
-$R_\Omega(\mathbf{x})$ for the complex demodulated response at the envelope frequency $\Omega$
-produced at location $\mathbf{x}$, and $G_{\mathbf{x}}(\Omega)$ for the local network
-susceptibility there,
-\begin{equation}
-R_\Omega(\mathbf{x})\;\propto\;\Sig''(v^*_{\mathbf{x}})\;G_{\mathbf{x}}(\Omega)\;
-\varepsilon_1(\mathbf{x})\,\varepsilon_2(\mathbf{x}),
-\label{eq:spatial}
-\end{equation}
-a product of three factors. Field overlap sets where a difference-frequency drive is
-generated at all; the operating point and the network susceptibility set which of the
-driven populations amplifies it. Resonance does not override an unfavorable field
-product, but it can compensate for one.
+The local response weights the carrier product by the detector curvature and
+network susceptibility (Eq.~\eqref{eq:receiver}). Field overlap supplies the
+source; local physiology sets its sign and amplification. Resonance can compensate
+for an unfavorable field product but requires a nonzero source.
 
-Equation~\eqref{eq:spatial} is written for scalar projected fields. In general the
+The spatial maps use scalar projected fields. In general the
 coupling is vectorial and compartment-specific,
 $\varepsilon_i(\mathbf{x})=\boldsymbol{\lambda}\!\cdot\!\mathbf{E}_i(\mathbf{x})$, so the
 mixing product $(\boldsymbol{\lambda}\!\cdot\!\mathbf{E}_1)
@@ -575,21 +561,14 @@ nor quadratic in $\mathcal A$. Asymmetric channel rectification, threshold
 crossing and release events are candidate biological realizations of rectifiers of one
 kind or another.
 
-Envelope following and square-law detection are distinguishable at a single site. At a matched target,
-$\mathcal A(t)=2\varepsilon|\cos(\Omega t/2)|$, whose Fourier series
-$|\cos\theta|=\tfrac2\pi+\tfrac4\pi\sum_{n\ge1}\tfrac{(-1)^{n+1}}{4n^2-1}\cos(2n\theta)$ gives a
-harmonic ladder whose nonnegative Fourier amplitudes $A_{n\Omega}$ obey $A_{2\Omega}/A_\Omega=1/5$, $A_{3\Omega}/A_\Omega=3/35$ and
-$A_{4\Omega}/A_\Omega=1/21$. The square-law output $\half \mathcal A^2=\varepsilon^2(1+\cos\Omega
-t)$ contains only DC and $\Omega$. For the mixed family $T(\mathcal A)=c_1\mathcal A+c_2\mathcal A^2$, with
-$c_1\ne0$ and a nonzero fundamental, the
-pre-network ratio is
-\begin{equation}
-\mathcal H_{\rm det}\equiv\left|\frac{Y_{2\Omega}}{Y_\Omega}\right|
-=\frac{1/5}{\left|1+\tfrac{3\pi}{4}\,c_2\varepsilon/c_1\right|},
-\label{eq:rdet}
-\end{equation}
-so measuring $\mathcal H_{\rm det}$ constrains $c_2\varepsilon/c_1$ within this family.\footnote{The inverse has two branches unless the sign of the fundamental
-relative to the linear term is known; for $c_2/c_1\ge0$ it is unique.}
+At matched carrier amplitudes, the rectified-cosine envelope has a
+second-to-first harmonic ratio of $1/5$, whereas the quadratic output contains
+only the steady term and the fundamental. The full harmonic series and an
+inversion for mixed linear/quadratic detectors are given in the supplement
+(\S\ref{supp:harmonics}).
+\ifjne\else
+\input{planning/parts/harmonic_details}
+\fi
 
 A smooth detector generates a second harmonic beyond quadratic order,
 $Y_{2\Omega}/Y_\Omega\sim(c_4/c_2)\varepsilon^2$, where
@@ -622,9 +601,8 @@ The envelope mean is
 \]
 where $\vartheta$ is beat phase. At a matched site with
 $\varepsilon_1=\varepsilon_2=\varepsilon>0$, the envelope and quadratic means are
-$4\varepsilon/\pi$ and $\varepsilon^2$, respectively. The applied field has no DC
-component: these means describe the ideal detector outputs after multiplication
-by their gains, and the quadratic response change takes the sign of $g''$.
+$4\varepsilon/\pi$ and $\varepsilon^2$, respectively. These means become detector outputs after multiplication by their gains; the
+quadratic response change takes the sign of $g''$.
 Even one carrier gives either ideal detector a mean output, but no beat modulation;
 adaptation can alter the physiological mean response.
 
@@ -671,12 +649,12 @@ For a spatially constant nonzero detector coefficient, this bounds the magnitude
 of $Y_{\rm DC}$. A negative coefficient makes the source most negative at the
 boundary. Spatially varying coefficients require a separately weighted map.
 
-The envelope mean has the same restriction. At each beat phase $\vartheta$,
-$\mathcal A$ is the Euclidean norm of
-$(\varepsilon_1+\varepsilon_2\cos\vartheta,\,\varepsilon_2\sin\vartheta)$,
-a vector of harmonic functions. A norm is convex, so this envelope is subharmonic;
-averaging over $\vartheta$ preserves that property. Thus both idealized mean maps
-lack a strict interior maximum under these conditions (Fig.~\ref{fig:spatial_maps}b).
+The envelope mean is also subharmonic under these assumptions: at each beat
+phase it is the norm of a vector of harmonic functions, and phase averaging
+preserves subharmonicity (supplement, \S\ref{supp:envelope-proof}).
+\ifjne\else
+\input{planning/parts/envelope_proof}
+\fi
 This does not prohibit a beat maximum: the product instead obeys
 $\nabla^2(\varepsilon_1\varepsilon_2)=2\nabla\varepsilon_1\cdot\nabla\varepsilon_2$,
 whose sign is unrestricted. Within the homogeneous model, interior selectivity
@@ -684,17 +662,18 @@ must therefore come from the oscillatory response rather than from either mean m
 
 Spatially varying access, orientation, or curvature can change the signed-source
 map and the resulting physiological mean-response map. The intensity result does
-not extend to these weighted responses. For isotropically distributed unit orientations
-$\mathbf n$ with orientation-independent access and curvature,
-$\langle(\mathbf n\cdot\mathbf E_j)^2\rangle=|\mathbf E_j|^2/3$
-and $\langle(\mathbf n\cdot\mathbf E_1)(\mathbf n\cdot\mathbf E_2)\rangle
-=\mathbf E_1\cdot\mathbf E_2/3$: orthogonal fields cancel the averaged beat,
-but retain the DC intensity. At equal local RMS polarization, an unmodulated
+not extend to these weighted responses. For isotropic orientations with orientation-independent access and curvature,
+orthogonal fields cancel the averaged beat but retain the steady intensity
+(supplement, \S\ref{supp:orientation}).
+\ifjne\else
+\input{planning/parts/orientation_average}
+\fi
+At equal local RMS polarization, an unmodulated
 carrier gives the same mean shift at second order when its DC mixing coefficient
 equals those of both TI carriers. For a dynamic detector, this requires the
 frequency-dependent coefficient to vary negligibly across the carrier interval.
 
-\paragraph{Comparison with direct tDCS and tACS.}
+\subsection{Comparison with direct tDCS and tACS}\label{sec:direct-comparison}
 The steady TI source can be compared with transcranial direct-current stimulation
 (tDCS), and the beat source with tACS at the beat frequency. Both comparisons
 must specify the effective polarization entering the same sigmoid, rather than electrode
@@ -799,6 +778,8 @@ detection, and amplification gives
 R_\Omega\simeq G(\Omega;\gamma)\;D\;\lambda_f(\omega_1)E_1\,\lambda_f(\omega_2)E_2 ,
 \label{eq:receiver}
 \end{equation}
+% Retain the former spatial-equation label as an alias of the general receiver.
+\makeatletter\begingroup\edef\@currentlabel{\theequation}\label{eq:spatial}\endgroup\makeatother
 where $\lambda_f$ maps field to local carrier polarization, $D$ converts the
 product of those polarizations into a beat drive, and $G$ maps that drive to the
 complex observed response, whose measured amplitude is $A_\Omega=|R_\Omega|$.
@@ -831,34 +812,17 @@ where $Y_\Omega^{\rm direct}$ is the beat generated with the same static couplin
 and no access attenuation. This filter belongs either in the field-to-polarization
 map or in the membrane equation that computes that polarization.
 
-Somatic passive time constants are commonly $10$--$30$~ms; reported human pyramidal
-values include approximately $12$~ms \cite{deitcher2017} and $16.5\pm3.7$~ms
-\cite{eyal2016}. For the illustrative $\tau_m=16$~ms used here, the power factor
-$|H_m|^2$ is about $10^{-4}$ at $1$~kHz, $2.5\times10^{-5}$ at $2$~kHz, and
-$10^{-6}$ at $10$~kHz. A static nonlinearity placed after this point-membrane response
-therefore receives strongly attenuated carriers.
+For the illustrative somatic time $\tau_m=16$~ms, $|H_m|^2$ is about
+$10^{-4}$ at $1$~kHz, $2.5\times10^{-5}$ at $2$~kHz, and $10^{-6}$ at
+$10$~kHz. The assumed $0.2$~ms sensitivity case instead gives $0.39$ at
+$1$~kHz and $0.14$ at $2$~kHz (Fig.~\ref{fig:khz}); it has not been measured
+under TI at an AIS or node. Table~\ref{tab:doors} distinguishes measured
+responses, assumed access times, and downstream filtering. A measured axonal
+decay is not itself a field-to-polarization transfer or a TI cutoff.
 
-Cohen et al.'s periaxonal circuit provides a reason to distinguish axonal from
-somatic access \cite{cohen2020periaxonal}. A conducting submyelin space, about
-$12$~nm wide and partly sealed at the paranodes, separates the voltage across
-myelin from that across the axonal membrane. Their minimum fitted axonal decay
-was approximately $1$~ms. This is a response to injected current in a distributed
-cable, rather than a measured transfer from a TI field. The AIS is another candidate
-site, with a high sodium-channel density \cite{kole2008ais}; this property supports
-nonlinear sensitivity but does not fix its charging time.
-
-A shorter effective time changes carrier transmission quantitatively. The sensitivity
-case $\tau_m=0.2$~ms gives $|H_m|^2\approx0.39$ at $1$~kHz and $0.14$ at $2$~kHz
-(Fig.~\ref{fig:khz}). This assumed time represents the fast-compartment hypothesis
-in Eq.~\eqref{eq:doors}, or motivates a shorter membrane time in a QIF reduction;
-it has not been measured under TI at the AIS or a node.
-A QIF reduction computes the access filter within its membrane equation,
-so no additional membrane filter is applied to its current input. A short access time improves carrier transmission without,
-by itself, specifying the mixing coefficient or the remaining circuit resonance.
-Table~\ref{tab:doors} separates measured decays, assumed access times,
-strong-pulse charging, cellular detection, and downstream synaptic filtering.
-A characteristic frequency requires a specified filter; a measured decay alone
-is not a TI cutoff.
+A QIF reduction computes access within its membrane equation, so no additional
+membrane filter is applied to its current input. Short access times improve
+carrier transmission without specifying the mixing coefficient or circuit gain.
 
 \begin{table}[h]
 \centering\small
@@ -969,17 +933,11 @@ $Q=\Delta/\sqrt3$ and an unbounded concave rise, unlike the saturating JR sigmoi
 
 If the population relaxes to this equilibrium faster than synaptic inputs change,
 NMM2 reduces to a static rate map with dynamic synapses
-\cite{ruffini2021nmm2,clusella2023}. A second-order synapse with time constant $\tau_s$ obeys
-\begin{equation}
-r(t)\simeq \frac{F(Q(t))}{\tau_m},\qquad
-\tau_s^2\ddot r_{\rm syn}+2\tau_s\dot r_{\rm syn}+r_{\rm syn}=r(t),
-\label{eq:slow_synapse}
-\end{equation}
-where $r_{\rm syn}$ is the filtered rate entering the recurrent drive in $Q$, with the original
-coupling normalization retained. This is the slow-synapse limit: shortening the
-effective membrane time makes the transfer appear static while the network retains
-its synaptic dynamics. The relevant separation is between the population relaxation
-time $\tau_{\rm rel}$ and $\tau_s$. Applying the same static map directly to a
+\cite{ruffini2021nmm2,clusella2023}. The rate then satisfies $r(t)\simeq F(Q(t))/\tau_m$, with recurrent drive
+filtered by the second-order synaptic operator of Eq.~\eqref{eq:slow_synapse}
+in Appendix~\ref{app:models}.
+Here $\tau_s$ is the synaptic time constant. The population relaxation time
+$\tau_{\rm rel}$ must satisfy $\tau_{\rm rel}\ll\tau_s$. Applying the same static map directly to a
 carrier of angular frequency $\omega_c$ requires the stronger condition
 $\omega_c\tau_{\rm rel}\ll1$. A population can therefore be quasistatic for its
 synaptic inputs yet dynamic for a kHz carrier.
@@ -996,9 +954,8 @@ $I_{\rm ac}^2\kappa_{\rm DC}/\tau_m$. At slow carriers,
 $\kappa_{\rm DC}\to F''(Q)/4$; at fast carriers,
 $\kappa_{\rm DC}\sim F'(Q)/[2(\omega\tau_m)^2]$.
 The slow response follows curvature and can be negative above the inflection.
-The fast DC coefficient instead follows $F'$, which is largest at the inflection;
-it has no PEIX-based sign reversal.
-The fast response follows the positive slope: voltage excursions of order
+The fast DC coefficient instead follows the positive slope $F'$, largest at the
+inflection, without a PEIX-based sign reversal: voltage excursions of order
 $I_{\rm ac}/(\omega\tau_m)$ generate a positive input shift through $v^2$.
 A shorter membrane time can therefore change both the magnitude and sign
 of the mean response at a given physical carrier frequency.
@@ -1010,7 +967,9 @@ to $I_1I_2/(\omega_1\omega_2\tau_m^2)$, where $I_j$ is the current amplitude
 of tone $j$, with the same product law as the static
 detector. The dynamic rate equation attenuates the carriers once more, after
 this mixing; it does not add that attenuation to the generated beat.
-The exact coefficients and carrier exponents are derived in the supplement.
+The crossover coefficient is derived in Appendix~\ref{app:mpr-coefficients};
+fixed-voltage coefficients and carrier exponents are given in the supplement
+(\S\ref{supp:dynamic-details}).
 
 For the QIF mixer, the role of $\Sig''/2$ is played by the unit coefficient
 of $v^2$ in membrane-time units. The voltage and rate dynamics that convert
@@ -1043,13 +1002,17 @@ NMM2 endpoint controls. Open-loop agreement at the beat is checked at one
 operating point; it does not imply equal driven operating states.
 
 \subsection{Amplitude scaling and harmonic measurements}\label{sec:transduction-methods}
-These measurements distinguish quadratic detection from envelope following,
-which predict different dose maps and cannot be identified from a beat response
-at one amplitude. With fixed coupling and a linear downstream response, an
-amplitude sweep tests whether the generated beat scales as $\varepsilon^2$ or
-$\varepsilon$. The harmonic test compares the response at the second harmonic,
-$2\Omega$, with the fundamental at $\Omega$. After correcting for network gain,
-their ratio tends to zero for weak quadratic detection but to $1/5$ for ideal envelope following. The amplitude law and harmonic ratio jointly identify the detector class.
+\label{sec:vocab-methods}
+A \emph{forced response} is the beat-driven component measured by lock-in; a purely
+forced regime requires stability under stimulation. \emph{Entrainment} means
+frequency and phase capture of a self-sustained oscillator \cite{pikovsky2001}.
+Our frequency-dominance screen does not establish that capture. \emph{Gating}
+means modulation of a persisting rhythm's amplitude \cite{canolty2010,tort2010};
+a rate fold alone does not establish it. Detailed criteria are in the supplement
+(\S\ref{sec:vocab}).
+
+We sweep amplitude at fixed coupling and operating state, measuring the
+fundamental and second harmonic to test the laws of \S\ref{sec:transduction}.
 
 The response at the envelope frequency is read out with a software lock-in
 amplifier: multiplying $v(t)$ by sine and cosine at $\Omega$ and averaging estimates
@@ -1072,11 +1035,11 @@ $A_{\rm test}$ and phase $\theta_0$, the long-window limits
 $(L_{\cos},L_{\sin})\to A_{\rm test}(\cos\theta_0,-\sin\theta_0)$ give
 $A_\Omega\to A_{\rm test}$: the normalization returns the physical amplitude,
 twice the magnitude of the windowed Fourier coefficient.
-Out-of-band components can leak into the estimate, particularly the DC level of the JR voltage readout ($\bar v\!\sim\!8$~mV, far
-larger than the demodulated signal). The finite-window projection of a constant onto the quadrature references
-need not vanish, so we subtract $\bar v$ explicitly; this makes the metric
-accurate down to the $10^{-8}$ level needed for the JR kHz
-analysis.
+Subtracting the windowed mean suppresses leakage from the much larger baseline
+into the small beat estimate (supplement, \S\ref{supp:lockin}).
+\ifjne\else
+\input{planning/parts/lockin_details}
+\fi
 
 The log--log amplitude slope distinguishes linear from quadratic scaling
 without absolute calibration.
@@ -1088,120 +1051,53 @@ coefficient through Eq.~\eqref{eq:rdet} additionally requires the mixed family
 $T(\mathcal A)=c_1\mathcal A+c_2\mathcal A^2$ and a known sign branch. A threshold response can give a
 similar ratio at one amplitude, so the amplitude sweep must also be checked.
 \subsection{Head model and field computation}\label{sec:fem-methods}
-To compare the spatial predictions on the same anatomy, we compute all maps
-in one open-access subject,
-IXI002 of the IXI dataset\footnote{\url{https://brain-development.org/ixi-dataset/}}
-(T1-weighted MRI; female, 35 years). The T1 image was segmented into six tissues
-(scalp, skull, cerebrospinal fluid, gray matter, white matter and eyes) and meshed with
-SimNIBS~3.2.3 \texttt{headreco} \cite{nielsen2018}, with its CAT12 option
-\cite{gaser2024}. Tissue conductivities were 0.33 (scalp), 0.008 (skull), 1.79
-(cerebrospinal fluid), 0.40 (gray matter), 0.15 (white matter) and 0.33~S/m (eyes)
-\cite{salvador2025}. These are low-frequency values; no dispersion correction was
-applied at the kHz carriers. The volume conductor is linear and quasi-static, so the
-carrier frequencies do not enter the maps.
+\ifjne
+We compute the maps in IXI002, an open-access T1-weighted MRI of a 35-year-old
+woman, using the hippocampal montage of Violante et al.\ \cite{violante2023}.
+The six-tissue SimNIBS model uses conductivities of $0.33$, $0.008$, $1.79$,
+$0.40$, $0.15$, and $0.33$~S/m for scalp, skull, cerebrospinal fluid, gray matter,
+white matter, and eyes, respectively \cite{salvador2025}. The conductor is
+quasi-static, with no kHz dispersion correction. Each electrode pair is solved once and scaled to peak
+currents summing to $4$~mA: $2+2$~mA for 1:1 and $1+3$~mA for 1:3. The posterior
+share is swept from $0.1$ to $0.9$ in steps of $0.025$. Electrode construction,
+conductivities, solver settings, and sensitivity protocols are specified in the
+supplement (\S\ref{supp:fem-protocol}).
 
-The electrodes follow the published hippocampal montage of Violante et al.\
-\cite{violante2023}, placed by its recipe on the subject's registered 10--10
-positions. Pair~1 (anterior) joins e1, 25~mm from T9 toward FT9, to e2, 10~mm from AF8
-toward Fp2. Pair~2 (posterior) joins e3, 25~mm from T9 toward TP9, to e4, 10~mm from P8
-toward PO8. Each electrode is a 20-mm disc of 3~mm of gel (4.0~S/m) under 2~mm of metal
-(10~S/m), meshed into the head model with SimNIBS~3.2.3; the resulting mesh has
-$3.64\times10^6$ linear tetrahedra. As a montage sensitivity, the 10--10 rendering of
-this montage, FT7--F8 (anterior) and TP7--P8 (posterior), which Yatsuda et al.\
-\cite{yatsuda2024} used as their starting montage, was meshed and solved in the same
-way. Each montage has its own mesh, carrying only its own four electrodes.
+Local polarization is $\varepsilon_j=\lambda_0 I_j^{\rm pair}\mathbf F_j\cdot\mathbf n$
+with uniform $\lambda_0=0.5$~mV per V/m \cite{radman2009} and field per unit
+current $\mathbf F_j$. This coupling sets absolute amplitudes but cancels from
+normalized maps, focus positions, and target-to-reference ratios. It is an
+assumed field-to-polarization conversion, not a measured AIS transfer.
 
-Each pair was solved once at 1~A. The potential $\phi_j$ (V) satisfies
-$\nabla\!\cdot\!(\sigma_{\rm cond}\nabla\phi_j)=0$, where
-$\sigma_{\rm cond}$ is tissue conductivity (S/m). Current enters and leaves through each
-electrode's metal contact as a Neumann condition, distributed in proportion to nodal
-area; the rest of the scalp carries no normal current, and one pinned node fixes the
-gauge. The linear finite-element system was assembled and solved with Neuroelectrics'
-temporal-interference library, by conjugate gradients with algebraic-multigrid
-preconditioning, to a relative residual of $10^{-8}$. The field
-$-\nabla\phi_j$ was recovered at gray- and white-matter
-nodes by superconvergent patch recovery \cite{zienkiewicz1992}, separately within each
-compartment (446{,}877 node--compartment pairs). Dividing these fields by the solve
-current gives the field-per-current vectors $\mathbf F_j$, expressed in
-(V/m)/mA to match $I_j^{\rm pair}$. Every current condition is a scaling of these two fields.
-With peak pair currents $I_1^{\rm pair}$ (anterior) and
-$I_2^{\rm pair}$ (posterior) summing to 4~mA, the ratio 1:1 is $2+2$~mA and 1:3 is
-1~mA anterior plus 3~mA posterior, the two conditions of Violante et al. The ratio sweep
-sets the posterior share $I_2^{\rm pair}/(I_1^{\rm pair}+I_2^{\rm pair})$ from 0.1 to
-0.9 in steps of 0.025.
+At each node, $\mathbf n$ maximizes the envelope at 1:1 and is then held fixed
+for every ratio and every map. This geometric direction need not match a cell's
+orientation. Radial and isotropically averaged orientations provide sensitivity
+comparisons; the latter averages the signed beat before taking its magnitude,
+allowing cancellation across orientations.
 
-The field-to-polarization conversion follows \S\ref{sec:envelope}:
-$\varepsilon_j(\mathbf x)=I_j^{\rm pair}\mathcal P_j(\mathbf x)$, with
-$\mathcal P_j=\lambda_0\,\mathbf F_j\!\cdot\!\mathbf n$, one uniform
-static coupling $\lambda_0=0.5$~mV per V/m \cite{radman2009}, and
-$\lambda_f\approx\lambda_0$. A uniform coupling multiplies the envelope map by
-$\lambda_0$ and the two second-order maps by $\lambda_0^2$. Target-to-reference ratios,
-normalized maps and focus positions do not depend on it. Hippocampal couplings of
-$0.12$--$0.18$~mV per V/m \cite{bikson2004,deans2007} would scale the absolute values
-by $0.24$--$0.36$ and $0.06$--$0.13$, respectively.
+The target is the left hippocampus segmented with FreeSurfer (1,568 gray- and
+white-matter nodes). The reference comprises 273,544 gray-matter nodes outside
+that ROI, including other deep gray matter. The target-to-reference contrast
+is the ROI 95th percentile divided by the reference 95th percentile; the
+mean-based companion replaces the numerator by the ROI mean. Nodes receive
+equal weight. Square roots of second-order maps provide degree-matched geometric
+contrasts; the raw maps remain the detector predictions before gain.
 
-The detector compartment fixes the projection direction. A laminar direction for a pyramidal
-axon initial segment, a local axon direction for a node, or an orientation
-distribution for terminals defines a different access model. Isotropic averaging
-is one possible distribution, not an anatomical consequence of choosing terminals.
-Maximizing a geometric map over orientation gives an upper bound for that map
-at each location; it does not identify the detector's orientation.
+The focus is the centroid of the top 10\% of ROI nodes ranked by each map.
+Displacement is measured along the hippocampal long axis, with anterior positive.
+The sensitivity analysis varies montage, atlas label, gray/white-matter inclusion,
+and focus fraction (5, 10, 25, or 50\%); all 32 combinations use a fixed projection
+for each montage. A radial projection provides a further orientation check.
 
-The projection direction $\mathbf n(\mathbf x)=\mathbf n^*(\mathbf x)$ is the envelope-maximizing direction at
-the reference ratio 1:1: the closed-form maximizer, over unit vectors, of
-$2\min(|\mathbf F_1\!\cdot\!\mathbf n|,|\mathbf F_2\!\cdot\!\mathbf n|)$
-\cite{grossman2017}. It is chosen once at each node and then held fixed for 1:1, 1:3
-and every ratio of the sweep, and all three maps use it. Along it, the 1:1 envelope map
-equals its maximum over orientation. At any other ratio it is the envelope seen by an
-element with that fixed orientation, which can be below that ratio's own maximum. As an
-orientation sensitivity, every statistic was repeated along a second fixed field, the
-radial direction from the brain centroid. The isotropic comparison averages the signed
-mixing term over uniformly distributed orientations before its magnitude is taken:
-$\langle\varepsilon_1\varepsilon_2\rangle_{\mathbf n}
-=\lambda_0^2I_1^{\rm pair}I_2^{\rm pair}\,\mathbf F_1\!\cdot\!\mathbf F_2/3$, so the
-isotropic beat excursion is
-$\tfrac23\lambda_0^2I_1^{\rm pair}I_2^{\rm pair}|\mathbf F_1\!\cdot\!\mathbf F_2|$.
-Elements whose beats have opposite phase cancel in this average.
-
-The target is the left hippocampus of a FreeSurfer~6.0.0 \texttt{recon-all}
-segmentation of the same T1 image (\texttt{aseg} label 17, 3903~mm$^3$)
-\cite{fischl2002}. The region of interest (ROI) is the 1{,}568 gray- and white-matter
-nodes inside it. The reference is the 273{,}544 gray-matter nodes outside the
-ROI, including other deep gray matter. It serves as a cortical-reference proxy.
-The mesh and the segmentation share one image frame; tissue-volume, centroid and
-white-matter checks confirmed their alignment. As a label sensitivity, the
-Neuromorphometrics atlas hippocampus, warped into the subject with SimNIBS~3.2.3
-\texttt{mni2subject} and the subject's nonlinear MNI transform (1{,}345 nodes; Dice 0.72
-with the FreeSurfer label), replaced the ROI. As a tissue sensitivity, the ROI was
-restricted to its gray-matter nodes (1{,}174 with the FreeSurfer label, 1{,}013 with
-the atlas label).
-
-The target-to-reference ratio is the ROI 95th percentile divided by the reference
-95th percentile; its mean-based companion divides the ROI mean by the same
-reference percentile. All percentiles and centroids weight nodes equally.
-The quadratic excursion and $\mathcal I$ are second order in the field, whereas
-the envelope excursion is first order. To separate this difference in degree
-from the spatial weighting, each second-order statistic is also given
-degree-matched, computed on the square root of the map. This is a geometric
-comparison; the raw maps remain the respective detector predictions before gain.
-The focus is the centroid of the top 10\% of ROI nodes,
-ranked by the map's own value, with 5, 25 and 50\% as a sensitivity. Ranking makes the
-focus exactly invariant to a uniform positive factor. Its displacement from 1:1 is
-measured along the hippocampal long axis, the first principal axis of the ROI nodes,
-with anterior positive. Field projections still use $\mathbf n^*$, independently
-of this reporting axis. The 1:1 to 1:3 displacement was computed for every combination
-of montage, label, ROI tissue definition and focus fraction (32 per map), each montage
-along its own 1:1 direction.
-
-No signed DC-source or mean-response map is computed. For a spatially uniform detector
-coefficient, $Y_{\rm DC}=\tfrac12\Sig''(v^*)\mathcal I$ (\S\ref{sec:dc}) is
-$\mathcal I$ rescaled, with the sign of $\Sig''(v^*)$. A nonuniform coefficient would
-require an operating-point map, which a head model does not provide, and a mean
-response would additionally require a circuit model. In particular,
-$\Sig''(v^*)$ is curvature at the population model's operating point, not a
-measurement of the transfer at the axon initial segment. Assigning that
-coefficient to an anatomical detector requires a calibrated access and
-input--output model.
+These are geometric maps. A signed steady source additionally requires a detector
+coefficient, and its mean response requires a circuit model. With spatially
+uniform curvature, $Y_{\rm DC}=\Sig''(v^*)\mathcal I/2$ is a signed rescaling of
+$\mathcal I$; the head model supplies no operating-point map or calibrated AIS
+input--output curve.
+\else
+\label{supp:fem-protocol}
+\input{planning/parts/fem_protocol}
+\fi
 
 \subsection{Single-column Jansen--Rit: integration, lock-in, and controls}\label{sec:jr-methods}
 We integrate the JR column as six first-order ordinary differential equations. The TI field enters only the pyramidal output sigmoid, Eq.~\eqref{eq:jr0},
@@ -1209,25 +1105,14 @@ as $s(t)$, while the readout $v=y_1-y_2$ contains only synaptic potentials.
 A beat in this readout must therefore have passed through the nonlinearity
 and the recurrent loop. Unless stated otherwise $f_c=100$~Hz and $m=1$.
 
-We integrate with a fixed-step fourth-order Runge--Kutta (RK4) scheme,
-$\Delta t=2\times10^{-4}$~s (50 samples per carrier cycle at $100$~Hz; reduced to
-$10^{-4}$~s for carrier sweeps up to $300$~Hz). The kHz-carrier runs of
-Fig.~\ref{fig:khz_direct} use $\Delta t=2\times10^{-5}$~s for the carrier sweep to
-$4$~kHz (25 samples per carrier cycle at $2$~kHz, 12.5 at $4$~kHz) and
-$1.5\times10^{-5}$~s for the $2$~kHz output spectrum. Halving each step changes the
-reported lock-in amplitudes by less than $1\%$. The $10$~kHz figures quoted in
-\S\ref{sec:khz} are analytic evaluations of Eq.~\eqref{eq:khz}, not simulations.
-
-The resonance sweep uses $10$~s of settling and a $20$~s
-measurement window. Long windows reduce transients from weakly damped modes and
-average beating when autonomous activity persists. Other runs use the windows
-specified in their scripts.
-The two-tone $2$~kHz example (Fig.~\ref{fig:khz_twotone}) uses $p=400$~s$^{-1}$,
-$C=135$, and $0.5$~mV per tone with $\tau=0.2$~ms. From a zero initial state,
-it settles for $4$~s and records $4$~s at $\Delta t=1.5\times10^{-5}$~s,
-sampling before each RK4 step. Its amplitude spectra use plain-mean subtraction
-and a Hann window. Parameter sweeps advance all $N_{\rm grid}$ combinations simultaneously
-in a vectorized $(N_{\rm grid},6)$ state array.
+Integration uses fixed-step fourth-order Runge--Kutta (RK4), with time steps
+chosen for each carrier band. Halving each step changes the reported lock-in
+amplitudes by less than $1\%$. The resonance sweep settles for $10$~s and measures
+for $20$~s; run-specific steps and windows are listed in the supplement
+(\S\ref{supp:jr-runs}). The quoted $10$~kHz attenuation is analytic, not simulated.
+\ifjne\else
+\input{planning/parts/jr_runs}
+\fi
 
 The full bifurcation diagram (Fig.~\ref{fig:bif}) is computed by numerical continuation of
 the fixed-point and limit-cycle branches. We independently locate the operating
@@ -1259,9 +1144,8 @@ operating point $v^*$ without recurrence, with the \emph{closed-loop} column, th
 Jansen--Rit with its feedback. The open-loop detector passes the two-tone field through
 $\Sig$ at $v^*$ and applies Eq.~\eqref{eq:lockin}, isolating the pure demodulation law; its signed in-phase
 component $L_{\cos}$ verifies the curvature law, including its sign.
-The \emph{bifurcation
-diagram} records the field-free min/max of $v$ vs.\ $p$, each run initialized at
-its fixed point plus a small kick. The \emph{two-dimensional map} evaluates
+Simulation checks of the continuation diagram record field-free min/max of $v$
+against $p$, initialized at the fixed point plus a small kick. The \emph{two-dimensional map} evaluates
 $A_\Omega$ over an ($\Omega,p$) grid. We verify the mechanism three ways: the
 square law ($A_\Omega$ vs.\ $\varepsilon$ on a well-damped focus, expecting a
 log--log slope of $2$); a linearization control (replacing $\Sig$ in
@@ -1290,9 +1174,8 @@ with second-order synaptic activations $r_E^{\rm syn}=\hat K_a[r_E]$ (excitatory
 $\tau_a$) and $r_I^{\rm syn}=\hat K_g[r_I]$ (inhibitory, $\tau_g$), each obeying the same
 critically damped operator as the JR synapse, $\tau_s^2\ddot r_{\rm syn}+2\tau_s\dot r_{\rm syn}+r_{\rm syn}=r$; here $J$
 is the dimensionless global synaptic gain and the relative weights $(w_{EE},w_{EI},w_{IE},w_{II})=(1,1,1,2)$
-use target $X$ and source $Y$ in $w_{XY}$ and set the E and I rows: the $E$ membrane sees $J\,(r_E^{\rm syn}-r_I^{\rm syn})$ and the $I$ membrane
-$J\,(r_E^{\rm syn}-2r_I^{\rm syn})$, the only asymmetry being the doubled $I\!\to\!I$ weight $w_{II}=2$.
-
+use target $X$ and source $Y$ in $w_{XY}$. The only weight asymmetry is the
+doubled inhibitory self-coupling, $w_{II}=2$.
 
 In the schematic, $\mathcal U_j(t)$ is the total synaptic and field input
 to QIF neuron $j$, and $J^*$ denotes a coupling-induced Hopf.
@@ -1343,7 +1226,7 @@ allowed to vary along this unpinned sweep.
 
 Stability of the driven endpoint is checked using period-to-period perturbation
 multipliers, direct perturbation decay, and a finite-time Lyapunov estimate;
-settings and results are given in Appendix~\ref{app:ping-stability}.
+settings and results are given in supplement, \S\ref{app:ping-stability}.
 
 \subsection{QIF spiking network (microscale of NMM2)}\label{sec:qif-methods}
 NMM2 is the exact infinite-population mean field of all-to-all QIF neurons
@@ -1393,12 +1276,10 @@ per neuron by the pairwise phase consistency of each neuron's spike phases at $\
 (PPC; \cite{vinck2010}), which is unbiased in the spike count, over neurons with at least ten
 spikes in the window.
 
-The weak-drive beat depth depends on the finite spike cutoff: it ranges from
-$0.093$ at $V_{\rm peak}=100$ to $0.121$--$0.141$ at the two larger cutoffs
-across tested steps, against the mean-field value $0.128$. The mean-rate
-increase stays at $2.8$--$2.9\%$. Population-size and time-step checks do not
-establish joint convergence. At the stronger drive, rate modulation is less
-sensitive, but spike-phase concentration still depends on the cutoff.
+Weak-drive beat depth remains cutoff-sensitive, and population-size and time-step
+checks do not establish joint convergence. At stronger drive, spike-phase
+concentration remains more cutoff-sensitive than rate modulation
+(supplement, \S\ref{app:qif-checks}).
 
 \subsection{Coupling sweeps, timing, and the tACS control (Jansen--Rit)}
 The JR sweeps vary coupling while keeping detection fixed. For each
@@ -1415,31 +1296,7 @@ tACS to TI's generated beat source and repeat the comparison with longer
 settling and measurement windows. Waveforms, amplitudes, and run windows
 are recorded together in the supplement.
 
-\subsection{Vocabulary: forced response, entrainment, and gating}\label{sec:vocab-methods}
-\emph{Forced response} denotes the component driven at the beat $\Delta f$,
-quantified by the lock-in amplitude (Eq.~\eqref{eq:lockin}). A purely forced regime
-requires a stable operating state under stimulation; being below Hopf with the field
-off is insufficient. \emph{Entrainment} is reserved for its
-dynamical-systems meaning, frequency capture of a \emph{self-sustained} oscillator
-\cite{pikovsky2001}; in the maps we screen for it with the dominance criterion
-$|f_{\rm out}-\Delta f|<0.3$~Hz on the dominant output frequency. This identifies
-frequency dominance, not phase capture. \emph{Gating} is amplitude modulation of a persisting rhythm without
-frequency capture \cite{canolty2010,tort2010}. Capture and gating are dynamically different, and the same word would otherwise cover
-both. The QIF rate fold measures beat-locked firing, which does not by itself
-establish gating of gamma amplitude.
-
-The coupling sweeps approach the Hopf from field-free stable foci ($\gamma>0$), so the
-$1/\gamma$ law concerns forced susceptibility. The frequency-dominance maps on
-the oscillatory side describe a different observable: their bands broaden with
-drive, but an Arnold tongue describes phase capture of the autonomous limit
-cycle and requires phase tracking.
-
 \section{Results}
-Both the JR column and the exact QIF mean field generate a beat and amplify
-it near a Hopf bifurcation. The detector law fixes the local source and its
-spatial weighting; recurrent coupling sets the gain. The spiking network
-then distinguishes modulation of ongoing firing from field-induced gamma.
-
 \subsection{The JR column generates and resonantly amplifies the beat}
 An input containing only the two tones $f_c\mp\Delta f/2$ produces an output
 oscillation at their $11.1$~Hz beat, near the column's alpha resonance
@@ -1559,24 +1416,31 @@ $\mathcal M[\tfrac12\mathcal A^2]$ and the mean-square polarization $\mathcal I$
 the Violante montage in IXI002. All three use the same local polarizations, along the direction chosen at
 1:1 and held fixed (\S\ref{sec:fem-methods}).
 
-At 1:1 ($2+2$~mA) the hippocampal means are $0.16$~mV, $0.018$~mV$^2$ and
-$0.0094$~mV$^2$, respectively. The target-to-reference ratio is $1.22$ for the envelope
-map, $1.17$ for the quadratic excursion ($1.08$ degree-matched) and $0.92$ for
-$\mathcal I$ ($0.96$). Once degree is matched, the quadratic map therefore favors the
-hippocampus less than the envelope map does, as Eq.~\eqref{eq:reweight} predicts where
-the dominant local polarization is larger in the reference than at the target;
-$\mathcal I$ favors the reference.
+Table~\ref{tab:fem-summary} summarizes the 1:1 to 1:3 change. The pair-current
+product falls from $4$ to $3$~mA$^2$, so the quadratic excursion falls to $75\%$
+of its value at every node, to machine precision. Its normalized map, contrast, and focus
+are unchanged. The envelope focus moves anteriorly, toward the pair whose current
+falls; the mean-square focus moves posteriorly, toward the pair whose current rises.
+At 1:1, degree matching reduces the quadratic contrast to $1.08$, below the
+envelope's $1.22$, while mean-square polarization favors the reference.
 
-Changing the current ratio separates the three maps (Fig.~\ref{fig:fem}a--c,f). From
-1:1 to 1:3 the quadratic excursion is multiplied by
-$I_1^{\rm pair}I_2^{\rm pair}/(2~\mathrm{mA})^2=0.75$ at every node, to machine
-precision. Its normalized map, its target-to-reference ratio and its focus do not change:
-this is the fixed-state product law of \S\ref{sec:envelope}. The envelope focus moves
-$2.5$~mm anteriorly ($2.2$--$4.0$~mm over the 5--50\% fractions), toward the pair whose
-current falls. Its ratio drops from $1.22$ to $0.95$, and its hippocampal mean falls by
-45\%. The focus of $\mathcal I$ moves $4.5$~mm posteriorly ($2.4$--$8.2$~mm), toward
-the pair whose current rises. Its hippocampal mean rises by 24\%, while its ratio
-changes little ($0.92$ to $0.90$).
+\begin{table}[htbp]
+\centering\small
+\caption{\textbf{Hippocampal maps under current-ratio changes.} Means refer to the
+ROI; contrasts are ROI/reference 95th-percentile ratios. Parentheses give
+square-root, degree-matched contrasts. Focus shifts use the top 10\% of ROI
+nodes, with anterior positive; ranges over other fractions are supplementary.}
+\label{tab:fem-summary}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Map & Mean, 1:1 & Contrast, 1:1 & Contrast, 1:3 & Mean change & Focus shift\\
+\midrule
+Envelope & $0.16$ mV & $1.22$ & $0.95$ & $-45\%$ & $+2.5$ mm\\
+Quadratic beat & $0.018$ mV$^2$ & $1.17$ ($1.08$) & $1.17$ ($1.08$) & $-25\%$ & $0$ mm\\
+Mean square & $0.0094$ mV$^2$ & $0.92$ ($0.96$) & $0.90$ & $+24\%$ & $-4.5$ mm\\
+\bottomrule
+\end{tabular}
+\end{table}
 
 The sweep shows two kinds of steering (Fig.~\ref{fig:fem}e,f). The envelope ratio peaks
 near balance ($1.24$ at a posterior share of $0.525$) and falls to $0.89$--$0.94$ at
@@ -1594,16 +1458,14 @@ The isotropic beat map (Fig.~\ref{fig:fem}d,g) has a target-to-reference ratio o
 ($1.08$ degree-matched), close to that of the fixed-direction quadratic map. It also
 scales with $I_1^{\rm pair}I_2^{\rm pair}$, so the current ratio cannot steer it either.
 
-The atlas label lowers the absolute ratios (envelope $1.17$, quadratic excursion $1.04$
-at 1:1) but keeps every direction of focus displacement: envelope $2.0$--$3.8$~mm
-anterior, $\mathcal I$ $3.2$--$5.9$~mm posterior, quadratic excursion zero. Along the
-radial direction the displacements also keep their directions (envelope $1.9$--$2.8$~mm
-anterior, $\mathcal I$ $2.0$--$3.7$~mm posterior), but the ratios change more than with
-the label: $1.62$ for the envelope and $1.97$ for the quadratic excursion at 1:1. In
-this subject the assumed orientation, more than the label, sets the absolute contrast.
-Across all 32 combinations of montage, label, ROI tissue definition and focus fraction,
-every envelope shift is anterior ($0.7$--$8.1$~mm), every shift of $\mathcal I$ is
-posterior ($0.5$--$10.6$~mm), and every shift of the quadratic excursion is zero.
+Across all 32 combinations of montage, label, tissue definition, and focus
+fraction, the envelope shift remains anterior, the mean-square shift posterior,
+and the quadratic beat shift zero. Radial projections preserve those directions
+but change absolute contrasts more than the atlas label does (supplement,
+\S\ref{supp:fem-sensitivities}).
+\ifjne\else
+\input{planning/parts/fem_sensitivities}
+\fi
 
 All four maps are geometric quantities before detector gain. $\mathcal I$ is
 nonnegative and does not by itself assign excitation or suppression
@@ -1669,8 +1531,7 @@ $-7.7$~mHz), but stays below $0.2\%$ of the $3.9$~Hz baseline
 (Fig.~\ref{fig:timing}). The ratio of modulation to mean-shift magnitude rises from
 $14.5$ far from the Hopf to $58$ near $\gamma=1$~s$^{-1}$, then falls to $44$ closest
 to the Hopf as rectification of the amplified oscillation accelerates the mean shift.
-The surrogate, whose direct DC source is $3/4$ of the two-tone value, gives ratios
-of $19$, $66$, and $45$. A small mean-rate change can therefore accompany a much
+The surrogate comparison is given in the supplement (\S\ref{supp:waveform-checks}). A small mean-rate change can therefore accompany a much
 larger beat response in this weakly driven regime, consistent with primate
 observations \cite{vieira2024}; both effects are compared in the same rate units.
 
@@ -1698,15 +1559,15 @@ lock-in amplitudes in linear response is
 The common network transfer cancels, so the ratio has no dependence on $\gamma$
 when both responses are linear about the same state. At the amplitudes used in
 Figs.~\ref{fig:jcurve} and~\ref{fig:tacs}, $\mathcal R_{\rm lin}=0.143$.
-The surrogate sweeps give approximately $0.14$ far from the Hopf, rising to $0.24$
-at $\gamma=1.07$~s$^{-1}$ and $0.47$ at $0.12$~s$^{-1}$. Genuine two tones give
-$0.14$, $0.24$, and $0.46$, respectively, a change of at most $2.2\%$ across the grid.
+Genuine two tones give output ratios of $0.14$ far from the Hopf, $0.24$ at
+$\gamma=1.07$~s$^{-1}$, and $0.46$ at $0.12$~s$^{-1}$. The AM-surrogate
+comparison is reported in the supplement (\S\ref{supp:waveform-checks}).
 These are response ratios for the stated unequal input amplitudes, not an
 equal-power comparison. The equal-per-carrier and equal-total-peak comparisons
 with both tACS and tDCS are given in \S\ref{sec:dc}.
 In controls at three couplings, matching the tACS input
-to TI's leading beat source gives TI/tACS output ratios of $0.99$, $0.94$, and
-$0.92$ for the surrogate, and $0.99$, $0.93$, and $0.90$ for two tones.
+to TI's leading beat source gives two-tone TI/tACS output ratios of $0.99$,
+$0.93$, and $0.90$.
 The stronger direct response saturates earlier near the Hopf: multiplying
 its input by $6.99$ increases the output by only $6.97$, $3.95$, and $1.96$
 at these three couplings. Stimulation-induced mean shifts, which field-free
@@ -1745,9 +1606,8 @@ is approached ($1/\gamma$ gain). \emph{(b)} (limit cycle,
 $\bar\eta>\bar\eta_H$) response in the autonomous-gamma regime, the peak shifting
 upward with $\bar\eta$ ($56\!\to\!65\!\to\!83$~Hz). The input carries no power at
 $\Delta f$; the response is synthesized by the exact quadratic $v^2$ nonlinearity, with no
-sigmoid anywhere in the model. Matched AM and two-tone drives agree at $\Omega$ to
-$0.07\%$ well below the Hopf and to $4\%$ at $\bar\eta=0.9$, consistent with the JR
-surrogate control (Fig.~\ref{fig:opp}d).}
+sigmoid anywhere in the model. AM/two-tone comparisons are reported in the supplement
+(\S\ref{supp:waveform-checks}).}
 \label{fig:nmm2_res}
 \end{figure}
 
@@ -1783,7 +1643,7 @@ At $A_f=8$, the simulated response exceeds the normalized linear reference by
 up to $48\%$ in the amplitude check, then saturates. At a quarter of that
 amplitude ($A_f=2$, one sixteenth of the power), the departures stay within
 $11\%$ at the nine tested couplings. The driven endpoint remains attracting under both waveforms
-(Appendix~\ref{app:ping-stability}).
+(supplement, \S\ref{app:ping-stability}).
 The alpha JR and gamma NMM2 circuits share the $1/\gamma$ gain scaling of their critical mode despite their different
 mixers, with amplification adjustable through coupling.
 
@@ -1804,13 +1664,10 @@ depth from $0.011$ to $9.2\times10^{-5}$, while TI's stays at $0.30$--$0.31$;
 the former is spectral leakage. The equal-power control separates induction
 of gamma from the beat response and has been tested only in the mean field.
 
-The $A_f=35$ runs are finite-amplitude illustrations: the fast-carrier estimate gives a voltage excursion
-$A_f/(\tau_E\omega_c)\approx1.2$ per tone in the model's voltage units. Its
-rectified excitatory-drive shift is about $1.5$, compared with $0.12$ at
-$A_f=10$. At $\bar\eta=0.85$, the Hopf threshold for a drive shift applied
-only to the excitatory population is $\delta\eta_E^*\approx0.286$. The larger
-field is therefore expected to cross this threshold, whereas the smaller one
-remains below it.
+The $A_f=35$ runs are finite-amplitude illustrations: the fast-carrier voltage
+excursion is about $1.2$ per tone in model units. At $A_f=10$, the estimated
+rectified E-drive shift is $0.12$, below the E-only Hopf threshold
+$\delta\eta_E^*\approx0.286$; the stronger drive exceeds it, as quantified below.
 
 At $\bar\eta=0.85$ and tone amplitude $A_f=10$, the spiking network has a beat
 depth of $0.093$ at $55$~Hz and a mean-rate increase of $2.8\%$: modulation exceeds
@@ -1890,8 +1747,7 @@ finite-amplitude runs do not establish its size under weak physiological stimula
 
 \section{Discussion}\label{sec:discussion}
 \subsection{Cellular access and mixing require separate calibration}
-Access sets the local polarization, detection generates the beat, and the circuit
-sets its amplification. Esmaeilpour et al.\
+Esmaeilpour et al.\
 \cite{esmaeilpour2021} already related network TI sensitivity to short, axon-like
 membrane times and distinguished sensitivity from selectivity mediated by
 network adaptation. Here the exact QIF mean field connects static and dynamic
@@ -1908,15 +1764,13 @@ size alone does not imply fast charging: specific membrane resistance times
 capacitance is area-independent, while conductance, geometry, and stimulation
 mode determine the response.
 
-Short access times motivate the model but remain preparation-dependent.
-The $1$ and $0.4$~ms cases of \cite{esmaeilpour2021} precede our effective-time
-hypothesis. Luff et al.'s pulse-width-modulated TI model uses $1$~ms within a
-$1$--$100$~ms passive-time sweep \cite{luff2024}. The $0.7~\mu$s charging
-measured by Semenov et al.\ under strong microsecond field pulses
-\cite{semenov2025} concerns a different response mode from intracellular
-current charging or periaxonal conduction. A $10$--$100$-fold reduction in
-QIF membrane time is therefore a sensitivity hypothesis, whose population
-consequence follows from the slow-synapse limit.
+The short-time cases in Table~\ref{tab:doors} motivate a preparation-dependent
+access hypothesis. Reducing QIF membrane time by $10$--$100$-fold tests that
+hypothesis; it does not calibrate TI access. Related model settings and strong-pulse
+measurements are compared in the supplement (\S\ref{supp:access}).
+\ifjne\else
+\input{planning/parts/access_literature}
+\fi
 
 The quadratic law specifies the leading mixing operation, not its coefficient.
 QIF derives one realization; cellular mixing measured or modeled in single
@@ -1956,16 +1810,14 @@ middle hippocampal voxels. Significant BOLD reductions thus extended beyond
 the anterior envelope focus.
 
 All three geometric maps change between these current conditions, so a condition
-difference alone cannot identify the detector. In our IXI002 calculation
-(\S\ref{sec:fem-results}, Fig.~\ref{fig:fem}), the envelope focus moves 2.5~mm
-anteriorly, whereas the quadratic beat retains its pattern and falls to $3/4$
-of its value everywhere at fixed neural state. The mean-square polarization
-changes by $\mathcal I_{1:3}/\mathcal I_{1:1}
-=(\mathcal P_1^2+9\mathcal P_2^2)/[4(\mathcal P_1^2+\mathcal P_2^2)]$,
-exceeding one only where $|\mathcal P_2|>\sqrt{3/5}|\mathcal P_1|
-\approx0.775|\mathcal P_1|$. Its hippocampal mean rises by 24\% and its focus
-moves 4.5~mm posteriorly. Equal summed currents therefore do not match local
-RMS polarization.
+difference alone cannot identify the detector. In IXI002 the quadratic beat pattern remains fixed and falls to $3/4$ of
+its value everywhere. Mean-square polarization instead changes its pattern and
+rises where the posterior pair contributes sufficiently strongly (supplement,
+\S\ref{supp:steering-algebra}). Equal summed currents do not match local RMS
+polarization.
+\ifjne\else
+\input{planning/parts/steering_algebra}
+\fi
 
 At spatially uniform, fixed curvature, the 24\% increase in hippocampal
 mean-square polarization predicts a 24\% increase in the magnitude of the
@@ -2008,20 +1860,14 @@ and the initial distance from the bifurcation. These examples and the laminar
 extension go beyond the weak-input expansion without establishing physiological
 thresholds.
 
-The recurrent amplifier is shared with direct low-frequency stimulation. Our
-coupling sweep fixes the JR field-free operating point and its local curvature
-while changing recurrent gain. A direct in-band drive shows the same
-$1/\gamma$ growth and resonance sharpening (Fig.~\ref{fig:tacs}), consistent with
-the known resonant susceptibility of recurrent excitatory--inhibitory networks
-\cite{ledoux2011,clusella2023}. Near the Hopf, this is temporal critical slowing
-in a mean-field model, not evidence of a diverging spatial correlation length.
-Related models already reproduce tACS entrainment and AM-driven phase locking
-\cite{ali2013,negahbani2018,krause2023}. When TI and tACS are matched
-for effective in-band input, observable, and operating state, they share the
-linear amplifier. Within linear response, resonance alone therefore gives TI
-no efficiency advantage. At finite amplitude the response ratio can change near
-the Hopf, as the coupling sweep demonstrates (\S\ref{sec:tacs-results}); its value then
-depends on drive amplitude and the driven state as well as on field-free damping.
+The pinned JR comparison (\S\ref{sec:tacs-results}) isolates the recurrent
+susceptibility shared with direct low-frequency stimulation, consistent with
+previous excitatory--inhibitory network models \cite{ledoux2011,clusella2023}.
+Near-Hopf temporal slowing does not establish a diverging spatial correlation
+length. Related models reproduce tACS entrainment and AM-driven phase locking
+\cite{ali2013,negahbani2018,krause2023}. Matching generated input, readout, and state
+makes the linear amplifier common to TI and tACS; at finite amplitude, their
+response ratio also depends on stimulation-induced state shifts.
 
 A reverberation time $\tau_{\rm rev}=1/\gamma$ gives a near-Hopf
 quality factor $\mathcal Q=\pi f_0\tau_{\rm rev}$ and power bandwidth
@@ -2042,12 +1888,9 @@ not fix the coupling at kHz. At equal per-carrier and direct-input polarizations
 the JR steady and beat sources are approximately $2$--$5\%$ of the corresponding
 tDCS and tACS sources for $0.1$--$0.3$~mV at the pinned operating point
 (\S\ref{sec:dc}). The following estimate instead matches the total TI peak.
-For equal TI carrier polarizations $\varepsilon$, the JR beat drive is
-$\Sig''\varepsilon^2/2$, whereas a direct sinusoid with the same total peak
-polarization $2\varepsilon$ gives $2\Sig'\varepsilon$. Their leading amplitude ratio is
-$\mathcal R_{\rm det}\simeq|\Sig''|\varepsilon/(4\Sig')$: the relative efficiency decreases
-as the input is weakened in this perturbative regime. A larger recurrent gain
-amplifies both drives.
+With direct amplitude $2\varepsilon$, the leading ratio is
+$\mathcal R_{\rm det}\simeq|\Sig''|\varepsilon/(4\Sig')$, half the equal-per-carrier
+ratio derived in \S\ref{sec:direct-comparison}. The common recurrent gain cancels.
 
 For an illustrative fast-access budget, take a per-tone field $E_j=0.5$~V/m,
 $\lambda_0=0.5$~mV per V/m, $f_c=2$~kHz, and the assumed $\tau_m=0.2$~ms.
@@ -2062,7 +1905,7 @@ the same readout; a measured PLV ratio alone does not supply it.
 
 For comparison, the carrier-averaged, matched-peak, open-loop drive ratio has a
 numerically estimated supremum of $0.348$ over bounded nondecreasing memoryless
-transfers (Appendix~\ref{app:bound}, Eq.~\eqref{eq:etasup}). The positive-mixture-of-steps argument extends
+transfers (supplement, \S\ref{app:bound}, Eq.~\eqref{eq:etasup}). The positive-mixture-of-steps argument extends
 the logistic result to this class. Approaching it requires an active transition
 sharp relative to the input; for the logistic family at the illustrative
 polarizations, this means microvolt widths. The limiting detector is step-like
@@ -2077,14 +1920,7 @@ used here; within that regime, local curvature determines the generated drive.
 
 The weaker TI effects reported by Vieira et al.\ \cite{vieira2024} are compatible with
 a smaller generated beat drive, but their experiments did not match local
-polarization at the mixer.\footnote{The two-pair TI comparison gave a phase-locking effect ratio of $0.34$ against
-tACS (95\% confidence interval $0.04$--$0.65$, 65 of 154 neurons), without
-correcting for TI currents up to $\pm2.5$~mA per pair versus $\pm1$~mA for tACS.
-A separate single-pair AM-tACS control compensated for frequency-dependent
-shunting to match extracellular modulation depth. Of twenty cells, ten responded
-to either modality and seven to both; in the latter group, median phase-locking
-value (PLV) was $0.10$ for AM-tACS and $0.20$ for tACS, against $0.043$ at baseline.
-The reported TI modulation depths were about $0.5$--$0.62$~V/m.}
+polarization at the mixer (supplement, \S\ref{supp:vieira}).
 Phase-locking value (PLV) also depends on baseline and state. These comparisons
 therefore do not calibrate the detector coefficient; that requires the same
 readout across a local-polarization amplitude sweep.
@@ -2139,11 +1975,10 @@ qualitative comparisons; their quantitative reanalysis remains to be done.}
 carrier-independent in the static limit and fast-carrier QIF asymptote, provided
 no other circuit mode is excited. Access restores dependence at fixed applied
 field; detector dynamics can add it near the crossover.
-& Carrier-frequency comparisons show changes in network sensitivity
-\cite{esmaeilpour2021} and subthreshold single-cell mixing \cite{luff2024mixer},
-without holding measured local carrier polarizations fixed. Thresholds depend on $f_c$
-\cite{opancar2025,peripheral2023}, and bare kHz fields have limited effects on
-hippocampal oscillations \cite{esmaeilpour2020}.
+& Network sensitivity, cellular mixing, and thresholds depend on carrier frequency
+\cite{esmaeilpour2021,luff2024mixer,opancar2025,peripheral2023}; bare kHz fields
+have limited effects on hippocampal oscillations \cite{esmaeilpour2020}.
+Local polarizations were not held fixed.
 & Measure each local polarization while sweeping $f_c$ at fixed beat and state;
 normalize the weak beat by their product. Hold network gain fixed or measure it
 independently to separate access from residual detector dependence. Measure any
@@ -2162,10 +1997,8 @@ a beat lock-in alone does not measure the envelope's full excursion. \\[4pt]
 access, and neural state, the quadratic beat map scales with
 $I_1^{\rm pair}I_2^{\rm pair}$; its normalized pattern does not move.
 An envelope follower can instead shift its maximum.
-& Cassar\`a et al.\ identify the product-law restriction
-\cite{cassara2025part2}. The IXI002 comparison (\S\ref{sec:fem-results}) confirms
-the geometric distinction: envelope and mean-square foci move oppositely;
-the quadratic beat map only rescales. A physiological beat-map test remains open.
+& The product-law restriction \cite{cassara2025part2} holds in IXI002
+(\S\ref{sec:fem-results}); a physiological beat-map test remains open.
 & Vary the current ratio at fixed electrodes and compare normalized beat maps
 and target-to-reference ratios, using a cortex-only reference to test deep-target
 selectivity. Keep the projection direction fixed at each site,
@@ -2312,7 +2145,7 @@ for the content of the published article.
 \bibliography{references}
 
 \fi
-% Notation is the first appendix in every edition, including the JNE article.
+% Article appendices are integral; additional material is routed by topic.
 \clearpage
 \appendix
 \makeatletter
@@ -2320,799 +2153,39 @@ for the content of the published article.
 \renewcommand{\section}{\clearpage\ne@stdsection}
 \makeatother
 \ifsupp
-\section{Notation and units}\label{app:notation-supp}
+\section*{Notation and units}\phantomsection\label{app:notation-supp}
 \def\notationtablelabel{tab:notation-supp}
+\input{planning/tn0484_notation.tex}
 \else
 \section{Notation and units}\label{app:notation}
 \def\notationtablelabel{tab:notation}
-\fi
 \input{planning/tn0484_notation.tex}
+\renewcommand{\theequation}{B\arabic{equation}}
+\renewcommand{\theHequation}{appendixB.\arabic{equation}}
+\setcounter{equation}{0}
+\input{planning/parts/article_models}
+\fi
 
 \ifappendices
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\theHsection}{supp.\arabic{section}}
+\setcounter{section}{0}
 \renewcommand{\theequation}{S\arabic{equation}}
+\renewcommand{\theHequation}{supp.\arabic{equation}}
 \setcounter{equation}{0}
 \renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\theHfigure}{supp.\arabic{figure}}
 \setcounter{figure}{0}
-
-\section{Simulated models: equations and parameters}\label{app:models}
-For a synapse from population $Y$ to $X$, the resulting first-generation neural
-mass model (NMM1) equations are
-\cite{ruffini2025rosetta}
-\begin{equation}
-\hat L_{X\leftarrow Y}\big[u_{X\leftarrow Y}\big]=C_{X\leftarrow Y}\,r_Y,\qquad
-v_X=\Lambda[E]+\!\!\sum_{Y:\,C_{X\leftarrow Y}\neq0}\!\!u_{X\leftarrow Y},\qquad
-r_X=\Sig(v_X).
-\label{eq:nmm1}
-\end{equation}
-The operator $\hat L$ is the inverse synaptic filter, $u_{X\leftarrow Y}$ its
-postsynaptic potential, $C_{X\leftarrow Y}$ the connectivity, and $\Lambda[E]$
-the direct polarization caused by the applied field $E$ (V/m). The rates $r_X,r_Y$
-are in s$^{-1}$, the potentials $v_X,u_{X\leftarrow Y}$ in mV, and the
-pathway weights $C_{X\leftarrow Y}$ dimensionless. This field contribution enters
-alongside the synaptic potentials, without first passing through a synapse.
-
-Synaptic operators convert rates into postsynaptic potentials, which sum with
-the direct field polarization before the rate curve is applied.
-
-\subsection*{Jansen--Rit column}
-Writing $y_0$ for the excitatory PSP driving the interneurons, $y_1$ and $y_2$ for the
-excitatory and inhibitory PSPs onto the pyramidal population, external input $p$, and the
-applied-field perturbation $s(t)$ (\S\ref{sec:coupling}) entering the pyramidal sigmoid,
-\begin{align}
-\ddot y_0 &= Aa\,\Sig\!\big(y_1-y_2+s(t)\big)-2a\dot y_0-a^2 y_0, \label{eq:jr0}\\
-\ddot y_1 &= Aa\,\big[\,p+C_2\,\Sig(C_1 y_0)\,\big]-2a\dot y_1-a^2 y_1,\\
-\ddot y_2 &= Bb\,C_4\,\Sig(C_3 y_0)-2b\dot y_2-b^2 y_2,
-\end{align}
-The pyramidal output passes through $h_e$ to give $y_0$; the excitatory
-and inhibitory interneurons receive $C_1y_0$ and $C_3y_0$, and return through
-weights $C_2$ and $C_4$. The excitatory and inhibitory impulse responses are
-$h_e(t)=Aa\,t e^{-at}$ and $h_i(t)=Bb\,t e^{-bt}$ for $t\ge0$.
-The equations are integrated as six first-order ODEs; the LFP proxy is $v=y_1-y_2$ \cite{jansen1995}.
-Table~\ref{tab:params} gives the reference column parameters. The synaptic rates
-correspond to excitatory and inhibitory decay times of $10$ and $20$~ms, while
-$A$ and $B$ set the postsynaptic-potential gains. The sigmoid parameters fix its
-voltage scale and rate ceiling; the sweeps vary the external rate $p$ or connectivity
-$C$ to change the operating state, as specified in Methods.
-
-\begin{table}[h]\centering\small
-\caption{Jansen--Rit parameters \cite{jansen1995}.}
-\label{tab:params}
-\begin{tabular}{@{}lll@{}}
-\toprule
-Symbol & Meaning & Value\\
-\midrule
-$A,\,B$ & excit./inhib.\ PSP gain & $3.25,\ 22$ mV\\
-$a,\,b$ & synaptic rates & $100,\ 50$ s$^{-1}$\\
-$v_0,\,e_0,\,\rho$ & sigmoid inflection, max rate$/2$, slope & $6$ mV, $2.5$ s$^{-1}$, $0.56$ mV$^{-1}$\\
-$C$ & global connectivity & $135$\\
-$C_1,C_2,C_3,C_4$ & couplings & $C,\,0.8C,\,0.25C,\,0.25C$\\
-$p$ & external input (bifurcation knob) & $0$--$400$ Hz\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-The alpha limit cycle lies between Hopf points near $p=90$ and
-$316$~s$^{-1}$. It coexists with a lower stable fixed point up to the
-saddle-node on an invariant circle (SNIC, $p\approx114$), then with a
-large-amplitude cycle up to its saddle-node near $p=137$. The SNIC
-terminates the large-amplitude branch, not the alpha cycle.
-
-\subsection{Compartment access and the passive-cable estimate}\label{app:access}
-The passive compartment equation $\mathsf C_m\dot{\mathbf V}+\mathsf G_m\mathbf V=\mathbf I^0-\mathbf p_EE$
-\cite{ruffini2021nmm2} gives the voltage perturbation
-$\delta\mathbf V(\omega)=-(\mathsf G_m+i\omega\mathsf C_m)^{-1}\mathbf p_EE(\omega)$. In SI units, $\mathbf V$ contains the compartment membrane potentials (V), $\mathsf C_m$ and
-$\mathsf G_m$ are the capacitance (F) and conductance (S) matrices, $\mathbf I^0$ is the
-endogenous current (A), and $\mathbf p_E$ is the field-to-current coupling
-(A per V/m).
-
-Geometry can also alter the relevant response mode. For a passive cable, the
-magnitude of the frequency-dependent space constant is
-\begin{equation}
-\ell(\omega)=\ell_0(1+\omega^2\tau_m^2)^{-1/4},
-\label{eq:lambda}
-\end{equation}
-where $\ell_0$ is its static value. At $1$~kHz and $\tau_m=16$~ms, this length
-is about one tenth of its static value, so compartments that are strongly coupled
-at low frequency can respond differently to the carrier. A somatic charging time
-alone therefore does not determine every extracellular-field response mode.
-For a sufficiently long passive cable with a sealed end in a uniform axial field,
-the end polarization is proportional to this space constant. Each carrier then
-acquires the factor $(1+\omega^2\tau_m^2)^{-1/4}$, so the quadratic beat is
-attenuated by $(1+\omega_c^2\tau_m^2)^{-1/2}$, about $10^{-2}$ at $1$~kHz and
-$10^{-3}$ at $10$~kHz for $16$~ms. These differ from the point-membrane estimates;
-soma loading and finite cable length further change the transfer.
-Thus cable geometry can improve carrier access without changing the somatic
-membrane time.
-
-\subsection{Static and dynamic MPR mixing coefficients}\label{app:mpr-coefficients}
-In this subsection and the derivation that follows, time is measured in units
-of $\tau_m$, rate in units of $1/\tau_m$, and $\omega$ denotes angular frequency
-in membrane-time units. Thus $r^*=F(Q)$ and physical angular frequency is
-$\omega/\tau_m$. Consider an uncoupled MPR population at drive $Q$, with a weak
-current $I_{\rm ac}\cos\omega t$.
-To second order in $I_{\rm ac}$, the carrier-averaged shift of $r$ is $I_{\rm ac}^2\kappa_{\rm DC}(Q,\omega)$, where
-\begin{equation}
-\kappa_{\rm DC}(Q,\omega)=\frac{r^*\,[\omega^2+3d^2-\nu^2]}{(d^2+\nu^2)\{[d^2+\nu^2-\omega^2]^2+4d^2\omega^2\}},
-\qquad r^*=F(Q),\quad d=\frac{\Delta}{\pi r^*},\quad \nu=2\pi r^*.
-\label{eq:crossover}
-\end{equation}
-The physical rate shift is $I_{\rm ac}^2\kappa_{\rm DC}/\tau_m$.
-The fixed-point eigenvalues in normalized time are $-d\pm i\nu$: $d$ is the relaxation rate and $\nu$
-the ringing angular frequency, both in membrane-time units; their physical
-values are $d/\tau_m$ and $\nu/\tau_m$. Expansion about this fixed point gives the limits
-\begin{equation}
-\kappa_{\rm DC}(Q,\omega)\xrightarrow[\ \omega\to0\ ]{}\tfrac14F''(Q),\qquad
-\kappa_{\rm DC}(Q,\omega)\xrightarrow[\ \omega\gg d,\nu\ ]{}\frac{F'(Q)}{2\omega^2}.
-\label{eq:crossover_limits}
-\end{equation}
-In the first limit the population tracks its static curve, whose curvature rectifies
-the input. In the second, the voltage excursion is approximately $I_{\rm ac}/\omega$; its
-square supplies a slow drive that the population reads through $F'$. Above the
-inflection of $F$, these limits have opposite signs and the coefficient vanishes at
-$\omega_z=\sqrt{\nu^2-3d^2}$. The $300$~Hz and kHz carriers
-are on the fast side for the parameters of the pyramidal--interneuron network gamma
-(PING) circuit studied here. That classification is
-parameter-dependent: a shorter effective membrane time can bring the same physical
-carrier into the adiabatic regime.
-
-Membrane access is already included in this calculation. The linear voltage response
-is $H_v(\omega)=(i\omega+d)/[(i\omega+d)^2+\nu^2]$. Dividing by its squared magnitude
-gives the mixing coefficient at fixed voltage excursion,
-\begin{equation}
-\kappa_V(Q,\omega)=\frac{\kappa_{\rm DC}(Q,\omega)}{|H_v(\omega)|^2}
-=\frac{F'(Q)}{2}\;\frac{\omega^2+3d^2-\nu^2}{\omega^2+d^2}.
-\label{eq:kfixed}
-\end{equation}
-This coefficient tends to $F'/2$ at high frequency. The $1/\omega^2$ suppression
-at fixed current comes from $|H_v|^2$, the membrane filtering already represented
-by \ifsupp main-text\fi\ Eq.~\eqref{eq:doors}; it is not an additional detector filter. A static curve
-placed after the same membrane has the same leading carrier roll-off, although
-its mixing coefficient and sign can differ. The steady-state curvature is
-$F''=4r^*(3d^2-\nu^2)/(d^2+\nu^2)^3$, so the inflection occurs at $\nu^2=3d^2$.
-
-For nearby fast tones, the quadratic terms in \ifsupp main-text\fi\ Eq.~\eqref{eq:mpr} contribute at
-different orders: $v^2$ at $\omega^{-2}$, $r v$ at $\omega^{-3}$, and $r^2$ at
-$\omega^{-4}$. Table~\ref{tab:exponents} compares the carrier and beat routes to
-the firing rate for a static curve and a dynamic population with the same membrane access.
-
-\begin{table}[h]
-\centering\small
-\begin{tabular}{lcc}
-\toprule
-stage & static curve, same membrane & dynamic population \\
-\midrule
-point-membrane current $\to$ voltage & $\omega^{-1}$ & $\omega^{-1}$ \\
-voltage $\to$ rate, carrier & $1$ & $\omega^{-1}$ \\
-current $\to$ rate, carrier & $\omega^{-1}$ & $\omega^{-2}$ \\
-two tones $\to$ beat in the rate & $(\omega_1\omega_2)^{-1}$ & $(\omega_1\omega_2)^{-1}\times$ const. \\
-\bottomrule
-\end{tabular}
-\caption{Fast-carrier scaling with matched point-membrane access, at fixed beat frequency
-and a nonzero leading mixing coefficient. The dynamic population integrates the
-carrier once more between voltage and rate; the beat is formed before that step.
-Prefactors depend on the operating point and beat-frequency susceptibility.}
-\label{tab:exponents}
-\end{table}
-
-The first row gives the shared membrane factor $1/\omega$. The second converts
-voltage to rate: a static curve adds its slope, whereas the dynamic rate equation
-integrates the carrier once more. Combining these stages gives the third-row
-carrier responses, $\omega^{-1}$ and $\omega^{-2}$, respectively.
-
-The beat in the last row is formed before that additional rate integration:
-static curvature and dynamic $v^2$ each mix the attenuated voltage, retaining
-$(\omega_1\omega_2)^{-1}$. Equal exponents do not imply equal amplitudes; mixing
-and the susceptibility at fixed $\Omega$ determine the prefactors. For the
-uncoupled carrier-averaged response, $\kappa_V$ in Eq.~\eqref{eq:kfixed} tends to
-$F'/2$, but is not the full finite-$\Omega$ network prefactor. Thus the dynamic
-rate attenuates the carrier twice while forming the beat between those stages.
-
-\subsection{Single-cell rate and dynamic MPR mixing}\label{app:mpr-mixing}
-The MPR steady-rate curve $F$ of \S\ref{sec:dynamic}, \ifsupp main-text\fi\ Eq.~\eqref{eq:Fmpr}, averages the single-neuron rate $f(q)=\sqrt q/\pi$ for
-$q>0$, and $f(q)=0$ otherwise, over the excitability distribution. Here $\eta$ is
-the neuron's excitability and $q=\eta+I$ its constant total drive.
-
-The coefficient in Eq.~\eqref{eq:crossover} follows by expanding about the
-fixed point $(r^*,v^*)$, with $v^*=-d/2$, in membrane-time units.
-The Jacobian and unit-current phasor are
-\[
-\mathsf J=\begin{pmatrix}2v^*&2r^*\\-2\pi^2r^*&2v^*\end{pmatrix},\qquad
-\mathbf h=(i\omega\mathsf I_2-\mathsf J)^{-1}\binom{0}{1},
-\]
-where $\mathsf I_2$ is the identity matrix and the first-order response is
-$I_{\rm ac}\operatorname{Re}(\mathbf h e^{i\omega t})$.
-Writing $h_r,h_v$ for its rate and voltage components, with an overbar denoting
-complex conjugation and $\operatorname{Re}$ the real part, the carrier-averaged
-quadratic source per $I_{\rm ac}^2$ is
-\[
-\mathbf b_2=\binom{\operatorname{Re}(h_r\overline{h_v})}{\big(|h_v|^2-\pi^2|h_r|^2\big)/2}.
-\]
-The mean second-order correction is $-I_{\rm ac}^2\mathsf J^{-1}\mathbf b_2$;
-its rate component gives Eq.~\eqref{eq:crossover}.
-
-\subsection{Stability of the driven PING endpoint}\label{app:ping-stability}
-We check the stability of the driven $J$-curve endpoint by integrating the full
-variational matrix along its trajectory. At carrier $300$~Hz and beat $50.5$~Hz,
-the AM input repeats every $2$~s. After $8$~s of settling, we compute the
-perturbation multipliers over that period and repeat over the next period.
-Moduli below one indicate decay of perturbations to the periodic response.
-Two-tone controls at $J=16.5663$ and $16.5901$, both with a $50.5$~Hz beat,
-use $5$~s settling, direct perturbation decay, and an $8$~s finite-time
-Lyapunov estimate.
-
-Although a DC-only averaged calculation predicts an unstable endpoint, the full
-periodically forced solution remains attracting: its largest perturbation
-multiplier is $0.034$ over the $2$~s forcing period. Increasing settling from
-$0.6$ to $3$~s changes the endpoint lock-in by $0.8\%$. With genuine two tones,
-the $50.5$~Hz endpoint control also attracts nearby trajectories: perturbations
-decay at $-0.0014$~ms$^{-1}$, and the $8$~s Lyapunov estimate is
-$-0.00079$~ms$^{-1}$. These controls test a nonlinear driven response, not linear
-gain about the DC-shifted equilibrium.
-
-\subsection{Finite-network numerical checks}\label{app:qif-checks}
-At $A_f=10$ and $\bar\eta=0.85$, the finite-network beat depth is $0.093$
-for the published cutoff, versus the mean-field value $0.128$. Raising the spike cutoff from $V_{\rm peak}=100$ to
-$200$ and $400$ gives depths $0.127$ and $0.139$, while the mean-rate increase
-stays at $2.8$--$2.9\%$. At the original cutoff, doubling the population gives
-$0.083$ and halving the time step gives $0.093$. The response is therefore
-sensitive to the finite spike cutoff. Halving the step at cutoffs $200$ and
-$400$ gives depths $0.121$ and $0.141$, respectively: cutoff dependence persists,
-and quantitative convergence remains unestablished at this population size.
-At the plotted cutoff, the pooled spike-phase vector strength is $0.046$;
-median per-neuron phase consistency remains negative in field-off and field-on
-windows at all three cutoffs.
-In the $A_f=35$ convergence checks, halving the time step changes the lock-in and the pooled vector
-strength by under $1\%$; doubling the spike-detection threshold changes the lock-in by
-about $1\%$ and the mean rate by $2\%$, but the pooled vector strength at
-$\bar\eta=0.85$ by about $45\%$, so phase concentration, unlike rate modulation, is sensitive to
-how spike times are defined.
-
-
-\subsection{JR coupling-sweep settings}\label{app:jr-sweep-settings}
-The coupling sweeps of Figs.~\ref{fig:jcurve} and~\ref{fig:timing}, and the transcranial
-alternating-current stimulation (tACS) control of Fig.~\ref{fig:tacs}, use the single JR
-column with the field-free operating point $v^*$ pinned: for
-each global connectivity $C$ we solve the field-free fixed-point relation analytically
-for the external drive $p(C)$ that holds $v^*$ (hence $\Sig''(v^*)$) fixed, vary $C$
-toward the alpha Hopf, and read $\gamma,\omega_0$ from the $6\times6$ Jacobian. The field
-is the AM surrogate of \ifsupp main-text\fi\ Eq.~\eqref{eq:amsur} for Fig.~\ref{fig:jcurve}, genuine two
-tones for the timing comparison (Fig.~\ref{fig:timing}), or a direct in-band sinusoid $s(t)=\varepsilon\cos\Omega t$
-($\varepsilon=0.1$~mV) for the tACS control (Fig.~\ref{fig:tacs}), each read out by the
-lock-in of $v$ at $\Delta f$, except in the timing comparison, which reads the
-modulation and mean of the same pyramidal rate $r_P=\Sig(v+s)$.
-That comparison uses $18$~s settling and a $20$~s window for each waveform.
-The Figure~\ref{fig:jcurve}--Figure~\ref{fig:tacs} response-ratio comparison uses
-$v^*=8.30$~mV, TI surrogate amplitude $0.3$~mV with $m=1$ and $f_c=100$~Hz,
-and tACS amplitude $0.1$~mV, driven at each field-free modal frequency.
-The original TI amplitudes are interpolated logarithmically in $C$ onto the tACS
-grid. For the waveform comparison, both the surrogate and two-tone TI are rerun
-on that grid with $12$~s settling and a $6$~s window.
-Pinning fixes the background curvature; it does not cancel the stimulation-induced
-mean shift.
-Additional controls at $C=110$, $133.9091$, and $136.3$ use a tACS amplitude of
-$0.0143039$~mV, matched to the leading TI beat source. They record mean voltage,
-mean rate, and lock-in with $12$~s settling and a $6$~s window, repeated with
-$60$~s settling and a $20$~s window; the latter settings also test genuine two tones.
-
-
-\section{The cubic Hopf normal form lacks a quadratic mixer}\label{app:sl}
-The Stuart--Landau equation \cite{pikovsky2001}
-\begin{equation}
-\dot z=(\alpha+i\omega_0)z-|z|^2z+\mathcal F(t),\qquad
-\gamma=-\alpha>0,
-\label{eq:sl}
-\end{equation}
-uses seconds for time and a normalized complex mode $z$, with the cubic
-coefficient set to $1$~s$^{-1}$. Its linear growth rate is $\alpha=-\gamma$;
-$\gamma$ has units s$^{-1}$. The mode has damping $\gamma$ and natural angular frequency
-$\omega_0$, driven by the applied input $\mathcal F$ (normalized mode units per second). For a weak input
-$\mathcal F=\varepsilon_{\rm SL} \psi_{\rm SL}(t)$ with dimensionless waveform $\psi_{\rm SL}$ on the stable side, the perturbative response has
-the form $z=\varepsilon_{\rm SL} z_1+\varepsilon_{\rm SL}^3z_3+\cdots$. There is no second-order
-source: the first-order response contains only the applied frequencies, and the
-cubic first contributes at order $\varepsilon_{\rm SL}^3$. Thus the normal form has a
-resonant linear susceptibility but lacks the quadratic difference-frequency
-generation of \ifsupp main-text\fi\ Eq.~\eqref{eq:demod}. This statement concerns the weak-input
-expansion; it is not an exclusion of every higher-order intermodulation or
-strong-drive response.
-
-In the numerical control ($\alpha=-0.5$~s$^{-1}$, $f_0=10$~Hz, $f_c=100$~Hz,
-$\varepsilon_{\rm SL}=0.5$~s$^{-1}$), a square-law detector gives a beat-frequency lock-in amplitude
-of $2.5\times10^{-1}$, while $\mathrm{Re}\,z$ gives approximately
-$2\times10^{-8}$, at the numerical floor. Driving the same mode directly in band
-recovers the forced $1/\gamma$ growth. The control separates resonant amplification
-from the nonlinear source required to drive it at the beat.
-
-\section{Efficiency of a memoryless transfer against a direct in-band drive}\label{app:bound}
-For the logistic family of memoryless transfers, compare balanced TI tones of
-polarization amplitude $\varepsilon$ each with a direct in-band drive of amplitude
-$2\varepsilon$, matching peak polarization. Their leading drive amplitudes are
-$|\Sig''|\varepsilon^2/2$ and $2\Sig'\varepsilon$, so
-$\mathcal R_{\rm det}\simeq|\Sig''|\varepsilon/(4\Sig')$.
-The weak-input formula concerns the logistic family. The step-mixture argument
-below extends the exact carrier-averaged bound to bounded nondecreasing
-memoryless transfers, with the same operating point, matched peak polarization,
-and open-loop readout. It does not cover the dynamic detector of \S\ref{sec:dynamic}.
-
-Writing $\zeta=\Sig/(2e_0)\in(0,1)$ gives
-$\Sig'=2e_0\rho\zeta(1-\zeta)$ and
-$\Sig''=2e_0\rho^2\zeta(1-\zeta)(1-2\zeta)$. Since
-$|\mathrm{PEIX}|=1-4\zeta(1-\zeta)=(1-2\zeta)^2$, the leading ratio satisfies
-\begin{equation}
-\mathcal R_{\rm det}\simeq\frac{\rho\,\varepsilon}{4}\sqrt{|\mathrm{PEIX}|}
-\;\le\;\frac{\rho\,\varepsilon}{4}.
-\label{eq:etabound}
-\end{equation}
-It vanishes at the inflection, where the quadratic coefficient is zero, and
-approaches its bound in the saturated tails. This maximizes a ratio rather than
-an absolute response: both drives vanish in those tails. For the JR slope
-$\rho=0.56$~mV$^{-1}$, the perturbative bound is $1.4\%$ at
-$\varepsilon=0.1$~mV and $0.28\%$ at $\varepsilon=0.02$~mV.
-
-Optimizing over the sigmoid slope gives a different limit from the weak-input bound.
-The logistic transfer depends on voltage only through $\rho(v-v_0)$, so writing
-\begin{equation}
-u=\rho\,\varepsilon,\qquad \xi=\rho\,(v^*-v_0),
-\label{eq:reduced}
-\end{equation}
-we have $\Sig(v^*+\varepsilon\psi(t))=2e_0\,L(\xi+u\,\psi(t))$ for any normalized waveform $\psi$,
-with $L(\xi)=(1+e^{-\xi})^{-1}$. Every Fourier amplitude, and hence their ratio, is a function
-of $(u,\xi)$ alone; the factor $2e_0$ cancels. Maximizing over $v^*$ and $\rho$ at fixed
-$\varepsilon$ is therefore the same as maximizing over $(u,\xi)$, and the family supremum is
-independent of field strength. Evaluating the exact cycle response rather than its
-quadratic truncation and optimizing $\xi$ at each $u$, the ratio rises monotonically over the
-range explored and converges to the hard-threshold limit
-\begin{equation}
-\sup_{\rho,\,v^*}\mathcal R_{\rm det}\approx0.3479 ,
-\label{eq:etasup}
-\end{equation}
-approached as $\rho\to\infty$ at a threshold offset $\delta$ (the distance from the
-operating point to the inflection) with $\delta/2\varepsilon=0.523$. There is no
-finite optimal transfer width: narrower is always better, and reaching $95\%$ of the ceiling
-requires $u\gtrsim6$, that is $1/\rho\lesssim\varepsilon/6$.
-
-The limiting detector switches across its full range. At the optimum,
-and at the illustrative fast-access polarization $\varepsilon\!\simeq\!0.1$~mV
-of \S\ref{sec:discussion}, its open-loop beat drive
-exceeds the physiological-slope sigmoid's by some three orders of magnitude for the same
-$e_0$ and waveform, because the field excursion is about twice the threshold offset and the
-transfer switches across its full range instead of responding linearly. The disparity grows
-as the field weakens, the smooth sigmoid's response falling as $\varepsilon^2$ while a
-threshold repositioned with the field keeps its excursion.
-
-The required transfer width is small: at $\varepsilon=0.1$~mV the ceiling is approached only for
-$1/\rho\lesssim17\;\mu$V; at $\varepsilon=0.02$~mV the corresponding width is
-about $3\;\mu$V. Both follow from $1/\rho\lesssim\varepsilon/6$, with the
-threshold offset held to the same order as the applied polarization. A population
-sigmoid averages the spread of thresholds and noise; the JR voltage scale is
-$1/\rho\approx1.8$~mV \cite{jansen1995}. A
-microvolt width lies far below that and reads as an idealized microscopic threshold or
-rectifier rather than as a neural-mass sigmoid; real thresholds are themselves noisy and
-state-dependent, so it is not a measured single-cell property either. The
-regime in which the family approaches its ceiling is thus one in which the ``population
-sigmoid'' has ceased to describe a population.
-
-The limit is a step detector, not an envelope follower. For a unit step at offset
-$\delta$ the carrier-averaged transduction is $\pi^{-1}\arccos(\delta/\mathcal A)$ for $\mathcal A>\delta$
-and zero below; with $\beta=\delta/2\varepsilon$ its tACS fundamental is
-$(2/\pi)\sqrt{1-\beta^2}$ and its TI coefficient reduces by parts to
-$\mathcal R_{\rm det}=2\beta\,[\mathsf K(k_{\rm ell}^2)-\mathsf E(k_{\rm ell}^2)]/(\pi\sqrt{1-\beta^2})$
-with elliptic parameter $k_{\rm ell}^2=1-\beta^2$ and $\mathsf K,\mathsf E$
-the complete elliptic integrals, giving $0.3479$ at $\beta=0.523$ by direct quadrature and
-by the elliptic form alike (\texttt{threshold\_bound\_check.py}). At that optimum the
-step's second-to-first harmonic magnitude ratio is $0.151$, not the $1/5$ of a linear
-envelope follower. A bounded nondecreasing transfer is, up to a constant, a positive
-mixture of shifted steps. Both signed Fourier coefficients are linear in the
-transfer, and each step's direct-drive coefficient is nonnegative. The triangle
-inequality therefore bounds the mixture's amplitude ratio by the largest step
-ratio, whenever the denominator is nonzero. This extends the result beyond the
-logistic family; the maximum itself is a numerical evaluation, not a certified bound.
-
-\section{Extension: the laminar column at low carriers}\label{app:lanmm}
-The two-band laminar column (LaNMM) adds a resonant intermediary
-between the field and the slow generator. These sweeps use $25$--$80$~Hz carriers
-and polarizations up to $3$~mV on $P_2$, exceeding the sigmoid scale
-$1/\rho\approx1.8$~mV. They describe nonlinear frequency selection below TI's
-kHz range. The weak-field square law is tested separately in JR at
-$0.05$--$0.2$~mV, one to two orders of magnitude below that scale
-(Fig.~\ref{fig:opp}b).
-
-\subsection{Model and measurements}\label{sec:lanmm-methods}
-The laminar extension (LaNMM)
-\cite{ruffini2025cfc,sanchezTodo2023} adds coupled alpha and gamma circuits: deep
-pyramidal $P_1$, spiny-stellate (SS), and somatostatin (SST) populations, and a
-superficial pyramidal $P_2$/PV circuit.
-We simulate this laminar neural mass model (LaNMM). We integrate the full 28-variable column
-\cite{ruffini2025cfc,sanchezTodo2023}, with the field entering as in the single
-JR column, as a membrane polarization added inside the sigmoid argument of the target
-population. Its output rate $\varphi_X$ (s$^{-1}$) is
-\begin{equation}
-\varphi_X(t)=\Sig\!\big(v_X(t)+s(t)\big),\qquad X\in\{P_1,P_2\},
-\label{eq:lanmm_drive}
-\end{equation}
-with $s(t)$ the AM or two-tone field of \S\ref{sec:coupling} (amplitude $\varepsilon$ in
-mV, beat $\Omega=2\pi\Delta f$, carrier $\omega_c=2\pi f_c$) and all three external drives
-held flat at their baselines (Fig.~\ref{fig:lanmm_setup}). A perturbation of an external
-input \emph{rate} would require clipping at zero
-once its excursion exceeds the baseline, and a hard clip is a half-wave rectifier---a
-diode detector placed upstream of the sigmoid, which would inject a line at $\Delta f$
-into the drive before the population nonlinearity received it. A signed membrane
-polarization carries no such constraint and none is applied. Because the LaNMM and JR
-sigmoids share the voltage scale $1/\rho\approx1.8$~mV, $\varepsilon$ is directly
-comparable between the two models.
-
-Integration is a vectorized fixed-step RK4
-($\Delta t=10^{-4}$~s) advancing the whole parameter grid simultaneously, as in the JR
-sweeps. The maps report the
-alpha-band ($8$--$12$~Hz) power of the $P_1$ and $P_2$ membrane potentials as the mean
-squared magnitude of the Hann-windowed fast Fourier transform (FFT) over the band, in arbitrary units, over a
-post-transient window. This measure includes autonomous and driven activity and
-does not isolate a phase-coherent response to stimulation.
-
-Two sweeps probe the column: an amplitude--beat sweep over
-$(\varepsilon,\Delta f)$ at fixed carrier, and a carrier--beat sweep
-over $(f_c,\Delta f)$ at fixed $\varepsilon$, built on the LaNMM module of
-\cite{ruffini2025cfc}. The maps
-(Figs.~\ref{fig:lanmm_p2},~\ref{fig:lanmm_p1}) show the \emph{signed} stimulation-induced
-change, alpha power minus the unstimulated ($\varepsilon=0$) baseline, on a zero-centered
-scale; over most of the $P_1$-driven grids the change is negative. For the
-alpha resonance we instead drive the deep $P_1$ loop directly and sweep its input against
-$\Delta f$, reading the lock-in (\ifsupp main-text\fi\ Eq.~\eqref{eq:lockin}) of $v_{P_1}$ at $\Delta f$.
-
-The additional carrier comparison below uses the lock-in
-of $v_{P_1}$, averaged at each carrier over 17 beats: $7$--$9$ and
-$12.25$--$14$~Hz in $0.25$~Hz steps. These lie more than $1.5$~Hz from the
-field-free alpha peak near $10.6$~Hz. We denote this arithmetic mean by $S(f_c)$.
-The carrier grid is $25$--$80$~Hz in $1$~Hz steps, with equal tone amplitudes
-$\varepsilon=1.5$~mV for $P_2$ drive and $0.5$~mV for $P_1$ drive. After $2$~s
-of settling, we compare $3$ and $10$~s measurement windows. Field-free controls
-give mean background amplitudes of $0.0048$ and $0.0012$~mV over the same beats.
-This background includes a persistent component near $8$~Hz, so it is not solely
-finite-window leakage. The statistic compares carrier profiles within each drive
-condition; the unequal amplitudes do not support a direct sensitivity comparison
-between targets.
-
-\subsection{Frequency selection and carrier dependence}\label{sec:lanmm-results}
-Driving either population with the two-tone field of Eq.~\eqref{eq:lanmm_drive}
-and reading alpha-band power in the deep ($P_1$, alpha) and superficial ($P_2$,
-gamma) pyramidal potentials recovers the beat resonance
-(\S\ref{sec:lanmm-methods}, Fig.~\ref{fig:lanmm_setup}). Direct $P_1$ drive reproduces the JR
-alpha-band resonance on both stable-focus and limit-cycle sides; that sweep
-and its code are in the repository. The additional result is carrier selectivity
-through the coupled gamma circuit.
-
-Sweeping the field amplitude $\varepsilon$ and beat frequency $\Delta f$ at a fixed
-carrier produces a region of enhanced alpha-band power: the response in $P_1$ is largest
-when $\Delta f$ matches the deep alpha ($\sim$10~Hz) and grows with $\varepsilon$
-(Figs.~\ref{fig:lanmm_p2}a,b and~\ref{fig:lanmm_p1}a,b). The dominant-frequency
-contours identify where the output is close to the beat, without establishing
-phase locking of the autonomous rhythm. Away from the enhancement region the drive
-\emph{reduces} alpha-band power: with the field on $P_1$, $95\%$ of the amplitude--beat
-grid and $97\%$ of the carrier--beat grid lie below the field-free baseline
-(Fig.~\ref{fig:lanmm_p1}), the drive pulling the autonomous alpha out of the $8$--$12$~Hz
-band or suppressing it; with the field on $P_2$ the fractions are $44\%$ and $31\%$
-(Fig.~\ref{fig:lanmm_p2}).
-
-The carrier dependence illustrates the two coupling limits of
-\S\ref{sec:coupling}--\S\ref{sec:khz} within this model's $25$--$80$~Hz carrier
-range. When the field is delivered to the superficial loop ($P_2$), alpha-band
-power enhancement in $P_1$ is largest in the gamma carrier band with
-$\Delta f$ near the $P_1$ alpha (Fig.~\ref{fig:lanmm_p2}c,d). At
-$\Delta f=10$~Hz, the carrier maximum is $44$~Hz. This selectivity is consistent with a double
-resonance: the fast loop acts as a tuned
-radio-frequency (RF) front end whose dynamics affect the carrier dependence of
-the deep response. With direct $P_1$ drive, a ridge near the column's own alpha
-persists across the carrier range (Fig.~\ref{fig:lanmm_p1}c). That ridge contains
-autonomous activity and is not a measurement of the demodulated component alone.
-
-The lock-in also contains the autonomous rhythm when the beat is close to alpha;
-its maximum over beats cannot isolate the driven response. We therefore compare
-the off-alpha statistic $S(f_c)$ defined in \S\ref{sec:lanmm-methods}
-(Table~\ref{tab:lanmm-carrier}).
-With $P_2$ drive it peaks near $39$~Hz and falls to about $16$--$17\%$ of that
-peak at a $25$~Hz carrier. With $P_1$ drive it peaks at $25$~Hz and spans about
-$42$--$68\%$ of that peak over $30$--$80$~Hz. These are properties of the
-specified amplitudes and beat average, not universal carrier-rejection factors.
-Single-beat profiles have deeper minima, including a dip near a $45$~Hz carrier
-under direct $P_1$ drive: the gamma circuit can affect the response in either
-stimulation condition.
-
-\begin{table}[t!]
-\centering\small
-\caption{\textbf{LaNMM carrier profiles measured away from alpha.}
-$S(f_c)$ is the mean lock-in amplitude of $v_{P_1}$ over the 17 beats specified
-in \S\ref{sec:lanmm-methods}. Percentages are normalized to each row's own carrier maximum;
-the range and median use carriers from $30$ to $80$~Hz.}
-\label{tab:lanmm-carrier}
-\begin{tabular}{@{}llrrrr@{}}
-\toprule
-Drive & Window & Peak $S$ (mV) & Peak $f_c$ (Hz) & Range (\%) & Median (\%)\\
-\midrule
-$P_2$, $1.5$ mV & $3$ s  & $0.450$ & $39$ & $23$--$100$ & $42$\\
-$P_2$, $1.5$ mV & $10$ s & $0.450$ & $39$ & $23$--$100$ & $42$\\
-$P_1$, $0.5$ mV & $3$ s  & $0.092$ & $25$ & $42$--$68$  & $53$\\
-$P_1$, $0.5$ mV & $10$ s & $0.091$ & $25$ & $42$--$67$  & $52$\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-The carrier peaks and aggregate ranges persist with the longer window, although
-individual normalized values change by up to $3.1$ percentage points for $P_2$
-drive and $9.6$ for $P_1$ drive. The smallest $S$ exceeds its mean field-free
-background by factors of about $16$ and $8$, respectively, with the $3$~s window,
-and $62$ and $32$ with $10$~s. Some individual beat--carrier points remain near or below
-background; the comparison concerns the mean over beats, not each grid point.
-TI's kHz carriers lie outside this model's range. Within it, the carrier can
-excite a network mode and affect the detected response, qualifying the inert-carrier
-limit of \S\ref{sec:carrier} and linking it to frequency-tagging and
-intermodulation paradigms \cite{gordon2019}.
-
-\begin{figure}[t!]
-\centering
-\includegraphics[width=0.86\textwidth]{fig_lanmm_field_p2_twotone.pdf}
-\caption{\textbf{LaNMM frequency selection: two-tone TI field on the superficial $P_2$ (gamma)
-loop.} The field enters the $P_2$ sigmoid argument as a membrane polarization $\varepsilon$
-(mV) with all external drives flat. Color shows the signed change of alpha-band
-($8$--$12$~Hz) power from the unstimulated $\varepsilon=0$ baseline, on a zero-centered
-scale (arbitrary units). \emph{(a,b)} $P_1$ and $P_2$ enhancement vs.\
-$\varepsilon$ and $\Delta f$ (carrier $40$~Hz), peaking at the $P_1$ alpha ($10.0$~Hz,
-dashed). The black contour in \emph{(a)} is the frequency-dominance set
-$|f_{\rm out}-\Delta f|<0.3$~Hz, drawn because band power
-alone cannot separate a driven from an autonomous rhythm; it is a dominance screen, not a
-phase-capture test. The $\varepsilon=0$ row is excluded, since with no drive the
-autonomous $10.67$~Hz alpha already lies within the tolerance of two grid points (a
-resolution floor of $0.5$~Hz); the set widens to $2.75$~Hz at $3$~mV. \emph{(c,d)} Enhancement vs.\ carrier and $\Delta f$ at
-$\varepsilon=1.5$~mV: $P_1$ alpha-band enhancement is largest in the
-gamma carrier band with $\Delta f$ near the $P_1$ alpha. At $\Delta f=10$~Hz,
-the carrier maximum is $44$~Hz. The field-free
-$P_2$ gamma peak is near $39.7$~Hz; the finite-drive maximum need not coincide with it.}
-\label{fig:lanmm_p2}
-\end{figure}
-
-Within the $25$--$80$~Hz carrier range and at the finite polarizations used here,
-the LaNMM shows alpha-band power changes concentrated near the intrinsic alpha,
-amplitude-dependent widening of the frequency-dominance region, and enhanced
-responses when superficial drive passes through the gamma circuit. The power
-maps include autonomous and driven activity; they do not isolate TI efficacy.
-The gamma-carrier preference, around $40$~Hz rather than kHz, remains a separate
-prediction to test. Esmaeilpour et al.\ \cite{esmaeilpour2021} swept
-$0.1$--$2$~kHz carriers at a fixed $5$~Hz beat against carbachol-induced gamma,
-finding decreasing sensitivity with carrier frequency. Those carriers did not
-sample the gamma band. Violante et al.\ \cite{violante2023} also used a fixed
-$5$~Hz beat. Neither study tests this low-carrier resonance prediction.
-
-\section{Vocabulary and metrics}\label{sec:vocab}
-\emph{Forced response.} Below the Hopf the column does not oscillate on its own;
-we quantify its response by the lock-in amplitude at the beat $\Delta f$
-(\ifsupp main-text\fi\ Eq.~\eqref{eq:lockin}). There is no autonomous rhythm to entrain in the stable-focus
-J-curve, timing, and tACS sweeps.
-
-\emph{Frequency dominance and entrainment.} Above the Hopf the column free-runs
-at $f_0$. A $1{:}1$ phase-capture test would follow the unwrapped phase difference
-from the drive and require absence of secular drift. Our maps instead report
-$|f_{\rm out}-\Delta f|<0.3$~Hz, where $f_{\rm out}$ is the largest non-DC FFT
-peak. This is a frequency-dominance screen: a forced component can outgrow a
-persisting autonomous one without capturing it. When the components coexist,
-instantaneous-phase estimates also require their separation
-\cite{lachaux1999}. The maps therefore identify a dominance region, not a
-measured Arnold tongue.
-
-\emph{Beat-locked rate and gating.} Gating means that the amplitude of a
-persisting rhythm is modulated by the beat without frequency capture
-\cite{canolty2010,tort2010}. The QIF statistic used here is the lock-in of the
-population rate $r_E$ at $\Delta f$, complemented by the rate folded on beat
-phase over whole cycles. It measures beat-locked firing. A raw rate fold does
-not extract the gamma amplitude, and sidebands can arise from amplitude or phase
-modulation. The above-Hopf QIF panels therefore establish coexistence and mixing
-of the beat and gamma rhythms; a gamma-amplitude estimate would be needed to
-identify gating specifically.
-
-The protocol for Fig.~\ref{fig:entrain} places the column on the limit-cycle side
-(input $p$ on the stable alpha-cycle branch below its upper Hopf), drives it
-with $s(t)=\varepsilon\cos\Omega t$, and records the dominant frequency. Grid
-widths and the clipping check are specified in the code. As the Hopf is approached,
-the autonomous cycle shrinks and the frequency-dominance region broadens in these
-simulations. Its width and the stable-focus susceptibility describe different
-responses; their increase near onset does not make them the same quantity.
-
-\section{Supplementary figures}
-
-\begin{figure}[t!]
-\centering
-\includegraphics[width=0.85\textwidth]{fig_lanmm_setup.png}
-\caption{\textbf{Stimulation setup in a LaNMM column.} The column couples a
-superficial PING subcircuit (pyramidal $P_2$ + PV; gamma) and a deep JR
-subcircuit (pyramidal $P_1$ + SS + SST; alpha). \emph{(a)} the TI field drives
-$P_2$ while $P_1$ receives a flat drive; \emph{(b)} the TI field drives $P_1$
-while $P_2$ is flat. Through the sigmoid nonlinearities and $P_1$--$P_2$ coupling,
-the generated beat-frequency component is transferred to the deep loop: $P_2$ carries the
-modulated fast carrier, while $P_1$ exposes the recovered low-frequency component (right
-traces).}
-\label{fig:lanmm_setup}
-\end{figure}
-
-\begin{figure}[t!]
-\centering
-\includegraphics[width=0.92\textwidth]{fig_tacs_jcurve.pdf}
-\caption{\textbf{tACS shares the network amplifier (Jansen--Rit).} A direct
-low-frequency (tACS) drive at $\Delta f$ enters the column without a carrier, so it
-needs no demodulation, but feeds the same near-Hopf resonator. With the field-free operating point
-pinned, sweeping the coupling $C$ toward the alpha Hopf: \emph{(a)} the lock-in
-resonance at $\Delta f$ sharpens and grows as $C\!\to\!C^*$; \emph{(b)} the response
-grows as $1/\gamma$ (dashed) and saturates near criticality---the same network
-amplification as the demodulated TI drive (Fig.~\ref{fig:jcurve}). The leading tACS
-response is linear in the field; the TI beat is quadratic. Their response ratio
-is independent of damping in linear response and changes at the finite amplitudes
-nearest the Hopf (\S\ref{sec:jcurve}). Here $\gamma>0$ describes the field-free state.}
-\label{fig:tacs}
-\end{figure}
-
-\begin{figure}[t!]
-\centering
-\includegraphics[width=\textwidth]{fig_entrainment.pdf}
-\caption{\textbf{Frequency dominance in the driven autonomous Jansen--Rit column.}
-The column is set in its autonomous alpha limit cycle ($p=250$, $f_0\!\approx\!11$~Hz) and
-driven by a direct in-band sinusoid. \emph{(a)} The set
-$|f_{\rm out}-\Delta f|<0.3$~Hz forms a wedge near $f_0$ that widens with drive.
-It screens for phase capture but does not establish it. \emph{(b)} Inside this
-region the dominant frequency follows $\Delta f$; outside, it remains near $f_0$.
-\emph{(c)} Toward the Hopf at fixed drive the dominance width grows as the
-autonomous cycle amplitude vanishes (blue, left axis; red dashed, right axis). Above the
-Hopf this width describes frequency selection in a driven autonomous oscillator;
-it is distinct from the linear susceptibility of the stable-focus side
-(Fig.~\ref{fig:jcurve}). Both diagnostics increase toward criticality in these sweeps.}
-\label{fig:entrain}
-\end{figure}
-
-\begin{figure}[t!]
-\centering
-\includegraphics[width=0.74\textwidth]{fig_khz.pdf}
-\caption{\textbf{Carrier attenuation depends on the assumed access time (Jansen--Rit, open loop).} Open-loop
-demodulated response (normalized to the $\tau\!\to\!0$ value) vs.\ carrier
-frequency up to $10$~kHz. With direct coupling ($\tau\!\to\!0$) the response is
-flat---carrier-independent. A slow somatic membrane ($\tau_m\!\approx\!16$~ms)
-rolls off as $1/f_c^2$ (dashed guide); the assumed fast response
-($\tau=0.2$~ms) retains about $0.14$ of the direct response at $2$~kHz and $0.04$
-at $3.9$~kHz. These are sensitivity cases, not measurements of anatomical
-compartments.}
-\label{fig:khz}
-\end{figure}
-\begin{figure}[t!]
-\centering
-\includegraphics[width=0.95\textwidth]{fig_khz_twotone.pdf}
-\caption{\textbf{Two-tone TI at a kHz carrier (Jansen--Rit, assumed fast access).}
-Two equal tones at $f_1=1994.543$ and $f_2=2005.457$~Hz, beating at
-$10.914$~Hz, pass through the assumed low-pass ($\tau=0.2$~ms) into the recurrent column.
-\emph{(a)} The input amplitude spectrum has lines only at $f_1$ and $f_2$; in the
-$8$--$14$~Hz band its maximum is $2.2\times10^{-13}$~mV.
-\emph{(b)} The output carries a demodulated line at the beat, $10.9$~Hz.}
-\label{fig:khz_twotone}
-\end{figure}
-\begin{figure}[t!]
-\centering
-\includegraphics[width=0.86\textwidth]{fig_lanmm_field_p1_twotone.pdf}
-\caption{\textbf{LaNMM frequency selection: two-tone TI field delivered directly to the deep
-$P_1$ (alpha) loop.} As Fig.~\ref{fig:lanmm_p2} but with the field on $P_1$. The deep loop
-shows frequency dominance at smaller fields, so the amplitude range is
-$\varepsilon\le1$~mV here against $3$~mV there. These finite-amplitude maps extend
-beyond the perturbative regime of the theory. Color: signed change of alpha-band power from the $\varepsilon=0$ baseline,
-zero-centered; most of the grid is suppression. \emph{(a,b)} $P_1$ and $P_2$ enhancement vs.\ $\varepsilon$ and $\Delta f$; the
-black contour in \emph{(a)} outlines the frequency-dominance set
-$|f_{\rm out}-\Delta f|<0.3$~Hz (Appendix~\ref{sec:vocab}), computed from the dominant
-output frequency because band power alone cannot separate a driven from an autonomous
-rhythm; the $\varepsilon=0$ row is excluded (resolution floor $0.5$~Hz). The set widens to
-$1.25$~Hz at $\varepsilon=1$~mV.
-\emph{(c,d)} Enhancement vs.\ carrier frequency and $\Delta f$ at $\varepsilon=0.5$~mV.
-The ridge near alpha persists across the carrier band and includes the autonomous
-rhythm. A separate lock-in comparison away from alpha, including its window and
-background controls, is given in Table~\ref{tab:lanmm-carrier}; these panels show
-band-power changes.}
-\label{fig:lanmm_p1}
-\end{figure}
-\begin{figure}[t!]
-\centering
-\includegraphics[width=0.72\textwidth]{fig_nmm2_map.pdf}
-\caption{\textbf{NMM2 PING resonance map (exact mean field).} Demodulated response over
-the ($\Delta f$, background drive $\bar\eta$) plane, log color scale. The ridge follows the
-gamma natural frequency, with $f_0$ rising with $\bar\eta$ for these parameters. White markers
-outline the frequency-dominance set (Appendix~\ref{sec:vocab}), drawn only above the Hopf
-(dashed line) where there is an autonomous rhythm to capture; below it the same color field
-is a forced response. The markers do not establish phase capture. Lock-in amplitude
-cannot separate driven and autonomous contributions, since both can place power at
-$\Delta f$.}
-\label{fig:nmm2_map}
-\end{figure}
-
-\begin{figure}[t!]
-\centering
-\includegraphics[width=\textwidth]{fig_khz_direct.pdf}
-\caption{\textbf{Demodulation at a kHz carrier (Jansen--Rit, closed loop).}
-The applied field passes through an explicit membrane filter before the sigmoid.
-\emph{(a)} Closed-loop demodulated $A_\Omega$ at $\Delta f=f_0$ vs.\ carrier $f_c$ for
-three access models: direct ($\tau\!\to\!0$, carrier-independent), fast
-($\tau=0.2$~ms), and somatic ($\tau_m=16$~ms; $1/f_c^2$ roll-off).
-The fast time is assumed rather than assigned to a measured compartment.
-\emph{(b)} Output spectrum for a
-$2$~kHz carrier delivered through the fast element: an alpha line at $f_0$,
-synthesized by the column although the input carries no alpha power.}
-\label{fig:khz_direct}
-\end{figure}
-
-\begin{figure}[t!]
-\centering
-\includegraphics[width=0.92\textwidth]{fig_nmm2_jcurve.pdf}
-\caption{\textbf{Coupling changes the dominant mode and its gain in NMM2.}
-Unpinned sweep at $\bar\eta=0$, AM surrogate $A_f=8$.
-\emph{(a)} Simulated rate peak (blue) and linear reference including the
-second-order source (gray), normalized over $14.5<J<16$. Red dashed:
-field-free Hopf. \emph{(b)} Gain against inverse damping of the critical
-mode. Filled symbols: that mode carries the linear peak; open symbols:
-the competing $55$~Hz mode carries it ($14.6\lesssim J\lesssim16.2$).
-The dashed $1/\gamma$ guide is anchored at the last linear point.
-The simulation exceeds then falls below the guide. The driven endpoint
-remains attracting under both AM and genuine two-tone forcing.}
-\label{fig:nmm2_jcurve}
-\end{figure}
-
-\begin{figure}[t!]
-\centering
-\includegraphics[width=\textwidth]{fig_timing_not_rate.pdf}
-\caption{\textbf{Beat modulation grows more than the mean-rate shift.}
-JR coupling sweep with fixed field-free curvature and genuine two-tone
-input, $\Delta f=f_0$. Both observables use the pyramidal rate
-$r_P=\Sig(v+s)$, in mHz.
-\emph{(a)} Beat amplitude (blue) follows $1/\gamma$ (dashed) before
-saturating; mean-shift magnitude (red) remains smaller.
-\emph{(b)} Normalization to the far-from-Hopf values gives growth factors
-$13.2$ and $4.4$. Their ratio rises from $14.5$ to $58$ near
-$\gamma=1$~s$^{-1}$, then falls to $44$ as the amplified response rectifies.
-The AM surrogate gives ratios $19$, $66$, and $45$.}
-\label{fig:timing}
-\end{figure}
-
-\begin{figure}[t!]
-\centering
-\includegraphics[width=\textwidth]{fig_qif_timing_twotone.pdf}
-\caption{\textbf{Beat-locked modulation and mean-rate change in the QIF network.} \emph{(a)} Field-free power
-spectrum of $r_E(t)$, normalized: the spiking network ($N=8000$) matches the exact NMM2
-mean field in gamma frequency ($\sim$55~Hz); a normalized spectrum does not test the mean
-rate. \emph{(b)} Intermodulation above the
-Hopf (TI off vs.\ on, log power): the nonlinearity mixes the imposed $\Delta f=42$~Hz beat
-with the persisting gamma near $53$--$54$~Hz, raising the direct $\Delta f$ line and the sum sideband
-near $95$~Hz, both absent with TI off. These sidebands establish nonlinear mixing;
-they do not uniquely identify gamma-amplitude gating. \emph{(c)} The $\Delta f$ modulation depth
-$A_\Omega/\langle r_E\rangle$, off vs.\ on: below $0.003$ rising to $0.29$
-($\bar\eta=0.85$) and $0.23$ ($\bar\eta=1.5$), while the mean rate rises by about
-$8$--$11\%$. The labels identify field-free states; both field-on responses contain
-gamma activity beyond the beat component. Spectra use the same post-settling windows
-as the rate measurements and are normalized to each spectrum's maximum. Modulation depth is
-reported rather than the off$\to$on lock-in ratio, whose denominator is the field-free
-floor.}
-\label{fig:qif_timing}
-\end{figure}
-
-\begin{figure}[t!]
-\centering
-\includegraphics[width=\textwidth]{fig_spatial_maps.pdf}
-\caption{\textbf{Envelope and quadratic spatial maps.} Illustrative line profile:
-$\varepsilon_1(x)=\varepsilon_0(1+x/L_x)$ and
-$\varepsilon_2(x)=\varepsilon_0(1-x/L_x)$ on $-L_x\le x\le L_x$, with polarization scale
-$\varepsilon_0>0$ (mV) and length $L_x>0$ (m). In (a,b), each geometric curve is
-divided by its own positive value at $x=0$.
-\emph{(a)} Modulation is $1-|x/L_x|$ for envelope following and $1-(x/L_x)^2$ for quadratic
-detection: both peak centrally, but the quadratic profile is broader here.
-\emph{(b)} The mean envelope and mean-square polarization $\mathcal I$ both
-increase toward the edges; neither includes a signed detector gain.
-\emph{(c)} The static JR rate source $Y_{\rm DC}=\Sig''\mathcal I/2$ for uniform
-positive curvature (solid red) or negative curvature of the same magnitude
-(dashed blue). Both use the same positive scale $|\Sig''|\varepsilon_0^2/2$,
-giving $\pm[1+(x/L_x)^2]$; the gray line marks zero. These are assumed detector
-states before recurrent feedback, not inferred physiological responses.
-This is a line profile, not a head model or a demonstration of three-dimensional focusing.}
-\label{fig:spatial_maps}
-\end{figure}
-
-% The supplement cites a handful of works (locking metrics, normal-form theory)
-% and is read as a standalone file, so it carries its own reference list.
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\theHtable}{supp.\arabic{table}}
+\setcounter{table}{0}
+\input{planning/parts/supp_access}
+\input{planning/parts/supp_detection}
+\input{planning/parts/supp_spatial}
+\input{planning/parts/supp_amplification}
+\input{planning/parts/supp_efficiency}
+\input{planning/parts/supp_laminar}
+\input{planning/parts/supp_metrics}
 \ifsupp
 \clearpage
 \bibliographystyle{unsrt}

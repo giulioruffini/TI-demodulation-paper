@@ -1,18 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{ruffini2025rosetta}
-Francesca Castaldo, Raul de~Palma~Aristides, Pau Clusella, Jordi Garcia-Ojalvo,
-  and Giulio Ruffini.
-\newblock Rosetta {S}tone of neural mass models.
-\newblock {\em Physics Reports}, 1189:1--49, 2026.
-\newblock arXiv:2512.10982.
-
-\bibitem{jansen1995}
-Ben~H. Jansen and Vincent~G. Rit.
-\newblock Electroencephalogram and visual evoked potential generation in a
-  mathematical model of coupled cortical columns.
-\newblock {\em Biological Cybernetics}, 73(4):357--366, 1995.
-
 \bibitem{ruffini2021nmm2}
 Giulio Ruffini.
 \newblock Analysis and extension of exact mean-field theory with dynamic
@@ -20,10 +7,133 @@ Giulio Ruffini.
 \newblock {\em bioRxiv}, 2021.
 \newblock Preprint 2021.09.01.458563 (NMM2).
 
+\bibitem{cohen2020periaxonal}
+Charles C.~H. Cohen, Marko~A. Popovic, Jan Klooster, Marie-Theres Weil, Wiebke
+  M{\"o}bius, Klaus-Armin Nave, and Maarten H.~P. Kole.
+\newblock Saltatory conduction along myelinated axons involves a periaxonal
+  nanocircuit.
+\newblock {\em Cell}, 180(2):311--322.e15, 2020.
+
+\bibitem{kole2008ais}
+Maarten H.~P. Kole, Susanne~U. Ilschner, Bj{\"o}rn~M. Kampa, Stephen~R.
+  Williams, Peter~C. Ruben, and Greg~J. Stuart.
+\newblock Action potential generation requires a high sodium channel density in
+  the axon initial segment.
+\newblock {\em Nature Neuroscience}, 11(2):178--186, 2008.
+
+\bibitem{esmaeilpour2021}
+Zeinab Esmaeilpour, Greg Kronberg, Davide Reato, Lucas~C. Parra, and Marom
+  Bikson.
+\newblock Temporal interference stimulation targets deep brain regions by
+  modulating neural oscillations.
+\newblock {\em Brain Stimulation}, 14(1):55--65, 2021.
+
+\bibitem{luff2024}
+Charlotte~E. Luff, Patrycja Dzialecka, Emma Acerbo, Adam Williamson, and Nir
+  Grossman.
+\newblock Pulse-width modulated temporal interference (pwm-ti) brain
+  stimulation.
+\newblock {\em Brain Stimulation}, 17(1):92–103, January 2024.
+
+\bibitem{semenov2025}
+Iurii Semenov, Vitalii Kim, Giedre Silkuniene, and Andrei~G. Pakhomov.
+\newblock Excitation and polarization of isolated neurons by high-frequency
+  sine waves for temporal interference stimulation.
+\newblock {\em Cell Reports Physical Science}, 6(7):102660, 2025.
+
 \bibitem{pikovsky2001}
 Arkady Pikovsky, Michael Rosenblum, and J{\"u}rgen Kurths.
 \newblock {\em Synchronization: A Universal Concept in Nonlinear Sciences}.
 \newblock Cambridge University Press, 2001.
+
+\bibitem{nielsen2018}
+Jesper~D. Nielsen, Kristoffer~H. Madsen, Oula Puonti, Hartwig~R. Siebner,
+  Christian Bauer, Camilla~G{\o}bel Madsen, Guilherme~B. Saturnino, and Axel
+  Thielscher.
+\newblock Automatic skull segmentation from {MR} images for realistic volume
+  conductor models of the head: assessment of the state-of-the-art.
+\newblock {\em NeuroImage}, 174:587--598, 2018.
+
+\bibitem{gaser2024}
+Christian Gaser, Robert Dahnke, Paul~M. Thompson, Florian Kurth, Eileen Luders,
+  and {Alzheimer's Disease Neuroimaging Initiative}.
+\newblock {CAT}: a computational anatomy toolbox for the analysis of structural
+  {MRI} data.
+\newblock {\em GigaScience}, 13:giae049, 2024.
+
+\bibitem{salvador2025}
+Ricardo Salvador, Junhong Zhou, Brad Manor, and Giulio Ruffini.
+\newblock Group optimization methods for dose planning in {tES}.
+\newblock {\em Journal of Neural Engineering}, 22:046045, 2025.
+
+\bibitem{violante2023}
+Ines~R. Violante, Ketevan Alania, Antonino~M. Cassar{\`a}, Esra Neufeld, Emma
+  Acerbo, Romain Carron, Adam Williamson, Danielle~L. Kurtin, Edward Rhodes,
+  Adam Hampshire, Niels Kuster, Edward~S. Boyden, Alvaro Pascual-Leone, and Nir
+  Grossman.
+\newblock Non-invasive temporal interference electrical stimulation of the
+  human hippocampus.
+\newblock {\em Nature Neuroscience}, 26(11):1994--2004, 2023.
+
+\bibitem{yatsuda2024}
+K.~Yatsuda, W.~Yu, and J.~Gomez-Tames.
+\newblock Population-level insights into temporal interference for focused deep
+  brain neuromodulation.
+\newblock {\em Frontiers in Human Neuroscience}, 18:1308549, 2024.
+
+\bibitem{zienkiewicz1992}
+O.~C. Zienkiewicz and J.~Z. Zhu.
+\newblock The superconvergent patch recovery and a posteriori error estimates.
+  {Part} 1: {The} recovery technique.
+\newblock {\em International Journal for Numerical Methods in Engineering},
+  33(7):1331--1364, 1992.
+
+\bibitem{radman2009}
+Thomas Radman, Raddy~L. Ramos, Joshua~C. Brumberg, and Marom Bikson.
+\newblock Role of cortical cell type and morphology in subthreshold and
+  suprathreshold uniform electric field stimulation in vitro.
+\newblock {\em Brain Stimulation}, 2(4):215–228.e3, October 2009.
+
+\bibitem{bikson2004}
+Marom Bikson, Masashi Inoue, Hiroki Akiyama, Jackie~K. Deans, John~E. Fox,
+  Hiroyoshi Miyakawa, and John G.~R. Jefferys.
+\newblock Effects of uniform extracellular dc electric fields on excitability
+  in rat hippocampal slices in vitro.
+\newblock {\em The Journal of Physiology}, 557(1):175–190, May 2004.
+
+\bibitem{deans2007}
+Jacqueline~K. Deans, Andrew~D. Powell, and John G.~R. Jefferys.
+\newblock Sensitivity of coherent oscillations in rat hippocampus to ac
+  electric fields.
+\newblock {\em The Journal of Physiology}, 583(2):555–565, August 2007.
+
+\bibitem{grossman2017}
+Nir Grossman, David Bono, Nina Dedic, Suhasa~B. Kodandaramaiah, Andrii Rudenko,
+  Ho-Jun Suk, Antonino~M. Cassara, Esra Neufeld, Niels Kuster, Li-Huei Tsai,
+  Alvaro Pascual-Leone, and Edward~S. Boyden.
+\newblock Noninvasive deep brain stimulation via temporally interfering
+  electric fields.
+\newblock {\em Cell}, 169(6):1029--1041.e16, 2017.
+
+\bibitem{fischl2002}
+Bruce Fischl, David~H. Salat, Evelina Busa, Marilyn Albert, Megan Dieterich,
+  Christian Haselgrove, Andre van~der Kouwe, Ron Killiany, David Kennedy, Shuna
+  Klaveness, Albert Montillo, Nikos Makris, Bruce Rosen, and Anders~M. Dale.
+\newblock Whole brain segmentation: automated labeling of neuroanatomical
+  structures in the human brain.
+\newblock {\em Neuron}, 33(3):341--355, 2002.
+
+\bibitem{jansen1995}
+Ben~H. Jansen and Vincent~G. Rit.
+\newblock Electroencephalogram and visual evoked potential generation in a
+  mathematical model of coupled cortical columns.
+\newblock {\em Biological Cybernetics}, 73(4):357--366, 1995.
+
+\bibitem{vieira2024}
+Pedro~G. Vieira, Matthew~R. Krause, and Christopher~C. Pack.
+\newblock Temporal interference stimulation disrupts spike timing in the
+  primate brain.
+\newblock {\em Nature Communications}, 15:4558, 2024.
 
 \bibitem{ruffini2025cfc}
 Giulio Ruffini, Edmundo Lopez-Sola, Raul Palma, Roser Sanchez-Todo, Jakub
@@ -45,22 +155,6 @@ Nathan Gordon, Jakob Hohwy, Matthew~J. Davidson, Jeroen J.~A. van Boxtel, and
 \newblock From intermodulation components to visual perception and
   cognition---a review.
 \newblock {\em NeuroImage}, 199:480--494, 2019.
-
-\bibitem{esmaeilpour2021}
-Zeinab Esmaeilpour, Greg Kronberg, Davide Reato, Lucas~C. Parra, and Marom
-  Bikson.
-\newblock Temporal interference stimulation targets deep brain regions by
-  modulating neural oscillations.
-\newblock {\em Brain Stimulation}, 14(1):55--65, 2021.
-
-\bibitem{violante2023}
-Ines~R. Violante, Ketevan Alania, Antonino~M. Cassar{\`a}, Esra Neufeld, Emma
-  Acerbo, Romain Carron, Adam Williamson, Danielle~L. Kurtin, Edward Rhodes,
-  Adam Hampshire, Niels Kuster, Edward~S. Boyden, Alvaro Pascual-Leone, and Nir
-  Grossman.
-\newblock Non-invasive temporal interference electrical stimulation of the
-  human hippocampus.
-\newblock {\em Nature Neuroscience}, 26(11):1994--2004, 2023.
 
 \bibitem{lachaux1999}
 Jean-Philippe Lachaux, Eugenio Rodriguez, Jacques Martinerie, and Francisco~J.

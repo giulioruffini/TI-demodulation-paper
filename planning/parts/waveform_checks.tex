@@ -1,0 +1,20 @@
+\subsection{AM-surrogate and genuine two-tone comparisons}\label{supp:waveform-checks}
+These checks support the waveform choices in \S\ref{sec:waveforms}. Agreement
+at the leading beat does not imply equal steady sources or driven operating states.
+
+\begin{table}[htbp]\centering\small
+\caption{Waveform comparisons at the stated operating points. JR response ratios
+use the same voltage readout; timing ratios use the same pyramidal firing rate.}
+\label{tab:waveform-checks}
+\begin{tabular}{@{}p{4.3cm}p{4.5cm}p{6cm}@{}}
+\toprule
+Comparison & Conditions & Result\\
+\midrule
+JR open-loop beat & $v^*=8$ mV & Two-tone/AM: $1.0000$ at $0.02$ mV; $0.988$ at $1$ mV.\\
+JR modulation/mean shift & Pinned sweep: far from Hopf, $\gamma=1$ s$^{-1}$, nearest point & Two tones: $14.5$, $58$, $44$; AM: $19$, $66$, $45$. AM has $3/4$ of the two-tone direct steady source.\\
+JR TI/tACS output & Far from Hopf, $\gamma=1.07$ and $0.12$ s$^{-1}$ & AM: $0.14$, $0.24$, $0.47$; two tones: $0.14$, $0.24$, $0.46$. Difference at most $2.2\%$ across the grid.\\
+JR matched-source output & Three couplings, settings in \S\ref{app:jr-sweep-settings} & TI/tACS: $0.99$, $0.94$, $0.92$ for AM; $0.99$, $0.93$, $0.90$ for two tones.\\
+PING beat & Well below Hopf; $\bar\eta=0.9$ & Matched AM and two-tone responses agree within $0.07\%$ and $4\%$, respectively.\\
+\bottomrule
+\end{tabular}
+\end{table}

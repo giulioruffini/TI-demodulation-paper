@@ -1,8 +1,20 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## Current journal edition — draft21, October 21, 2026
+## Current journal edition — draft22, October 21, 2026
 
-The canonical reading copy is `../TN0484_jne.pdf` (44 pages). The abstract and
+The approved prose/placement pass is implemented, with the full PING system
+unchanged in Methods. The article is 43 pages and the topic-organized supplement
+27 pages. Main narrative count falls from 14,977 to 13,018 words including
+headings/captions; article appendices add 1,503. The complete article still
+exceeds the normal journal length. The revision and checks are recorded in
+`revision_2026-10-21_draft22_prose.md`. Klaus's fidelity check is pending.
+The 0.348 bound remains in its existing Discussion/supplement locations pending
+Giulio's placement decision. The approved abstract, author order, numerical
+results, and draft20 reading baseline are unchanged.
+
+### Earlier October 21 abstract and amplitude-comparison update
+
+Before the prose pass, `../TN0484_jne.pdf` had 44 pages. The abstract and
 body quantify TI steady and beat sources relative to tDCS and tACS at matched
 effective sigmoid-input amplitudes (2960dec). Section 2.2 explains AIS coupling
 as effective threshold modulation, with calibration of the anatomical input
@@ -42,8 +54,9 @@ proposes de-duplication and relocation while retaining local qualifications and
 the theoretical model bridge. Reconciliation with Klaus is complete; the joint
 decision summary is `revision_2026-10-21_prose_plan.md`. The remaining reviewer
 difference concerns article-appendix versus supplement placement of the compact
-efficiency-bound argument. Giulio's decision remains pending. No manuscript or
-PDF changed during this review.
+efficiency-bound argument. Giulio approved the first pass and layout, retaining PING in Methods
+(`24d34c1`). Implementation is recorded above; the bound-placement decision
+remains pending. No manuscript changed during the preceding review itself.
 
 ## v0.15.0-draft13 — The shared abstract is 297 words (2026-10-06)
 

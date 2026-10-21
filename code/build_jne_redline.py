@@ -56,6 +56,13 @@ def expanded_source(revision=None):
     token = r"\input{" + caption + "}"
     if token in source:
         source = source.replace(token, source_at(caption, revision))
+    # Shared content blocks keep article, supplement, and TN wording in one place.
+    # Expand them for latexdiff; TeX still selects the requested edition.
+    part_pattern = r"\\input\{(planning/parts/[^}]+)\}"
+    while re.search(part_pattern, source):
+        source = re.sub(part_pattern, lambda m: source_at(
+            m.group(1) if m.group(1).endswith(".tex") else m.group(1) + ".tex",
+            revision), source)
     # Join adjacent inline math spans only in the comparison inputs.
     return source.replace("$$", "")
 

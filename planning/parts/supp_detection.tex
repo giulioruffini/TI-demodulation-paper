@@ -1,0 +1,88 @@
+\section{Detection and harmonic signatures}\label{supp:detection}
+These calculations support the carrier-scaling and harmonic tests in
+\S\ref{sec:transduction} and the dynamic detector in \S\ref{sec:dynamic}.
+\subsection{Fixed-voltage mixing and carrier exponents}\label{supp:dynamic-details}
+Time and frequency use the membrane-time units defined in article
+Appendix~\ref{app:mpr-coefficients}; $r^*,d,\nu$ have the same definitions.
+Membrane access is already included in this calculation. The linear voltage response
+is $H_v(\omega)=(i\omega+d)/[(i\omega+d)^2+\nu^2]$. Dividing by its squared magnitude
+gives the mixing coefficient at fixed voltage excursion,
+\begin{equation}
+\kappa_V(Q,\omega)=\frac{\kappa_{\rm DC}(Q,\omega)}{|H_v(\omega)|^2}
+=\frac{F'(Q)}{2}\;\frac{\omega^2+3d^2-\nu^2}{\omega^2+d^2}.
+\label{eq:kfixed}
+\end{equation}
+This coefficient tends to $F'/2$ at high frequency. The $1/\omega^2$ suppression
+at fixed current comes from $|H_v|^2$, the membrane filtering already represented
+by \ifsupp main-text\fi\ Eq.~\eqref{eq:doors}; it is not an additional detector filter. A static curve
+placed after the same membrane has the same leading carrier roll-off, although
+its mixing coefficient and sign can differ. The steady-state curvature is
+$F''=4r^*(3d^2-\nu^2)/(d^2+\nu^2)^3$, so the inflection occurs at $\nu^2=3d^2$.
+
+For nearby fast tones, the quadratic terms in \ifsupp main-text\fi\ Eq.~\eqref{eq:mpr} contribute at
+different orders: $v^2$ at $\omega^{-2}$, $r v$ at $\omega^{-3}$, and $r^2$ at
+$\omega^{-4}$. Table~\ref{tab:exponents} compares the carrier and beat routes to
+the firing rate for a static curve and a dynamic population with the same membrane access.
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lcc}
+\toprule
+stage & static curve, same membrane & dynamic population \\
+\midrule
+point-membrane current $\to$ voltage & $\omega^{-1}$ & $\omega^{-1}$ \\
+voltage $\to$ rate, carrier & $1$ & $\omega^{-1}$ \\
+current $\to$ rate, carrier & $\omega^{-1}$ & $\omega^{-2}$ \\
+two tones $\to$ beat in the rate & $(\omega_1\omega_2)^{-1}$ & $(\omega_1\omega_2)^{-1}\times$ const. \\
+\bottomrule
+\end{tabular}
+\caption{Fast-carrier scaling with matched point-membrane access, at fixed beat frequency
+and a nonzero leading mixing coefficient. The dynamic population integrates the
+carrier once more between voltage and rate; the beat is formed before that step.
+Prefactors depend on the operating point and beat-frequency susceptibility.}
+\label{tab:exponents}
+\end{table}
+
+The first row gives the shared membrane factor $1/\omega$. The second converts
+voltage to rate: a static curve adds its slope, whereas the dynamic rate equation
+integrates the carrier once more. Combining these stages gives the third-row
+carrier responses, $\omega^{-1}$ and $\omega^{-2}$, respectively.
+
+The beat in the last row is formed before that additional rate integration:
+static curvature and dynamic $v^2$ each mix the attenuated voltage, retaining
+$(\omega_1\omega_2)^{-1}$. Equal exponents do not imply equal amplitudes; mixing
+and the susceptibility at fixed $\Omega$ determine the prefactors. For the
+uncoupled carrier-averaged response, $\kappa_V$ in Eq.~\eqref{eq:kfixed} tends to
+$F'/2$, but is not the full finite-$\Omega$ network prefactor. Thus the dynamic
+rate attenuates the carrier twice while forming the beat between those stages.
+
+\ifjne
+\input{planning/parts/harmonic_details}
+\fi
+\input{planning/parts/waveform_checks}
+\subsection{The cubic Hopf normal form lacks a quadratic mixer}\label{app:sl}
+The Stuart--Landau equation \cite{pikovsky2001}
+\begin{equation}
+\dot z=(\alpha+i\omega_0)z-|z|^2z+\mathcal F(t),\qquad
+\gamma=-\alpha>0,
+\label{eq:sl}
+\end{equation}
+uses seconds for time and a normalized complex mode $z$, with the cubic
+coefficient set to $1$~s$^{-1}$. Its linear growth rate is $\alpha=-\gamma$;
+$\gamma$ has units s$^{-1}$. The mode has damping $\gamma$ and natural angular frequency
+$\omega_0$, driven by the applied input $\mathcal F$ (normalized mode units per second). For a weak input
+$\mathcal F=\varepsilon_{\rm SL} \psi_{\rm SL}(t)$ with dimensionless waveform $\psi_{\rm SL}$ on the stable side, the perturbative response has
+the form $z=\varepsilon_{\rm SL} z_1+\varepsilon_{\rm SL}^3z_3+\cdots$. There is no second-order
+source: the first-order response contains only the applied frequencies, and the
+cubic first contributes at order $\varepsilon_{\rm SL}^3$. Thus the normal form has a
+resonant linear susceptibility but lacks the quadratic difference-frequency
+generation of \ifsupp main-text\fi\ Eq.~\eqref{eq:demod}. This statement concerns the weak-input
+expansion; it is not an exclusion of every higher-order intermodulation or
+strong-drive response.
+
+In the numerical control ($\alpha=-0.5$~s$^{-1}$, $f_0=10$~Hz, $f_c=100$~Hz,
+$\varepsilon_{\rm SL}=0.5$~s$^{-1}$), a square-law detector gives a beat-frequency lock-in amplitude
+of $2.5\times10^{-1}$, while $\mathrm{Re}\,z$ gives approximately
+$2\times10^{-8}$, at the numerical floor. Driving the same mode directly in band
+recovers the forced $1/\gamma$ growth. The control separates resonant amplification
+from the nonlinear source required to drive it at the beat.

@@ -1,0 +1,119 @@
+\section{Simulated models: equations and parameters}\label{app:models}
+For a synapse from population $Y$ to $X$, the resulting first-generation neural
+mass model (NMM1) equations are
+\cite{ruffini2025rosetta}
+\begin{equation}
+\hat L_{X\leftarrow Y}\big[u_{X\leftarrow Y}\big]=C_{X\leftarrow Y}\,r_Y,\qquad
+v_X=\Lambda[E]+\!\!\sum_{Y:\,C_{X\leftarrow Y}\neq0}\!\!u_{X\leftarrow Y},\qquad
+r_X=\Sig(v_X).
+\label{eq:nmm1}
+\end{equation}
+The operator $\hat L$ is the inverse synaptic filter, $u_{X\leftarrow Y}$ its
+postsynaptic potential, $C_{X\leftarrow Y}$ the connectivity, and $\Lambda[E]$
+the direct polarization caused by the applied field $E$ (V/m). The rates $r_X,r_Y$
+are in s$^{-1}$, the potentials $v_X,u_{X\leftarrow Y}$ in mV, and the
+pathway weights $C_{X\leftarrow Y}$ dimensionless. This field contribution enters
+alongside the synaptic potentials, without first passing through a synapse.
+
+Synaptic operators convert rates into postsynaptic potentials, which sum with
+the direct field polarization before the rate curve is applied.
+
+\subsection*{Jansen--Rit column}
+Writing $y_0$ for the excitatory PSP driving the interneurons, $y_1$ and $y_2$ for the
+excitatory and inhibitory PSPs onto the pyramidal population, external input $p$, and the
+applied-field perturbation $s(t)$ (\S\ref{sec:coupling}) entering the pyramidal sigmoid,
+\begin{align}
+\ddot y_0 &= Aa\,\Sig\!\big(y_1-y_2+s(t)\big)-2a\dot y_0-a^2 y_0, \label{eq:jr0}\\
+\ddot y_1 &= Aa\,\big[\,p+C_2\,\Sig(C_1 y_0)\,\big]-2a\dot y_1-a^2 y_1,\\
+\ddot y_2 &= Bb\,C_4\,\Sig(C_3 y_0)-2b\dot y_2-b^2 y_2,
+\end{align}
+The pyramidal output passes through $h_e$ to give $y_0$; the excitatory
+and inhibitory interneurons receive $C_1y_0$ and $C_3y_0$, and return through
+weights $C_2$ and $C_4$. The excitatory and inhibitory impulse responses are
+$h_e(t)=Aa\,t e^{-at}$ and $h_i(t)=Bb\,t e^{-bt}$ for $t\ge0$.
+The equations are integrated as six first-order ODEs; the LFP proxy is $v=y_1-y_2$ \cite{jansen1995}.
+Table~\ref{tab:params} gives the reference column parameters. The synaptic rates
+correspond to excitatory and inhibitory decay times of $10$ and $20$~ms, while
+$A$ and $B$ set the postsynaptic-potential gains. The sigmoid parameters fix its
+voltage scale and rate ceiling; the sweeps vary the external rate $p$ or connectivity
+$C$ to change the operating state, as specified in Methods.
+
+\begin{table}[h]\centering\small
+\caption{Jansen--Rit parameters \cite{jansen1995}.}
+\label{tab:params}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Symbol & Meaning & Value\\
+\midrule
+$A,\,B$ & excit./inhib.\ PSP gain & $3.25,\ 22$ mV\\
+$a,\,b$ & synaptic rates & $100,\ 50$ s$^{-1}$\\
+$v_0,\,e_0,\,\rho$ & sigmoid inflection, max rate$/2$, slope & $6$ mV, $2.5$ s$^{-1}$, $0.56$ mV$^{-1}$\\
+$C$ & global connectivity & $135$\\
+$C_1,C_2,C_3,C_4$ & couplings & $C,\,0.8C,\,0.25C,\,0.25C$\\
+$p$ & external input (bifurcation knob) & $0$--$400$ Hz\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The alpha limit cycle lies between Hopf points near $p=90$ and
+$316$~s$^{-1}$. It coexists with a lower stable fixed point up to the
+saddle-node on an invariant circle (SNIC, $p\approx114$), then with a
+large-amplitude cycle up to its saddle-node near $p=137$. The SNIC
+terminates the large-amplitude branch, not the alpha cycle.
+
+
+\input{planning/parts/slow_synapse}
+\subsection{Static and dynamic MPR mixing coefficients}\label{app:mpr-coefficients}
+In this subsection and the derivation that follows, time is measured in units
+of $\tau_m$, rate in units of $1/\tau_m$, and $\omega$ denotes angular frequency
+in membrane-time units. Thus $r^*=F(Q)$ and physical angular frequency is
+$\omega/\tau_m$. Consider an uncoupled MPR population at drive $Q$, with a weak
+current $I_{\rm ac}\cos\omega t$.
+To second order in $I_{\rm ac}$, the carrier-averaged shift of $r$ is $I_{\rm ac}^2\kappa_{\rm DC}(Q,\omega)$, where
+\begin{equation}
+\kappa_{\rm DC}(Q,\omega)=\frac{r^*\,[\omega^2+3d^2-\nu^2]}{(d^2+\nu^2)\{[d^2+\nu^2-\omega^2]^2+4d^2\omega^2\}},
+\qquad r^*=F(Q),\quad d=\frac{\Delta}{\pi r^*},\quad \nu=2\pi r^*.
+\label{eq:crossover}
+\end{equation}
+The physical rate shift is $I_{\rm ac}^2\kappa_{\rm DC}/\tau_m$.
+The fixed-point eigenvalues in normalized time are $-d\pm i\nu$: $d$ is the relaxation rate and $\nu$
+the ringing angular frequency, both in membrane-time units; their physical
+values are $d/\tau_m$ and $\nu/\tau_m$. Expansion about this fixed point gives the limits
+\begin{equation}
+\kappa_{\rm DC}(Q,\omega)\xrightarrow[\ \omega\to0\ ]{}\tfrac14F''(Q),\qquad
+\kappa_{\rm DC}(Q,\omega)\xrightarrow[\ \omega\gg d,\nu\ ]{}\frac{F'(Q)}{2\omega^2}.
+\label{eq:crossover_limits}
+\end{equation}
+In the first limit the population tracks its static curve, whose curvature rectifies
+the input. In the second, the voltage excursion is approximately $I_{\rm ac}/\omega$; its
+square supplies a slow drive that the population reads through $F'$. Above the
+inflection of $F$, these limits have opposite signs and the coefficient vanishes at
+$\omega_z=\sqrt{\nu^2-3d^2}$. The $300$~Hz and kHz carriers
+are on the fast side for the parameters of the pyramidal--interneuron network gamma
+(PING) circuit studied here. That classification is
+parameter-dependent: a shorter effective membrane time can bring the same physical
+carrier into the adiabatic regime.
+
+
+\subsection{Single-cell rate and dynamic MPR mixing}\label{app:mpr-mixing}
+The MPR steady-rate curve $F$ of \S\ref{sec:dynamic}, \ifsupp main-text\fi\ Eq.~\eqref{eq:Fmpr}, averages the single-neuron rate $f(q)=\sqrt q/\pi$ for
+$q>0$, and $f(q)=0$ otherwise, over the excitability distribution. Here $\eta$ is
+the neuron's excitability and $q=\eta+I$ its constant total drive.
+
+The coefficient in Eq.~\eqref{eq:crossover} follows by expanding about the
+fixed point $(r^*,v^*)$, with $v^*=-d/2$, in membrane-time units.
+The Jacobian and unit-current phasor are
+\[
+\mathsf J=\begin{pmatrix}2v^*&2r^*\\-2\pi^2r^*&2v^*\end{pmatrix},\qquad
+\mathbf h=(i\omega\mathsf I_2-\mathsf J)^{-1}\binom{0}{1},
+\]
+where $\mathsf I_2$ is the identity matrix and the first-order response is
+$I_{\rm ac}\operatorname{Re}(\mathbf h e^{i\omega t})$.
+Writing $h_r,h_v$ for its rate and voltage components, with an overbar denoting
+complex conjugation and $\operatorname{Re}$ the real part, the carrier-averaged
+quadratic source per $I_{\rm ac}^2$ is
+\[
+\mathbf b_2=\binom{\operatorname{Re}(h_r\overline{h_v})}{\big(|h_v|^2-\pi^2|h_r|^2\big)/2}.
+\]
+The mean second-order correction is $-I_{\rm ac}^2\mathsf J^{-1}\mathbf b_2$;
+its rate component gives Eq.~\eqref{eq:crossover}.

@@ -1,0 +1,86 @@
+\section{Efficiency of a memoryless transfer against a direct in-band drive}\label{app:bound}
+For the logistic family of memoryless transfers, compare balanced TI tones of
+polarization amplitude $\varepsilon$ each with a direct in-band drive of amplitude
+$2\varepsilon$, matching peak polarization. Their leading drive amplitudes are
+$|\Sig''|\varepsilon^2/2$ and $2\Sig'\varepsilon$, so
+$\mathcal R_{\rm det}\simeq|\Sig''|\varepsilon/(4\Sig')$.
+The weak-input formula concerns the logistic family. The step-mixture argument
+below extends the exact carrier-averaged bound to bounded nondecreasing
+memoryless transfers, with the same operating point, matched peak polarization,
+and open-loop readout. It does not cover the dynamic detector of \S\ref{sec:dynamic}.
+
+Writing $\zeta=\Sig/(2e_0)\in(0,1)$ gives
+$\Sig'=2e_0\rho\zeta(1-\zeta)$ and
+$\Sig''=2e_0\rho^2\zeta(1-\zeta)(1-2\zeta)$. Since
+$|\mathrm{PEIX}|=1-4\zeta(1-\zeta)=(1-2\zeta)^2$, the leading ratio satisfies
+\begin{equation}
+\mathcal R_{\rm det}\simeq\frac{\rho\,\varepsilon}{4}\sqrt{|\mathrm{PEIX}|}
+\;\le\;\frac{\rho\,\varepsilon}{4}.
+\label{eq:etabound}
+\end{equation}
+It vanishes at the inflection, where the quadratic coefficient is zero, and
+approaches its bound in the saturated tails. This maximizes a ratio rather than
+an absolute response: both drives vanish in those tails. For the JR slope
+$\rho=0.56$~mV$^{-1}$, the perturbative bound is $1.4\%$ at
+$\varepsilon=0.1$~mV and $0.28\%$ at $\varepsilon=0.02$~mV.
+
+Optimizing over the sigmoid slope gives a different limit from the weak-input bound.
+The logistic transfer depends on voltage only through $\rho(v-v_0)$, so writing
+\begin{equation}
+u=\rho\,\varepsilon,\qquad \xi=\rho\,(v^*-v_0),
+\label{eq:reduced}
+\end{equation}
+we have $\Sig(v^*+\varepsilon\psi(t))=2e_0\,L(\xi+u\,\psi(t))$ for any normalized waveform $\psi$,
+with $L(\xi)=(1+e^{-\xi})^{-1}$. Every Fourier amplitude, and hence their ratio, is a function
+of $(u,\xi)$ alone; the factor $2e_0$ cancels. Maximizing over $v^*$ and $\rho$ at fixed
+$\varepsilon$ is therefore the same as maximizing over $(u,\xi)$, and the family supremum is
+independent of field strength. Evaluating the exact cycle response rather than its
+quadratic truncation and optimizing $\xi$ at each $u$, the ratio rises monotonically over the
+range explored and converges to the hard-threshold limit
+\begin{equation}
+\sup_{\rho,\,v^*}\mathcal R_{\rm det}\approx0.3479 ,
+\label{eq:etasup}
+\end{equation}
+approached as $\rho\to\infty$ at a threshold offset $\delta$ (the distance from the
+operating point to the inflection) with $\delta/2\varepsilon=0.523$. There is no
+finite optimal transfer width: narrower is always better, and reaching $95\%$ of the ceiling
+requires $u\gtrsim6$, that is $1/\rho\lesssim\varepsilon/6$.
+
+The limiting detector switches across its full range. At the optimum,
+and at the illustrative fast-access polarization $\varepsilon\!\simeq\!0.1$~mV
+of \S\ref{sec:discussion}, its open-loop beat drive
+exceeds the physiological-slope sigmoid's by some three orders of magnitude for the same
+$e_0$ and waveform, because the field excursion is about twice the threshold offset and the
+transfer switches across its full range instead of responding linearly. The disparity grows
+as the field weakens, the smooth sigmoid's response falling as $\varepsilon^2$ while a
+threshold repositioned with the field keeps its excursion.
+
+The required transfer width is small: at $\varepsilon=0.1$~mV the ceiling is approached only for
+$1/\rho\lesssim17\;\mu$V; at $\varepsilon=0.02$~mV the corresponding width is
+about $3\;\mu$V. Both follow from $1/\rho\lesssim\varepsilon/6$, with the
+threshold offset held to the same order as the applied polarization. A population
+sigmoid averages the spread of thresholds and noise; the JR voltage scale is
+$1/\rho\approx1.8$~mV \cite{jansen1995}. A
+microvolt width lies far below that and reads as an idealized microscopic threshold or
+rectifier rather than as a neural-mass sigmoid; real thresholds are themselves noisy and
+state-dependent, so it is not a measured single-cell property either. The
+regime in which the family approaches its ceiling is thus one in which the ``population
+sigmoid'' has ceased to describe a population.
+
+The limit is a step detector, not an envelope follower. For a unit step at offset
+$\delta$ the carrier-averaged transduction is $\pi^{-1}\arccos(\delta/\mathcal A)$ for $\mathcal A>\delta$
+and zero below; with $\beta=\delta/2\varepsilon$ its tACS fundamental is
+$(2/\pi)\sqrt{1-\beta^2}$ and its TI coefficient reduces by parts to
+$\mathcal R_{\rm det}=2\beta\,[\mathsf K(k_{\rm ell}^2)-\mathsf E(k_{\rm ell}^2)]/(\pi\sqrt{1-\beta^2})$
+with elliptic parameter $k_{\rm ell}^2=1-\beta^2$ and $\mathsf K,\mathsf E$
+the complete elliptic integrals, giving $0.3479$ at $\beta=0.523$ by direct quadrature and
+by the elliptic form alike (\texttt{threshold\_bound\_check.py}). At that optimum the
+step's second-to-first harmonic magnitude ratio is $0.151$, not the $1/5$ of a linear
+envelope follower. A bounded nondecreasing transfer is, up to a constant, a positive
+mixture of shifted steps. Both signed Fourier coefficients are linear in the
+transfer, and each step's direct-drive coefficient is nonnegative. The triangle
+inequality therefore bounds the mixture's amplitude ratio by the largest step
+ratio, whenever the denominator is nonzero. This extends the result beyond the
+logistic family; the maximum itself is a numerical evaluation, not a certified bound.
+
+\input{planning/parts/vieira_comparison}

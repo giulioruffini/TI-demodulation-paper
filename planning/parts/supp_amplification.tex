@@ -1,0 +1,75 @@
+\section{Recurrent amplification and numerical checks}\label{supp:amplification}
+These protocols support the coupling, timing, and field-induced gamma results in
+\S\ref{sec:jcurve}--\S\ref{sec:qif}.
+\subsection{JR coupling-sweep settings}\label{app:jr-sweep-settings}
+The coupling sweeps of Figs.~\ref{fig:jcurve} and~\ref{fig:timing}, and the transcranial
+alternating-current stimulation (tACS) control of Fig.~\ref{fig:tacs}, use the single JR
+column with the field-free operating point $v^*$ pinned: for
+each global connectivity $C$ we solve the field-free fixed-point relation analytically
+for the external drive $p(C)$ that holds $v^*$ (hence $\Sig''(v^*)$) fixed, vary $C$
+toward the alpha Hopf, and read $\gamma,\omega_0$ from the $6\times6$ Jacobian. The field
+is the AM surrogate of \ifsupp main-text\fi\ Eq.~\eqref{eq:amsur} for Fig.~\ref{fig:jcurve}, genuine two
+tones for the timing comparison (Fig.~\ref{fig:timing}), or a direct in-band sinusoid $s(t)=\varepsilon\cos\Omega t$
+($\varepsilon=0.1$~mV) for the tACS control (Fig.~\ref{fig:tacs}), each read out by the
+lock-in of $v$ at $\Delta f$, except in the timing comparison, which reads the
+modulation and mean of the same pyramidal rate $r_P=\Sig(v+s)$.
+That comparison uses $18$~s settling and a $20$~s window for each waveform.
+The Figure~\ref{fig:jcurve}--Figure~\ref{fig:tacs} response-ratio comparison uses
+$v^*=8.30$~mV, TI surrogate amplitude $0.3$~mV with $m=1$ and $f_c=100$~Hz,
+and tACS amplitude $0.1$~mV, driven at each field-free modal frequency.
+The original TI amplitudes are interpolated logarithmically in $C$ onto the tACS
+grid. For the waveform comparison, both the surrogate and two-tone TI are rerun
+on that grid with $12$~s settling and a $6$~s window.
+Pinning fixes the background curvature; it does not cancel the stimulation-induced
+mean shift.
+Additional controls at $C=110$, $133.9091$, and $136.3$ use a tACS amplitude of
+$0.0143039$~mV, matched to the leading TI beat source. They record mean voltage,
+mean rate, and lock-in with $12$~s settling and a $6$~s window, repeated with
+$60$~s settling and a $20$~s window; the latter settings also test genuine two tones.
+
+
+\subsection{Stability of the driven PING endpoint}\label{app:ping-stability}
+We check the stability of the driven $J$-curve endpoint by integrating the full
+variational matrix along its trajectory. At carrier $300$~Hz and beat $50.5$~Hz,
+the AM input repeats every $2$~s. After $8$~s of settling, we compute the
+perturbation multipliers over that period and repeat over the next period.
+Moduli below one indicate decay of perturbations to the periodic response.
+Two-tone controls at $J=16.5663$ and $16.5901$, both with a $50.5$~Hz beat,
+use $5$~s settling, direct perturbation decay, and an $8$~s finite-time
+Lyapunov estimate.
+
+Although a DC-only averaged calculation predicts an unstable endpoint, the full
+periodically forced solution remains attracting: its largest perturbation
+multiplier is $0.034$ over the $2$~s forcing period. Increasing settling from
+$0.6$ to $3$~s changes the endpoint lock-in by $0.8\%$. With genuine two tones,
+the $50.5$~Hz endpoint control also attracts nearby trajectories: perturbations
+decay at $-0.0014$~ms$^{-1}$, and the $8$~s Lyapunov estimate is
+$-0.00079$~ms$^{-1}$. These controls test a nonlinear driven response, not linear
+gain about the DC-shifted equilibrium.
+
+\subsection{Finite-network numerical checks}\label{app:qif-checks}
+At $A_f=10$ and $\bar\eta=0.85$, the finite-network beat depth is $0.093$
+for the published cutoff, versus the mean-field value $0.128$. Raising the spike cutoff from $V_{\rm peak}=100$ to
+$200$ and $400$ gives depths $0.127$ and $0.139$, while the mean-rate increase
+stays at $2.8$--$2.9\%$. At the original cutoff, doubling the population gives
+$0.083$ and halving the time step gives $0.093$. The response is therefore
+sensitive to the finite spike cutoff. Halving the step at cutoffs $200$ and
+$400$ gives depths $0.121$ and $0.141$, respectively: cutoff dependence persists,
+and quantitative convergence remains unestablished at this population size.
+At the plotted cutoff, the pooled spike-phase vector strength is $0.046$;
+median per-neuron phase consistency remains negative in field-off and field-on
+windows at all three cutoffs.
+In the $A_f=35$ convergence checks, halving the time step changes the lock-in and the pooled vector
+strength by under $1\%$; doubling the spike-detection threshold changes the lock-in by
+about $1\%$ and the mean rate by $2\%$, but the pooled vector strength at
+$\bar\eta=0.85$ by about $45\%$, so phase concentration, unlike rate modulation, is sensitive to
+how spike times are defined.
+
+
+\input{planning/parts/qif_estimate}
+\input{planning/parts/figure_tacs}
+\input{planning/parts/figure_entrain}
+\input{planning/parts/figure_nmm2_map}
+\input{planning/parts/figure_nmm2_jcurve}
+\input{planning/parts/figure_timing}
+\input{planning/parts/figure_qif_timing}

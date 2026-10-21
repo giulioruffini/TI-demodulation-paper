@@ -1,0 +1,11 @@
+\subsection{Static rate with dynamic synapses}
+A second-order synapse with time constant $\tau_s$ obeys
+\begin{equation}
+r(t)\simeq \frac{F(Q(t))}{\tau_m},\qquad
+\tau_s^2\ddot r_{\rm syn}+2\tau_s\dot r_{\rm syn}+r_{\rm syn}=r(t),
+\label{eq:slow_synapse}
+\end{equation}
+where $r_{\rm syn}$ is the filtered rate entering the recurrent drive in $Q$, with the original
+coupling normalization retained. This is the slow-synapse limit: shortening the
+effective membrane time makes the transfer appear static while the network retains
+its synaptic dynamics.

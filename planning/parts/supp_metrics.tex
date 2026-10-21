@@ -1,0 +1,38 @@
+\section{Vocabulary and numerical settings}\label{sec:vocab}
+\emph{Forced response.} Below the Hopf the column does not oscillate on its own;
+we quantify its response by the lock-in amplitude at the beat $\Delta f$
+(\ifsupp main-text\fi\ Eq.~\eqref{eq:lockin}). There is no autonomous rhythm to entrain in the stable-focus
+J-curve, timing, and tACS sweeps.
+
+\emph{Frequency dominance and entrainment.} Above the Hopf the column free-runs
+at $f_0$. A $1{:}1$ phase-capture test would follow the unwrapped phase difference
+from the drive and require absence of secular drift. Our maps instead report
+$|f_{\rm out}-\Delta f|<0.3$~Hz, where $f_{\rm out}$ is the largest non-DC FFT
+peak. This is a frequency-dominance screen: a forced component can outgrow a
+persisting autonomous one without capturing it. When the components coexist,
+instantaneous-phase estimates also require their separation
+\cite{lachaux1999}. The maps therefore identify a dominance region, not a
+measured Arnold tongue.
+
+\emph{Beat-locked rate and gating.} Gating means that the amplitude of a
+persisting rhythm is modulated by the beat without frequency capture
+\cite{canolty2010,tort2010}. The QIF statistic used here is the lock-in of the
+population rate $r_E$ at $\Delta f$, complemented by the rate folded on beat
+phase over whole cycles. It measures beat-locked firing. A raw rate fold does
+not extract the gamma amplitude, and sidebands can arise from amplitude or phase
+modulation. The above-Hopf QIF panels therefore establish coexistence and mixing
+of the beat and gamma rhythms; a gamma-amplitude estimate would be needed to
+identify gating specifically.
+
+The protocol for Fig.~\ref{fig:entrain} places the column on the limit-cycle side
+(input $p$ on the stable alpha-cycle branch below its upper Hopf), drives it
+with $s(t)=\varepsilon\cos\Omega t$, and records the dominant frequency. Grid
+widths and the clipping check are specified in the code. As the Hopf is approached,
+the autonomous cycle shrinks and the frequency-dominance region broadens in these
+simulations. Its width and the stable-focus susceptibility describe different
+responses; their increase near onset does not make them the same quantity.
+
+\ifjne
+\input{planning/parts/lockin_details}
+\input{planning/parts/jr_runs}
+\fi
