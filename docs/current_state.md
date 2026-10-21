@@ -31,6 +31,17 @@ decision. No table, figure, equation, or reference citations occur in the abstra
 The review baseline stays draft20 at e20c047. Public GitHub, Calliope, Zenodo,
 and further circulation remain held. Earlier entries below are historical.
 
+### Prose and placement review, October 21
+
+Klaus's review is in `../notes/2026-10-21_klaus/prose_structure_review.md`
+(`6c0e23a`). Kaiti's independent response to all R/P/C items is in
+`../notes/2026-10-21_kaiti/prose_structure_review.md`, with a reproducible count:
+13,332 text words, 227 heading words, and 1,418 caption/other words from
+Introduction through Conclusion, excluding mathematical tokens. The review
+proposes de-duplication and relocation while retaining local qualifications and
+the theoretical model bridge. Reconciliation with Klaus and Giulio's decision
+remain pending. No manuscript or PDF changed during this review.
+
 ## v0.15.0-draft13 — The shared abstract is 297 words (2026-10-06)
 
 The four macros now contain Klaus's supplied 297-word abstract, within the
