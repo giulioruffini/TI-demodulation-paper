@@ -101,10 +101,13 @@ uncertainty to the supplementary access evidence (`0818802`) and corrected the
 grammar of a supplementary pointer. Counts above include those corrections;
 Klaus's note quotes the preceding count, one word smaller.
 
-During his independent TN build, Klaus restored the canonical TN artifacts to
-Git HEAD, replacing their pre-existing modified working copies. Kaiti recovered
-the exact original PDF and paired BBL from the automatic snapshot cache and
-restored them, leaving their prior dirty status intact. Blob identifiers, SHA-256
-hashes, and provenance are recorded in
-`notes/2026-10-21_kaiti/preexisting_tn_restoration.json`. Those recovered artifacts
-are deliberately excluded from this revision's commits.
+During his independent TN build, Klaus restored the tracked TN artifacts to
+Git HEAD. Kaiti recovered the PDF and paired BBL present at the start of her
+prose pass from the automatic snapshot cache. Klaus subsequently identified
+these as his October 21, 09:45 verification build from `e2e5415` (62 pages),
+not a canonical TN or Kaiti's work. No manuscript work was lost. The committed
+canonical TN remains the October 9 version pending regeneration at the agreed
+version boundary. The recovered verification copies remain uncommitted in the
+working tree; their recovery did not promote them to canonical status. Blob
+identifiers, SHA-256 hashes, and the corrected provenance are recorded in
+`notes/2026-10-21_kaiti/preexisting_tn_restoration.json`.

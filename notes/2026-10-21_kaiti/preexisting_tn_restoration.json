@@ -1,5 +1,6 @@
 {
-  "reason": "Restore pre-existing modified TN artifacts after peer validation restored HEAD.",
+  "reason": "Recover the modified TN artifacts present at the start of the prose pass after peer validation restored HEAD; these were verification outputs, not canonical manuscript work.",
+  "provenance_correction": "Klaus's October 21 15:23 peer report identifies these files as his 09:45 build.sh both verification build from e2e5415 (62 pages). No Kaiti manuscript work was lost. The committed canonical TN remains the October 9 version; the recovered working copies remain uncommitted verification outputs.",
   "snapshot_repository": "/private/tmp/claude-501/bash-edit-diff/4307729508299667462-8977172285830420383-eaa9460717fb6866",
   "matching_snapshot": "0db69c171ef954b08b2eb9a878bb5669269ef5c8",
   "files": {
