@@ -1,5 +1,29 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## Current journal edition — draft21, October 21, 2026
+
+The canonical reading copy is `../TN0484_jne.pdf` (44 pages). The abstract and
+body quantify TI steady and beat sources relative to tDCS and tACS at matched
+effective sigmoid-input amplitudes (2960dec). Section 2.2 explains AIS coupling
+as effective threshold modulation, with calibration of the anatomical input
+required (3772fc2). The installed abstract is 299 words by TeXcount.
+
+Ricardo Salvador is second author. Alex Just was removed by Klaus at Giulio's
+instruction in aad1ac2; the journal PDF and author records now contain eight
+authors. That commit was already present in the shared working tree when this
+handoff was received; no pull or merge was needed. The revision record is
+`revision_2026-10-21_dc_direct_comparison.md`.
+
+Klaus's subsequent abstract repair remains a proposal in
+`../notes/2026-10-21_klaus/abstract_proposed_macros.tex`, with rationale in the
+11:35 addendum to `abstract_significance.md`. Giulio has not selected it.
+Kaiti recommends the reader repairs while retaining "resonant" before gain
+and "approximately" before 2–5%, preserving the condition and rounded estimate.
+With those two words, the proposed macros count to 300 words by TeXcount.
+
+The review baseline stays draft20 at e20c047. Public GitHub, Calliope, Zenodo,
+and further circulation remain held. Earlier entries below are historical.
+
 ## v0.15.0-draft13 — The shared abstract is 297 words (2026-10-06)
 
 The four macros now contain Klaus's supplied 297-word abstract, within the

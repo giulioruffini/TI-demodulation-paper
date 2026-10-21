@@ -74,3 +74,21 @@ frequency. The comparison paragraph now names the effective input and the
 dependence on both frequency and anatomical entry compartment. This incorporates
 the compatible wording in Klaus's 1c4e4a3 note without introducing new symbols.
 The abstract and numerical estimates are unchanged.
+
+## Author-list update and pending abstract proposal
+
+Klaus's aad1ac2 removes Alex Just at Giulio's instruction from the source
+bylines, PDF metadata, ORCID list, funding acknowledgment, competing-interest
+statement, CRediT list, CITATION.cff, and README. The rebuilt 44-page journal
+PDF contains eight authors, with Ricardo second. The commit was already in
+the shared working tree. The current-state record now reflects this update;
+the review redline is regenerated against the unchanged e20c047 baseline.
+
+The proposed abstract in notes/2026-10-21_klaus/abstract_proposed_macros.tex
+has not been applied. Its reader repairs restore what is detected, the
+referent of frequency dependence, the source acting alone, and detector/carrier
+qualifiers. Kaiti recommends retaining "resonant" and "approximately" in that
+proposal. The installed 299-word abstract remains Giulio's last approved text.
+The proposal with these two words is 300 words by TeXcount. The refreshed
+redline builds without errors, undefined references, overfull boxes, or duplicate
+labels; the article and redline author-list pages were inspected visually.
