@@ -107,7 +107,7 @@ Optional: "Weak-field beat dose" -> "For weak fields, beat dose" (+2, needs a cu
 
 Body changes match my note (AIS threshold shift v0 -> v0 - s; calibration once; compartments
 clause). Abstract: 294 tokens / 299 TeXcount, 2-5% verified. Five reader problems introduced
-by the compression, with a counted repair (tokens 297, TeXcount in the terminal log):
+by the compression, with a counted repair (tokens 294, TeXcount 298; also "within regions" and "separate steady-source from beat-dependent effects"):
 1. Objective never says what is detected; the field's missing difference frequency is the
    premise. Add "of the difference frequency absent from the field".
 2. "Direct transcranial alternating- and direct-current stimulation": "direct" twice in two
