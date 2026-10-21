@@ -4,7 +4,7 @@
 
 The approved prose/placement pass is implemented, with the full PING system
 unchanged in Methods. The article is 43 pages and the topic-organized supplement
-27 pages. Main narrative count falls from 14,977 to 13,018 words including
+27 pages. Main narrative count falls from 14,977 to 13,019 words including
 headings/captions; article appendices add 1,503. The complete article still
 exceeds the normal journal length. The revision and checks are recorded in
 `revision_2026-10-21_draft22_prose.md`. Klaus's fidelity check is pending.

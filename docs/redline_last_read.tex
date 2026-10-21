@@ -1,7 +1,7 @@
 \documentclass[11pt,a4paper]{article}
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-ucdi601x/old.tex   Wed Oct 21 15:10:50 2026
-%DIF ADD /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-ucdi601x/new.tex   Wed Oct 21 15:10:50 2026
+%DIF DEL /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-7xw7iplp/old.tex   Wed Oct 21 15:17:20 2026
+%DIF ADD /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-7xw7iplp/new.tex   Wed Oct 21 15:17:20 2026
 \usepackage[margin=2.3cm]{geometry}
 \usepackage{lmodern}        % classic Computer Modern look, vectorized (T1)
 \usepackage[T1]{fontenc}
@@ -2115,7 +2115,7 @@ Two-tone controls at $J=16.5663$ and $16.5901$, both with a $50.5$~Hz beat,
 use $5$~s settling, }\DIFdelend \DIFaddbegin \DIFadd{endpoint is checked using period-to-period perturbation
 multipliers, }\DIFaddend direct perturbation decay, and \DIFdelbegin \DIFdel{an $8$~s }\DIFdelend \DIFaddbegin \DIFadd{a }\DIFaddend finite-time Lyapunov estimate\DIFdelbegin \DIFdel{.
 }\DIFdelend \DIFaddbegin \DIFadd{;
-settings and results are given in supplement, \S\ref{app:ping-stability}.
+settings and results are given in the supplement (\S\ref{app:ping-stability}).
 }\DIFaddend
 
 \DIFdelbegin \DIFdel{Although a DC-only averaged calculation predicts an unstable endpoint, the full
@@ -2124,7 +2124,8 @@ multiplier is $0.034$ over the $2$~s forcing period. Increasing settling from
 $0.6$ to $3$~s changes the endpoint lock-in by $0.8\%$. With genuine two tones,
 the $50.5$~Hz endpoint control also attracts nearby trajectories: perturbations
 decay at $-0.0014$~ms$^{-1}$, and the $8$~s Lyapunov estimate is
-$-0.00079$~ms$^{-1}$. These controls test a nonlinear driven response, not linear
+$-0.00079$~ms$^{-1}$.
+These controls test a nonlinear driven response, not linear
 gain about the DC-shifted equilibrium.
 }\DIFdelend \subsection{QIF spiking network (microscale of NMM2)}\label{sec:qif-methods}
 NMM2 is the exact infinite-population mean field of all-to-all QIF neurons
@@ -3889,6 +3890,14 @@ membrane time.
 }
 
 \subsection{\DIFadd{Measured responses and candidate access sites}}
+\DIFadd{Somatic passive time constants are commonly $10$--$30$~ms; reported human pyramidal
+values include approximately $12$~ms \cite{deitcher2017} and $16.5\pm3.7$~ms
+\cite{eyal2016}. For the illustrative $\tau_m=16$~ms used here, the power factor
+$|H_m|^2$ is about $10^{-4}$ at $1$~kHz, $2.5\times10^{-5}$ at $2$~kHz, and
+$10^{-6}$ at $10$~kHz. A static nonlinearity placed after this point-membrane response
+therefore receives strongly attenuated carriers.
+}
+
 \DIFadd{Cohen et al.'s periaxonal circuit provides a reason to distinguish axonal from
 somatic access \cite{cohen2020periaxonal}. A conducting submyelin space, about
 $12$~nm wide and partly sealed at the paranodes, separates the voltage across

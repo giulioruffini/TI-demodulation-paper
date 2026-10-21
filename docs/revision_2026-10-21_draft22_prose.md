@@ -56,17 +56,17 @@ The full raw counts are in `notes/2026-10-21_kaiti/prose_revision_wordcount.txt`
 |---|---:|---:|
 | Introduction | 742 | 688 |
 | Theory | 4,499 | 4,207 |
-| Methods | 3,433 | 2,336 |
+| Methods | 3,433 | 2,337 |
 | Results | 3,409 | 3,184 |
 | Discussion | 2,691 | 2,400 |
 | Conclusion | 203 | 203 |
-| Main narrative | 14,977 | 13,018 |
+| Main narrative | 14,977 | 13,019 |
 | Article appendices | 897 | 1,503 |
-| Narrative plus appendices | 15,874 | 14,521 |
+| Narrative plus appendices | 15,874 | 14,522 |
 
-The narrative is 1,959 words shorter (13.1%). Restoring integral material to
-article Appendix B makes the net reduction 1,353 words (8.5%). Body-text words
-alone fall from 13,332 to 11,465; article-appendix text adds 1,430. These counts
+The narrative is 1,958 words shorter (13.1%). Restoring integral material to
+article Appendix B makes the net reduction 1,352 words (8.5%). Body-text words
+alone fall from 13,332 to 11,466; article-appendix text adds 1,430. These counts
 exclude the abstract, declarations, and references. The complete article therefore
 still exceeds JNE's normal 12,000-word length. This is the agreed recount after
 the first pass, not a claim of compliance or authorization for further cuts.

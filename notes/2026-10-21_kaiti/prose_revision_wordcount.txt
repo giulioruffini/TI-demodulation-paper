@@ -41,8 +41,8 @@ REVISION working tree
 MAIN NARRATIVE
 File: count.tex
 Encoding: ascii
-Sum count: 13018
-Words in text: 11465
+Sum count: 13019
+Words in text: 11466
 Words in headers: 221
 Words outside text (captions, etc.): 1332
 Number of headers: 38
@@ -53,7 +53,7 @@ Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
   620+1+67 (1/1/18/1) Section: Introduction
   3924+65+218 (11/3/280/24) Section: Theory
-  2211+44+81 (8/1/198/3) Section: Methods
+  2212+44+81 (8/1/198/3) Section: Methods
   2192+76+916 (10/11/315/1) Section: Results
   2316+34+50 (7/0/74/0) Section: Discussion}\label{sec:discussion
   202+1+0 (1/0/0/0) Section: Conclusion
