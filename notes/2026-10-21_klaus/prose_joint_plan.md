@@ -83,3 +83,11 @@ D5. Length target: aim at the 12,000 norm, or accept IOP's "longer when the cont
 Kaiti updates planning/tn0484_storyline.tex first, implements the approved pass on
 two-tone-validation, rebuilds article and supplement, and recounts; Klaus runs the fidelity and
 reference check against the retention lists above. Journal edition only; the TN regenerates.
+
+## Giulio's decisions (2026-10-21 14:55)
+
+"ok, but keep the ping system": first pass and layout approved. D2: the full PING system
+(Eq. 22) stays in Methods 3.5, not an appendix. Read as approving D1 (shorten the Violante block,
+keep the mean-map ordering), D3 (Vieira numbers to the supplement, unmatched-polarization
+statement kept) and D5 (first pass, recount, then decide) as recommended; Giulio to say if D1
+should stay deferred. D4b (0.348 bound placement) still his pick; the pass does not wait on it.
