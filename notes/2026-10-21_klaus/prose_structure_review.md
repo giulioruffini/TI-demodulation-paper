@@ -72,3 +72,42 @@ C2. 3.5 relative-weights sentence ("set the E and I rows ... the only asymmetry 
 C3. 4.4 third paragraph: eleven numbers in six lines. A small table (map x {ratio, focus shift,
     hippocampal mean change}) would carry them.
 C4. Discussion 5.2 Violante paragraph is good; its third paragraph repeats 4.4 (R8).
+
+## Plan for the appendix and supplement (draft for Kaiti, 14:50)
+
+IOP's rule (publishingsupport.iopscience.iop.org/questions/supplementary-material, read today):
+supplementary material is a separate file, not typeset, not in the version of record, not peer
+reviewed by default; "if material is integral to the article then it must be submitted as part of
+the article", i.e. as a typeset appendix that counts toward the 12k-word norm. So the plan needs
+two bins, not one: article appendices (integral, short) and the supplement (everything else).
+
+Current supplement (23 pp): A notation (also in the article), B simulated models (B.1 cable access,
+B.2 MPR mixing coefficients, B.3 single-cell mixing, B.4 PING stability, B.5 finite-network checks,
+B.6 JR sweep settings), C cubic Hopf has no quadratic mixer, D memoryless efficiency bound,
+E LaNMM extension, F vocabulary and metrics, Figures S1-S13.
+
+Proposed article appendices (typeset, integral):
+  App. A  Notation and units (as now).
+  App. B  Model equations and parameters: JR, PING (Eq. 22 moves here from 3.5), MPR F(Q) and
+          the slow-synapse limit (from 2.9). One place for every equation the Results use.
+Everything else goes to the supplement, reorganized by stage so a reader finds things by the
+paper's own structure:
+  S1  Access: passive-cable estimate (B.1); access time-constant table (Table 2 if moved);
+      kHz runs S5, S6, S9.
+  S2  Detection: MPR static and dynamic mixing coefficients (B.2, B.3); harmonic ladder, Eq. 12 and
+      its branches (from 2.4); surrogate-vs-two-tone checks as one table (R7); cubic Hopf (C).
+  S3  Spatial maps: envelope-mean subharmonicity and isotropic averages (from 2.5); head-model
+      procedure, solver, sensitivities (from 3.3) and the 4.4 sensitivity table; S13.
+  S4  Amplification: JR coupling-sweep settings (B.6); PING stability (B.4); finite-network checks
+      and cutoff dependence (B.5 + 3.6 paragraph); S3, S4, S8, S10, S11, S12.
+  S5  Efficiency bound (D) with footnote 5's Vieira numbers.
+  S6  Laminar extension (E) with S2.
+  S7  Vocabulary and metrics (F, absorbing 3.8); numerical settings catalogue (from 3.4, 3.2).
+Each supplement section opens with one sentence naming the main-text claim it supports, and the
+main text cites "supplement, section Sn" at each hand-off. Supplementary figures keep their S
+numbers but are placed inside the section they belong to, so the figure list at the end disappears.
+
+Open questions for Kaiti: (a) is B.2/B.3 integral (Fig. 11 rests on it) and therefore an article
+appendix rather than S2; (b) does the LaNMM extension stay in the article as a paragraph plus S6, or
+drop from the main text entirely; (c) the TN edition keeps everything inline, so the \ifjne switch
+must route each relocated block to the supplement in the article build and inline in the TN.
