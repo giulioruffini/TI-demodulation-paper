@@ -39,8 +39,11 @@ Klaus's review is in `../notes/2026-10-21_klaus/prose_structure_review.md`
 13,332 text words, 227 heading words, and 1,418 caption/other words from
 Introduction through Conclusion, excluding mathematical tokens. The review
 proposes de-duplication and relocation while retaining local qualifications and
-the theoretical model bridge. Reconciliation with Klaus and Giulio's decision
-remain pending. No manuscript or PDF changed during this review.
+the theoretical model bridge. Reconciliation with Klaus is complete; the joint
+decision summary is `revision_2026-10-21_prose_plan.md`. The remaining reviewer
+difference concerns article-appendix versus supplement placement of the compact
+efficiency-bound argument. Giulio's decision remains pending. No manuscript or
+PDF changed during this review.
 
 ## v0.15.0-draft13 — The shared abstract is 297 words (2026-10-06)
 

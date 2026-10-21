@@ -1,6 +1,6 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
-- [ ] Giulio: decide the joint prose and relocation proposals after Kaiti/Klaus reconciliation; retain the manuscript meanwhile
+- [ ] Giulio: decide the joint prose proposal in docs/revision_2026-10-21_prose_plan.md; retain the manuscript meanwhile
 - [ ] read the October 21 journal update at TN0484_jne.pdf, especially the abstract and Section 2.5 amplitude comparison
 - [ ] Giulio: decide whether to expand DC at its first occurrence in "DC-like" in the abstract
 - [ ] Ricardo: supply points_2_3.json, its producer/revision, and HippUnfold version; verify masks and orientation denominators before numerical integration
@@ -10,6 +10,7 @@
 - [ ] migrate the folder at a coordinated version boundary with no concurrent editors; run the layout checker before and after
 - [x] place Ricardo Salvador second in the manuscript and author records as instructed October 21
 - [x] review all Klaus R/P/C prose proposals against the current journal source and October 20 decisions; record Kaiti's verdict and current word count
+- [x] reconcile the prose plan with Klaus, distinguish article appendices from supplementary files, and record the remaining bound-placement choice
 - [x] verify Klaus's removal of Alex Just, update the current-state record, and refresh the redline (October 21)
 - [x] verify the approved abstract reader repairs in 62772c7: 300 words, source/PDF agreement, and unchanged science (October 21)
 - [x] verify and record IOP's normal 300-word abstract limit and abbreviation requirements (October 21)
