@@ -88,3 +88,17 @@ Detection thus supplies a DC-like steady source at depth, signed by the local op
 than by electrode polarity; in a uniform compartment no montage gives it an interior maximum.
 
 Fits 300 with "TI targeting depends on detector law and circuit state." (8 words) as the opener.
+
+## Addendum 09:40 — Kaiti's 295-word abstract (relayed by Giulio): agree, three fixes
+
+Checked against the body: 24% (l. 1891), scope list (l. 657-662), "no strict interior maximum",
+threshold wording, slow-membrane condition, tACS, product dose: all restored and accurate.
+1. Last sentence: "direct carrier rectification" collides with the out-of-scope "direct
+   carrier-evoked spiking and conduction block" (l. 259, 1929). Use the Introduction's
+   wording: "distinguish the steady shift from effects requiring the beat".
+2. One term for the detector output: "steady source" (Results 1, Significance 2) but "steady
+   shift" (Results last). Giulio's chain 2026-10-19: I map -> Y_DC source -> mean-rate shift.
+3. The 24% sentence lacks its contrast (envelope -45%, beat -25%, l. 1899), which is what ties
+   it to Violante's ordering. With the five spare words: "... rises by 24% from 1:1 to 1:3
+   while envelope and beat averages fall" and drop "quadratic" before "beat map": 300 words.
+Optional: "Weak-field beat dose" -> "For weak fields, beat dose" (+2, needs a cut elsewhere).
