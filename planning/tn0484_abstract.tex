@@ -1,35 +1,37 @@
+% !TEX root = ../TN0484_envelope_demodulation.tex
 % TN0484 / WP0185: the only abstract text.
 % Shared by the JNE article, TN, and storyline; edit these four macros.
 % JNE adds run-in headings; TN and storyline print the same text without them.
 
-\newcommand{\absObjective}{Temporal-interference (TI) stimulation requires three stages in series: the kilohertz field must reach a
-nonlinear membrane (access), the membrane must generate the difference frequency
-absent from the field (detection), and the circuit must amplify that weak component
-(amplification). We build a mesoscale model.}
+\newcommand{\absObjective}{Temporal-interference (TI) stimulation applies kilohertz fields with
+no difference-frequency component. We develop a mesoscale model with three stages in
+series: membrane access, nonlinear detection, and circuit amplification. The weak-field
+response factorizes into these stages.}
 
-\newcommand{\absApproach}{Following single-neuron TI models, we represent access by a short effective
-membrane time. We analyze detection and amplification in a Jansen--Rit column, an
-exact mean field of quadratic integrate-and-fire neurons, and its spiking network.}
+\newcommand{\absApproach}{Following single-neuron models, we represent access by a short
+effective membrane time and analyze detection and amplification in a Jansen--Rit column, an
+exact mean field of quadratic integrate-and-fire neurons, and its spiking network. A
+realistic head model tests spatial predictions.}
 
-\newcommand{\absResults}{For weak fields the detector is quadratic: the beat is
-proportional to the product of the local carrier amplitudes, and a signed steady
-source to their summed squares. A static rate curve and the exact
-mean field give the same product law; the mean field adds frequency dependence
-when membranes are slow relative to input.
-In a realistic head with a published hippocampal montage, changing the current
-ratio moves the envelope and mean-square foci in opposite directions and only
-rescales the product map. Near a Hopf bifurcation the
-circuit amplifies the beat as the inverse of the modal damping; with the
-Jansen--Rit operating point held fixed, synaptic coupling sets this gain
-independently of detection. The amplified response appears mainly in
-envelope-locked timing, with little change in mean rate.
-At stronger fields the steady shift alone can drive a gamma circuit across its
-oscillation threshold, as can an unmodulated carrier of equal power.}
+\newcommand{\absResults}{For weak fields, quadratic detection generates a beat proportional
+to the product of local carrier polarizations and a signed, DC-like steady source
+proportional to their summed squares. Static and exact mean-field detectors share this
+product law; membranes slow relative to the input add frequency dependence. With a
+published hippocampal montage, changing the current ratio moves the envelope and
+mean-square foci in opposite directions but only rescales the beat map at fixed neural
+state. Hippocampal mean-square polarization rises by 24\% from 1:1 to 1:3 while envelope
+and beat averages fall. Near a Hopf bifurcation, gain grows inversely with modal damping
+and is shared with transcranial alternating-current stimulation (tACS). At a fixed
+Jansen--Rit operating point, coupling changes gain independently of detection;
+amplification appears mainly in beat-locked timing, with little mean-rate change. At
+stronger fields, the steady source alone can drive a gamma circuit across its oscillation
+threshold, as can an equal-power unmodulated carrier.}
 
-\newcommand{\absSignificance}{The model expresses TI efficacy as the product of three
-separately measurable factors. For weak fields, dose follows the product of carrier
-amplitudes rather than the envelope minimum. Under uniform conductivity, access,
-and detection, the steady drive has its largest magnitude at compartment boundaries. TI shares
-its circuit amplifier with direct low-frequency stimulation. Carrier sweeps,
-independent-amplitude tests, beat sweeps across states, and equal-power controls
-each test one stage.}
+\newcommand{\absSignificance}{Weak-field beat dose follows the carrier-polarization product
+rather than the envelope minimum. The accompanying steady source can act at depth, with
+sign set by detector curvature rather than carrier polarity. Its magnitude has no strict
+interior maximum within tissue regions of uniform conductivity, access, orientation, and
+detection. Local-polarization measurements, independent carrier-amplitude variation, and
+beat-frequency sweeps across states test access, detection, and amplification,
+respectively. Equal-power unmodulated-carrier controls separate steady-source effects from
+those requiring the beat.}
