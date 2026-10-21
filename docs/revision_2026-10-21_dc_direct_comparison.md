@@ -61,3 +61,16 @@ The previously modified journal PDF is preserved at
 Pre-existing changes to the full-TN PDF and bibliography are left outside this
 commit. The supplement and full TN are not rebuilt. Public-release and sharing
 holds remain in force.
+
+## AIS interpretation
+
+The follow-up clarification identifies s as the effective polarization in the
+sigmoid-input coordinate. For AIS coupling, adding s is equivalent to shifting
+the sigmoid's effective threshold from v0 to v0 − s; no backward transmission
+to the soma is required. The access paragraph states that the conversion from
+local AIS polarization and the compartment response time require calibration,
+and that fast access alone does not validate static detection at the carrier
+frequency. The comparison paragraph now names the effective input and the
+dependence on both frequency and anatomical entry compartment. This incorporates
+the compatible wording in Klaus's 1c4e4a3 note without introducing new symbols.
+The abstract and numerical estimates are unchanged.

@@ -1,7 +1,7 @@
 \documentclass[11pt,a4paper]{article}
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-2tp6pk7m/old.tex   Wed Oct 21 10:03:22 2026
-%DIF ADD /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-2tp6pk7m/new.tex   Wed Oct 21 10:03:22 2026
+%DIF DEL /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-81_xa_nv/old.tex   Wed Oct 21 11:29:43 2026
+%DIF ADD /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-81_xa_nv/new.tex   Wed Oct 21 11:29:43 2026
 \usepackage[margin=2.3cm]{geometry}
 \usepackage{lmodern}        % classic Computer Modern look, vectorized (T1)
 \usepackage[T1]{fontenc}
@@ -604,7 +604,8 @@ and }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{: inhibition; }\DIFaddendFL green\DIF
 \subsection{From applied field to a squared-envelope beat component}\label{sec:coupling}
 We \DIFdelbegin \DIFdel{use the quasistatic electromagnetic approximation for }\DIFdelend \DIFaddbegin \DIFadd{neglect electromagnetic propagation and induction in }\DIFaddend the applied field
 $E(t)$ (V/m), \DIFdelbegin \DIFdel{neglecting propagation and induction. This does not make membranecharging
-instantaneous}\DIFdelend \DIFaddbegin \DIFadd{while retaining the membrane's finite charging response}\DIFaddend . Let $s(t)$ be the polarization (mV) after the cellular access response;
+instantaneous}\DIFdelend \DIFaddbegin \DIFadd{while retaining the membrane's finite charging response}\DIFaddend . Let $s(t)$ be the
+\DIFaddbegin \DIFadd{effective }\DIFaddend polarization (mV) \DIFdelbegin \DIFdel{after the cellular access response}\DIFdelend \DIFaddbegin \DIFadd{expressed in the sigmoid's input coordinate after cellular access}\DIFaddend ;
 the static population model reads
 \begin{equation}
 r(t)=\Sig\!\big(v(t)+s(t)\big),\qquad
@@ -641,18 +642,24 @@ $\lambda_f\approx\lambda_0$ }\DIFdelend \DIFaddbegin \DIFadd{We first hold this 
 amplification\DIFdelbegin \DIFdel{;
 \S\ref{sec:khz} restores frequency-dependent access. Fast axonal access motivates
 this limit; compartment anatomy enters the reduced model through
-the }\DIFdelend \DIFaddbegin \DIFadd{. At fixed applied field, its frequency dependence follows $H$. Fast axonal compartments motivate the direct-coupling approximation
-$\lambda_f\approx\lambda_0$; their }\DIFaddend coupling and response time \DIFdelbegin \DIFdel{, which must be calibrated for }\DIFdelend \DIFaddbegin \DIFadd{require
-calibration in }\DIFaddend the preparation.
-\DIFdelbegin \DIFdel{It also fixes the projection direction. A laminar direction for a pyramidal
+the coupling and response time, which must be calibrated for the preparation.
+It also fixes the projection direction. A laminar direction for a pyramidal
 axon initial segment, a local axon direction for a node, or an orientation
 distribution for terminals defines a different access model. Isotropic averaging
-is one possible distribution, not an anatomical consequence of choosing terminals.
-Maximizing a geometric map over orientation gives an upper bound for that map
+is one possible distribution,
+not an anatomical consequence of choosing terminals. Maximizing a geometric map over orientation gives an upper bound for that map
 at each location; it does not identify the detector's orientation. The FEM
 comparison in \S\ref{sec:fem-methods} therefore holds its chosen direction fixed
-when changing the current ratio.
-}\DIFdelend
+when changing the current ratio}\DIFdelend . \DIFaddbegin \DIFadd{At fixed applied field, its frequency dependence follows $H$.
+Fast axonal compartments motivate the direct-coupling approximation
+$\lambda_f\approx\lambda_0$. For coupling at the AIS, the additive input $s$
+represents a change in spike-initiation drive: $\Sig(v+s)$ is the same
+sigmoid with its effective threshold shifted from $v_0$ to $v_0-s$.
+No backward transmission to the soma is required. Converting local AIS
+polarization into $s$, and determining the compartment's response time,
+require calibration in the preparation. Fast access alone does not establish
+that the static sigmoid describes detection at the carrier frequency.
+}\DIFaddend
 
 Expanding $\Sig$ about a field-free operating voltage $v^*$ (mV) (a Volterra/Taylor expansion, as
 in \cite{ruffini2025ham}) gives
@@ -1229,7 +1236,7 @@ frequency-dependent coefficient to vary negligibly across the carrier interval.
 \DIFaddbegin \paragraph{\DIFadd{Comparison with direct tDCS and tACS.}}
 \DIFadd{The steady TI source can be compared with transcranial direct-current stimulation
 (tDCS), and the beat source with tACS at the beat frequency. Both comparisons
-must specify the polarization reaching the same sigmoid, rather than electrode
+must specify the effective polarization entering the same sigmoid, rather than electrode
 current alone. For two equal TI carrier polarizations
 $\varepsilon_1=\varepsilon_2=\varepsilon>0$, Eq.~\eqref{eq:taylor} gives the leading
 signed rate sources
@@ -1280,7 +1287,8 @@ TI RMS is $\varepsilon$. Direct tACS also generates a quadratic steady
 source, $\Sig''(v^*)\varepsilon_{\rm A}^2/4$; at equal RMS polarization it
 equals the direct TI steady source for this static detector. Equal
 electrode currents need not give equal polarizations because access differs
-between DC, the beat frequency, and the carriers.
+between DC, the beat frequency, and the carriers, and between the compartments
+through which each acts.
 }
 
 \DIFadd{Matching sources at the same entry point matches their leading circuit responses:

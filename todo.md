@@ -7,7 +7,7 @@
 - [ ] keep public GitHub, Calliope, Zenodo, and circulation to other coauthors on hold pending explicit authorization
 - [ ] migrate the folder at a coordinated version boundary with no concurrent editors; run the layout checker before and after
 - [x] place Ricardo Salvador second in the manuscript and author records as instructed October 21
-- [x] add and verify the TI/tDCS/tACS comparison, retain a 299-word abstract, and rebuild the journal article and redline (October 21)
+- [x] add and verify the TI/tDCS/tACS comparison, clarify AIS threshold modulation, retain a 299-word abstract, and rebuild the journal article and redline (October 21)
 - [x] revise the entire paper for legibility, build draft21 separately, and redline against draft20 (October 20)
 - [x] preserve all existing labels and cited references; relocate coefficient derivations and run diagnostics to the supplement (October 20)
 - [x] integrate and verify Ricardo’s FEM results and the approved physiological Discussion and abstract (October 19)
