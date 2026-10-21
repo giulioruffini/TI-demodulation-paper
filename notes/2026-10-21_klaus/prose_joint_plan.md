@@ -63,9 +63,18 @@ D2. Full PING system (Eq. 22) to App. B, with E/I coupling and forcing definitio
     Methods: optional; saves ~150 words of main text.
 D3. Vieira's numbers (footnote 5) to the supplement, with the unmatched-polarization statement
     kept in 5.4: new placement choice.
-D4. Supplement reorganized by stage (access / detection / spatial maps / amplification /
-    bound / laminar / vocabulary and settings), article appendices limited to A notation and
-    B model equations (Klaus's plan of 14:45; Kaiti's answer pending).
+D4. Appendix and supplement layout, agreed (Kaiti ac246f4, IOP policy verified by both):
+    article appendices = A notation; B model equations and parameters (JR, PING, MPR) plus a
+    compact crossover derivation (today's B.2/B.3 core), because Fig. 11 and the dynamic-sign
+    claim rest on it; the supplement is topic-organized by stage (access / detection / spatial
+    maps / amplification / laminar / vocabulary and settings), takes the extended exponent
+    catalogue, the full LaNMM study (a one-paragraph pointer stays in the article), and all
+    procedure and sensitivity material; one source, \ifjne routes each block. Article-appendix
+    moves do not reduce the article count.
+    D4b, the one open difference: the 0.348 memoryless supremum (5.4, App. D, ~600 words).
+    Kaiti: if the claim stays, its compact argument is integral and belongs in an article
+    appendix. Klaus: the bound supports a Discussion comparison, not a figure or result; keep
+    the one-sentence claim in 5.4 and put the derivation in the supplement. Your call.
 D5. Length target: aim at the 12,000 norm, or accept IOP's "longer when the content justifies
     it" and stop at the first pass. We recommend the first pass, recount, then decide.
 
