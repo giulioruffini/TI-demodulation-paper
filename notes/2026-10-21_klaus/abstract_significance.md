@@ -72,3 +72,19 @@ Approach. Following single-neuron models, we represent access by a short effecti
 Main results. For weak fields, quadratic detection generates a beat proportional to the product of local carrier polarizations and a signed, DC-like steady source proportional to their summed squares. The static rate curve and exact mean field share this product law, while slow membranes add frequency dependence. With a published hippocampal montage, changing the current ratio moves the envelope and mean-square foci in opposite directions but only rescales the quadratic beat map at fixed neural state. Near a Hopf bifurcation, circuit gain grows inversely with modal damping and is shared with transcranial alternating-current stimulation. At a fixed Jansen–Rit operating point, coupling changes this gain but not detection; the amplified response appears mainly in beat-locked timing, with little change in mean rate. At stronger fields the steady shift alone can induce gamma, as can an equal-power unmodulated carrier.
 
 Significance. TI targeting depends on the detector law and the circuit's state. For weak fields, dose follows the product of carrier polarizations rather than the envelope minimum. The DC-like source reaches deep targets with a sign set by the target's state, not by electrode polarity; within a uniform compartment no montage gives it an interior maximum. Local-polarization measurements, independent variation of carrier amplitudes, and beat-frequency sweeps across states test access, detection, and amplification, respectively. Equal-power unmodulated-carrier controls separate beat from steady-shift responses.
+
+## Addendum 09:45 — Kaiti's two DC sentences (relayed by Giulio)
+
+Her retraction of "preferential deep stimulation" is right; "at depth" is what the FEM supports.
+Her sentence 1 ("Nonlinear detection also generates a DC-like steady shift whose sign depends on the
+local operating point") duplicates Main results sentence 1 (signed steady source); detection makes the
+source, the circuit makes the shift (Giulio, 2026-10-19). Her sentence 2 duplicates Main results
+sentence 3 (foci move in opposite directions); "steers" is Violante's envelope verb and implies focal
+control that sec:dc denies; the body says "moves" (l. 1893). Net new content: "operating point".
+
+Proposed single Significance sentence (31 words), replacing the DC sentence of the merged proposal:
+
+Detection thus supplies a DC-like steady source at depth, signed by the local operating point rather
+than by electrode polarity; in a uniform compartment no montage gives it an interior maximum.
+
+Fits 300 with "TI targeting depends on detector law and circuit state." (8 words) as the opener.
