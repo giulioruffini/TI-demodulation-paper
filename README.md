@@ -4,7 +4,7 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
 **Paper:** *The cortical column as a tuned receiver: a network mechanism for
-temporal-interference stimulation* — G. Ruffini, B. Mercadal, R. Salvador, A. Just,
+temporal-interference stimulation* — G. Ruffini, R. Salvador, B. Mercadal, A. Just,
 R. de Palma Aristides, F. Castaldo, N. Grossman, S. Canals, C. Mirasso.
 Archived at Zenodo: **[doi:10.5281/zenodo.21009618](https://doi.org/10.5281/zenodo.21009618)**.
 Licensed **CC-BY-4.0** (see [`LICENSE`](LICENSE)); machine-readable citation in
@@ -19,9 +19,16 @@ Giulio's annotated draft20 is preserved in
 The separate `build/review/` copies remain unchanged as the completed reader-check
 snapshot; the root files are the current reading copies.
 
+The October 21 update adds the approved TI/tDCS/tACS source-amplitude comparison
+to the abstract and Section 2.5, distinguishes per-carrier, total-peak, and RMS
+matching, and places Ricardo Salvador second in the author records. The journal
+article and review redline are rebuilt; the full TN and supplement retain their
+previous compiled versions. See the
+[revision record](docs/revision_2026-10-21_dc_direct_comparison.md).
+
 Draft21 revises the whole paper for legibility, moves detailed coefficients and
 run diagnostics to the supplement, and shortens captions. The approved abstract
-is unchanged. The [revision record](docs/revision_2026-10-20_draft21_legibility.md)
+was unchanged at that revision. The [revision record](docs/revision_2026-10-20_draft21_legibility.md)
 lists the relocations and checks. One abstract and one notation source remain
 shared between editions; the full TN will be regenerated at an authorized cut.
 Run `python3 code/build_jne_redline.py` to update the review redline against

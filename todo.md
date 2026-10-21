@@ -1,12 +1,13 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
-- [ ] read the corrected draft21 article at TN0484_jne.pdf; annotated draft20 is archived in notes/2026-10-20_kaiti
+- [ ] read the October 21 journal update at TN0484_jne.pdf, especially the abstract and Section 2.5 amplitude comparison
 - [ ] Ricardo: supply points_2_3.json, its producer/revision, and HippUnfold version; verify masks and orientation denominators before numerical integration
-- [ ] Giulio: confirm Ricardo's provisional byline position after Borja
 - [ ] Giulio: decide the seven retained CUT? passages and the biological-rectifier sentence in docs/revision_2026-10-06_v0150draft16_readability.md
 - [ ] confirm the remaining author declarations, actual AI-tool versions, and all authors' approval of the submission version
 - [ ] keep public GitHub, Calliope, Zenodo, and circulation to other coauthors on hold pending explicit authorization
 - [ ] migrate the folder at a coordinated version boundary with no concurrent editors; run the layout checker before and after
+- [x] place Ricardo Salvador second in the manuscript and author records as instructed October 21
+- [x] add and verify the TI/tDCS/tACS comparison, retain a 299-word abstract, and rebuild the journal article and redline (October 21)
 - [x] revise the entire paper for legibility, build draft21 separately, and redline against draft20 (October 20)
 - [x] preserve all existing labels and cited references; relocate coefficient derivations and run diagnostics to the supplement (October 20)
 - [x] integrate and verify Ricardo’s FEM results and the approved physiological Discussion and abstract (October 19)

@@ -91,8 +91,8 @@
 \newcommand{\paperver}{0.15.0-draft21}
 \hypersetup{
   pdftitle={The cortical column as a tuned receiver: a network mechanism for temporal-interference stimulation},
-  pdfauthor={Giulio Ruffini, Borja Mercadal, Ricardo Salvador, Alex Just, Raul de Palma Aristides, Francesca Castaldo, Nir Grossman, Santiago Canals, Claudio Mirasso},
-  pdfsubject={TN0484 / WP0185, version \paperver, October 20, 2026}
+  pdfauthor={Giulio Ruffini, Ricardo Salvador, Borja Mercadal, Alex Just, Raul de Palma Aristides, Francesca Castaldo, Nir Grossman, Santiago Canals, Claudio Mirasso},
+  pdfsubject={TN0484 / WP0185, version \paperver, October 21, 2026}
 }
 
 \begin{document}
@@ -104,12 +104,12 @@
 % by them); confirm corresponding-author email. ORCIDs below verified against
 % the ORCID registry (2026-07-21).
 % Ricardo Salvador's ORCID supplied as registry-verified by giulio-shell on
-% 2026-10-09. Placement after Borja Mercadal is provisional pending Giulio's decision.
+% 2026-10-09. Giulio confirmed Ricardo as second author on 2026-10-21.
 % ---------------------------------------------------------------------------
 \begin{center}
 {\LARGE\bfseries The cortical column as a tuned receiver:\\[4pt]
 a network mechanism for temporal-interference stimulation}\\[16pt]
-{\large Giulio Ruffini$^{1,2}$, Borja Mercadal$^{1}$, Ricardo Salvador$^{1}$,\\[2pt]
+{\large Giulio Ruffini$^{1,2}$, Ricardo Salvador$^{1}$, Borja Mercadal$^{1}$,\\[2pt]
 Alex Just$^{1}$, Raul de Palma Aristides$^{2}$, Francesca Castaldo$^{1,2}$,\\[2pt]
 Nir Grossman$^{5}$, Santiago Canals$^{2,4}$, and Claudio Mirasso$^{2,3}$}\\[12pt]
 \begin{minipage}{0.86\textwidth}\centering\small
@@ -120,13 +120,13 @@ $^{4}$Instituto de Neurociencias (UMH-CSIC), Sant Joan d'Alacant, Spain\\
 $^{5}$Department of Brain Sciences and UK Dementia Research Institute,\\
 Imperial College London, London, United Kingdom\\[6pt]
 E-mail: \texttt{giulio.ruffini@neuroelectrics.com}\\[4pt]
-Working draft v\paperver\quad 2026-10-20
+Working draft v\paperver\quad 2026-10-21
 \end{minipage}\\[8pt]
 \begin{minipage}{0.86\textwidth}\centering\footnotesize\color{negray}
 \textbf{ORCID iDs:}\ %
 G.~Ruffini \href{https://orcid.org/0000-0003-3084-0177}{0000-0003-3084-0177};\ %
-B.~Mercadal \href{https://orcid.org/0000-0002-0941-6796}{0000-0002-0941-6796};\ %
 R.~Salvador \href{https://orcid.org/0000-0003-1235-6533}{0000-0003-1235-6533};\ %
+B.~Mercadal \href{https://orcid.org/0000-0002-0941-6796}{0000-0002-0941-6796};\ %
 A.~Just \href{https://orcid.org/0009-0006-8794-7425}{0009-0006-8794-7425};\ %
 R.~de Palma Aristides \href{https://orcid.org/0000-0002-0255-2293}{0000-0002-0255-2293};\ %
 F.~Castaldo \href{https://orcid.org/0000-0002-4947-4552}{0000-0002-4947-4552};\ %
@@ -143,12 +143,12 @@ C.~Mirasso \href{https://orcid.org/0000-0003-2980-7038}{0000-0003-2980-7038}.
 a network mechanism for temporal-interference stimulation}\\[10pt]
 \begin{tabular}{@{}ll@{}}
 \textbf{Document:} & TN0484 (Neuroelectrics TN)\,/\,WP0185 (BCOM WP) \\
-\textbf{Authors:} & Giulio Ruffini, Borja Mercadal, Ricardo Salvador,\\
+\textbf{Authors:} & Giulio Ruffini, Ricardo Salvador, Borja Mercadal,\\
 & Alex Just, Raul de Palma Aristides, Francesca Castaldo,\\
 & Nir Grossman, Santiago Canals, and Claudio Mirasso \\
 \textbf{Affiliations:} & Neuroelectrics\,/\,BCOM\,/\,IFISC (UIB-CSIC)\,/\,IN (UMH-CSIC)\\
 & Imperial College London (Brain Sciences and UK Dementia Research Institute) \\
-\textbf{Date:} & 2026-10-20 \qquad \textbf{Version:} \paperver \\
+\textbf{Date:} & 2026-10-21 \qquad \textbf{Version:} \paperver \\
 \textbf{DOI:} & \href{https://doi.org/10.5281/zenodo.21009618}{10.5281/zenodo.21009618} \\
 \end{tabular}\\[4pt]
 {\color{neblue}\rule{\textwidth}{1pt}}
@@ -602,9 +602,10 @@ three; amplitude dependence is the primary test.
 
 \subsection{The steady source has a state-dependent sign}\label{sec:dc}
 Mean-square polarization is a nonnegative geometric map. Detection converts it
-into a signed steady source, and the circuit converts that source into a mean
-response. Under uniform conductivity, access, and detection, the source's
-largest magnitude lies on compartment boundaries; the envelope-following mean
+into a signed, DC-like steady source, and the circuit converts that source into a mean
+response. \emph{DC-like} refers to the detected source, not to a DC component in the applied
+field. Under uniform conductivity, access, orientation, and detection, the source's
+largest magnitude lies on tissue-compartment boundaries; the envelope-following mean
 obeys the same restriction.
 The envelope mean is
 \[
@@ -685,6 +686,68 @@ but retain the DC intensity. At equal local RMS polarization, an unmodulated
 carrier gives the same mean shift at second order when its DC mixing coefficient
 equals those of both TI carriers. For a dynamic detector, this requires the
 frequency-dependent coefficient to vary negligibly across the carrier interval.
+
+\paragraph{Comparison with direct tDCS and tACS.}
+The steady TI source can be compared with transcranial direct-current stimulation
+(tDCS), and the beat source with tACS at the beat frequency. Both comparisons
+must specify the polarization reaching the same sigmoid, rather than electrode
+current alone. For two equal TI carrier polarizations
+$\varepsilon_1=\varepsilon_2=\varepsilon>0$, Eq.~\eqref{eq:taylor} gives the leading
+signed rate sources
+\[
+Y_{\rm DC}^{\rm TI}\simeq Y_\Omega^{\rm TI}
+\simeq \frac12\Sig''(v^*)\varepsilon^2.
+\]
+A constant polarization $\varepsilon_{\rm D}$ and a sinusoidal polarization
+$\varepsilon_{\rm A}\cos\Omega t$, representing direct tDCS and tACS inputs at
+the same entry point, instead give
+\[
+Y_{\rm DC}^{\rm tDCS}\simeq\Sig'(v^*)\varepsilon_{\rm D},
+\qquad
+Y_\Omega^{\rm tACS}\simeq\Sig'(v^*)\varepsilon_{\rm A}.
+\]
+Here $\varepsilon_{\rm D}$ is signed and a negative $\varepsilon_{\rm A}$ denotes
+a phase reversal. Matching either direct source to its TI counterpart therefore
+requires the equivalent polarization
+\[
+\varepsilon_{\rm eq}
+=\frac{\Sig''(v^*)}{2\Sig'(v^*)}\,\varepsilon^2,
+\qquad
+\frac{\Sig''(v^*)}{\Sig'(v^*)}
+=-\rho\tanh\!\left[\frac{\rho(v^*-v_0)}2\right].
+\]
+The ratio depends on sigmoid steepness and operating voltage; the rate ceiling
+$2e_0$ cancels. At the inflection the quadratic TI sources vanish.
+
+For the JR parameters $\rho=0.56$~mV$^{-1}$, $v_0=6$~mV,
+$e_0=2.5$~s$^{-1}$, and the pinned operating point $v^*=8.30$~mV,
+$\Sig'=0.4745$~s$^{-1}$mV$^{-1}$ and
+$\Sig''=-0.1508$~s$^{-1}$mV$^{-2}$. With each direct-input amplitude
+equal to the per-carrier TI amplitude, the source-magnitude ratio is
+$|\varepsilon_{\rm eq}|/\varepsilon
+=0.1589\,\varepsilon/(1~\mathrm{mV})$:
+$1.59\%$ at $0.1$~mV and $4.77\%$ at $0.3$~mV, rounded to $2$--$5\%$.
+At $0.3$~mV per carrier, the equivalent direct polarization is
+$-0.0143$~mV, or $-14.3~\mu$V. The negative sign specifies a suppressive
+local source for tDCS and an inverted source phase for tACS.
+
+These percentages match each TI carrier to the direct input. Matching the
+total TI peak instead requires a direct amplitude $2\varepsilon$ and halves
+the ratios. Matching RMS polarization requires tACS amplitude
+$\sqrt{2}\varepsilon$ or tDCS magnitude $\varepsilon$, since the two-tone
+TI RMS is $\varepsilon$. Direct tACS also generates a quadratic steady
+source, $\Sig''(v^*)\varepsilon_{\rm A}^2/4$; at equal RMS polarization it
+equals the direct TI steady source for this static detector. Equal
+electrode currents need not give equal polarizations because access differs
+between DC, the beat frequency, and the carriers.
+
+Matching sources at the same entry point matches their leading circuit responses:
+the steady sources share the zero-frequency transfer, while the beat and tACS
+sources share the transfer at $\Omega$. These two transfers need not be equal.
+The comparison is local and assumes a common operating state; the TI beat can
+also rectify after amplification and add to the mean shift
+(\S\ref{sec:timing}). It does not establish a universal ratio of physiological
+effects or equal spatial response maps.
 
 \subsection{Amplification: the synaptic low-pass and the network resonance}\label{sec:carrier}
 Synaptic filtering suppresses the carrier after the nonlinearity has generated
@@ -1631,7 +1694,9 @@ The surrogate sweeps give approximately $0.14$ far from the Hopf, rising to $0.2
 at $\gamma=1.07$~s$^{-1}$ and $0.47$ at $0.12$~s$^{-1}$. Genuine two tones give
 $0.14$, $0.24$, and $0.46$, respectively, a change of at most $2.2\%$ across the grid.
 These are response ratios for the stated unequal input amplitudes, not an
-equal-power comparison. In controls at three couplings, matching the tACS input
+equal-power comparison. The equal-per-carrier and equal-total-peak comparisons
+with both tACS and tDCS are given in \S\ref{sec:dc}.
+In controls at three couplings, matching the tACS input
 to TI's leading beat source gives TI/tACS output ratios of $0.99$, $0.94$, and
 $0.92$ for the surrogate, and $0.99$, $0.93$, and $0.90$ for two tones.
 The stronger direct response saturates earlier near the Hopf: multiplying
@@ -1965,9 +2030,13 @@ hippocampus ($0.21$ at $10$~Hz AC) \cite{bikson2004,deans2007} and reach about
 $0.5$~mV per V/m in cortical
 L5/6 pyramidal cells \cite{radman2009}; human cortical fields near $0.8$~V/m have
 been reported at $2$~mA \cite{huang2017,huang2017corr}. These static couplings do
-not fix the coupling at kHz. For equal TI carrier polarizations $\varepsilon$,
-the JR beat drive is $\Sig''\varepsilon^2/2$, whereas a direct drive of the same
-peak polarization gives $2\Sig'\varepsilon$. Their leading amplitude ratio is
+not fix the coupling at kHz. At equal per-carrier and direct-input polarizations,
+the JR steady and beat sources are approximately $2$--$5\%$ of the corresponding
+tDCS and tACS sources for $0.1$--$0.3$~mV at the pinned operating point
+(\S\ref{sec:dc}). The following estimate instead matches the total TI peak.
+For equal TI carrier polarizations $\varepsilon$, the JR beat drive is
+$\Sig''\varepsilon^2/2$, whereas a direct sinusoid with the same total peak
+polarization $2\varepsilon$ gives $2\Sig'\varepsilon$. Their leading amplitude ratio is
 $\mathcal R_{\rm det}\simeq|\Sig''|\varepsilon/(4\Sig')$: the relative efficiency decreases
 as the input is weakened in this perturbative regime. A larger recurrent gain
 amplifies both drives.
@@ -2200,7 +2269,7 @@ GALVANI).
 \section*{Competing interests}
 % Wording supplied by Giulio via Klaus, 2026-10-05; all authors confirm at submission.
 % Shareholder wording follows the author-confirmed WP0215 journal declaration.
-Giulio Ruffini, Borja Mercadal, Ricardo Salvador, Alex Just, and Francesca Castaldo are employees of
+Giulio Ruffini, Ricardo Salvador, Borja Mercadal, Alex Just, and Francesca Castaldo are employees of
 Neuroelectrics, which develops and sells transcranial electrical stimulation devices.
 Giulio Ruffini is a co-founder and shareholder of Neuroelectrics. The other authors
 declare no competing interests.
@@ -2211,9 +2280,9 @@ declare no competing interests.
 % Roles below reflect actual contributions; do not inflate them.
 Using the CRediT taxonomy: \textbf{G.~Ruffini}: conceptualization, methodology, formal
 analysis, software, investigation, visualization, writing (original draft), supervision,
-funding acquisition. \textbf{B.~Mercadal}: validation, visualization, writing (review
-and editing). \textbf{R.~Salvador}: conceptualization (current-ratio steering),
+funding acquisition. \textbf{R.~Salvador}: conceptualization (current-ratio steering),
 methodology (head modeling), software, formal analysis, data curation, visualization.
+\textbf{B.~Mercadal}: validation, visualization, writing (review and editing).
 \textbf{A.~Just}: software, visualization, writing (review and editing).
 \textbf{R.~de Palma Aristides}: software, visualization, writing (review and editing).
 \textbf{F.~Castaldo}: conceptualization, writing (review and editing).

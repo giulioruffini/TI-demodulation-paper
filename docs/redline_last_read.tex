@@ -1,7 +1,7 @@
 \documentclass[11pt,a4paper]{article}
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-u84udf72/old.tex   Tue Oct 20 21:14:24 2026
-%DIF ADD /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-u84udf72/new.tex   Tue Oct 20 21:14:24 2026
+%DIF DEL /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-2tp6pk7m/old.tex   Wed Oct 21 10:03:22 2026
+%DIF ADD /Users/giulio/Claude/NE TNs and Blogs/TN0484/build/.latex-redline-2tp6pk7m/new.tex   Wed Oct 21 10:03:22 2026
 \usepackage[margin=2.3cm]{geometry}
 \usepackage{lmodern}        % classic Computer Modern look, vectorized (T1)
 \usepackage[T1]{fontenc}
@@ -28,7 +28,12 @@
 
 % ---------------------------------------------------------------------------
 % Build switch. \jnefalse -> Neuroelectrics/BCOM Technical Note (TN0484/WP0185).
-%                \jnetrue  -> Journal of Neural Engineering manuscript.
+%DIF 28c28-29
+%DIF < %                \jnetrue  -> Journal of Neural Engineering manuscript.
+%DIF -------
+%                \jnetrue  -> Journal of Neural Engineering manuscript (default: the %DIF >
+%                working edition; typesetting this file in TeXShop gives the article). %DIF >
+%DIF -------
 % One source, two outputs: the TN keeps its branding and the full appendices;
 % the JNE build strips the house furniture and uses the structured abstract.
 % Never fork this file -- switch the flag.
@@ -38,7 +43,12 @@
 %   pdflatex -jobname=TN0484_jne "\def\jnebuild{}\input{<this file>}" ).
 % ---------------------------------------------------------------------------
 \newif\ifjne
-\jnefalse
+%DIF 38c39-40
+%DIF < \jnefalse
+%DIF -------
+\jnetrue %DIF >
+\ifdefined\tnbuild\jnefalse\fi %DIF >
+%DIF -------
 \ifdefined\jnebuild\jnetrue\fi
 
 % ---------------------------------------------------------------------------
@@ -89,18 +99,19 @@
 
 \newcommand{\Sig}{\sigma}
 \newcommand{\half}{\tfrac{1}{2}}
-%DIF 89c89
+%DIF 89c91
 %DIF < \newcommand{\paperver}{0.15.0-draft20}
 %DIF -------
 \newcommand{\paperver}{0.15.0-draft21} %DIF >
 %DIF -------
 \hypersetup{
   pdftitle={The cortical column as a tuned receiver: a network mechanism for temporal-interference stimulation},
-  pdfauthor={Giulio Ruffini, Borja Mercadal, Ricardo Salvador, Alex Just, Raul de Palma Aristides, Francesca Castaldo, Nir Grossman, Santiago Canals, Claudio Mirasso},
-%DIF 93c93
+%DIF 92-93c94-95
+%DIF <   pdfauthor={Giulio Ruffini, Borja Mercadal, Ricardo Salvador, Alex Just, Raul de Palma Aristides, Francesca Castaldo, Nir Grossman, Santiago Canals, Claudio Mirasso},
 %DIF <   pdfsubject={TN0484 / WP0185, version \paperver, October 19, 2026}
 %DIF -------
-  pdfsubject={TN0484 / WP0185, version \paperver, October 20, 2026} %DIF >
+  pdfauthor={Giulio Ruffini, Ricardo Salvador, Borja Mercadal, Alex Just, Raul de Palma Aristides, Francesca Castaldo, Nir Grossman, Santiago Canals, Claudio Mirasso}, %DIF >
+  pdfsubject={TN0484 / WP0185, version \paperver, October 21, 2026} %DIF >
 %DIF -------
 }
 %DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
@@ -154,12 +165,13 @@
 % by them); confirm corresponding-author email. ORCIDs below verified against
 % the ORCID registry (2026-07-21).
 % Ricardo Salvador's ORCID supplied as registry-verified by giulio-shell on
-% 2026-10-09. Placement after Borja Mercadal is provisional pending Giulio's decision.
+%DIF <  2026-10-09. Placement after Borja Mercadal is provisional pending Giulio's decision.
+%DIF >  2026-10-09. Giulio confirmed Ricardo as second author on 2026-10-21.
 % ---------------------------------------------------------------------------
 \begin{center}
 {\LARGE\bfseries The cortical column as a tuned receiver:\\[4pt]
 a network mechanism for temporal-interference stimulation}\\[16pt]
-{\large Giulio Ruffini$^{1,2}$, Borja Mercadal$^{1}$, Ricardo Salvador$^{1}$,\\[2pt]
+{\large Giulio Ruffini$^{1,2}$, \DIFdelbegin \DIFdel{Borja Mercadal$^{1}$, }\DIFdelend Ricardo Salvador$^{1}$, \DIFaddbegin \DIFadd{Borja Mercadal$^{1}$,}\DIFaddend \\[2pt]
 Alex Just$^{1}$, Raul de Palma Aristides$^{2}$, Francesca Castaldo$^{1,2}$,\\[2pt]
 Nir Grossman$^{5}$, Santiago Canals$^{2,4}$, and Claudio Mirasso$^{2,3}$}\\[12pt]
 \begin{minipage}{0.86\textwidth}\centering\small
@@ -171,14 +183,17 @@ $^{5}$Department of Brain Sciences and UK Dementia Research Institute,\\
 Imperial College London, London, United Kingdom\\[6pt]
 E-mail: \texttt{giulio.ruffini@neuroelectrics.com}\\[4pt]
 Working draft v\paperver\quad \DIFdelbegin \DIFdel{2026-10-19
-}\DIFdelend \DIFaddbegin \DIFadd{2026-10-20
+}\DIFdelend \DIFaddbegin \DIFadd{2026-10-21
 }\DIFaddend \end{minipage}\\[8pt]
 \begin{minipage}{0.86\textwidth}\centering\footnotesize\color{negray}
 \textbf{ORCID iDs:}\ %
 G.~Ruffini \href{https://orcid.org/0000-0003-3084-0177}{0000-0003-3084-0177};\ %
-B.~Mercadal \href{https://orcid.org/0000-0002-0941-6796}{0000-0002-0941-6796};\ %
-R.~Salvador \href{https://orcid.org/0000-0003-1235-6533}{0000-0003-1235-6533};\ %
-A.~Just \href{https://orcid.org/0009-0006-8794-7425}{0009-0006-8794-7425};\ %
+\DIFdelbegin \DIFdel{B.~Mercadal }%DIFDELCMD < \href{https://orcid.org/0000-0002-0941-6796}{%%%
+\DIFdel{0000-0002-0941-6796}%DIFDELCMD < \MBLOCKRIGHTBRACE%%%
+\DIFdel{;\ %DIF <
+}\DIFdelend R.~Salvador \href{https://orcid.org/0000-0003-1235-6533}{0000-0003-1235-6533};\ %
+\DIFaddbegin \DIFadd{B.~Mercadal }\href{https://orcid.org/0000-0002-0941-6796}{\DIFadd{0000-0002-0941-6796}}\DIFadd{;\ %DIF >
+}\DIFaddend A.~Just \href{https://orcid.org/0009-0006-8794-7425}{0009-0006-8794-7425};\ %
 R.~de Palma Aristides \href{https://orcid.org/0000-0002-0255-2293}{0000-0002-0255-2293};\ %
 F.~Castaldo \href{https://orcid.org/0000-0002-4947-4552}{0000-0002-4947-4552};\ %
 N.~Grossman \href{https://orcid.org/0000-0003-2002-9049}{0000-0003-2002-9049};\ %
@@ -194,12 +209,12 @@ C.~Mirasso \href{https://orcid.org/0000-0003-2980-7038}{0000-0003-2980-7038}.
 a network mechanism for temporal-interference stimulation}\\[10pt]
 \begin{tabular}{@{}ll@{}}
 \textbf{Document:} & TN0484 (Neuroelectrics TN)\,/\,WP0185 (BCOM WP) \\
-\textbf{Authors:} & Giulio Ruffini, Borja Mercadal, Ricardo Salvador,\\
+\textbf{Authors:} & Giulio Ruffini, \DIFdelbegin \DIFdel{Borja Mercadal, }\DIFdelend Ricardo Salvador, \DIFaddbegin \DIFadd{Borja Mercadal,}\DIFaddend \\
 & Alex Just, Raul de Palma Aristides, Francesca Castaldo,\\
 & Nir Grossman, Santiago Canals, and Claudio Mirasso \\
 \textbf{Affiliations:} & Neuroelectrics\,/\,BCOM\,/\,IFISC (UIB-CSIC)\,/\,IN (UMH-CSIC)\\
 & Imperial College London (Brain Sciences and UK Dementia Research Institute) \\
-\textbf{Date:} & \DIFdelbegin \DIFdel{2026-10-19 }\DIFdelend \DIFaddbegin \DIFadd{2026-10-20 }\DIFaddend \qquad \textbf{Version:} \paperver \\
+\textbf{Date:} & \DIFdelbegin \DIFdel{2026-10-19 }\DIFdelend \DIFaddbegin \DIFadd{2026-10-21 }\DIFaddend \qquad \textbf{Version:} \paperver \\
 \textbf{DOI:} & \href{https://doi.org/10.5281/zenodo.21009618}{10.5281/zenodo.21009618} \\
 \end{tabular}\\[4pt]
 {\color{neblue}\rule{\textwidth}{1pt}}
@@ -223,60 +238,84 @@ references to article equations are marked as main-text references.
 
 \noindent
 \ifjne
-\textbf{Objective.} Temporal-interference (TI) stimulation requires three stages in series: the kilohertz field must reach a
+\textbf{Objective.} \DIFdelbegin \DIFdel{Temporal-interference }\DIFdelend \DIFaddbegin \DIFadd{We develop a mesoscale model of temporal-interference }\DIFaddend (TI) stimulation \DIFdelbegin \DIFdel{requires }\DIFdelend \DIFaddbegin \DIFadd{with }\DIFaddend three stages
+in series: \DIFdelbegin \DIFdel{the kilohertz field must reach a
 nonlinear membrane (access), the membrane must generate the difference frequency
 absent from the field (detection), and the circuit must amplify that weak component
-(amplification). We build a mesoscale model.\
-\textbf{Approach.} Following single-neuron TI models, we represent access by a short effective
-membrane time. We analyze detection and amplification in a Jansen--Rit column, an
-exact mean field of quadratic integrate-and-fire neurons, and its spiking network.\
-\textbf{Main results.} For weak fields the detector is quadratic: the beat is
-proportional to the product of the local carrier amplitudes, and a signed steady
-source to their summed squares. A static rate curve and the exact
+(amplification).We build a mesoscale model.}\DIFdelend \DIFaddbegin \DIFadd{membrane access, nonlinear detection, and circuit amplification.}\DIFaddend \
+\textbf{Approach.} \DIFdelbegin \DIFdel{Following single-neuron TI models, we represent access }\DIFdelend \DIFaddbegin \DIFadd{Access is represented }\DIFaddend by a short effective membrane time. We analyze detection and
+amplification in a Jansen--Rit column, an exact mean field of quadratic
+integrate-and-fire neurons, and its spiking network\DIFaddbegin \DIFadd{, and test spatial predictions in a
+realistic head}\DIFaddend .\
+\textbf{Main results.} For weak fields\DIFdelbegin \DIFdel{the detector is quadratic : the beat is
+}\DIFdelend \DIFaddbegin \DIFadd{, quadratic detection generates a beat }\DIFaddend proportional to the product of
+\DIFdelbegin \DIFdel{the local carrier amplitudes, }\DIFdelend \DIFaddbegin \DIFadd{local carrier polarizations }\DIFaddend and a signed\DIFdelbegin \DIFdel{steady
+source }\DIFdelend \DIFaddbegin \DIFadd{, DC-like steady source proportional }\DIFaddend to their
+summed squares. \DIFdelbegin \DIFdel{A static rate curve and }\DIFdelend \DIFaddbegin \DIFadd{Direct transcranial alternating- and direct-current stimulation (tACS
+and tDCS) sources are linear in polarization to leading order. At the Jansen--Rit
+operating point studied, TI carrier polarizations of 0.1--0.3 mV generate steady and
+beat sources approximately 2--5\% as large as those generated by tDCS and tACS,
+respectively, when }\DIFaddend the \DIFdelbegin \DIFdel{exact
 mean field give the same product law; the mean field adds frequency dependence
-when membranes are slow relative to input.
-In a realistic head with a published hippocampal montage, changing the current
-ratio moves the envelope and mean-square foci in opposite directions and only
-rescales the product map. Near a Hopf bifurcation the
-circuit amplifies the beat as the inverse of the modal damping; with the
-Jansen--Rit operating point held fixed, synaptic coupling sets this gain
-independently of detection. The amplified response appears mainly in
-envelope-locked timing, with little change in mean rate.
-At stronger fields the steady shift alone can drive a gamma circuit across its
-oscillation threshold, as can an unmodulated carrier of equal power.\
-\textbf{Significance.} The model expresses TI efficacy as the product of three
-separately measurable factors. For weak fields, dose follows the product of carrier
-amplitudes rather than the envelope minimum. Under uniform conductivity, access,
-and detection, the steady drive has its largest magnitude at compartment boundaries. TI shares
-its circuit amplifier with direct low-frequency stimulation. Carrier sweeps,
-independent-amplitude tests, beat sweeps across states, and equal-power controls
-each test one stage.
+when membranes are }\DIFdelend \DIFaddbegin \DIFadd{direct-input polarization amplitude equals that of each TI
+carrier. Membranes }\DIFaddend slow relative to input \DIFdelbegin \DIFdel{.
+In a realistic head with a published }\DIFdelend \DIFaddbegin \DIFadd{add frequency dependence. With a }\DIFaddend hippocampal
+montage, changing the current ratio moves \DIFdelbegin \DIFdel{the }\DIFdelend envelope and mean-square foci \DIFdelbegin \DIFdel{in opposite directions and }\DIFdelend \DIFaddbegin \DIFadd{oppositely but
+}\DIFaddend only rescales the \DIFdelbegin \DIFdel{product map }\DIFdelend \DIFaddbegin \DIFadd{beat map at fixed state}\DIFaddend . Near a Hopf bifurcation\DIFdelbegin \DIFdel{the
+circuit amplifies the beat as the inverse of the modal damping ; with the
+}\DIFdelend \DIFaddbegin \DIFadd{, resonant gain grows
+inversely with modal damping and is shared with tACS. At a fixed }\DIFaddend Jansen--Rit operating
+point\DIFdelbegin \DIFdel{held fixed, synaptic coupling sets this }\DIFdelend \DIFaddbegin \DIFadd{, coupling changes }\DIFaddend gain independently of detection\DIFdelbegin \DIFdel{. The amplified response }\DIFdelend \DIFaddbegin \DIFadd{; amplification }\DIFaddend appears mainly in
+\DIFdelbegin \DIFdel{envelope-locked }\DIFdelend \DIFaddbegin \DIFadd{beat-locked }\DIFaddend timing, with little \DIFdelbegin \DIFdel{change in mean rate. At stronger fields the steady shift alone }\DIFdelend \DIFaddbegin \DIFadd{mean-rate change. Stronger steady sources }\DIFaddend can drive a
+gamma circuit across its oscillation threshold, as can an \DIFdelbegin \DIFdel{unmodulated carrier of equal power}\DIFdelend \DIFaddbegin \DIFadd{equal-power unmodulated
+carrier}\DIFaddend .\
+\textbf{Significance.} \DIFdelbegin \DIFdel{The model expresses TI efficacy as the product of three
+separately measurable factors. For weak fields, }\DIFdelend \DIFaddbegin \DIFadd{Weak-field beat }\DIFaddend dose follows the \DIFdelbegin \DIFdel{product of carrier
+amplitudes }\DIFdelend \DIFaddbegin \DIFadd{polarization product }\DIFaddend rather than the envelope minimum.
+\DIFdelbegin \DIFdel{Under }\DIFdelend \DIFaddbegin \DIFadd{The steady source can act at depth, its sign set by curvature, not polarity. Its
+magnitude has no strict interior maximum within tissue regions of }\DIFaddend uniform conductivity, access,
+\DIFdelbegin \DIFdel{and detection, the steady drive has its largest magnitude at compartment boundaries. TI shares
+its circuit amplifier with direct low-frequency stimulation. Carrier sweeps, independent-amplitude tests, beat sweepsacross states}\DIFdelend \DIFaddbegin \DIFadd{orientation, and detection. Polarization measurements, amplitude and frequency sweeps}\DIFaddend ,
+and equal-power controls \DIFdelbegin \DIFdel{each test one stage}\DIFdelend \DIFaddbegin \DIFadd{distinguish the stages and separate steady-source effects from
+those requiring the beat}\DIFaddend .
 \else
-Temporal-interference (TI) stimulation requires three stages in series: the kilohertz field must reach a
+\DIFdelbegin \DIFdel{Temporal-interference }\DIFdelend \DIFaddbegin \DIFadd{We develop a mesoscale model of temporal-interference }\DIFaddend (TI) stimulation \DIFdelbegin \DIFdel{requires }\DIFdelend \DIFaddbegin \DIFadd{with }\DIFaddend three stages
+in series: \DIFdelbegin \DIFdel{the kilohertz field must reach a
 nonlinear membrane (access), the membrane must generate the difference frequency
 absent from the field (detection), and the circuit must amplify that weak component
-(amplification). We build a mesoscale model.\ Following single-neuron TI models, we represent access by a short effective
-membrane time. We analyze detection and amplification in a Jansen--Rit column, an
-exact mean field of quadratic integrate-and-fire neurons, and its spiking network.\ For weak fields the detector is quadratic: the beat is
-proportional to the product of the local carrier amplitudes, and a signed steady
-source to their summed squares. A static rate curve and the exact
+(amplification).We build a mesoscale model.}\DIFdelend \DIFaddbegin \DIFadd{membrane access, nonlinear detection, and circuit amplification.}\DIFaddend \ \DIFdelbegin \DIFdel{Following single-neuron TI models, we represent access }\DIFdelend \DIFaddbegin \DIFadd{Access is represented }\DIFaddend by a short effective membrane time. We analyze detection and
+amplification in a Jansen--Rit column, an exact mean field of quadratic
+integrate-and-fire neurons, and its spiking network\DIFaddbegin \DIFadd{, and test spatial predictions in a
+realistic head}\DIFaddend .\ For weak fields\DIFdelbegin \DIFdel{the detector is quadratic : the beat is
+}\DIFdelend \DIFaddbegin \DIFadd{, quadratic detection generates a beat }\DIFaddend proportional to the product of
+\DIFdelbegin \DIFdel{the local carrier amplitudes, }\DIFdelend \DIFaddbegin \DIFadd{local carrier polarizations }\DIFaddend and a signed\DIFdelbegin \DIFdel{steady
+source }\DIFdelend \DIFaddbegin \DIFadd{, DC-like steady source proportional }\DIFaddend to their
+summed squares. \DIFdelbegin \DIFdel{A static rate curve and }\DIFdelend \DIFaddbegin \DIFadd{Direct transcranial alternating- and direct-current stimulation (tACS
+and tDCS) sources are linear in polarization to leading order. At the Jansen--Rit
+operating point studied, TI carrier polarizations of 0.1--0.3 mV generate steady and
+beat sources approximately 2--5\% as large as those generated by tDCS and tACS,
+respectively, when }\DIFaddend the \DIFdelbegin \DIFdel{exact
 mean field give the same product law; the mean field adds frequency dependence
-when membranes are slow relative to input.
-In a realistic head with a published hippocampal montage, changing the current
-ratio moves the envelope and mean-square foci in opposite directions and only
-rescales the product map. Near a Hopf bifurcation the
-circuit amplifies the beat as the inverse of the modal damping; with the
-Jansen--Rit operating point held fixed, synaptic coupling sets this gain
-independently of detection. The amplified response appears mainly in
-envelope-locked timing, with little change in mean rate.
-At stronger fields the steady shift alone can drive a gamma circuit across its
-oscillation threshold, as can an unmodulated carrier of equal power.\ The model expresses TI efficacy as the product of three
-separately measurable factors. For weak fields, dose follows the product of carrier
-amplitudes rather than the envelope minimum. Under uniform conductivity, access,
-and detection, the steady drive has its largest magnitude at compartment boundaries. TI shares
-its circuit amplifier with direct low-frequency stimulation. Carrier sweeps,
-independent-amplitude tests, beat sweeps across states, and equal-power controls
-each test one stage.
+when membranes are }\DIFdelend \DIFaddbegin \DIFadd{direct-input polarization amplitude equals that of each TI
+carrier. Membranes }\DIFaddend slow relative to input \DIFdelbegin \DIFdel{.
+In a realistic head with a published }\DIFdelend \DIFaddbegin \DIFadd{add frequency dependence. With a }\DIFaddend hippocampal
+montage, changing the current ratio moves \DIFdelbegin \DIFdel{the }\DIFdelend envelope and mean-square foci \DIFdelbegin \DIFdel{in opposite directions and }\DIFdelend \DIFaddbegin \DIFadd{oppositely but
+}\DIFaddend only rescales the \DIFdelbegin \DIFdel{product map }\DIFdelend \DIFaddbegin \DIFadd{beat map at fixed state}\DIFaddend . Near a Hopf bifurcation\DIFdelbegin \DIFdel{the
+circuit amplifies the beat as the inverse of the modal damping ; with the
+}\DIFdelend \DIFaddbegin \DIFadd{, resonant gain grows
+inversely with modal damping and is shared with tACS. At a fixed }\DIFaddend Jansen--Rit operating
+point\DIFdelbegin \DIFdel{held fixed, synaptic coupling sets this }\DIFdelend \DIFaddbegin \DIFadd{, coupling changes }\DIFaddend gain independently of detection\DIFdelbegin \DIFdel{. The amplified response }\DIFdelend \DIFaddbegin \DIFadd{; amplification }\DIFaddend appears mainly in
+\DIFdelbegin \DIFdel{envelope-locked }\DIFdelend \DIFaddbegin \DIFadd{beat-locked }\DIFaddend timing, with little \DIFdelbegin \DIFdel{change in mean rate. At stronger fields the steady shift alone }\DIFdelend \DIFaddbegin \DIFadd{mean-rate change. Stronger steady sources }\DIFaddend can drive a
+gamma circuit across its oscillation threshold, as can an \DIFdelbegin \DIFdel{unmodulated carrier of equal power}\DIFdelend \DIFaddbegin \DIFadd{equal-power unmodulated
+carrier}\DIFaddend .\ \DIFdelbegin \DIFdel{The model expresses TI efficacy as the product of three
+separately measurable factors. For weak fields, }\DIFdelend \DIFaddbegin \DIFadd{Weak-field beat }\DIFaddend dose follows the \DIFdelbegin \DIFdel{product of carrier
+amplitudes }\DIFdelend \DIFaddbegin \DIFadd{polarization product }\DIFaddend rather than the envelope minimum.
+\DIFdelbegin \DIFdel{Under }\DIFdelend \DIFaddbegin \DIFadd{The steady source can act at depth, its sign set by curvature, not polarity. Its
+magnitude has no strict interior maximum within tissue regions of }\DIFaddend uniform conductivity, access,
+\DIFdelbegin \DIFdel{and detection, the steady drive has its largest magnitude at compartment boundaries. TI shares
+its circuit amplifier with direct low-frequency stimulation. Carrier sweeps, independent-amplitude tests, beat sweepsacross states}\DIFdelend \DIFaddbegin \DIFadd{orientation, and detection. Polarization measurements, amplitude and frequency sweeps}\DIFaddend ,
+and equal-power controls \DIFdelbegin \DIFdel{each test one stage}\DIFdelend \DIFaddbegin \DIFadd{distinguish the stages and separate steady-source effects from
+those requiring the beat}\DIFaddend .
 \fi
 
 \smallskip
@@ -1091,9 +1130,10 @@ three; amplitude dependence is the primary test.
 
 \DIFaddend \subsection{The steady source has a state-dependent sign}\label{sec:dc}
 Mean-square polarization is a nonnegative geometric map. Detection converts it
-into a signed steady source, and the circuit converts that source into a mean
-response. Under uniform conductivity, access, and detection, the source's
-largest magnitude lies on compartment boundaries; the envelope-following mean
+into a signed\DIFaddbegin \DIFadd{, DC-like }\DIFaddend steady source, and the circuit converts that source into a mean
+response. \DIFaddbegin \DIFadd{\emph{DC-like} refers to the detected source, not to a DC component in the applied
+field. }\DIFaddend Under uniform conductivity, access, \DIFaddbegin \DIFadd{orientation, }\DIFaddend and detection, the source's
+largest magnitude lies on \DIFdelbegin \DIFdel{compartment }\DIFdelend \DIFaddbegin \DIFadd{tissue-compartment }\DIFaddend boundaries; the envelope-following mean
 obeys the same restriction\DIFdelbegin \DIFdel{, as shown below}\DIFdelend .
 The envelope mean is
 \[
@@ -1186,7 +1226,73 @@ carrier gives the same mean shift at second order when its DC mixing coefficient
 equals those of both TI carriers. For a dynamic detector, this requires the
 frequency-dependent coefficient to vary negligibly across the carrier interval.
 
-\subsection{Amplification: the synaptic low-pass and the network resonance}\label{sec:carrier}
+\DIFaddbegin \paragraph{\DIFadd{Comparison with direct tDCS and tACS.}}
+\DIFadd{The steady TI source can be compared with transcranial direct-current stimulation
+(tDCS), and the beat source with tACS at the beat frequency. Both comparisons
+must specify the polarization reaching the same sigmoid, rather than electrode
+current alone. For two equal TI carrier polarizations
+$\varepsilon_1=\varepsilon_2=\varepsilon>0$, Eq.~\eqref{eq:taylor} gives the leading
+signed rate sources
+}\[
+\DIFadd{Y_{\rm DC}^{\rm TI}\simeq Y_\Omega^{\rm TI}
+\simeq \frac{1}{2}\Sig''(v^*)\varepsilon^2.
+}\]
+\DIFadd{A constant polarization $\varepsilon_{\rm D}$ and a sinusoidal polarization
+$\varepsilon_{\rm A}\cos\Omega t$, representing direct tDCS and tACS inputs at
+the same entry point, instead give
+}\[
+\DIFadd{Y_{\rm DC}^{\rm tDCS}\simeq\Sig'(v^*)\varepsilon_{\rm D},
+\qquad
+Y_\Omega^{\rm tACS}\simeq\Sig'(v^*)\varepsilon_{\rm A}.
+}\]
+\DIFadd{Here $\varepsilon_{\rm D}$ is signed and a negative $\varepsilon_{\rm A}$ denotes
+a phase reversal. Matching either direct source to its TI counterpart therefore
+requires the equivalent polarization
+}\[
+\DIFadd{\varepsilon_{\rm eq}
+=\frac{\Sig''(v^*)}{2\Sig'(v^*)}\,\varepsilon^2,
+\qquad
+\frac{\Sig''(v^*)}{\Sig'(v^*)}
+=-\rho\tanh\!\left[\frac{\rho(v^*-v_0)}{2}\right].
+}\]
+\DIFadd{The ratio depends on sigmoid steepness and operating voltage; the rate ceiling
+$2e_0$ cancels. At the inflection the quadratic TI sources vanish.
+}
+
+\DIFadd{For the JR parameters $\rho=0.56$~mV$^{-1}$, $v_0=6$~mV,
+$e_0=2.5$~s$^{-1}$, and the pinned operating point $v^*=8.30$~mV,
+$\Sig'=0.4745$~s$^{-1}$mV$^{-1}$ and
+$\Sig''=-0.1508$~s$^{-1}$mV$^{-2}$. With each direct-input amplitude
+equal to the per-carrier TI amplitude, the source-magnitude ratio is
+$|\varepsilon_{\rm eq}|/\varepsilon
+=0.1589\,\varepsilon/(1~\mathrm{mV})$:
+$1.59\%$ at $0.1$~mV and $4.77\%$ at $0.3$~mV, rounded to $2$--$5\%$.
+At $0.3$~mV per carrier, the equivalent direct polarization is
+$-0.0143$~mV, or $-14.3~\mu$V. The negative sign specifies a suppressive
+local source for tDCS and an inverted source phase for tACS.
+}
+
+\DIFadd{These percentages match each TI carrier to the direct input. Matching the
+total TI peak instead requires a direct amplitude $2\varepsilon$ and halves
+the ratios. Matching RMS polarization requires tACS amplitude
+$\sqrt{2}\varepsilon$ or tDCS magnitude $\varepsilon$, since the two-tone
+TI RMS is $\varepsilon$. Direct tACS also generates a quadratic steady
+source, $\Sig''(v^*)\varepsilon_{\rm A}^2/4$; at equal RMS polarization it
+equals the direct TI steady source for this static detector. Equal
+electrode currents need not give equal polarizations because access differs
+between DC, the beat frequency, and the carriers.
+}
+
+\DIFadd{Matching sources at the same entry point matches their leading circuit responses:
+the steady sources share the zero-frequency transfer, while the beat and tACS
+sources share the transfer at $\Omega$. These two transfers need not be equal.
+The comparison is local and assumes a common operating state; the TI beat can
+also rectify after amplification and add to the mean shift
+(\S\ref{sec:timing}). It does not establish a universal ratio of physiological
+effects or equal spatial response maps.
+}
+
+\DIFaddend \subsection{Amplification: the synaptic low-pass and the network resonance}\label{sec:carrier}
 Synaptic filtering suppresses the carrier after the nonlinearity has generated
 the beat. Each JR excitatory synapse has transfer function
 $H_s(\omega)=Aa/(i\omega+a)^2$, a second-order low-pass with characteristic
@@ -2337,7 +2443,9 @@ The surrogate sweeps give approximately $0.14$ far from the Hopf, rising to $0.2
 at $\gamma=1.07$~s$^{-1}$ and $0.47$ at $0.12$~s$^{-1}$. Genuine two tones give
 $0.14$, $0.24$, and $0.46$, respectively, a change of at most $2.2\%$ across the grid.
 These are response ratios for the stated unequal input amplitudes, not an
-equal-power comparison. In controls at three couplings, matching the tACS input
+equal-power comparison. \DIFaddbegin \DIFadd{The equal-per-carrier and equal-total-peak comparisons
+with both tACS and tDCS are given in \S\ref{sec:dc}.
+}\DIFaddend In controls at three couplings, matching the tACS input
 to TI's leading beat source gives TI/tACS output ratios of $0.99$, $0.94$, and
 $0.92$ for the surrogate, and $0.99$, $0.93$, and $0.90$ for two tones.
 \DIFdelbegin \DIFdel{Increasing that direct input by a factor of }\DIFdelend \DIFaddbegin \DIFadd{The stronger direct response saturates earlier near the Hopf: multiplying
@@ -2753,9 +2861,13 @@ hippocampus ($0.21$ at $10$~Hz AC) \cite{bikson2004,deans2007} and reach about
 $0.5$~mV per V/m in cortical
 L5/6 pyramidal cells \cite{radman2009}; human cortical fields near $0.8$~V/m have
 been reported at $2$~mA \cite{huang2017,huang2017corr}. These static couplings do
-not fix the coupling at kHz. For equal TI carrier polarizations $\varepsilon$,
-the JR beat drive is $\Sig''\varepsilon^2/2$, whereas a direct drive of the same
-peak polarization gives $2\Sig'\varepsilon$. Their leading amplitude ratio is
+not fix the coupling at kHz. \DIFaddbegin \DIFadd{At equal per-carrier and direct-input polarizations,
+the JR steady and beat sources are approximately $2$--$5\%$ of the corresponding
+tDCS and tACS sources for $0.1$--$0.3$~mV at the pinned operating point
+(\S\ref{sec:dc}). The following estimate instead matches the total TI peak.
+}\DIFaddend For equal TI carrier polarizations $\varepsilon$, the JR beat drive is
+$\Sig''\varepsilon^2/2$, whereas a direct \DIFdelbegin \DIFdel{drive of the same peak polarization }\DIFdelend \DIFaddbegin \DIFadd{sinusoid with the same total peak
+polarization $2\varepsilon$ }\DIFaddend gives $2\Sig'\varepsilon$. Their leading amplitude ratio is
 $\mathcal R_{\rm det}\simeq|\Sig''|\varepsilon/(4\Sig')$: the relative efficiency decreases
 as the input is weakened in this perturbative regime. A larger recurrent gain
 amplifies both drives.
@@ -3057,7 +3169,7 @@ GALVANI).
 \section*{Competing interests}
 % Wording supplied by Giulio via Klaus, 2026-10-05; all authors confirm at submission.
 % Shareholder wording follows the author-confirmed WP0215 journal declaration.
-Giulio Ruffini, Borja Mercadal, Ricardo Salvador, Alex Just, and Francesca Castaldo are employees of
+Giulio Ruffini, \DIFdelbegin \DIFdel{Borja Mercadal, }\DIFdelend Ricardo Salvador, \DIFaddbegin \DIFadd{Borja Mercadal, }\DIFaddend Alex Just, and Francesca Castaldo are employees of
 Neuroelectrics, which develops and sells transcranial electrical stimulation devices.
 Giulio Ruffini is a co-founder and shareholder of Neuroelectrics. The other authors
 declare no competing interests.
@@ -3068,10 +3180,11 @@ declare no competing interests.
 % Roles below reflect actual contributions; do not inflate them.
 Using the CRediT taxonomy: \textbf{G.~Ruffini}: conceptualization, methodology, formal
 analysis, software, investigation, visualization, writing (original draft), supervision,
-funding acquisition. \textbf{B.~Mercadal}: validation, visualization, writing (review
-and editing). \textbf{R.~Salvador}: conceptualization (current-ratio steering),
+funding acquisition. \DIFdelbegin \DIFdel{\textbf{B.~Mercadal}: validation, visualization, writing (review
+and editing). }\DIFdelend \textbf{R.~Salvador}: conceptualization (current-ratio steering),
 methodology (head modeling), software, formal analysis, data curation, visualization.
-\textbf{A.~Just}: software, visualization, writing (review and editing).
+\DIFaddbegin \DIFadd{\textbf{B.~Mercadal}: validation, visualization, writing (review and editing).
+}\DIFaddend \textbf{A.~Just}: software, visualization, writing (review and editing).
 \textbf{R.~de Palma Aristides}: software, visualization, writing (review and editing).
 \textbf{F.~Castaldo}: conceptualization, writing (review and editing).
 \textbf{N.~Grossman}: conceptualization.
@@ -3150,7 +3263,8 @@ Symbol & Meaning & Units & Defined in \\
 \multicolumn{4}{@{}l}{\textbf{Field and access}}\\*
 $E(t),E_0,\mathbf E_j$ & Applied field, its amplitude, and vector field of tone $j=1,2$ & V/m & Eq.~\eqref{eq:coupling} \\
 $s(t),\varepsilon_j,\varepsilon$ & Local polarization; tone amplitudes; common amplitude ($\varepsilon_{\rm TI}$ and $\varepsilon_{\rm tACS}$ label the waveform) & mV & Eqs.~\eqref{eq:am}, \eqref{eq:doors} \\
-$I_j^{\rm pair},\mathcal P_j$ & Peak electrode-pair current; signed local polarization per unit current & mA; mV/mA & \S\ref{sec:envelope} \\
+\DIFaddbegin \DIFadd{$\varepsilon_{\rm D},\varepsilon_{\rm A},\varepsilon_{\rm eq}$ }& \DIFadd{Direct DC polarization, signed AC amplitude, and equivalent direct polarization matching a TI source }& \DIFadd{mV }& \DIFadd{\S\ref{sec:dc} }\\
+\DIFaddend $I_j^{\rm pair},\mathcal P_j$ & Peak electrode-pair current; signed local polarization per unit current & mA; mV/mA & \S\ref{sec:envelope} \\
 $\mathbf F_j,\sigma_{\rm cond}$ & FEM field per pair current; tissue conductivity & (V/m)/mA; S/m & \S\ref{sec:fem-methods} \\
 $\mathcal A(t),\overline{\mathcal A}$ & Nonnegative polarization envelope and its beat-period mean & mV & Eq.~\eqref{eq:sqenv}; Table~\ref{tab:transduction-maps} \\
 $f_1,f_2,f_c$ & Tone frequencies and their center & Hz & Eq.~\eqref{eq:am} \\
