@@ -1,7 +1,7 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
 - [ ] read the October 21 journal update at TN0484_jne.pdf, especially the abstract and Section 2.5 amplitude comparison
-- [ ] Giulio: decide Klaus's abstract reader repairs in notes/2026-10-21_klaus/abstract_proposed_macros.tex, retaining resonant gain and the approximate percentage
+- [ ] record Klaus's check of IOP guidance on whether the JNE 300-word abstract limit is mandatory
 - [ ] Ricardo: supply points_2_3.json, its producer/revision, and HippUnfold version; verify masks and orientation denominators before numerical integration
 - [ ] Giulio: decide the seven retained CUT? passages and the biological-rectifier sentence in docs/revision_2026-10-06_v0150draft16_readability.md
 - [ ] confirm the remaining author declarations, actual AI-tool versions, and all authors' approval of the submission version
@@ -9,6 +9,7 @@
 - [ ] migrate the folder at a coordinated version boundary with no concurrent editors; run the layout checker before and after
 - [x] place Ricardo Salvador second in the manuscript and author records as instructed October 21
 - [x] verify Klaus's removal of Alex Just, update the current-state record, and refresh the redline (October 21)
+- [x] verify the approved abstract reader repairs in 62772c7: 300 words, source/PDF agreement, and unchanged science (October 21)
 - [x] add and verify the TI/tDCS/tACS comparison, clarify AIS threshold modulation, retain a 299-word abstract, and rebuild the journal article and redline (October 21)
 - [x] revise the entire paper for legibility, build draft21 separately, and redline against draft20 (October 20)
 - [x] preserve all existing labels and cited references; relocate coefficient derivations and run diagnostics to the supplement (October 20)

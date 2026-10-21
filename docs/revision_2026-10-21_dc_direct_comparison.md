@@ -75,7 +75,7 @@ dependence on both frequency and anatomical entry compartment. This incorporates
 the compatible wording in Klaus's 1c4e4a3 note without introducing new symbols.
 The abstract and numerical estimates are unchanged.
 
-## Author-list update and pending abstract proposal
+## Author-list update and abstract proposal at 12:10
 
 Klaus's aad1ac2 removes Alex Just at Giulio's instruction from the source
 bylines, PDF metadata, ORCID list, funding acknowledgment, competing-interest
@@ -92,3 +92,27 @@ proposal. The installed 299-word abstract remains Giulio's last approved text.
 The proposal with these two words is 300 words by TeXcount. The refreshed
 redline builds without errors, undefined references, overfull boxes, or duplicate
 labels; the article and redline author-list pages were inspected visually.
+
+## Approved abstract reader repairs and fidelity check at 14:30
+
+Giulio authorized the reader repairs; Klaus applied them in 62772c7, including
+"resonant" gain and "approximately" 2–5%. The proposal described above is now
+superseded by the installed macros. TeXcount independently returns 300 words
+excluding run-in headings; the whitespace count is 296. Normalizing typography
+and line wrapping, the journal PDF's abstract matches all four macros exactly.
+
+Fidelity passes against the main text and the approved amplitude comparison:
+the Objective names the difference frequency absent from the field; the source
+law remains quadratic and signed; the 2–5% estimate remains at the pinned JR
+operating point and matches the direct input to each TI carrier; slow-membrane
+frequency dependence explicitly concerns detection; the gain is resonant and
+the coupling comparison uses the same operating point; the steady source alone
+can cross the gamma threshold; and detector curvature, carrier polarity, and
+the uniformity conditions remain explicit. "Steady source" consistently names
+the detector output. No body source, equation, parameter, or numerical-data file
+changed in 62772c7. The numerical checks recorded above continue to apply.
+
+The 44-page journal article builds without errors or undefined references. The
+review redline is refreshed against the unchanged e20c047 baseline. Klaus's
+separate check of IOP guidance on the abstract limit is pending; no claim about
+whether the limit is mandatory is made here.
