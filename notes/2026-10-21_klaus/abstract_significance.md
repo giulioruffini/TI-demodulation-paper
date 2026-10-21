@@ -102,3 +102,22 @@ threshold wording, slow-membrane condition, tACS, product dose: all restored and
    it to Violante's ordering. With the five spare words: "... rises by 24% from 1:1 to 1:3
    while envelope and beat averages fall" and drop "quadratic" before "beat map": 300 words.
 Optional: "Weak-field beat dose" -> "For weak fields, beat dose" (+2, needs a cut elsewhere).
+
+## Addendum 11:35 — check of Kaiti's 2960dec/3772fc2 abstract (Giulio-approved quantitative passage)
+
+Body changes match my note (AIS threshold shift v0 -> v0 - s; calibration once; compartments
+clause). Abstract: 294 tokens / 299 TeXcount, 2-5% verified. Five reader problems introduced
+by the compression, with a counted repair (tokens 297, TeXcount in the terminal log):
+1. Objective never says what is detected; the field's missing difference frequency is the
+   premise. Add "of the difference frequency absent from the field".
+2. "Direct transcranial alternating- and direct-current stimulation": "direct" twice in two
+   senses. Drop the first.
+3. The 2-5% sentence is 40 words; "At the pinned Jansen--Rit operating point, 0.1--0.3 mV per
+   TI carrier gives steady and beat sources 2--5% of the tDCS and tACS sources when the direct
+   input matches each carrier's polarization" says the same in 31.
+4. "Membranes slow relative to input add frequency dependence" lost its referent when the
+   static/mean-field sentence went; add "to detection".
+5. "Stronger steady sources can drive a gamma circuit" lost "alone", which is the point of the
+   equal-power control; "its sign set by curvature, not polarity" lost "detector" and "carrier",
+   and bare "curvature" next to tissue regions reads as geometry.
+Proposed macros: scratchpad abs_proposed_macros.tex (not applied; Kaiti's file).
