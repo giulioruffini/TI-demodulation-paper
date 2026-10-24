@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Build the current JNE redline without advancing its recorded review baseline."""
 
+import argparse
 import json
 import os
 from pathlib import Path
@@ -68,7 +69,17 @@ def expanded_source(revision=None):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--baseline", help="comparison commit; does not alter the reading baseline")
+    parser.add_argument("--baseline-version", help="version label for an alternate comparison")
+    parser.add_argument("--output", type=Path, help="alternate PDF destination")
+    args = parser.parse_args()
     config = json.loads((ROOT / "planning/review_baseline.json").read_text())
+    if args.baseline:
+        config["baseline_commit"] = args.baseline
+        config["baseline_version"] = args.baseline_version or args.baseline
+    if args.output:
+        config["redline"] = str(args.output)
     baseline = config["baseline_commit"]
     destination = ROOT / config["redline"]
     job = destination.stem
@@ -103,7 +114,7 @@ def main():
                       without_deleted_label, text, flags=re.DOTALL)
         label = (r"\noindent{\small Changes relative to v"
                  + config["baseline_version"] + " (" + baseline + r").}\par")
-        text = text.replace(r"\begin{document}", r"\begin{document}" + "\n" + label, 1)
+        text = text.replace(r"\begin{document}", r"\begin{document}" + "\n" + r"\emergencystretch=3em" + "\n" + label, 1)
         tex = stage / f"{job}.tex"
         tex.write_text(text)
         try:

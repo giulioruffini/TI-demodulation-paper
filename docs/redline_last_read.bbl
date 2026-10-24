@@ -168,6 +168,14 @@ Giulio Ruffini.
 \newblock {\em bioRxiv}, 2025.
 \newblock Preprint 2025.11.03.686310.
 
+\bibitem{cassara2025part2}
+Antonino~M. Cassar{\`a}, Taylor~H. Newton, Katie Zhuang, Sabine~J. Regel, Peter
+  Achermann, Alvaro Pascual-Leone, Niels Kuster, and Esra Neufeld.
+\newblock Recommendations for the safe application of temporal interference
+  stimulation in the human brain part {II}: Biophysics, dosimetry, and safety
+  recommendations.
+\newblock {\em Bioelectromagnetics}, 46(1):e22536, 2025.
+
 \bibitem{ruffini2025rosetta}
 Francesca Castaldo, Raul de~Palma~Aristides, Pau Clusella, Jordi Garcia-Ojalvo,
   and Giulio Ruffini.
@@ -219,14 +227,6 @@ Adri{\`a} Galan-Gadea, Ricardo Salvador, Fabrice Bartolomei, Fabrice Wendling,
 \newblock Spherical harmonics representation of the steady-state membrane
   potential shift induced by {tDCS} in realistic neuron models.
 \newblock {\em Journal of Neural Engineering}, 20(2):026004, 2023.
-
-\bibitem{cassara2025part2}
-Antonino~M. Cassar{\`a}, Taylor~H. Newton, Katie Zhuang, Sabine~J. Regel, Peter
-  Achermann, Alvaro Pascual-Leone, Niels Kuster, and Esra Neufeld.
-\newblock Recommendations for the safe application of temporal interference
-  stimulation in the human brain part {II}: Biophysics, dosimetry, and safety
-  recommendations.
-\newblock {\em Bioelectromagnetics}, 46(1):e22536, 2025.
 
 \bibitem{pikovsky2001}
 Arkady Pikovsky, Michael Rosenblum, and J{\"u}rgen Kurths.

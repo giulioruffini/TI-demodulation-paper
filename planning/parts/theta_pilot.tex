@@ -1,0 +1,57 @@
+\subsection{A cutoff-free theta-neuron check}\label{supp:theta-pilot}
+The change of variables $V_j=\tan(\theta_j/2)$ converts the QIF equation to
+\[
+\tau_X\dot\theta_j=(1-\cos\theta_j)
+ +(1+\cos\theta_j)(\eta_j+U_X(t)),
+\]
+where $U_X$ is the same recurrent and external input as in the voltage model.
+An upward crossing of $\theta=\pi$ emits a spike; wrapping by $2\pi$ replaces
+the finite voltage cutoff and reset. We linearly interpolate the crossing
+time for phase statistics. Empirical spike counts still drive the original
+second-order synapses. Excitability quantiles, initial voltage, coupling,
+carrier, and readouts are unchanged.
+
+The pilot used $\bar\eta=0.85$, $A_f=10$, $f_c=300$~Hz, a $55$~Hz beat,
+and $800$~ms settling. Before running it, we set a stopping rule: rate depth
+must change by less than $5\%$ under separate step halving, population
+doubling, and window doubling before extending this solver to carrier controls.
+Table~\ref{tab:theta-pilot} gives every tested setting. Step and window changes
+satisfy that criterion; population doubling does not, so the pilot stops.
+No finite-network equal-RMS control was run.
+
+\begin{table}[htbp]
+\centering\small
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Condition & $N$ per population & Step (ms) & Window (ms) & Mean E rate (Hz) & Beat depth\\
+\midrule
+Field off & 8000 & 0.0025 & 800 & 50.4 & 0.006\\
+Two tones & 8000 & 0.0025 & 800 & 51.8 & 0.156\\
+Half step & 8000 & 0.00125 & 800 & 51.8 & 0.155\\
+Double population & 16000 & 0.0025 & 800 & 51.8 & 0.137\\
+Double window & 8000 & 0.0025 & 1600 & 51.8 & 0.151\\
+Exact mean field & $\infty$ & 0.0025 & 800 & 52.1 & 0.128\\
+\bottomrule
+\end{tabular}
+\caption{Cutoff-free weak-drive checks. Depth is the rate lock-in divided by
+mean rate. Relative to the two-tone baseline it changes by $-0.4\%$,
+$-11.9\%$, and $-3.0\%$ under step, population, and window changes.
+Only the baseline settings have a matched field-off run.}
+\label{tab:theta-pilot}
+\end{table}
+
+Removing the cutoff raises the baseline depth from $0.093$ to $0.156$.
+The three cutoff results are compatible with an inverse-cutoff correction:
+a fit of $d_\infty-c/V_{\rm peak}$ gives $d_\infty=0.156$, with residuals
+below $0.002$. This agreement supports a cutoff contribution but does not
+establish joint numerical convergence. Doubling the population moves the
+theta result toward the exact mean field, while also increasing the largest
+sampled Euler step in phase from about $1.5$ to $3.2$ radians. A combined
+population and time-step limit remains untested.
+
+Pooled spike-phase vector strength rises from $0.002$ without stimulation
+to $0.068$--$0.077$ in the driven runs. Median per-neuron phase consistency
+remains negative, from $-0.015$ to $-0.005$, and supplies no evidence for
+strong individual phase locking. The finite network therefore supports the
+presence of population-rate modulation; its quantitative weak-input depth
+and agreement with the mean field remain unresolved.

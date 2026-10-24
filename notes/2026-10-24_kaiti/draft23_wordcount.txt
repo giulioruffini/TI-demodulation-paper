@@ -42,38 +42,38 @@ REVISION working tree
 MAIN NARRATIVE
 File: count.tex
 Encoding: ascii
-Sum count: 11370
-Words in text: 9798
+Sum count: 11476
+Words in text: 9814
 Words in headers: 221
-Words outside text (captions, etc.): 1351
+Words outside text (captions, etc.): 1441
 Number of headers: 38
-Number of floats/tables/figures: 17
-Number of math inlines: 809
+Number of floats/tables/figures: 18
+Number of math inlines: 837
 Number of math displayed: 29
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
-  646+1+67 (1/1/18/1) Section: Introduction
-  3781+65+218 (11/3/270/24) Section: Theory
-  1874+44+81 (8/1/158/3) Section: Methods
-  2222+76+925 (10/11/315/1) Section: Results
-  1072+34+60 (7/1/48/0) Section: Discussion}\label{sec:discussion
-  203+1+0 (1/0/0/0) Section: Conclusion
+  594+1+67 (1/1/18/1) Section: Introduction
+  3750+65+218 (11/3/270/24) Section: Theory
+  1835+44+81 (8/1/158/3) Section: Methods
+  2275+76+1015 (10/12/339/1) Section: Results
+  1152+34+60 (7/1/52/0) Section: Discussion}\label{sec:discussion
+  208+1+0 (1/0/0/0) Section: Conclusion
 
 
 ARTICLE APPENDICES
 File: count.tex
 Encoding: ascii
-Sum count: 1503
-Words in text: 1430
+Sum count: 1520
+Words in text: 1447
 Words in headers: 28
 Words outside text (captions, etc.): 45
 Number of headers: 7
 Number of floats/tables/figures: 1
-Number of math inlines: 195
+Number of math inlines: 199
 Number of math displayed: 7
 Subcounts:
   text+headers+captions (#headers/#floats/#inlines/#displayed)
   0+0+0 (1/0/0/0) Section
-  859+3+42 (1/0/120/0) Section: Notation and units}\label{app:notation
+  876+3+42 (1/0/124/0) Section: Notation and units}\label{app:notation
   571+25+3 (5/1/75/7) Section: Simulated models: equations and parameters}\label{app:models
 

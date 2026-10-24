@@ -10,7 +10,7 @@ Archived at Zenodo: **[doi:10.5281/zenodo.21009618](https://doi.org/10.5281/zeno
 Licensed **CC-BY-4.0** (see [`LICENSE`](LICENSE)); machine-readable citation in
 [`CITATION.cff`](CITATION.cff).
 
-The current working edition is the **JNE article, v0.15.0-draft22**:
+The current working edition is the **JNE article, v0.15.0-draft23**:
 [article](TN0484_jne.pdf), [supplement](TN0484_jne_supplement.pdf), and
 [redline against draft20](docs/redline_last_read.pdf).
 Run `./build.sh journal` to update both canonical PDFs and settle their cross-references.
@@ -19,14 +19,28 @@ Giulio's annotated draft20 is preserved in
 The separate `build/review/` copies remain unchanged as the completed reader-check
 snapshot; the root files are the current reading copies.
 
-The approved October 21 prose pass retains the full PING system in Methods,
-consolidates repeated explanations, and groups supplementary procedures and checks
-by topic. The tDCS/tACS comparison has its own Theory subsection. The narrative
-is 13.1% shorter; integral model material now appears in article Appendix B, so
-the complete article remains above the normal journal length. The approved
-abstract and author order are unchanged. See the
-[draft22 revision record](docs/revision_2026-10-21_draft22_prose.md) and
+Draft23 addresses the referee review with a conditional kHz source-budget figure,
+static-versus-dynamic sign rules, single-subject spatial scope, and a cutoff-free
+theta-neuron convergence pilot. The pilot fails its population-size criterion,
+so the finite-network interpretation remains qualitative. The full PING system
+and access-evidence table remain in the article. The main article is about
+13,000 words including captions and appendices, down from 14,522 in draft22,
+with the new results included. It still exceeds the journal's 12,000-word norm.
+See the [revision record](docs/revision_2026-10-24_draft23_referee.md),
+[redline against draft22](docs/redline_draft22.pdf), and
 [current storyline](build/storyline/tn0484_storyline.pdf).
+
+Reproduce the analytic figure with
+`MPLCONFIGDIR=/tmp/tn0484-mpl .venv/bin/python code/make_feasibility_fig.py`.
+The script writes `figures/fig_feasibility_khz.pdf` and exact curve/anchor data
+in `code/`. The theta protocol, script, and five cached runs are in
+`notes/2026-10-24_klaus/`; run the script's `--help` for individual conditions.
+It imports the existing QIF model without changing its parameters or readouts.
+The [portable FEM instructions](docs/fem_portable.md) describe the independent
+NumPy consumer and checked exporter. The original per-node fields and labels
+are still required: the existing figure cache does not contain them.
+A submission tag and data deposit remain pending release authorization;
+the linked public archive is not a claim that this working draft is deposited.
 
 Draft21 revises the whole paper for legibility, moves detailed coefficients and
 run diagnostics to the supplement, and shortens captions. The approved abstract
@@ -351,13 +365,17 @@ repository root.
 
 ### Figure → script table
 
-23 figures are included by the manuscript, including the complementary Figure 11 (formerly S13). The table records the available scripts
+Draft23 contains 14 article figures and 13 supplementary figures. The table records their scripts
 and inputs; it does not assert a fresh rerun of every numerical calculation.
 **Available** means the producer or renderer is present; it does not imply
 that every simulation was rerun during this revision.
 
 | figure | script | data dep. | scipy | status |
 |---|---|---|---|---|
+| fig_feasibility_khz | `make_feasibility_fig.py` | analytic formulas; exact curves and anchors saved in code/ | – | Available; 9600 rows independently checked |
+| fig_fem | `make_fem_fig.py` | fem_quadmaps.npz and .json | – | Available from cache; per-node export pending |
+| fig_spatial_maps | `notes/2026-10-06_ti_focality/make_spatial_maps.py` | analytic illustrative profiles | – | Available |
+| fig_models_ti | `figures_src/fig_models_ti.tex` | circuit schematic | – | Available |
 | fig_concept | `figures_v2.py` | analyses_v2.npz† | – | Available |
 | fig_bifurcation_sigmoid | `figures_v2.py` | analyses_v2.npz†, jr_bifurcation.npz‡ | – | Available |
 | fig_carrier_independence | `figures_v2.py` | analyses_v2.npz† | – | Available |

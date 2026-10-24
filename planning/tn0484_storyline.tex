@@ -58,7 +58,7 @@
   \vspace{2pt}{\normalsize #2\par}\vspace{5pt}}
 
 \begin{document}
-\pagetitle{Three stages of temporal interference}{Draft22: prose and placement revision approved on 24 October 2026}
+\pagetitle{Three stages of temporal interference}{Draft23: referee revision approved on 24 October 2026}
 \IfFileExists{\abstractfile}{\input{\abstractfile}}{\input{planning/\abstractfile}}
 \absObjective\ \absApproach\ \absResults\ \absSignificance
 
@@ -115,8 +115,9 @@ No new anatomical cohort or biological experiment is part of this revision.
 The main article retains the full PING system, core MPR equations and static-rate
 curve, Table 2 access evidence, amplitude-matching conventions, and the compact
 crossover derivation. The feasibility figure replaces scattered access-budget
-explanations. The spiking pilot has a fixed run budget and a qualitative fallback;
-agreement with the mean field is an outcome, not a tuning target.
+explanations. The theta-neuron pilot passed step and window checks but changed by 12\%
+under population doubling, exceeding its 5\% criterion. Its scope is therefore
+qualitative; the equal-RMS gamma control remains a mean-field result.
 
 The revised abstract distinguishes static and dynamic detection, names the
 single-head illustration, and describes JR population-rate modulation. The
@@ -124,15 +125,17 @@ steady effect at depth, 2--5\% matched-polarization comparison, shared tACS gain
 and scoped boundary restriction remain. The multicompartment statement preserves
 bilinear current scaling without assuming a universal common projection vector.
 
-The starting article count is 14,522 words including captions and article
-appendices. Target roughly 12,000 on the same basis by consolidating repeated
-explanations and moving the full prediction/evidence matrix to the supplement.
+The article falls from 14,522 to about 13,000 words including captions and
+article appendices, with the new results included. Repeated explanations are
+consolidated and the full prediction/evidence matrix is supplementary. The
+article remains above the journal's 12,000-word norm.
 No integral model is relocated merely to improve that count. The LaNMM study
 remains supplementary. The efficiency-bound placement remains unchanged.
 
-A portable FEM package contains derived fields, coordinates, tissue and ROI
-labels, orientation definitions, units, and hashes, with an independent analysis
-script. Redistribution and missing inputs are resolved before public release.
+A NumPy-only FEM consumer and checked exporter are prepared for derived fields,
+coordinates, tissue and ROI labels, orientations, units, and hashes. The IXI002
+per-node inputs are unavailable locally; export and real-data comparison remain
+pending before release.
 Validation covers analytic arithmetic, numerical convergence, retained claims,
 article/supplement builds, references, rendered pages, and a redline against
 both the editing and reading baselines. Klaus checks the integrated revision.

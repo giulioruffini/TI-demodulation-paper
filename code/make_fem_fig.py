@@ -29,8 +29,8 @@ D = np.load(os.path.join(HERE, "fem_quadmaps.npz"))
 R = json.load(open(os.path.join(HERE, "fem_quadmaps.json"), encoding="utf-8"))
 
 ORDER = ["env", "quad", "msp", "iso"]
-NAME = {"env": r"$\mathcal{M}[\mathcal{A}]$", "quad": r"$\mathcal{M}[\mathcal{A}^2/2]$",
-        "msp": r"$\mathcal{I}$", "iso": r"isotropic $\mathcal{M}[\mathcal{A}^2/2]$"}
+NAME = {"env": "Envelope", "quad": "Quadratic beat",
+        "msp": "Mean square", "iso": "Isotropic beat"}
 UNIT = {"env": "mV", "quad": r"mV$^2$", "msp": r"mV$^2$", "iso": r"mV$^2$"}
 COLOR = {"env": figstyle.NEBLUE, "quad": figstyle.NERED, "msp": figstyle.NEGREEN,
          "iso": figstyle.NEGRAY}
@@ -84,7 +84,7 @@ for j, k in enumerate(ORDER):
     cb = fig.colorbar(im, cax=fig.add_subplot(top[2, j]), orientation="horizontal")
     cb.set_label(UNIT[k], labelpad=1)
     cb.ax.tick_params(labelsize=7.5)
-    cb.ax.xaxis.set_major_locator(matplotlib.ticker.MaxNLocator(4))
+    cb.ax.xaxis.set_major_locator(matplotlib.ticker.MaxNLocator(3))
     cb.set_ticks([t for t in cb.ax.get_xticks() if 0 <= t <= vmax])
 
 # ---- (e) target-to-cortex ratio over the sweep ---------------------------------
@@ -104,9 +104,9 @@ ax.set_xlabel("posterior current fraction")
 ax.set_ylabel("target / reference (p95)")
 handles = [Line2D([], [], color=COLOR[k], label=NAME[k]) for k in ("env", "quad", "msp")]
 handles.append(Line2D([], [], color="0.3", ls="--", lw=1.3, label=r"degree-matched ($\sqrt{\cdot}$)"))
-ax.legend(handles=handles, loc="upper right", ncol=2, columnspacing=1.0)
+ax.legend(handles=handles, loc="upper right", ncol=1, columnspacing=0.6)
 ax.set_xlim(share[0], share[-1])
-ax.set_ylim(0.76, 1.36)
+ax.set_ylim(0.76, 1.52)
 ax.set_xticks([0.1, 0.3, 0.5, 0.7, 0.9])
 ax.set_yticks([0.8, 1.0, 1.2])
 figstyle.panel(ax, "e")
@@ -142,9 +142,7 @@ ax.bar(x[1:] - 0.19, [b[1] for b in bars[1:]], 0.36,
 ax.bar(x[1:] + 0.19, [b[2] for b in bars[1:]], 0.36, color="w", hatch="////",
        edgecolor=[COLOR[b[0]] for b in bars[1:]], lw=1.0)
 ax.axhline(1.0, color="0.75", lw=0.8)
-ax.set_xticks(x, [r"$\mathcal{M}[\mathcal{A}]$" + "\nalong " + r"$\mathbf{n}^*$",
-                  r"$\mathcal{M}[\mathcal{A}^2/2]$" + "\nalong " + r"$\mathbf{n}^*$",
-                  r"$\mathcal{M}[\mathcal{A}^2/2]$" + "\nisotropic"])
+ax.set_xticks(x, ["Envelope\nfixed", "Quadratic\nfixed", "Quadratic\nisotropic"])
 ax.tick_params(axis="x", labelsize=7.5)
 ax.set_ylabel("target / reference (p95)")
 ax.set_ylim(0, 1.6)

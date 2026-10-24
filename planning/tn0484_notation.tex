@@ -39,7 +39,7 @@ Symbol & Meaning & Units & Defined in \\
 \multicolumn{4}{@{}l}{\textbf{Field and access}}\\*
 $E(t),E_0,\mathbf E_j$ & Applied field, its amplitude, and vector field of tone $j=1,2$ & V/m & Eq.~\eqref{eq:coupling} \\
 $s(t),\varepsilon_j,\varepsilon$ & Local polarization; tone amplitudes; common amplitude ($\varepsilon_{\rm TI}$ and $\varepsilon_{\rm tACS}$ label the waveform) & mV & Eqs.~\eqref{eq:am}, \eqref{eq:doors} \\
-$\varepsilon_{\rm D},\varepsilon_{\rm A},\varepsilon_{\rm eq}$ & Direct DC polarization, signed AC amplitude, and equivalent direct polarization matching a TI source & mV & \S\ref{sec:dc} \\
+$\varepsilon_{\rm D},\varepsilon_{\rm A},\varepsilon_{\rm eq}$ & Direct DC polarization, signed AC amplitude, and equivalent direct polarization matching a TI source & mV & \S\ref{sec:direct-comparison} \\
 $I_j^{\rm pair},\mathcal P_j$ & Peak electrode-pair current; signed local polarization per unit current & mA; mV/mA & \S\ref{sec:envelope} \\
 $\mathbf F_j,\sigma_{\rm cond}$ & FEM field per pair current; tissue conductivity & (V/m)/mA; S/m & \S\ref{sec:fem-methods} \\
 $\mathcal A(t),\overline{\mathcal A}$ & Nonnegative polarization envelope and its beat-period mean & mV & Eq.~\eqref{eq:sqenv}; Table~\ref{tab:transduction-maps} \\
@@ -63,6 +63,7 @@ $\Sig,\Sig',\Sig''$ & JR/LaNMM rate curve, slope and curvature & s$^{-1}$; s$^{-
 $e_0,v_0,\rho$ & Half the rate ceiling, inflection voltage, inverse voltage scale & s$^{-1}$; mV; mV$^{-1}$ & Eq.~\eqref{eq:sigmoid} \\
 $\mathrm{PEIX}$ & Signed sigmoid saturation index & dimensionless & Eq.~\eqref{eq:peix} \\
 $Y_\Omega,Y_{\rm DC}$ & Complex beat amplitude and signed steady source before recurrence & detector-output units & Eqs.~\eqref{eq:demod}, \eqref{eq:taylor} \\
+$a_j^k,b_j^k,B_{kl}$ & Compartment polarization, polarization per current, bilinear mixing coefficient & mV; mV/mA; output/mV$^2$ & \S\ref{sec:envelope} \\
 $\chi^{(2)}$ & Dynamic coefficient mapping a polarization product to a rate beat & s$^{-1}$mV$^{-2}$ & \S\ref{sec:coupling} \\
 $g,T,Y_{\rm LF}$ & Memoryless response, envelope transduction, carrier-averaged output & specified output units & Eq.~\eqref{eq:cycavg} \\
 $c_1,c_2,c_4$ & Linear, quadratic and quartic envelope coefficients & output/(mV)$^{1,2,4}$ & \S\ref{sec:transduction} \\
@@ -99,6 +100,7 @@ $\hat K_a,\hat K_g,H_s$ & QIF synaptic rate filters; JR rate-to-voltage transfer
 $\mu_\pm,\gamma,\omega_0,f_0$ & Modal eigenvalues, damping, angular and ordinary modal frequency & s$^{-1}$ (ms$^{-1}$ where stated); Hz for $f_0$ & Eq.~\eqref{eq:gain} \\
 $\tau_{\rm rel},\tau_{\rm rev},\mathcal Q$ & Population relaxation time, $1/\gamma$, and mode quality factor & time; dimensionless for $\mathcal Q$ & \S\ref{sec:nmm}, \S\ref{sec:carrier}, \S\ref{sec:discussion} \\
 $D,G,R_\Omega$ & Beat-source coefficient, recurrent transfer, complex observed beat response & input/output-dependent & Eq.~\eqref{eq:receiver} \\
+$\theta_j$ & QIF phase with $V_j=\tan(\theta_j/2)$ & rad & \S\ref{supp:theta-pilot} \\
 $V_j,V_{\rm peak},N$ & Single-QIF voltage, spike cutoff and neurons per population & normalized; count & \S\ref{sec:qif-methods} \\
 $\delta\eta_E,\delta\eta_E^*$ & Rectified E-drive shift and its Hopf threshold & normalized & \S\ref{sec:qif-methods}, \S\ref{sec:qif} \\
 $P_1,P_2,r_P,\varphi_X$ & Deep/superficial pyramidal populations; JR and LaNMM pyramidal rates & labels; s$^{-1}$ for rates & \S\ref{sec:timing}; \S\ref{sec:lanmm-methods} \\

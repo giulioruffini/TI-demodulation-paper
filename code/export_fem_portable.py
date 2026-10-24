@@ -15,6 +15,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
+    if args.output.suffix != '.npz':
+        raise SystemExit('Output must have an .npz suffix')
     if args.output.exists():
         raise SystemExit('Output exists; choose a new path')
     # Import here so --help works without the private library or its data.
@@ -43,7 +45,13 @@ def main():
                                     raise RuntimeError('Original focus selection differs; export stopped')
                                 np.testing.assert_allclose(c, old['centroid_mm'], rtol=0, atol=1e-10)
     cached = json.loads((Path(__file__).parent/'fem_quadmaps.json').read_text())
-    meta = dict(schema='tn0484-fields-v1', montages=list(original.MONTAGES),
+    actual_hashes = {f'fields_{m}': original.hash_file(original.qm.OUT/'fields'/f'{m}.npz')
+                     for m in original.MONTAGES}
+    actual_hashes.update(aseg=original.hash_file(original.qm.LABELS['aseg'][0]),
+                         atlas_label=original.hash_file(original.qm.LABELS['atlas'][0]))
+    if actual_hashes != cached['provenance']['inputs_sha512']:
+        raise RuntimeError('Original input hashes differ from the published analysis')
+    meta = dict(schema='tn0484-fields-v1' , montages=list(original.MONTAGES),
                 units=dict(xyz_mm='mm', E1_per_A='(V/m)/A', E2_per_A='(V/m)/A'),
                 coupling_mV_per_Vm=.5, total_current_A=.004,
                 reference='gray matter outside ROI, including deep gray matter',
