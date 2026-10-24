@@ -1,0 +1,32 @@
+{
+  "tau_s": 0.0002,
+  "narrowband_9_over_1": 0.02000725500645444,
+  "missey_abstract_pairs": 0.021331143316959844,
+  "missey_methods_pairs": 0.03012443791353223,
+  "illustrative_budget": [
+    {
+      "frequency_hz": 1000,
+      "per_carrier_field_V_m": 0.5,
+      "coupling_mV_per_V_m": 0.5,
+      "post_access_polarization_mV": 0.15566924807487498,
+      "signed_DC_and_beat_source_s_inverse_narrowband": -0.0018271617756332513,
+      "equivalent_direct_polarization_microvolts": -3.8507097484367785
+    },
+    {
+      "frequency_hz": 2000,
+      "per_carrier_field_V_m": 0.5,
+      "coupling_mV_per_V_m": 0.5,
+      "post_access_polarization_mV": 0.0924244618924047,
+      "signed_DC_and_beat_source_s_inverse_narrowband": -0.0006440879991699829,
+      "equivalent_direct_polarization_microvolts": -1.3574035809694054
+    },
+    {
+      "frequency_hz": 9000,
+      "per_carrier_field_V_m": 0.5,
+      "coupling_mV_per_V_m": 0.5,
+      "post_access_polarization_mV": 0.022018948791375025,
+      "signed_DC_and_beat_source_s_inverse_narrowband": -3.655649158314055e-05,
+      "equivalent_direct_polarization_microvolts": -0.07704213189281464
+    }
+  ]
+}
