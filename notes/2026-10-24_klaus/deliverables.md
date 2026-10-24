@@ -136,35 +136,42 @@ was adjusted at any point. Mean-field agreement was not a target.
    ($c$ = 6.2, residuals ≤ 0.002), against the theta value 0.156 at the same
    $N$, step, and window. The mechanism is the reset lag $\approx 2\tau_E/
    V_{\rm peak}$ = 0.3, 0.15, 0.075 ms per spike, which the theta form removes.
-2. With the cutoff removed, the remaining gap to the exact mean field is
-   finite-size and shrinks with $N$: depth 0.156 at 8000, 0.137 at 16000,
-   mean field 0.128 (gap 0.028 → 0.010 per doubling). The published $N$ = 8000
-   therefore carries a finite-size excess of order 20% at this amplitude,
-   comparable in size and opposite in sign to the cutoff deficit, which is why
-   the $V_{\rm peak}$ = 200 run happened to sit near the mean field.
+2. With the cutoff removed, one population doubling moves the depth toward
+   the exact mean field: 0.156 at 8000, 0.137 at 16000, mean field 0.128.
+   One doubling does not establish that the remaining gap is purely finite
+   size: the largest sampled Euler advance in phase also rose from 1.5 to
+   3.2 rad, so the population and time-step limits are not separated and
+   joint convergence is untested (Kaiti's correction, 21:30). What can be
+   said is that at $N$ = 8000 the cutoff-free depth lies 22% above the mean
+   field while the published cutoff run lies 27% below it, so the
+   $V_{\rm peak}$ = 200 agreement with the mean field was a cancellation.
 3. The qualitative statements hold at every setting: beat depth 0.137–0.156
-   against a 2.8% mean-rate rise (ratio 5–6; published 3.4 at
-   $V_{\rm peak}$ = 100); per-neuron phase consistency stays at the field-off
-   control level (median PPC −0.005 to −0.015) while the pooled vector strength
-   rises from 0.002 to 0.07–0.08, the "many weakly biased cells" picture of
-   Sec. 4.9.
+   in all driven runs; the mean-rate rise of 2.8% (ratio 5–6; published 3.4
+   at $V_{\rm peak}$ = 100) is a baseline statement, since only the baseline
+   settings have a matched field-off run, the driven mean rate being 0.0518
+   at every setting; per-neuron phase consistency stays at the field-off
+   control level (median PPC −0.005 to −0.015) while the pooled vector
+   strength rises from 0.002 to 0.07–0.08, the "many weakly biased cells"
+   picture of Sec. 4.9.
 
 ### Qualitative fallback wording (for Kaiti)
 
 "At $A_f = 10$ and $\bar\eta = 0.85$ the spiking network's beat depth lies
 between 0.09 and 0.16 depending on the spike cutoff and population size
 (0.093 at $V_{\rm peak}$ = 100; 0.156 and 0.137 for the cutoff-free theta
-form at $N$ = 8000 and 16000), against the mean-field 0.128; the mean rate
-rises by 2.8% in every case." Table S-finite-network can carry the two theta
-rows. The sentence "quantitative convergence remains unestablished at this
+form at $N$ = 8000 and 16000), against the mean-field 0.128; at the baseline
+settings the mean rate rises by 2.8%." Table S-finite-network can carry the
+two theta rows. The sentence "quantitative convergence remains unestablished at this
 population size" stays true and now has a measured size dependence behind it.
 
 ### Limitations
 
 The population dependence was measured at one doubling; the direction is
-toward the mean field, the exponent is not determined (one more doubling,
-$N$ = 32000, about 7 min, would give it, but lies outside the pre-registered
-list and was not run). The theta integrator is Euler at the published step,
+toward the mean field, the exponent is not determined, and the step and
+population limits are not separated because the largest phase advance per
+step grows with $N$ (one more doubling at $N$ = 32000 with a halved step,
+about 15 min, would address both, but lies outside the pre-registered list
+and was not run). The theta integrator is Euler at the published step,
 validated by the half-step check only for these statistics. The equal-power
 single-carrier controls remain tested only in the mean field; they are two
 runs of the same script (`--runs sc10,sc35`, plus `tt35` for comparison) if
