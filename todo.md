@@ -8,6 +8,7 @@
 - [ ] confirm the remaining author declarations, actual AI-tool versions, and all authors' approval of the submission version
 - [ ] keep public GitHub, Calliope, Zenodo, and circulation to other coauthors on hold pending explicit authorization
 - [ ] migrate the folder at a coordinated version boundary with no concurrent editors; run the layout checker before and after
+- [x] move stray Finder metadata out of Git refs, preserve its backup, and verify git fsck passes (October 24)
 - [x] close Klaus’s draft22 fidelity/reference check and apply his vocabulary-placement suggestion (October 21)
 - [x] apply the approved prose pass, keep PING in Methods, rebuild article/supplement/redline, and verify edition routing (October 21)
 - [x] place Ricardo Salvador second in the manuscript and author records as instructed October 21
