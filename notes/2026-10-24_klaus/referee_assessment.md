@@ -40,12 +40,14 @@ $|H_m|^2 = 1/(1+\omega^2\tau^2)$ at $\tau = 0.2$ ms:
 
 Two structural points the figure can make, both absent from the text:
 
-- For $\omega\tau \gg 1$ the ratio tends to $(f_1/f_2)^2 = 1/81$ independently
-  of $\tau$. The 9 versus 1 kHz penalty is therefore not an artifact of the
-  assumed 0.2 ms; it holds for every point-membrane access slower than about
-  20 µs ($\omega\tau = 1$ at 9 kHz). At $\tau = 0.1$ ms the ratio is 0.042, at
-  16 ms it is 0.012. The sealed-cable law softens the exponent to one (ratio
-  0.11–0.14).
+- When both carriers satisfy $\omega\tau \gg 1$ the ratio tends to
+  $(f_1/f_2)^2 = 1/81$ independently of $\tau$; for the 1 kHz carrier that
+  needs $\tau \gg 160$ µs. Below that the ratio rises monotonically toward 1:
+  0.024 at 160 µs, 0.042 at 100 µs, 0.12 at 50 µs, 0.45 at 20 µs (where only
+  9 kHz is near its corner), 0.76 at 10 µs. So the assumed 0.2 ms sits in the
+  asymptotic regime, and escaping a tenfold penalty needs access faster than
+  about 60 µs. The sealed-cable law softens the exponent to one (ratio
+  0.11–0.14 at 0.2 ms).
 - The dynamic MPR detector gives no escape: its fast-carrier beat source scales
   as $I_1 I_2/(\omega_1\omega_2\tau_m^2)$ (2.10), the same exponent two.
 
@@ -69,15 +71,16 @@ Missey et al. 2026, read in the published PDF:
 - Sham: unmodulated 1 kHz suppresses cortical IEDs, 9 kHz sham does nothing; a
   carry-over effect follows TI only.
 
-What the paper can say, in order of strength: (i) the design cannot resolve a
-factor of 30 in the generated source (3 versus 10 patients, between centers, no
-within-person sweep); (ii) biomarker suppression under a 130 Hz envelope at
-4 mA is a thresholded readout and need not be proportional to the beat source,
-so equal suppression is compatible with unequal sources once the lower carrier is
-past the proportional regime; (iii) if equal efficacy at fixed current is
-confirmed within person, it falsifies point-membrane and cable access in the
-weak regime and requires either access faster than about 20 µs or a mechanism
-outside the weak expansion. The Table 4 "Carrier dependence" test is exactly
+What the paper can say, in order of strength: (i) the comparison is between
+centers (3 versus 10 patients) with no within-person carrier change, and the
+field-to-source transfer was not measured, so the study does not test the
+predicted carrier dependence of the generated source; (ii) a nonlinear or
+saturating readout between beat source and biomarker suppression could
+reconcile equal suppression with unequal sources, but Missey does not
+establish such a readout; (iii) if equal efficacy at fixed current is confirmed
+within person, it falsifies point-membrane and cable access in the weak regime
+and requires either access faster than about 60 µs or a mechanism outside the
+weak expansion. The Table 4 "Carrier dependence" test is exactly
 the within-person sweep; Missey makes it the first experiment to propose.
 
 Esmaeilpour 2021 slice thresholds (PubMed abstract): 100 Hz carrier about
@@ -101,8 +104,8 @@ budget suffice):
 
 A five-row table (carrier × access case → ratio, field factor) is the
 no-figure fallback. Placement: the reviewer asked for a figure and the abstract
-makes the claim, so the article (2.8) is the natural home; Table 2 could move
-to S1 in exchange if length rules. Agree with Kaiti on the two traps: the access
+makes the claim, so the article (2.8) is the natural home. Kaiti prefers to
+keep Table 2 in the article; whether anything moves out is K's call. Agree with Kaiti on the two traps: the access
 factor applies to the static JR chain only, since PING and QIF compute access
 inside $\tau_E$ (say so in the caption); and varying $\tau$ at fixed
 $\lambda_0$ silently assumes the fast compartment couples like a soma, so
@@ -116,13 +119,16 @@ Credits already in place: Esmaeilpour in the Introduction and as the first
 sentence of 5.1 ("already related network TI sensitivity to short, axon-like
 membrane times and distinguished sensitivity from selectivity"); Cassarà part II
 for the product-law invariance in 2.3 and in Table 4; Luff's neuron mixer in the
-Introduction; Luff PWM-TI in S1 only; Missey once, in 5.3, for modulation of
-ongoing activity. Checked against the abstracts: Esmaeilpour measured slice
-thresholds and modeled sensitivity with 1 and 0.4 ms membranes and selectivity
-through adaptation; Cassarà II derived safety thresholds from exposure metrics
-and noted that second-order mixing follows the field product; Luff PWM-TI showed
-that the passive low-pass converts a pulse-width-modulated field into an
-amplitude-modulated membrane potential.
+Introduction, in 5.1, and in Table 2 (the reviewer's Luff 2024 is the Cell
+Reports neuron-mixer paper, not PWM-TI; PWM-TI appears in S1 only); Missey once,
+in 5.3, for modulation of ongoing activity. Checked against the abstracts:
+Esmaeilpour measured slice thresholds and modeled sensitivity with 1 and 0.4 ms
+membranes and selectivity through adaptation; Cassarà II derived safety
+thresholds from exposure metrics and noted that second-order mixing follows the
+field product; Luff's mixer paper observed subthreshold difference-frequency
+oscillations in single neurons, surviving synaptic blockade and abolished by
+TTX, which locates a cellular detector without a compartment or a population
+coefficient.
 
 What draft22 adds, each traceable to a section: the three-stage decomposition
 with stated matching conditions and the 2–5% tDCS/tACS comparison at a pinned
@@ -178,7 +184,9 @@ subharmonic (the S3 envelope argument); an indefinite $\chi$, for example a
 soma and an AIS with opposite curvature signs, admits an interior extremum.
 Recommend Accept: add "and a semidefinite mixing form across compartments" to
 the assumption list in 2.5 and the Conclusion, and four lines in S3 next to the
-envelope proof. No computation.
+envelope proof. No computation. Kaiti treats the extension as optional and keeps
+the scalar theorem's stated scope; I agree the scalar statement stands as is,
+and offer the clause because it answers the reviewer in one line.
 
 ## 4. Single head, top-decile centroid, modest contrasts
 
@@ -194,10 +202,14 @@ direction of focus motion, not by selectivity; and the abstract does not say
 Recommend Modify, wording only: Approach sentence "and test spatial predictions
 in a realistic head" to "and compare spatial maps in one head model" (same token
 count, and it also answers item 6); one sentence after Table 3 on the 0.90–1.24
-range. Decline new subjects or montages: the ordering (envelope anterior,
-mean-square posterior, beat fixed) follows from the steering algebra; the head
-model supplies magnitudes, and more subjects would cost Ricardo days without
-changing the result.
+range. Decline new subjects or montages for this revision, with the honest
+reason: only the fixed quadratic pattern is algebraically general. The opposite
+motion of the envelope and mean-square centroids has a pointwise rationale (the
+mean-square map rises where the strengthened pair dominates, the envelope where
+the weakened pair was the stronger), but its direction and size along the
+hippocampal axis depend on the field geometry, so other heads or montages could
+change that ordering. The text must claim it for this subject and montage only,
+and a multi-subject check belongs to future work.
 
 ## 5. Theta-neuron convergence versus qualitative spiking scope
 
@@ -224,11 +236,14 @@ $\sqrt2 A_f$: two runs ($A_f$ = 10 and 35), minutes. It closes "tested only in
 the mean field".
 
 Verdict: Accept both as the smallest defensible computations of the whole
-review, under one hour including edits. Disagreement with Kaiti: she proposes
-the bounded qualitative scope now with theta optional. I rank the theta run
-first because the reviewer offered it as the alternative to a downgrade, it
-removes a free parameter rather than adding one, and it costs minutes. If K
-wants no computation, the qualitative route needs only the depths reported to
+review. Machine time is minutes per condition; validating the theta integrator
+(spike-crossing interpolation at $\theta = \pi$, step, population size,
+window) is additional work that cannot be promised in an hour. Reconciled with
+Kaiti (20:35): run a bounded pilot first, same model and readout, with a stop
+rule, and treat mean-field agreement as an outcome, not an acceptance target;
+no campaign commitment. The spiking equal-power control matches RMS input
+current in model units ($\sqrt2 A_f$), not a calibrated polarization. If the
+pilot does not settle, the qualitative route needs only the depths reported to
 one figure with their cutoff range (0.09–0.14) in 4.9 and the Fig. 11 caption.
 The full PING stays in Methods either way.
 
@@ -301,3 +316,18 @@ K decides: figure in the article or in S1, and whether Table 2 moves out in
 exchange; theta run now or qualitative scope; the two abstract substitutions;
 Table 4 merge; FEM array deposit (the arrays are outputs of the nonpublic
 library, so NE should confirm).
+
+## Reconciliation with Kaiti, 20:35
+
+Her plan is `notes/2026-10-24_kaiti/referee_revision_plan.md` (0d64623). Four
+overstatements in the first version of this note are corrected above: the 1/81
+asymptote needs both carriers above their corners ($\tau \gg 160$ µs), and
+20 µs only brings 9 kHz to its corner (ratio 0.45 there); Missey establishes
+neither a thresholded readout nor an inability to resolve the source ratio, only
+an unmeasured transfer and a between-center design; only the fixed quadratic
+pattern is algebraically general, the opposite centroid motion is geometry-
+dependent; the reviewer's Luff 2024 is the Cell Reports mixer paper. Agreed:
+scope fixes, analytic figure, novelty paragraph, portable FEM package, full
+PING, Table 2 kept, equal-RMS input in model units for the PING control, the
+semidefinite clause optional, theta-neuron work as a bounded pilot with a stop
+rule and the qualitative fallback.
