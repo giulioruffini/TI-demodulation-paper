@@ -1,6 +1,6 @@
 % TN0484 / WP0185: abstract and storyline. Build from the project root:
 %   ~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex
-% Map mode: rows follow the v0.15.0-draft22 manuscript order and numbering (TN build; the JNE build
+% Map mode: rows follow the v0.15.0-draft23 manuscript order and numbering (TN build; the JNE build
 % keeps Appendix A and moves later appendices and figures S1--S13 to the supplement). Prepared 2026-10-03.
 \documentclass[11pt,a4paper,landscape]{article}
 \usepackage[T1]{fontenc}
@@ -17,8 +17,8 @@
 % ---- paper identity ---------------------------------------------------------
 \newcommand{\wpnumber}{TN0484 / WP0185}
 \newcommand{\papertitle}{The cortical column as a tuned receiver}
-\newcommand{\storylinedate}{21 October 2026}
-\newcommand{\baselinelabel}{v0.15.0-draft22}
+\newcommand{\storylinedate}{24 October 2026}
+\newcommand{\baselinelabel}{v0.15.0-draft23}
 \newcommand{\abstractfile}{tn0484_abstract.tex}
 \newcommand{\storylineauthors}{Giulio Ruffini}
 % -----------------------------------------------------------------------------
@@ -58,25 +58,25 @@
   \vspace{2pt}{\normalsize #2\par}\vspace{5pt}}
 
 \begin{document}
-\pagetitle{Three stages of temporal interference}{Draft22: prose and placement revision approved on 21 October 2026}
+\pagetitle{Three stages of temporal interference}{Draft22: prose and placement revision approved on 24 October 2026}
 \IfFileExists{\abstractfile}{\input{\abstractfile}}{\input{planning/\abstractfile}}
 \absObjective\ \absApproach\ \absResults\ \absSignificance
 
 \smallskip
-The approved 300-word abstract is unchanged. This pass consolidates repetition and
-relocates procedures while retaining results and their local conditions. Giulio
-approved the joint plan and required the full PING system to stay in Methods.
-Draft20 (\texttt{e20c047}) remains the reading baseline; \texttt{24d34c1} is the
-immediate editing baseline. The canonical journal and supplement are rebuilt.
-The efficiency-bound block remains in its current location pending Giulio's
-placement decision. No simulation or numerical result changes.
+The revision separates mathematical results, model demonstrations, and physiological
+hypotheses. Giulio approved the conditional access analysis, bounded theta-neuron
+pilot, reproducibility work, and a further reduction in length. The abstract above
+is the current shared text and is revised with the results. The full PING system
+and access evidence table remain in the article. The editing baseline is draft22
+(\texttt{69c106b}); draft20 (\texttt{e20c047}) remains the reading baseline.
+No new anatomical cohort or biological experiment is part of this revision.
 \newpage
 \pagetitle{Argument and retention map}{Section order in the revised article and supplement}
 \begin{tabularx}{\textwidth}{@{}L{43mm}YY@{}}
 \toprule
 \textbf{Place} & \textbf{Scientific content and destination} & \textbf{Contribution to the argument}\\
 \midrule
-\textbf{Abstract and Introduction} & A two-tone field has no difference-frequency line. Access creates local polarization; detection generates a beat and steady source; amplification determines the response. Retain the cellular and network literature, weak-perturbation scope, and approved FEM abstract sentence. & The reader learns the physical problem before the model equations. The tests distinguish the three stages rather than assigning every response to demodulation.\\[8pt]
+\textbf{Abstract and Introduction} & A two-tone field has no difference-frequency line. Access creates local polarization; detection generates a beat and steady source; amplification determines the response. Retain the cellular and network literature, weak-perturbation scope, and single-subject FEM scope. & The reader learns the physical problem and the advances beyond existing mixing and network models: joint sources, independent gain, and the dynamic crossover.\\[8pt]
 \textbf{Theory: population curve and field coupling} & Keep the JR sigmoid, synaptic response, and direct polarization. Derive the quadratic cross term and constant term together. Define and number the dynamic coefficient; retain its weak-input, memory, and nonzero-coefficient conditions. & The rate curve first explains what mixes the carriers. The NMM1 operator notation moves to the model appendix; it is not needed to understand this step.\\[8pt]
 \textbf{Theory: envelope, spatial weighting, harmonics} & Define the spatially varying envelope before using its harmonics. Retain the side-by-side map table, product/minimum relation, two-site example, fixed-pair current-ratio law, signed projections, and recurrent weighting. Keep the second-harmonic predictions, amplitude laws, and gain correction here; move the full harmonic ladder and mixed-detector inversion to supplementary Detection. & The reader can distinguish an envelope map from a detector output, then see how amplitude and harmonic measurements separate their predictions.\\[8pt]
 \bottomrule\end{tabularx}
@@ -86,8 +86,8 @@ placement decision. No simulation or numerical result changes.
 \toprule
 \textbf{Place} & \textbf{Scientific content and destination} & \textbf{Contribution to the argument}\\
 \midrule
-\textbf{Theory: steady source} & Retain the distinction between nonnegative mean-square polarization, signed source, and circuit response. Retain the convex/concave sign, polarity invariance, beat/DC inequality, 202-fold example, the quadratic subharmonic identity and all uniformity conditions. The envelope-norm proof and orientation averages move to supplementary Spatial maps. The direct tDCS/tACS comparison becomes a separate Theory subsection with the 2--5\% result and its amplitude conventions. & The spatial restriction concerns the mean map under stated conditions; it does not prohibit an interior beat maximum. Orientation and equal-power qualifications stay here.\\[8pt]
-\textbf{Theory: gain, access, operating point} & Retain the synaptic attenuation estimates, resonant susceptibility, access--detection--gain product, static versus dynamic coefficients, access-time table, cable estimate, measured versus assumed times, and PEIX identities. & After detection is understood, the reader sees what suppresses the carriers and amplifies the beat, and why this does not establish physiological access.\\[8pt]
+\textbf{Theory: steady source} & Retain the distinction between nonnegative mean-square polarization, signed source, and circuit response. Retain the convex/concave sign, polarity invariance, beat/DC inequality, 202-fold example, the quadratic subharmonic identity and all uniformity conditions. The envelope-norm proof and orientation averages move to supplementary Spatial maps. The direct tDCS/tACS comparison becomes a separate Theory subsection with the 2--5\% result and its amplitude conventions. & The spatial restriction concerns the mean map under stated conditions; it does not prohibit an interior beat maximum. The static-curvature sign rule is distinguished from the dynamic coefficient. The scalar boundary theorem retains its assumptions; general multicompartment bilinearity is stated separately.\\[8pt]
+\textbf{Theory: gain, access, operating point} & Retain the synaptic attenuation estimates, resonant susceptibility, access--detection--gain product, static versus dynamic coefficients, access-time table, cable estimate, measured versus assumed times, and PEIX identities. Add the conditional kHz source-strength figure, with assumed coupling and explicit units. & After detection is understood, the reader sees what suppresses the carriers and amplifies the beat, and why this does not establish physiological access.\\[8pt]
 \textbf{Theory: exact mean field} & Move the QIF introduction after the static argument. Keep the MPR equations in physical time and rate, its nonlinear equilibrium curve, threshold recruitment, and slow-synapse and carrier-relaxation conditions. Retain the signs and asymptotes of dynamic mixing. & QIF now answers a question already posed: when does a static curve suffice? A compact crossover derivation and exact coefficient belong in the article model appendix. The fixed-voltage coefficient and exponent catalogue remain in supplementary Detection. The static-rate relation and time-scale conditions stay in Theory; the repeated synaptic display moves to the article appendix.\\[8pt]
 \bottomrule\end{tabularx}
 \newpage
@@ -97,8 +97,8 @@ placement decision. No simulation or numerical result changes.
 \textbf{Place} & \textbf{Scientific content and destination} & \textbf{Contribution to the argument}\\
 \midrule
 \textbf{Methods} & State the purpose of waveform matching, lock-in, FEM geometry, and each model comparison before settings. Put projection choices with the head model. Place the shortened circuit schematic beside the first model explanation in Theory. Keep the full PING equations, effective input, observables, and convergence summaries. Move run catalogues and extended FEM procedures to topic-organized supplementary sections. & Methods connects each test to its observable. Detailed JR run settings, PING endpoint stability, and QIF cutoff results have explicit supplementary homes.\\[8pt]
-\textbf{Results: JR and FEM} & Combine the two-sentence beat demonstration with resonance. Retain the two-tone spectrum, curvature, square-law and linearization controls, kHz access checks, FEM maps and the sensitivity conclusion, pinned coupling sweep, timing ratios, and TI/tACS controls. & The evidence proceeds from beat generation to spatial consequences and recurrent amplification. A compact FEM table replaces the numerical catalogue. Sensitivity ranges and AM/two-tone comparison values move to supplementary tables; waveform identities and local limitations remain.\\[8pt]
-\textbf{Results: NMM2 and spikes} & Retain dynamic-source accuracy, the two-mode coupling curve, gain exponent and finite-amplitude deviations, attracting endpoint, spike cutoff qualification, both field amplitudes, equal-RMS carrier control, sidebands, and phase statistics. & The exact model confirms mixing and gain, then the network separates beat modulation from induced gamma. Numerical diagnostics are consolidated rather than repeated in captions.\\[8pt]
+\textbf{Results: JR and FEM} & Combine the two-sentence beat demonstration with resonance. Retain the two-tone spectrum, curvature, square-law and linearization controls, kHz access checks, FEM maps and the sensitivity conclusion, pinned coupling sweep, timing ratios, and TI/tACS controls. & The evidence proceeds from beat generation to spatial consequences and recurrent amplification. Simplify the FEM figure without removing its maps or numerical comparisons. Call moving foci ROI centroids and keep modest target-to-reference contrasts explicit.\\[8pt]
+\textbf{Results: NMM2 and spikes} & Retain dynamic-source accuracy, the two-mode coupling curve, gain exponent and finite-amplitude deviations, attracting endpoint, spike cutoff qualification, both field amplitudes, equal-RMS carrier control, sidebands, and phase statistics. & The exact model establishes mixing and gain. A theta-neuron pilot tests cutoff sensitivity at fixed model and readout; time-step, size, window and spike-crossing checks decide the quantitative scope. If unresolved, retain qualitative network evidence. Equal-RMS controls are labeled by the tested model.\\[8pt]
 \bottomrule\end{tabularx}
 \newpage
 \pagetitle{Argument and retention map}{Section order in the revised article and supplement}
@@ -106,29 +106,35 @@ placement decision. No simulation or numerical result changes.
 \toprule
 \textbf{Place} & \textbf{Scientific content and destination} & \textbf{Contribution to the argument}\\
 \midrule
-\textbf{Discussion} & Group interpretation into access/mixing, spatial predictions, field-induced oscillations and gain, efficiency, population-model limits, and tests. Keep the Violante biological interpretation and conditions, removing repeated displacement values and relocating the ratio algebra. Move the Vieira numerical footnote to supplementary Efficiency while retaining its unmatched-input qualification. Keep the Cifra scope attached to its claim. & Each subsection answers one scientific question. The efficiency argument distinguishes generated drive from PLV and keeps the numerical ceiling within its stated family.\\[8pt]
-\textbf{Predictions and Conclusion} & Retain every test row, independent amplitudes, fixed-pair steering, state dependence, harmonic calibration, timing, blockade, and equal-power controls. Put the off-resonance measurement design beside these tests. & The conclusion states the supported findings and the measurements that separate mechanisms; detailed qualifications remain beside their claims.\\[8pt]
+\textbf{Discussion} & Group interpretation into access/mixing, spatial predictions, field-induced oscillations and gain, efficiency, population-model limits, and tests. Keep the Violante biological interpretation and conditions, removing repeated displacement values and relocating the ratio algebra. Move the Vieira numerical footnote to supplementary Efficiency while retaining its unmatched-input qualification. Keep the Cifra scope attached to its claim. & Each subsection answers one scientific question. Missey constrains carrier dependence without measuring source transfer. Label the Violante interpretation a hypothesis. Consolidate repeated mechanism explanations; retain the efficiency bound within its family.\\[8pt]
+\textbf{Predictions and Conclusion} & Merge the nine test rows into six concise claim-to-test entries while retaining independent amplitudes, steering, state/carrier dependence, harmonic calibration, recurrence, and equal-RMS controls. Relocate the full evidence matrix to supplementary Experimental tests. Keep the off-resonance design here. & The conclusion states the supported findings and the measurements that separate mechanisms; detailed qualifications remain beside their claims.\\[8pt]
 \textbf{Notation and supplement} & Replace tilde variables with explicit physical units in the article and an explicit membrane-time convention in the uncoupled derivation. Keep all equations, citations, supplementary figures, LaNMM results, detector-bound derivation, and vocabulary metrics. & Article appendices contain notation, the JR specification, the slow-synapse display, and compact MPR crossover derivation. Supplementary sections contain access, detection, spatial maps, amplification, efficiency, laminar extension, and metrics/settings; figures accompany their topics. Article-appendix moves do not reduce the article count.\\[8pt]
 \bottomrule\end{tabularx}
 \newpage
-\pagetitle{Changes and review conditions}{No substantive scientific removal is proposed in this pass}
-The main article retains the PING system, core MPR system and static-rate curve,
-access evidence table, amplitude-matching conventions, and local cutoff and
-interpretation qualifications. The appendix supplies the JR specification and
-compact crossover calculation. Supplementary sections hold extended procedures,
-auxiliary derivations, sensitivities, and waveform checks. Each topic names the
-article claim it supports. Shared source blocks prevent divergence between editions.
+\pagetitle{Scope, length, and verification}{Approved work proceeds before the next author reading}
+The main article retains the full PING system, core MPR equations and static-rate
+curve, Table 2 access evidence, amplitude-matching conventions, and the compact
+crossover derivation. The feasibility figure replaces scattered access-budget
+explanations. The spiking pilot has a fixed run budget and a qualitative fallback;
+agreement with the mean field is an outcome, not a tuning target.
 
-The approved Violante shortening preserves its mean-map ordering, biological
-interpretation, and conditions. The Vieira numerical footnote moves with the
-comparison details. The efficiency-bound discussion and derivation remain in their
-existing narrative and supplementary locations pending Giulio's choice. Earlier
-CUT? items remain retained. The approved abstract, author order, figures, simulation
-caches, and numerical results are unchanged.
+The revised abstract distinguishes static and dynamic detection, names the
+single-head illustration, and describes JR population-rate modulation. The
+steady effect at depth, 2--5\% matched-polarization comparison, shared tACS gain,
+and scoped boundary restriction remain. The multicompartment statement preserves
+bilinear current scaling without assuming a universal common projection vector.
 
-The first pass is recounted before further shortening is considered. Validation
-covers journal and supplement builds, retained labels and citations, notation,
-cross-document references, and rendered pages. Klaus checks the committed revision
-against the retention list. Public GitHub, Calliope, Zenodo, and further circulation
-remain held.
+The starting article count is 14,522 words including captions and article
+appendices. Target roughly 12,000 on the same basis by consolidating repeated
+explanations and moving the full prediction/evidence matrix to the supplement.
+No integral model is relocated merely to improve that count. The LaNMM study
+remains supplementary. The efficiency-bound placement remains unchanged.
+
+A portable FEM package contains derived fields, coordinates, tissue and ROI
+labels, orientation definitions, units, and hashes, with an independent analysis
+script. Redistribution and missing inputs are resolved before public release.
+Validation covers analytic arithmetic, numerical convergence, retained claims,
+article/supplement builds, references, rendered pages, and a redline against
+both the editing and reading baselines. Klaus checks the integrated revision.
+Public release and further coauthor circulation remain held.
 \end{document}

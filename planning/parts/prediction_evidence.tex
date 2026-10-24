@@ -1,0 +1,105 @@
+\subsection{Evidence and measurement design}\label{supp:prediction-evidence}
+The detailed matrix supports the compact experimental tests in article
+Table~\ref{tab:predictions}. Model comparisons and biological observations
+are distinguished; the latter do not calibrate the detector.
+\begingroup\small
+\renewcommand{\arraystretch}{1.15}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.30\textwidth}
+ >{\raggedright\arraybackslash}p{0.27\textwidth}
+ >{\raggedright\arraybackslash}p{0.35\textwidth}@{}}
+\caption{Predictions, existing evidence, and tests. Published observations provide
+qualitative comparisons; their quantitative reanalysis remains to be done.}
+\label{tab:prediction-evidence}\\
+\toprule
+\textbf{Prediction (model basis)} & \textbf{Existing evidence} & \textbf{Proposed test} \\
+\midrule\endfirsthead
+\multicolumn{3}{@{}l}{\textit{Table \thetable\ continued}}\\
+\toprule
+\textbf{Prediction (model basis)} & \textbf{Existing evidence} & \textbf{Proposed test} \\
+\midrule\endhead
+\midrule\multicolumn{3}{r@{}}{\textit{Continued on next page}}\\\endfoot
+\bottomrule\endlastfoot
+\textbf{Carrier dependence.} At fixed local polarization, the leading beat is
+carrier-independent in the static limit and fast-carrier QIF asymptote, provided
+no other circuit mode is excited. Access restores dependence at fixed applied
+field; detector dynamics can add it near the crossover.
+& Network sensitivity, cellular mixing, and thresholds depend on carrier frequency
+\cite{esmaeilpour2021,luff2024mixer,opancar2025,peripheral2023}; bare kHz fields
+have limited effects on hippocampal oscillations \cite{esmaeilpour2020}.
+Local polarizations were not held fixed.
+& Measure each local polarization while sweeping $f_c$ at fixed beat and state;
+normalize the weak beat by their product. Hold network gain fixed or measure it
+independently to separate access from residual detector dependence. Measure any
+residual cutoff rather than assigning it to a compartment. \\[4pt]
+\textbf{Independent carrier amplitudes.} At fixed detector and network gains,
+quadratic modulation excursion follows $2|\varepsilon_1\varepsilon_2|$;
+an ideal envelope follower tracks $2\min(|\varepsilon_1|,|\varepsilon_2|)$
+(Eq.~\eqref{eq:reweight}, Table~\ref{tab:transduction-maps}).
+& The unequal-amplitude spatial example separates these maps; a biological test
+with independent local-polarization calibration is not supplied here.
+& Hold the weaker polarization fixed and vary the stronger, then swap tones.
+Keep both inputs weak, frequencies fixed, and the operating state controlled.
+Reconstruct the slow-response excursion after correcting network filtering;
+a beat lock-in alone does not measure the envelope's full excursion. \\[4pt]
+\textbf{Current-ratio steering.} With fixed electrode pairs, frequencies,
+access, and neural state, the quadratic beat map scales with
+$I_1^{\rm pair}I_2^{\rm pair}$; its normalized pattern does not move.
+An envelope follower can instead shift its maximum.
+& The product-law restriction \cite{cassara2025part2} holds in IXI002
+(\S\ref{sec:fem-results}); a physiological beat-map test remains open.
+& Vary the current ratio at fixed electrodes and compare normalized beat maps
+and target-to-reference ratios, using a cortex-only reference to test deep-target
+selectivity. Keep the projection direction fixed at each site,
+including any direction chosen to maximize the envelope at a reference ratio.
+Measure the DC shift and repeat at lower amplitude to check state dependence.
+ \\[4pt]
+\textbf{State and carrier dependence.} The static sigmoid follows $\Sig''$ and
+reverses sign at its inflection (PEIX$=0$). Fast-carrier QIF mixes in voltage and
+reads the source through rate and network susceptibility; its DC term follows
+$F'$ without the same sign rule (\S\ref{sec:dynamic}).
+& Cell-type-specific responses (PV versus pyramidal) are reported
+\cite{caldas2024}; the detector coefficient remains model-dependent.
+& Vary tonic drive and carrier frequency at fixed beat; measure beat amplitude
+and phase. Compare with the predicted coefficient after accounting for network
+susceptibility. Amplitude changes alone do not isolate detection. \\[4pt]
+\textbf{Transduction class.} At a matched site, weak smooth detection with nonzero
+curvature gives $Y_\Omega\propto\varepsilon^2$ and a harmonic ratio vanishing as
+$\varepsilon\to0$. An ideal envelope follower gives $Y_\Omega\propto\varepsilon$
+and ratio $1/5$; a threshold has onset $2\varepsilon=\delta$ and a variable ratio.
+& Untested with local-polarization calibration; existing comparisons match
+extracellular field rather than $\varepsilon$.
+& Sweep amplitude off resonance, reading both the log--log slope and
+$|Y_{2\Omega}/Y_\Omega|$. Near resonance, suppression by approximately
+$3\mathcal Q$ requires correction with an independently measured
+$G(2\Omega)/G(\Omega)$ (\S\ref{sec:transduction-methods}). \\[4pt]
+\textbf{Frequency selectivity.} The beat response peaks at the region's resonant
+rhythm and grows as $1/\gamma$ near its Hopf; state changes can alter both the
+generated drive and the recurrent gain \cite{ruffini2025cfc}.
+& The quantitative gain--bandwidth relation is not tested here in biological data.
+& Sweep $\Delta f$ through the intrinsic band across brain states and track the
+peak frequency, height, and width. \\[4pt]
+\textbf{Population modulation and mean rate.} Beat modulation can exceed the mean shift; their ratio
+peaks and then falls as the amplified oscillation rectifies
+(\S\ref{sec:timing}--\ref{sec:qif}).
+& Qualitatively consistent with TI altering spike timing more than mean rate in
+primates \cite{vieira2024}.
+& Compare beat lock-in with mean-rate change in commensurate effect measures,
+retaining the finite-amplitude qualification. \\[4pt]
+\textbf{Network readout.} Population nonlinearity and synaptic recurrence contribute
+to the measured response.
+& Most pyramidal TI responses vanish under synaptic blockade \cite{caldas2024},
+supporting network involvement without excluding cellular mixing.
+& Test whether synaptic blockade reduces recurrent amplification while preserving
+a cellular detector. \\[4pt]
+\textbf{Equal-RMS carrier control.} At second order, equal local RMS
+polarization gives the same steady source when the carriers see the same DC
+coefficient. TI also supplies a beat; either waveform can induce an oscillation
+if the mean shift crosses a bifurcation.
+& Demonstrated in the PING mean field (Fig.~\ref{fig:qif_regimes}c,d).
+The corresponding spiking-network and in vivo controls are not provided here.
+& Compare two tones with one carrier of matched RMS polarization and duration,
+checking the DC coefficient across the carrier interval. Measure mean activity,
+intrinsic oscillations, and beat lock-in separately to distinguish the steady
+shift from the beat response. \\
+\end{longtable}
+\endgroup

@@ -189,4 +189,46 @@ Adriano B.~L. Tort, Robert Komorowski, Howard Eichenbaum, and Nancy Kopell.
   different frequencies.
 \newblock {\em Journal of Neurophysiology}, 104(2):1195--1210, 2010.
 
+\bibitem{luff2024mixer}
+Charlotte~E. Luff, Robert Peach, Emma-Jane Mallas, Edward Rhodes, Felix
+  Laumann, Edward~S. Boyden, David~J. Sharp, Mauricio Barahona, and Nir
+  Grossman.
+\newblock The neuron mixer and its impact on human brain dynamics.
+\newblock {\em Cell Reports}, 43(6):114274, 2024.
+
+\bibitem{opancar2025}
+Aleksandar Opan{\v c}ar, Petra Ondr{\'a}{\v c}kov{\'a}, David~Samuel Rose, Jan
+  Trajlinek, Vedran {\DJ}erek, and Eric~Daniel G{\l}owacki.
+\newblock The same biophysical mechanism is involved in both temporal
+  interference and direct k{H}z stimulation of peripheral nerves.
+\newblock {\em Nature Communications}, 16:9006, 2025.
+
+\bibitem{peripheral2023}
+Ryan~B. Budde, Michael~T. Williams, and Pedro~P. Irazoqui.
+\newblock Temporal interference current stimulation in peripheral nerves is not
+  driven by envelope extraction.
+\newblock {\em Journal of Neural Engineering}, 20(2):026041, 2023.
+
+\bibitem{esmaeilpour2020}
+Zeinab Esmaeilpour, Mark Jackson, Greg Kronberg, Tianhe Zhang, Rosana Esteller,
+  Brad Hershey, and Marom Bikson.
+\newblock Limited sensitivity of hippocampal synaptic function or network
+  oscillations to unmodulated kilohertz electric fields.
+\newblock {\em eNeuro}, 7(6):ENEURO.0368--20.2020, 2020.
+
+\bibitem{cassara2025part2}
+Antonino~M. Cassar{\`a}, Taylor~H. Newton, Katie Zhuang, Sabine~J. Regel, Peter
+  Achermann, Alvaro Pascual-Leone, Niels Kuster, and Esra Neufeld.
+\newblock Recommendations for the safe application of temporal interference
+  stimulation in the human brain part {II}: Biophysics, dosimetry, and safety
+  recommendations.
+\newblock {\em Bioelectromagnetics}, 46(1):e22536, 2025.
+
+\bibitem{caldas2024}
+Sara Caldas-Martinez, Chaitanya Goswami, Mats Forssell, Jiaming Cao, Alison~L.
+  Barth, and Pulkit Grover.
+\newblock Cell-specific effects of temporal interference stimulation on
+  cortical function.
+\newblock {\em Communications Biology}, 7:1076, 2024.
+
 \end{thebibliography}

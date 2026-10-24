@@ -1,6 +1,6 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
-- [ ] Giulio: review the October 24 referee revision plan; decide on the conditional kHz figure and bounded theta-neuron pilot with qualitative fallback
+- [ ] complete draft23: feasibility figure, bounded theta pilot, scoped claims, shorter prose, portable FEM analysis, and fidelity checks
 - [ ] Giulio: decide the efficiency-bound placement and any further length reduction after the draft22 recount
 - [ ] read draft22 at TN0484_jne.pdf; the tDCS/tACS comparison is now Section 2.6
 - [ ] Giulio: decide whether to expand DC at its first occurrence in "DC-like" in the abstract

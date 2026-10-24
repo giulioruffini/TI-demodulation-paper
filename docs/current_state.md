@@ -2,11 +2,11 @@
 
 ## Referee assessment — October 24, 2026
 
-Draft22 remains unchanged. Kaiti and Klaus assessed the new review; the proposed
+Giulio approved implementation on October 24. Draft23 is in progress. The agreed
 revision, arithmetic checks, and remaining choices are in
 `../notes/2026-10-24_kaiti/referee_revision_plan.md`. The proposal adds a conditional
 kHz feasibility figure and a bounded theta-neuron pilot, with qualitative spiking
-scope if convergence remains unresolved. Implementation awaits Giulio's decision.
+scope if convergence remains unresolved. The full PING system and Table 2 remain in the article; length and clarity are priorities.
 
 ## Current journal edition — draft22, October 21, 2026
 
