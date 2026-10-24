@@ -1,5 +1,13 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
+## Referee assessment — October 24, 2026
+
+Draft22 remains unchanged. Kaiti and Klaus assessed the new review; the proposed
+revision, arithmetic checks, and remaining choices are in
+`../notes/2026-10-24_kaiti/referee_revision_plan.md`. The proposal adds a conditional
+kHz feasibility figure and a bounded theta-neuron pilot, with qualitative spiking
+scope if convergence remains unresolved. Implementation awaits Giulio's decision.
+
 ## Current journal edition — draft22, October 21, 2026
 
 The approved prose/placement pass is implemented, with the full PING system

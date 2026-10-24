@@ -2,8 +2,8 @@
 
 October 24, 2026. Assessment of the review supplied by Giulio against draft22,
 source HEAD `8d7bd08`. This is a planning document. No manuscript, abstract,
-figure, numerical cache, or publication artifact is changed. Klaus has been
-asked for an independent assessment; reconciliation is recorded below.
+figure, numerical cache, or publication artifact is changed. Klaus's independent
+assessment and our discussion are recorded below.
 
 ## The review identifies a scope problem and a useful new calculation
 
@@ -22,7 +22,7 @@ add another layer of repeated caveats.
 | 2. Novelty | Accept sharper positioning | Lead with the joint steady/beat formulation, pinned detector-versus-gain experiment, dynamic MPR crossover, and comparative maps/controls. Cassara is already credited for product-map invariance; avoid claiming its discovery. |
 | 3. Sign and multicompartment scope | Accept | Separate static curvature from the dynamic DC coefficient. Describe scalar common-vector coupling as a specialization of a bilinear response. Keep the maximum-principle claim within its actual scalar assumptions. |
 | 4. Head generalizability | Accept explicit scope; defer a new anatomical cohort | Name the single-subject geometric illustration in abstract/conclusion, and call the moving location an ROI top-decile centroid. Retain quantitative contrasts and existing sensitivities. |
-| 5. Spiking convergence | Accept the offered qualitative-only alternative | Keep full PING equations and finite-network illustrations, but remove any claim of converged weak-drive spike-level amplitude. A theta-neuron study is a separate optional work package. |
+| 5. Spiking convergence | Recommend a bounded theta pilot, with qualitative fallback | Keep full PING equations. Test whether removing the voltage cutoff resolves amplitude sensitivity before committing to a convergence campaign; retain qualitative scope unless convergence is demonstrated. |
 | 6. Violante interpretation | Accept hypothesis label; retain the comparison | The current text already gives P=0.76 and unknown neural/hemodynamic gains. Label the steady-source explanation as a hypothesis and foreground the discriminating measurement. |
 | Terminology and matching | Accept | Use beat-locked population-rate modulation for JR, retain spike terminology only for measured spike quantities, and distinguish matched local RMS input/polarization from physical electrode or tissue power. |
 | Reproducibility | Accept as a submission requirement | Package derived fields, coordinates, tissue/ROI labels, orientation conventions, units and hashes, plus a portable analysis script. Cached figure summaries alone do not reproduce the spatial analysis. Prepare the release locally; publication holds remain. |
@@ -120,7 +120,9 @@ The finite-network limitation is already explicit in Methods, Results, and
 Supplement S4.3. Raising V_peak and halving the step did not establish
 convergence; matching the mean field at one intermediate cutoff is not a
 convergence argument. The referee expressly allows qualitative scope. That
-is the proportionate default. If quantitative spike agreement is retained,
+is a defensible fallback. After Klaus inspected the existing runtime logs, a
+bounded theta-neuron pilot appears worthwhile before choosing that fallback.
+If quantitative spike agreement is retained,
 use a theta formulation with accurate threshold-crossing times, the same
 synapses and heterogeneity, then test time-step and population-size effects
 on rate modulation and phase statistics separately. This is a genuine new
@@ -143,8 +145,13 @@ unmodulated-carrier control. [Violante](https://doi.org/10.1038/s41593-023-01456
 2. Produce the conditional feasibility figure and its reproducible calculation,
    with exact two-tone access factors, stated normalization, and independent
    checks. Use existing JR and MPR work rather than add new anatomy or biophysics.
-3. Revise abstract/Introduction/Discussion and the local captions, retain full
-   PING in Methods, and choose the qualitative finite-network scope. Audit
+3. Run a bounded theta-neuron pilot on a separate script, preserving the PING
+   model, inputs, and readouts. Agree tolerances and a run budget before starting;
+   test spike-crossing handling, time step, population size, and windows. If
+   convergence remains unresolved within that budget, use qualitative scope.
+   Add the finite-network equal-RMS carrier control only after validating the
+   solver. Revise abstract/Introduction/Discussion and local captions, retaining
+   full PING in Methods. Audit
    first mentions of RMS, polarity, focus, source, and response.
 4. Prepare the portable FEM reproduction package and a version-specific README.
    A clean environment must reproduce maps and statistics, not just replot the
@@ -160,4 +167,23 @@ unmodulated-carrier control. [Violante](https://doi.org/10.1038/s41593-023-01456
 No new human experiment or multi-head campaign is needed for this proposed
 revision. A future calibrated-physiology claim would need new evidence beyond
 this sensitivity analysis. Giulio's decision is whether to proceed with this
-bounded revision and whether quantitative spiking convergence is worth adding.
+bounded revision, including the proposed theta pilot.
+
+## Discussion with Klaus
+
+Klaus's independent note is `../2026-10-24_klaus/referee_assessment.md`. We
+agree on the principal scope corrections, an analytic feasibility figure,
+clearer novelty, portable FEM inputs, and retention of full PING in Methods.
+He favored a theta-neuron implementation over the qualitative-only option,
+citing an existing runtime of about 0.7 minutes for a 1.6-second condition.
+That makes a pilot attractive, but runtime does not establish the development
+or validation cost. The recommendation above incorporates a bounded pilot with
+a qualitative fallback; it makes no promise of mean-field agreement.
+
+Kaiti asked Klaus to correct four overstatements in his initial assessment:
+the 1/81 high-frequency asymptote requires both carrier bands to be asymptotic;
+Missey's readout is not established to be thresholded and its design does not
+measure source-transfer ratios; opposite envelope/DC centroid motion is
+geometry-dependent, unlike the fixed-pattern quadratic scaling; and the
+reviewer's Luff reference is the Cell Reports neuron-mixer article, not PWM-TI.
+No new computation or manuscript revision has been authorized by this discussion.

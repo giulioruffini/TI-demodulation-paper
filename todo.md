@@ -1,6 +1,6 @@
 # TODO — TN0484 / WP0185 (TI tuned receiver)
 
-- [ ] Giulio: review the October 24 referee revision plan; decide on the conditional kHz figure and qualitative versus converged spiking scope
+- [ ] Giulio: review the October 24 referee revision plan; decide on the conditional kHz figure and bounded theta-neuron pilot with qualitative fallback
 - [ ] Giulio: decide the efficiency-bound placement and any further length reduction after the draft22 recount
 - [ ] read draft22 at TN0484_jne.pdf; the tDCS/tACS comparison is now Section 2.6
 - [ ] Giulio: decide whether to expand DC at its first occurrence in "DC-like" in the abstract
@@ -9,6 +9,7 @@
 - [ ] confirm the remaining author declarations, actual AI-tool versions, and all authors' approval of the submission version
 - [ ] keep public GitHub, Calliope, Zenodo, and circulation to other coauthors on hold pending explicit authorization
 - [ ] migrate the folder at a coordinated version boundary with no concurrent editors; run the layout checker before and after
+- [x] assess the new referee review against draft22 and primary sources, discuss it with Klaus, and record the revision proposal (October 24)
 - [x] move stray Finder metadata out of Git refs, preserve its backup, and verify git fsck passes (October 24)
 - [x] close Klaus’s draft22 fidelity/reference check and apply his vocabulary-placement suggestion (October 21)
 - [x] apply the approved prose pass, keep PING in Methods, rebuild article/supplement/redline, and verify edition routing (October 21)
