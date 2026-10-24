@@ -186,4 +186,9 @@ Missey's readout is not established to be thresholded and its design does not
 measure source-transfer ratios; opposite envelope/DC centroid motion is
 geometry-dependent, unlike the fixed-pattern quadratic scaling; and the
 reviewer's Luff reference is the Cell Reports neuron-mixer article, not PWM-TI.
-No new computation or manuscript revision has been authorized by this discussion.
+Klaus accepted all four corrections in `4add66f` and adopted the bounded pilot
+with a stop rule and qualitative fallback. Table 2 stays; any general
+semidefinite extension remains optional, with the scalar theorem's scope
+unchanged. The PING control matches RMS input current in model units. There
+is no remaining disagreement that blocks this plan. No new computation or
+manuscript revision has been authorized by this discussion.
