@@ -24,19 +24,24 @@ linear resonance offers no efficiency advantage over a matched direct source.
 Five figures have repaired labels; all 76 plotted arrays match their baseline
 exactly. Bibliography locators and the Thiele citation have been checked.
 
-Klaus released the checked `bc4a7dd` tree to public GitHub as `ed0fb39`, with
-annotated tag `jne-submission`. Remote main and the peeled tag both resolve to
-`ed0fb39503dadbb9677762310464f081cec38265`. The main source, abstract, four
-repaired generators, and both journal PDFs match the checked commit byte for
-byte. The availability reference now resolves to the completed release.
+Giulio’s abstract clarification is committed in `184e525`. Significance now
+states, “Resonance amplifies TI and matched tACS equally, so it confers no
+efficiency advantage.” The gain comparison belongs to the weak-response regime;
+it does not assert equal TI and tACS source amplitudes. The Approach is shorter,
+with assumed field coupling and membrane times retained. The abstract remains
+300 words and the article remains 40 pages, with a clean build.
 
-The Overleaf GitHub mirror is updated to `8b75fe4`; its main source, abstract,
-notation file, bibliography, and five repaired figure PDFs match `bc4a7dd`.
-Klaus reports a clean 40-page test build of the compilation subset. Giulio must
-still pull the mirror changes into the Overleaf project, recompile, and send
-the coauthor email. Neither Kaiti nor Klaus sends that email. Zenodo and
-Calliope updates remain held. The per-node FEM export remains unreceived and
-unvalidated. The remaining licensing, ethics, de Palma description,
+Public GitHub main and the annotated tag `jne-submission` now resolve to
+`03af462c2a9c9bfda5749b0cda326cd5d73c192e`. The Overleaf GitHub mirror is updated
+to `1e338fb9cbe55cedd3684b1e4a68d8650b11ed04`. Both remote versions’ main source
+and abstract match `184e525` byte for byte. These replace the earlier public
+`ed0fb39` and mirror `8b75fe4` cuts, whose repaired generators and PDFs were
+already checked against `bc4a7dd`.
+
+Giulio must re-pull the mirror changes into the Overleaf project, recompile,
+and send the coauthor email. Neither Kaiti nor Klaus sends that email. Zenodo
+and Calliope updates remain held. The per-node FEM export remains unreceived
+and unvalidated. The remaining licensing, ethics, de Palma description,
 `salvador2025` placement, tool-version, and author approval questions remain
 open; a fidelity check does not decide them.
 

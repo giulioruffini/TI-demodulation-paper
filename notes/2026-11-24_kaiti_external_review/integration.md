@@ -94,3 +94,28 @@ file, bibliography, and five repaired figure PDFs are byte-identical to
 These checks close the public-tag and mirror tasks. The Overleaf web project
 still requires Giulio’s pull and recompile. Giulio sends the coauthor email.
 No archive update or email send is implied by this release verification.
+
+## Abstract clarification and updated release, 18:50 CET
+
+Giulio approved the more explicit shared-gain sentence in `184e525`. The
+Approach was shortened to retain 300 words. The steady-source assumptions and
+model ladder remain; the budgets are still stated to assume field coupling and
+membrane times, although their frequency dependence is no longer named in that
+Approach sentence. The main article is unchanged. The gain equality refers to
+weak-response amplification of matched inputs through the same circuit, not
+equality of the TI and tACS source amplitudes.
+
+Independent checks confirm 11,180 article words plus 300 abstract words,
+40 article pages, and zero errors, undefined references, or overfull boxes.
+Public main and the peeled `jne-submission` tag now resolve to
+`03af462c2a9c9bfda5749b0cda326cd5d73c192e`; mirror HEAD is
+`1e338fb9cbe55cedd3684b1e4a68d8650b11ed04`. Main source and abstract in both cuts
+match `184e525` byte for byte. Giulio must re-pull the mirror into Overleaf;
+the coauthor email remains his to send.
+
+The independent theory reviewer accepts the wording in context. Equal linear
+outputs require matched in-band sources, operating state, and readout; the
+main text supplies those conditions and retains finite-amplitude departures.
+The Approach shortening has no material loss: it no longer explicitly calls
+the budgets frequency-dependent, but does not assert frequency independence.
+No further abstract edit was made.
