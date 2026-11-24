@@ -1,38 +1,43 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## JNE submission review — November 24, 2026
+## External submission review integrated — November 24, 2026
 
-The repaired revision has an independent fidelity check against `864121f`.
-Klaus's repairs preserve the scientific content; the final pass restored the
-QIF comparison's beyond-perturbation scope and the distinction between membrane
-access and additional carrier-frequency filtering after mixing. The harmonic
-example now states its positive-amplitude condition, and the measured harmonic
-ratio fits on the page. See
-`notes/2026-11-24_kaiti_live/repaired_9f_fidelity.md`.
+The author-approved corrections from the external review are integrated against
+`0f9ecca`. Independent theory, methods/layout, and final abstract checks found no
+unresolved fidelity issue. The Introduction opening, Theory 2.9 slow-limit
+explanation, and Conclusion remain as approved. The review record is
+`notes/2026-11-24_kaiti_external_review/integration.md`.
 
-The 12-point article runs to 44 pages and the supplement to 42, including the
-live notation-table page break. The article and its integral appendices contain
-11,848 words; the 298-word abstract brings the combined count to 12,146.
-Equation (B6) defines `u` as the postsynaptic potential divided by its pathway's
-steady voltage gain. For the single JR excitatory synapse, the physical voltage
-is `A tau_s u` in mV. Equation (B9) gives the scalar log-rate dynamics.
-Figure 12(b) labels the complex excitatory-rate response error, independently
-verified against all 12 stored cases. Both journal builds have no errors,
-undefined references, multiply defined labels, or overfull boxes.
+The 12-point article has 40 pages, down from 44; the supplement has 43. The
+article and its integral appendices contain 11,180 words, plus a 300-word
+abstract (11,480 combined). The complete notation table and contents list are
+in the supplement; the article retains its unit conventions and Appendix B
+numbering. Both builds have no errors, undefined references, multiply defined
+labels, or overfull boxes.
 
-At Giulio's request, the GitHub repository URL now appears explicitly in data
-availability (`bcd13b3` through `e8d108e`). The duplicate Methods AI-use sentence
-was removed in `7a79865`; the end-of-paper declaration remains. The remaining
-data-availability and licensing questions, the new ethics sentence,
-the de Palma study description, and the placement of `salvador2025`
-remain author decisions. They are retained as draft wording, not approved by
-the fidelity check. Public release and synchronization remain held.
+Corrections distinguish loss of carrier preference after synaptic blockade from
+loss of response, finite-cutoff QIF simulations from the exact mean-field limit,
+and a measured tACS response from calibrated circuit gain. The harmonic and
+Hopf conditions, waveform settings, and human null-result scope are explicit.
+The abstract names the fixed-input QIF steady-rate crossover and states that
+linear resonance offers no efficiency advantage over a matched direct source.
+Five figures have repaired labels; all 76 plotted arrays match their baseline
+exactly. Bibliography locators and the Thiele citation have been checked.
 
-The clean reading copies are `TN0484_jne.pdf` and `TN0484_jne_supplement.pdf`.
-The earlier article comparison against `864121f` is in
-`review/jne_submission_2026-11-24/TN0484_jne_changes.pdf`; it predates these repairs.
-The authors still need to confirm the outstanding affiliations, funding,
-declarations, AI tool versions, and final manuscript.
+Klaus owns the authorized public simulation-code update and the availability
+paragraph. He changed the availability reference from `4b7cc66` to the planned
+`jne-submission` tag during this check. The tag was not yet public at 16:20 CET;
+it must include these four repaired figure generators before release. Numerical
+arrays are unchanged. Archive updates, Overleaf/Calliope
+synchronization, and separate coauthor circulation remain held. The per-node
+FEM export remains unreceived and unvalidated. The remaining licensing,
+ethics, de Palma description, `salvador2025` placement, tool-version, and author
+approval questions remain open; a fidelity check does not decide them.
+
+The reading copies are `TN0484_jne.pdf` and `TN0484_jne_supplement.pdf`.
+The full-TN PDF and BBL were already modified before this task and have not
+been rebuilt, restored, or included in this integration. The earlier redline
+against `864121f` predates these corrections.
 
 ## Shared working source — November 24, 2026
 

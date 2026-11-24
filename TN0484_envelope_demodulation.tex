@@ -56,7 +56,8 @@
 \suppfalse
 \ifdefined\suppbuild\supptrue\jnetrue\fi
 
-% Notation and compact model derivations are article appendices.
+% Unit conventions and compact model derivations are article appendices.
+% The full notation table is supplementary in the journal edition.
 % Additional topic-organized material travels with the TN and supplement.
 \newif\ifappendices
 \ifsupp\appendicestrue\else\ifjne\appendicesfalse\else\appendicestrue\fi\fi
@@ -165,6 +166,8 @@ references to article equations are marked as main-text references.
 \end{minipage}
 \end{center}
 \vspace{8pt}
+\tableofcontents
+\clearpage
 \fi
 
 \ifsupp\else
@@ -186,9 +189,11 @@ references to article equations are marked as main-text references.
 transcranial stimulation; neural mass model; amplitude demodulation; Hopf bifurcation;
 cross-frequency coupling; criticality.
 
-% Kept in both builds: reviewers use the contents list to navigate.
+% The journal contents list belongs to the supplement; the full TN retains it.
+\ifjne\else
 \clearpage
 \tableofcontents
+\fi
 \clearpage
 
 \section{Introduction}
@@ -295,8 +300,8 @@ rate curve already supplies this through its curvature.
 \caption{\textbf{The cortical column as a tuned receiver.} Access converts the
 applied field into the local polarization entering the detector. The nonlinear detector
 generates the beat at angular frequency $\Omega$ from a carrier near $f_c$; a
-recurrent network amplifies it near its natural frequency $f_0$. The diagram shows
-the static-sigmoid realization. In a conventional AM receiver, the tuned circuit
+recurrent network amplifies it near its natural frequency $f_0$. The diagram starts
+after access and shows the static-sigmoid realization. In a conventional AM receiver, the tuned circuit
 selects the carrier before detection \cite{nahin2001}; here the resonator selects
 the low-frequency output. }
 \label{fig:concept}
@@ -309,8 +314,9 @@ M-type potassium current $I_M$, can tune a single neuron \cite{hutcheonyarom2000
 as in the cell- and state-dependent hippocampal TI responses modeled by de Palma
 Aristides et al.\ in an unpublished study \cite{depalma2026ti}. Recurrent excitatory--inhibitory circuits supply another
 resonance \cite{brunelhakim1999,brunelwang2003,ledoux2011}. In slices, pyramidal and
-parvalbumin (PV) neurons respond differently, and most pyramidal TI responses
-vanish under synaptic blockade \cite{caldas2024}; simulations also find network
+parvalbumin (PV) neurons respond differently, and most tested pyramidal cells
+lose their preferential response to modulated over equal-peak unmodulated
+carriers after synaptic blockade \cite{caldas2024}; simulations also find network
 mediation \cite{karimi2024,esmaeilpour2021}. Reviews summarize these mechanisms
 \cite{soroushi2025,wangw2026}. At human-comparable fields, primate recordings show
 weaker effects than direct low-frequency stimulation, expressed mainly in spike
@@ -414,7 +420,8 @@ $\lambda_f=\lambda_0|H|$ and $\varepsilon_j=\lambda_f(\omega_j)E_j$.
 Holding these post-access polarizations fixed isolates detection and gain;
 at fixed field they inherit $H$'s frequency dependence.
 
-Fast axonal access motivates $\lambda_f\approx\lambda_0$. At the AIS,
+If access is fast relative to both carriers, $|H(\omega_j)|\approx1$ and
+$\lambda_f\approx\lambda_0$. At the AIS,
 $\Sig(v+s)$ represents a spike-initiation threshold shifted from $v_0$ to
 $v_0-s$, requiring no backward transmission to the soma. The conversion from
 AIS polarization to $s$ and its response time require calibration. A static
@@ -593,8 +600,9 @@ Other rectifier laws are compared in the supplement (\S\ref{supp:harmonics}).
 At matched tones, envelope following is linear in amplitude with
 second/fundamental harmonic ratio $1/5$. Quadratic detection gives only
 the steady term and fundamental; its quartic correction gives
-$Y_{2\Omega}/Y_\Omega\sim(c_4/c_2)\varepsilon^2$, with
-$c_2=g''/4$ and $c_4=g^{(4)}/64$. A threshold detector is silent for
+$|Y_{2\Omega}|/|Y_\Omega|\approx|c_4/c_2|\varepsilon^2$ when the nonzero
+quadratic term dominates, with $c_2=g''/4$ and $c_4=g^{(4)}/64$.
+A threshold detector is silent for
 $2\varepsilon\le\delta$ and has an amplitude-dependent ratio above onset.
 The full harmonic series and mixed-detector inversion are supplementary
 (\S\ref{supp:harmonics}).
@@ -602,7 +610,8 @@ The full harmonic series and mixed-detector inversion are supplementary
 \input{planning/parts/harmonic_details}
 \fi
 
-The network gain $G$ modifies the detector ratio $\mathcal H_{\rm det}$, giving the measured ratio
+In the linear network regime, gain $G$ modifies the detector ratio
+$\mathcal H_{\rm det}$, giving the measured ratio
 \[
 \mathcal H_{\rm meas}=\mathcal H_{\rm det}|G(2\Omega)/G(\Omega)|.
 \]
@@ -647,9 +656,8 @@ endogenous infraslow ($<0.1$~Hz) mixing in coupled Jansen--Rit models \cite{Just
 The Population Excitation--Inhibition Index (PEIX) \cite{ruffini2025cfc}
 measures signed departure from maximal sigmoid slope, positive above the
 inflection and negative below; its definition and curvature identities are
-in Appendix~\ref{app:peix}. Changes in $v^*$ through neuromodulation,
-attention, arousal, psychedelic exposure, or dysfunction of PV interneurons
-in Alzheimer's disease can scale or reverse the static JR source.
+in Appendix~\ref{app:peix}. Changes in the operating point $v^*$ can
+therefore scale or reverse the static JR source.
 Dynamic detectors have their own state-dependent coefficients and susceptibilities, without
 a universal PEIX sign rule; state sweeps isolate detection only if recurrent
 gain is also measured.
@@ -768,8 +776,8 @@ generated low-frequency drive.
 
 The recurrent circuit selects the recovered beat. Linearizing about the JR
 fixed point gives a leading pair $\mu_\pm=-\gamma\pm i\omega_0$, with
-modal damping $\gamma$ and frequency $\omega_0$. Below a supercritical
-Hopf, $\gamma\to0^+$ and the quality factor
+modal damping $\gamma$ and frequency $\omega_0$. On the stable-focus side of a
+simple Hopf bifurcation, $\gamma\to0^+$ and the quality factor
 $\mathcal Q=\omega_0/(2\gamma)$ grows. A constant-numerator two-pole
 approximation to the complex susceptibility $G$ gives
 \begin{equation}
@@ -785,7 +793,7 @@ undamped frequency $\sqrt{\omega_0^2+\gamma^2}$ and peak
 $\sqrt{\omega_0^2-\gamma^2}$ ($\omega_0>\gamma$).
 Frequency-dependent projections can further shift the peak.}
 This weak-drive law requires stability after the rectified mean shift.
-Above the Hopf, entrainment instead means phase capture of an autonomous rhythm.
+On the oscillatory side, entrainment instead means phase capture of an autonomous rhythm.
 
 Write $D$ for the detector's beat-source coefficient: for the JR rate source,
 $D=\half\Sig''(v^*)$, half the local sigmoid curvature. Combining access,
@@ -804,9 +812,10 @@ A static detector has carrier-independent $D$ at fixed polarization;
 a dynamic detector can retain frequency dependence. A carrier sweep and a beat sweep
 therefore constrain different stages rather than a single effective gain.
 
-Resonance requires a beat source. The cubic Hopf normal form
-responds to an in-band drive but has no second-order difference-frequency source. A large resonant susceptibility alone therefore does not
-establish beat generation.
+Resonance requires a beat source. Under additive forcing about its zero-amplitude
+equilibrium, the cubic Hopf normal form has no quadratic mixing term.
+A large resonant susceptibility alone therefore does not establish beat generation;
+nonlinear input maps or readouts must be specified separately.
 In the calibrated noise-free Stuart--Landau networks tested in \cite{Ruffini2026iso},
 first-order rate transmission and readout yielded negligible infraslow BOLD power.
 
@@ -1124,7 +1133,7 @@ the fixed point check the continuation.
 For the coupling sweep, we adjust $p(C)$ to keep $v^*=8.30$~mV and its
 curvature fixed as connectivity $C$ varies while allowing stimulation-induced mean shifts.
 The Jacobian gives damping and modal frequency.
-The gain sweep uses the AM surrogate, the timing comparison reads the modulation
+The gain sweep uses the AM surrogate, the rate-modulation/mean-rate comparison reads the modulation
 and mean of the pyramidal rate $r_P=\Sig(v+s)$ under genuine tones, and the direct tACS comparison
 uses the same voltage lock-in as TI (\S\ref{app:jr-sweep-settings}).
 
@@ -1189,7 +1198,7 @@ multipliers, direct perturbation decay, and a finite-time Lyapunov estimate, wit
 settings and results in the supplement (\S\ref{app:ping-stability}).
 
 \subsection{QIF spiking network (microscale of NMM2)}\label{sec:qif-methods}
-We simulate the all-to-all QIF network whose infinite-population limit is
+We simulate a finite-cutoff approximation to the all-to-all QIF network underlying
 Eq.~\eqref{eq:nmm2-ping} \cite{montbrio2015,ruffini2025rosetta,clusella2023},
 with $N=8000$ neurons per population. Excitabilities are
 deterministic quantiles of Lorentzian$(\bar\eta,\Delta)$. Each single-neuron voltage $V_j$ spikes at $V_{\rm peak}=100$
@@ -1234,7 +1243,8 @@ although the input spectrum has no alpha peak (Fig.~\ref{fig:demod}).
 \centering
 \includegraphics[width=\textwidth]{fig_demodulation_twotone.pdf}
 \caption{\textbf{The JR column generates a beat absent from the input.}
-\emph{(a)} Two equal tones at $94.45$ and $105.55$~Hz and their envelope,
+At $p=330$~s$^{-1}$ and $\varepsilon=1$~mV per tone,
+\emph{(a)} shows tones at $94.45$ and $105.55$~Hz and their envelope,
 $2\varepsilon|\cos(\Omega t/2)|$. \emph{(b)} Input spectrum: only the two
 tones are present. The alpha-band floor is $1.6\times10^{-8}$ of their
 amplitude, from finite-window leakage. \emph{(c,d)} The synaptic voltage
@@ -1260,7 +1270,9 @@ frequency $f_{\rm out}$ then identifies a frequency-dominance region
 \centering
 \includegraphics[width=\textwidth]{fig_resonance.pdf}
 \caption{\textbf{The JR beat resonance sharpens toward the Hopf.}
-Stable-focus response at $\varepsilon=0.3$~mV. \emph{(a)} Lock-in amplitude
+Stable-focus response to the AM surrogate, Eq.~\eqref{eq:amsur}, with
+$m=1$, $\varepsilon=0.3$~mV, and $f_c=100$~Hz at
+$p=330$, $355$, and $395$~s$^{-1}$. \emph{(a)} Lock-in amplitude
 against beat frequency; the finite-amplitude peak moves from $11.08$ to
 $10.93$~Hz across the curves. \emph{(b)} Peak amplitude increases as $p$
 approaches the upper Hopf from above. These three points show sharpening
@@ -1331,7 +1343,8 @@ gain; $\lambda_0$ and the access time are assumptions.}
 \end{figure}
 
 \subsection{Sigmoid curvature predicts the JR beat source}\label{sec:results-curvature}
-The signed open-loop beat follows $\half\Sig''(v^*)\varepsilon^2m$, vanishing
+For equal true two-tone polarizations, the signed open-loop beat follows
+$\half\Sig''(v^*)\varepsilon^2$, vanishing
 and reversing phase at the inflection (Fig.~\ref{fig:opp}). The
 closed-loop examples lie on the negative-curvature flank. At matched network
 susceptibility, either flank obeys the same gain law, with opposite source
@@ -1483,7 +1496,10 @@ lock-in amplitudes in linear response is
 =\frac{|\Sig''(v^*)|\,\varepsilon_{\rm TI}^2m}
 {2\Sig'(v^*)\,\varepsilon_{\rm tACS}}.
 \]
-The common linear transfer cancels, giving a predicted ratio of $0.143$ for the original unequal-input comparison. Genuine two-tone responses depart from this prediction near the Hopf. When the leading sources are matched instead, the TI/tACS output ratios are $0.90$--$0.99$ at the three tested couplings. The larger direct input saturates earlier and shifts the operating state, which field-free pinning does not cancel. Numerical controls for these unequal-input comparisons are in the supplement (\S\ref{supp:tacs-saturation}). Equal-per-carrier, total-peak, and RMS matching are distinguished in \S\ref{sec:direct-comparison}.
+The common linear transfer cancels. At $v^*=8.30$~mV,
+$\varepsilon_{\rm TI}=0.3$~mV, $m=1$, and
+$\varepsilon_{\rm tACS}=0.1$~mV give a predicted ratio of $0.143$.
+Genuine two-tone responses depart from this prediction near the Hopf. When the leading sources are matched instead, the TI/tACS output ratios are $0.90$--$0.99$ at the three tested couplings. The larger direct input saturates earlier and shifts the operating state, which field-free pinning does not cancel. Numerical controls for these unequal-input comparisons are in the supplement (\S\ref{supp:tacs-saturation}). Equal-per-carrier, total-peak, and RMS matching are distinguished in \S\ref{sec:direct-comparison}.
 
 \ifjne\else
 \input{planning/parts/tacs_saturation}
@@ -1493,7 +1509,8 @@ The common linear transfer cancels, giving a predicted ratio of $0.143$ for the 
 \centering
 \includegraphics[width=\textwidth]{fig_nmm2_resonance_twotone.pdf}
 \caption{\textbf{Gamma resonance in the PING mean field.}
-Excitatory-rate lock-in under genuine two-tone input, carrier $300$~Hz.
+Excitatory-rate lock-in under genuine two-tone input, carrier $300$~Hz
+and amplitude $A_f=8$ per tone in model units.
 \emph{(a)} Below $\bar\eta_H=1.110$, forced-resonance peaks near
 $f_0\approx54$~Hz grow from $0.0014$ to $0.0030$ to $0.0055$~ms$^{-1}$
 toward the Hopf. \emph{(b)} Above it, peaks in the autonomous-gamma regime
@@ -1569,7 +1586,7 @@ it does not establish gamma-amplitude gating or phase capture.}
 \end{figure}
 
 \subsection{QIF responses distinguish beat modulation from field-induced gamma}\label{sec:qif}
-The finite QIF network shows beat-locked modulation at the lower tested
+The finite QIF network qualitatively reproduces beat-locked modulation at the lower tested
 amplitude and field-induced gamma at the higher amplitude. Its $8000$-neuron populations test
 these regimes at the spike level
 \cite{montbrio2015,ruffini2025rosetta,clusella2023}
@@ -1646,7 +1663,7 @@ results do not establish its size under weak physiological stimulation.
 \subsection{Cellular access and mixing require separate calibration}
 The JR and QIF models demonstrate local mixing followed by recurrent
 amplification. Cellular mixing \cite{mirzakhalili2020,luff2024mixer} and network
-amplification \cite{caldas2024,karimi2024,esmaeilpour2021} have complementary
+involvement \cite{caldas2024,karimi2024,esmaeilpour2021} have complementary
 experimental and modeling support, but their combined transfer at physiological
 kHz fields remains unmeasured. The short-time cases in Table~\ref{tab:doors}
 are access assumptions; varying the effective membrane time quantifies their
@@ -1765,8 +1782,10 @@ also matters: Hodgkin--Huxley and Frankenhaeuser--Huxley models reproduce
 stimulus-evoked firing that the tested leaky, exponential, and adaptive-exponential
 integrate-and-fire models miss \cite{plovie2025}. Noise, additional heterogeneity,
 and intercolumn interactions can broaden or shift our deterministic resonances.
-Human findings include peripheral effects without central effects \cite{iszak2023}
-and null occipito-parietal alpha-power modulation \cite{mansourinezhad2025}.
+Human findings include peripheral effects without detectable effects in the tested
+central readouts \cite{iszak2023} and null occipito-parietal resting-alpha-power
+modulation \cite{mansourinezhad2025}. Resting-state null results do not exclude
+task-related alpha modulation, as reported by Thiele et al.\ \cite{thiele2024ttis}.
 Access, generated sources, and circuit tuning therefore need measurement in the
 same preparation.
 
@@ -1779,8 +1798,9 @@ $\mathcal Q=10$, a detector second-harmonic/fundamental ratio of $20\%$ appears 
 the measured response as only $0.7\%$, which could make an envelope follower look
 quadratic. Driving off resonance at $\Delta f\simeq f_0/4$ places both harmonics on
 the flatter part of the response, where $|G(2\Omega)/G(\Omega)|\approx1.22$--$1.25$
-for $\mathcal Q=3$--$30$. Alternatively, a weak direct tACS sweep can measure $G$
-independently so its effect can be removed from the harmonic ratio.
+for $\mathcal Q=3$--$30$. Alternatively, a weak direct tACS sweep, calibrated for
+local polarization and linear source conversion at the same operating point,
+can estimate $G$ and correct the measured harmonic ratio.
 
 \begin{table}[htbp]
 \centering\small
@@ -1841,19 +1861,21 @@ to be calibrated. Local-polarization measurements, independent-amplitude tests,
 beat sweeps across states, and equal-RMS controls distinguish these mechanisms.
 
 \section*{Code and data availability}
-An earlier article and supplement are archived on
-\href{https://doi.org/10.5281/zenodo.24145177}{Zenodo (doi:10.5281/zenodo.24145177)}.
-Simulation code is public on GitHub at\newline
-{\small\url{https://github.com/giulioruffini/TI-demodulation-paper}}. The cited snapshot
-(commit \href{https://github.com/giulioruffini/TI-demodulation-paper/tree/482d3d1ed78170107204dc9947fc3fcfd6bdf8be}{\texttt{482d3d1}}, CC BY 4.0) includes the neural simulations, two-tone kHz
-and laminar-model reproduction scripts, and the earlier IXI002 map analysis.
-The updated orientation and interface analyses and their per-node data have
-not been deposited. Recomputing the head-model results requires the original
-IXI002 fields and labels and Neuroelectrics' nonpublic TI library. The interface
-analysis also requires the mesh and electric potentials. The planned
-FreeSurfer-only export covers the regional statistics and excludes the separate
+\begin{sloppypar}
+Simulation code, cached outputs, and figure scripts for this version are public on
+GitHub at\newline
+{\small\url{https://github.com/giulioruffini/TI-demodulation-paper}}
+(release tag \href{https://github.com/giulioruffini/TI-demodulation-paper/tree/jne-submission}{\texttt{jne-submission}},
+CC BY 4.0). They include the neural simulations, the two-tone kHz and laminar-model
+reproduction scripts, and the head-model analysis scripts with their summary outputs;
+the README maps figures to scripts. An earlier article and supplement are archived
+on Zenodo, doi:\href{https://doi.org/10.5281/zenodo.24145177}{10.5281/zenodo.24145177}.
+Recomputing the head-model results requires the original IXI002 fields and labels and
+Neuroelectrics' nonpublic TI library; the interface analysis also requires the mesh and
+electric potentials. A FreeSurfer-only per-node export, to be released under
+CC BY-SA 4.0 with IXI attribution, will cover the regional statistics but not the
 atlas-label and interface analyses.
-% Release hold: align the public repository/archive with this reviewed draft before submission.
+\end{sloppypar}
 
 \section*{Acknowledgments}
 GR, BM, RS and FC have received funding from the European Research Council (ERC) under the

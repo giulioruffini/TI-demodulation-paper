@@ -31,7 +31,7 @@ for e0 in stable:
     print(f"  stable eta={e0:>5g}: peak {c.max():.4f} at Delta f = {dfgrid[np.argmax(c)]:.1f} Hz")
 figstyle.panel(a1, "a")
 a1.set_xlabel(r"envelope frequency $\Delta f$ (Hz)")
-a1.set_ylabel(r"lock-in response at $\Delta f$ (a.u.)")
+a1.set_ylabel(r"Excitatory-rate amplitude (ms$^{-1}$)")
 a1.legend(fontsize=8, title="approaching Hopf")
 
 for e0 in cycle:

@@ -1,0 +1,97 @@
+{
+  "fig_concept": {
+    "data_arrays_identical": true,
+    "arrays_compared": 12,
+    "baseline_rerender_matches_existing_png_exactly": false,
+    "existing_png_shape": [
+      1380,
+      3510,
+      4
+    ],
+    "baseline_png_shape": [
+      1380,
+      3510,
+      4
+    ],
+    "minimum_drawn_text_at_465_1pt_width": 6.200000000000001,
+    "visible_text_issues": [],
+    "pdf_sha256": "b67719946e04a2655738d72864bdd19b7bbfb86fe1d85e1a9dc1303a9bd19d32",
+    "png_sha256": "8115019e113dc18db7666c8015e0795f3c9fb4f0d1b23ae728c714b15cd737de"
+  },
+  "fig_curvature_twotone": {
+    "data_arrays_identical": true,
+    "arrays_compared": 18,
+    "baseline_rerender_matches_existing_png_exactly": false,
+    "existing_png_shape": [
+      2306,
+      3655,
+      4
+    ],
+    "baseline_png_shape": [
+      2292,
+      3642,
+      4
+    ],
+    "minimum_drawn_text_at_465_1pt_width": 6.2,
+    "visible_text_issues": [],
+    "pdf_sha256": "ea7fe4153e8d87209271a5092d3c37fae2d29707e00ee13133286e7814c87013",
+    "png_sha256": "0995f4cad8c21a6f984d5d2f84c7ede60ba038aae8f85d2992c55bcabc4a547f"
+  },
+  "fig_demodulation_twotone": {
+    "data_arrays_identical": true,
+    "arrays_compared": 16,
+    "baseline_rerender_matches_existing_png_exactly": false,
+    "existing_png_shape": [
+      1861,
+      3121,
+      4
+    ],
+    "baseline_png_shape": [
+      1859,
+      3118,
+      4
+    ],
+    "minimum_drawn_text_at_465_1pt_width": 6.2,
+    "visible_text_issues": [],
+    "pdf_sha256": "858a4e350a29f4bd10b937027c6f03c6f40b1c24f668aa7234664b9532fabd3e",
+    "png_sha256": "ce704fe76468a8c05e559bd4d16c8b5080f483a0f3bea96c608f6caf7c39ddb2"
+  },
+  "fig_jcurve": {
+    "data_arrays_identical": true,
+    "arrays_compared": 16,
+    "baseline_rerender_matches_existing_png_exactly": false,
+    "existing_png_shape": [
+      1172,
+      3274,
+      4
+    ],
+    "baseline_png_shape": [
+      1161,
+      3265,
+      4
+    ],
+    "minimum_drawn_text_at_465_1pt_width": 6.2678366951211535,
+    "visible_text_issues": [],
+    "pdf_sha256": "500499ec6c1a387bd91bb1eb1240bc256708b64c231df6d48165481fb4c630b4",
+    "png_sha256": "d318fb163fbd090a519d9f2cd602e04c04e63430671207c1e65afcbea9ac9cc6"
+  },
+  "fig_nmm2_resonance_twotone": {
+    "data_arrays_identical": true,
+    "arrays_compared": 14,
+    "baseline_rerender_matches_existing_png_exactly": false,
+    "existing_png_shape": [
+      1217,
+      3316,
+      4
+    ],
+    "baseline_png_shape": [
+      1210,
+      3309,
+      4
+    ],
+    "minimum_drawn_text_at_465_1pt_width": 6.200000000000001,
+    "visible_text_issues": [],
+    "pdf_sha256": "bc99b1cd0dacc47be29f59e1cdcfb7a361d3bffac660ca2c613dcda80d92d7fe",
+    "png_sha256": "7c9e2c6fdb84654076a1b41a2127dbdc96de54a8099f8dd92986a7495ac2b7cd"
+  }
+}

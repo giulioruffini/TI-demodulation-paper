@@ -67,7 +67,7 @@ def fig_demod():
     # cosine, not a sinusoid. It is A^2 that is sinusoidal at Omega.
     ax[0, 0].plot(tt, 2.0 * np.abs(np.cos(np.pi * F0 * tt)), color=NERED, lw=1.9)
     ax[0, 0].set_xlabel("time (s)")
-    ax[0, 0].set_ylabel("field (mV)")
+    ax[0, 0].set_ylabel("Polarization $s$ (mV)")
     figstyle.panel(ax[0, 0], "a")
 
     ax[0, 1].semilogy(fI, PI + 1e-9, color=NEGRAY, lw=1.4)
@@ -167,7 +167,7 @@ def fig_curvature():
     ax[0, 1].loglog(epsv, resp, "o-", color=NEBLUE, ms=6)
     ax[0, 1].loglog(epsv, resp[0] * (epsv / epsv[0]) ** 2, "--", color=NEGRAY,
                     lw=1.2, label=f"slope 2 (measured {slope:.2f})")
-    ax[0, 1].set_xlabel("field amplitude $\\varepsilon$ (mV)")
+    ax[0, 1].set_xlabel("Polarization amplitude $\\varepsilon$ (mV)")
     ax[0, 1].set_ylabel("response @ $\\Omega$ (mV)")
     ax[0, 1].legend(loc="upper left", fontsize=8)
     figstyle.panel(ax[0, 1], "b")
@@ -183,7 +183,7 @@ def fig_curvature():
 
     ax[1, 1].semilogx(eps_eq, a_2t / a_am, "o-", color=NEBLUE, ms=5)
     ax[1, 1].axhline(1.0, color=NEGRAY, ls="--", lw=1.0)
-    ax[1, 1].set_xlabel("field amplitude $\\varepsilon$ (mV)")
+    ax[1, 1].set_xlabel("Polarization amplitude $\\varepsilon$ (mV)")
     ax[1, 1].set_ylabel("two-tone / AM  at $\\Omega$")
     ax[1, 1].set_ylim(0.95, 1.02)
     figstyle.panel(ax[1, 1], "d")

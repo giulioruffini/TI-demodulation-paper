@@ -1,0 +1,115 @@
+{
+  "TN0484_jne": {
+    "pages": 40,
+    "errors": 0,
+    "undefined": 0,
+    "multiply_defined": 0,
+    "overfull": 0
+  },
+  "TN0484_jne_supplement": {
+    "pages": 43,
+    "errors": 0,
+    "undefined": 0,
+    "multiply_defined": 0,
+    "overfull": 0
+  },
+  "main_labels": {
+    "removed": [],
+    "added": []
+  },
+  "main_matches_review_snapshot": false,
+  "counts": [
+    {
+      "revision": "working tree",
+      "sections": {
+        "Introduction": {
+          "text": 1137,
+          "headings": 1,
+          "captions": 71,
+          "base_total": 1209,
+          "ordinary_table_words": 0,
+          "total": 1209
+        },
+        "Theory": {
+          "text": 2978,
+          "headings": 69,
+          "captions": 226,
+          "base_total": 3273,
+          "ordinary_table_words": 167,
+          "total": 3440
+        },
+        "Methods": {
+          "text": 1264,
+          "headings": 37,
+          "captions": 81,
+          "base_total": 1382,
+          "ordinary_table_words": 0,
+          "total": 1382
+        },
+        "Results": {
+          "text": 1676,
+          "headings": 61,
+          "captions": 987,
+          "base_total": 2724,
+          "ordinary_table_words": 40,
+          "total": 2764
+        },
+        "Discussion": {
+          "text": 1099,
+          "headings": 34,
+          "captions": 59,
+          "base_total": 1192,
+          "ordinary_table_words": 214,
+          "total": 1406
+        },
+        "Conclusion": {
+          "text": 181,
+          "headings": 1,
+          "captions": 0,
+          "base_total": 182,
+          "ordinary_table_words": 0,
+          "total": 182
+        }
+      },
+      "main": {
+        "text": 8335,
+        "headings": 203,
+        "captions": 1424,
+        "base_total": 9962,
+        "ordinary_table_words": 421,
+        "total": 10383
+      },
+      "appendices": {
+        "text": 741,
+        "headings": 26,
+        "captions": 3,
+        "base_total": 770,
+        "ordinary_table_words": 27,
+        "total": 797
+      },
+      "total": 11180,
+      "abstract": 300,
+      "total_with_abstract": 11480,
+      "method": "TeXcount text + headings + captions, plus ordinary table bodies; longtable counted once. Excludes math, abstract, references, front matter and declarations."
+    }
+  ],
+  "sha256": {
+    "TN0484_envelope_demodulation.tex": "9e336974f2d7bddb80c99d560ae64fe878f1a9a2111badf3710fc54770f51838",
+    "planning/tn0484_abstract.tex": "4cb21464809b4f885c161e4e1bf28d046648ee7653ff305db3d38d016e42f505",
+    "planning/tn0484_notation.tex": "051c3488348d8b84a8c5a9dcc9c7d0bcb1e9c05ac5ad7e7cd7683501b91b5867",
+    "planning/parts/peix_definition.tex": "f3a63a5ca43afe4316484f5254c01fd2a8988d3c2df2612e92cf91768ba7692f",
+    "planning/parts/qif_protocol.tex": "f2824cb8217d1457a4198ccf40540431af2a76b01baa4eea808d219619ecf6cc",
+    "planning/parts/supp_amplification.tex": "cbf1360b2f38dbb5df4e6dfd23edcb1b1345ff66cda82f0dd61491a5433e4672",
+    "references.bib": "07d809d334e55612f47eb305f6f1ce5ba770522394c161026ab044872cf8a8f2",
+    "TN0484_jne.pdf": "8d574df904a5ac0b3ba4b5884efd0776ad81d6c2ce427a9c6ff4a359375ee3e5",
+    "TN0484_jne_supplement.pdf": "62af313662e033ada6a21109db6ca0cce847c2e8c5cd62f04e74f1ef925c3459",
+    "TN0484_jne_supplement.bbl": "974467718666d150508cecd68e456989db0fd403b343b078ad13782f604c55b1",
+    "figures/fig_demodulation_twotone.pdf": "858a4e350a29f4bd10b937027c6f03c6f40b1c24f668aa7234664b9532fabd3e",
+    "figures/fig_curvature_twotone.pdf": "ea7fe4153e8d87209271a5092d3c37fae2d29707e00ee13133286e7814c87013",
+    "figures/fig_nmm2_resonance_twotone.pdf": "bc99b1cd0dacc47be29f59e1cdcfb7a361d3bffac660ca2c613dcda80d92d7fe",
+    "figures/fig_concept.pdf": "b67719946e04a2655738d72864bdd19b7bbfb86fe1d85e1a9dc1303a9bd19d32",
+    "figures/fig_jcurve.pdf": "500499ec6c1a387bd91bb1eb1240bc256708b64c231df6d48165481fb4c630b4"
+  },
+  "main_review_snapshot_difference": "Only the availability reference changed after the snapshot: Klaus replaced commit 4b7cc66 by planned release tag jne-submission. Final journal builds include that change.",
+  "public_submission_tag": "Absent from git ls-remote at 2026-11-24 16:20 CET; Klaus owns the public cut after this checked commit."
+}

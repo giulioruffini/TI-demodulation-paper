@@ -8,9 +8,10 @@
 - [ ] obtain the mesh, potentials, and solver inputs for the offered one-refinement interface check; retain the unresolved convergence qualification
 - [ ] Giulio: decide the seven retained CUT? passages and the biological-rectifier sentence in docs/revision_2026-10-06_v0150draft16_readability.md
 - [ ] confirm the remaining availability/license questions, ethics sentence, de Palma description, salvador2025 placement, tool versions, and author approval
-- [ ] keep further public GitHub pushes and separate circulation to other coauthors on hold pending explicit authorization
+- [ ] Klaus: include the four repaired figure generators in the authorized public code cut and align its availability reference; retain the hold on archives and coauthor circulation
 - [ ] migrate the folder at a coordinated version boundary with no concurrent editors; run the layout checker before and after
 - [ ] correct Nir Grossman’s lowercase ORCID-derived display name and complete Canals/Mirasso affiliations on the latest Zenodo record without rewriting historical bylines
+- [x] integrate the approved external submission-review corrections, relocate notation, verify figure arrays and labels, and rebuild the 40-page article and 43-page supplement
 - [x] independently check the repaired revision against 864121f, restore remaining scope conditions, and verify notation, Figure 12(b), word count, and 12-point PDFs
 - [x] clarify the slow-synapse reduction, stationary feedback gain, and rate–potential normalization with Klaus; verify algebra, prose, builds, and length
 - [x] independently check and commit the Theory–Conclusion prose pass with preserved content, clean builds, and the 12,000-word count

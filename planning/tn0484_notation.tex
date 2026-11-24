@@ -1,6 +1,9 @@
 % One notation source for the article, supplement, and full TN.
+\ifappendices
 Table~\ref{\notationtablelabel} groups the symbols by their role in the calculation.
-\ifappendices\else Symbols used only in supplementary derivations appear in the supplement's notation table.\fi\space
+\else
+The complete notation table is in the supplement (Table~\ref{tab:notation-supp}).
+\fi
 JR and LaNMM voltages are in mV and rates in s$^{-1}$. MPR mean voltage and current-like inputs are dimensionless.
 QIF simulations use ms and ms$^{-1}$, with rates converted to Hz where indicated.
 The uncoupled MPR derivation uses membrane-time units (Appendix~\ref{app:mpr-coefficients}).
@@ -9,6 +12,7 @@ at balanced currents, held fixed during the ratio sweep. A star otherwise marks 
 on a bifurcation parameter, its critical value. Subscripts E and I identify
 excitatory and inhibitory populations; they are not field or current variables.
 
+\ifappendices
 \clearpage
 \begingroup
 \footnotesize
@@ -130,3 +134,4 @@ $\mathrm{PPC}$ & Pairwise phase consistency of single-neuron spike phases & dime
 $f_{\rm out},S(f_c)$ & Dominant output frequency; LaNMM mean off-alpha lock-in & Hz; mV & App.~\ref{sec:vocab}; \S\ref{sec:lanmm-methods} \\
 \end{longtable}
 \endgroup
+\fi

@@ -3,6 +3,18 @@ The finite network uses the PING model and observables defined in
 \S\ref{sec:qif-methods}. The following settings support the weak-drive and
 field-induced gamma comparisons.
 
+The finite cutoff approximates the infinite-voltage reset model underlying the
+exact MPR mean field \cite{montbrio2015}. For a single neuron obeying
+$\tau_m\dot V=V^2+q$ at constant normalized drive $q>0$, integration from
+reset $-V_{\rm peak}$ to spike threshold $+V_{\rm peak}$, with instantaneous
+reset, gives the exact firing rate
+\[
+r_{\rm cut}=\frac{\sqrt q}{2\tau_m\arctan(V_{\rm peak}/\sqrt q)},\qquad
+r_{\infty}=\frac{\sqrt q}{\pi\tau_m}.
+\]
+Here $r_{\infty}$ is the infinite-cutoff limit. Increasing population size
+alone does not remove the finite-cutoff error.
+
 Euler integration uses $0.0025$~ms steps and $800$~ms settling, exceeding
 four field-free relaxation times at $\bar\eta=0.85$ ($176$~ms).
 Measurements cover whole beat cycles to avoid phase-coverage bias:

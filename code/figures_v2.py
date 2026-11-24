@@ -20,7 +20,7 @@ def concept():
     fig = plt.figure(figsize=(11.5, 4.4)); ax = fig.add_axes([0,0,1,1]); ax.axis("off")
     ax.set_xlim(0,100); ax.set_ylim(0,44)
     stages = [
-        (2 , "AM field  $s(t)$", "carrier $f_c$\nenvelope $\\Omega$", NEL),
+        (2 , "Local polarization\n$s(t)$", "carrier $f_c$\nenvelope $\\Omega$", NEL),
         (27, "Nonlinear\ndetector", "firing-rate sigmoid\n$\\sigma(v)$,  curvature $\\sigma''$", NEB2),
         (52, "Tuned\nresonator", "2nd-order synapses\nnear Hopf,  $f_0$", NEB2),
         (77, "Demodulated\noutput @ $\\Omega$", "alpha rhythm\nrecovered", NEL),
@@ -52,7 +52,7 @@ def concept():
         elif kind=="ripple": s=np.cos(2*np.pi*2*tt)+0.16*np.cos(2*np.pi*22*tt)  # post-tank
         else:                s=np.cos(2*np.pi*2*tt)                    # recovered envelope
         axx.plot(tt,s,color=NEB,lw=1.0); axx.margins(y=0.15)
-    wav(12,"am","AM field"); wav(37,"rect","rectified"); wav(62,"ripple","filtered"); wav(87,"sine","envelope @ $\\Omega$")
+    wav(12,"am","Local polarization"); wav(37,"rect","rectified"); wav(62,"ripple","filtered"); wav(87,"sine","envelope @ $\\Omega$")
     figstyle.scale_text(fig, placed_frac=1)
     overlap.check(fig, placed_frac=1, name="figures_v2.py")
     fig.savefig(f"{FIGS}/fig_concept.png",dpi=300); fig.savefig(f"{FIGS}/fig_concept.pdf")

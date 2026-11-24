@@ -20,7 +20,7 @@ cols=plt.cm.viridis(np.linspace(0.12,0.82,len(Csel)))
 import jr_jsweep_engine as E
 for C,c in zip(Csel,cols):
     g=E.jac_eig(E.p_of_C(vstar,C),C)[1]
-    ax[1].plot(fdf,R[f"res_{int(round(C*10))}"],color=c,lw=1.9,label=f"$C$={C:.0f} ($\\gamma$={g:.1f})")
+    ax[1].plot(fdf,R[f"res_{int(round(C*10))}"],color=c,lw=1.9,label=f"$C$={C:g} ($\\gamma$={g:.1f})")
 ax[1].set_xlabel(r'$\Delta f$ (Hz)'); ax[1].set_ylabel(r'$A_\Omega$ (mV)')
 figstyle.panel(ax[1], "b"); ax[1].legend(fontsize=8); ax[1].grid(alpha=.3)
 # (c) gain vs 1/gamma with 1/gamma guide

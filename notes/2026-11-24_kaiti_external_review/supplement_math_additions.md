@@ -1,0 +1,9 @@
+# Supplement math additions — 2026-11-24
+
+The QIF protocol now distinguishes the finite cutoff from the infinite-voltage reset model underlying the exact MPR mean field. For constant normalized drive q > 0 and instantaneous symmetric reset, the transit time is 2 tau_m arctan(V_peak / sqrt(q)) / sqrt(q). Its reciprocal is the exact finite-cutoff firing rate; the infinite-cutoff limit is sqrt(q) / (pi tau_m). Increasing population size does not remove the finite-cutoff error. The existing Montbrió citation supports the exact MPR model, while the transit-time formula follows directly from the stated scalar equation.
+
+The existing driven-endpoint stability paragraph now identifies the AM surrogate's frequencies as 249.5, 300, and 350.5 Hz and states that the multipliers use its full 2 s forcing period. This matches `code/s10_periodic_stability_check.py:19–22` and the waveform in `code/nmm2_jcA.py:14`. The distinct 300 Hz center / 55 Hz two-tone condition has a 400 ms forcing period and is not the Floquet check described here. Settling times, control conditions, and numerical results are unchanged.
+
+The linear TI/tACS ratio 0.143 comes from the AM surrogate with epsilon_TI = 0.3 mV, m = 1, and f_c = 100 Hz versus a direct tACS sinusoid with epsilon_tACS = 0.1 mV, both at the field-free pinned operating point v* = 8.30 mV. The parameters and ratio calculation are explicit in `code/ti_tacs_ratio_vs_gamma.py:17–20` and already documented in `planning/parts/supp_amplification.tex:5`. Direct arithmetic gives 0.1430394719301372. The 0.0143039 mV source-matched tACS amplitude belongs to the additional control and is not the denominator used for 0.143. The 0.3 mV value is the AM carrier coefficient, not a per-tone amplitude for genuine two-tone TI.
+
+Validation was limited to source inspection, the transit-time derivation, direct scalar arithmetic, and a whitespace diff check. No simulations or builds were run, and no main-text source was edited.
