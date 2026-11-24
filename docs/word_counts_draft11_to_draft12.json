@@ -1,0 +1,114 @@
+{
+  "before": "01f4cbb",
+  "after": "0.15.0-draft12",
+  "method": "TeXcount text + headings + captions; math, bibliography, and front matter excluded. Abstract and Introduction recounted; all later sections are byte-identical to the baseline and retain their verified counts.",
+  "sections": {
+    "Abstract": {
+      "before": 285,
+      "after": 321,
+      "change": 36
+    },
+    "Introduction": {
+      "before": 905,
+      "after": 958,
+      "change": 53
+    },
+    "Theory": {
+      "before": 4239,
+      "after": 4239,
+      "change": 0
+    },
+    "Methods": {
+      "before": 2481,
+      "after": 2481,
+      "change": 0
+    },
+    "Results": {
+      "before": 3798,
+      "after": 3798,
+      "change": 0
+    },
+    "Discussion": {
+      "before": 1441,
+      "after": 1441,
+      "change": 0
+    },
+    "Conclusion": {
+      "before": 230,
+      "after": 230,
+      "change": 0
+    },
+    "Code and data availability": {
+      "before": 96,
+      "after": 96,
+      "change": 0
+    },
+    "Acknowledgments": {
+      "before": 30,
+      "after": 30,
+      "change": 0
+    },
+    "Competing interests": {
+      "before": 39,
+      "after": 39,
+      "change": 0
+    },
+    "Author contributions": {
+      "before": 71,
+      "after": 71,
+      "change": 0
+    },
+    "Declaration of generative AI and AI-assisted technologies in the manuscript preparation process": {
+      "before": 62,
+      "after": 62,
+      "change": 0
+    },
+    "Appendix: Notation and units": {
+      "before": 795,
+      "after": 795,
+      "change": 0
+    },
+    "Appendix: Simulated models: equations and parameters": {
+      "before": 168,
+      "after": 168,
+      "change": 0
+    },
+    "Appendix: The cubic Hopf normal form lacks a quadratic mixer": {
+      "before": 146,
+      "after": 146,
+      "change": 0
+    },
+    "Appendix: Efficiency of a memoryless transfer against a direct in-band drive": {
+      "before": 560,
+      "after": 560,
+      "change": 0
+    },
+    "Appendix: Extension: the laminar column at low carriers": {
+      "before": 1293,
+      "after": 1293,
+      "change": 0
+    },
+    "Appendix: Vocabulary and metrics": {
+      "before": 293,
+      "after": 293,
+      "change": 0
+    },
+    "Appendix: Supplementary figures": {
+      "before": 1202,
+      "after": 1202,
+      "change": 0
+    }
+  },
+  "totals": {
+    "article": {
+      "before": 13677,
+      "after": 13766,
+      "change": 89
+    },
+    "supplement": {
+      "before": 4457,
+      "after": 4457,
+      "change": 0
+    }
+  }
+}

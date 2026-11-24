@@ -1,0 +1,30 @@
+{
+  "baseline": "864121f",
+  "article_pages": 44,
+  "supplement_pages": 42,
+  "article_and_appendices_words": 11872,
+  "abstract_words": 298,
+  "combined_words": 12170,
+  "errors": 0,
+  "undefined_references": 0,
+  "multiply_defined_labels": 0,
+  "overfull_boxes": 0,
+  "sha256": {
+    "references.bib": "5550928ec2cb8ab808ab2f5050ef734a3c25acbd8e5b25730e48fe22b25f6924",
+    "TN0484_envelope_demodulation.tex": "abeeb9e51a075eab61dfcd9c302dc0125057d37160e4e7ac96664104169b98e5",
+    "todo.md": "0622a4d56c2b7f9aa9abbf6c21a8b57739a80711161e06e54037555def9d919d",
+    "planning/tn0484_abstract.tex": "85677c8e737aaeb5320d56ea6eb65e843bb833a716774e40c0681195532b2adc",
+    "planning/tn0484_notation.tex": "b90f6c3bb99b0b171b5de91e494731648c4e343315f29708db672f46a99c6898",
+    "code/mpr_crossover_fig.py": "a6387f9faffe34b066461b4ff89ef7d713ff22fd74cd9d67725dfcb5978050bb",
+    "docs/current_state.md": "144ec879c5ff502825357c5a1141a3bfc45e6f603d1da538f28c7c30c2717030",
+    "figures_src/fig_models_ti_caption.tex": "3c4d7f3d7ebb03a076cce9067ac25070cb970b28634cc8ed41cf3d800db0b84c",
+    "planning/parts/slow_synapse.tex": "ce7b31ad177dad715f2f2f2acff133e8e9e94082c117f031b483dab323adede8",
+    "planning/parts/fem_interfaces.tex": "232ddb4f7324075b87930135c5b02d429f466ae23e8bd9b76279fecdd908c931",
+    "planning/parts/theta_pilot.tex": "22c4f2f31e4313081684f4dca8c851f55368ec8c3bcf06b6ba49e166c48128c5",
+    "planning/parts/article_models.tex": "bae2b834a0d56437a03da68c6786817132af7f8d99ed1813c1ae939c4e9a7a65",
+    "planning/parts/harmonic_details.tex": "e0b591004c1bc04724ec01118ed40adcce12b8f1f57ef7565a8d47595a75f77b",
+    "planning/parts/supp_detection.tex": "72d16b9c1f9eb97002fc581f78e67a24d6ec5bf66385f75d81e3201fd46d2a2b",
+    "TN0484_jne.pdf": "13518527d6d0b5ed6398cf37c6925cf7574a015454f73b2c36607f9f624a9a4c",
+    "TN0484_jne_supplement.pdf": "5e0cf1a655c4e260173a0879195a685d768ab9941fe3012b922a55a87417b3e2"
+  }
+}

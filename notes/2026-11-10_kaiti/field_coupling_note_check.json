@@ -1,0 +1,24 @@
+{
+  "algebraic_check": {
+    "comparisons": 63,
+    "max_relative_error": 3.537066260547775e-15,
+    "max_pinned_equilibrium_residual": 5.551115123125783e-17
+  },
+  "dimensional_to_normalized_check": {
+    "states": 9,
+    "max_absolute_derivative_discrepancy": 1.1102230246251565e-16,
+    "illustrative_current_scale_pA": 200.0,
+    "illustrative_normalized_field_coefficient": 0.01
+  },
+  "slow_limit_check": {
+    "equilibrium_gain_cases": 15,
+    "max_relative_finite_difference_error": 1.374411251475749e-08,
+    "max_relative_coordinate_error": 2.4424906541753444e-15,
+    "max_stationarity_current_residual": 1.4988010832439613e-15
+  },
+  "pdf_pages": 11,
+  "pdf_words_whitespace": 5469,
+  "pdf_sha256": "d575ac7c7d5b09b71672f6f704ec49a81e7dec9785b99dc1a23b2f8577dd9e01",
+  "tex_warnings": [],
+  "scope": "Source audit, derivations, equilibrium and linear-response calculations; no time-domain neuronal simulations."
+}

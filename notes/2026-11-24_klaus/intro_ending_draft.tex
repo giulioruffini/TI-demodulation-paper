@@ -1,0 +1,35 @@
+% Draft: new ending of the Introduction (Klaus, 2026-11-24). Replaces the two paragraphs
+% "We focus on weak stimulation-induced changes ..." and "The framework of
+% Fig.~\ref{fig:concept} ...". Content preserved; acronyms JR and QIF defined; adds a
+% "Here we" statement and ends on the receiver picture instead of the calibration caveat.
+
+Here we develop the receiver picture of Fig.~\ref{fig:concept}: cellular mixing followed
+by recurrent gain, extending models of endogenous cross-frequency coupling
+\cite{ruffini2025cfc,ruffini2025ham}. We work at the population level, with weak
+stimulation-induced changes around ongoing activity that may already include spiking.
+Direct carrier-evoked spiking and conduction block
+\cite{opancar2025,peripheral2023,semenov2025} lie outside this expansion, and the
+finite-amplitude network examples are identified as such.
+
+Weak static detection produces two sources: a beat proportional to the product of the
+carrier polarizations, and a steady, direct-current-like source proportional to their
+summed squares. Cassar\`a et al.\ showed that this product law fixes the spatial
+pattern of the beat, so that changing the current ratio only rescales it
+\cite{cassara2025part2}. What is new here concerns the fate of both sources in neural
+tissue. The steady source is a stimulus in its own right: it can act at depth, and its
+sign is set by the state and dynamics of the detector rather than by carrier polarity.
+In the exact mean field of quadratic integrate-and-fire (QIF) neurons, fast carriers
+rectify, so the steady source follows the slope of the rate curve even where its
+curvature predicts the opposite sign, and an unmodulated carrier matched in
+root-mean-square input shows that this shift alone can drive the circuit into gamma
+oscillation without any beat. Detection and amplification are separable: in a
+Jansen--Rit (JR) neural mass column held at a fixed operating point, recurrent gain
+varies independently of detector curvature, grows near a Hopf bifurcation as it does for
+transcranial alternating-current stimulation, and appears mainly as beat-locked
+modulation of the population rate, with little change in mean rate. In a realistic head
+model, the current ratio leaves the beat pattern unchanged, as the product law requires,
+but moves the envelope and mean-square foci in opposite directions, so where TI acts
+depends on which feature the tissue detects. The size of these effects in vivo depends
+on the field-to-detector transfer at kHz frequencies, which remains to be calibrated.
+Within that limit, the cortical column behaves as a tuned receiver whose response is set
+in turn by access, detection, and gain.

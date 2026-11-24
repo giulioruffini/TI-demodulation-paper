@@ -1,0 +1,23 @@
+fig_feasibility_khz.pdf: 741 pt wide, placed 1, scale 0.627; printed sizes 6.1..8.4 pt; 58 spans
+    COLLISION  'εeq ∝λ2' x '0E2' (24%) at (349,223)
+fig_curvature_twotone.pdf: 877 pt wide, placed 1, scale 0.530; printed sizes 4.3..8.4 pt; 42 spans
+    COLLISION  '1' x '2σ00(v * )ε2' (16%) at (302,43)
+    TOO SMALL  1 span(s) below 6.0 pt: '1'@4.3
+fig_fem.pdf: 732 pt wide, placed 1, scale 0.635; printed sizes 6.1..8.9 pt; 72 spans
+fig_mpr_crossover.pdf: 803 pt wide, placed 1, scale 0.579; printed sizes 4.5..8.9 pt; 37 spans
+    COLLISION  '1' x '4F00(Q): static curvatur' (18%) at (83,55)
+    COLLISION  '∝f−2' x 'c' (54%) at (635,109)
+    TOO SMALL  2 span(s) below 6.0 pt: '1'@4.5, 'c'@4.5
+fig_qif_raster_twotone.pdf: 726 pt wide, placed 1, scale 0.640; printed sizes 6.1..9.6 pt; 60 spans
+fig_qif_regimes.pdf: 734 pt wide, placed 1, scale 0.634; printed sizes 6.1..9.5 pt; 90 spans
+fig_khz_twotone.pdf: 618 pt wide, placed 0.95, scale 0.714; printed sizes 6.4..8.9 pt; 35 spans
+fig_qif_timing_twotone.pdf: 993 pt wide, placed 1, scale 0.468; printed sizes 6.1..7.5 pt; 44 spans
+fig_lanmm_field_p1_twotone.pdf: 656 pt wide, placed 0.86, scale 0.610; printed sizes 6.1..8.3 pt; 88 spans
+fig_lanmm_field_p2_twotone.pdf: 656 pt wide, placed 0.86, scale 0.610; printed sizes 6.1..8.3 pt; 88 spans
+fig_khz.pdf: 580 pt wide, placed 0.74, scale 0.593; printed sizes 4.5..7.7 pt; 22 spans
+    COLLISION  '∝1/f2' x 'c' (54%) at (113,287)
+    TOO SMALL  1 span(s) below 6.0 pt: 'c'@4.5
+fig_khz_direct.pdf: 677 pt wide, placed 1, scale 0.686; printed sizes 4.2..8.9 pt; 35 spans
+    COLLISION  '∝1/f2' x 'c' (54%) at (102,204)
+    TOO SMALL  1 span(s) below 6.0 pt: 'c'@4.2
+fig_nmm2_jcurve.pdf: 678 pt wide, placed 0.92, scale 0.631; printed sizes 6.1..9.5 pt; 28 spans

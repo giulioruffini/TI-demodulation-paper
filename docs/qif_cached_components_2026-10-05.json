@@ -1,0 +1,113 @@
+{
+  "cache_sha256": "92c7ad13467d5d4af0c1fb74fbf248ac33297647bdd95ad4f8a53dfc44d5124a",
+  "estimator": "Hann lock-in amplitude divided by the measurement-window mean",
+  "conditions": {
+    "forced_off": {
+      "qif": {
+        "mean_rate_per_ms": 0.0526640625,
+        "beat_Hz": 55.0,
+        "gamma_peak_Hz": 52.9748615678595,
+        "gamma_depth": 0.0051697359178548615,
+        "gamma_FFT_bin_Hz": 52.49999999965606,
+        "gamma_FFT_bin_depth": 0.004850429867627272,
+        "beat_depth": 0.0013472501659191048,
+        "sum_depth": 0.00012106572522185702,
+        "difference_depth": 3.6738357562171996e-05,
+        "window_ms": 799.9999999999999
+      },
+      "mean_field": {
+        "mean_rate_per_ms": 0.05062550234201931,
+        "beat_Hz": 55.0,
+        "gamma_peak_Hz": 53.499998288974865,
+        "gamma_depth": 0.000935273745444323,
+        "gamma_FFT_bin_Hz": 52.49999999732459,
+        "gamma_FFT_bin_depth": 0.000445002721326314,
+        "beat_depth": 0.0007676348921013769,
+        "sum_depth": 8.734820461561093e-07,
+        "difference_depth": 1.8807080188183304e-05,
+        "window_ms": 800.0000000174623
+      }
+    },
+    "forced_on": {
+      "qif": {
+        "mean_rate_per_ms": 0.05821203125,
+        "beat_Hz": 55.0,
+        "gamma_peak_Hz": 52.26098548583192,
+        "gamma_depth": 0.7037798891502454,
+        "gamma_FFT_bin_Hz": 52.49999999965606,
+        "gamma_FFT_bin_depth": 0.6854439835795528,
+        "beat_depth": 0.2901696475594726,
+        "sum_depth": 0.213130117453153,
+        "difference_depth": 0.015423924339228783,
+        "window_ms": 799.9999999999999,
+        "stored_beat_depth": 0.2901696475600123
+      },
+      "mean_field": {
+        "mean_rate_per_ms": 0.05687297162382236,
+        "beat_Hz": 55.0,
+        "gamma_peak_Hz": 51.86127828546536,
+        "gamma_depth": 0.6999883298464804,
+        "gamma_FFT_bin_Hz": 51.249999997388294,
+        "gamma_FFT_bin_depth": 0.6010611093662714,
+        "beat_depth": 0.3141567502982095,
+        "sum_depth": 0.2271816594981314,
+        "difference_depth": 0.017278233891945532,
+        "window_ms": 800.0000000174623
+      }
+    },
+    "entrain_off": {
+      "qif": {
+        "mean_rate_per_ms": 0.05239045239632005,
+        "beat_Hz": 42.0,
+        "gamma_peak_Hz": 54.83300467399093,
+        "gamma_depth": 0.9485356117601415,
+        "gamma_FFT_bin_Hz": 54.35302910013217,
+        "gamma_FFT_bin_depth": 0.8596791894570723,
+        "beat_depth": 5.408524795915538e-06,
+        "sum_depth": 0.00027411838560313694,
+        "difference_depth": 0.00013332400481673375,
+        "window_ms": 809.5225
+      },
+      "mean_field": {
+        "mean_rate_per_ms": 0.05119647523262108,
+        "beat_Hz": 42.0,
+        "gamma_peak_Hz": 54.560971388605665,
+        "gamma_depth": 0.9909108018923032,
+        "gamma_FFT_bin_Hz": 54.35302909771841,
+        "gamma_FFT_bin_depth": 0.9729341258478931,
+        "beat_depth": 0.00015269619154490552,
+        "sum_depth": 7.127745446426196e-05,
+        "difference_depth": 1.685510887782074e-06,
+        "window_ms": 809.5225000176703
+      }
+    },
+    "entrain_on": {
+      "qif": {
+        "mean_rate_per_ms": 0.056381230910814706,
+        "beat_Hz": 42.0,
+        "gamma_peak_Hz": 53.569206794165225,
+        "gamma_depth": 1.0041360865000417,
+        "gamma_FFT_bin_Hz": 53.117732984220076,
+        "gamma_FFT_bin_depth": 0.9206815198294633,
+        "beat_depth": 0.23177177607316118,
+        "sum_depth": 0.28670340866602817,
+        "difference_depth": 0.043890916870288045,
+        "window_ms": 809.5225,
+        "stored_beat_depth": 0.23177177607349378
+      },
+      "mean_field": {
+        "mean_rate_per_ms": 0.0560175660829052,
+        "beat_Hz": 42.0,
+        "gamma_peak_Hz": 53.340086249798176,
+        "gamma_depth": 1.0234657995205023,
+        "gamma_FFT_bin_Hz": 53.117732981861174,
+        "gamma_FFT_bin_depth": 1.002255458095143,
+        "beat_depth": 0.23852633534216486,
+        "sum_depth": 0.2967591176900719,
+        "difference_depth": 0.04351420287588708,
+        "window_ms": 809.5225000176703
+      }
+    }
+  },
+  "carrier_excursion_estimate_per_tone": 1.2378717796036305
+}

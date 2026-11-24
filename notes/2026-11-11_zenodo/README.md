@@ -1,0 +1,17 @@
+# TN0484 preprint deposit, November 11, 2026
+
+The article and supplement at scientific-source commit `47adb53` are published at [Zenodo record 24145177](https://zenodo.org/records/24145177), version DOI **10.5281/zenodo.24145177**, under CC BY 4.0. The concept DOI remains **10.5281/zenodo.21009618**. Giulio authorized this deposit with “deposit 484.” Further public GitHub pushes, a separate data deposit, and separate coauthor circulation remain outside that instruction.
+
+The manuscript is **v0.15.0-draft29**. Calliope WP0185 and Zenodo identify this archive as **v0.13.0**, the next minor version after their v0.12.0. These counters differ. No empty intermediate versions were created. The 38-page article is dated November 11; its unchanged 35-page supplement is dated November 10. Both retain the manuscript draft label.
+
+The deposited PDF joins the two canonical reading PDFs. Assembly resolved 188 links between the documents and verified all 591 internal links. All 73 pages rendered identically to the source PDFs. The downloaded Zenodo copy also preserves those links and pages; the only pixel difference is Calliope’s stamp in the first page’s left margin. There are no unresolved reference markers. TN0486’s version DOI, 10.5281/zenodo.24141603, is present in the article.
+
+The frozen byline is Giulio Ruffini, Ricardo Salvador, Borja Mercadal, Raul de Palma Aristides, Francesca Castaldo, Nir Grossman, Santiago Canals, and Claudio Mirasso. The public API confirms all eight ORCIDs in that order, including the compound surname “de Palma Aristides.” Nir’s author record was created through Calliope’s portal; Raul’s existing full-name record received his ORCID. The older short-name Raul record was not edited or deleted.
+
+Calliope’s exporter copies Nir’s lowercase ORCID registry spelling (“grossman, nir”) into Zenodo. The printed PDF uses normal capitalization. Calliope also exports only BCOM for Canals and Mirasso, omitting their additional affiliations printed in the paper. These catalog corrections remain in `todo.md`. The available metadata-refresh tool rewrites every historical version’s byline, so it was not used for these limited corrections.
+
+The prior root files were archived before upload. Calliope received 79 source and support files plus the combined PDF, with the PDF pinned as the primary source. The source package contains only the manuscript and its rendering dependencies; it builds to 38 and 35 pages without final-pass errors or unresolved references. The separate simulation datasets and private notes were not included. Zenodo contains the stamped combined PDF; the manuscript sources are in Calliope.
+
+Calliope indexed 149 chunks and accepted the record with the normal limitation for PDF extraction. The direct mint command skipped because the work already had a Zenodo record; the version-update pipeline published the revision under the existing concept DOI. A temporary HTTP 502 during status polling did not prevent publication. No duplicate version was created.
+
+Evidence is in `archive_preparation.json`, `source_manifest.json`, `pdf_assembly_check.json`, `zenodo_pdf_check.json`, and `zenodo_record.json`. `build_preprint.py` reproduces PDF assembly after staging the two reading PDFs in `build/zenodo_2026-11-11/`. The citation is in the repository-root `citation.bib` and `CITATION.cff`. The same BibTeX entry is included in the TN0439 author review and its updated Downloads ZIP.

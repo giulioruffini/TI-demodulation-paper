@@ -1,0 +1,75 @@
+\subsection{Field orientation relative to hippocampal anatomy}\label{supp:fem-orientation}
+The fields in IXI002 follow neither the hippocampal long axis nor the local
+laminar direction. Table~\ref{tab:fem-orientation} compares the carrier fields
+$\mathbf E_1,\mathbf E_2$ and each montage's balanced-envelope-maximizing
+direction $\mathbf n^*$ at $2+2$~mA.
+The principal coordinate axes of the 1,568-node FreeSurfer hippocampal region
+of interest (ROI) are PC1, the anterior-positive long axis; PC2, lateral-positive; and
+PC3$={\rm PC1}\times{\rm PC2}$, normal to its best-fit plane. Angles are
+unsigned, from $0$ to $90^\circ$, and nodes receive equal weight.
+Weighting by field magnitude, or envelope maximum for $\mathbf n^*$,
+changes these angular medians by at most about $1.5^\circ$.
+
+\begin{table}[htbp]
+\centering\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}llrrrr@{}}
+\toprule
+Montage & Direction & PC1 & PC2 & PC3 & Laminar\\
+\midrule
+Violante & $\mathbf E_1$ & 71 (63--78) & 25 (17--33) & 79 (73--84) & 69 (53--80)\\
+ & $\mathbf E_2$ & 58 (51--67) & 35 (27--42) & 83 (77--87) & 72 (57--81)\\
+ & $\mathbf n^*$ & 66 (62--71) & 28 (22--34) & 80 (73--85) & 69 (53--80)\\
+Yatsuda & $\mathbf E_1$ & 71 (64--78) & 25 (20--35) & 76 (69--84) & 74 (55--83)\\
+ & $\mathbf E_2$ & 77 (71--83) & 21 (15--27) & 79 (70--85) & 74 (54--83)\\
+ & $\mathbf n^*$ & 75 (66--83) & 23 (16--32) & 78 (70--85) & 74 (56--83)\\
+\bottomrule
+\end{tabular}
+\caption{Angles in degrees, median (interquartile range). Coordinate-axis
+comparisons use all 1,568 ROI nodes; laminar comparisons use the 934 nodes
+where that direction is defined. Yatsuda denotes the FT7--F8, TP7--P8
+rendering.}
+\label{tab:fem-orientation}
+\end{table}
+
+The laminar direction is the normalized gradient of HippUnfold's inner--outer
+Laplace coordinate \cite{dekraker2022}, sampled at the nearest voxel without
+smoothing. HippUnfold 1.5.2-pre.2 processed the same T1 image; its container,
+arguments and segmentation-model hash are recorded in
+\path{docs/fem_ixi002_violante.md}. The coordinate has a $0.2$~mm grid
+in T1 world coordinates. It defines directions at 934 nodes (59.6\% of the
+ROI); 565 are interior, with their voxel and all six face neighbors inside
+the Laplace domain. The laminar direction lies $33^\circ$ (21--54) from PC3
+and $76^\circ$ (55--83) from PC2. Its median spread about its own principal
+axis is $31^\circ$ (23--51), so one uniform direction cannot follow it
+throughout the region.
+
+A laminar-aligned detector samples smaller polarizations than an optimally
+oriented one. In the Violante montage, median absolute projections of the
+unit carrier directions onto the laminar direction are 0.36 and 0.31.
+The map fractions in Table~\ref{tab:fem-laminar-fractions} are computed
+node by node, each divided by that map's own maximum over orientation.
+The quadratic and mean-square denominators therefore need not occur at
+$\mathbf n^*$. These fractions describe geometry under a laminar-detector
+hypothesis, before state-dependent detection or recurrent gain.
+
+\begin{table}[htbp]
+\centering\small
+\begin{tabular}{@{}llrrr@{}}
+\toprule
+Montage & Nodes & Envelope & Quadratic beat & Mean square\\
+\midrule
+Violante & All defined (934) & 0.29 (0.11--0.57) & 0.11 (0.02--0.34) & 0.12 (0.04--0.33)\\
+ & Interior (565) & 0.25 (0.10--0.54) & 0.08 (0.02--0.29) & 0.09 (0.03--0.31)\\
+Yatsuda & All defined (934) & 0.25 (0.09--0.55) & 0.07 (0.01--0.32) & 0.08 (0.02--0.33)\\
+ & Interior (565) & 0.25 (0.10--0.47) & 0.07 (0.02--0.25) & 0.08 (0.02--0.26)\\
+\bottomrule
+\end{tabular}
+\caption{Laminar-projected map divided by its orientation maximum, median
+(interquartile range). Restricting the Violante comparison to interior nodes
+gives carrier and $\mathbf n^*$ angles to the laminar direction of
+$71^\circ$, $74^\circ$, and $71^\circ$, respectively.}
+\label{tab:fem-laminar-fractions}
+\end{table}
+
+The carrier directions themselves differ by a median $14.2^\circ$ (10.2--18.6) in the Violante montage and $7.5^\circ$ (4.2--11.4) in the Yatsuda rendering; their 95th percentiles are $29.2^\circ$ and $16.8^\circ$. The renderings also differ in electrode layout. With the tested 20-mm discs, the Violante e2 center is 9.4 and 18.4~mm from AF8 and Fp2, and e4 is 10.4 and 19.0~mm from P8 and PO8. These separations meet the 20-mm overlap criterion if those cap positions are occupied, for this layout and disc size.

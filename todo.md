@@ -1,0 +1,34 @@
+# TODO — TN0484 / WP0185 (TI tuned receiver)
+
+- [ ] freeze the shared manuscript after author review and cut the submission version
+- [ ] agree on Raul’s first Zhao-model calibration conditions using the dimensional field-coupling note before launching the proposed simulations
+- [ ] obtain Ricardo’s FreeSurfer-only NPZ and SHA-256; adapt the portable reader for optional atlas labels and verify the published spatial statistics
+- [ ] align the public repository, data-availability links, Zenodo record, submission tag, and data deposit when release is authorized
+- [ ] obtain the exact private TI-library revision used by Ricardo’s imported FEM producers
+- [ ] obtain the mesh, potentials, and solver inputs for the offered one-refinement interface check; retain the unresolved convergence qualification
+- [ ] Giulio: decide the seven retained CUT? passages and the biological-rectifier sentence in docs/revision_2026-10-06_v0150draft16_readability.md
+- [ ] confirm the remaining availability/license questions, ethics sentence, de Palma description, salvador2025 placement, tool versions, and author approval
+- [ ] keep further public GitHub pushes and separate circulation to other coauthors on hold pending explicit authorization
+- [ ] migrate the folder at a coordinated version boundary with no concurrent editors; run the layout checker before and after
+- [ ] correct Nir Grossman’s lowercase ORCID-derived display name and complete Canals/Mirasso affiliations on the latest Zenodo record without rewriting historical bylines
+- [x] independently check the repaired revision against 864121f, restore remaining scope conditions, and verify notation, Figure 12(b), word count, and 12-point PDFs
+- [x] clarify the slow-synapse reduction, stationary feedback gain, and rate–potential normalization with Klaus; verify algebra, prose, builds, and length
+- [x] independently check and commit the Theory–Conclusion prose pass with preserved content, clean builds, and the 12,000-word count
+- [x] derive the MPR log-rate equation in Appendix B.3 and identify its fast two-tone beat drive
+- [x] clarify the feasibility figure’s separate field examples and verify its source budget
+- [x] simplify voltage/amplitude/total-drive notation and redundant time arguments; verify tables and builds
+- [x] verify the approved Introduction ending against Results; preserve QIF, JR, and spatial-map conditions and rebuild the shared article
+- [x] integrate the checked abstract, approved Introduction and S3.1 extrema proof; clarify the two-tone envelope, phase, and midpoint-frequency notation and verify builds
+- [x] deposit manuscript v0.15.0-draft29 and its supplement as Zenodo archive v0.13.0, DOI 10.5281/zenodo.24145177, and update the coordinated references
+- [x] integrate the approved TN0439 and TN0486 citations, print the version-specific DOI, and rebuild the draft29 article and draft20 redline
+- [x] integrate Ricardo’s November 6 contrasts, orientation and corrected interface results as draft28 without increasing article length
+- [x] trace the earlier field-coupling argument, restore dimensional QIF/MPR, check JR DC response and stability, and deliver the LaTeX note with a Zhao-model study plan
+- [x] expose the slow-synapse input and recurrent gain in Theory 2.9 and give Raul the full dimensional derivation, with prior-work attribution and algebraic checks
+- [x] create and verify a simpler six-slide overview with the main findings and figures; retain the detailed thirteen-slide deck
+- [x] read Ricardo’s November 6 email, verify new JSON values with Klaus, and record the export and integration requirements
+- [x] complete draft27 reader-flow revision, retain the scoped 0.348 result, and verify moved numbers, qualifications, builds, and Klaus’s fidelity check
+- [x] consolidate draft26 and integrate the available November 4 FEM corrections; preserve key explanations and complete fidelity/build checks
+- [x] deliver draft25 after readability revision, supporting-detail relocations, Klaus’s fidelity review, and final builds (October 30)
+- [x] deliver draft24 after compression, figure repairs, builds, and Klaus’s independent fidelity checks (October 25)
+- [x] review Ricardo's October 30 reply and PR #2 with Klaus; verify the supplied provenance and identify the remaining bound and numerical wording corrections
+- [x] diagnose the Figure S9 upturn and remove the startup transient by extending settling to 12 seconds (October 25)

@@ -1,0 +1,32 @@
+{
+  "figures": {
+    "before": 22,
+    "after": 22,
+    "same_order": true
+  },
+  "equation_labels": {
+    "before": 32,
+    "after": 32,
+    "same_order": true
+  },
+  "all_labels": {
+    "before": 82,
+    "after": 82,
+    "same_order": true
+  },
+  "citations": {
+    "before": 85,
+    "after": 85,
+    "same_order": true
+  },
+  "original_cache_unchanged": true,
+  "qif_executable_code_unchanged": true,
+  "raster_pdf_bytes": {
+    "before": 13410322,
+    "after": 493491
+  },
+  "jne_pdf_bytes": {
+    "before": 14519611,
+    "after": 1604091
+  }
+}

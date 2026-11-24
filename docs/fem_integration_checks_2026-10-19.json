@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-19",
+  "contribution_commit": "d7790943ae8ed9186c7a6233cc7698f58efeb992",
+  "scope": "Portable FEM outputs checked; private field solve and field-to-map producer not rerun.",
+  "reference_mask": "All gray-matter nodes outside the hippocampal ROI, including other deep GM.",
+  "file_sha256": {
+    "fem_quadmaps.json": "3c53464218a3f14cd65640410aaab46b67acb1bc0e4d3cf65472e26330f1fae3",
+    "fem_quadmaps.npz": "9e15bb73cea3c484826686664fa10bafe2cc804b01d41cc129b2b5f0966f0646"
+  },
+  "matching_array_count": 44,
+  "max_json_array_difference": 0.0,
+  "interpolated_slice_scaling_max_abs": {
+    "quad": 7.450580596923828e-09,
+    "iso": 3.725290298461914e-09
+  },
+  "summary": {
+    "env": {
+      "reference_p95_ratio_1to1": 1.2210452694882101,
+      "reference_p95_ratio_1to3": 0.9535509584779517,
+      "degree_matched_ratio_1to1": 1.2210452694882101,
+      "roi_mean_1to1": 0.16288518779902572,
+      "roi_mean_1to3_over_1to1": 0.5531852842887484,
+      "focus_shift_mm": 2.543558221161487,
+      "sensitivity_count": 32,
+      "sensitivity_range_mm": [
+        0.7221400600676319,
+        8.092622199601292
+      ]
+    },
+    "quad": {
+      "reference_p95_ratio_1to1": 1.1674339552353719,
+      "reference_p95_ratio_1to3": 1.1674339552353719,
+      "degree_matched_ratio_1to1": 1.0804774385110132,
+      "roi_mean_1to1": 0.018303314042764827,
+      "roi_mean_1to3_over_1to1": 0.75,
+      "focus_shift_mm": 0.0,
+      "sensitivity_count": 32,
+      "sensitivity_range_mm": [
+        0.0,
+        0.0
+      ]
+    },
+    "msp": {
+      "reference_p95_ratio_1to1": 0.9175520555333018,
+      "reference_p95_ratio_1to3": 0.9032003454712825,
+      "degree_matched_ratio_1to1": 0.9578881329485189,
+      "roi_mean_1to1": 0.009426177006716246,
+      "roi_mean_1to3_over_1to1": 1.2441283335713318,
+      "focus_shift_mm": -4.492278090892206,
+      "sensitivity_count": 32,
+      "sensitivity_range_mm": [
+        -10.556161895405843,
+        -0.5239200784446719
+      ]
+    },
+    "iso": {
+      "reference_p95_ratio_1to1": 1.1769280449990762,
+      "reference_p95_ratio_1to3": 1.1769280449990762,
+      "degree_matched_ratio_1to1": 1.0848620024420845,
+      "roi_mean_1to1": 0.006092660846933451,
+      "roi_mean_1to3_over_1to1": 0.7499999999999999,
+      "focus_shift_mm": 0.0,
+      "sensitivity_count": 32,
+      "sensitivity_range_mm": [
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "status": "pass"
+}

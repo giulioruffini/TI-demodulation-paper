@@ -1,0 +1,14 @@
+--- a/code/make_qif_regimes_fig.py
++++ b/code/make_qif_regimes_fig.py
+@@ -56,9 +56,9 @@
+                ylabel='line amplitude / mean rate')
+         ax.set_xticks([40, 45, 50, 55, 60, 65])
+         ax.set_yticks([0, .2, .4, .6, .8])
+-        ax.legend(loc='upper right', fontsize=9)
++        ax.legend(loc='upper left', fontsize=9)
+         figstyle.panel(ax, 'cd'[col])
+-    fig.tight_layout(w_pad=2.5, h_pad=3)
++    fig.tight_layout(w_pad=4.5, h_pad=3)
+     figstyle.scale_text(fig, placed_frac=1)
+     overlap.check(fig, placed_frac=1, name='qif_regimes')
+     for extension in ('pdf', 'png'):

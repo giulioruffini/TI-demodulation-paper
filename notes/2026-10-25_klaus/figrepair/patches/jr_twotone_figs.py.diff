@@ -1,0 +1,11 @@
+--- a/code/jr_twotone_figs.py
++++ b/code/jr_twotone_figs.py
+@@ -161,7 +161,7 @@
+     ax[0, 0].plot(vs, meas, color=NEBLUE, lw=1.8, label="measured (two-tone)")
+     ax[0, 0].set_xlabel("operating point $v^*$ (mV)")
+     ax[0, 0].set_ylabel("signed response @ $\\Omega$ (s$^{-1}$)")
+-    ax[0, 0].legend(loc="lower right", fontsize=8)
++    ax[0, 0].legend(loc="upper right", fontsize=8)
+     figstyle.panel(ax[0, 0], "a")
+ 
+     ax[0, 1].loglog(epsv, resp, "o-", color=NEBLUE, ms=6)

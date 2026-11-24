@@ -1,0 +1,25 @@
+--- a/code/make_khz_twotone_fig.py
++++ b/code/make_khz_twotone_fig.py
+@@ -30,7 +30,7 @@
+ fI, PI, fV, PV = d["fI"], d["PI"], d["fV"], d["PV"]
+ f1, f2, F0 = float(d["f1"]), float(d["f2"]), float(d["F0"])
+ 
+-fig, ax = plt.subplots(1, 2, figsize=(11.0, 3.9))
++fig, ax = plt.subplots(1, 2, figsize=(8.6, 3.4))
+ 
+ ax[0].semilogy(fI, PI + 1e-16, color=NEGRAY, lw=1.2)
+ ax[0].set_xlim(1900, 2100)
+@@ -58,8 +58,11 @@
+ 
+ fig.tight_layout(w_pad=3.5)
+ figstyle.thin_ticks(fig)
+-figstyle.scale_text(fig, placed_frac=1)
+-overlap.check(fig, placed_frac=1, name="make_khz_twotone_fig.py")
++fig.canvas.draw()          # materialize the re-located tick labels so scale_text sees them
++# placed at 0.95\textwidth (planning/parts/figure_khz_twotone.tex); the target allows for
++# the 0.1 in pad that savefig(bbox="tight") adds on each side, which scale_text does not see
++figstyle.scale_text(fig, placed_frac=0.95, target_min_pt=6.6)
++overlap.check(fig, placed_frac=0.95, name="make_khz_twotone_fig.py")
+ fig.savefig(f"{FIGS}/fig_khz_twotone.png", dpi=300)
+ fig.savefig(f"{FIGS}/fig_khz_twotone.pdf")
+ band = (fI > 8) & (fI < 14)

@@ -1,0 +1,19 @@
+{
+  "TN0484_jne.aux": {
+    "equations": 26,
+    "figures": 11,
+    "numbering_changes": {}
+  },
+  "TN0484_jne_supplement.aux": {
+    "equations": 6,
+    "figures": 12,
+    "numbering_changes": {}
+  },
+  "cited_keys_unchanged": true,
+  "cited_key_count": 60,
+  "abstract_unchanged": true,
+  "table_source": "planning/tn0484_notation.tex",
+  "equation_and_figure_labels_preserved": true,
+  "independent_audit": "docs/notation_audit_appendix_2026-10-06.md",
+  "independent_audit_commit": "bee566d"
+}

@@ -1,0 +1,73 @@
+{
+  "peix": {
+    "slope_identity_max_error": 1.1102230246251565e-16,
+    "curvature_identity_max_error": 3.7470027081099033e-16,
+    "at_inflection": 0,
+    "saturation_limits": [
+      -1,
+      1
+    ]
+  },
+  "qif_second_order": {
+    "phasor_vs_closed_form_max_error": 1.0408340855860843e-17,
+    "operating_points": 4,
+    "frequencies": 5
+  },
+  "mixed_detector_ratio": [
+    {
+      "c2_over_c1": -2,
+      "quadrature": 0.22600004087575043,
+      "formula": 0.2260000408757506
+    },
+    {
+      "c2_over_c1": -0.5,
+      "quadrature": 0.3782426492003012,
+      "formula": 0.3782426492003011
+    },
+    {
+      "c2_over_c1": 0,
+      "quadrature": 0.20000000000000018,
+      "formula": 0.2
+    },
+    {
+      "c2_over_c1": 0.5,
+      "quadrature": 0.13593985332134056,
+      "formula": 0.13593985332134043
+    },
+    {
+      "c2_over_c1": 2,
+      "quadrature": 0.069325157220421,
+      "formula": 0.06932515722042093
+    }
+  ],
+  "jr_hopf": {
+    "upper_p_per_s": 315.69642806881564,
+    "frequency_Hz": 11.163570828298523,
+    "cached_supercritical_markers": [
+      89.829094984,
+      315.69641894
+    ]
+  },
+  "access_16ms": [
+    {
+      "frequency_Hz": 1000,
+      "point_membrane_beat": 9.893667896574153e-05,
+      "cable_end_beat": 0.009946691860399695
+    },
+    {
+      "frequency_Hz": 2000,
+      "point_membrane_beat": 2.4736005215090527e-05,
+      "cable_end_beat": 0.004973530457842852
+    },
+    {
+      "frequency_Hz": 10000,
+      "point_membrane_beat": 9.894637049678127e-07,
+      "cable_end_beat": 0.0009947179022053501
+    }
+  ],
+  "illustrative_budget": {
+    "polarization_mV": 0.0924244618924047,
+    "efficiency_at_0p1mV": 0.007946637329452071,
+    "width_for_eps_0p02_mV_in_microvolts": 3.3333333333333335
+  }
+}

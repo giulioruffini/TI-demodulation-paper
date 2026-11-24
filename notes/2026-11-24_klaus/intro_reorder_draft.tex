@@ -1,0 +1,58 @@
+% Draft: reordered opening of the Introduction (K's arc, 2026-11-24, 13:3x).
+% Paragraph 1: tES acts in the brain's frequency range but cannot focus deep (theorem).
+% Paragraph 2: TI works with a nonlinear feature of the field that escapes the restriction.
+% Paragraph 3: how TI builds it (beat), Eq. (1), envelope definition, need for nonlinearity.
+% Replaces the current first three paragraphs (up to "The mechanism has three stages").
+% All statements and citations are already in the paper; only the order and links are new.
+% "a few hundred hertz": K suggested DC to ~250 Hz; adjust if he prefers a number.
+
+\section{Introduction}
+Transcranial electrical stimulation (tES), or transcranial current stimulation (tCS),
+injects weak currents through scalp electrodes \cite{ruffini2013} and acts directly at
+the frequencies of brain function, from DC to a few hundred hertz
+\cite{reato2010,liu2018,krause2023}. Its reach to deep targets is limited
+by physics. Under the quasistatic approximation, electric-field strength has no strict
+three-dimensional interior maximum in homogeneous, isotropic, source-free tissue: its
+maximum lies on a boundary, such as the scalp or a conductivity interface
+\cite{heller1992}. No montage can therefore make a deep region of uniform tissue receive
+a stronger field than its surroundings. With spatially fixed linear coupling to the
+membrane, the same restriction applies to the mean-square polarization and to any other
+map that inherits subharmonicity from the field (\S\ref{sec:dc}).
+
+Temporal-interference (TI) stimulation aims at the focal modulation of deep brain
+targets by working with a nonlinear feature of the field, its \textit{envelope}
+\cite{grossman2017}. The envelope excursion and the quadratic beat amplitude can have
+interior maxima (supplement, \S\ref{supp:interior-maxima}), whereas the beat-period mean
+of the envelope remains subject to the restriction (\S\ref{sec:dc}). Spatial targeting
+therefore depends on which feature of the waveform the neurons detect.
+
+To construct such a feature, two sinusoidal currents are injected at $f_1$ and
+$f_2=f_1+\Delta f$ through separate electrode pairs, typically with $f_1\sim1$--$2$~kHz
+and $\Delta f\sim1$--$100$~Hz, producing, where they overlap, an amplitude-modulated (AM)
+electric field whose direction generally rotates over the beat period. Changing the
+currents steers the region of largest envelope modulation. The difference frequency
+itself is absent from the input,
+\begin{equation}
+s(t)=\varepsilon_1\cos(\omega_1 t)+\varepsilon_2\cos(\omega_2 t),\qquad
+\omega_{1,2}=2\pi f_{1,2},\quad \Omega=\omega_2-\omega_1=2\pi\,\Delta f .
+\label{eq:am}
+\end{equation}
+Here $s(t)$ is the local membrane polarization, $t$ is time, and
+$\varepsilon_{1,2}$ are its tone amplitudes in mV, produced by coupling of the applied
+field to the membrane; $\Omega$ is the beat angular frequency, and
+$f_c=(f_1+f_2)/2$ is the carrier frequency. The signal \textit{envelope} is the modulus
+of the analytic signal, $\mathcal A(t)=|s(t)+i\mathcal H[s](t)|$, where $\mathcal H$ is
+the Hilbert transform \cite{gabor1946}. The spectrum of $s(t)$ contains only the two
+applied lines. A linear, time-invariant system can attenuate or phase-shift them but
+cannot create a new one. Passive membrane filtering therefore cannot demodulate TI
+\cite{mirzakhalili2020}; a nonlinear element must mix the carriers into the
+low-frequency band, as in AM reception \cite{nahin2001}. Neural targeting thus depends
+on how neurons and neural populations transduce this waveform.
+
+% Bibliography entry to add to references.bib (verified against Crossref, 2026-11-24):
+% @article{ruffini2013,
+%   author  = {Ruffini, Giulio and Wendling, Fabrice and Merlet, Isabelle and Molaee-Ardekani, Behnam and Mekonnen, Abeye and Salvador, Ricardo and Soria-Frisch, Aureli and Grau, Carles and Dunne, Stephen and Miranda, Pedro C.},
+%   title   = {Transcranial Current Brain Stimulation ({tCS}): Models and Technologies},
+%   journal = {IEEE Transactions on Neural Systems and Rehabilitation Engineering},
+%   volume  = {21}, number = {3}, pages = {333--345}, year = {2013},
+%   doi     = {10.1109/TNSRE.2012.2200046}}

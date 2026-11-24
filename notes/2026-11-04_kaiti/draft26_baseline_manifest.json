@@ -1,0 +1,33 @@
+{
+  "baseline": "0d80796",
+  "files": {
+    "TN0484_envelope_demodulation.tex": {
+      "sha256": "ab3d1e41d4105c6899d9bff349946d9a35d34da2df51ee1179e79224b7796bd7",
+      "bytes": 104126
+    },
+    "TN0484_jne.pdf": {
+      "sha256": "35012e4ba9d6ed0d9c3f76f6c58156e0bd9dcd718af96c9cc986d4634b9c28bf",
+      "bytes": 2439287
+    },
+    "TN0484_jne_supplement.pdf": {
+      "sha256": "0df889056c341cd6133402c6ccf76f3ee4ee84ce75712039056f088093eddb05",
+      "bytes": 1953296
+    },
+    "TN0484_envelope_demodulation.pdf": {
+      "sha256": "ef4c79ae246eacac711c5e11ce7960735ce67b1add15c80f492c10073b9425ac",
+      "bytes": 2276808
+    },
+    "TN0484_envelope_demodulation.bbl": {
+      "sha256": "3efa9d688c30006a39bc5bec309dcfb593621d89de5ee70e0e90f6c19ff2e00c",
+      "bytes": 19701
+    },
+    "planning/review_baseline.json": {
+      "sha256": "cb70fb69b0fb1391d7cf62a8ec8a4f253c18c5bb61c024769bceff2bf3e2a282",
+      "bytes": 560
+    },
+    "LICENSE": {
+      "sha256": "01a89ae6fe408d07ee22735020529794bc40b8434f5fafa187516b9a01dce060",
+      "bytes": 1638
+    }
+  }
+}

@@ -1,0 +1,622 @@
+\section{Theory}
+
+\subsection{A population rate curve supplies the nonlinearity}\label{sec:nmm}
+A neural mass model describes a population through averaged variables
+\cite{ruffini2025rosetta,jansen1995}. In the Jansen--Rit (JR) family, a linear synaptic
+filter converts presynaptic firing rate $r$ into postsynaptic potential $u$,
+\[
+\ddot u+2a\dot u+a^2u=Aa\,r,
+\]
+with inverse synaptic time $a$ (s$^{-1}$) and PSP gain $A$ (mV); inhibitory synapses use
+$b$ and $B$ in the same respective units. Summed postsynaptic potentials give the mean input $v$, which
+a static transfer curve converts to firing rate \cite{wilsoncowan1972},
+\begin{equation}
+\Sig(v)=\frac{2e_0}{1+e^{\,\rho(v_0-v)}} .
+\label{eq:sigmoid}
+\end{equation}
+Here $2e_0$ is the maximum rate, $v_0$ the inflection voltage, and $\rho$ the inverse
+voltage scale (s$^{-1}$, mV, and mV$^{-1}$, respectively). Primes denote
+derivatives with respect to voltage. Nonzero curvature makes this curve a mixer, while its slope sets
+the local gain of the recurrent circuit.
+
+The JR column couples pyramidal, excitatory-interneuron, and inhibitory-interneuron
+populations, with field input to the pyramidal sigmoid and local field potential
+(LFP) proxy $v=y_1-y_2$, where $y_1$ and $y_2$ are the excitatory and inhibitory
+postsynaptic potentials onto the pyramidal population. Its external input rate is
+$p$ (s$^{-1}$), and $C$ is the dimensionless connectivity scale.
+Figure~\ref{fig:models} locates the field input, nonlinear detector, and
+recurrent amplifier in the JR and QIF circuits.
+\input{figures_src/fig_models_ti_caption.tex}
+
+\subsection{From applied field to a squared-envelope beat component}\label{sec:coupling}
+We neglect propagation and induction in the extracellular field $E$ (V/m),
+but retain finite membrane charging. The effective polarization $s$ (mV)
+enters the population sigmoid after cellular access,
+\begin{equation}
+r=\Sig(v+s),\qquad
+E(t)=E_1\cos\omega_1 t+E_2\cos\omega_2 t .
+\label{eq:coupling}
+\end{equation}
+Soma, dendrites, AIS, nodes, and terminals contribute parallel inputs with
+different couplings and response times. For nearby carriers centered at
+$\omega_c=2\pi f_c$,
+\begin{equation}
+s\simeq\sum_k \boldsymbol\lambda^k_f(\omega_c)\!\cdot\!\mathbf E,\qquad
+\boldsymbol\lambda^k_f(\omega)=\boldsymbol\lambda^k_0\,\lvert H_k(\omega)\rvert,
+\label{eq:doors}
+\end{equation}
+where $\boldsymbol\lambda^k_0$ is compartment $k$'s static polarization vector
+(a length) and $H_k$ its access filter \cite{ruffini2025rosetta,galangadea2023}.
+This amplitude-gain sum assumes aligned compartment phases; otherwise the
+complex transfers must be summed. For one dominant entry point,
+$\lambda_f=\lambda_0|H|$ and $\varepsilon_j=\lambda_f(\omega_j)E_j$.
+Holding these post-access polarizations fixed isolates detection and gain;
+at fixed field they inherit $H$'s frequency dependence.
+
+Fast axonal access motivates $\lambda_f\approx\lambda_0$. At the AIS,
+$\Sig(v+s)$ represents a spike-initiation threshold shifted from $v_0$ to
+$v_0-s$, requiring no backward transmission to the soma. The conversion from
+AIS polarization to $s$ and its response time require calibration. A static
+detector additionally requires relaxation faster than the carrier.
+
+Expanding about the field-free voltage $v^*$ (mV)
+\cite{ruffini2025ham} gives
+$\Sig(v^*+s)\approx\Sig(v^*)+\Sig'(v^*)s+\half\Sig''(v^*)s^2+\dots$.
+Quadratic mixing leads when $|s|\ll1/\rho\approx1.8$~mV and
+$\Sig''(v^*)\ne0$; larger excursions require the full curve.
+The linear term preserves the carriers, while
+$2\cos\omega_1t\cos\omega_2t=\cos\Omega t+\cos(\omega_1+\omega_2)t$
+generates their difference. Averaging over the carrier removes the fast terms
+before applying network gain; synaptic filtering suppresses those terms
+downstream of detection. Since $\langle\cos^2\omega_jt\rangle_c=\half$,
+\begin{equation}
+\big\langle\Sig(v^*+s)\big\rangle_c
+=\Sig(v^*)+\tfrac14\Sig''(v^*)\,(\varepsilon_1^2+\varepsilon_2^2)
++\tfrac12\Sig''(v^*)\,\varepsilon_1\varepsilon_2\cos\Omega t+O(\varepsilon^4),
+\label{eq:taylor}
+\end{equation}
+giving a steady source from the summed squares and a signed beat-source amplitude (s$^{-1}$ )
+\begin{equation}
+Y_\Omega\simeq\half\,\Sig''(v^*)\,\varepsilon_1\varepsilon_2 .
+\label{eq:demod}
+\end{equation}
+Here $\varepsilon$ denotes a common small-amplitude scale and $\simeq$
+denotes leading order in polarization throughout.
+
+For a dynamic cellular response with synaptic input held fixed, define
+the second-order coefficient $\chi^{(2)}$ through the complex source amplitude,
+\begin{equation}
+Y_\Omega\simeq\chi^{(2)}(\omega_2,-\omega_1)\,
+\varepsilon_2\varepsilon_1,\qquad
+r_\Omega(t)=\operatorname{Re}\!\left[Y_\Omega e^{i\Omega t}\right].
+\label{eq:chi2}
+\end{equation}
+The generated rate $r_\Omega$ precedes recurrence, so $\chi^{(2)}$ has units
+s$^{-1}$mV$^{-2}$. With this cosine-amplitude convention, its memoryless
+limit is $\Sig''/2$. Cellular history, state, and response times can make
+it complex and frequency-dependent; symmetry or cancellation can remove
+second-order mixing, leaving higher orders.
+
+The static detector predicts quadratic scaling, a vanishing source at the
+inflection, and carrier independence at fixed polarization. At fixed field,
+access attenuation raises the field required for a given source, consistent
+with carrier-dependent thresholds \cite{opancar2025,peripheral2023}.
+
+\subsection{Envelope oscillations and spatial weighting}\label{sec:envelope}
+Envelope following and quadratic detection assign different spatial doses
+to the same field. At position $\mathbf x$, let $\varepsilon_j(\mathbf x)$ be
+the signed polarization of tone $j$ along a fixed direction. The nonnegative
+envelope of the two-tone polarization is
+\[
+\mathcal A(\mathbf x,t)=\sqrt{\varepsilon_1(\mathbf x)^2+\varepsilon_2(\mathbf x)^2
++2\varepsilon_1(\mathbf x)\varepsilon_2(\mathbf x)\cos\Omega t}.
+\]
+At each location, low-pass filtering (LPF) removes the carrier terms and gives
+\begin{equation}
+\mathrm{LPF}[s^2]=\tfrac12\mathcal A^2
+=\frac{\varepsilon_1^2+\varepsilon_2^2}{2}+\varepsilon_1\varepsilon_2\cos\Omega t,
+\label{eq:sqenv}
+\end{equation}
+with spatial arguments suppressed. The squared envelope is sinusoidal at
+$\Omega$, but the envelope is not: for matched tones it is the rectified
+cosine $\mathcal A(t)=2\varepsilon|\cos(\Omega t/2)|$.
+The conventional TI map measures its excursion,
+$\mathcal M[y]\equiv\max_t y-\min_t y$ \cite{grossman2017}.
+
+Table~\ref{tab:transduction-maps} separates these geometric quantities from
+detector gains; overbars denote beat-period means. An ideal envelope follower
+with gain $c_1$ outputs $c_1\mathcal A$, whereas a smooth transfer $g$ with
+nonzero curvature gives $g''(v^*)\mathcal A^2/4$ at weak input ($g=\Sig$ in JR).
+The nonnegative mean-square map $\mathcal I$ therefore specifies neither excitation
+nor suppression, and an envelope-excursion map alone specifies no mean output.
+Envelope following is itself a response assumption.
+
+\begin{table}[ht]
+\centering\small
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.22\textwidth}
+ >{\raggedright\arraybackslash}p{0.34\textwidth}
+ >{\raggedright\arraybackslash}p{0.36\textwidth}@{}}
+\toprule
+ & Envelope following & Quadratic detection \\
+\midrule
+Slow signal & $\mathcal A(\mathbf x,t)$ & $\tfrac12\mathcal A(\mathbf x,t)^2$ \\
+Mean before gain & $\overline{\mathcal A}(\mathbf x)$
+ & $\mathcal I(\mathbf x)=\dfrac{\varepsilon_1^2+\varepsilon_2^2}{2}$ \\
+Modulation excursion & $2\min(|\varepsilon_1|,|\varepsilon_2|)$
+ & $2|\varepsilon_1\varepsilon_2|$ \\
+Units before detector gain & mV & mV$^2$ \\
+Signed steady source (output units) & $c_1\overline{\mathcal A}$
+ & $Y_{\rm DC}=\tfrac12g''(v^*)\mathcal I$ \\
+\bottomrule
+\end{tabular}
+\caption{Envelope and quadratic maps at the same position $\mathbf x$.
+The first four rows give geometric quantities before detector gain; the last
+gives the steady source after gain, before recurrent feedback. Its sign depends
+on the detector. Averaging the slow signal over a beat period gives its mean.
+Excursion means maximum minus minimum, not Fourier amplitude.}
+\label{tab:transduction-maps}
+\end{table}
+
+The excursion maps in Table~\ref{tab:transduction-maps} are related pointwise by
+\begin{equation}
+\mathcal{M}\big[\tfrac12\mathcal A^2\big]=\max(|\varepsilon_1|,|\varepsilon_2|)\;\mathcal{M}[\mathcal A].
+\label{eq:reweight}
+\end{equation}
+The dominant polarization reweights the envelope map. Both maps can have a
+central maximum, although the quadratic example in Fig.~\ref{fig:spatial_maps}a
+is broader. A larger superficial dominant carrier degrades deep contrast:
+for $(\varepsilon_1,\varepsilon_2)=(10,1)$ superficially and $(0.5,0.5)$
+at depth, the superficial/deep excursion ratio is $2$ for the envelope
+and $40$ for the quadratic map. A sufficiently weak second carrier can
+instead suppress the superficial product. Actual contrast requires the vector fields.
+
+With fixed electrode pairs, frequencies, neural state, linear access, and
+projection directions, write
+$\varepsilon_j(\mathbf x)=I_j^{\rm pair}\mathcal P_j(\mathbf x)$,
+where $I_j^{\rm pair}>0$ is the peak current of pair $j$ (mA) and $\mathcal P_j$
+the signed polarization per current (mV/mA). Then
+\[
+\mathcal M[\tfrac12\mathcal A^2]
+=2I_1^{\rm pair}I_2^{\rm pair}|\mathcal P_1\mathcal P_2|.
+\]
+Changing the current ratio therefore rescales the beat map without moving its maxima
+or changing normalized maps and target/reference ratios
+\cite{cassara2025part2}. Fixed detector coefficients and linear propagation
+preserve the common current factor, even with dynamic mixing and heterogeneous
+gains. Steering requires a changed carrier-field shape, for example through
+current redistribution among electrodes at one frequency.
+
+Current-ratio changes can still reshape the beat response through the steady source,
+which weights $\mathcal P_1^2$ and $\mathcal P_2^2$ by the squared currents and can
+thereby shift the operating points. Such state changes fall outside the fixed-state
+argument above. Threshold effects also depart from the weak quadratic regime; the
+$2\min$ steering law requires envelope following.
+
+The product law permits an interior beat maximum. Its spatial weighting also
+depends on local detector and network factors (Eq.~\eqref{eq:receiver}), so
+resonance can compensate for an unfavorable product only where the source
+is nonzero.
+
+The scalar maps use a common fixed projection,
+$\varepsilon_j=\boldsymbol\lambda\cdot\mathbf E_j$; the beat changes phase
+when either projection changes sign. The current-product scaling also holds
+when a detector combines input from several compartments. Let $a_j^k$ be the
+complex polarization of carrier $j$ in compartment $k$. A weak dynamic
+detector has a bilinear beat source
+$Y_\Omega=\sum_{kl}B_{kl}(\omega_2,-\omega_1)a_2^k\overline{a_1^l}$,
+where $B_{kl}$ are fixed response coefficients and the overbar means complex
+conjugation. A single scalar input is a rank-one specialization. Linear
+access gives $a_j^k=I_j^{\rm pair}b_j^k$, with $b_j^k$ the polarization per
+unit current, so the common factor $I_1^{\rm pair}I_2^{\rm pair}$ and its
+fixed spatial pattern survive without a universal projection vector.
+
+\subsection{Detector laws and harmonic signatures}\label{sec:transduction}
+For a narrowband input $s(t)=\mathcal A(t)\cos\omega_c t$, a memoryless
+nonlinearity $g$ has low-frequency output given by its carrier-cycle average,
+\[
+Y_{\rm LF}(\mathcal A)=(2\pi)^{-1}\!\int_0^{2\pi}\!g(v^*+\mathcal A\cos\theta)\,\mathrm{d}\theta,
+\]
+where $\theta$ is carrier phase. This transduction contains
+only even powers,
+\begin{equation}
+Y_{\rm LF}(\mathcal A)=g(v^*)+\tfrac14 g''(v^*)\mathcal A^2+\tfrac1{64}g^{(4)}(v^*)\mathcal A^4+\cdots
+\label{eq:cycavg}
+\end{equation}
+Thus smooth detection with nonzero curvature is quadratic at weak input.
+A threshold detector instead gives
+$\pi^{-1}\arccos(\delta/\mathcal A)$ for envelope amplitude
+$\mathcal A>\delta$ and zero below, where $\delta>0$ is its offset.
+Other rectifier laws are compared in the supplement (\S\ref{supp:harmonics}).
+
+At matched tones, envelope following is linear in amplitude with
+second/fundamental harmonic ratio $1/5$. Quadratic detection gives only
+the steady term and fundamental; its quartic correction gives
+$Y_{2\Omega}/Y_\Omega\sim(c_4/c_2)\varepsilon^2$, with
+$c_2=g''/4$ and $c_4=g^{(4)}/64$. A threshold detector is silent for
+$2\varepsilon\le\delta$ and has an amplitude-dependent ratio above onset.
+The full harmonic series and mixed-detector inversion are supplementary
+(\S\ref{supp:harmonics}).
+\ifjne\else
+\input{planning/parts/harmonic_details}
+\fi
+
+The network modifies these ratios through
+$\mathcal H_{\rm meas}=\mathcal H_{\rm det}|G(2\Omega)/G(\Omega)|$.
+Near resonance it can suppress an envelope follower's second harmonic,
+making it appear quadratic. Amplitude sweeps and gain correction are
+therefore needed; a threshold detector can match one harmonic ratio, so that
+ratio alone cannot identify the detector.
+
+\subsection{The steady source has a state-dependent sign}\label{sec:dc}
+Detection converts nonnegative mean-square polarization into a signed steady
+source; recurrence converts that source into a mean response. ``DC-like''
+describes this source, not the applied field, which has no DC component.
+At matched polarizations $\varepsilon>0$,
+the envelope and quadratic means are $4\varepsilon/\pi$ and
+$\varepsilon^2$ before detector gains (supplement, \S\ref{supp:envelope-proof}). Either ideal detector gives a mean
+output with one carrier, but no beat; adaptation can alter the mean response.
+
+The static JR source is
+\[
+Y_{\rm DC}(\mathbf x,\mathbf n)
+=\frac{\Sig''(v^*_{\mathbf x})}{2}\,\mathcal I(\mathbf x,\mathbf n),
+\qquad
+\mathcal I(\mathbf x,\mathbf n)
+=\frac{\varepsilon_1(\mathbf x,\mathbf n)^2+
+\varepsilon_2(\mathbf x,\mathbf n)^2}{2}\ge0,
+\]
+where $v^*_{\mathbf x}$ is the local baseline and $\mathbf n$ the common
+unit cell orientation. Convex and concave rate curves give positive and
+negative sources, respectively; the quadratic source vanishes at the inflection
+and in the saturated tails.
+Reversing either carrier or $\mathbf n$ leaves the squares unchanged;
+other orientations change magnitudes but not the sign at fixed curvature.
+Figure~\ref{fig:spatial_maps}c shows both signs on one positive normalization.
+At the pinned JR state, $v^*=8.30$~mV, the source lowers the local rate
+because $\Sig''(v^*)<0$.
+This curvature rule applies to static detection; dynamic rectification and
+recurrence can change the sign of the mean response.
+The same operating-point dependence enters the multitone sigmoid expansion for
+endogenous infraslow ($<0.1$~Hz) mixing in coupled Jansen--Rit models \cite{Just2026mixing}.
+
+\label{sec:opp}
+The Population Excitation--Inhibition Index (PEIX) \cite{ruffini2025cfc}
+measures signed departure from maximal sigmoid slope, positive above the
+inflection and negative below; its definition and curvature identities are
+in Appendix~\ref{app:peix}. Changes in $v^*$ through neuromodulation,
+attention, arousal, psychedelic exposure, or dysfunction of PV interneurons
+in Alzheimer's disease can scale or reverse the static JR source.
+Dynamic detectors have their own state-dependent coefficients and susceptibilities, without
+a universal PEIX sign rule; state sweeps isolate detection only if recurrent
+gain is also measured.
+
+Carrier averaging retains the beat cross term; a beat-period average removes
+it, leaving intensities without cross-frequency cancellation. Where
+$Y_{\rm DC}\ne0$,
+$|Y_\Omega/Y_{\rm DC}|=2|\varepsilon_1\varepsilon_2|/
+(\varepsilon_1^2+\varepsilon_2^2)\le1$, with equality at matched magnitudes.
+A common access factor cancels. In the superficial/deep example of \S\ref{sec:envelope}, $\mathcal I$ is
+$50.5$ superficially and $0.25$ at depth, a $202$-fold contrast;
+the corresponding beat/DC ratios are $0.20$ and $1$.
+
+In a homogeneous, isotropic, source-free conductor, the potentials $\phi_j$,
+field components $\mathbf E_j=-\nabla\phi_j$, and polarizations
+$\varepsilon_j=\boldsymbol\lambda\cdot\mathbf E_j$ for spatially fixed
+coupling $\boldsymbol\lambda$ are harmonic. Consequently
+$\nabla^2\mathcal I=\sum_j|\nabla\varepsilon_j|^2\ge0$:
+the intensity is subharmonic, with no strict interior maximum. Its maximum
+lies on the region's boundary, including conductivity interfaces, regardless
+of montage. With spatially constant nonzero detection, the same holds for
+$|Y_{\rm DC}|$; negative curvature makes the boundary source most negative.
+Spatially varying access, orientation, or detector coefficients require a
+weighted map, and the restriction does not extend to the physiological mean
+response or an indefinite multicompartment DC form.
+
+The envelope mean is also subharmonic: at each beat phase it is a norm of
+harmonic components, and phase averaging preserves that property (supplement,
+\S\ref{supp:envelope-proof}).
+\ifjne\else
+\input{planning/parts/envelope_proof}
+\fi
+By contrast,
+$\nabla^2(\varepsilon_1\varepsilon_2)=2\nabla\varepsilon_1\cdot\nabla\varepsilon_2$
+has unrestricted sign. Within this homogeneous scalar model, interior
+selectivity must come from the oscillatory response, not either mean map.
+
+With isotropic orientations and orientation-independent access and curvature,
+orthogonal fields cancel the averaged beat while retaining steady intensity
+(supplement, \S\ref{supp:orientation}).
+\ifjne\else
+\input{planning/parts/orientation_average}
+\fi
+
+An unmodulated carrier at the same local RMS polarization gives the same
+second-order mean shift if its DC mixing coefficient equals those of both
+TI carriers. This motivates the equal-RMS carrier control in
+\S\ref{sec:qif-methods}. For a dynamic detector, the coefficient must vary
+negligibly over the carrier interval.
+
+\subsection{Comparison with direct tDCS and tACS}\label{sec:direct-comparison}
+We compare TI's steady and beat sources with transcranial direct-current
+stimulation (tDCS) and tACS at $\Omega$, respectively, using polarizations
+at the same sigmoid entry point. For equal TI tones
+$\varepsilon_1=\varepsilon_2=\varepsilon>0$,
+\[
+Y_{\rm DC}^{\rm TI}\simeq Y_\Omega^{\rm TI}
+\simeq \frac12\Sig''(v^*)\varepsilon^2.
+\]
+A constant polarization $\varepsilon_{\rm D}$ or sinusoid
+$\varepsilon_{\rm A}\cos\Omega t$ instead gives
+\[
+Y_{\rm DC}^{\rm tDCS}\simeq\Sig'(v^*)\varepsilon_{\rm D},
+\qquad
+Y_\Omega^{\rm tACS}\simeq\Sig'(v^*)\varepsilon_{\rm A}.
+\]
+Here $\varepsilon_{\rm D}$ is signed and negative $\varepsilon_{\rm A}$
+denotes phase reversal. The equivalent direct polarization matching either
+TI source is
+\[
+\varepsilon_{\rm eq}
+=\frac{\Sig''(v^*)}{2\Sig'(v^*)}\,\varepsilon^2,
+\qquad
+\frac{\Sig''(v^*)}{\Sig'(v^*)}
+=-\rho\tanh\!\left[\frac{\rho(v^*-v_0)}2\right].
+\]
+Sigmoid steepness and operating voltage determine the ratio; the rate ceiling
+cancels, and the quadratic TI sources vanish at the inflection.
+
+For the JR parameters $\rho=0.56$~mV$^{-1}$, $v_0=6$~mV,
+$e_0=2.5$~s$^{-1}$, and the pinned operating point $v^*=8.30$~mV,
+$\Sig'=0.4745$~s$^{-1}$mV$^{-1}$ and
+$\Sig''=-0.1508$~s$^{-1}$mV$^{-2}$. With each direct-input amplitude
+equal to the per-carrier TI amplitude, the source-magnitude ratio is
+$|\varepsilon_{\rm eq}|/\varepsilon
+=0.1589\,\varepsilon/(1~\mathrm{mV})$:
+$1.59\%$ at $0.1$~mV and $4.77\%$ at $0.3$~mV, rounded to $2$--$5\%$.
+At $0.3$~mV per carrier, the equivalent direct polarization is
+$-0.0143$~mV, or $-14.3~\mu$V. The negative sign specifies a suppressive
+local source for tDCS and an inverted source phase for tACS.
+
+Matching the total TI peak instead uses direct amplitude $2\varepsilon$
+and halves these ratios. RMS matching uses tACS amplitude
+$\sqrt2\varepsilon$ or tDCS magnitude $\varepsilon$, because TI's RMS
+polarization is $\varepsilon$. The tACS quadratic steady source,
+$\Sig''\varepsilon_{\rm A}^2/4$, then equals TI's for this static detector.
+Equal electrode currents need not match polarization: access differs among
+DC, beat and carrier frequencies, and among entry compartments.
+
+At a common state and entry point, matched steady sources share the
+zero-frequency transfer, and matched beat and tACS sources share the transfer
+at $\Omega$. These transfers differ, and rectification of the amplified TI
+beat can add a mean shift.
+Source ratios therefore imply neither universal physiological-effect ratios
+nor equal spatial responses.
+
+\subsection{Amplification: the synaptic low-pass and the network resonance}\label{sec:carrier}
+Synaptic filtering suppresses the carrier after the nonlinearity has generated
+the beat. Each JR excitatory synapse has transfer function
+$H_s(\omega)=Aa/(i\omega+a)^2$, a second-order low-pass with characteristic
+frequency $a/(2\pi)\approx16$~Hz. It passes a $10$~Hz component with relative
+amplitude about $0.7$ but reduces a $100$~Hz component to about $2.5\%$. Unless the
+carrier itself excites a responsive mode, the loop therefore reads predominantly the
+generated low-frequency drive.
+
+% fig:carrier moved to Results (Theory is equations-only)
+
+The recurrent circuit selects the recovered beat. Linearizing about the JR
+fixed point gives a leading pair $\mu_\pm=-\gamma\pm i\omega_0$, with
+modal damping $\gamma$ and frequency $\omega_0$. Below a supercritical
+Hopf, $\gamma\to0^+$ and the quality factor
+$\mathcal Q=\omega_0/(2\gamma)$ grows. A constant-numerator two-pole
+approximation to the complex susceptibility $G$ gives
+\begin{equation}
+|G(\Omega)|\propto\big[(\omega_0^2+\gamma^2-\Omega^2)^2+(2\gamma\Omega)^2\big]^{-1/2},
+\qquad |G(\omega_0)|\propto\frac{1}{2\gamma\omega_0}
+\quad(\gamma\ll\omega_0),
+\label{eq:gain}
+\end{equation}
+an approximately Lorentzian power peak near $\omega_0$ with $1/\gamma$
+growth at a simple Hopf with nonzero input--output projections.\footnote{
+The eigenvalue frequency $\omega_0$ differs from the canonical oscillator's
+undamped frequency $\sqrt{\omega_0^2+\gamma^2}$ and peak
+$\sqrt{\omega_0^2-\gamma^2}$ ($\omega_0>\gamma$).
+Frequency-dependent projections can further shift the peak.}
+This weak-drive law requires stability after the rectified mean shift.
+Above the Hopf, entrainment instead means phase capture of an autonomous rhythm.
+
+Write $D$ for the detector's beat-source coefficient: for the JR rate source,
+$D=\half\Sig''(v^*)$, half the local sigmoid curvature. Combining access,
+detection, and amplification gives
+\begin{equation}
+R_\Omega\simeq G(\Omega;\gamma)\;D\;\lambda_f(\omega_1)E_1\,\lambda_f(\omega_2)E_2 ,
+\label{eq:receiver}
+\end{equation}
+% Retain the former spatial-equation label as an alias of the general receiver.
+\makeatletter\begingroup\edef\@currentlabel{\theequation}\label{eq:spatial}\endgroup\makeatother
+where $\lambda_f$ maps field to local carrier polarization, $D$ converts the
+product of those polarizations into a beat drive, and $G$ maps that drive to the
+complex observed response, whose measured amplitude is $A_\Omega=|R_\Omega|$.
+For JR, $G$ is the response to a generated rate drive.
+A static detector has carrier-independent $D$ at fixed polarization;
+a dynamic detector can retain frequency dependence. A carrier sweep and a beat sweep
+therefore constrain different stages rather than a single effective gain.
+
+Resonance requires a beat source. The cubic Hopf normal form
+responds to an in-band drive but has no second-order difference-frequency source. A large resonant susceptibility alone therefore does not
+establish beat generation.
+In the calibrated noise-free Stuart--Landau networks tested in \cite{Ruffini2026iso},
+first-order rate transmission and readout yielded negligible infraslow BOLD power.
+
+\subsection{Carrier access depends on the effective membrane response}\label{sec:khz}
+Carrier independence at fixed polarization does not imply independence at fixed
+applied field. As an isopotential access model, consider
+$H_m(\omega)=1/(1+i\omega\tau_m)$, with effective time constant $\tau_m$.
+This is the response of a point membrane to injected current; a field coupled
+through a cable need not have the same transfer.
+For nearby carriers, the two polarizations acquire nearly the same attenuation.
+The quadratic beat then satisfies
+\begin{equation}
+\frac{|Y_\Omega(f_c)|}{|Y_\Omega^{\rm direct}|}
+\simeq |H_m(\omega_c)|^2
+=\frac{1}{1+(\omega_c\tau_m)^2}
+\sim\frac{1}{(\omega_c\tau_m)^2}
+\quad(\omega_c\tau_m\gg1),
+\label{eq:khz}
+\end{equation}
+where $Y_\Omega^{\rm direct}$ is the beat generated with the same static coupling
+and no access attenuation. This filter belongs either in the field-to-polarization
+map or in the membrane equation that computes that polarization.
+
+For an illustrative somatic $\tau_m=16$~ms, $|H_m|^2$ is about
+$10^{-4}$, $2.5\times10^{-5}$, and $10^{-6}$ at $1$, $2$, and $10$~kHz.
+The assumed $0.2$~ms case gives $0.39$ and $0.14$ at $1$ and $2$~kHz
+(Fig.~\ref{fig:khz}); this transfer has not been measured under TI at an
+AIS or node. Table~\ref{tab:doors} distinguishes measured responses,
+assumed access, and downstream filtering. Axonal decay alone specifies
+neither field coupling nor a TI cutoff.
+
+A sufficiently long passive cable with a sealed end in a uniform axial field
+has quadratic-beat factors $|Y_\Omega(f_c)|/|Y_\Omega^{\rm direct}|$ near $10^{-2}$
+at $1$~kHz and $10^{-3}$ at $10$~kHz for $\tau_m=16$~ms, exceeding the point-membrane
+values.
+
+QIF computes access in its membrane equation, so current input needs no additional
+filter. Shorter access improves transmission but determines neither mixing nor
+recurrent gain.
+
+\begin{table}[h]
+\centering\small
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.8cm}
+>{\raggedright\arraybackslash}p{3.5cm}
+>{\raggedright\arraybackslash}p{8.6cm}@{}}
+\toprule
+Response & Time scale & Evidence and role \\
+\midrule
+Somatic point-membrane model & $\tau_m=16$~ms; $f_{\rm char}\approx10$~Hz &
+Illustrative current-driven filter, informed by somatic measurements near $12$ and $16.5$~ms
+\cite{deitcher2017,eyal2016}. \\
+Myelinated axon & minimum fitted decay $\approx1$~ms &
+Injected-current responses in Cohen et al.'s periaxonal circuit
+\cite{cohen2020periaxonal}; evidence for distinct axonal voltage dynamics. \\
+Fast axonal access & assumed $\tau_m=0.2$~ms; $f_{\rm char}\approx800$~Hz &
+Reduced-model sensitivity case for a fast compartment, such as an AIS or node;
+TI coupling and charging time require calibration. \\
+Prior TI network model & $\tau_m=1$ and $0.4$~ms &
+Short effective membrane times governing kHz sensitivity in a gamma network
+\cite{esmaeilpour2021}; model parameters, not measured axonal TI decays. \\
+Field-induced charging & $\approx0.7~\mu$s &
+Measured with strong microsecond field pulses in isolated neurons
+\cite{semenov2025}; a different stimulation regime. \\
+Cellular detector & channel- and state-dependent &
+Luff et al.'s TTX-sensitive mixing persists near $5$~kHz
+\cite{luff2024mixer}; this measures detection, not a passive time constant. \\
+JR excitatory synapse & $\tau_s=10$~ms; $f_{\rm char}\approx16$~Hz &
+Model filter acting on the generated rate, downstream of detection. \\
+\bottomrule
+\end{tabular}
+\caption{\textbf{Access, detection, and downstream filtering involve different response
+times.} Measured decays, pulse-charging times, and assumed model parameters are
+identified separately. The characteristic frequency $f_{\rm char}=1/(2\pi\tau)$
+is given only for the specified filters; an axonal decay is not automatically a TI
+cutoff. AIS, axon initial segment; TTX, tetrodotoxin.}
+\label{tab:doors}
+\end{table}
+
+Any additional gate filter must represent kinetics absent from the detector
+and have a model or measurement behind it. QIF lacks explicit sodium-channel
+kinetics; neither it nor a static sigmoid specifies a universal $1$~kHz cutoff.
+
+\subsection{The exact mean field extends the static detector}\label{sec:dynamic}
+The exact mean field of all-to-all quadratic integrate-and-fire (QIF) neurons
+with Lorentzian excitabilities supplies both a static rate curve and its
+dynamic extension. For weak carriers at fixed synaptic input, steady
+rectification follows the curve's curvature at low frequency and its slope
+at high frequency. The Montbri\'o--Paz\'o--Roxin (MPR) equations evolve physical
+rate $r$ and dimensionless mean voltage $v$ \cite{montbrio2015}; dynamic
+synapses produce a second-generation neural mass (NMM2)
+\cite{ruffini2021nmm2,clusella2023}. The population equations are
+\begin{equation}
+\tau_m\dot r=\frac{\Delta}{\pi\tau_m}+2rv,\qquad
+\tau_m\dot v=v^2+\bar\eta-(\pi\tau_m r)^2+I.
+\label{eq:mpr}
+\end{equation}
+Here $\tau_m$ is membrane time, dots denote physical-time derivatives,
+$\bar\eta$ and $\Delta>0$ are the excitability center and half-width, and
+$I$ is dimensionless input, including recurrent drive when present.
+For constant total drive $Q=\bar\eta+I$, equilibrium gives
+$v=-\Delta/(2\pi\tau_m r)$ and
+\begin{equation}
+\tau_m r=F(Q)=\frac{1}{\pi}\sqrt{\frac{Q+\sqrt{Q^2+\Delta^2}}{2}} .
+\label{eq:Fmpr}
+\end{equation}
+Primes on $F$ denote drive derivatives. Below its inflection at
+$Q=\Delta/\sqrt3$, curvature reflects recruitment across threshold;
+above it, the concave square-root rate of active cells. This nonlinearity
+exists without recurrence and grows without bound, unlike the JR sigmoid.
+
+If relaxation is faster than synaptic variation, NMM2 reduces to
+$r\simeq F(Q)/\tau_m$ with dynamically filtered recurrence
+\cite{ruffini2021nmm2,clusella2023}. For population relaxation time
+$\tau_{\rm rel}$ and synaptic time $\tau_s$ (Eq.~\eqref{eq:slow_synapse},
+Appendix~\ref{app:models}), this requires $\tau_{\rm rel}\ll\tau_s$.
+Applying the static curve to carriers further requires
+$\omega_c\tau_{\rm rel}\ll1$: the same population can track synaptic
+input quasistatically while responding dynamically to kHz input.
+Recurrent excitatory--inhibitory circuits resonate without intrinsic
+cellular resonance \cite{brunelhakim1999,brunelwang2003}. Such synaptic
+modes survive the fast-membrane limit, whereas modes requiring finite
+membrane dynamics need not.
+
+\paragraph{Field coupling and recurrent gain in the slow limit.}
+The field input survives this reduction. For one self-coupled population,
+write $I=I_b+\tau_mJr_{\rm syn}+\lambda_I E$, where $I_b$ is the normalized
+background input, $r_{\rm syn}$ the filtered rate, and $J$ dimensionless
+self-coupling. For a fixed field direction, $\lambda_I=\kappa_E/I_s$:
+$\kappa_E$ is equivalent current per field and $I_s$ the current unit.
+A cellular voltage-polarization coefficient requires an impedance conversion
+before entering this current-driven model. At equilibrium $r_{\rm syn}=r$;
+differentiating $\tau_mr=F(\bar\eta+I_b+\tau_mJr+\lambda_IE)$ gives
+\begin{equation}
+\frac{\partial r_*}{\partial E}
+=\frac{\lambda_I F'(Q_*)}{\tau_m[1-JF'(Q_*)]}.
+\label{eq:slow-field-gain}
+\end{equation}
+Positive self-feedback amplifies the steady response on the stable branch
+$JF'(Q_*)<1$; negative feedback suppresses it. The bare curve $F$ takes
+total drive as its argument. A transfer fitted after an internally recurrent
+population settles already contains that feedback and must not be coupled
+through the same loop again. A JR-like description retains this gain when
+input conversion, local slope, and feedback are matched
+\cite{ruffini2021nmm2,clusella2023}; its connections between populations do
+not automatically specify the same within-population self-coupling.
+
+Outside the adiabatic limit, the quadratic voltage term mixes the carriers
+before the rate responds. For an uncoupled population under a weak current
+$I_{\rm ac}\cos\omega t$, write the mean-rate shift as
+$I_{\rm ac}^2\kappa_{\rm DC}/\tau_m$. At slow carriers,
+$\kappa_{\rm DC}\to F''(Q)/4$; at fast carriers,
+$\kappa_{\rm DC}\sim F'(Q)/[2(\omega\tau_m)^2]$.
+The slow response follows curvature and can be negative above the inflection.
+The fast DC coefficient instead follows the positive slope $F'$, largest at the
+inflection, without a PEIX-based sign reversal: voltage excursions of order
+$I_{\rm ac}/(\omega\tau_m)$ generate a positive input shift through $v^2$.
+A shorter membrane time can therefore change both the magnitude and sign
+of the mean response at a given physical carrier frequency.
+
+This fast-carrier attenuation includes membrane access. Normalizing by the
+squared voltage excursion leaves a coefficient tending to $F'/2$.
+For two nearby current tones of amplitudes $I_j$, voltage squaring gives a
+beat source proportional to $I_1I_2/(\omega_1\omega_2\tau_m^2)$.
+The dynamic rate equation further attenuates the carriers after mixing;
+that carrier attenuation is not applied to the generated beat. The crossover is derived in
+Appendix~\ref{app:mpr-coefficients}; fixed-voltage coefficients and carrier
+exponents are supplementary (\S\ref{supp:dynamic-details}).
+
+In this cellular realization of quadratic detection, the unit coefficient of $v^2$ in membrane-time units
+plays the role of $\Sig''/2$; $G$ includes the voltage and rate dynamics
+converting that source into a rate beat. Other smooth cellular mechanisms
+share the weak-input product law without sharing its coefficient, phase,
+or carrier dependence.
+

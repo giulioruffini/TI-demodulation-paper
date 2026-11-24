@@ -1,0 +1,14 @@
+{
+  "TN0484_envelope_demodulation.pdf": {
+    "before_backup_sha256": "6bd6b11fc927768440868f50265c1352eabbeab98a6ae8af531ef51b976b2089",
+    "prebuild_sha256": "6bd6b11fc927768440868f50265c1352eabbeab98a6ae8af531ef51b976b2089",
+    "postbuild_sha256": "6bd6b11fc927768440868f50265c1352eabbeab98a6ae8af531ef51b976b2089",
+    "unchanged_from_backup": true
+  },
+  "TN0484_envelope_demodulation.bbl": {
+    "before_backup_sha256": "3efa9d688c30006a39bc5bec309dcfb593621d89de5ee70e0e90f6c19ff2e00c",
+    "prebuild_sha256": "3efa9d688c30006a39bc5bec309dcfb593621d89de5ee70e0e90f6c19ff2e00c",
+    "postbuild_sha256": "3efa9d688c30006a39bc5bec309dcfb593621d89de5ee70e0e90f6c19ff2e00c",
+    "unchanged_from_backup": true
+  }
+}

@@ -1,0 +1,37 @@
+\section{Carrier access}\label{supp:access}
+These calculations support the distinction between applied field and local
+polarization in \S\ref{sec:khz} and its kHz demonstrations.
+\subsection{Compartment access and the passive-cable estimate}\label{app:access}
+The passive compartment equation $\mathsf C_m\dot{\mathbf V}+\mathsf G_m\mathbf V=\mathbf I^0-\mathbf p_EE$
+\cite{ruffini2021nmm2} gives the voltage perturbation
+$\delta\mathbf V(\omega)=-(\mathsf G_m+i\omega\mathsf C_m)^{-1}\mathbf p_EE(\omega)$. In SI units, $\mathbf V$ contains the compartment membrane potentials (V), $\mathsf C_m$ and
+$\mathsf G_m$ are the capacitance (F) and conductance (S) matrices, $\mathbf I^0$ is the
+endogenous current (A), and $\mathbf p_E$ is the field-to-current coupling
+(A per V/m).
+
+Geometry can also alter the relevant response mode. For a passive cable, the
+magnitude of the frequency-dependent space constant is
+\begin{equation}
+\ell(\omega)=\ell_0(1+\omega^2\tau_m^2)^{-1/4},
+\label{eq:lambda}
+\end{equation}
+where $\ell_0$ is its static value. At $1$~kHz and $\tau_m=16$~ms, this length
+is about one tenth of its static value, so compartments that are strongly coupled
+at low frequency can respond differently to the carrier. A somatic charging time
+alone therefore does not determine every extracellular-field response mode.
+For a sufficiently long passive cable with a sealed end in a uniform axial field,
+the end polarization is proportional to this space constant. Each carrier then
+acquires the factor $(1+\omega^2\tau_m^2)^{-1/4}$, so the quadratic beat is
+attenuated by $(1+\omega_c^2\tau_m^2)^{-1/2}$, about $10^{-2}$ at $1$~kHz and
+$10^{-3}$ at $10$~kHz for $16$~ms. These differ from the point-membrane estimates;
+soma loading and finite cable length further change the transfer.
+Thus cable geometry can improve carrier access without changing the somatic
+membrane time.
+
+\input{planning/parts/access_evidence}
+\ifjne
+\input{planning/parts/access_literature}
+\fi
+\input{planning/parts/figure_khz}
+\input{planning/parts/figure_khz_twotone}
+\input{planning/parts/figure_khz_direct}

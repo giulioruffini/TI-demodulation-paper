@@ -1,0 +1,17 @@
+{
+  "article_pages": 37,
+  "supplement_pages": 32,
+  "redline_pages": 53,
+  "visual_inspection": {
+    "article": "All 37 pages in contact sheets; enlarged pages 8, 19, 20, 21, 37. Final source adds waveform/ratio/example cues; rechecked current page text.",
+    "redline": "Enlarged changed FEM table and MPR appendix; no overlaps or clipping.",
+    "storyline": "All six pages in contact sheet; no overflow.",
+    "final_restorations": "Enlarged final pages 14 and 21 checked after restoring the purpose clauses and gain caption; text remains readable and contained."
+  },
+  "table_font_sizes_pt": [
+    6.974,
+    9.963
+  ],
+  "figure_changes": false,
+  "font_margin_figure_size_changes": false
+}

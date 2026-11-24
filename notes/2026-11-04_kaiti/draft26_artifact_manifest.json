@@ -1,0 +1,53 @@
+{
+  "baseline": "0d80796",
+  "implementation_commit": "0fbac10",
+  "fidelity_review_commit": "79e06a8",
+  "files": {
+    "TN0484_envelope_demodulation.tex": {
+      "sha256": "9d799a8c25b17e5e13ba13e7ad0a48864af19ede60b5f8fee030876332c58173",
+      "bytes": 104201
+    },
+    "planning/parts/article_models.tex": {
+      "sha256": "b3e63122af05dbe1bdf85227f3227466948a1378baed4758f2b6989f3d6d6069",
+      "bytes": 6091
+    },
+    "TN0484_jne.pdf": {
+      "sha256": "d5d4686b7bf18f257e0de71461f2504ff51018f9a5bf8ed65263e0001dabbfec",
+      "bytes": 2438552,
+      "pages": 37
+    },
+    "TN0484_jne_supplement.pdf": {
+      "sha256": "7f49d92cdd086eb2ba7e7b0626ee77c438458d3542ceb3aeb763965715e6137f",
+      "bytes": 1953311,
+      "pages": 32
+    },
+    "docs/redline_last_read.pdf": {
+      "sha256": "d3990a49dae5ae12dc685f490dbfebbf6798d77b06e48f55c7577287ca72f2a3",
+      "bytes": 2767229,
+      "pages": 53
+    },
+    "build/storyline/tn0484_storyline.pdf": {
+      "sha256": "944d6ceea06eba8051353b638a203d14e6690b8fb1f4bd1fea82c54ec14edd62",
+      "bytes": 150256,
+      "pages": 6
+    },
+    "TN0484_envelope_demodulation.pdf": {
+      "sha256": "ef4c79ae246eacac711c5e11ce7960735ce67b1add15c80f492c10073b9425ac",
+      "bytes": 2276808,
+      "pages": 44
+    },
+    "TN0484_envelope_demodulation.bbl": {
+      "sha256": "3efa9d688c30006a39bc5bec309dcfb593621d89de5ee70e0e90f6c19ff2e00c",
+      "bytes": 19701
+    }
+  },
+  "checks": [
+    "PASS: 135 baseline labels and 67 citations retained and resolved.",
+    "PASS: 32 labeled equation bodies unchanged apart from punctuation/spacing.",
+    "PASS: abstract, full PING system, efficiency derivation and original QIF/FEM inputs unchanged.",
+    "PASS: article/supplement logs, printed references, historical S1\u2013S13 labels and annotated draft20.",
+    "PASS: isolated full-TN routing build; canonical TN artifacts were not regenerated.",
+    "PASS: all figure sources/artifacts, recorded reading baseline and pre-existing canonical TN artifacts unchanged."
+  ],
+  "push_guard": "no-push-while-review-held"
+}

@@ -1,0 +1,60 @@
+fig_concept.pdf: 842 pt wide, placed 1, scale 0.552; printed sizes 6.1..9.1 pt; 22 spans
+
+fig_bifurcation_sigmoid.pdf: 817 pt wide, placed 1, scale 0.569; printed sizes 6.0..9.1 pt; 47 spans
+    COLLISION  'SNIC' x 'HB+' (19%) at (182,236)
+
+fig_demodulation_twotone.pdf: 749 pt wide, placed 1, scale 0.621; printed sizes 6.1..8.4 pt; 52 spans
+
+fig_resonance.pdf: 728 pt wide, placed 1, scale 0.639; printed sizes 6.1..8.3 pt; 30 spans
+
+fig_carrier_independence.pdf: 795 pt wide, placed 1, scale 0.585; printed sizes 6.1..8.4 pt; 25 spans
+
+fig_feasibility_khz.pdf: 741 pt wide, placed 1, scale 0.627; printed sizes 6.1..8.4 pt; 59 spans
+    COLLISION  'εeq ∝λ2' x '0E2' (24%) at (349,223)
+
+fig_curvature_twotone.pdf: 877 pt wide, placed 1, scale 0.530; printed sizes 4.3..8.4 pt; 42 spans
+    COLLISION  '1' x '2σ00(v * )ε2' (16%) at (302,43)
+    TOO SMALL  1 span(s) below 6.0 pt: '1'@4.3
+
+fig_fem.pdf: 732 pt wide, placed 1, scale 0.635; printed sizes 6.1..8.9 pt; 72 spans
+
+fig_jcurve.pdf: 787 pt wide, placed 1, scale 0.591; printed sizes 6.1..8.4 pt; 47 spans
+
+fig_nmm2_resonance_twotone.pdf: 797 pt wide, placed 1, scale 0.583; printed sizes 6.1..8.4 pt; 34 spans
+
+fig_mpr_crossover.pdf: 803 pt wide, placed 1, scale 0.579; printed sizes 4.5..8.9 pt; 36 spans
+    COLLISION  '∝f−2' x 'c' (54%) at (635,109)
+    TOO SMALL  1 span(s) below 6.0 pt: 'c'@4.5
+
+fig_qif_raster_twotone.pdf: 777 pt wide, placed 1, scale 0.598; printed sizes 6.4..8.3 pt; 72 spans
+
+fig_qif_regimes.pdf: 728 pt wide, placed 1, scale 0.639; printed sizes 6.4..8.8 pt; 88 spans
+
+fig_qif_timing_twotone.pdf: 993 pt wide, placed 1, scale 0.468; printed sizes 6.1..7.5 pt; 44 spans
+
+fig_khz.pdf: 580 pt wide, placed 0.74, scale 0.593; printed sizes 4.5..7.7 pt; 22 spans
+    COLLISION  '∝1/f2' x 'c' (54%) at (113,287)
+    TOO SMALL  1 span(s) below 6.0 pt: 'c'@4.5
+
+fig_nmm2_jcurve.pdf: 678 pt wide, placed 0.92, scale 0.631; printed sizes 6.1..9.5 pt; 28 spans
+
+fig_timing_not_rate.pdf: 673 pt wide, placed 1, scale 0.691; printed sizes 6.1..8.3 pt; 33 spans
+
+fig_tacs_jcurve.pdf: 677 pt wide, placed 0.92, scale 0.632; printed sizes 6.1..8.3 pt; 30 spans
+
+fig_khz_twotone.pdf: 618 pt wide, placed 0.95, scale 0.714; printed sizes 6.4..8.9 pt; 35 spans
+
+fig_entrainment.pdf: 729 pt wide, placed 1, scale 0.638; printed sizes 6.1..8.5 pt; 54 spans
+
+fig_khz_direct.pdf: 677 pt wide, placed 1, scale 0.686; printed sizes 4.2..8.9 pt; 35 spans
+    COLLISION  '∝1/f2' x 'c' (54%) at (102,204)
+    TOO SMALL  1 span(s) below 6.0 pt: 'c'@4.2
+
+fig_nmm2_map.pdf: 449 pt wide, placed 0.72, scale 0.746; printed sizes 6.0..7.1 pt; 25 spans
+    TOO SMALL  22 span(s) below 6.0 pt: '30'@6.0, '40'@6.0, '50'@6.0, '60'@6.0, '70'@6.0, '80'@6.0
+
+fig_spatial_maps.pdf: 482 pt wide, placed 1, scale 0.964; printed sizes 7.7..9.6 pt; 34 spans
+
+fig_lanmm_field_p1_twotone.pdf: 644 pt wide, placed 0.86, scale 0.621; printed sizes 6.1..8.4 pt; 88 spans
+
+fig_lanmm_field_p2_twotone.pdf: 644 pt wide, placed 0.86, scale 0.621; printed sizes 6.1..8.4 pt; 88 spans

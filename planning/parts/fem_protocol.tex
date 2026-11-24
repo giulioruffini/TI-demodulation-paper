@@ -1,0 +1,114 @@
+To compare the spatial predictions on the same anatomy, we compute all maps
+in one open-access subject,
+IXI002 of the IXI dataset\footnote{\url{https://brain-development.org/ixi-dataset/}}
+(T1-weighted MRI; female, 35 years). The T1 image was segmented into six tissues
+(scalp, skull, cerebrospinal fluid, gray matter, white matter and eyes) and meshed with
+SimNIBS~3.2.3 \texttt{headreco} \cite{nielsen2018}, with its CAT12 option
+\cite{gaser2024}. Tissue conductivities were 0.33 (scalp), 0.008 (skull), 1.79
+(cerebrospinal fluid), 0.40 (gray matter), 0.15 (white matter) and 0.33~S/m (eyes)
+\cite{salvador2025}. These are low-frequency values; no dispersion correction was
+applied at the kHz carriers. The volume conductor is linear and quasi-static, so the
+carrier frequencies do not enter the maps.
+
+The electrodes follow the published hippocampal montage of Violante et al.\
+\cite{violante2023}, placed by its recipe on the subject's registered 10--10
+positions. Pair~1 (anterior) joins e1, 25~mm from T9 toward FT9, to e2, 10~mm from AF8
+toward Fp2. Pair~2 (posterior) joins e3, 25~mm from T9 toward TP9, to e4, 10~mm from P8
+toward PO8. Each electrode is a 20-mm disc of 3~mm of gel (4.0~S/m) under 2~mm of metal
+(10~S/m), meshed into the head model with SimNIBS~3.2.3; the resulting mesh has
+$3.64\times10^6$ linear tetrahedra. As a montage sensitivity, the 10--10 rendering of
+this montage, FT7--F8 (anterior) and TP7--P8 (posterior), which Yatsuda et al.\
+\cite{yatsuda2024} used as their starting montage, was meshed and solved in the same
+way. Each montage has its own mesh, carrying only its own four electrodes.
+
+Each pair was solved once at 1~A. The potential $\phi_j$ (V) satisfies
+$\nabla\!\cdot\!(\sigma_{\rm cond}\nabla\phi_j)=0$, where
+$\sigma_{\rm cond}$ is tissue conductivity (S/m). Current enters and leaves through each
+electrode's metal contact as a Neumann condition, distributed in proportion to nodal
+area; the rest of the scalp carries no normal current, and one pinned node fixes the
+gauge. The linear finite-element system was assembled and solved with Neuroelectrics'
+temporal-interference library, by conjugate gradients with algebraic-multigrid
+preconditioning, to a relative residual of $10^{-8}$. The field
+$-\nabla\phi_j$ was recovered at gray- and white-matter
+nodes by superconvergent patch recovery \cite{zienkiewicz1992}, separately within each
+compartment (446{,}877 node--compartment pairs). Dividing these fields by the solve
+current gives the field-per-current vectors $\mathbf F_j$, expressed in
+(V/m)/mA to match $I_j^{\rm pair}$. Every current condition is a scaling of these two fields.
+With peak pair currents $I_1^{\rm pair}$ (anterior) and
+$I_2^{\rm pair}$ (posterior) summing to 4~mA, the ratio 1:1 is $2+2$~mA and 1:3 is
+1~mA anterior plus 3~mA posterior, the two conditions of Violante et al. The ratio sweep
+sets the posterior share $I_2^{\rm pair}/(I_1^{\rm pair}+I_2^{\rm pair})$ from 0.1 to
+0.9 in steps of 0.025.
+
+The field-to-polarization conversion follows \S\ref{sec:envelope}:
+$\varepsilon_j(\mathbf x)=I_j^{\rm pair}\mathcal P_j(\mathbf x)$, with
+$\mathcal P_j=\lambda_0\,\mathbf F_j\!\cdot\!\mathbf n$, one uniform
+static coupling $\lambda_0=0.5$~mV per V/m \cite{radman2009}, and
+$\lambda_f\approx\lambda_0$. A uniform coupling multiplies the envelope map by
+$\lambda_0$ and the two second-order maps by $\lambda_0^2$. Target-to-reference ratios,
+normalized maps and focus positions do not depend on it. Hippocampal couplings of
+$0.12$--$0.18$~mV per V/m \cite{bikson2004,deans2007} would scale the absolute values
+by $0.24$--$0.36$ and $0.06$--$0.13$, respectively.
+
+The detector compartment fixes the projection direction. A laminar direction for a pyramidal
+axon initial segment, a local axon direction for a node, or an orientation
+distribution for terminals defines a different access model. Isotropic averaging
+is one possible distribution, not an anatomical consequence of choosing terminals.
+Maximizing a geometric map over orientation gives an upper bound for that map
+at each location; it does not identify the detector's orientation.
+
+The projection direction $\mathbf n(\mathbf x)=\mathbf n^*(\mathbf x)$ is the envelope-maximizing direction at
+the reference ratio 1:1: the closed-form maximizer, over unit vectors, of
+$2\min(|\mathbf F_1\!\cdot\!\mathbf n|,|\mathbf F_2\!\cdot\!\mathbf n|)$
+\cite{grossman2017}. It is chosen once at each node and then held fixed for 1:1, 1:3
+and every ratio of the sweep, and all three maps use it. Along it, the 1:1 envelope map
+equals its maximum over orientation. At any other ratio it is the envelope seen by an
+element with that fixed orientation, which can be below that ratio's own maximum. As an
+orientation sensitivity, every statistic was repeated along a second fixed field, the
+radial direction from the brain centroid. The isotropic comparison averages the signed
+mixing term over uniformly distributed orientations before its magnitude is taken:
+$\langle\varepsilon_1\varepsilon_2\rangle_{\mathbf n}
+=\lambda_0^2I_1^{\rm pair}I_2^{\rm pair}\,\mathbf F_1\!\cdot\!\mathbf F_2/3$, so the
+isotropic beat excursion is
+$\tfrac23\lambda_0^2I_1^{\rm pair}I_2^{\rm pair}|\mathbf F_1\!\cdot\!\mathbf F_2|$.
+Elements whose beats have opposite phase cancel in this average.
+
+The target is the left hippocampus of a FreeSurfer~6.0.0 \texttt{recon-all}
+segmentation of the same T1 image (\texttt{aseg} label 17, 3903~mm$^3$)
+\cite{fischl2002}. The region of interest (ROI) is the 1{,}568 gray- and white-matter
+nodes inside it. The reference is the 273{,}544 gray-matter nodes outside the
+ROI, including other deep gray matter. It is a gray-matter reference, not a cortex-only contrast.
+The mesh and the segmentation share one image frame; tissue-volume, centroid and
+white-matter checks confirmed their alignment. As a label sensitivity, the
+Neuromorphometrics atlas hippocampus, warped into the subject with SimNIBS~3.2.3
+\texttt{mni2subject} and the subject's nonlinear MNI transform (1{,}345 nodes; Dice 0.72
+with the FreeSurfer label), replaced the ROI. As a tissue sensitivity, the ROI was
+restricted to its gray-matter nodes (1{,}174 with the FreeSurfer label, 1{,}013 with
+the atlas label).
+
+The target-to-reference ratio is the ROI 95th percentile divided by the reference
+95th percentile; its mean-based companion divides the ROI mean by the same
+reference percentile. All percentiles and centroids weight nodes equally.
+The quadratic excursion and $\mathcal I$ are second order in the field, whereas
+the envelope excursion is first order. To separate this difference in degree
+from the spatial weighting, each second-order statistic is also given
+degree-matched, computed on the square root of the map. This is a geometric
+comparison; the raw maps remain the respective detector predictions before gain.
+The focus is the centroid of the top 10\% of ROI nodes,
+ranked by the map's own value, with 5, 25 and 50\% as a sensitivity. Ranking makes the
+focus exactly invariant to a uniform positive factor. Its displacement from 1:1 is
+measured along the hippocampal long axis, the first principal axis of the ROI nodes,
+with anterior positive. Field projections still use $\mathbf n^*$, independently
+of this reporting axis. The 1:1 to 1:3 displacement was computed for every combination
+of montage, label, ROI tissue definition and focus fraction (32 per map), each montage
+along its own 1:1 direction.
+
+No signed DC-source or mean-response map is computed. For a spatially uniform detector
+coefficient, $Y_{\rm DC}=\tfrac12\Sig''(v^*)\mathcal I$ (\S\ref{sec:dc}) is
+$\mathcal I$ rescaled, with the sign of $\Sig''(v^*)$. A nonuniform coefficient would
+require an operating-point map, which a head model does not provide, and a mean
+response would additionally require a circuit model. In particular,
+$\Sig''(v^*)$ is curvature at the population model's operating point, not a
+measurement of the transfer at the axon initial segment. Assigning that
+coefficient to an anatomical detector requires a calibrated access and
+input--output model.

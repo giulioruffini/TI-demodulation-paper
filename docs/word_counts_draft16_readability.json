@@ -1,0 +1,111 @@
+{
+  "baseline_commit": "22ce445",
+  "counting": "texcount -sum=1,1,1,0,0,0,0 -1; prose, headings and captions, excluding mathematical expressions, references, shared abstract and shared notation table. The identical imported schematic caption is included in both counts.",
+  "sections": [
+    {
+      "section": "Introduction",
+      "before": 973,
+      "after": 758,
+      "change": -215
+    },
+    {
+      "section": "Theory",
+      "before": 5113,
+      "after": 4444,
+      "change": -669
+    },
+    {
+      "section": "Methods",
+      "before": 2699,
+      "after": 2913,
+      "change": 214
+    },
+    {
+      "section": "Results",
+      "before": 3232,
+      "after": 3123,
+      "change": -109
+    },
+    {
+      "section": "Discussion",
+      "before": 1960,
+      "after": 1866,
+      "change": -94
+    },
+    {
+      "section": "Conclusion",
+      "before": 230,
+      "after": 279,
+      "change": 49
+    },
+    {
+      "section": "Code and data availability",
+      "before": 96,
+      "after": 96,
+      "change": 0
+    },
+    {
+      "section": "Acknowledgments",
+      "before": 30,
+      "after": 30,
+      "change": 0
+    },
+    {
+      "section": "Competing interests",
+      "before": 39,
+      "after": 39,
+      "change": 0
+    },
+    {
+      "section": "Author contributions",
+      "before": 71,
+      "after": 71,
+      "change": 0
+    },
+    {
+      "section": "Declaration of generative AI and AI-assisted technologies in the manuscript\npreparation process",
+      "before": 62,
+      "after": 62,
+      "change": 0
+    },
+    {
+      "section": "Simulated models: equations and parameters",
+      "before": 168,
+      "after": 455,
+      "change": 287
+    },
+    {
+      "section": "The cubic Hopf normal form lacks a quadratic mixer",
+      "before": 178,
+      "after": 178,
+      "change": 0
+    },
+    {
+      "section": "Efficiency of a memoryless transfer against a direct in-band drive",
+      "before": 560,
+      "after": 560,
+      "change": 0
+    },
+    {
+      "section": "Extension: the laminar column at low carriers",
+      "before": 1298,
+      "after": 1298,
+      "change": 0
+    },
+    {
+      "section": "Vocabulary and metrics",
+      "before": 293,
+      "after": 293,
+      "change": 0
+    },
+    {
+      "section": "Supplementary figures",
+      "before": 1270,
+      "after": 1270,
+      "change": 0
+    }
+  ],
+  "main_body_before": 14207,
+  "main_body_after": 13383,
+  "abstract_words": 296
+}

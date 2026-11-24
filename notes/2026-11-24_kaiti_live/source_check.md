@@ -1,0 +1,13 @@
+# Envelope definition and spatial restriction
+
+November 24, 2026. This addition follows Giulio's request relayed by Klaus at 11:44. It extends the prose proposal with a definition and a cited mathematical scope statement; it is not an edit to the live manuscript.
+
+The envelope is the modulus of the analytic signal, not the modulus of the Hilbert transform alone. Gabor's original paper, pages 432–433, defines the complex signal, identifies its real and imaginary parts as a Hilbert-transform pair, and writes its squared modulus as the sum of their squares. The scanned primary source was read: [Gabor (1946), Part 1](https://genesis.eecg.toronto.edu/gabor1946.pdf), DOI 10.1049/ji-3-2.1946.0074. For the manuscript's two positive-frequency tones, the definition gives its existing square-root envelope exactly, including signed amplitudes. No narrowband approximation is needed for that identity.
+
+The field-strength statement is local to a homogeneous, isotropic, source-free region in the quasistatic approximation. Heller and van Hulsteyn derive the harmonic-field equation and state the maximum restriction on page 130, Section II, following Eq. (2.8). The primary scan was inspected in the independent scope review: [Heller and van Hulsteyn (1992)](https://pmc.ncbi.nlm.nih.gov/articles/PMC1262130/), DOI 10.1016/S0006-3495(92)81587-4. “No strict three-dimensional interior maximum” preserves the constant-field case and does not imply that all boundaries are superficial.
+
+Spatially fixed linear field-to-polarization coupling makes the carrier polarizations harmonic. Their summed squares and the beat-period mean of their analytic envelope are subharmonic. The envelope excursion and quadratic beat amplitude can have strict interior maxima; an explicit local construction is recorded in [the scope note](envelope_boundary_scope.md). The new paragraph points to the existing steady-source section for the mean-map argument. It makes no new claim of physiological focality or of an interior maximum in the head model.
+
+An independent read of the inserted paragraph found one antecedent problem: after the envelope definition, “The spectrum” could refer to the envelope. The final sentence now reads “The spectrum of s(t) contains only the two applied lines.” The definition of the envelope, the waveform spectrum, and the detected low-frequency source therefore remain distinct.
+
+The remaining changes from proposal v1 are the grammatical correction “aims at” and the two bibliography entries. All abstract macros, results, equations already present, figures, tables, and supplementary content are unchanged from v1.

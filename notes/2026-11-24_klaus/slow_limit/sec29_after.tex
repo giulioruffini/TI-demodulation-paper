@@ -1,0 +1,43 @@
+With the synaptic drive held fixed, both $r$ and $v$ relax, over a population time
+$\tau_{\rm rel}$, to the equilibrium of Eq.~\eqref{eq:mpr}, so $r\simeq F(Q)/\tau_m$.
+If $\tau_{\rm rel}$ is much shorter than the synaptic time $\tau_s$
+(Eq.~\eqref{eq:slow_synapse}, Appendix~\ref{app:models}), the fast variables can be
+eliminated at every instant while the synapses keep their dynamics, and NMM2 reduces to
+the static curve with dynamically filtered recurrence
+\cite{ruffini2021nmm2,clusella2023}. Applying the static curve to carriers requires the separate condition
+$\omega_c\tau_{\rm rel}\ll1$; one population can track synaptic input quasistatically
+while responding dynamically to kHz input.
+Recurrent excitatory--inhibitory circuits resonate without intrinsic
+cellular resonance \cite{brunelhakim1999,brunelwang2003}. Such synaptic
+modes survive the fast-membrane limit, whereas modes requiring finite
+membrane dynamics need not.
+
+\paragraph{Field coupling and recurrent gain in the slow limit.}
+The field input survives this reduction. For one self-coupled population,
+$I=I_b+\tau_mJu+\lambda_I E$, where $I_b$ is the normalized background input, $u$ the
+postsynaptic potential divided by its steady gain, and $J$ the dimensionless
+self-coupling. For a fixed field direction, $\lambda_I=\kappa_E/I_s$, with $\kappa_E$
+the equivalent current per unit field and $I_s$ the current unit; a cellular
+voltage-polarization coefficient requires an impedance conversion before entering this
+current-driven model. At equilibrium $u=r$, and a field change $\delta E$ acts directly and through the
+recurrent rate,
+\begin{equation}
+\delta r=\frac{F'(Q_*)}{\tau_m}\,\big(\lambda_I\,\delta E+\tau_mJ\,\delta r\big),
+\end{equation}
+and solving for $\delta r$ gives
+\begin{equation}
+\frac{\partial r_*}{\partial E}
+=\frac{\lambda_I F'(Q_*)}{\tau_m[1-JF'(Q_*)]}.
+\label{eq:slow-field-gain}
+\end{equation}
+This stationary derivative does not require slow synapses; it compares the closed loop
+with the clamped response $\lambda_IF'(Q_*)/\tau_m$, with $u$ held fixed, at the same
+$Q_*$. On a stable equilibrium, positive self-feedback amplifies the steady response by
+$1/[1-JF'(Q_*)]$ and negative feedback suppresses it; $JF'(Q_*)<1$ is necessary there but,
+with finite membrane time, not a complete stability test. The bare curve $F$ takes total drive as its
+argument. A transfer fitted from external drive to settled rate already includes this
+feedback and must not be coupled through the same loop again. A JR-like
+description retains this gain when input conversion, local slope, and feedback are
+matched \cite{ruffini2021nmm2,clusella2023}; its connections between populations do not
+automatically specify the same within-population self-coupling.
+

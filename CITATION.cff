@@ -1,55 +1,88 @@
 cff-version: 1.2.0
-message: "If you use this work, please cite it using the metadata below."
-title: "The cortical column as a tuned receiver: a network mechanism for temporal-interference stimulation"
-abstract: >-
-  A mesoscopic, network mechanism for temporal-interference (TI) stimulation: the
-  population firing-rate sigmoid of a neural mass acts as a square-law demodulator of
-  an amplitude-modulated field, and a second-order-synapse network near a Hopf
-  bifurcation resonantly amplifies the recovered envelope. Demonstrated across a
-  modeling ladder (Jansen-Rit, laminar LaNMM, exact NMM2 mean field, QIF spiking
-  network) with a tACS corollary.
-type: software
-authors:
-  - family-names: Ruffini
-    given-names: Giulio
-    affiliation: "Neuroelectrics / BCOM"
-    orcid: "https://orcid.org/0000-0003-3084-0177"
-  - family-names: Mercadal
-    given-names: Borja
-    affiliation: "Neuroelectrics"
-    orcid: "https://orcid.org/0000-0002-0941-6796"
-  - family-names: Just
-    given-names: Alex
-    affiliation: "Neuroelectrics"
-    orcid: "https://orcid.org/0009-0006-8794-7425"
-  - family-names: de Palma Aristides
-    given-names: Raul
-    affiliation: "BCOM"
-    orcid: "https://orcid.org/0000-0002-0255-2293"
-  - family-names: Castaldo
-    given-names: Francesca
-    affiliation: "Neuroelectrics / BCOM"
-    orcid: "https://orcid.org/0000-0002-4947-4552"
-  - family-names: Canals
-    given-names: Santiago
-    affiliation: "Instituto de Neurociencias (UMH-CSIC) / BCOM"
-    orcid: "https://orcid.org/0000-0003-2175-8139"
-  - family-names: Mirasso
-    given-names: Claudio
-    affiliation: "IFISC (UIB-CSIC) / BCOM"
-    orcid: "https://orcid.org/0000-0003-2980-7038"
+message: Please cite the deposited preprint. Archive version 0.13.0 contains manuscript 0.15.0-draft29.
+title: 'The cortical column as a tuned receiver: a network mechanism for temporal-interference
+  stimulation'
+abstract: 'We develop a mesoscale model of temporal-interference (TI) stimulation with three
+  stages in series: membrane access, nonlinear detection of the difference frequency absent
+  from the field, and circuit amplification. We represent access by an effective membrane time
+  and analyze detection and amplification in a Jansen–Rit column, an exact mean field of quadratic
+  integrate-and-fire (QIF) neurons, and its spiking network. We compare spatial maps in one
+  head model and quantify conditional kHz access budgets. For weak fields, a static quadratic
+  detector generates a beat proportional to the carrier-polarization product and a signed, direct-current-like
+  (DC-like) steady source proportional to their summed squares. Transcranial alternating-current
+  (tACS) and direct-current (tDCS) stimulation sources are linear to leading order. At the pinned
+  Jansen–Rit operating point, 0.1–0.3 mV per carrier gives TI sources approximately 2–5% of
+  direct sources at equal per-carrier and direct-input polarizations. Dynamic QIF detection
+  crosses from static curvature to positive-slope rectification at fast carriers. Changing the
+  current ratio moves the hippocampal envelope and mean-square centroids oppositely but only
+  rescales the beat map at fixed state. Near a Hopf bifurcation, resonant gain grows inversely
+  with modal damping and is shared with tACS. In the pinned Jansen–Rit column, coupling changes
+  gain independently of detection; amplification appears mainly in beat-locked population-rate
+  modulation, with little mean-rate change. At stronger inputs, the steady source alone drives
+  the circuit across its gamma threshold, as does an unmodulated carrier matched in root-mean-square
+  (RMS) input. Weak-field beat dose follows the polarization product rather than the envelope
+  minimum. The steady source can act at depth; its sign depends on detector state and dynamics,
+  not carrier polarity. For uniform scalar coupling and detection in homogeneous conductivity,
+  its magnitude has no strict interior maximum. Polarization measurements and amplitude and
+  frequency sweeps test the stages; physiological kHz coupling remains uncalibrated.'
+authors: &id001
+- family-names: Ruffini
+  given-names: Giulio
+  affiliation: Neuroelectrics / BCOM
+  orcid: https://orcid.org/0000-0003-3084-0177
+- family-names: Salvador
+  given-names: Ricardo
+  affiliation: Neuroelectrics
+  orcid: https://orcid.org/0000-0003-1235-6533
+- family-names: Mercadal
+  given-names: Borja
+  affiliation: Neuroelectrics
+  orcid: https://orcid.org/0000-0002-0941-6796
+- family-names: de Palma Aristides
+  given-names: Raul
+  affiliation: BCOM
+  orcid: https://orcid.org/0000-0002-0255-2293
+- family-names: Castaldo
+  given-names: Francesca
+  affiliation: Neuroelectrics / BCOM
+  orcid: https://orcid.org/0000-0002-4947-4552
+- family-names: Grossman
+  given-names: Nir
+  affiliation: Department of Brain Sciences and UK Dementia Research Institute, Imperial College
+    London
+  orcid: https://orcid.org/0000-0003-2002-9049
+- family-names: Canals
+  given-names: Santiago
+  affiliation: Instituto de Neurociencias (UMH-CSIC) / BCOM
+  orcid: https://orcid.org/0000-0003-2175-8139
+- family-names: Mirasso
+  given-names: Claudio
+  affiliation: IFISC (UIB-CSIC) / BCOM
+  orcid: https://orcid.org/0000-0003-2980-7038
 identifiers:
-  - type: doi
-    value: 10.5281/zenodo.21009618
-    description: "Zenodo archive of this repository (concept DOI, resolves to latest version)"
-repository-code: "https://github.com/giulioruffini/TI-demodulation-paper"
+- type: doi
+  value: 10.5281/zenodo.21009618
+  description: Zenodo archive of this repository (concept DOI, resolves to latest version)
+repository-code: https://github.com/giulioruffini/TI-demodulation-paper
 license: CC-BY-4.0
-version: "0.12.0"
-date-released: "2026-07-21"
+version: 0.15.0-draft29
 keywords:
-  - temporal interference
-  - transcranial stimulation
-  - neural mass model
-  - envelope demodulation
-  - Hopf bifurcation
-  - cross-frequency coupling
+- temporal interference
+- transcranial stimulation
+- neural mass model
+- envelope demodulation
+- Hopf bifurcation
+- cross-frequency coupling
+doi: 10.5281/zenodo.24145177
+url: https://zenodo.org/records/24145177
+date-released: '2026-11-11'
+preferred-citation:
+  type: article
+  authors: *id001
+  title: 'The cortical column as a tuned receiver: a network mechanism for temporal-interference
+    stimulation'
+  year: 2026
+  journal: Zenodo
+  version: 0.13.0
+  doi: 10.5281/zenodo.24145177
+  url: https://zenodo.org/records/24145177

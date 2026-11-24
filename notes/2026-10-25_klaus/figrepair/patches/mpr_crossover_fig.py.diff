@@ -1,0 +1,34 @@
+--- a/code/mpr_crossover_fig.py
++++ b/code/mpr_crossover_fig.py
+@@ -24,9 +24,10 @@
+ # ---- (a) uncoupled MPR: kappa_DC(Q, w)/... vs w tau
+ w = np.logspace(-1.3, 2.3, 400)
+ Qi = D / np.sqrt(3)
+-for Q, col, lab in ((0.0, NEBLUE, r"$Q=0$ (below inflection, $F''>0$)"),
+-                    (Qi, NEGREEN, r"$Q=\Delta/\sqrt{3}$ (inflection, $F''=0$)"),
+-                    (3.0, NERED, r"$Q=3$ (above inflection, $F''<0$)")):
++# the caption names the three operating points (below, at and above the inflection)
++for Q, col, lab in ((0.0, NEBLUE, r"$Q=0$ ($F''>0$)"),
++                    (Qi, NEGREEN, r"$Q=\Delta/\sqrt{3}$ ($F''=0$)"),
++                    (3.0, NERED, r"$Q=3$ ($F''<0$)")):
+     C = np.array([C_closed(Q, x) for x in w])
+     a1.plot(w, C, color=col, lw=1.8, label=lab)
+     a1.axhline(Fpp(Q) / 4, color=col, lw=0.9, ls=":", alpha=0.8)
+@@ -47,7 +48,7 @@
+     x = 2 * np.pi * f_hz * TE * 1e-3
+     a1.axvline(x, color="0.75", lw=0.8, ls=":")
+     a1.text(x * 1.06, -0.0046, lab + r" ($\tau_E$)", color="0.45", fontsize=7.5, rotation=90, va="bottom")
+-a1.legend(loc="upper right", bbox_to_anchor=(0.995, 0.86), frameon=False, fontsize=7.5)
++a1.legend(loc="center left", bbox_to_anchor=(0.0, 0.39), frameon=False, fontsize=7.5)
+ figstyle.panel(a1, "a")
+ 
+ # ---- (b) PING: relative error of the fast-carrier form
+@@ -68,7 +69,7 @@
+ a2.yaxis.set_minor_locator(NullLocator()); a2.yaxis.set_minor_formatter(NullFormatter())
+ a2.xaxis.set_major_locator(FixedLocator([300, 1000, 2000])); a2.xaxis.set_major_formatter(FixedFormatter(["300", "1000", "2000"]))
+ a2.yaxis.set_major_locator(FixedLocator([0.01, 0.1, 1])); a2.yaxis.set_major_formatter(FixedFormatter(["0.01", "0.1", "1"]))
+-a2.legend(loc="lower left", frameon=False, fontsize=8)
++a2.legend(loc="upper right", frameon=False, fontsize=8)
+ figstyle.panel(a2, "b")
+ 
+ fig.tight_layout()

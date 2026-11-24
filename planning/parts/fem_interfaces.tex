@@ -1,0 +1,132 @@
+\subsection{Continuum bounds and recovered interface jumps}\label{supp:fem-interfaces}
+Median map jumps across tissue interfaces are 1.13--1.34 along the common
+direction $\mathbf n^*$ (Table~\ref{tab:fem-interface-jumps}). These
+projected ratios differ from the conductivity bounds on field magnitude
+and maps maximized over orientation. All measurements here use IXI002,
+the Violante montage, and $2+2$~mA.
+
+Interfaces are faces shared by tetrahedra of different tissue tags:
+241,780 CSF/gray-matter faces and 253,608 gray/white-matter faces, with no
+white-matter/CSF faces. The median CSF/gray-matter edge is 1.51~mm
+(interquartile range 1.37--1.66). At each interface node, each side's field
+is averaged over its incident interface-face element samples; the normal
+is the normalized sum of their area vectors. Both sides use the
+balanced-envelope-maximizing direction $\mathbf n^*$ of the recovered
+gray-matter nodal fields. This direction is not reoptimized for the
+side-averaged fields. Fixed-projection ratios retain high-side values
+exceeding $10^{-12}$ times that side's map maximum.
+
+For a continuum interface between isotropic conductivities, let
+$r=\sigma_{\rm high}/\sigma_{\rm low}\geq1$, where ``high'' and ``low''
+identify the more and less conductive sides, and let $\boldsymbol\nu$ be
+the unit interface normal. Tangential-field and normal-current continuity give
+\begin{equation}
+\mathbf E_{j,\rm low}=A\mathbf E_{j,\rm high},\qquad
+A=\mathbf 1+(r-1)\boldsymbol\nu\boldsymbol\nu^{\mathsf T},\qquad j=1,2,
+\label{eq:fem-interface-transform}
+\end{equation}
+where $\mathbf 1$ is the identity. The symmetric matrix $A$ has eigenvalues
+$1,1,r$. For unit $\mathbf n$, define
+$\mathbf m=A\mathbf n/|A\mathbf n|$; then
+$\mathbf n\cdot A\mathbf E_j=|A\mathbf n|\,\mathbf m\cdot\mathbf E_j$,
+with $1\leq|A\mathbf n|\leq r$.
+For the map bounds, the scalar field-to-polarization coupling is the same
+on both sides. Let $M_k$ denote a map's maximum over unit orientation, with degree $k=1$
+for envelope excursion and $k=2$ for quadratic excursion or mean-square
+polarization. For nonzero $M_{k,\rm high}$,
+\begin{equation}
+1\leq\frac{M_{k,\rm low}}{M_{k,\rm high}}\leq r^k.
+\label{eq:fem-interface-bound}
+\end{equation}
+The upper bound follows by maximizing the projection identity. For the lower
+bound, choose $\mathbf n$ parallel to $A^{-1}\mathbf m$ for a high-side
+maximizer $\mathbf m$; its scale factor is at least one. Field magnitude
+obeys the corresponding degree-one bound. Here $r=4.475$ at CSF/gray matter
+and $2.667$ at gray/white matter, giving squared bounds 20.03 and 7.11.
+
+A generic fixed oblique projection has neither the floor one nor the ceiling
+$r^k$: normal and tangential contributions can cancel on either side.
+An exact low-side envelope maximizer nevertheless retains the envelope floor,
+and an exact high-side maximizer retains its ceiling. Gray matter is the
+low side at CSF/gray matter and the high side at gray/white matter, but the
+measured $\mathbf n^*$ maximizes recovered nodal fields, not the side averages
+used for jumps. Optimization and field averaging must therefore be
+distinguished when applying the continuum bounds.
+
+\begin{table}[htbp]
+\centering\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Low/high ratio & Nodes & Envelope & Quadratic beat & Mean square\\
+\midrule
+GM/CSF & 120,892 & 1.17 (1.04--1.53) & 1.28 (1.06--2.07) & 1.25 (1.04--1.97)\\
+WM/GM & 126,426 & 1.13 (1.03--1.38) & 1.33 (1.08--2.01) & 1.34 (1.08--2.05)\\
+\bottomrule
+\end{tabular}
+\caption{Projected map jumps along the same $\mathbf n^*$ on both sides,
+median (interquartile range). GM denotes gray matter and WM white matter.
+The conductivity bounds in Eq.~\eqref{eq:fem-interface-bound} apply to
+each map's own orientation maximum, not these projections.}
+\label{tab:fem-interface-jumps}
+\end{table}
+
+The median angle between $\mathbf n^*$ and the interface normal is $64^\circ$ at
+CSF/gray matter and $63^\circ$ at gray/white matter. Across maps and interfaces,
+4.4--12.8\% of the projected ratios lie below one and 0.2--2.9\% exceed
+$r^k$. The largest envelope and quadratic ratios are $7.2\times10^4$ and
+$1.29\times10^5$, respectively; large ratios can arise from small denominators
+and do not measure large absolute exposure.
+
+Even separately optimized maps depart from the continuum bounds in the
+recovered fields (Table~\ref{tab:fem-interface-tails}): 96.7--98.3\% lie
+within them, 1.6--3.3\% below one, and fewer than 0.05\% above the ceiling.
+First percentiles are 0.988--0.997, but minima reach 0.686.
+
+\begin{table}[htbp]
+\centering\small
+\begin{tabular}{@{}llrrrrr@{}}
+\toprule
+Interface & Map & Below 1 & Minimum & Above $r^k$ & Maximum & p1\\
+\midrule
+CSF/GM & Envelope & 3513 & 0.885 & 33 & 7.90 & 0.995\\
+ & Quadratic beat & 3845 & 0.796 & 3 & 20.63 & 0.989\\
+ & Mean square & 3936 & 0.686 & 3 & 21.27 & 0.988\\
+GM/WM & Envelope & 2275 & 0.920 & 45 & 3.51 & 0.997\\
+ & Quadratic beat & 2075 & 0.877 & 33 & 8.67 & 0.995\\
+ & Mean square & 2211 & 0.880 & 34 & 8.57 & 0.995\\
+\bottomrule
+\end{tabular}
+\caption{Ratios of each map's own orientation maxima, low/high conductivity.
+Tail entries are node counts, with denominators in Table~\ref{tab:fem-interface-jumps};
+p1 denotes the first percentile. Counts use a relative tolerance of $10^{-9}$
+at the ceiling and an absolute tolerance of $10^{-9}$ at one.}
+\label{tab:fem-interface-tails}
+\end{table}
+
+Component measurements quantify these departures without establishing their
+cause. The high-side normal fraction of $\mathbf E_1$ has nodal medians
+20\% and 46\% at the two interfaces. Applying the continuum transform to
+each high-side field predicts median projected jumps of 1.26--1.80.
+For faces whose high-side normal component is at least 10\% of field magnitude,
+the realized $\mathbf E_1$ normal jump is 2.15 (1.45--3.18) at CSF/gray matter
+and 1.88 (1.51--2.24) at gray/white matter. Varying that cutoff from 0 to 50\%
+gives medians 1.97--2.17 and 1.88--1.90; the corresponding $\mathbf E_2$
+ranges are 1.99--2.17 and 1.86--1.88. Element-face tangential continuity holds
+to rounding (largest residual $5.2\times10^{-11}$ of the high-side field).
+Nodal side averages do not retain this identity: their median tangential
+residuals are about 1\% of the field.
+
+At nodes above the own-maximum ceiling, the median realized $\mathbf E_1$
+normal jump exceeds $r$ for all six map/interface combinations; the envelope
+subsets give 7.08 and 2.80. Tangential residuals here are normalized by the
+high-side tangential magnitude; their medians occupy the 60th--75th
+percentiles of all-node residuals. Below-floor subsets have median normal
+ratios 0.81--1.14. These conditional medians associate the map tails with
+normal-component scatter; they do not determine the cause of every violation.
+Continuous linear finite elements enforce the normal-current condition in
+the weak formulation, not face by face. Whether refinement closes the gap
+remains unresolved; refining this mesh would also retain its segmented boundary.
+
+The exposure statistics compare nodes near interfaces with those farther away. ``Near'' means within 2~mm of an interface vertex or face centroid. Gray-matter 99th percentiles near CSF are 0.90, 0.86, and 0.93 times those farther away for envelope, quadratic, and mean-square maps. White-matter ratios near the gray/white interface are 1.25, 1.62, and 1.57. Of each map's top 1\% of brain nodes, 67--73\% are white matter and 81--82\% lie near the gray/white interface, compared with 73\% of all brain nodes; 24--31\% lie near CSF, compared with 47.5\% of all nodes.
+
+A separate check of local maxima holds the projection along the spatially fixed $x$ direction. A strict local maximum exceeds every node sharing a tetrahedron edge within the same tissue; a boundary node belongs to a face adjoining another tissue. Boundary fractions of mean-square maxima are 98.0\% in gray matter and 96.5\% in white matter, against boundary fractions of 90.0\% and 73.4\% among all nodes. The quadratic beat gives similar fractions, 97.9\% and 96.1\%, despite lacking the subharmonic restriction. Mean-square interior maxima number 262 of 13,144 in gray matter and 227 of 6,395 in white matter; the quadratic counts are 270 of 12,659 and 245 of 6,262. With 95.4\% of all brain nodes already within 2~mm of an interface, these mesh-dependent statistics do not sharply test the continuum restriction in \S\ref{sec:dc}.

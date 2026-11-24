@@ -1,0 +1,28 @@
+{
+  "intro_pdf_page": 3,
+  "printed_reference": "S3.1",
+  "link_target": "TN0484_jne_supplement.pdf#nameddest=paragraph*.7",
+  "target_pdf_page": 10,
+  "anchor": "paragraph*.7",
+  "target_position_top_origin": [
+    65.1969985961914,
+    309.42303466796875
+  ],
+  "proof_heading_bbox": [
+    65.197021484375,
+    318.4798889160156,
+    392.55731201171875,
+    329.3890075683594
+  ],
+  "direct_paragraph_destination_verified": true,
+  "validation": {
+    "TN0484_jne": {
+      "pages": 38,
+      "issues": []
+    },
+    "TN0484_jne_supplement": {
+      "pages": 36,
+      "issues": []
+    }
+  }
+}

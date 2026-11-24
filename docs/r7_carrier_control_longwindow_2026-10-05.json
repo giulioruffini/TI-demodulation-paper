@@ -1,0 +1,38 @@
+[
+ {
+  "case": "two tones a=35",
+  "t_meas_ms": 800.0,
+  "bin_Hz": 1.25,
+  "depth_55": 0.2997220296285324,
+  "gamma_Hz": 51.25,
+  "gamma_depth": 0.6054194392459974,
+  "offset_bins": 3.0
+ },
+ {
+  "case": "two tones a=35",
+  "t_meas_ms": 3200.0,
+  "bin_Hz": 0.3125,
+  "depth_55": 0.31383722129712366,
+  "gamma_Hz": 51.875,
+  "gamma_depth": 0.7017675610901296,
+  "offset_bins": 10.0
+ },
+ {
+  "case": "one carrier 49.50",
+  "t_meas_ms": 800.0,
+  "bin_Hz": 1.25,
+  "depth_55": 0.010982570150864264,
+  "gamma_Hz": 51.25,
+  "gamma_depth": 0.7092638798231597,
+  "offset_bins": 3.0
+ },
+ {
+  "case": "one carrier 49.50",
+  "t_meas_ms": 3200.0,
+  "bin_Hz": 0.3125,
+  "depth_55": 9.203966758865712e-05,
+  "gamma_Hz": 51.5625,
+  "gamma_depth": 0.7372049253088508,
+  "offset_bins": 11.0
+ }
+]

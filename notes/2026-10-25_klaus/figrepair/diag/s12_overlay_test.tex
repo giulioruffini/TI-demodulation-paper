@@ -1,0 +1,20 @@
+\documentclass[10pt]{article}
+\usepackage[margin=2.3cm]{geometry}
+\usepackage{lmodern}\usepackage[T1]{fontenc}
+\usepackage{graphicx,xcolor}
+\pagestyle{empty}
+\begin{document}
+\noindent Overlay test for fig\_lanmm\_setup.png (S12): the PNG's own ``a)'' and ``b)'' are covered by white boxes carrying bold ``(a)'' and ``(b)'' in the house style. No package beyond graphicx and xcolor; the picture environment is in the LaTeX kernel.
+\begin{figure}[h!]
+\centering
+% --- begin overlay: replaces \includegraphics[width=0.85\textwidth]{fig_lanmm_setup.png}
+\setlength{\unitlength}{0.85\textwidth}%
+\begin{picture}(1,0.8206)% height/width of the PNG (933/1137)
+  \put(0,0){\includegraphics[width=\unitlength]{fig_lanmm_setup.png}}
+  \put(0,0.788){\colorbox{white}{\makebox[0.045\unitlength][l]{\rule[-0.4ex]{0pt}{2.4ex}\textbf{(a)}}}}
+  \put(0,0.371){\colorbox{white}{\makebox[0.045\unitlength][l]{\rule[-0.4ex]{0pt}{2.4ex}\textbf{(b)}}}}
+\end{picture}
+% --- end overlay
+\caption{Test caption.}
+\end{figure}
+\end{document}

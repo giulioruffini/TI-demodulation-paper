@@ -1,0 +1,12 @@
+The data in this directory (fem_ixi002_nodes.npz) are licensed under the Creative Commons
+Attribution-ShareAlike 4.0 International licence (CC BY-SA 4.0):
+https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+This licence applies to this directory only. The code in this repository is licensed separately,
+under CC BY 4.0.
+
+The data are an adaptation of IXI002 from the IXI dataset (https://brain-development.org/ixi-dataset/),
+which is made available under CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/legalcode).
+Section 4(b)(ii) of that licence permits adaptations to be distributed under a later version with the
+same licence elements; this adaptation is distributed under CC BY-SA 4.0. The changes made are listed
+in README.md.

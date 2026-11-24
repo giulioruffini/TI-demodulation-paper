@@ -1,0 +1,36 @@
+If relaxation is faster than synaptic variation, NMM2 reduces to
+$r\simeq F(Q)/\tau_m$ with dynamically filtered recurrence
+\cite{ruffini2021nmm2,clusella2023}. For population relaxation time
+$\tau_{\rm rel}$ and synaptic time $\tau_s$ (Eq.~\eqref{eq:slow_synapse},
+Appendix~\ref{app:models}), this requires $\tau_{\rm rel}\ll\tau_s$.
+Applying the static curve to carriers further requires
+$\omega_c\tau_{\rm rel}\ll1$: the same population can track synaptic
+input quasistatically while responding dynamically to kHz input.
+Recurrent excitatory--inhibitory circuits resonate without intrinsic
+cellular resonance \cite{brunelhakim1999,brunelwang2003}. Such synaptic
+modes survive the fast-membrane limit, whereas modes requiring finite
+membrane dynamics need not.
+
+\paragraph{Field coupling and recurrent gain in the slow limit.}
+The field input survives this reduction. For one self-coupled population,
+write $I=I_b+\tau_mJu+\lambda_I E$, where $I_b$ is the normalized
+background input, $u$ the postsynaptic potential divided by its steady gain, and $J$ dimensionless
+self-coupling. For a fixed field direction, $\lambda_I=\kappa_E/I_s$:
+$\kappa_E$ is equivalent current per field and $I_s$ the current unit.
+A cellular voltage-polarization coefficient requires an impedance conversion
+before entering this current-driven model. At equilibrium $u=r$;
+differentiating $\tau_mr=F(\bar\eta+I_b+\tau_mJr+\lambda_IE)$ gives
+\begin{equation}
+\frac{\partial r_*}{\partial E}
+=\frac{\lambda_I F'(Q_*)}{\tau_m[1-JF'(Q_*)]}.
+\label{eq:slow-field-gain}
+\end{equation}
+Positive self-feedback amplifies the steady response on the stable branch
+$JF'(Q_*)<1$; negative feedback suppresses it. The bare curve $F$ takes
+total drive as its argument. A transfer fitted after an internally recurrent
+population settles already contains that feedback and must not be coupled
+through the same loop again. A JR-like description retains this gain when
+input conversion, local slope, and feedback are matched
+\cite{ruffini2021nmm2,clusella2023}; its connections between populations do
+not automatically specify the same within-population self-coupling.
+

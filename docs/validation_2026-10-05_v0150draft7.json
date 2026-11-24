@@ -1,0 +1,88 @@
+{
+  "version": "0.15.0-draft7",
+  "baseline": "be8cb21",
+  "outputs": [
+    {
+      "path": "build/TN0484_v0.15.0-draft7.pdf",
+      "pages": 52,
+      "bytes": 3572724,
+      "sha256": "d15d68739a856df076bbf53ce5339c77ca7a8d66a37bd0939cd6bea11f189b7c"
+    },
+    {
+      "path": "build/TN0484_v0.15.0-draft7_jne.pdf",
+      "pages": 34,
+      "bytes": 1617020,
+      "sha256": "855f9ff9efdefcedab62250d626666202abfba2f44b67979a8a4239ec754602e"
+    },
+    {
+      "path": "build/TN0484_v0.15.0-draft7_jne_supplement.pdf",
+      "pages": 20,
+      "bytes": 2313950,
+      "sha256": "a2263c42e2a67eeeca692edce76288935f1a916e9592e2c81eb9edd4fbf0f412"
+    },
+    {
+      "path": "build/TN0484_v0.15.0-draft7_redline_vs_draft6.pdf",
+      "pages": 53,
+      "bytes": 3669679,
+      "sha256": "fda69565fdedc75e0d1726b54ff63ef4bee7be52a472ae6dc123481d2ce02f84"
+    },
+    {
+      "path": "build/storyline/TN0484_v0.15.0-draft7_storyline.pdf",
+      "pages": 9,
+      "bytes": 294544,
+      "sha256": "dcce87b534dcf1578190a50b236de58654ab6bac5aa233de6433b35f18d9f615"
+    }
+  ],
+  "retention": {
+    "sections": {
+      "count": 35,
+      "retained_in_order": true
+    },
+    "figure_labels": {
+      "count": 23,
+      "retained_in_order": true
+    },
+    "equation_labels": {
+      "count": 32,
+      "retained_in_order": true
+    },
+    "citations": {
+      "retained": 59,
+      "total": 60,
+      "added": [
+        "kole2008ais"
+      ]
+    },
+    "jne_abstract_words": 277
+  },
+  "logs": {
+    "TN0484_envelope_demodulation": {
+      "errors": 0,
+      "undefined": 0,
+      "overfull": 0
+    },
+    "TN0484_jne": {
+      "errors": 0,
+      "undefined": 0,
+      "overfull": 0
+    },
+    "TN0484_jne_supplement": {
+      "errors": 0,
+      "undefined": 0,
+      "overfull": 0
+    },
+    "docs/redline_v0150draft6_to_v0150draft7": {
+      "errors": 0,
+      "undefined": 0,
+      "overfull": 0
+    },
+    "build/storyline/tn0484_storyline": {
+      "errors": 0,
+      "undefined": 0,
+      "overfull": 0
+    }
+  },
+  "ratio_rows_independently_checked": 12,
+  "portable_cache_arrays_verified": 19,
+  "control_trajectories": "Klaus; arithmetic and source tables independently audited"
+}

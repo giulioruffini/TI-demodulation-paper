@@ -1,0 +1,15 @@
+--- a/code/khz_direct.py
++++ b/code/khz_direct.py
+@@ -83,7 +83,11 @@
+               ("fast element  $\\tau\\!\\approx\\!0.2$ ms", 0.2e-3, False, NEGREEN),
+               ("soma  $\\tau_m\\!\\approx\\!16$ ms", 16e-3, False, NERED)]
+     fcs = np.geomspace(100., 4000., 4 if quick else 10)
+-    dt = 2e-5; t_set = 3.0 if quick else 6.0; t_meas = 1.5 if quick else 3.0
++    # Settling doubled 2026-10-25: every column starts at Y = 0 and rings down at the
++    # autonomous f0, which is the lock-in frequency; after 6 s the residual (7.7e-6 mV,
++    # measured field-off) still interfered with the soma route above 1 kHz. See
++    # notes/2026-10-25_klaus/figrepair/diag/khz_direct_upturn_diag.log.
++    dt = 2e-5; t_set = 3.0 if quick else 12.0; t_meas = 1.5 if quick else 3.0
+ 
+     # one vectorized pass over all (route x carrier) columns
+     nf = len(fcs)

@@ -1,0 +1,50 @@
+{
+  "edition": "0.15.0-draft25",
+  "date": "2026-10-30",
+  "implementation_commit": "4ebe719",
+  "fidelity_review_commit": "0a5ad3b",
+  "reading_directory": "/Users/giulio/Claude/NE TNs and Blogs/TN0484/build/review_draft25/reading",
+  "files": {
+    "TN0484_jne.pdf": {
+      "delivered_as": "TN0484_JNE_draft25.pdf",
+      "bytes": 2439287,
+      "sha256": "35012e4ba9d6ed0d9c3f76f6c58156e0bd9dcd718af96c9cc986d4634b9c28bf"
+    },
+    "TN0484_jne_supplement.pdf": {
+      "delivered_as": "TN0484_JNE_draft25_supplement.pdf",
+      "bytes": 1953296,
+      "sha256": "0df889056c341cd6133402c6ccf76f3ee4ee84ce75712039056f088093eddb05"
+    },
+    "docs/redline_draft24.pdf": {
+      "delivered_as": "TN0484_draft25_changes_from_draft24.pdf",
+      "bytes": 2558928,
+      "sha256": "fcbad6d6002146cbbc1597711eb5e070e7044ef8a3ecf162fa832bd4c468ead3"
+    },
+    "docs/redline_last_read.pdf": {
+      "delivered_as": "TN0484_draft25_changes_from_draft20.pdf",
+      "bytes": 2767942,
+      "sha256": "8e0b76efd4f51ac3d56850056ef9b748c0ac75799c4564c8d3b1adce05e29ad8"
+    },
+    "build/storyline/tn0484_storyline.pdf": {
+      "delivered_as": "TN0484_draft25_storyline.pdf",
+      "bytes": 150217,
+      "sha256": "e5d2843cf6f16559b4eab7fd83e8e174ba53d1dcc006e5986072877dfdf5b4da"
+    },
+    "TN0484_envelope_demodulation.tex": {
+      "bytes": 104126,
+      "sha256": "ab3d1e41d4105c6899d9bff349946d9a35d34da2df51ee1179e79224b7796bd7"
+    },
+    "code/build_jne_redline.py": {
+      "bytes": 9140,
+      "sha256": "41b9155e9298c4e9a9acc1fe17ba1e7105cffd536a68d4fe9cb744b63971adfe"
+    },
+    "planning/tn0484_abstract.tex": {
+      "bytes": 2442,
+      "sha256": "83cb021393be057234f589de25e283ed87e3f511bb0b992dfc99179e9873dd66"
+    },
+    "planning/review_baseline.json": {
+      "bytes": 560,
+      "sha256": "cb70fb69b0fb1391d7cf62a8ec8a4f253c18c5bb61c024769bceff2bf3e2a282"
+    }
+  }
+}

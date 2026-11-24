@@ -1,0 +1,179 @@
+{
+  "email_id": "1a1b29568bc5df98",
+  "email_date": "2026-11-06 21:38:04 CET",
+  "pr": 2,
+  "head": "6ade413dd88b7d525466ff1eeaad003f449150cc",
+  "baseline": "146679e",
+  "existing_quadmap_leaves_compared": 3104,
+  "changed_or_missing_old_paths": [],
+  "files": {
+    "fem_quadmaps.json": "30a5cf970256535738d929123682da628bbe5d548fd8b8d19cebfc36e5ab7559",
+    "fem_orientation_interface.json": "1ba874355654043b274a74999e307efba2befa3ded34ef64de891af019cce3a8",
+    "fem_export_nodes.py": "5ffce363b35268b4b34332fa7fa1cedd0b8e1b644dfa1d2915e27054586e2c7f",
+    "README.md": "3d39a1c51128317c473f00d057df4e923da2817edcd184c9ae479343a2f5f4f1"
+  },
+  "gm_only": {
+    "1:1": {
+      "env": {
+        "roi_mean": 0.15278498786495456,
+        "roi_p95": 0.2192464243170179,
+        "cortex_p95": 0.20185649560148017,
+        "cortex_p99": 0.31747971323155844,
+        "tc_p95": 1.0861499584827343,
+        "tc_mean": 0.7568990406263361
+      },
+      "quad": {
+        "roi_mean": 0.015335962199111144,
+        "roi_p95": 0.028225533558486428,
+        "cortex_p95": 0.03017769571344921,
+        "cortex_p99": 0.0659662170681565,
+        "tc_p95": 0.9353110928846443,
+        "tc_mean": 0.5081886418609625,
+        "degree_matched": {
+          "roi_mean": 0.12092155077107786,
+          "roi_p95": 0.16800321770298188,
+          "cortex_p95": 0.17371728669949815,
+          "cortex_p99": 0.2568388928717483,
+          "tc_p95": 0.967107078949485,
+          "tc_mean": 0.6960824283437717
+        }
+      },
+      "msp": {
+        "roi_mean": 0.007933864709129157,
+        "roi_p95": 0.014308693070663847,
+        "cortex_p95": 0.020023259879239343,
+        "cortex_p99": 0.03893636468493932,
+        "tc_p95": 0.7146035738915564,
+        "tc_mean": 0.3962324195449914,
+        "degree_matched": {
+          "roi_mean": 0.0869764040632848,
+          "roi_p95": 0.1196187626162074,
+          "cortex_p95": 0.14150356843159248,
+          "cortex_p99": 0.1973229958146927,
+          "tc_p95": 0.8453409616594586,
+          "tc_mean": 0.6146587328314062
+        }
+      },
+      "iso": {
+        "roi_mean": 0.005105125215887651,
+        "roi_p95": 0.009408511186162143,
+        "cortex_p95": 0.009978085694176598,
+        "cortex_p99": 0.0217402691476473,
+        "tc_p95": 0.9429174567675973,
+        "tc_mean": 0.5116337313947003,
+        "degree_matched": {
+          "roi_mean": 0.06975066778623457,
+          "roi_p95": 0.09699670296553989,
+          "cortex_p95": 0.09989036837339717,
+          "cortex_p99": 0.14744581765134188,
+          "tc_p95": 0.9710315873794703,
+          "tc_mean": 0.6982722050388452
+        }
+      }
+    },
+    "1:3": {
+      "env": {
+        "roi_mean": 0.08446740569936534,
+        "roi_p95": 0.12954901130058094,
+        "cortex_p95": 0.15444643450030118,
+        "cortex_p99": 0.22399408678491253,
+        "tc_p95": 0.8387957398934212,
+        "tc_mean": 0.5469042129243885
+      },
+      "quad": {
+        "roi_mean": 0.011501971649333358,
+        "roi_p95": 0.021169150168864823,
+        "cortex_p95": 0.022633271785086905,
+        "cortex_p99": 0.049474662801117376,
+        "tc_p95": 0.9353110928846445,
+        "tc_mean": 0.5081886418609626,
+        "degree_matched": {
+          "roi_mean": 0.10472113483276321,
+          "roi_p95": 0.14549505444830982,
+          "cortex_p95": 0.15044358335827,
+          "cortex_p99": 0.222429005906804,
+          "tc_p95": 0.9671070789494849,
+          "tc_mean": 0.6960824283437717
+        }
+      },
+      "msp": {
+        "roi_mean": 0.010100533977144834,
+        "roi_p95": 0.01671977949363151,
+        "cortex_p95": 0.021864429887991876,
+        "cortex_p99": 0.04350747859278624,
+        "tc_p95": 0.7647022849113551,
+        "tc_mean": 0.4619619184624672,
+        "degree_matched": {
+          "roi_mean": 0.09831009839295346,
+          "roi_p95": 0.12930495097188136,
+          "cortex_p95": 0.14786625675570383,
+          "cortex_p99": 0.20858446392671615,
+          "tc_p95": 0.8744723360753738,
+          "tc_mean": 0.6648582343933666
+        }
+      },
+      "iso": {
+        "roi_mean": 0.003828843911915738,
+        "roi_p95": 0.007056383389621606,
+        "cortex_p95": 0.007483564270632447,
+        "cortex_p99": 0.016305201860735474,
+        "tc_p95": 0.9429174567675973,
+        "tc_mean": 0.5116337313947004,
+        "degree_matched": {
+          "roi_mean": 0.06040585023380802,
+          "roi_p95": 0.08400160885149094,
+          "cortex_p95": 0.0865075966047476,
+          "cortex_p99": 0.12769182376783006,
+          "tc_p95": 0.9710315873794703,
+          "tc_mean": 0.6982722050388451
+        }
+      }
+    }
+  },
+  "steering_summary": {
+    "env": {
+      "n_variants": 8,
+      "n_mean_rises": 0,
+      "n_mean_falls": 8,
+      "roi_mean_change_min": -0.46160436562622775,
+      "roi_mean_change_max": -0.43871070479995056,
+      "fraction_roi_nodes_rising_min": 0.0,
+      "fraction_roi_nodes_rising_max": 0.0019743336623889436,
+      "n_roi_nodes_rising_min": 0,
+      "n_roi_nodes_rising_max": 2
+    },
+    "quad": {
+      "n_variants": 8,
+      "n_mean_rises": 0,
+      "n_mean_falls": 8,
+      "roi_mean_change_min": -0.25,
+      "roi_mean_change_max": -0.25,
+      "fraction_roi_nodes_rising_min": 0.0,
+      "fraction_roi_nodes_rising_max": 0.0,
+      "n_roi_nodes_rising_min": 0,
+      "n_roi_nodes_rising_max": 0
+    },
+    "msp": {
+      "n_variants": 8,
+      "n_mean_rises": 8,
+      "n_mean_falls": 0,
+      "roi_mean_change_min": 0.17229422943475936,
+      "roi_mean_change_max": 0.29718856621449086,
+      "fraction_roi_nodes_rising_min": 0.8080357142857143,
+      "fraction_roi_nodes_rising_max": 0.9092936802973978,
+      "n_roi_nodes_rising_min": 847,
+      "n_roi_nodes_rising_max": 1353
+    },
+    "iso": {
+      "n_variants": 8,
+      "n_mean_rises": 0,
+      "n_mean_falls": 8,
+      "roi_mean_change_min": -0.2500000000000002,
+      "roi_mean_change_max": -0.25,
+      "fraction_roi_nodes_rising_min": 0.0,
+      "fraction_roi_nodes_rising_max": 0.0,
+      "n_roi_nodes_rising_min": 0,
+      "n_roi_nodes_rising_max": 0
+    }
+  }
+}

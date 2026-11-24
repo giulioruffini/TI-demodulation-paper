@@ -1,0 +1,13 @@
+1.0 fig_feasibility_khz
+1.0 fig_curvature_twotone
+1.0 fig_fem
+1.0 fig_mpr_crossover
+1.0 fig_qif_raster_twotone
+1.0 fig_qif_regimes
+0.95 fig_khz_twotone
+1.0 fig_qif_timing_twotone
+0.86 fig_lanmm_field_p1_twotone
+0.86 fig_lanmm_field_p2_twotone
+0.74 fig_khz
+1.0 fig_khz_direct
+0.92 fig_nmm2_jcurve

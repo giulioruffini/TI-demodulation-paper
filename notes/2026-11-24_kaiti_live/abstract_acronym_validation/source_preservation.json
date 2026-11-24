@@ -1,0 +1,15 @@
+{
+  "build_exit_code": 0,
+  "source_files_checked": 52,
+  "changed_source_paths": [],
+  "protected_artifacts_unchanged": {
+    "TN0484_envelope_demodulation.pdf": true,
+    "TN0484_envelope_demodulation.bbl": true,
+    "TN0484_jne_supplement.pdf": true,
+    "TN0484_jne_supplement.bbl": true,
+    "TN0484_jne_supplement.out": true,
+    "TN0484_jne_supplement.aux": true,
+    "TN0484_jne_supplement.log": true,
+    "TN0484_jne_supplement.blg": true
+  }
+}

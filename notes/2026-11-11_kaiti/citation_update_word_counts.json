@@ -1,0 +1,148 @@
+[
+  {
+    "revision": "08acd1f^",
+    "sections": {
+      "Introduction": {
+        "text": 635,
+        "headings": 1,
+        "captions": 67,
+        "base_total": 703,
+        "ordinary_table_words": 0,
+        "total": 703
+      },
+      "Theory": {
+        "text": 2886,
+        "headings": 72,
+        "captions": 215,
+        "base_total": 3173,
+        "ordinary_table_words": 167,
+        "total": 3340
+      },
+      "Methods": {
+        "text": 1492,
+        "headings": 37,
+        "captions": 81,
+        "base_total": 1610,
+        "ordinary_table_words": 0,
+        "total": 1610
+      },
+      "Results": {
+        "text": 1661,
+        "headings": 61,
+        "captions": 940,
+        "base_total": 2662,
+        "ordinary_table_words": 40,
+        "total": 2702
+      },
+      "Discussion": {
+        "text": 1061,
+        "headings": 34,
+        "captions": 60,
+        "base_total": 1155,
+        "ordinary_table_words": 208,
+        "total": 1363
+      },
+      "Conclusion": {
+        "text": 178,
+        "headings": 1,
+        "captions": 0,
+        "base_total": 179,
+        "ordinary_table_words": 0,
+        "total": 179
+      }
+    },
+    "main": {
+      "text": 7913,
+      "headings": 206,
+      "captions": 1363,
+      "base_total": 9482,
+      "ordinary_table_words": 415,
+      "total": 9897
+    },
+    "appendices": {
+      "text": 1410,
+      "headings": 26,
+      "captions": 45,
+      "base_total": 1481,
+      "ordinary_table_words": 27,
+      "total": 1508
+    },
+    "total": 11405,
+    "abstract": 299,
+    "total_with_abstract": 11704,
+    "method": "TeXcount text + headings + captions, plus ordinary table bodies; longtable counted once. Excludes math, abstract, references, front matter and declarations."
+  },
+  {
+    "revision": "working tree",
+    "sections": {
+      "Introduction": {
+        "text": 635,
+        "headings": 1,
+        "captions": 67,
+        "base_total": 703,
+        "ordinary_table_words": 0,
+        "total": 703
+      },
+      "Theory": {
+        "text": 2924,
+        "headings": 72,
+        "captions": 215,
+        "base_total": 3211,
+        "ordinary_table_words": 167,
+        "total": 3378
+      },
+      "Methods": {
+        "text": 1492,
+        "headings": 37,
+        "captions": 81,
+        "base_total": 1610,
+        "ordinary_table_words": 0,
+        "total": 1610
+      },
+      "Results": {
+        "text": 1661,
+        "headings": 61,
+        "captions": 940,
+        "base_total": 2662,
+        "ordinary_table_words": 40,
+        "total": 2702
+      },
+      "Discussion": {
+        "text": 1061,
+        "headings": 34,
+        "captions": 60,
+        "base_total": 1155,
+        "ordinary_table_words": 208,
+        "total": 1363
+      },
+      "Conclusion": {
+        "text": 178,
+        "headings": 1,
+        "captions": 0,
+        "base_total": 179,
+        "ordinary_table_words": 0,
+        "total": 179
+      }
+    },
+    "main": {
+      "text": 7951,
+      "headings": 206,
+      "captions": 1363,
+      "base_total": 9520,
+      "ordinary_table_words": 415,
+      "total": 9935
+    },
+    "appendices": {
+      "text": 1410,
+      "headings": 26,
+      "captions": 45,
+      "base_total": 1481,
+      "ordinary_table_words": 27,
+      "total": 1508
+    },
+    "total": 11443,
+    "abstract": 299,
+    "total_with_abstract": 11742,
+    "method": "TeXcount text + headings + captions, plus ordinary table bodies; longtable counted once. Excludes math, abstract, references, front matter and declarations."
+  }
+]

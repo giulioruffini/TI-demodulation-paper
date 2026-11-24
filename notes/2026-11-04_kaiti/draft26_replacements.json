@@ -1,0 +1,139 @@
+[
+  {
+    "id": "edition",
+    "before": "\\newcommand{\\paperver}{0.15.0-draft25}",
+    "after": "\\newcommand{\\paperver}{0.15.0-draft26}"
+  },
+  {
+    "id": "fem_table_caption",
+    "before": "\\caption{\\textbf{Hippocampal maps under current-ratio changes.} Means refer to the\nROI; contrasts are ROI/reference 95th-percentile ratios. Parentheses give\nsquare-root, degree-matched contrasts. Focus shifts use the top 10\\% of ROI\nnodes, with anterior positive; ranges over other fractions are supplementary.}",
+    "after": "\\caption{\\textbf{Hippocampal maps under current-ratio changes.}\nContrasts divide the ROI p95 or raw mean by the reference p95; parentheses\ngive square-root, degree-matched p95 contrasts. Focus shifts use the top\n10\\% of ROI nodes, anterior positive; ranges over other fractions are supplementary.}"
+  },
+  {
+    "id": "fem_table",
+    "before": "\\begin{tabular}{@{}lrrrrr@{}}\n\\toprule\nMap & Mean, 1:1 & Contrast, 1:1 & Contrast, 1:3 & Mean change & Focus shift\\\\\n\\midrule\nEnvelope & $0.16$ mV & $1.22$ & $0.95$ & $-45\\%$ & $+2.5$ mm\\\\\nQuadratic beat & $0.018$ mV$^2$ & $1.17$ ($1.08$) & $1.17$ ($1.08$) & $-25\\%$ & $0$ mm\\\\\nMean square & $0.0094$ mV$^2$ & $0.92$ ($0.96$) & $0.90$ & $+24\\%$ & $-4.5$ mm\\\\\n\\bottomrule\n\\end{tabular}",
+    "after": "\\setlength{\\tabcolsep}{4pt}\n\\begin{tabular}{@{}lrrrrrr@{}}\n\\toprule\nMap & \\shortstack{ROI mean\\\\1:1} & \\shortstack{p95 contrast\\\\1:1} &\n\\shortstack{p95 contrast\\\\1:3} & \\shortstack{Mean contrast\\\\1:1 / 1:3} &\n\\shortstack{Mean\\\\change} & \\shortstack{Focus\\\\shift}\\\\\n\\midrule\nEnvelope & $0.16$ mV & $1.22$ & $0.95$ & $0.81\\,/\\,0.58$ & $-45\\%$ & $+2.5$ mm\\\\\nQuadratic beat & $0.018$ mV$^2$ & $1.17$ ($1.08$) & $1.17$ ($1.08$) & $0.61\\,/\\,0.61$ & $-25\\%$ & $0$ mm\\\\\nMean square & $0.0094$ mV$^2$ & $0.92$ ($0.96$) & $0.90$ ($0.95$) & $0.47\\,/\\,0.54$ & $+24\\%$ & $-4.5$ mm\\\\\n\\bottomrule\n\\end{tabular}\n% Ricardo's gray-matter-only contrasts will be added here once supplied and verified."
+  },
+  {
+    "id": "fem_tail",
+    "before": "envelope's $1.22$, while mean-square polarization favors the reference. These modest contrasts\nseparate geometric predictions but do not establish physiological deep selectivity.",
+    "after": "Within the ROI, envelope nodes above the reference 95th percentile have an anterolateral\ncentroid and are 52\\% white matter, compared with 25\\% across the ROI.\n"
+  },
+  {
+    "id": "fem_caption_colors",
+    "before": "(line), range over 5--50\\% (band). \\emph{(g)} Contrasts",
+    "after": "(line), range over 5--50\\% (band), colors as in (e). \\emph{(g)} Contrasts"
+  },
+  {
+    "id": "future_data_license",
+    "before": "the per-node export and its comparison with the published statistics remain\npending. Input hashes, settings, and export instructions are recorded in",
+    "after": "the per-node export and its comparison with the published statistics remain\npending; when released, the data file will carry a separate CC BY-SA 4.0 license\nwith IXI attribution. Input hashes, settings, and export instructions are recorded in"
+  },
+  {
+    "id": "ixi_acknowledgment",
+    "before": "GALVANI).\n% RS support confirmed",
+    "after": "GALVANI).\nWe acknowledge the \\href{https://brain-development.org/ixi-dataset/}{IXI dataset}\n(CC BY-SA 3.0) for the IXI002 MRI.\n% RS support confirmed"
+  },
+  {
+    "id": "joint_sources",
+    "before": "giving a signed beat-source amplitude",
+    "after": "giving a steady source from the summed squares and a signed beat-source amplitude"
+  },
+  {
+    "id": "joint_sources_following",
+    "before": "in s$^{-1}$ before recurrence, alongside the steady (DC) source.",
+    "after": "in s$^{-1}$ before recurrence."
+  },
+  {
+    "id": "operating_point_relocation",
+    "before": "\\subsection{Operating-point dependence}\\label{sec:opp}\nThe static JR source changes sign across the sigmoid inflection and vanishes\nthere and in the saturated tails. The Population Excitation--Inhibition Index\n(PEIX) \\cite{ruffini2025cfc} expresses this state dependence through the signed\ndeparture from maximal sigmoid slope, positive above the inflection and negative\nbelow. Its definition and curvature identities are in Appendix~\\ref{app:peix}.\n\nChanges in $v^*$ through neuromodulation, attention, arousal, psychedelic\nexposure, or dysfunction of PV interneurons in Alzheimer's disease can scale or\nreverse the static JR source. Dynamic detectors have their own state-dependent\ncoefficients and susceptibilities, without a universal PEIX sign rule.\nState sweeps therefore isolate detection only if recurrent gain is also measured.\n\n",
+    "after": "\\label{sec:opp}\nThe Population Excitation--Inhibition Index (PEIX) \\cite{ruffini2025cfc}\nmeasures signed departure from maximal sigmoid slope, positive above the\ninflection and negative below; its definition and curvature identities are\nin Appendix~\\ref{app:peix}. Changes in $v^*$ through neuromodulation,\nattention, arousal, psychedelic exposure, or dysfunction of PV interneurons\nin Alzheimer's disease can scale or reverse the static JR source.\nDynamic detectors have their own state-dependent coefficients and susceptibilities, without\na universal PEIX sign rule; state sweeps isolate detection only if recurrent\ngain is also measured.\n\n",
+    "destination": "sec:dc after static sign/polarity paragraph"
+  },
+  {
+    "id": "curvature_zero_scope",
+    "before": "negative sources, respectively, with zero quadratic source at the inflection.",
+    "after": "negative sources, respectively; the quadratic source vanishes at the inflection\nand in the saturated tails."
+  },
+  {
+    "id": "harmonic_method_open",
+    "before": "We sweep amplitude at fixed coupling and operating state, measuring the\nfundamental and second harmonic to test the laws of \\S\\ref{sec:transduction}.",
+    "after": "At fixed coupling and operating state, we measure the fundamental and second\nharmonic across an amplitude sweep to distinguish linear from quadratic scaling."
+  },
+  {
+    "id": "harmonic_method_scope",
+    "before": "with their amplitude ratio corrected by $|G(2\\Omega)/G(\\Omega)|$. The amplitude sweep tests\nlinear versus quadratic scaling. Estimating a mixture coefficient through\nEq.~\\eqref{eq:rdet} assumes the mixed detector family and its\nsign branch; a threshold detector can match one harmonic ratio.",
+    "after": "with their amplitude ratio corrected by $|G(2\\Omega)/G(\\Omega)|$.\nEstimating a mixture coefficient through Eq.~\\eqref{eq:rdet} assumes the mixed\ndetector family and its sign branch."
+  },
+  {
+    "id": "harmonic_prediction_ambiguity",
+    "before": "therefore needed; one harmonic ratio cannot identify the detector.",
+    "after": "therefore needed; a threshold detector can match one harmonic ratio, so that\nratio alone cannot identify the detector."
+  },
+  {
+    "id": "harmonic_discussion_setup",
+    "before": "Network filtering must be separated from the harmonic signature. At resonance\nwith $\\mathcal Q=10$,",
+    "after": "At resonance with $\\mathcal Q=10$,"
+  },
+  {
+    "id": "test_table_harmonic_repeat",
+    "before": "resonance or correct their network gains; a single harmonic ratio is insufficient.",
+    "after": "resonance or correct their network gains."
+  },
+  {
+    "id": "jr_methods_relocation",
+    "before": "\\subsection{Coupling sweeps, timing, and the tACS control (Jansen--Rit)}\nThe JR sweeps vary coupling while keeping detection fixed. For each\nconnectivity $C$, we solve for the external drive $p(C)$ that holds the\nfield-free voltage at $v^*=8.30$~mV, then obtain damping and modal frequency\nfrom the Jacobian. This fixes the background curvature without canceling\nstimulation-induced mean shifts.\n\nThe gain sweep uses the AM surrogate; the timing comparison uses genuine\ntwo tones and measures modulation and mean of the same pyramidal rate\n$r_P=\\Sig(v+s)$. The tACS control uses a direct sinusoid at the same beat\nfrequency and reads the same voltage lock-in as TI. Further controls match\ntACS to TI's generated beat source and repeat the comparison with longer\nsettling and measurement windows. Waveforms, amplitudes, and run windows\nare recorded together in the supplement.\n\n",
+    "after": "The coupling sweep holds detection fixed: for each $C$, we solve for the external\ndrive $p(C)$ that holds the field-free voltage at $v^*=8.30$~mV, then obtain damping and modal frequency\nfrom the Jacobian. This fixes the background curvature without canceling\nstimulation-induced mean shifts.\n\nWe use the AM surrogate for the gain sweep and genuine two tones to compare\nmodulation and mean of the same pyramidal rate\n$r_P=\\Sig(v+s)$. The tACS control uses a direct sinusoid at the same beat\nfrequency and reads the same voltage lock-in as TI. Further controls match\ntACS to TI's generated beat source and repeat the comparison with longer\nsettling and measurement windows. Waveforms, amplitudes, and run windows\nare recorded together in the supplement.\n\n",
+    "destination": "end of sec:jr-methods"
+  },
+  {
+    "id": "jr_results_heading",
+    "before": "\\subsection{Coupling sets the gain at fixed detection}\\label{sec:jcurve}",
+    "after": "\\subsection{JR gain, mean shifts, and the tACS comparison}\\label{sec:jcurve}"
+  },
+  {
+    "id": "jr_timing_heading",
+    "before": "\\subsection{Resonance favors beat modulation over the mean shift}\\label{sec:timing}",
+    "after": "\\paragraph{Beat modulation and mean rate.}\\label{sec:timing}"
+  },
+  {
+    "id": "jr_tacs_heading",
+    "before": "\\subsection{TI and tACS share the linear amplifier}\\label{sec:tacs-results}",
+    "after": "\\paragraph{Comparison with tACS.}\\label{sec:tacs-results}"
+  },
+  {
+    "id": "jr_gain_open",
+    "before": "With $v^*=8.30$~mV pinned by adjusting $p(C)$, the curvature and open-loop\nbeat $A_{\\rm open}\\simeq\\half|\\Sig''(v^*)|\\varepsilon^2m$ stay fixed.\nAs $C\\to C^*\\approx137$, the damping tends to zero, the beat response\ngrows about $30$-fold, and its resonance sharpens (Fig.~\\ref{fig:jcurve}a,b).\nThis is a network effect: the local detector curvature is fixed while\nthe recurrent transfer changes.",
+    "after": "For the AM surrogate, pinning $v^*=8.30$~mV through $p(C)$ fixes the curvature and open-loop\nbeat $A_{\\rm open}\\simeq\\half|\\Sig''(v^*)|\\varepsilon^2m$.\nAs $C\\to C^*\\approx137$, damping tends to zero, the response grows about\n$30$-fold, and resonance sharpens (Fig.~\\ref{fig:jcurve}a,b).\nThis isolates a network effect: recurrent transfer changes at fixed detector curvature."
+  },
+  {
+    "id": "jr_timing_open",
+    "before": "In the pinned JR coupling sweep, genuine two tones at $\\Delta f=f_0$",
+    "after": "With genuine two tones at $\\Delta f=f_0$, the same pinned sweep"
+  },
+  {
+    "id": "jr_timing_verb",
+    "before": "the same pinned sweep\nincrease modulation",
+    "after": "the same pinned sweep\nincreases modulation"
+  },
+  {
+    "id": "tacs_setup",
+    "before": "TI and direct low-frequency stimulation share the same linear amplifier.\nMatching their generated in-band drives therefore matches their linear outputs;\nresonance alone gives TI no efficiency advantage.",
+    "after": "TI and tACS share the linear amplifier, so matching their generated in-band\ndrives at a common state matches their linear outputs; resonance alone gives\nTI no efficiency advantage."
+  },
+  {
+    "id": "tacs_transfer_repeat",
+    "before": "The common transfer cancels when both responses are linear about the same\nstate. For the stated unequal inputs, the predicted ratio is $0.143$;",
+    "after": "The common linear transfer cancels. For the stated unequal inputs the predicted ratio is $0.143$;"
+  },
+  {
+    "id": "jr_caption_role",
+    "before": "AM surrogate, Eq.~\\eqref{eq:amsur}; adjusting $p(C)$ pins the field-free\nstate, curvature $\\Sig''(v^*)=-0.151$~s$^{-1}$mV$^{-2}$, and open-loop\nsource $A_{\\rm open}$. \\emph{(a,b)} The response grows and sharpens as\n$C$ approaches the Hopf $C^*$ from the stable-focus side ($\\gamma>0$).\n\\emph{(c)} Rate-to-voltage gain $A_\\Omega/A_{\\rm open}$ (mV\\,s) follows\n$1/\\gamma$ (dashed) before saturating.",
+    "after": "\\caption{\\textbf{JR coupling controls amplification at fixed detection.}\nAM surrogate, Eq.~\\eqref{eq:amsur}, with $p(C)$ pinning the field-free state,\ncurvature $\\Sig''(v^*)=-0.151$~s$^{-1}$mV$^{-2}$, and source $A_{\\rm open}$.\n\\emph{(a,b)} The response grows and its resonance sharpens as $C$ approaches\n$C^*$ on the stable-focus side ($\\gamma>0$). \\emph{(c)} Rate-to-voltage gain\n$A_\\Omega/A_{\\rm open}$ (mV\\,s) follows $1/\\gamma$ (dashed) before saturating.}"
+  },
+  {
+    "id": "direct_shared_transfer",
+    "before": "At a common state and entry point, matched sources give matched leading\ncircuit responses. Steady sources share the zero-frequency transfer; beat\nand tACS sources share the transfer at $\\Omega$. These transfers differ,\nand rectification of the amplified TI beat can add a mean shift.\nThe local source comparison therefore specifies\nneither a universal physiological-effect ratio nor equal spatial responses.",
+    "after": "At a common state and entry point, matched steady sources share the\nzero-frequency transfer, and matched beat and tACS sources share the transfer\nat $\\Omega$. These transfers differ, and rectification of the amplified TI\nbeat can add a mean shift.\nSource ratios therefore imply neither universal physiological-effect ratios\nnor equal spatial responses."
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "TN0484_jne.pdf": {
+    "pages": 37,
+    "sha256": "fbf1c1a2da615bad48b46e2bd7439df4d06eea3def0ad18a9eb33f479d52ffce",
+    "bytes": 2438783
+  },
+  "TN0484_jne_supplement.pdf": {
+    "pages": 35,
+    "sha256": "d3d11108bcdbe6a49147f3fc8a6ec3a06440c8d9eb695ff4748b049aec720a83",
+    "bytes": 1982655
+  },
+  "docs/redline_last_read.pdf": {
+    "pages": 53,
+    "sha256": "bc7f6caf172459bd814393a6d50bc809b9698dd8d690df7bf4ece472cca06e1f",
+    "bytes": 2769958
+  },
+  "build/storyline/tn0484_storyline.pdf": {
+    "pages": 6,
+    "sha256": "5f2728ebf632bc0b5fc01847611b75bf8589cf51216575233a8a4416b5216b01",
+    "bytes": 151137
+  },
+  "output/pdf/TN0484_main_results.pdf": {
+    "pages": 13,
+    "sha256": "b1cb4c8713c86df5e5001b146ef56867c0ef18b0710fadd04319a1fd0df67d95",
+    "bytes": 1070914
+  }
+}

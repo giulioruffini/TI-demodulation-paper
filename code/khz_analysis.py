@@ -41,16 +41,16 @@ for tau in taus:
 
 A0=curves[0.0].copy()                                            # normalize: direct -> 1
 fig, ax = plt.subplots(figsize=(8.0,4.8))
-labels={0.0:"direct / fast nonlinearity ($\\tau\\!\\to\\!0$)",
-        0.2e-3:"axon / AIS / node  $\\tau\\approx0.2$ ms (corner $\\approx$800 Hz)",
-        16e-3:"soma / dendrite  $\\tau_m\\approx16$ ms (corner $\\approx$10 Hz)"}
+labels={0.0:"direct ($\\tau\\!\\to\\!0$)",
+        0.2e-3:"assumed fast response, $\\tau=0.2$ ms (corner $\\approx$800 Hz)",
+        16e-3:"slow somatic membrane, $\\tau_m=16$ ms (corner $\\approx$10 Hz)"}
 cols={0.0:NEB, 0.2e-3:"#1a9850", 16e-3:NER}
 for tau in taus:
     ax.loglog(fc, curves[tau]/A0, "o-", ms=3, color=cols[tau], label=labels[tau])
 # 1/f^2 guide anchored to the soma curve at 1 kHz
 i1k=np.argmin(np.abs(fc-1000)); base=(curves[16e-3]/A0)[i1k]
 ax.loglog(fc[fc>=300], base*(fc[fc>=300]/1000.)**-2, "k--", lw=1, label="$\\propto 1/f_c^{2}$")
-for f,lab in [(1000,"1k"),(2000,"2k"),(3900,"TMS\n3.9k"),(10000,"10k")]:
+for f,lab in [(1000,"1k"),(2000,"2k"),(3900,"3.9k"),(10000,"10k")]:
     ax.axvline(f, color=GR, ls=":", lw=0.7); ax.text(f*1.02, 1.3e-7, lab, fontsize=7.5, color=GR)
 ax.set_ylim(1e-7, 2.0)
 ax.set_xlabel("carrier frequency  $f_c$  (Hz)")

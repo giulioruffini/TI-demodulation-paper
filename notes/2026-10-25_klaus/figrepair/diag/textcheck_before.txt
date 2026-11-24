@@ -1,0 +1,28 @@
+fig_feasibility_khz.pdf: 741 pt wide, placed 1, scale 0.627; printed sizes 6.1..8.4 pt; 58 spans
+    COLLISION  'εeq ∝λ2' x '0E2' (24%) at (349,223)
+fig_curvature_twotone.pdf: 877 pt wide, placed 1, scale 0.530; printed sizes 4.3..8.4 pt; 42 spans
+    COLLISION  '1' x '2σ00(v * )ε2' (16%) at (302,198)
+    TOO SMALL  1 span(s) below 6.0 pt: '1'@4.3
+fig_fem.pdf: 732 pt wide, placed 1, scale 0.635; printed sizes 6.1..8.9 pt; 72 spans
+    COLLISION  '0.30' x '0.000' (28%) at (204,308)
+fig_mpr_crossover.pdf: 803 pt wide, placed 1, scale 0.579; printed sizes 4.5..8.9 pt; 37 spans
+    COLLISION  '1' x '4F00(Q): static curvatur' (18%) at (83,55)
+    COLLISION  '∝f−2' x 'c' (54%) at (555,234)
+    TOO SMALL  2 span(s) below 6.0 pt: '1'@4.5, 'c'@4.5
+fig_qif_raster_twotone.pdf: 726 pt wide, placed 1, scale 0.640; printed sizes 6.1..9.6 pt; 60 spans
+fig_qif_regimes.pdf: 734 pt wide, placed 1, scale 0.634; printed sizes 6.1..9.5 pt; 90 spans
+    COLLISION  'E rate (Hz)' x 'E neuron #' (20%) at (363,146)
+fig_khz_twotone.pdf: 798 pt wide, placed 0.95, scale 0.554; printed sizes 5.8..7.9 pt; 35 spans
+    TOO SMALL  29 span(s) below 6.0 pt: '1920'@5.8, '1960'@5.8, '2000'@5.8, '2040'@5.8, '2080'@5.8, '10−14'@5.8
+fig_qif_timing_twotone.pdf: 993 pt wide, placed 1, scale 0.468; printed sizes 6.1..7.5 pt; 44 spans
+fig_lanmm_field_p1_twotone.pdf: 800 pt wide, placed 0.86, scale 0.500; printed sizes 4.0..7.0 pt; 91 spans
+    TOO SMALL  75 span(s) below 6.0 pt: '6'@4.0, '8'@4.0, '10'@4.0, '12'@4.0, '14'@4.0, '0.0'@4.0
+fig_lanmm_field_p2_twotone.pdf: 800 pt wide, placed 0.86, scale 0.500; printed sizes 4.0..7.0 pt; 92 spans
+    TOO SMALL  76 span(s) below 6.0 pt: '6'@4.0, '8'@4.0, '10'@4.0, '12'@4.0, '14'@4.0, '0.0'@4.0
+fig_khz.pdf: 580 pt wide, placed 0.74, scale 0.593; printed sizes 4.5..7.7 pt; 23 spans
+    COLLISION  '∝1/f2' x 'c' (54%) at (113,287)
+    TOO SMALL  1 span(s) below 6.0 pt: 'c'@4.5
+fig_khz_direct.pdf: 677 pt wide, placed 1, scale 0.686; printed sizes 4.2..8.9 pt; 36 spans
+    COLLISION  '∝1/f2' x 'c' (54%) at (102,204)
+    TOO SMALL  1 span(s) below 6.0 pt: 'c'@4.2
+fig_nmm2_jcurve.pdf: 678 pt wide, placed 0.92, scale 0.631; printed sizes 6.1..9.5 pt; 28 spans

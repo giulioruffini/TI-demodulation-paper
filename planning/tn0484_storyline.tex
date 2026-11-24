@@ -1,0 +1,137 @@
+% TN0484 / WP0185: abstract and storyline. Build from the project root:
+%   ~/.claude/skills/paper-storyline/scripts/build_storyline.sh planning/tn0484_storyline.tex
+% Map mode: draft29 JNE article, article appendices A/B, and topic-organized supplement.
+\documentclass[11pt,a4paper,landscape]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,microtype}
+\usepackage[left=14mm,right=14mm,top=17mm,bottom=16mm,headheight=14pt,headsep=5mm]{geometry}
+\usepackage[table]{xcolor}
+\usepackage{array,tabularx,xltabular,booktabs,ragged2e}
+\usepackage{url}
+\usepackage{fancyhdr,lastpage}
+\usepackage{amsmath}
+\usepackage[hidelinks]{hyperref}
+
+% ---- paper identity ---------------------------------------------------------
+\newcommand{\wpnumber}{TN0484 / WP0185}
+\newcommand{\papertitle}{The cortical column as a tuned receiver}
+\newcommand{\storylinedate}{10 November 2026}
+\newcommand{\baselinelabel}{v0.15.0-draft29}
+\newcommand{\abstractfile}{tn0484_abstract.tex}
+\newcommand{\storylineauthors}{Giulio Ruffini}
+% -----------------------------------------------------------------------------
+
+\definecolor{ink}{HTML}{183C4A}
+\definecolor{muted}{HTML}{53616B}
+\definecolor{rulecolor}{HTML}{A6B8BF}
+\definecolor{wash}{HTML}{EDF3F5}
+\hypersetup{pdftitle={\wpnumber: Abstract and storyline},
+  pdfauthor={\storylineauthors},
+  pdfsubject={Abstract and section map of \papertitle}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily\color{muted}\wpnumber\quad\papertitle}
+\fancyhead[R]{\small\sffamily\color{muted}Abstract and storyline\quad\storylinedate}
+\fancyfoot[L]{\small\sffamily\color{muted}Internal reading map\quad\textbullet\quad Section order: \baselinelabel}
+\fancyfoot[R]{\small\sffamily\color{muted}\thepage\,/\,\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\tabcolsep}{3.5mm}
+\renewcommand{\arraystretch}{1.12}
+\arrayrulecolor{rulecolor}
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\newcommand{\place}[2]{\textbf{\color{ink}#1}\par\smallskip #2}
+% xltabular breaks across pages (tabularx does not). Its body is scanned for the literal
+% \end{xltabular}, so the environment is written out in the body rather than wrapped.
+\newcommand{\maphead}{%
+  \rowcolor{wash}\textbf{Place in \baselinelabel} & \textbf{Scientific content to retain} &
+  \textbf{Contribution to the argument} & \textbf{Examples / links}\\[3pt]
+  \midrule\endhead
+  \bottomrule\endlastfoot}
+\newcommand{\pagetitle}[2]{%
+  {\Large\sffamily\bfseries\color{ink}#1\par}
+  \vspace{2pt}{\normalsize #2\par}\vspace{5pt}}
+
+\begin{document}
+\pagetitle{Three stages of temporal interference}{Draft29: field coupling and recurrent gain in the slow-synapse limit}
+\IfFileExists{\abstractfile}{\input{\abstractfile}}{\input{planning/\abstractfile}}
+\absObjective\ \absApproach\ \absResults\ \absSignificance
+
+\smallskip
+The field term survives the slow-synapse reduction, and recurrent feedback
+changes the steady response through the slope of the local transfer curve.
+A short addition in Theory makes this connection explicit, distinguishes a
+cellular voltage response from the model's current input, and separates the
+bare transfer curve from a curve fitted after internal recurrence has settled.
+The full dimensional derivation and a proposed Zhao-model calibration study
+are in the companion note for Raul. The reduction and feedback gain are prior
+results, attributed to Ruffini and to Clusella and colleagues.
+
+All earlier article text, results, figures, equations, and the shared abstract
+remain. The editing baseline is \texttt{9915f13}; draft20 remains the recorded
+reading baseline. Ricardo's FEM additions remain as integrated in draft28,
+with their single-subject scope and unresolved convergence qualifications.
+\newpage
+\pagetitle{Argument and retention map}{Section order in the revised article and supplement}
+\begin{tabularx}{\textwidth}{@{}L{43mm}YY@{}}
+\toprule
+\textbf{Place} & \textbf{Scientific content and destination} & \textbf{Contribution to the argument}\\
+\midrule
+\textbf{Abstract and Introduction} & A two-tone field has no difference-frequency line. Access creates local polarization; detection generates a beat and steady source; amplification determines the response. Retain the cellular and network literature, weak-perturbation scope, and single-subject FEM scope. & The reader learns the physical problem and the advances beyond existing mixing and network models: joint sources, independent gain, and the dynamic crossover.\\[8pt]
+\textbf{Theory: population curve and field coupling} & Keep the JR sigmoid, synaptic response, and direct polarization. Derive the quadratic cross term and constant term together. Define and number the dynamic coefficient; retain its weak-input, memory, and nonzero-coefficient conditions. & The rate curve first explains what mixes the carriers. The NMM1 operator notation moves to the model appendix; it is not needed to understand this step.\\[8pt]
+\textbf{Theory: envelope, spatial weighting, harmonics} & Define the spatially varying envelope before using its harmonics. Retain the side-by-side map table, product/minimum relation, two-site example, fixed-pair current-ratio law, signed projections, and recurrent weighting. Keep the second-harmonic predictions, amplitude laws, and gain correction here; move the full harmonic ladder and mixed-detector inversion to supplementary Detection. & The reader can distinguish an envelope map from a detector output, then see how amplitude and harmonic measurements separate their predictions.\\[8pt]
+\bottomrule\end{tabularx}
+\newpage
+\pagetitle{Argument and retention map}{Section order in the revised article and supplement}
+\begin{tabularx}{\textwidth}{@{}L{43mm}YY@{}}
+\toprule
+\textbf{Place} & \textbf{Scientific content and destination} & \textbf{Contribution to the argument}\\
+\midrule
+\textbf{Theory: steady source} & Retain the distinction between nonnegative mean-square polarization, signed source, and circuit response. Retain the convex/concave sign, polarity invariance, beat/DC inequality, 202-fold example, the quadratic subharmonic identity and all uniformity conditions. The envelope-norm proof and orientation averages move to supplementary Spatial maps. The direct tDCS/tACS comparison becomes a separate Theory subsection with the 2--5\% result and its amplitude conventions. & The spatial restriction concerns the mean map under stated conditions; it does not prohibit an interior beat maximum. The static-curvature sign rule is distinguished from the dynamic coefficient. The scalar boundary theorem retains its assumptions; general multicompartment bilinearity is stated separately.\\[8pt]
+\textbf{Theory: gain, access, operating point} & Retain the synaptic attenuation estimates, resonant susceptibility, access--detection--gain product, static versus dynamic coefficients, access-time table, cable estimate, measured versus assumed times, and the conditional kHz source-strength figure. The operating-state interpretation joins the steady-source subsection; PEIX identities remain beside the JR model in Appendix B. & After detection is understood, the reader sees what suppresses the carriers and amplifies the beat, and why this does not establish physiological access.\\[8pt]
+\textbf{Theory: exact mean field} & Keep the MPR equations, equilibrium curve, threshold recruitment, and slow-synapse and carrier-relaxation conditions. Show how field input enters the reduced curve and how its slope and self-coupling determine steady gain. Distinguish current conversion, bare transfer, and internally recurrent transfer. Retain the signs and asymptotes of dynamic mixing. & The slow limit connects cellular input to a JR-like description without hiding feedback in the field coefficient. The full dimensional walkthrough belongs in Raul's note. The exact mixing coefficient and crossover derivation remain in the article appendix; fixed-voltage coefficients remain in supplementary Detection.\\[8pt]
+\bottomrule\end{tabularx}
+\newpage
+\pagetitle{Argument and retention map}{Section order in the revised article and supplement}
+\begin{tabularx}{\textwidth}{@{}L{43mm}YY@{}}
+\toprule
+\textbf{Place} & \textbf{Scientific content and destination} & \textbf{Contribution to the argument}\\
+\midrule
+\textbf{Methods} & State the purpose of waveform matching, lock-in, FEM geometry, and each model comparison before settings. Put projection choices with the head model. Place the shortened circuit schematic beside the first model explanation in Theory. Keep the full PING equations, effective input, observables, and convergence summaries. Move run catalogues and extended FEM procedures to topic-organized supplementary sections. & Methods connects each test to its observable. Detailed JR run settings, PING endpoint stability, and QIF integration and cutoff checks have explicit supplementary homes. Methods retains each comparison, its waveform, and its readout. The JR coupling protocol joins the JR setup. The lock-in construction, physical-amplitude convention, and calibration stay together here.\\[8pt]
+\textbf{Results: JR and FEM} & Combine the two-sentence beat demonstration with resonance. Retain the two-tone spectrum, curvature, square-law and linearization controls, kHz access checks, FEM maps and the sensitivity conclusion, pinned coupling sweep, timing ratios, and TI/tACS controls. & The evidence proceeds from beat generation to spatial consequences and recurrent amplification. The FEM figure retains all maps and numerical comparisons. Call moving foci ROI centroids and keep modest target-to-reference contrasts explicit. The current-ratio interpretation stays here; detailed thresholds remain supplementary. Table 3 retains the original contrasts and adds GM-only subrows. The envelope p95 tail, laminar projection factors, and unresolved interface convergence are stated here; anatomical and interface diagnostics are supplementary. JR gain, mean modulation, and tACS comparisons share one experimental block.\\[8pt]
+\textbf{Results: NMM2 and spikes} & Retain dynamic-source accuracy, the two-mode coupling curve, gain exponent and finite-amplitude deviations, attracting endpoint, spike cutoff qualification, both field amplitudes, equal-RMS carrier control, sidebands, and phase statistics. & The exact model establishes mixing and gain. QIF Results proceeds from weak-drive modulation to field-induced gamma and the equal-RMS mean-field control. The finite-network convergence limit remains beside its result; depth diagnostics and refined drive/stability estimates are in supplementary Amplification, with every moved number accounted for.\\[8pt]
+\bottomrule\end{tabularx}
+\newpage
+\pagetitle{Argument and retention map}{Section order in the revised article and supplement}
+\begin{tabularx}{\textwidth}{@{}L{43mm}YY@{}}
+\toprule
+\textbf{Place} & \textbf{Scientific content and destination} & \textbf{Contribution to the argument}\\
+\midrule
+\textbf{Discussion} & Group interpretation into access/mixing, spatial predictions, field-induced oscillations and gain, efficiency, population-model limits, and tests. Keep the Violante biological interpretation and conditions, removing repeated displacement values and relocating the ratio algebra. Move the Vieira numerical footnote to supplementary Efficiency while retaining its unmatched-input qualification. Keep the Cifra scope attached to its claim. & Each subsection answers one scientific question. Missey constrains carrier dependence without measuring source transfer. Label the Violante interpretation a hypothesis. Consolidate repeated mechanism explanations; retain the efficiency bound within its family.\\[8pt]
+\textbf{Predictions and Conclusion} & The six claim-to-test entries retain independent amplitudes, steering, state/carrier dependence, harmonic calibration, recurrence, and equal-RMS controls. The full evidence matrix is in supplementary Experimental tests. Keep the off-resonance design here. The efficiency ceiling is stated concisely with its exact scope; the step-mixture argument and sharp-threshold interpretation are supplementary. & The conclusion states the supported findings and the measurements that separate mechanisms; detailed qualifications remain beside their claims.\\[8pt]
+\textbf{Notation and supplement} & Physical units are explicit in the article; the uncoupled derivation states its membrane-time convention. Keep all equations, citations, supplementary figures, LaNMM results, detector-bound derivation, and vocabulary metrics. & Article appendices contain notation, the JR specification, the slow-synapse display, and compact MPR crossover derivation. Supplementary sections contain access, detection, spatial maps, amplification, efficiency, laminar extension, and metrics/settings; figures accompany their topics. Article-appendix moves do not reduce the article count.\\[8pt]
+\bottomrule\end{tabularx}
+\newpage
+\pagetitle{Scope, length, and verification}{Draft29: a short field-coupling addition; full derivation in the companion note}
+Draft29 contains 11,405 words across narrative, headings, captions,
+tables, and appendices, plus the unchanged 299-word abstract: an addition of
+136 words. The article is 38 pages; the supplement remains 35 pages.
+Fonts, margins, and figure sizes remain unchanged.
+
+No earlier sentence is removed. Existing equation bodies, citations,
+labels, figures, and scientific inputs are compared with the baseline.
+Dimensional and normalized gain formulas are checked against each other;
+equilibrium finite differences check the derivative. Article and supplement
+builds, redlines, and rendered-page checks accompany the scientific review.
+The canonical TN artifacts and annotated draft20 are preserved.
+
+The GM-only comparison belongs in Table~3; mean-change and node-fraction checks
+belong in supplementary Spatial maps, followed by anatomical orientation and
+interface diagnostics. The per-node export remains unreceived and unvalidated.
+Remote PR merging, public release, Overleaf, Calliope, and coauthor sending
+remain held.
+\end{document}

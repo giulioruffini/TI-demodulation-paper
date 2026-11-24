@@ -1,0 +1,12 @@
+\subsection{Static rate with dynamic synapses}
+A second-order synapse with time constant $\tau_s$ obeys
+\begin{equation}
+r\simeq \frac{F(Q)}{\tau_m},\qquad
+\tau_s^2\ddot u+2\tau_s\dot u+u=r,
+\label{eq:slow_synapse}
+\end{equation}
+where $u$ is the postsynaptic potential entering the recurrent drive in $Q$, measured in
+units of its steady gain: the filter of \S\ref{sec:nmm} with $a=1/\tau_s$ has gain
+$A\tau_s$, and dividing its potential by $A\tau_s$ gives this equation \cite{clusella2023}. This is the slow-synapse limit: shortening the
+effective membrane time makes the transfer appear static while the network retains
+its synaptic dynamics.

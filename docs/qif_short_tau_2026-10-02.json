@@ -1,0 +1,357 @@
+{
+  "carriers_Hz": [
+    980.0,
+    1020.0
+  ],
+  "beat_Hz": 40.0,
+  "input_convention": "fixed normalized current amplitudes inside tau*v_dot equation",
+  "uncoupled": [
+    {
+      "tau_ms": 15.0,
+      "protocol": "fixed_parameters",
+      "Q": 0.0,
+      "Delta": 1.0,
+      "r_baseline_Hz": 15.005271935951768,
+      "v_baseline": -0.7071067811865475,
+      "voltage_carrier_1000Hz_per_a": 0.010611522897576725,
+      "v_squared_beat_source_per_a1a2": 0.00011264950835110642,
+      "rate_beat_Hz_per_a1a2": 0.00022866039840225923,
+      "rate_beat_complex_Hz_per_a1a2": [
+        -0.00015796088008614465,
+        -0.00016532978606376576
+      ],
+      "intrinsic_eigenvalues_per_second": [
+        [
+          -94.28090415820633,
+          94.28090415820634
+        ],
+        [
+          -94.28090415820633,
+          -94.28090415820634
+        ]
+      ]
+    },
+    {
+      "tau_ms": 1.5,
+      "protocol": "fixed_parameters",
+      "Q": 0.0,
+      "Delta": 1.0,
+      "r_baseline_Hz": 150.05271935951768,
+      "v_baseline": -0.7071067811865475,
+      "voltage_carrier_1000Hz_per_a": 0.10718252760613908,
+      "v_squared_beat_source_per_a1a2": 0.011492897707280108,
+      "rate_beat_Hz_per_a1a2": 0.8795780062765505,
+      "rate_beat_complex_Hz_per_a1a2": [
+        0.8502022733314981,
+        -0.22541864063866573
+      ],
+      "intrinsic_eigenvalues_per_second": [
+        [
+          -942.8090415820633,
+          942.8090415820634
+        ],
+        [
+          -942.8090415820633,
+          -942.8090415820634
+        ]
+      ]
+    },
+    {
+      "tau_ms": 1.0,
+      "protocol": "fixed_parameters",
+      "Q": 0.0,
+      "Delta": 1.0,
+      "r_baseline_Hz": 225.0790790392765,
+      "v_baseline": -0.7071067811865475,
+      "voltage_carrier_1000Hz_per_a": 0.16230559397439356,
+      "v_squared_beat_source_per_a1a2": 0.026354060115448417,
+      "rate_beat_Hz_per_a1a2": 3.105581998618777,
+      "rate_beat_complex_Hz_per_a1a2": [
+        3.0631308647345867,
+        -0.511731233808666
+      ],
+      "intrinsic_eigenvalues_per_second": [
+        [
+          -1414.2135623730949,
+          1414.213562373095
+        ],
+        [
+          -1414.2135623730949,
+          -1414.213562373095
+        ]
+      ]
+    },
+    {
+      "tau_ms": 0.2,
+      "protocol": "fixed_parameters",
+      "Q": 0.0,
+      "Delta": 1.0,
+      "r_baseline_Hz": 1125.3953951963824,
+      "v_baseline": -0.7071067811865475,
+      "voltage_carrier_1000Hz_per_a": 0.4399239025031248,
+      "v_squared_beat_source_per_a1a2": 0.19348570323059647,
+      "rate_beat_Hz_per_a1a2": 169.8328343470926,
+      "rate_beat_complex_Hz_per_a1a2": [
+        169.7686796490885,
+        -4.667658146453388
+      ],
+      "intrinsic_eigenvalues_per_second": [
+        [
+          -7071.067811865474,
+          7071.067811865474
+        ],
+        [
+          -7071.067811865474,
+          -7071.067811865474
+        ]
+      ]
+    },
+    {
+      "tau_ms": 0.15,
+      "protocol": "fixed_parameters",
+      "Q": 0.0,
+      "Delta": 1.0,
+      "r_baseline_Hz": 1500.5271935951769,
+      "v_baseline": -0.7071067811865475,
+      "voltage_carrier_1000Hz_per_a": 0.4147686111260996,
+      "v_squared_beat_source_per_a1a2": 0.17202296069026712,
+      "rate_beat_Hz_per_a1a2": 218.5509890387751,
+      "rate_beat_complex_Hz_per_a1a2": [
+        218.52929172182897,
+        -3.0795242136678898
+      ],
+      "intrinsic_eigenvalues_per_second": [
+        [
+          -9428.090415820634,
+          9428.090415820634
+        ],
+        [
+          -9428.090415820634,
+          -9428.090415820634
+        ]
+      ]
+    },
+    {
+      "tau_ms": 15.0,
+      "protocol": "matched_rate_voltage",
+      "Q": 0.0,
+      "Delta": 1.0,
+      "r_baseline_Hz": 15.005271935951768,
+      "v_baseline": -0.7071067811865475,
+      "voltage_carrier_1000Hz_per_a": 0.010611522897576725,
+      "v_squared_beat_source_per_a1a2": 0.00011264950835110642,
+      "rate_beat_Hz_per_a1a2": 0.00022866039840225923,
+      "rate_beat_complex_Hz_per_a1a2": [
+        -0.00015796088008614465,
+        -0.00016532978606376576
+      ],
+      "intrinsic_eigenvalues_per_second": [
+        [
+          -94.28090415820633,
+          94.28090415820634
+        ],
+        [
+          -94.28090415820633,
+          -94.28090415820634
+        ]
+      ]
+    },
+    {
+      "tau_ms": 1.5,
+      "protocol": "matched_rate_voltage",
+      "Q": -0.495,
+      "Delta": 0.1,
+      "r_baseline_Hz": 15.005271935951768,
+      "v_baseline": -0.7071067811865475,
+      "voltage_carrier_1000Hz_per_a": 0.10495068649931234,
+      "v_squared_beat_source_per_a1a2": 0.011018771862430582,
+      "rate_beat_Hz_per_a1a2": 0.15963909525887288,
+      "rate_beat_complex_Hz_per_a1a2": [
+        0.1396626714979775,
+        -0.07732385741231172
+      ],
+      "intrinsic_eigenvalues_per_second": [
+        [
+          -942.8090415820633,
+          94.28090415820634
+        ],
+        [
+          -942.8090415820633,
+          -94.28090415820634
+        ]
+      ]
+    },
+    {
+      "tau_ms": 1.0,
+      "protocol": "matched_rate_voltage",
+      "Q": -0.49777777777777776,
+      "Delta": 0.06666666666666667,
+      "r_baseline_Hz": 15.005271935951768,
+      "v_baseline": -0.7071067811865475,
+      "voltage_carrier_1000Hz_per_a": 0.15530055620304023,
+      "v_squared_beat_source_per_a1a2": 0.02412656941545389,
+      "rate_beat_Hz_per_a1a2": 0.38281393427705823,
+      "rate_beat_complex_Hz_per_a1a2": [
+        0.3613919258653774,
+        -0.12626315454634196
+      ],
+      "intrinsic_eigenvalues_per_second": [
+        [
+          -1414.2135623730949,
+          94.28090415820634
+        ],
+        [
+          -1414.2135623730949,
+          -94.28090415820634
+        ]
+      ]
+    },
+    {
+      "tau_ms": 0.2,
+      "protocol": "matched_rate_voltage",
+      "Q": -0.4999111111111111,
+      "Delta": 0.013333333333333334,
+      "r_baseline_Hz": 15.00527193595177,
+      "v_baseline": -0.7071067811865475,
+      "voltage_carrier_1000Hz_per_a": 0.5285739813994649,
+      "v_squared_beat_source_per_a1a2": 0.27938462310340717,
+      "rate_beat_Hz_per_a1a2": 8.866616082705844,
+      "rate_beat_complex_Hz_per_a1a2": [
+        8.842836681602856,
+        -0.6489377324496909
+      ],
+      "intrinsic_eigenvalues_per_second": [
+        [
+          -7071.067811865474,
+          94.28090415820634
+        ],
+        [
+          -7071.067811865474,
+          -94.28090415820634
+        ]
+      ]
+    },
+    {
+      "tau_ms": 0.15,
+      "protocol": "matched_rate_voltage",
+      "Q": -0.49995,
+      "Delta": 0.01,
+      "r_baseline_Hz": 15.005271935951768,
+      "v_baseline": -0.7071067811865475,
+      "voltage_carrier_1000Hz_per_a": 0.5883963233901194,
+      "v_squared_beat_source_per_a1a2": 0.3461938260506279,
+      "rate_beat_Hz_per_a1a2": 12.380756006223145,
+      "rate_beat_complex_Hz_per_a1a2": [
+        12.359025515049511,
+        -0.7332172965673938
+      ],
+      "intrinsic_eigenvalues_per_second": [
+        [
+          -9428.090415820634,
+          94.28090415820634
+        ],
+        [
+          -9428.090415820634,
+          -94.28090415820634
+        ]
+      ]
+    }
+  ],
+  "validation": [
+    {
+      "tau_ms": 15.0,
+      "amplitudes": [
+        0.05,
+        0.025
+      ],
+      "coefficient_full": [
+        -0.00015796092552729845,
+        -0.000165329810366167
+      ],
+      "coefficient_half": [
+        -0.00015796089221749277,
+        -0.00016532978853635365
+      ],
+      "quadratic_limit_relative_error": 2.1485101054011896e-08
+    },
+    {
+      "tau_ms": 1.5,
+      "amplitudes": [
+        0.05,
+        0.025
+      ],
+      "coefficient_full": [
+        0.13967258791304757,
+        -0.07733175597403064
+      ],
+      "coefficient_half": [
+        0.13966515046575154,
+        -0.07732583191765297
+      ],
+      "quadratic_limit_relative_error": 1.6009861811532852e-09
+    },
+    {
+      "tau_ms": 0.15,
+      "amplitudes": [
+        0.05,
+        0.025
+      ],
+      "coefficient_full": [
+        12.450114451878651,
+        -0.73972690075912
+      ],
+      "coefficient_half": [
+        12.381677643592608,
+        -0.734835251571498
+      ],
+      "quadratic_limit_relative_error": 1.2974603131803046e-05
+    }
+  ],
+  "PING_fixed_parameters": [
+    {
+      "tau_E_ms": 15.0,
+      "tau_I_ms": 7.5,
+      "r_E_Hz": 47.99066830071401,
+      "r_I_Hz": 25.477191442072034,
+      "max_eigenvalue_real_per_ms": -0.019516340321163395,
+      "least_damped_oscillatory_mode_Hz": 53.21174215322493,
+      "oscillatory_mode_damping_per_ms": 0.019516340321163395
+    },
+    {
+      "tau_E_ms": 1.5,
+      "tau_I_ms": 0.75,
+      "r_E_Hz": 479.90668300714015,
+      "r_I_Hz": 254.77191442072035,
+      "max_eigenvalue_real_per_ms": -0.01917936717654182,
+      "least_damped_oscillatory_mode_Hz": 109.29831131312486,
+      "oscillatory_mode_damping_per_ms": 0.25332373471773373
+    },
+    {
+      "tau_E_ms": 1.0,
+      "tau_I_ms": 0.5,
+      "r_E_Hz": 719.8600245107103,
+      "r_I_Hz": 382.1578716310805,
+      "max_eigenvalue_real_per_ms": -0.019171892392005386,
+      "least_damped_oscillatory_mode_Hz": 109.62467059792151,
+      "oscillatory_mode_damping_per_ms": 0.3046094765887921
+    },
+    {
+      "tau_E_ms": 0.2,
+      "tau_I_ms": 0.1,
+      "r_E_Hz": 3599.300122553551,
+      "r_I_Hz": 1910.7893581554026,
+      "max_eigenvalue_real_per_ms": -0.01916068080439382,
+      "least_damped_oscillatory_mode_Hz": 106.17768571232538,
+      "oscillatory_mode_damping_per_ms": 0.3846488196540766
+    },
+    {
+      "tau_E_ms": 0.15,
+      "tau_I_ms": 0.075,
+      "r_E_Hz": 4799.0668300714015,
+      "r_I_Hz": 2547.7191442072035,
+      "max_eigenvalue_real_per_ms": -0.019160010557095868,
+      "least_damped_oscillatory_mode_Hz": 105.81332652121067,
+      "oscillatory_mode_damping_per_ms": 0.3892138943315162
+    }
+  ]
+}

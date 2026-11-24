@@ -1,0 +1,368 @@
+{
+  "before": "b6fc18b",
+  "after": "working",
+  "method": "TeXcount text + headings + captions; math, bibliography, and front matter excluded. All source sections counted, including JNE declarations and the supplement.",
+  "sections": {
+    "Abstract": {
+      "before": {
+        "text": 275,
+        "headings": 0,
+        "captions": 0,
+        "inline_math": 2,
+        "display_math": 0,
+        "words": 275
+      },
+      "after": {
+        "text": 275,
+        "headings": 0,
+        "captions": 0,
+        "inline_math": 2,
+        "display_math": 0,
+        "words": 275
+      },
+      "change": 0
+    },
+    "Introduction": {
+      "before": {
+        "text": 773,
+        "headings": 1,
+        "captions": 75,
+        "inline_math": 16,
+        "display_math": 1,
+        "words": 849
+      },
+      "after": {
+        "text": 746,
+        "headings": 1,
+        "captions": 75,
+        "inline_math": 16,
+        "display_math": 1,
+        "words": 822
+      },
+      "change": -27
+    },
+    "Theory": {
+      "before": {
+        "text": 3857,
+        "headings": 50,
+        "captions": 89,
+        "inline_math": 284,
+        "display_math": 26,
+        "words": 3996
+      },
+      "after": {
+        "text": 3978,
+        "headings": 50,
+        "captions": 89,
+        "inline_math": 298,
+        "display_math": 26,
+        "words": 4117
+      },
+      "change": 121
+    },
+    "Methods": {
+      "before": {
+        "text": 2381,
+        "headings": 39,
+        "captions": 117,
+        "inline_math": 263,
+        "display_math": 3,
+        "words": 2537
+      },
+      "after": {
+        "text": 2292,
+        "headings": 39,
+        "captions": 117,
+        "inline_math": 258,
+        "display_math": 3,
+        "words": 2448
+      },
+      "change": -89
+    },
+    "Results": {
+      "before": {
+        "text": 2757,
+        "headings": 83,
+        "captions": 945,
+        "inline_math": 344,
+        "display_math": 1,
+        "words": 3785
+      },
+      "after": {
+        "text": 2355,
+        "headings": 83,
+        "captions": 945,
+        "inline_math": 320,
+        "display_math": 1,
+        "words": 3383
+      },
+      "change": -402
+    },
+    "Discussion": {
+      "before": {
+        "text": 1459,
+        "headings": 1,
+        "captions": 0,
+        "inline_math": 37,
+        "display_math": 0,
+        "words": 1460
+      },
+      "after": {
+        "text": 1352,
+        "headings": 1,
+        "captions": 0,
+        "inline_math": 33,
+        "display_math": 0,
+        "words": 1353
+      },
+      "change": -107
+    },
+    "Conclusion": {
+      "before": {
+        "text": 266,
+        "headings": 1,
+        "captions": 0,
+        "inline_math": 0,
+        "display_math": 0,
+        "words": 267
+      },
+      "after": {
+        "text": 229,
+        "headings": 1,
+        "captions": 0,
+        "inline_math": 0,
+        "display_math": 0,
+        "words": 230
+      },
+      "change": -37
+    },
+    "Code and data availability": {
+      "before": {
+        "text": 92,
+        "headings": 4,
+        "captions": 0,
+        "inline_math": 0,
+        "display_math": 0,
+        "words": 96
+      },
+      "after": {
+        "text": 92,
+        "headings": 4,
+        "captions": 0,
+        "inline_math": 0,
+        "display_math": 0,
+        "words": 96
+      },
+      "change": 0
+    },
+    "Acknowledgments": {
+      "before": {
+        "text": 29,
+        "headings": 1,
+        "captions": 0,
+        "inline_math": 0,
+        "display_math": 0,
+        "words": 30
+      },
+      "after": {
+        "text": 29,
+        "headings": 1,
+        "captions": 0,
+        "inline_math": 0,
+        "display_math": 0,
+        "words": 30
+      },
+      "change": 0
+    },
+    "Competing interests": {
+      "before": {
+        "text": 24,
+        "headings": 2,
+        "captions": 0,
+        "inline_math": 0,
+        "display_math": 0,
+        "words": 26
+      },
+      "after": {
+        "text": 24,
+        "headings": 2,
+        "captions": 0,
+        "inline_math": 0,
+        "display_math": 0,
+        "words": 26
+      },
+      "change": 0
+    },
+    "Author contributions": {
+      "before": {
+        "text": 69,
+        "headings": 2,
+        "captions": 0,
+        "inline_math": 0,
+        "display_math": 0,
+        "words": 71
+      },
+      "after": {
+        "text": 69,
+        "headings": 2,
+        "captions": 0,
+        "inline_math": 0,
+        "display_math": 0,
+        "words": 71
+      },
+      "change": 0
+    },
+    "Declaration of generative AI and AI-assisted technologies in the manuscript preparation process": {
+      "before": {
+        "text": 50,
+        "headings": 12,
+        "captions": 0,
+        "inline_math": 0,
+        "display_math": 0,
+        "words": 62
+      },
+      "after": {
+        "text": 50,
+        "headings": 12,
+        "captions": 0,
+        "inline_math": 0,
+        "display_math": 0,
+        "words": 62
+      },
+      "change": 0
+    },
+    "Appendix: Notation and units": {
+      "before": {
+        "text": 701,
+        "headings": 3,
+        "captions": 17,
+        "inline_math": 127,
+        "display_math": 0,
+        "words": 721
+      },
+      "after": {
+        "text": 701,
+        "headings": 3,
+        "captions": 17,
+        "inline_math": 127,
+        "display_math": 0,
+        "words": 721
+      },
+      "change": 0
+    },
+    "Appendix: Simulated models: equations and parameters": {
+      "before": {
+        "text": 157,
+        "headings": 8,
+        "captions": 3,
+        "inline_math": 14,
+        "display_math": 1,
+        "words": 168
+      },
+      "after": {
+        "text": 157,
+        "headings": 8,
+        "captions": 3,
+        "inline_math": 14,
+        "display_math": 1,
+        "words": 168
+      },
+      "change": 0
+    },
+    "Appendix: The cubic Hopf normal form lacks a quadratic mixer": {
+      "before": {
+        "text": 137,
+        "headings": 9,
+        "captions": 0,
+        "inline_math": 15,
+        "display_math": 1,
+        "words": 146
+      },
+      "after": {
+        "text": 137,
+        "headings": 9,
+        "captions": 0,
+        "inline_math": 15,
+        "display_math": 1,
+        "words": 146
+      },
+      "change": 0
+    },
+    "Appendix: Efficiency of a memoryless transfer against a direct in-band drive": {
+      "before": {
+        "text": 551,
+        "headings": 10,
+        "captions": 0,
+        "inline_math": 51,
+        "display_math": 3,
+        "words": 561
+      },
+      "after": {
+        "text": 551,
+        "headings": 10,
+        "captions": 0,
+        "inline_math": 51,
+        "display_math": 3,
+        "words": 561
+      },
+      "change": 0
+    },
+    "Appendix: Extension: the laminar column at low carriers": {
+      "before": {
+        "text": 743,
+        "headings": 7,
+        "captions": 207,
+        "inline_math": 94,
+        "display_math": 0,
+        "words": 957
+      },
+      "after": {
+        "text": 646,
+        "headings": 7,
+        "captions": 207,
+        "inline_math": 92,
+        "display_math": 0,
+        "words": 860
+      },
+      "change": -97
+    },
+    "Appendix: Vocabulary and metrics": {
+      "before": {
+        "text": 290,
+        "headings": 3,
+        "captions": 0,
+        "inline_math": 9,
+        "display_math": 0,
+        "words": 293
+      },
+      "after": {
+        "text": 290,
+        "headings": 3,
+        "captions": 0,
+        "inline_math": 9,
+        "display_math": 0,
+        "words": 293
+      },
+      "change": 0
+    },
+    "Appendix: Supplementary figures": {
+      "before": {
+        "text": 0,
+        "headings": 2,
+        "captions": 1301,
+        "inline_math": 130,
+        "display_math": 0,
+        "words": 1303
+      },
+      "after": {
+        "text": 0,
+        "headings": 2,
+        "captions": 1301,
+        "inline_math": 130,
+        "display_math": 0,
+        "words": 1303
+      },
+      "change": 0
+    }
+  }
+}

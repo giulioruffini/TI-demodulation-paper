@@ -1,0 +1,36 @@
+--- a/code/make_fem_fig.py
++++ b/code/make_fem_fig.py
+@@ -37,6 +37,7 @@
+ GOLD = "#ffd166"
+ share = D["share"]
+ S11, S13 = 0.5, 0.75
++CBARS = []
+ 
+ # Size the canvas so the equal-aspect slices fill their cells (inches throughout).
+ t1 = D["slice_t1"]
+@@ -82,10 +83,11 @@
+             ax.set_title(NAME[k], fontsize=10.5, loc="right" if k == "iso" else "center")
+             figstyle.panel(ax, "abcd"[j])
+     cb = fig.colorbar(im, cax=fig.add_subplot(top[2, j]), orientation="horizontal")
+-    cb.set_label(UNIT[k], labelpad=1)
++    cb.set_label(UNIT[k], labelpad=2)
+     cb.ax.tick_params(labelsize=7.5)
+     cb.ax.xaxis.set_major_locator(matplotlib.ticker.MaxNLocator(3))
+     cb.set_ticks([t for t in cb.ax.get_xticks() if 0 <= t <= vmax])
++    CBARS.append(cb)
+ 
+ # ---- (e) target-to-cortex ratio over the sweep ---------------------------------
+ ax = fig.add_subplot(bottom[0])
+@@ -155,6 +157,12 @@
+ 
+ # Materialize tick labels before sizing text for the final printed width.
+ fig.canvas.draw()
++# Keep each colorbar's end labels inside its own bar: the last label of one bar and
++# the first of the next otherwise abut across the gutter and read as one number.
++for cb in CBARS:
++    labs = cb.ax.get_xticklabels()
++    if len(labs) >= 2:
++        labs[0].set_ha("left"); labs[-1].set_ha("right")
+ figstyle.scale_text(fig, placed_frac=1.0)
+ fig.savefig(os.path.join(FIGS, "fig_fem.pdf"), metadata={"CreationDate": None})   # reruns byte-identical
+ fig.savefig(os.path.join(FIGS, "fig_fem.png"))

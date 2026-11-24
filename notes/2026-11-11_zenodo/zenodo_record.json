@@ -1,0 +1,163 @@
+{
+  "created": "2026-11-11T20:02:27.303270+00:00",
+  "modified": "2026-11-11T20:02:27.627854+00:00",
+  "id": 24145177,
+  "conceptrecid": "21009618",
+  "doi": "10.5281/zenodo.24145177",
+  "conceptdoi": "10.5281/zenodo.21009618",
+  "doi_url": "https://doi.org/10.5281/zenodo.24145177",
+  "metadata": {
+    "title": "The cortical column as a tuned receiver: a network mechanism for temporal-interference stimulation",
+    "doi": "10.5281/zenodo.24145177",
+    "publication_date": "2026-11-11",
+    "description": "<p>**Objective.** We develop a mesoscale model of temporal-interference (TI) stimulation with three stages in series: membrane access, nonlinear detection of the difference frequency absent from the field, and circuit amplification. **Approach.** We represent access by an effective membrane time and analyze detection and amplification in a Jansen–Rit column, an exact mean field of quadratic integrate-and-fire (QIF) neurons, and its spiking network. We compare spatial maps in one head model and quantify conditional kHz access budgets. **Main results.** For weak fields, a static quadratic detector generates a beat proportional to the carrier-polarization product and a signed, direct-current-like (DC-like) steady source proportional to their summed squares. Transcranial alternating-current (tACS) and direct-current (tDCS) stimulation sources are linear to leading order. At the pinned Jansen–Rit operating point, 0.1–0.3 mV per carrier gives TI sources approximately 2–5% of direct sources at equal per-carrier and direct-input polarizations. Dynamic QIF detection crosses from static curvature to positive-slope rectification at fast carriers. Changing the current ratio moves the hippocampal envelope and mean-square centroids oppositely but only rescales the beat map at fixed state. Near a Hopf bifurcation, resonant gain grows inversely with modal damping and is shared with tACS. In the pinned Jansen–Rit column, coupling changes gain independently of detection; amplification appears mainly in beat-locked population-rate modulation, with little mean-rate change. At stronger inputs, the steady source alone drives the circuit across its gamma threshold, as does an unmodulated carrier matched in root-mean-square (RMS) input. **Significance.** Weak-field beat dose follows the polarization product rather than the envelope minimum. The steady source can act at depth; its sign depends on detector state and dynamics, not carrier polarity. For uniform scalar coupling and detection in homogeneous conductivity, its magnitude has no strict interior maximum. Polarization measurements and amplitude and frequency sweeps test the stages; physiological kHz coupling remains uncalibrated.</p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Ruffini, Giulio",
+        "affiliation": "BCOM, Neuroelectrics",
+        "orcid": "0000-0003-3084-0177"
+      },
+      {
+        "name": "Salvador, Ricardo",
+        "affiliation": "Neuroelectrics",
+        "orcid": "0000-0003-1235-6533"
+      },
+      {
+        "name": "Mercadal, Borja",
+        "affiliation": "Neuroelectrics",
+        "orcid": "0000-0002-0941-6796"
+      },
+      {
+        "name": "de Palma Aristides, Raul",
+        "affiliation": "BCOM",
+        "orcid": "0000-0002-0255-2293"
+      },
+      {
+        "name": "Castaldo, Francesca",
+        "affiliation": "BCOM, Neuroelectrics",
+        "orcid": "0000-0002-4947-4552"
+      },
+      {
+        "name": "grossman, nir",
+        "affiliation": "Department of Brain Sciences and UK Dementia Research Institute, Imperial College London",
+        "orcid": "0000-0003-2002-9049"
+      },
+      {
+        "name": "Canals, Santiago",
+        "affiliation": "BCOM",
+        "orcid": "0000-0003-2175-8139"
+      },
+      {
+        "name": "Mirasso, Claudio",
+        "affiliation": "BCOM",
+        "orcid": "0000-0003-2980-7038"
+      }
+    ],
+    "keywords": [
+      "Computational Neuropsychiatry & Neurophenomenology",
+      "Physics",
+      "Brains"
+    ],
+    "version": "0.13.0",
+    "resource_type": {
+      "title": "Preprint",
+      "type": "publication",
+      "subtype": "preprint"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "communities": [
+      {
+        "id": "bcom"
+      }
+    ],
+    "relations": {
+      "version": [
+        {
+          "index": 3,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "21009618"
+          }
+        }
+      ]
+    }
+  },
+  "title": "The cortical column as a tuned receiver: a network mechanism for temporal-interference stimulation",
+  "links": {
+    "self": "https://zenodo.org/api/records/24145177",
+    "self_html": "https://zenodo.org/records/24145177",
+    "preview_html": "https://zenodo.org/records/24145177?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.24145177",
+    "self_doi": "https://doi.org/10.5281/zenodo.24145177",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.24145177",
+    "reserve_doi": "https://zenodo.org/api/records/24145177/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/21009618",
+    "parent_html": "https://zenodo.org/records/21009618",
+    "parent_doi": "https://doi.org/10.5281/zenodo.21009618",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.21009618",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:24145177/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:24145177/sequence/default",
+    "files": "https://zenodo.org/api/records/24145177/files",
+    "media_files": "https://zenodo.org/api/records/24145177/media-files",
+    "thumbnails": {
+      "10": "https://zenodo.org/api/iiif/record:24145177:WP0185-stamped.pdf/full/%5E10,/0/default.jpg",
+      "50": "https://zenodo.org/api/iiif/record:24145177:WP0185-stamped.pdf/full/%5E50,/0/default.jpg",
+      "100": "https://zenodo.org/api/iiif/record:24145177:WP0185-stamped.pdf/full/%5E100,/0/default.jpg",
+      "250": "https://zenodo.org/api/iiif/record:24145177:WP0185-stamped.pdf/full/%5E250,/0/default.jpg",
+      "750": "https://zenodo.org/api/iiif/record:24145177:WP0185-stamped.pdf/full/%5E750,/0/default.jpg",
+      "1200": "https://zenodo.org/api/iiif/record:24145177:WP0185-stamped.pdf/full/%5E1200,/0/default.jpg"
+    },
+    "latest": "https://zenodo.org/api/records/24145177/versions/latest",
+    "latest_html": "https://zenodo.org/records/24145177/latest",
+    "versions": "https://zenodo.org/api/records/24145177/versions",
+    "draft": "https://zenodo.org/api/records/24145177/draft",
+    "access_links": "https://zenodo.org/api/records/24145177/access/links",
+    "access_grants": "https://zenodo.org/api/records/24145177/access/grants",
+    "access_users": "https://zenodo.org/api/records/24145177/access/users",
+    "access_request": "https://zenodo.org/api/records/24145177/access/request",
+    "access": "https://zenodo.org/api/records/24145177/access",
+    "communities": "https://zenodo.org/api/records/24145177/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/24145177/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/24145177/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/24145177/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/24145177/quota-increase",
+    "requests": "https://zenodo.org/api/records/24145177/requests"
+  },
+  "updated": "2026-11-11T20:02:27.627854+00:00",
+  "recid": "24145177",
+  "revision": 3,
+  "files": [
+    {
+      "id": "31ecf303-b7b6-4ad8-8bc9-8511339a8f6d",
+      "key": "WP0185-stamped.pdf",
+      "size": 4781990,
+      "checksum": "md5:6ae55b3f22cdab3e69a085fb344e0830",
+      "links": {
+        "self": "https://zenodo.org/api/records/24145177/files/WP0185-stamped.pdf/content"
+      }
+    }
+  ],
+  "swh": {},
+  "owners": [
+    {
+      "id": "1616388"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 136,
+    "unique_downloads": 115,
+    "views": 719,
+    "unique_views": 683,
+    "version_downloads": 0,
+    "version_unique_downloads": 0,
+    "version_unique_views": 0,
+    "version_views": 0
+  },
+  "state": "done",
+  "submitted": true
+}

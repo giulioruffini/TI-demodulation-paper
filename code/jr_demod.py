@@ -65,10 +65,27 @@ def rhs(Y, p, sfield, lin=None):
     d[:,5]=B*b*(C4*Sigm(C3*y0))        - 2*b*y5 - b*b*y2
     return d
 
-def field(t, eps, m, Omega, fc):
-    return eps*(1.0+m*np.cos(Omega*t))*np.cos(2*np.pi*fc*t)
+def field(t, eps, m, Omega, fc, wave='am'):
+    """Applied field at time t.
 
-def integrate(p, Omega, eps, m, fc, t_settle, t_meas, dt, record=False, lin=None):
+    'am'      -- the modulated-carrier surrogate, eps(1 + m cos Om t) cos(wc t).
+    'twotone' -- the physical TI waveform, two equal tones at fc -/+ Delta f/2.
+
+    At m = 1 the two share their peak amplitude (2 eps) and their leading quadratic
+    component at Omega (1/2 sigma'' eps^2), so the same eps compares them fairly.
+    They are not otherwise equivalent: the AM surrogate carries a different DC term
+    and a spurious 2*Omega line at 25% of the fundamental, where genuine two tones
+    carry exactly none.
+    """
+    if wave == 'am':
+        return eps*(1.0+m*np.cos(Omega*t))*np.cos(2*np.pi*fc*t)
+    if wave == 'twotone':
+        wc = 2*np.pi*fc
+        return eps*(np.cos((wc-Omega/2.0)*t) + np.cos((wc+Omega/2.0)*t))
+    raise ValueError(f"unknown wave {wave!r}")
+
+def integrate(p, Omega, eps, m, fc, t_settle, t_meas, dt, record=False, lin=None,
+              wave='am'):
     """RK4. p,Omega shape (N,). Returns lock-in amplitude @Omega of v=y1-y2.
     If record, also returns (t_arr, v_arr, s_arr) for system 0 over the window.
     lin: pass (v_op,S1) to linearize the field-receiving sigmoid (control)."""
@@ -78,12 +95,12 @@ def integrate(p, Omega, eps, m, fc, t_settle, t_meas, dt, record=False, lin=None
     nmea = int(round(t_meas/dt))
     t = 0.0
     for _ in range(nset):
-        s1=field(t,eps,m,Omega,fc)
+        s1=field(t,eps,m,Omega,fc,wave)
         k1=rhs(Y,p,s1,lin)
-        s2=field(t+0.5*dt,eps,m,Omega,fc)
+        s2=field(t+0.5*dt,eps,m,Omega,fc,wave)
         k2=rhs(Y+0.5*dt*k1,p,s2,lin)
         k3=rhs(Y+0.5*dt*k2,p,s2,lin)
-        s3=field(t+dt,eps,m,Omega,fc)
+        s3=field(t+dt,eps,m,Omega,fc,wave)
         k4=rhs(Y+dt*k3,p,s3,lin)
         Y=Y+(dt/6.0)*(k1+2*k2+2*k3+k4)
         t+=dt
@@ -96,10 +113,10 @@ def integrate(p, Omega, eps, m, fc, t_settle, t_meas, dt, record=False, lin=None
     if record:
         t_arr=np.empty(nmea); v_arr=np.empty(nmea); s_arr=np.empty(nmea)
     for k in range(nmea):
-        s1=field(t,eps,m,Omega,fc); k1=rhs(Y,p,s1,lin)
-        s2=field(t+0.5*dt,eps,m,Omega,fc); k2=rhs(Y+0.5*dt*k1,p,s2,lin)
+        s1=field(t,eps,m,Omega,fc,wave); k1=rhs(Y,p,s1,lin)
+        s2=field(t+0.5*dt,eps,m,Omega,fc,wave); k2=rhs(Y+0.5*dt*k1,p,s2,lin)
         k3=rhs(Y+0.5*dt*k2,p,s2,lin)
-        s3=field(t+dt,eps,m,Omega,fc); k4=rhs(Y+dt*k3,p,s3,lin)
+        s3=field(t+dt,eps,m,Omega,fc,wave); k4=rhs(Y+dt*k3,p,s3,lin)
         Y=Y+(dt/6.0)*(k1+2*k2+2*k3+k4); t+=dt
         v=Y[:,1]-Y[:,2]; co=np.cos(Omega*t); si=np.sin(Omega*t)
         acc_c+=w[k]*v*co; acc_s+=w[k]*v*si; acc_v+=w[k]*v
@@ -127,7 +144,7 @@ def steady_v(p, dt=2e-4, t=4.0):
 # Open-loop "detector": the sigmoid alone, no network feedback.
 # Demonstrates A_Omega ~ (1/2) sigma''(v*) eps^2 m  and carrier independence.
 # ----------------------------------------------------------------------
-def openloop_lockin(v_star, eps, m, Omega, fc, dt=2e-4, T=2.0):
+def openloop_lockin(v_star, eps, m, Omega, fc, dt=2e-4, T=2.0, wave='am'):
     """Pass the AM field through sigma at fixed operating point(s) v_star and
     return the Hann-windowed lock-in amplitude of sigma(v*+s(t)) at Omega.
     v_star, Omega, fc are broadcast to a common shape (N,); eps, m scalar."""
@@ -136,14 +153,14 @@ def openloop_lockin(v_star, eps, m, Omega, fc, dt=2e-4, T=2.0):
                                             np.atleast_1d(np.asarray(fc,float)))
     n = int(round(T/dt)); t = np.arange(n)*dt
     Om = Omega[:, None]                                       # (N,1)
-    s = eps*(1.0+m*np.cos(Om*t))*np.cos(2*np.pi*fc[:, None]*t)  # (N,n)
+    s = field(t, eps, m, Om, fc[:, None], wave)               # (N,n)
     y = Sigm(v_star[:, None] + s)                             # (N,n)
     y = y - y.mean(1, keepdims=True)                          # demean (avoid DC leakage)
     w = np.hanning(n)
     c = (y*(w*np.cos(Om*t))).sum(1); s_ = (y*(w*np.sin(Om*t))).sum(1)
     return 2.0/w.sum()*np.sqrt(c**2 + s_**2)
 
-def openloop_inphase(v_star, eps, m, Omega, fc, dt=2e-4, T=2.0):
+def openloop_inphase(v_star, eps, m, Omega, fc, dt=2e-4, T=2.0, wave='am'):
     """SIGNED in-phase (cosine) lock-in component of sigma(v*+s(t)) at Omega.
     For the static detector the demodulated term is in phase with the envelope
     cos(Omega t), so this returns ~ (1/2) sigma''(v*) eps^2 m -- including the
@@ -153,7 +170,7 @@ def openloop_inphase(v_star, eps, m, Omega, fc, dt=2e-4, T=2.0):
                                             np.atleast_1d(np.asarray(fc,float)))
     n = int(round(T/dt)); t = np.arange(n)*dt
     Om = Omega[:, None]
-    s = eps*(1.0+m*np.cos(Om*t))*np.cos(2*np.pi*fc[:, None]*t)
+    s = field(t, eps, m, Om, fc[:, None], wave)
     y = Sigm(v_star[:, None] + s); y = y - y.mean(1, keepdims=True)
     w = np.hanning(n)
     return 2.0/w.sum()*(y*(w*np.cos(Om*t))).sum(1)

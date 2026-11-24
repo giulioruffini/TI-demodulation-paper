@@ -1,0 +1,11 @@
+{
+  "supplement_only_rows": [
+    "$\\ell(\\omega),\\ell_0$ & Frequency-dependent and static cable space constants & $\\mu$m & App.~\\ref{app:access}, Eq.~\\eqref{eq:lambda} \\\\",
+    "$\\mathbf V,\\mathsf C_m,\\mathsf G_m$ & Compartment voltages, capacitance and conductance matrices & V; F; S & App.~\\ref{app:access} \\\\",
+    "$\\mathbf I^0,\\mathbf p_E$ & Endogenous currents; field-to-current vector & A; A/(V/m) & App.~\\ref{app:access} \\\\",
+    "$u,\\xi,\\beta,k_{\\rm ell}^2$ & Reduced amplitude $\\rho\\varepsilon$, offset $\\rho(v^*-v_0)$, threshold ratio, elliptic parameter & dimensionless & App.~\\ref{app:bound} \\\\",
+    "$L,\\psi,\\mathsf K,\\mathsf E$ & Unit logistic, normalized waveform, complete elliptic integrals & dimensionless & App.~\\ref{app:bound} \\\\",
+    "$z,\\alpha,\\mathcal F,\\varepsilon_{\\rm SL}$ & Stuart--Landau mode, growth rate, forcing and forcing amplitude & normalized mode; s$^{-1}$ for the others & App.~\\ref{app:sl} \\\\"
+  ],
+  "routing": "ifappendices; rows retained verbatim in supplement and full TN"
+}

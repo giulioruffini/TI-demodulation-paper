@@ -1,0 +1,22 @@
+{
+  "TN0484_envelope_demodulation.tex": {
+    "sha256": "2ea5bd856b8e3c58bbe5e233465ae04383336939a4e502c007988c306be4b85e",
+    "bytes": 109740
+  },
+  "TN0484_jne.pdf": {
+    "sha256": "d2217630f5f8e6da57d7a094ee49ac6b375a4d23d5f512aa851def4705f8caaf",
+    "bytes": 2454892
+  },
+  "TN0484_jne_supplement.pdf": {
+    "sha256": "94adb210bb33b1569318d9ad440f4e4617830ab83fcb0abf6054ddffac6cba67",
+    "bytes": 1945397
+  },
+  "TN0484_envelope_demodulation.pdf": {
+    "sha256": "ef4c79ae246eacac711c5e11ce7960735ce67b1add15c80f492c10073b9425ac",
+    "bytes": 2276808
+  },
+  "TN0484_envelope_demodulation.bbl": {
+    "sha256": "3efa9d688c30006a39bc5bec309dcfb593621d89de5ee70e0e90f6c19ff2e00c",
+    "bytes": 19701
+  }
+}

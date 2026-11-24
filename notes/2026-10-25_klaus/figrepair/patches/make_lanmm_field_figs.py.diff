@@ -1,0 +1,38 @@
+--- a/code/make_lanmm_field_figs.py
++++ b/code/make_lanmm_field_figs.py
+@@ -31,6 +31,9 @@
+     P1 grids. Scale limit: 99.5th percentile of |Z|, symmetric."""
+     x, y = np.asarray(x), np.asarray(y)
+     lim = np.percentile(np.abs(Z), 99.5)
++    # fold the decade into the colorbar label instead of a 1e7 offset over "a.u."
++    k = int(np.floor(np.log10(lim))) if lim > 0 else 0
++    Z = Z / 10.0 ** k; lim = lim / 10.0 ** k
+     im = ax.imshow(Z, origin="lower", aspect="auto", interpolation="bilinear",
+                    extent=[x[0], x[-1], y[0], y[-1]], cmap="RdBu_r",
+                    vmin=-lim if lim > 0 else -1.0, vmax=lim if lim > 0 else 1.0)
+@@ -38,7 +41,7 @@
+     figstyle.panel(ax, letter)
+     ax.set_xlabel("envelope frequency $\\Delta f$ (Hz)")
+     ax.set_ylabel(ylabel)
+-    plt.colorbar(im, ax=ax, label="alpha band-power change (on$-$off, a.u.)")
++    plt.colorbar(im, ax=ax, label=f"alpha band-power change (on$-$off, $10^{{{k}}}$ a.u.)")
+ 
+ 
+ def dominance_width(F1, df, eps):
+@@ -57,7 +60,7 @@
+     Pc1, Pc2 = d["Pc1"], d["Pc2"]
+     eps, df, fc, eps_c = d["eps"], d["df"], d["fc"], float(d["eps_c"])
+ 
+-    fig, ax = plt.subplots(2, 2, figsize=(11, 9), constrained_layout=True)
++    fig, ax = plt.subplots(2, 2, figsize=(9.0, 7.4), constrained_layout=True)
+     _imshow(ax[0, 0], Pt1, df, eps, "a", "field amplitude $\\varepsilon$ (mV)")
+     _imshow(ax[0, 1], Pt2, df, eps, "b", "field amplitude $\\varepsilon$ (mV)")
+ 
+@@ -75,6 +78,7 @@
+ 
+     out = f"fig_lanmm_field_{target.lower()}_{wave}"
+     os.makedirs(FIGDIR, exist_ok=True)
++    fig.canvas.draw()          # materialize the tick labels so scale_text sees them
+     figstyle.scale_text(fig, placed_frac=0.86)
+     fig.savefig(os.path.join(FIGDIR, out + ".png"), dpi=300)
+     fig.savefig(os.path.join(FIGDIR, out + ".pdf"))

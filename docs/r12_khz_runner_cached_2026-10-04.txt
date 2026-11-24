@@ -1,0 +1,12 @@
+Figure directory: /tmp/tn0484_v0150draft2/repro/cached-figures
+Mode: replot existing caches
+>>> make_khz_twotone_fig: make_khz_twotone_fig.py
+  spectrum input: /tmp/tn0484_v0150draft2/repro/code/khz_twotone.npz
+  [figcheck] make_khz_twotone_fig.py: clean
+  input 8-14 Hz max Fourier amplitude : 2.243e-13
+  output line at 11.00 Hz : 7.616e-02
+  wrote fig_khz_twotone
+    ok  [1.6s]
+
+SUMMARY
+  ok                              1.6s  make_khz_twotone_fig

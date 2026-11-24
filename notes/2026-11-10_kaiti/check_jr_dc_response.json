@@ -1,0 +1,208 @@
+{
+  "calculation": "Equilibria, Jacobians and linear transfer functions only; no time simulations.",
+  "engine": "code/jr_jsweep_engine.py",
+  "engine_sha256": "c9d1d8934bb5660f3a9746b8c735b809409b1eb03ade9ed3824dbcfe2c9d5064",
+  "gain_order": [
+    "synaptic_voltage_v",
+    "total_sigmoid_argument_u",
+    "pyramidal_rate_r"
+  ],
+  "gain_units": [
+    "mV/mV",
+    "mV/mV",
+    "s^-1/mV"
+  ],
+  "peak_definition": "Maximum of infinitesimal |v/epsilon| over 0-40 Hz; u and r evaluated at the same frequency.",
+  "parameters": {
+    "A": 3.25,
+    "B": 22.0,
+    "a": 100.0,
+    "b": 50.0,
+    "v0": 6.0,
+    "e0": 2.5,
+    "rr": 0.56
+  },
+  "field_free_sigmoid": {
+    "argument_mV": 8.3,
+    "rate_s_inv": 3.919042380259298,
+    "slope_s_inv_per_mV": 0.47446769697913904,
+    "curvature_s_inv_per_mV_squared": -0.1508169084973431,
+    "plus_0p2mV_local_rate_delta_s_inv": 0.09187706253361139,
+    "minus_0p2mV_local_rate_delta_s_inv": -0.09790322497001602,
+    "plus_0p2mV_local_percent": 2.344375324860163
+  },
+  "couplings": [
+    {
+      "C": 110.0,
+      "background_p_s_inv": 188.9665351126352,
+      "dc_loop_factor": -2.1322207064611227,
+      "dc_gains_v_u_r": [
+        -0.6807376958024679,
+        0.31926230419753215,
+        0.1514796502048564
+      ],
+      "dc_linear_shifts_at_plus_0p2mV_v_u_r": [
+        -0.13614753916049357,
+        0.06385246083950644,
+        0.03029593004097128
+      ],
+      "dc_gain_from_full_jacobian": -0.6807376958024679,
+      "field_free_damping_s_inv": 10.739052508067122,
+      "field_free_mode_frequency_Hz": 8.991078349825127,
+      "engine_finite_difference_damping_difference_s_inv": 3.0245149318375297e-07,
+      "voltage_peak_frequency_Hz": 8.755750444536627,
+      "infinitesimal_peak_gains_abs_v_u_r": [
+        1.6749507519834081,
+        2.3109876344459352,
+        1.0964889806628313
+      ],
+      "finite_dc": [
+        {
+          "epsilon_mV": -0.2,
+          "sigmoid_argument_mV": 8.236276586163832,
+          "synaptic_voltage_mV": 8.43627658616383,
+          "delta_argument_mV": -0.06372341383616842,
+          "delta_synaptic_voltage_mV": 0.1362765861638291,
+          "delta_rate_s_inv": -0.03054076940732875,
+          "rate_percent_change": -0.7792916341289492,
+          "damping_s_inv": 10.564760900702822,
+          "mode_frequency_Hz": 8.988379137437327,
+          "maximum_engine_rhs_residual": 3.637978807091713e-12
+        },
+        {
+          "epsilon_mV": 0.2,
+          "sigmoid_argument_mV": 8.363998654265774,
+          "synaptic_voltage_mV": 8.163998654265772,
+          "delta_argument_mV": 0.06399865426577378,
+          "delta_synaptic_voltage_mV": -0.13600134573422906,
+          "delta_rate_s_inv": 0.030056359292062407,
+          "rate_percent_change": 0.7669312136929167,
+          "damping_s_inv": 10.9217540856174,
+          "mode_frequency_Hz": 8.989589659776838,
+          "maximum_engine_rhs_residual": 6.821210263296962e-13
+        }
+      ]
+    },
+    {
+      "C": 130.0,
+      "background_p_s_inv": 310.5172725075356,
+      "dc_loop_factor": -3.8172649464447574,
+      "dc_gains_v_u_r": [
+        -0.7924133276626147,
+        0.20758667233738537,
+        0.09849317034748238
+      ],
+      "dc_linear_shifts_at_plus_0p2mV_v_u_r": [
+        -0.15848266553252296,
+        0.041517334467477074,
+        0.019698634069496478
+      ],
+      "dc_gain_from_full_jacobian": -0.7924133276626147,
+      "field_free_damping_s_inv": 2.642620087383907,
+      "field_free_mode_frequency_Hz": 10.71010495973241,
+      "engine_finite_difference_damping_difference_s_inv": -5.36015939633927e-07,
+      "voltage_peak_frequency_Hz": 10.698026817464562,
+      "infinitesimal_peak_gains_abs_v_u_r": [
+        9.007123677099546,
+        9.680961602475156,
+        4.593303556069863
+      ],
+      "finite_dc": [
+        {
+          "epsilon_mV": -0.2,
+          "sigmoid_argument_mV": 8.258594321733277,
+          "synaptic_voltage_mV": 8.458594321733266,
+          "delta_argument_mV": -0.04140567826672381,
+          "delta_synaptic_voltage_mV": 0.15859432173326482,
+          "delta_rate_s_inv": -0.019774903896056184,
+          "rate_percent_change": -0.5045850995555655,
+          "damping_s_inv": 2.518479494409914,
+          "mode_frequency_Hz": 10.725764009992155,
+          "maximum_engine_rhs_residual": 1.8189894035458565e-12
+        },
+        {
+          "epsilon_mV": 0.2,
+          "sigmoid_argument_mV": 8.341633613018843,
+          "synaptic_voltage_mV": 8.141633613018858,
+          "delta_argument_mV": 0.04163361301884194,
+          "delta_synaptic_voltage_mV": -0.15836638698114314,
+          "delta_rate_s_inv": 0.019623070830044664,
+          "rate_percent_change": 0.5007108606145344,
+          "damping_s_inv": 2.7725523874282034,
+          "mode_frequency_Hz": 10.693137992581933,
+          "maximum_engine_rhs_residual": 7.275957614183426e-12
+        }
+      ]
+    },
+    {
+      "C": 136.3,
+      "background_p_s_inv": 363.93460610898,
+      "dc_loop_factor": -4.440158004722123,
+      "dc_gains_v_u_r": [
+        -0.8161818095849445,
+        0.18381819041505557,
+        0.08721579346910427
+      ],
+      "dc_linear_shifts_at_plus_0p2mV_v_u_r": [
+        -0.1632363619169889,
+        0.03676363808301111,
+        0.017443158693820855
+      ],
+      "dc_gain_from_full_jacobian": -0.8161818095849445,
+      "field_free_damping_s_inv": 0.12344276704279246,
+      "field_free_mode_frequency_Hz": 11.172694515073522,
+      "engine_finite_difference_damping_difference_s_inv": -5.440837298753554e-07,
+      "voltage_peak_frequency_Hz": 11.172669369935702,
+      "infinitesimal_peak_gains_abs_v_u_r": [
+        206.36284207570029,
+        207.04973059521993,
+        98.2384088356652
+      ],
+      "finite_dc": [
+        {
+          "epsilon_mV": -0.2,
+          "sigmoid_argument_mV": 8.263333799588134,
+          "synaptic_voltage_mV": 8.463333799588138,
+          "delta_argument_mV": -0.03666620041186697,
+          "delta_synaptic_voltage_mV": 0.16333379958813765,
+          "delta_rate_s_inv": -0.017498283433099004,
+          "rate_percent_change": -0.44649385577558504,
+          "damping_s_inv": 0.004598704067904498,
+          "mode_frequency_Hz": 11.189679224573704,
+          "maximum_engine_rhs_residual": 5.820766091346741e-11
+        },
+        {
+          "epsilon_mV": 0.2,
+          "sigmoid_argument_mV": 8.336864403259092,
+          "synaptic_voltage_mV": 8.136864403259104,
+          "delta_argument_mV": 0.03686440325909146,
+          "delta_synaptic_voltage_mV": -0.16313559674089717,
+          "delta_rate_s_inv": 0.017388472590974313,
+          "rate_percent_change": 0.44369187428444773,
+          "damping_s_inv": 0.24715656957466675,
+          "mode_frequency_Hz": 11.15471699440074,
+          "maximum_engine_rhs_residual": 5.820766091346741e-11
+        }
+      ]
+    }
+  ],
+  "pinned_coupling_crossing": {
+    "C_H": 136.61258549097195,
+    "frequency_Hz": 11.194926562764179,
+    "dc_loop_factor": -4.472200648683452,
+    "dc_total_argument_gain": 0.18274183718767484
+  },
+  "dc_induced_complex_pair_crossing_at_C136p3": {
+    "epsilon_mV": -0.20790707537626346,
+    "sigmoid_argument_mV": 8.261888121556423,
+    "synaptic_voltage_mV": 8.469795196932687,
+    "delta_argument_mV": -0.03811187844357811,
+    "delta_synaptic_voltage_mV": 0.16979519693268585,
+    "delta_rate_s_inv": -0.018192359859313445,
+    "rate_percent_change": -0.46420421353314817,
+    "damping_s_inv": 1.158001871103785e-13,
+    "mode_frequency_Hz": 11.190330218136031,
+    "maximum_engine_rhs_residual": 0.0
+  },
+  "crossing_scope": "Equilibrium stability crossing only; no attractor or Hopf criticality calculation."
+}

@@ -1,0 +1,13 @@
+\subsection{Static rate with dynamic synapses}
+In NMM2, $u$ denotes the postsynaptic potential divided by the pathway's
+steady voltage gain, so it has the same units as the presynaptic firing
+rate $r$ \cite{clusella2023}. For a self-coupled population,
+\begin{equation}
+\tau_s^2\ddot u+2\tau_s\dot u+u=r,\qquad
+r\simeq \frac{F(Q)}{\tau_m}.
+\label{eq:slow_synapse}
+\end{equation}
+The filter equation is exact for this synapse. The rate follows the static
+curve when $Q$ varies slowly relative to population relaxation. For the single excitatory synapse
+of \S\ref{sec:nmm}, $a=1/\tau_s$, the gain is $A\tau_s$, and the physical potential is
+$A\tau_s u$ in mV.

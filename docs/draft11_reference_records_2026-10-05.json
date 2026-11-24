@@ -1,0 +1,766 @@
+{
+  "cfc": {
+    "DOI": "10.1162/neco.a.1537",
+    "title": [
+      "Cross-Frequency Coupling as a Neural Substrate for Prediction Error Evaluation: A Laminar Neural Mass Modeling Approach"
+    ],
+    "author": [
+      {
+        "given": "Giulio",
+        "family": "Ruffini",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Neuroelectrics, 08035, Barcelona, Spain"
+          },
+          {
+            "name": "Barcelona Computational Foundation, 08017 Barcelona, Spain giulio.ruffini@neuroelectrics.com"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Edmundo",
+        "family": "Lopez-Sola",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Neuroelectrics, 08035, Barcelona, Spain"
+          },
+          {
+            "name": "Universitat Pompeu Fabra, 08002, Barcelona, Spain eddlopez23@gmail.com"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Raul",
+        "family": "Palma",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Universitat Pompeu Fabra, 08002, Barcelona Spain"
+          },
+          {
+            "name": "Barcelona Computational Foundation, 08017 Barcelona, Spain rparistides@gmail.com"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Roser",
+        "family": "Sanchez-Todo",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Neuroelectrics, 08035, Barcelona, Spain"
+          },
+          {
+            "name": "Universitat Pompeu Fabra, 08002, Barcelona, Spain roser.sanchez@neuroelectrics.com"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Jakub",
+        "family": "Vohryzek",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Universitat Pompeu Fabra, 08002, Barcelona Spain"
+          },
+          {
+            "name": "Barcelona Computational Foundation, 08017 Barcelona, Spain jakub.vohryzek@upf.edu"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Francesca",
+        "family": "Castaldo",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Neuroelectrics, 08035, Barcelona, Spain"
+          },
+          {
+            "name": "Barcelona Computational Foundation, 08017 Barcelona, Spain francesca.castaldo@neuroelectrics.com"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Karl",
+        "family": "Friston",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Wellcome Centre for Human Neuroimaging, University College London, London, WC1N 3AR UK"
+          },
+          {
+            "name": "Barcelona Computational Foundation, 08017 Barcelona, Spain k.friston@ucl.ac.uk"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "container-title": [
+      "Neural Computation"
+    ],
+    "volume": "38",
+    "issue": "8",
+    "page": "1299-1343",
+    "published": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          27
+        ]
+      ]
+    }
+  },
+  "missey": {
+    "DOI": "10.1016/j.brs.2025.11.008",
+    "title": [
+      "Non-invasive temporal interference stimulation of the hippocampus suppresses epileptic biomarkers in patients with Epilepsy: biophysical differences between kilohertz and amplitude modulated stimulation"
+    ],
+    "author": [
+      {
+        "given": "Florian",
+        "family": "Missey",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Emma",
+        "family": "Acerbo",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Adam S.",
+        "family": "Dickey",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Jan",
+        "family": "Trajlinek",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Ondřej",
+        "family": "Studnička",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-8718-9149",
+        "authenticated-orcid": false,
+        "given": "Claudia",
+        "family": "Lubrano",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Mariane",
+        "family": "de Araújo e Silva",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0009-0007-4643-1083",
+        "authenticated-orcid": false,
+        "given": "Evan",
+        "family": "Brady",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-0518-8914",
+        "authenticated-orcid": false,
+        "given": "Vit",
+        "family": "Všianský",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Johanna",
+        "family": "Szabo",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Irena",
+        "family": "Dolezalova",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Daniel",
+        "family": "Fabo",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Martin",
+        "family": "Pail",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-7953-8150",
+        "authenticated-orcid": false,
+        "given": "Claire-Anne",
+        "family": "Gutekunst",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-9034-7849",
+        "authenticated-orcid": false,
+        "given": "Rosanna",
+        "family": "Migliore",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Michele",
+        "family": "Migliore",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-2916-1302",
+        "authenticated-orcid": false,
+        "given": "Stanislas",
+        "family": "Lagarde",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-4723-7406",
+        "authenticated-orcid": false,
+        "given": "Romain",
+        "family": "Carron",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Fariba",
+        "family": "Karimi",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-3813-2589",
+        "authenticated-orcid": false,
+        "given": "Raul Castillo",
+        "family": "Astorga",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Antonino M.",
+        "family": "Cassara",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-5827-3728",
+        "authenticated-orcid": false,
+        "given": "Niels",
+        "family": "Kuster",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Esra",
+        "family": "Neufeld",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Fabrice",
+        "family": "Bartolomei",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Nigel P.",
+        "family": "Pedersen",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Robert E.",
+        "family": "Gross",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Viktor",
+        "family": "Jirsa",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-8747-672X",
+        "authenticated-orcid": false,
+        "given": "Daniel L.",
+        "family": "Drane",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Milan",
+        "family": "Brázdil",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-5632-0084",
+        "authenticated-orcid": false,
+        "given": "Adam",
+        "family": "Williamson",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "container-title": [
+      "Brain Stimulation"
+    ],
+    "volume": "19",
+    "issue": "1",
+    "page": "102981",
+    "published": {
+      "date-parts": [
+        [
+          2026,
+          1
+        ]
+      ]
+    }
+  },
+  "wang": {
+    "DOI": "10.1038/s41398-026-04263-4",
+    "title": [
+      "Temporal interference stimulation: A new paradigm for non-invasive deep brain stimulation—mechanistic insights, clinical advances, and future directions"
+    ],
+    "author": [
+      {
+        "given": "Wenjiang",
+        "family": "Wang",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "MISSEY",
+        "family": "Florian",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Chenxi",
+        "family": "Ling",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Kun",
+        "family": "Wei",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Junhao",
+        "family": "Jian",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Haoxuan",
+        "family": "Sun",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Liujiao",
+        "family": "Yan",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-0570-670X",
+        "authenticated-orcid": false,
+        "given": "Shaohua",
+        "family": "Hu",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-5745-7410",
+        "authenticated-orcid": false,
+        "given": "Bo",
+        "family": "Bi",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "container-title": [
+      "Translational Psychiatry"
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          21
+        ]
+      ]
+    }
+  },
+  "semenov": {
+    "DOI": "10.1016/j.xcrp.2025.102660",
+    "title": [
+      "Excitation and polarization of isolated neurons by high-frequency sine waves for temporal interference stimulation"
+    ],
+    "author": [
+      {
+        "given": "Iurii",
+        "family": "Semenov",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Vitalii",
+        "family": "Kim",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Giedre",
+        "family": "Silkuniene",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-3816-3860",
+        "authenticated-orcid": false,
+        "given": "Andrei G.",
+        "family": "Pakhomov",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "container-title": [
+      "Cell Reports Physical Science"
+    ],
+    "volume": "6",
+    "issue": "7",
+    "page": "102660",
+    "published": {
+      "date-parts": [
+        [
+          2025,
+          7
+        ]
+      ]
+    }
+  }
+}

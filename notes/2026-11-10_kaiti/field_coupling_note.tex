@@ -1,0 +1,391 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=24mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,booktabs,tabularx,array,enumitem}
+\usepackage{placeins}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!50!black,citecolor=blue!50!black]{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small Electric-field coupling to neural masses}
+\fancyhead[R]{\small TN0484 research note}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{0pt}
+\setlist[enumerate]{leftmargin=*,itemsep=4pt,topsep=4pt}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\dd}{\mathrm d}
+\newcommand{\E}{\mathcal E}
+\newcommand{\doi}[1]{\href{https://doi.org/#1}{doi: #1}}
+\title{Electric-field coupling from single neurons\ to neural masses}
+\author{Technical note for Giulio Ruffini and Raul de Palma Aristides}
+\date{November 10, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+A cellular field coefficient and a population's response to the field are different quantities. Ruffini's dimensional NMM2 equations show how a common current input passes unchanged from quadratic integrate-and-fire neurons into the exact mean field; the dynamics then determine the voltage response. In the Jansen--Rit column studied here, recurrence attenuates the steady response while amplifying a resonant oscillatory input. A small DC shift can nevertheless change oscillatory stability. Zhao's compartmental network provides a way to test the cellular-to-population mapping: identify the input under controlled synaptic drive, restore feedback, and measure the response across connectivity and state. This note gives source checks, equilibrium and linear-response calculations, and a proposed simulation protocol. No new time-domain network simulations have been run.
+\end{abstract}
+
+\section{The earlier work already separates coupling from response}
+
+The argument recalled by Giulio is explicit in his February 2022 NMM2 preprint~\cite{ruffini}. It traces a field-derived input from quadratic integrate-and-fire (QIF) neurons into the Montbri\'o--Paz\'o--Roxin (MPR) mean field. The Discussion, page 10, says that the compartment-derived coefficient should enter NMM2 ``without any scaling,'' then assigns modulation of the response to connectivity, heterogeneity, and synaptic dynamics. Table~\ref{tab:prior} locates the argument and its derivations.
+
+That statement means that no additional population amplification factor is needed when the same microscopic input is reduced consistently. Physical units still have to match. The preprint uses $\lambda$ for a voltage shift entering a sigmoid and $P$ for a current input entering QIF; its compartmental appendix also uses $P$ for a voltage response. The new study should give these objects different names. Appendix O of the preprint already supplies the required voltage, current, and time rescaling.
+
+The published comparison by Clusella et al.~\cite{clusella} retains the field-derived current and demonstrates that sensitivity depends on self-connectivity and tonic input. The \emph{Rosetta Stone} presents the same microscopic route~\cite{rosetta}. Galan-Gadea et al.~\cite{galan} provide the complementary calculation of steady polarization in realistic neurons. These works establish the rationale for Raul's study; they do not establish that a single scalar input reproduces every response of Zhao's conductance-based network.
+
+\begin{table}[ht]
+\centering\small
+\caption{Where the argument appears in Ruffini's NMM2 preprint, version 7. Page numbers refer to the inspected PDF.}\label{tab:prior}
+\begin{tabularx}{\linewidth}{@{}p{31mm}X@{}}
+\toprule
+Location & Content relevant to the proposed study\\\midrule
+p. 3, Eqs. (5)--(6) & Voltage coupling in a heuristic mass; local slope and connectivity enter the response.\\
+p. 4, Eqs. (7)--(13) & The common field input survives the QIF-to-MPR reduction.\\
+pp. 9--10, Fig. 5 & Response versus self-coupling and synaptic timescale; no added population scaling of the input.\\
+pp. 12--13, SI A & Linear compartmental polarization, including linear averages over compartments.\\
+pp. 48--49, SI O & Physical units and nondimensionalization of the field and synaptic inputs.\\\bottomrule
+\end{tabularx}
+\end{table}
+\FloatBarrier
+
+\section{A polarization coefficient must be tied to an input and a readout}
+
+Fix a field direction $\mathbf e$, with $|\mathbf e|=1$, and write the applied field as $\mathbf E(t)=\mathbf e\E(t)$. For a specified cell, compartment, and background state, define
+\begin{equation}
+\lambda_V(\omega)=\frac{\widehat{\delta U}(\omega)}{\widehat{\E}(\omega)},
+\qquad
+\kappa_I(\omega)=\frac{\widehat{I}_{E}(\omega)}{\widehat{\E}(\omega)}.
+\label{eq:definitions}
+\end{equation}
+Here $U$ is transmembrane voltage, $I_E$ is a candidate equivalent injected current, $\omega$ is angular frequency, and hats denote complex amplitudes with time dependence $e^{\ii\omega t}$. The units are mV/(V/m) for $\lambda_V$ and nA/(V/m) for $\kappa_I$. The first is a measured voltage response. The second specifies an input representation.
+
+If current injection at a chosen site reproduces the field-induced voltage at the chosen readout, its impedance $Z_U=\widehat{\delta U}/\widehat{\delta I}$ gives
+\begin{equation}
+\lambda_V(\omega)=Z_U(\omega)\kappa_I(\omega).
+\label{eq:impedance}
+\end{equation}
+A polarization slope alone therefore does not determine a current coefficient. Even for a passive single compartment, $Z_U=R/(1+\ii\omega RC)$, where $R$ and $C$ are resistance and capacitance. A constant current coefficient would be $\kappa_I=\lambda_V(0)/R$, not $\lambda_V(0)$ itself. For an active neuron the impedance also depends on voltage and synaptic conductance. A somatic current fitted to somatic voltage need not reproduce dendritic polarization or spike timing.
+
+The compartmental calculation makes the distinction explicit. At a stable stationary state, linearize the ionic and cable dynamics as
+\begin{equation}
+\delta\dot{\mathbf x}=A_{\rm cell}\delta\mathbf x+B_E\mathbf E,
+\qquad
+\delta U_c=\mathbf c^{\mathsf T}\delta\mathbf x.
+\end{equation}
+The vector $\mathbf x$ contains compartmental voltages and gating variables, $B_E$ gives the field forcing, and $\mathbf c$ selects the voltage readout. Then
+\begin{equation}
+\boldsymbol\lambda_{V,c}(\omega)
+=\mathbf c^{\mathsf T}(\ii\omega\mathbf1-A_{\rm cell})^{-1}B_E.
+\label{eq:cellresolvent}
+\end{equation}
+Geometry determines both the field forcing and the axial dynamics; membrane properties and the chosen readout complete the voltage response. Changing the background conductance can change $\boldsymbol\lambda_{V,c}$ without changing morphology. A periodically firing cell instead has a phase-dependent response; Eq.~\eqref{eq:cellresolvent} is a stationary-state formula.
+
+The quantity Giulio proposes to extract from the network is useful:
+\begin{equation}
+\chi_{VE,p}(\omega;\mathcal J)
+=\frac{\widehat{\delta\bar U_p}(\omega)}{\widehat{\E}(\omega)},
+\qquad \bar U_p=\frac1{N_p}\sum_{j\in p}U_j.
+\label{eq:popchi}
+\end{equation}
+Here $p$ labels a population, $N_p$ is its cell count, and $\mathcal J$ denotes the recurrent parameters. This is the population voltage susceptibility. It includes feedback, the operating state, and the averaging rule. If it is used as a neural mass's input coefficient while that mass also generates the same recurrent gain, the gain is counted twice. It can serve as an effective coefficient only when the dynamics already absorbed into it have been removed from the reduced model.
+
+\section{The dimensional MPR equations expose the calibration}
+
+Appendix O of Ruffini's preprint restores the physical units before taking the population limit~\cite{ruffini}. Its starting point, Eq.~(85), is
+\begin{equation}
+C_m\dot U_j=\frac{g_L}{U_t-U_r}(U_j-U_r)(U_j-U_t)
++I_{\eta,j}+J_qs(t)+I_{\rm bg}(t)+\kappa_I\E(t).
+\label{eq:qifphysical}
+\end{equation}
+Here $C_m$ is membrane capacitance, $g_L$ is the leak conductance, $U_r$ and $U_t$ are the unforced rest and threshold parameters, $I_{\eta,j}$ is a constant cell-specific current, and $I_{\rm bg}$ is a common background current. The filtered population rate $s$ has units of inverse time; $J_q$ has units of charge, so $J_qs$ is a synaptic current. This is a QIF normal form requiring calibration, not a global identity for a real neuron's ionic current. A constant $\kappa_I$ assumes an instantaneous equivalent current over the band tested. If calibration requires a causal input filter, the resulting common filtered current still passes unchanged into MPR.
+
+Let $U_c=(U_t+U_r)/2$, $U_s=U_t-U_r>0$, $u_j=U_j-U_c$, and $k=g_L/U_s$. Completing the square gives
+\begin{equation}
+C_m\dot u_j=ku_j^2+I_{\eta,j}+J_qs+I_b+\kappa_I\E,
+\qquad I_b=I_{\rm bg}-g_LU_s/4.
+\label{eq:qifcentered}
+\end{equation}
+For the MPR reduction, assume an infinite all-to-all population, common cellular parameters and additive drive, symmetric infinite spike/reset limits, and Lorentzian current heterogeneity centered at $\bar I_\eta$ with half-width $\Delta_I>0$. The population equations in physical units are~\cite{ruffini,mpr}
+\begin{align}
+\dot r&=\frac{k}{C_m}\left(\frac{\Delta_I}{\pi C_m}+2ru\right),
+\label{eq:mprrdim}\\
+C_m\dot u&=ku^2-\frac{(\pi C_mr)^2}{k}
++\bar I_\eta+J_qs+I_b+\kappa_I\E.
+\label{eq:mprvdim}
+\end{align}
+These are Eqs.~(93) and~(96) of the preprint with the field input written explicitly. The variable $u$ is a voltage and $r$ is a firing rate. Every term on the right of Eq.~\eqref{eq:mprvdim} is a current. The coupling $\kappa_I$ retains units of current per field and is inherited unchanged from Eq.~\eqref{eq:qifcentered}. There is no population-size factor or fitted amplification at this step. The half-width $\Delta_I$ is not a variance; a Lorentzian has no finite variance.
+
+The measured coefficient $\lambda_V$ is obtained by solving these dynamics, or their single-cell counterpart. For example, a resting-cell resistance of $100$ M$\Omega$ and a DC polarization coefficient of $0.2$ mV/(V/m) imply $\kappa_I=2$ pA/(V/m) for the matched current input. These are illustrative calibration values, not measurements of Zhao's reduced cells. They show why the same numerical coefficient cannot be inserted interchangeably as a voltage shift and a current.
+
+The mean voltage also requires a specified readout. In the ideal MPR limit, $u$ is a principal-value mean associated with a Lorentzian voltage density, whose ordinary first moment is undefined. A finite Hodgkin--Huxley network's arithmetic mean soma voltage is a different observable. Mapping between them requires a declared treatment of spikes. Exactness applies to the specified QIF continuum and its mean-field manifold; fitting QIF to a conductance-based neuron remains a separate approximation.
+
+\subsection{Normalization changes units, not population gain}
+
+The preprint's physical scales are
+\begin{equation}
+I_s=g_LU_s=kU_s^2,\qquad \tau_m=C_m/g_L,\qquad
+v=u/U_s,\qquad J=J_q/(I_s\tau_m),\qquad
+\lambda_I=\kappa_I/I_s.
+\label{eq:scales}
+\end{equation}
+Define $\eta_j=I_{\eta,j}/I_s$, $I_0=I_b/I_s$, and $\Delta=\Delta_I/I_s$; $\bar\eta$ is the center of the normalized excitability distribution. Keep physical time and rates. The microscopic and macroscopic equations become
+\begin{align}
+\tau_m\dot v_j&=v_j^2+\eta_j+\tau_mJs+I_0+\lambda_I\E,\label{eq:qif}\\
+\tau_m\dot r&=\frac{\Delta}{\pi\tau_m}+2rv,\label{eq:mprr}\\
+\tau_m\dot v&=v^2+\bar\eta-(\pi\tau_mr)^2+\tau_mJs+I_0+\lambda_I\E.
+\label{eq:mprv}
+\end{align}
+Voltage $v$, the input terms, and $J$ are dimensionless, whereas $r$ and $s$ retain units of inverse time. Now $\lambda_I$ has units $(\mathrm{V/m})^{-1}$. For $g_L=10$ nS and $U_s=20$ mV, the illustrative $2$ pA/(V/m) above becomes $\lambda_I=0.01\,(\mathrm{V/m})^{-1}$ because $I_s=200$ pA. This is a unit conversion, not extra amplification. TN0484 uses this normalized convention but its present QIF simulations do not supply the physical scales $U_s$ and $I_s$ needed for field calibration.
+
+\subsection{The slow-synapse limit preserves the field input and its feedback gain}
+\label{sec:slow-field}
+
+The dimensional equations connect the cellular input to a static population transfer without an extra field multiplier. Following Appendix K of the NMM2 preprint~\cite{ruffini}, let the rate and voltage relax faster than both the synaptic input and the applied field vary. Write their total current as
+\begin{equation}
+Q=\bar I_\eta+I_b+J_qs+\kappa_I\E.
+\end{equation}
+Setting the left sides of Eqs.~\eqref{eq:mprrdim}--\eqref{eq:mprvdim} to zero first gives $u=-\Delta_I/(2\pi C_mr)$. Substitution into the voltage equation then gives
+\begin{equation}
+0=\frac{k\Delta_I^2}{4\pi^2C_m^2r^2}
+-\frac{\pi^2C_m^2r^2}{k}+Q,
+\qquad
+r=F_{\rm phys}(Q)
+=\frac{\sqrt{k}}{\pi C_m}
+\sqrt{\frac{Q+\sqrt{Q^2+\Delta_I^2}}2}.
+\label{eq:physical-static}
+\end{equation}
+The positive root is the population firing rate. Its argument is total current, not the MPR mean voltage $u$. This distinction matters when comparing it with a voltage-argument JR sigmoid. The physical rate curve has slope
+\begin{equation}
+F_{\rm phys}'(Q)=\frac{F_{\rm phys}(Q)}{2\sqrt{Q^2+\Delta_I^2}},
+\label{eq:physical-slope}
+\end{equation}
+with units of rate per current. It is the dimensional counterpart of the transfer derived in Appendix K and in the published NMM1--NMM2 comparison~\cite{clusella}.
+
+The synaptic dynamics remain. For a second-order synapse,
+\begin{equation}
+\tau_s^2\ddot s+2\tau_s\dot s+s
+=F_{\rm phys}(\bar I_\eta+I_b+J_qs+\kappa_I\E).
+\label{eq:physical-slow}
+\end{equation}
+The field-derived current enters the transfer alongside the recurrent current. Its coefficient is still $\kappa_I$. The reduction replaces the fast rate--voltage dynamics by their static input--output relation; it does not remove the synaptic feedback. Its conditions are $\tau_{\rm rel}\ll\tau_s$ and $\omega\tau_{\rm rel}\ll1$, where $\tau_{\rm rel}$ is the local population relaxation time at fixed synaptic input. Slow synapses alone do not permit a static treatment of fast carriers.
+
+At a steady state, $s_*=r_*$. A weak constant field perturbation therefore obeys
+\begin{equation}
+\delta r=F_{\rm phys}'(Q_*)\big(J_q\delta r+\kappa_I\delta\E\big),
+\qquad
+\frac{\dd r_*}{\dd\E}
+=\frac{F_{\rm phys}'(Q_*)\kappa_I}
+{1-J_qF_{\rm phys}'(Q_*)}.
+\label{eq:physical-static-gain}
+\end{equation}
+The product $J_qF_{\rm phys}'$ is dimensionless. Positive feedback amplifies the incremental response on the stable branch $J_qF_{\rm phys}'<1$; a value of $0.9$ gives ten times the response with the synaptic current clamped at its baseline value. Negative feedback suppresses DC. The operating current $Q_*$ also changes with $J_q$ unless compensated, so the local slope need not remain fixed in a coupling sweep.
+
+For a weak sinusoid within the same adiabatic regime, $s=H_sr$ in the frequency domain, with $H_s=(1+\ii\omega\tau_s)^{-2}$. The rate response is consequently
+\begin{equation}
+\frac{\widehat{\delta r}}{\widehat{\E}}
+=\frac{F_{\rm phys}'(Q_*)\kappa_I}
+{1-J_qF_{\rm phys}'(Q_*)H_s(\omega)}.
+\label{eq:physical-slow-frequency}
+\end{equation}
+This is the recurrent gain of the reduced neural mass. It is already present in a static-transfer model; finite membrane dynamics add further modes outside the slow limit.
+
+Two different curves can be called a population transfer. The bare $F_{\rm phys}$ maps \emph{total} current to rate with the synaptic input specified. A curve $R_J(I)$ measured after an internally recurrent population settles to an external current $I$ instead satisfies
+\begin{equation}
+R_J(I)=F_{\rm phys}(\bar I_\eta+J_qR_J(I)+I).
+\end{equation}
+Its slope already includes the feedback denominator in Eq.~\eqref{eq:physical-static-gain}; branches may be multiple. If this settled response is fitted by a sigmoid, its parameters can depend on internal connectivity. Reintroducing the same $J_q$ around that fitted curve would count that feedback again. Conversely, a bare transfer needs the feedback to remain explicit.
+
+To compare with JR, choose a justified local input-voltage coordinate $x$ with $\delta x=R_{\rm eff}\delta Q$. Here $R_{\rm eff}$ converts the selected current input to that coordinate at the stated operating point. Consistency requires
+\begin{equation}
+\Sigma'(x_*)=\frac{F_{\rm phys}'(Q_*)}{R_{\rm eff}},\qquad
+\lambda_x=R_{\rm eff}\kappa_I,\qquad
+J_x=R_{\rm eff}J_q.
+\end{equation}
+Thus
+\begin{equation}
+\frac{\Sigma'(x_*)\lambda_x}{1-\Sigma'(x_*)J_x}
+=\frac{F_{\rm phys}'(Q_*)\kappa_I}{1-F_{\rm phys}'(Q_*)J_q}.
+\end{equation}
+The weak steady response agrees when the input, slope, and feedback are matched. Here $\lambda_x$ is the field coefficient of $x$; it equals the measured cellular $\lambda_V$ only if $x$ represents that same voltage readout at the matched state. $R_{\rm eff}$ is a coordinate calibration, not automatically an isolated-cell resistance or the transfer to MPR's mean voltage. Standard JR connections between populations also need not represent the same within-population self-coupling. Raul's study must identify which recurrence is explicit and which, if any, has already entered the fitted transfer.
+
+\subsection{Connectivity changes the transfer even when the input is fixed}
+
+Let $(r_0,v_0)$ be a stable stationary population state, and let the normalized synaptic filter have transfer $H_s(\omega)$, with $H_s(0)=1$. Define
+\begin{equation}
+z=\ii\omega\tau_m-2v_0,\qquad
+D_J=z^2+4(\pi\tau_mr_0)^2-2\tau_mJr_0H_s(\omega).
+\end{equation}
+Linearizing Eqs.~\eqref{eq:mprr}--\eqref{eq:mprv} and eliminating the rate perturbation gives
+\begin{equation}
+\frac{\widehat{\delta v}}{\widehat{\E}}=\lambda_I\frac{z}{D_J},
+\qquad
+\frac{\widehat{\delta r}}{\widehat{\E}}=\lambda_I\frac{2r_0}{D_J},
+\qquad
+\chi_{VE}=U_s\lambda_I\frac{z}{D_J}.
+\label{eq:gain}
+\end{equation}
+For a second-order synapse with time constant $\tau_s$, $H_s=(1+\ii\omega\tau_s)^{-2}$. The denominator contains $J$ explicitly. The equilibrium usually changes with $J$ as well. To isolate feedback at a fixed state, hold $r_0,v_0,\Delta$ fixed and compensate the tonic input according to
+\begin{equation}
+\bar\eta+I_0(J)=(\pi\tau_mr_0)^2-v_0^2-\tau_mJr_0.
+\label{eq:pin}
+\end{equation}
+This preserves the equilibrium while leaving the recurrent term in $D_J$. Thus Giulio's expectation is correct: the measured population response can depend on connectivity even when the microscopic field input is unchanged. Neither the amplitude nor its change with $J$ is universally monotonic; resonance, inhibition, and state matter.
+
+The instantaneous one-population example is sufficient to show this dependence. It does not itself provide a finite-rate Hopf bifurcation for $\Delta>0$: its Jacobian trace is $4v_0/\tau_m<0$. For an excitatory--inhibitory circuit or a model with synaptic states, use the full Jacobian $A_{\mathcal J}$, field-input matrix $B$, and voltage readout row $C_p$:
+\begin{equation}
+\chi_{VE,p}=C_p(\ii\omega\mathbf1-A_{\mathcal J})^{-1}B\mathbf e.
+\label{eq:networkresolvent}
+\end{equation}
+The readout $C_p$ includes the conversion to physical voltage when the state uses dimensionless QIF variables. Near an oscillatory instability, a weakly damped mode can amplify the response if both the input and the readout couple to it. This changes the transfer, not automatically $B$.
+
+For heterogeneous orientations, the inputs $\boldsymbol\lambda_{I,j}\cdot\mathbf E$ are no longer common. One can introduce orientation or cell-type classes, each with its own MPR pair under the corresponding closure assumptions. Replacing all coefficients by their arithmetic mean is not generally exact. In particular, opposite signed polarizations may cancel in a population's linear response while their squares, and hence a quadratic steady response, remain nonzero. The proposed study should retain cellular distributions as well as population means.
+
+\section{JR can attenuate DC while amplifying an oscillatory input}
+
+Inserting a measured cellular polarization into the Jansen--Rit (JR) sigmoid assumes that it shifts the population's effective voltage argument by the same amount. That mapping is not derived by the insertion itself. Even when it is accepted as the model input, the resulting population response need not be large. The pinned JR column in TN0484 provides a concrete example.
+
+Write the pyramidal rate as $r_P=\Sigma(q)$, where $q=v_{\rm JR}+\varepsilon$, $v_{\rm JR}=y_1-y_2$ is the recurrent synaptic voltage difference, and $\varepsilon$ is the imposed polarization. With
+\begin{equation}
+\Sigma(q)=\frac{5~\mathrm{s}^{-1}}{1+\exp[\rho(v_0-q)]},\qquad
+\rho=0.56~\mathrm{mV}^{-1},\quad v_0=6~\mathrm{mV},
+\end{equation}
+the field-free state $q^*=8.30$ mV has $r_P^*=3.9190$ s$^{-1}$ and $\Sigma'(q^*)=0.4745$ s$^{-1}$mV$^{-1}$. Holding the recurrent voltage fixed, $+0.2$ mV increases the rate by $0.09188$ s$^{-1}$, or $2.34\%$. This is finite but modest. It is a model calculation at a specified entry point, not a universal tDCS effect size.
+
+At equilibrium, eliminate the synaptic states to write $v_{\rm JR}=F_C(r_P)$, where $C$ is the JR connectivity parameter and the background drive pins the field-free state. Define the dimensionless DC loop factor $L_0=\Sigma'(q^*)F_C'(r_P^*)$. Differentiating $r_P=\Sigma(F_C(r_P)+\varepsilon)$ gives
+\begin{equation}
+\frac{\dd r_P}{\dd\varepsilon}=\frac{\Sigma'(q^*)}{1-L_0},\qquad
+\frac{\dd q}{\dd\varepsilon}=\frac1{1-L_0},\qquad
+\frac{\dd v_{\rm JR}}{\dd\varepsilon}=\frac{L_0}{1-L_0}.
+\label{eq:jrdc}
+\end{equation}
+Here the DC loop factor is negative: static inhibitory feedback partly cancels the imposed polarization. The background drive is held fixed while applying DC. Solving the nonlinear equilibrium equations gives Table~\ref{tab:jrdc}; all three listed stimulated equilibria remain stable.
+
+\begin{table}[ht]
+\centering\small
+\caption{JR response to $\varepsilon=+0.2$ mV at the pyramidal sigmoid, with the field-free operating point fixed at $8.30$ mV. The rate changes and voltage shifts are finite-input equilibrium results; $L_0$ is evaluated at field off.}
+\label{tab:jrdc}
+\begin{tabular}{@{}rrrrr@{}}
+\toprule
+$C$ & $L_0$ & $\Delta q$ (mV) & $\Delta v_{\rm JR}$ (mV) & Rate change\\\midrule
+110 & $-2.132$ & $+0.0640$ & $-0.1360$ & $+0.767\%$\\
+130 & $-3.817$ & $+0.0416$ & $-0.1584$ & $+0.501\%$\\
+136.3 & $-4.440$ & $+0.0369$ & $-0.1631$ & $+0.444\%$\\\bottomrule
+\end{tabular}
+\end{table}
+
+Thus a simulation may show little rate change, although the model has responded. The synaptic voltage can even move opposite to the applied polarization while the total sigmoid argument and rate increase. A mean-subtracted signal or an AC power spectrum also removes a purely steady offset. The response must be assessed in the intended observable.
+
+\subsection{DC susceptibility and a DC-induced transition are different effects}
+
+At a stable equilibrium with Jacobian $A$, input vector $B$, and output row $C_o$, the DC susceptibility is $-C_oA^{-1}B$. A Hopf pair approaches $\pm\ii\omega_0$ with $\omega_0\ne0$, so proximity to that Hopf does not by itself make the DC transfer singular. The response near $\omega_0$ can grow while the DC response remains small. A zero-eigenvalue transition, such as a saddle-node, can instead amplify DC directly when input and output couple to the slow mode.
+
+DC can also move the equilibrium and change its stability. At $C=136.3$, the field-free JR damping is $0.1234$ s$^{-1}$. An input of $+0.2$ mV increases it to $0.2472$ s$^{-1}$; $-0.2$ mV reduces it to $0.00460$ s$^{-1}$, although the latter changes the mean rate by only about $0.45\%$. Continuing the equilibrium branch gives a complex-pair stability crossing at $\varepsilon\simeq-0.2079$ mV. This identifies the crossing, not the resulting attractor or the type of Hopf bifurcation. The corresponding slow relaxation also means that a short run can mistake a transient for the steady response.
+
+This is a route by which weak DC can matter without a large steady gain. It changes the circuit's operating state, and therefore its response to endogenous fluctuations or its proximity to oscillation. Cakan and Obermayer demonstrated field-induced state transitions in a biophysically parameterized mean-field model of adaptive spiking neurons~\cite{cakan}. For Raul's study, DC mean shifts, changes in damping, and oscillatory entrainment should therefore be measured separately.
+
+\section{Zhao's model already supplies the field at the cellular level}
+
+Zhao et al.~\cite{zhao} use an oscillating network of 800 pyramidal cells (PY) and 200 interneurons (IN), with two compartments per cell. Their reduced-cell calibration uses realistic-cell entrainment at 10 Hz; the network study concerns 1--30 Hz. It provides a low-frequency starting point, not a calibrated kHz input model. The public code inspected here predates the journal article, so a small reproduction should establish its correspondence before the new study~\cite{zhaocode}.
+
+The code applies compartmental extracellular potentials rather than prescribing a membrane voltage shift. In its units, the imposed potential is
+\begin{equation}
+U_{e,jc}(t)=-10^{-3}\frac{\E_0}{a_p}
+\,\mathbf e\cdot\mathbf x_{jc}\,\sin(2\pi ft).
+\label{eq:zhaoinput}
+\end{equation}
+Coordinates $\mathbf x_{jc}$ are in micrometers, the field amplitude $\E_0$ is in V/m (numerically mV/mm), and $U_e$ is in mV. The public script uses divisors $a_{\rm PY}=5$ and $a_{\rm IN}=1.5$: increasing these variables reduces coupling. An explicit multiplier $g_p=a_p^{\rm baseline}/a_p$ would make parameter sweeps easier to interpret; $g_p=0$ should zero the field contribution directly.
+
+For a lumped soma--dendrite pair with axial conductance $g_c$, the current into the soma is
+\begin{equation}
+I_{d\to s}=g_c\big[(U_{\mathrm d}-U_{\mathrm s})+(U_{e,\mathrm d}-U_{e,\mathrm s})\big].
+\end{equation}
+The field therefore gives opposite axial forcing to the two compartments. A common extracellular offset has no effect on this current. A balanced pair of injected currents is a candidate equivalent of this differential forcing; a common shift of both membrane voltages is not. Equivalence should be checked in the actual NEURON implementation, including its extracellular circuit settings.
+
+Raul should retain this extracellular stimulation as the reference intervention and fit a $\lambda E$ surrogate against it. Applying both interventions would count the field twice. If a single current input reproduces soma voltage but misses dendritic voltage or rate modulation, it is inadequate for those outputs. The next candidate is a compartment-specific input or a causal input kernel, not a new scalar fitted independently to every experiment.
+
+\section{A staged study can identify coupling and recurrent gain}
+
+The first objective is to measure a direct cellular response under a specified background, then test whether its input representation predicts the recurrent population response. The values below define a proposed pilot; they are not established linearity ranges or simulation results.
+
+\subsection{Reproduce the reference and establish the readouts}
+
+Freeze the code revision, NEURON version, mechanisms, connectivity, and random seeds. Reproduce the field-off state and a few 10-Hz conditions from the paper before extending the model. Record transmembrane voltage in \emph{both} compartments of every cell, along with extracellular potentials, spikes, and synaptic events or conductances. The present script records soma voltage and dendritic extracellular potential; the latter is not dendritic membrane voltage.
+
+Keep PY and IN means separate. Report the raw voltage mean and a prespecified subthreshold estimate, because a change in spike timing or count can change the raw mean without the same change in subthreshold polarization. Also retain rate modulation, mean rate, local-field-potential (LFP) power, and spike phase locking to both the applied field and the endogenous LFP. Use the same phase reference when comparing conditions. A voltage response and a phase-locking value measure different effects.
+
+\subsection{Calibrate the cell before closing the feedback loop}
+
+Disconnect recurrent feedback and test PY and IN cells at a controlled resting state. Then replay the complete field-off synaptic events, including background input, while preventing the stimulated cells from altering the replay. This keeps the baseline conductance load and temporal structure while removing the feedback generated by the intervention. Repeat the replay calibration for each network operating state studied later.
+
+Start with DC and 5, 10, 20, and 40 Hz. Use $\E_0=0.025$, $0.05$, and $0.1$ V/m with both signs, plus field off, as a local-linearity assay. Measure complex soma and dendrite polarization and their difference. For a three-dimensional coefficient, stimulate along three independent directions. Compare the actual field first with the balanced-current equivalent, then with a single-site current surrogate. Measure the current-to-voltage impedance at the same state and sites before using Eq.~\eqref{eq:impedance}. Fit on part of the frequency set and test the remaining frequencies and the rate response.
+
+Existing Neurotwin code already distinguishes nonfiring voltage-polarization models (\texttt{NFv}) from induced-current models (\texttt{NFc}), and provides weighted cell-type averages. Those averages describe cellular composition; they do not include recurrent gain. This code is a possible source of calibration data, but the chosen current summary still needs to match the reduced model's input channel.
+
+\subsection{Vary recurrence with the direct field input held fixed}
+
+Use a common multiplier $j\in\{0.8,1,1.2\}$ on the recurrent synaptic weights, keeping morphology, field coupling, cell count, and connectivity realization fixed. First leave the background input unchanged. This measures the total consequence of changing recurrence, including the induced change of state. Then adjust the PY and IN background drives to restore their field-off mean rates, where feasible. Report residual changes in mean voltage, conductance, oscillation frequency, and synchrony: matching rates alone does not pin the cellular impedance or the network state.
+
+Begin with DC and 5, 10, and 20 Hz at $0$ and $\pm0.05$ V/m; double the amplitude at selected points to test scaling. Compare full-network responses with the state-specific replay responses. For DC, record the change in mean voltage and rate, relaxation, and oscillatory power. If a resonance moves, compare both fixed absolute frequency and fixed detuning from the measured intrinsic frequency. These comparisons distinguish changes in sensitivity from simply moving the stimulation closer to resonance. The code's named network presets change several weights and inputs together, so they should not substitute for a controlled coupling sweep.
+
+At informative points, vary excitation and inhibition separately by $\pm20\%$. Resolve individual connection classes or the AMPA/NMDA contribution only if the grouped sweep leaves the mechanism ambiguous. A subsequent synaptic-time-constant sweep can use factors $0.5,1,2$ while preserving the integral of each synaptic conductance kernel; otherwise timescale and input strength change together. Cell number should remain fixed in this first study. A later size study must state how indegree and synaptic strength scale.
+
+\subsection{Test orientation and the oscillating state separately}
+
+Compare field input to PY alone, IN alone, and both. Rotate the field by $0^\circ$, $45^\circ$, and $90^\circ$ relative to the pyramidal axis, holding the cells fixed. Retain the complex signed population mean and the distribution of individual response amplitudes; the latter cannot be reconstructed from the former. The default code samples the IN polar angle uniformly, which is random but not isotropic. Preserve that distribution for reproduction; uniform sampling of its cosine is a separate isotropic control.
+
+For initial transfer identification, seek a stationary nonoscillating population regime. Zhao's alpha state is already an oscillator: a weak field may mainly shift phase, and locking can make a long-window amplitude/field ratio fail to approach a finite linear susceptibility. Analyze that state through phase, oscillation amplitude, and locking separately, with repeated stimulus-onset phases. Around an ideal periodic orbit the linearization is time-periodic and can produce sidebands; the noisy network needs a phase-conditioned response analysis. Equation~\eqref{eq:networkresolvent} cannot simply be applied with a constant matrix.
+
+\subsection{Estimate the signed response and state the stopping rule}
+
+Use identical connectivity and paired random streams for $+\E_0$, $-\E_0$, and field off, with at least three independent realizations in the pilot. Paired streams reduce variance but do not prevent nonlinear trajectories from diverging. For an applied cosine, let angle brackets denote averaging over realizations and define
+\begin{align}
+D_p(t)&=\tfrac12\big(\langle\bar U_p^+(t)\rangle-
+\langle\bar U_p^-(t)\rangle\big),\\
+Q_p(t)&=\tfrac12\big(\langle\bar U_p^+(t)\rangle+
+\langle\bar U_p^-(t)\rangle\big)-\langle\bar U_p^0(t)\rangle.
+\end{align}
+Over an integer number of periods with duration $T$, the fundamental estimate is
+\begin{equation}
+\widehat\chi_{VE,p}(\omega)=\frac{2}{T\E_0}
+\int_0^T D_p(t)e^{-\ii\omega t}\,\dd t.
+\label{eq:estimator}
+\end{equation}
+Use the mean and second harmonic of $Q_p$ to measure the leading even response. Choose settling and measurement windows by convergence of these estimates, and halve the integration step at selected points. The published 0.05-ms step is a starting point for low-frequency reproduction, not evidence of convergence for a new protocol.
+
+Predeclare a provisional 10\% tolerance for amplitude dependence and prediction error in the complex response, with an absolute noise floor near zero. Numerical and sampling uncertainty must be smaller than that tolerance before accepting or rejecting the scalar model. Increase realizations if they are not. If the fitted coefficient changes across readouts, frequencies, or states beyond uncertainty, report the domain in which a scalar fails. If phase locking defeats a linear extrapolation, report that phase response rather than calling it a large material coupling coefficient.
+
+\section{The result should be a transferable input model}
+
+The study should produce a cellular input calibration, a population transfer measured independently, and a test of their composition. Fit the input on isolated or replay data and identify the reduced recurrent dynamics from field-off statistics and independently applied weak current perturbations. Reserve field conditions and network parameters for prediction. A field-response fit alone cannot uniquely identify both input strength and network gain.
+
+A compact report can show compartmental coupling amplitude and phase, population voltage and rate susceptibility versus $j$, and predictions on conditions excluded from fitting. Each curve should identify the voltage readout, field direction, background state, and averaging convention. Agreement would support a specified reduced input model over that domain. Failure would identify a missing state variable, input channel, or coupling distribution; it would not require abandoning the cellular-to-population route.
+
+For TN0484, this would address the missing calibration between physical fields and QIF drive. A later kHz or temporal-interference study would need a new frequency-response calibration, time-step checks, and an equal-RMS single-carrier control. QIF voltage dynamics already filter their current input; a compartmental filter should be added only for dynamics not already represented in the calibrated QIF model. This preserves the separation between field access, detection, and recurrent amplification.
+
+\appendix
+\section{Sources and implementation locations}
+
+The prior-work audit used Ruffini's version-7 PDF, the local \emph{Rosetta Stone} arXiv-v1 source, and the published Clusella and Zhao articles. The local Rosetta source repeats the field-input argument at lines 1954--1985 of \texttt{main.tex}; this was used as a historical source, not as the final journal version. The coupling and susceptibility formulas above were checked against the primary equations and derived in the conventions stated here.
+
+Appendix K of the preprint contains transcription errors that do not enter this derivation. The second-order line below Eq.~(82) requires positive damping $+2t'$, as its first-order system and eigenvalues imply. The positivity identity is $4\pi^2s_*^2-2Q_*=2\sqrt{Q_*^2+\Delta^2}>0$. For the scalar slow-synapse model with inhibitory coupling, complex poles alone do not guarantee a nonzero-frequency amplitude peak: that peak requires $|J|K^*>1$ in the appendix's units. The slow-transfer and feedback argument above uses the corrected algebra.
+
+The JR calculations use the parameters and input placement in TN0484's \path{code/jr_jsweep_engine.py}. They use scalar equilibrium solves and the analytical six-state Jacobian, with a finite-difference Jacobian cross-check. The accompanying calculation note records the stationary feedback map and both DC and AC transfers. No finite-amplitude AC response or time-domain network simulation was computed.
+
+The Zhao code was read at commit \texttt{cd6a240} (August 19, 2023). In \texttt{run\_2C\_tACS\_network\_par.py}, the coupling divisors are at lines 25--40, orientations at 150--153, voltage recording at 164--168, and extracellular field assignment at 218--260. \texttt{mod/xtra.mod} and \texttt{stimWaveform.hoc} apply the temporal waveform. The script's coordinate placement and reciprocal coupling convention should be preserved in the reproduction and varied only as labeled sensitivities.
+
+The Neurotwin checkout was read at \texttt{4b60395}. Its tutorial is \path{docs/source/tutorials/neuron_perturbation.rst}; \path{neurotwin/maxwell/neurons/coupling_models.py}, lines 937--977, defines the voltage/current and cell/type/population choices. The docstring points to TN160, which was not located in the searched local folders. The accompanying Markdown source audits retain the exact local paths and additional equation checks.
+
+\begin{thebibliography}{9}
+\bibitem{ruffini} G. Ruffini. \emph{Analysis and extension of exact mean-field theory with dynamic synaptic currents}. bioRxiv, version 7, February 14, 2022 (first posted 2021). \href{https://www.biorxiv.org/content/10.1101/2021.09.01.458563v7.full.pdf}{Version-specific PDF}; \doi{10.1101/2021.09.01.458563}.
+\bibitem{clusella} P. Clusella, E. K\"oksal-Ers\"oz, J. Garcia-Ojalvo, and G. Ruffini. Comparison between an exact and a heuristic neural mass model with second-order synapses. \emph{Biological Cybernetics} \textbf{117}, 5--19 (2023). \doi{10.1007/s00422-022-00952-7}.
+\bibitem{rosetta} F. Castaldo, R. de Palma Aristides, P. Clusella, J. Garcia-Ojalvo, and G. Ruffini. \emph{Rosetta Stone of Neural Mass Models}. \href{https://arxiv.org/abs/2512.10982v1}{arXiv:2512.10982v1} (2025); version 1 source consulted.
+\bibitem{galan} A. Galan-Gadea, R. Salvador, F. Bartolomei, F. Wendling, and G. Ruffini. Spherical harmonics representation of the steady-state membrane potential shift induced by tDCS in realistic neuron models. \emph{Journal of Neural Engineering} \textbf{20}, 026004 (2023). \doi{10.1088/1741-2552/acbabd}.
+\bibitem{mpr} E. Montbri\'o, D. Paz\'o, and A. Roxin. Macroscopic description for networks of spiking neurons. \emph{Physical Review X} \textbf{5}, 021028 (2015). \doi{10.1103/PhysRevX.5.021028}.
+\bibitem{cakan} C. Cakan and K. Obermayer. Biophysically grounded mean-field models of neural populations under electrical stimulation. \emph{PLOS Computational Biology} \textbf{16}, e1007822 (2020). \doi{10.1371/journal.pcbi.1007822}. See also the correction: \doi{10.1371/journal.pcbi.1008717} (2021).
+\bibitem{zhao} Z. Zhao, S. Shirinpour, H. Tran, M. Wischnewski, and A. Opitz. Intensity- and frequency-specific effects of transcranial alternating current stimulation are explained by network dynamics. \emph{Journal of Neural Engineering} \textbf{21}, 026024 (2024). \doi{10.1088/1741-2552/ad37d9}.
+\bibitem{zhaocode} Opitz Lab. \emph{TACS\_effects\_network}, source snapshot \href{https://github.com/OpitzLab/TACS_effects_network/tree/cd6a240eba49604230b473440b20a85947884cd6}{\texttt{cd6a240}}. Inspected November 10, 2026.
+\end{thebibliography}
+\end{document}

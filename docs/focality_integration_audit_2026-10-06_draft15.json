@@ -1,0 +1,36 @@
+{
+  "TN0484_jne.aux": {
+    "preserved_equations": 26,
+    "preserved_figures": 11,
+    "numbering_changes": {},
+    "added_labels": {
+      "tab:transduction-maps": "2"
+    }
+  },
+  "TN0484_jne_supplement.aux": {
+    "preserved_equations": 6,
+    "preserved_figures": 12,
+    "numbering_changes": {},
+    "added_labels": {
+      "fig:spatial_maps": "S13"
+    }
+  },
+  "baseline": "a2aacd6",
+  "cited_keys_unchanged": true,
+  "cited_key_count": 60,
+  "abstract_unchanged": true,
+  "two_site_example_verbatim": true,
+  "body_outside_requested_section_and_new_figure_unchanged": true,
+  "note_pdf_unchanged": true,
+  "existing_simulation_producers_and_caches_unchanged": true,
+  "figure_producer": "notes/2026-10-06_ti_focality/make_spatial_maps.py --paper",
+  "figure_checks": "notes/2026-10-06_ti_focality/map_checks.json",
+  "section_word_counts": {
+    "draft14": {
+      "section_2_4_texcount": "957"
+    },
+    "draft15": {
+      "section_2_4_texcount": "1304"
+    }
+  }
+}

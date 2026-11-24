@@ -1,0 +1,1517 @@
+{
+  "statistic": "S(fc) = arithmetic mean of lock-in amplitudes over 7\u201314 Hz beats more than 1.5 Hz from field-free dominant alpha; normalize by each curve's own carrier maximum",
+  "interpretation": "Descriptive finite-amplitude response; unequal target amplitudes; dominance is not a phase-locking test; field-free background is not solely leakage",
+  "numpy_version": "2.4.6",
+  "records": [
+    {
+      "source": "lanmm_carrier_lockin_P2_twotone.npz",
+      "sha256": "8279d2ee6342cd4a024c1a07c45b23af62bfb3cffa462e06b52d44ce15b820a4",
+      "target": "P2",
+      "window_s": 3.0,
+      "settling_s": 2.0,
+      "dt_s": 0.0001,
+      "component_amplitude_mV": 1.5,
+      "field_free_dominant_alpha_Hz": 10.666666666666666,
+      "selected_beats_Hz": [
+        7.0,
+        7.25,
+        7.5,
+        7.75,
+        8.0,
+        8.25,
+        8.5,
+        8.75,
+        9.0,
+        12.25,
+        12.5,
+        12.75,
+        13.0,
+        13.25,
+        13.5,
+        13.75,
+        14.0
+      ],
+      "mean_lockin_min_mV": 0.07462886071893825,
+      "mean_lockin_max_mV": 0.44984469767745033,
+      "peak_carrier_Hz": 39.0,
+      "normalized_30_80_Hz": {
+        "min": 0.23347494927189816,
+        "max": 1.0,
+        "median": 0.42487584755352614
+      },
+      "normalized_at_carrier_Hz": {
+        "25": 0.16589916721092257,
+        "60": 0.4892797888502063,
+        "80": 0.38767744344988253
+      },
+      "background": {
+        "mean_mV": 0.004772556462998935,
+        "max_mV": 0.018172222231041164,
+        "max_at_beat_Hz": 8.0,
+        "mean_over_smallest_mean_response": 0.06395054697368338,
+        "max_pointwise_background_over_response": 3.1514006676438737,
+        "max_ratio_at_carrier_Hz": 26.0,
+        "max_ratio_at_beat_Hz": 8.0,
+        "points_response_at_or_below_background": 3,
+        "amplitude_per_selected_beat_mV": [
+          0.0006439011758963131,
+          0.0006782912229440784,
+          0.001974359472504406,
+          0.012208878155271628,
+          0.018172222231041164,
+          0.015041662249787284,
+          0.005532334262353054,
+          0.005250943606731839,
+          0.00738139255633597,
+          0.001815299594501285,
+          0.0021122010056282454,
+          0.002154599345274698,
+          0.004076660480811197,
+          0.0019641799479792016,
+          0.0005768750916544401,
+          0.0008865227960778209,
+          0.0006631366761892791
+        ]
+      },
+      "dominance_screen": {
+        "tolerance_Hz": 0.3,
+        "selected_points_passing": 0,
+        "selected_points_total": 952,
+        "ridge_fraction_passing": 1.0,
+        "ridge_beat_range_Hz": [
+          10.0,
+          10.75
+        ]
+      },
+      "retrospective_10_Hz_statistic": {
+        "median_over_carriers_divided_by_max": 0.3224739108106808,
+        "max_mV": 3.587368465918813,
+        "max_at_carrier_Hz": 43.0,
+        "max_point_output_frequency_Hz": 10.0,
+        "max_point_passes_dominance_screen": true,
+        "field_free_background_mV": 0.24809227921883453
+      },
+      "per_carrier": [
+        {
+          "carrier_Hz": 25.0,
+          "mean_lockin_mV": 0.07462886071893825,
+          "normalized": 0.16589916721092257
+        },
+        {
+          "carrier_Hz": 26.0,
+          "mean_lockin_mV": 0.09200393916423151,
+          "normalized": 0.2045237826282007
+        },
+        {
+          "carrier_Hz": 27.0,
+          "mean_lockin_mV": 0.19646226193146518,
+          "normalized": 0.436733528139379
+        },
+        {
+          "carrier_Hz": 28.0,
+          "mean_lockin_mV": 0.20985762450184658,
+          "normalized": 0.4665112773037944
+        },
+        {
+          "carrier_Hz": 29.0,
+          "mean_lockin_mV": 0.25129594956160406,
+          "normalized": 0.5586282351643709
+        },
+        {
+          "carrier_Hz": 30.0,
+          "mean_lockin_mV": 0.28756992639108026,
+          "normalized": 0.6392649015889367
+        },
+        {
+          "carrier_Hz": 31.0,
+          "mean_lockin_mV": 0.32728877208490426,
+          "normalized": 0.7275594750248192
+        },
+        {
+          "carrier_Hz": 32.0,
+          "mean_lockin_mV": 0.3423752109461268,
+          "normalized": 0.7610964688787288
+        },
+        {
+          "carrier_Hz": 33.0,
+          "mean_lockin_mV": 0.3701714327993511,
+          "normalized": 0.8228871757532042
+        },
+        {
+          "carrier_Hz": 34.0,
+          "mean_lockin_mV": 0.3923991611234579,
+          "normalized": 0.8722991804714295
+        },
+        {
+          "carrier_Hz": 35.0,
+          "mean_lockin_mV": 0.40684254615160026,
+          "normalized": 0.9044066724630293
+        },
+        {
+          "carrier_Hz": 36.0,
+          "mean_lockin_mV": 0.4481823457315713,
+          "normalized": 0.9963046092252242
+        },
+        {
+          "carrier_Hz": 37.0,
+          "mean_lockin_mV": 0.4425236122213758,
+          "normalized": 0.983725304546495
+        },
+        {
+          "carrier_Hz": 38.0,
+          "mean_lockin_mV": 0.44144024168967544,
+          "normalized": 0.9813169833252072
+        },
+        {
+          "carrier_Hz": 39.0,
+          "mean_lockin_mV": 0.44984469767745033,
+          "normalized": 1.0
+        },
+        {
+          "carrier_Hz": 40.0,
+          "mean_lockin_mV": 0.4404504059757089,
+          "normalized": 0.979116589013399
+        },
+        {
+          "carrier_Hz": 41.0,
+          "mean_lockin_mV": 0.41634599495617025,
+          "normalized": 0.9255327385334672
+        },
+        {
+          "carrier_Hz": 42.0,
+          "mean_lockin_mV": 0.3924676788053905,
+          "normalized": 0.8724514945529034
+        },
+        {
+          "carrier_Hz": 43.0,
+          "mean_lockin_mV": 0.3900012398669658,
+          "normalized": 0.8669686269073382
+        },
+        {
+          "carrier_Hz": 44.0,
+          "mean_lockin_mV": 0.34937408511852314,
+          "normalized": 0.776654892060177
+        },
+        {
+          "carrier_Hz": 45.0,
+          "mean_lockin_mV": 0.3187606145018991,
+          "normalized": 0.7086014710135768
+        },
+        {
+          "carrier_Hz": 46.0,
+          "mean_lockin_mV": 0.28707947833221525,
+          "normalized": 0.6381746407469234
+        },
+        {
+          "carrier_Hz": 47.0,
+          "mean_lockin_mV": 0.2644201246623721,
+          "normalized": 0.5878031374551574
+        },
+        {
+          "carrier_Hz": 48.0,
+          "mean_lockin_mV": 0.24921314023100352,
+          "normalized": 0.5539981720751446
+        },
+        {
+          "carrier_Hz": 49.0,
+          "mean_lockin_mV": 0.21089323933108425,
+          "normalized": 0.46881343810414294
+        },
+        {
+          "carrier_Hz": 50.0,
+          "mean_lockin_mV": 0.19112814719316645,
+          "normalized": 0.42487584755352614
+        },
+        {
+          "carrier_Hz": 51.0,
+          "mean_lockin_mV": 0.14933801610199904,
+          "normalized": 0.33197682861003297
+        },
+        {
+          "carrier_Hz": 52.0,
+          "mean_lockin_mV": 0.11250593107264768,
+          "normalized": 0.2500994935663712
+        },
+        {
+          "carrier_Hz": 53.0,
+          "mean_lockin_mV": 0.10502746797047507,
+          "normalized": 0.23347494927189816
+        },
+        {
+          "carrier_Hz": 54.0,
+          "mean_lockin_mV": 0.1110482216486723,
+          "normalized": 0.24685902095104073
+        },
+        {
+          "carrier_Hz": 55.0,
+          "mean_lockin_mV": 0.12479124995946156,
+          "normalized": 0.2774096273753124
+        },
+        {
+          "carrier_Hz": 56.0,
+          "mean_lockin_mV": 0.14536426037872816,
+          "normalized": 0.32314321171116234
+        },
+        {
+          "carrier_Hz": 57.0,
+          "mean_lockin_mV": 0.15820541031516602,
+          "normalized": 0.35168895205830164
+        },
+        {
+          "carrier_Hz": 58.0,
+          "mean_lockin_mV": 0.22145523791659913,
+          "normalized": 0.49229264912974025
+        },
+        {
+          "carrier_Hz": 59.0,
+          "mean_lockin_mV": 0.2532496371848643,
+          "normalized": 0.5629712620653151
+        },
+        {
+          "carrier_Hz": 60.0,
+          "mean_lockin_mV": 0.22009991869500778,
+          "normalized": 0.4892797888502063
+        },
+        {
+          "carrier_Hz": 61.0,
+          "mean_lockin_mV": 0.20794140659313415,
+          "normalized": 0.46225154518156225
+        },
+        {
+          "carrier_Hz": 62.0,
+          "mean_lockin_mV": 0.20480551753684648,
+          "normalized": 0.45528049701209783
+        },
+        {
+          "carrier_Hz": 63.0,
+          "mean_lockin_mV": 0.1802832708210269,
+          "normalized": 0.4007678022033605
+        },
+        {
+          "carrier_Hz": 64.0,
+          "mean_lockin_mV": 0.1619820340997562,
+          "normalized": 0.36008434674470985
+        },
+        {
+          "carrier_Hz": 65.0,
+          "mean_lockin_mV": 0.16751637590120932,
+          "normalized": 0.37238712997195905
+        },
+        {
+          "carrier_Hz": 66.0,
+          "mean_lockin_mV": 0.15611882465443455,
+          "normalized": 0.3470504942271779
+        },
+        {
+          "carrier_Hz": 67.0,
+          "mean_lockin_mV": 0.15501950436389098,
+          "normalized": 0.3446067168608571
+        },
+        {
+          "carrier_Hz": 68.0,
+          "mean_lockin_mV": 0.16148543767425405,
+          "normalized": 0.3589804181487609
+        },
+        {
+          "carrier_Hz": 69.0,
+          "mean_lockin_mV": 0.18256474124621486,
+          "normalized": 0.4058394868024392
+        },
+        {
+          "carrier_Hz": 70.0,
+          "mean_lockin_mV": 0.1875659339466409,
+          "normalized": 0.41695708522306574
+        },
+        {
+          "carrier_Hz": 71.0,
+          "mean_lockin_mV": 0.18525387006366645,
+          "normalized": 0.41181739169124987
+        },
+        {
+          "carrier_Hz": 72.0,
+          "mean_lockin_mV": 0.16855642522599748,
+          "normalized": 0.3746991486089641
+        },
+        {
+          "carrier_Hz": 73.0,
+          "mean_lockin_mV": 0.16091191282845319,
+          "normalized": 0.3577054784890028
+        },
+        {
+          "carrier_Hz": 74.0,
+          "mean_lockin_mV": 0.16818880007185494,
+          "normalized": 0.37388192178370505
+        },
+        {
+          "carrier_Hz": 75.0,
+          "mean_lockin_mV": 0.15839814176813083,
+          "normalized": 0.3521173920376098
+        },
+        {
+          "carrier_Hz": 76.0,
+          "mean_lockin_mV": 0.16869851293559734,
+          "normalized": 0.3750150080829858
+        },
+        {
+          "carrier_Hz": 77.0,
+          "mean_lockin_mV": 0.16602526838728354,
+          "normalized": 0.36907241375628647
+        },
+        {
+          "carrier_Hz": 78.0,
+          "mean_lockin_mV": 0.17356094712829911,
+          "normalized": 0.3858241478101106
+        },
+        {
+          "carrier_Hz": 79.0,
+          "mean_lockin_mV": 0.1748140391460061,
+          "normalized": 0.38860975809778703
+        },
+        {
+          "carrier_Hz": 80.0,
+          "mean_lockin_mV": 0.17439464234507926,
+          "normalized": 0.38767744344988253
+        }
+      ],
+      "original_band_power_cache": {
+        "source": "lanmm_field_P2_twotone.npz",
+        "relative_max_difference": {
+          "Pc1": 1.726886083124265e-16,
+          "Pc2": 0.0
+        }
+      }
+    },
+    {
+      "source": "lanmm_carrier_lockin_P2_twotone_tmeas10.npz",
+      "sha256": "82b2fe9664cf59147cae9aef3edb53d17ce80d6bfef323f1e0190e70c0b5d0b9",
+      "target": "P2",
+      "window_s": 10.0,
+      "settling_s": 2.0,
+      "dt_s": 0.0001,
+      "component_amplitude_mV": 1.5,
+      "field_free_dominant_alpha_Hz": 10.600000000000001,
+      "selected_beats_Hz": [
+        7.0,
+        7.25,
+        7.5,
+        7.75,
+        8.0,
+        8.25,
+        8.5,
+        8.75,
+        9.0,
+        12.25,
+        12.5,
+        12.75,
+        13.0,
+        13.25,
+        13.5,
+        13.75,
+        14.0
+      ],
+      "mean_lockin_min_mV": 0.073979467728371,
+      "mean_lockin_max_mV": 0.4504647492734915,
+      "peak_carrier_Hz": 39.0,
+      "normalized_30_80_Hz": {
+        "min": 0.22940726008006448,
+        "max": 1.0,
+        "median": 0.41624527074404477
+      },
+      "normalized_at_carrier_Hz": {
+        "25": 0.16422920516574252,
+        "60": 0.48709681555558443,
+        "80": 0.37887635983576995
+      },
+      "background": {
+        "mean_mV": 0.0011950731543629446,
+        "max_mV": 0.017291544313262,
+        "max_at_beat_Hz": 8.0,
+        "mean_over_smallest_mean_response": 0.016154119393652196,
+        "max_pointwise_background_over_response": 2.8135251139731707,
+        "max_ratio_at_carrier_Hz": 26.0,
+        "max_ratio_at_beat_Hz": 8.0,
+        "points_response_at_or_below_background": 1,
+        "amplitude_per_selected_beat_mV": [
+          2.3143505839054906e-05,
+          3.123094713341741e-06,
+          7.404272039306093e-05,
+          9.793600460450285e-05,
+          0.017291544313262,
+          0.00029235483349944463,
+          3.800638586759195e-05,
+          1.381578018710693e-05,
+          0.0002109606392991364,
+          1.0330076476962557e-05,
+          0.00011373436904766061,
+          1.816127221814932e-05,
+          0.0020068433367501637,
+          8.527082633989332e-05,
+          1.711628753116764e-05,
+          1.0895169292707903e-06,
+          1.8770661211548996e-05
+        ]
+      },
+      "dominance_screen": {
+        "tolerance_Hz": 0.3,
+        "selected_points_passing": 0,
+        "selected_points_total": 952,
+        "ridge_fraction_passing": 1.0,
+        "ridge_beat_range_Hz": [
+          10.0,
+          10.75
+        ]
+      },
+      "retrospective_10_Hz_statistic": {
+        "median_over_carriers_divided_by_max": 0.3793811691275596,
+        "max_mV": 3.5873739562091975,
+        "max_at_carrier_Hz": 43.0,
+        "max_point_output_frequency_Hz": 10.0,
+        "max_point_passes_dominance_screen": true,
+        "field_free_background_mV": 0.004975536654967827
+      },
+      "per_carrier": [
+        {
+          "carrier_Hz": 25.0,
+          "mean_lockin_mV": 0.073979467728371,
+          "normalized": 0.16422920516574252
+        },
+        {
+          "carrier_Hz": 26.0,
+          "mean_lockin_mV": 0.08962688912874144,
+          "normalized": 0.1989653780307815
+        },
+        {
+          "carrier_Hz": 27.0,
+          "mean_lockin_mV": 0.1964379634050492,
+          "normalized": 0.4360784361525822
+        },
+        {
+          "carrier_Hz": 28.0,
+          "mean_lockin_mV": 0.2079925302896623,
+          "normalized": 0.46172876040824984
+        },
+        {
+          "carrier_Hz": 29.0,
+          "mean_lockin_mV": 0.24745138976222847,
+          "normalized": 0.5493246478471789
+        },
+        {
+          "carrier_Hz": 30.0,
+          "mean_lockin_mV": 0.28835688675075555,
+          "normalized": 0.6401319686297693
+        },
+        {
+          "carrier_Hz": 31.0,
+          "mean_lockin_mV": 0.32677049281668613,
+          "normalized": 0.7254074671629708
+        },
+        {
+          "carrier_Hz": 32.0,
+          "mean_lockin_mV": 0.3510028174818617,
+          "normalized": 0.7792015203142049
+        },
+        {
+          "carrier_Hz": 33.0,
+          "mean_lockin_mV": 0.36582008568440605,
+          "normalized": 0.812094811579374
+        },
+        {
+          "carrier_Hz": 34.0,
+          "mean_lockin_mV": 0.3918688104483861,
+          "normalized": 0.869921144951722
+        },
+        {
+          "carrier_Hz": 35.0,
+          "mean_lockin_mV": 0.4050930981502422,
+          "normalized": 0.8992781317596447
+        },
+        {
+          "carrier_Hz": 36.0,
+          "mean_lockin_mV": 0.4445220071293677,
+          "normalized": 0.9868075312136892
+        },
+        {
+          "carrier_Hz": 37.0,
+          "mean_lockin_mV": 0.4424230218605323,
+          "normalized": 0.9821479318283419
+        },
+        {
+          "carrier_Hz": 38.0,
+          "mean_lockin_mV": 0.44015673184022175,
+          "normalized": 0.9771169276843649
+        },
+        {
+          "carrier_Hz": 39.0,
+          "mean_lockin_mV": 0.4504647492734915,
+          "normalized": 1.0
+        },
+        {
+          "carrier_Hz": 40.0,
+          "mean_lockin_mV": 0.4349690610508513,
+          "normalized": 0.965600664097176
+        },
+        {
+          "carrier_Hz": 41.0,
+          "mean_lockin_mV": 0.4249852026184125,
+          "normalized": 0.9434372019205224
+        },
+        {
+          "carrier_Hz": 42.0,
+          "mean_lockin_mV": 0.39640011194206476,
+          "normalized": 0.8799803149555607
+        },
+        {
+          "carrier_Hz": 43.0,
+          "mean_lockin_mV": 0.38287623044808217,
+          "normalized": 0.8499582510409173
+        },
+        {
+          "carrier_Hz": 44.0,
+          "mean_lockin_mV": 0.3484229220261042,
+          "normalized": 0.7734743342027093
+        },
+        {
+          "carrier_Hz": 45.0,
+          "mean_lockin_mV": 0.3168780387048575,
+          "normalized": 0.7034469161369844
+        },
+        {
+          "carrier_Hz": 46.0,
+          "mean_lockin_mV": 0.2909446974125828,
+          "normalized": 0.6458767259409703
+        },
+        {
+          "carrier_Hz": 47.0,
+          "mean_lockin_mV": 0.26087189056237775,
+          "normalized": 0.5791172139065517
+        },
+        {
+          "carrier_Hz": 48.0,
+          "mean_lockin_mV": 0.2429051383946621,
+          "normalized": 0.5392322901767984
+        },
+        {
+          "carrier_Hz": 49.0,
+          "mean_lockin_mV": 0.21254720503159308,
+          "normalized": 0.47183981737614034
+        },
+        {
+          "carrier_Hz": 50.0,
+          "mean_lockin_mV": 0.18750382152199271,
+          "normalized": 0.41624527074404477
+        },
+        {
+          "carrier_Hz": 51.0,
+          "mean_lockin_mV": 0.14784411725259403,
+          "normalized": 0.32820352200929526
+        },
+        {
+          "carrier_Hz": 52.0,
+          "mean_lockin_mV": 0.11372293390723828,
+          "normalized": 0.2524568994369712
+        },
+        {
+          "carrier_Hz": 53.0,
+          "mean_lockin_mV": 0.1033398838934849,
+          "normalized": 0.22940726008006448
+        },
+        {
+          "carrier_Hz": 54.0,
+          "mean_lockin_mV": 0.11192208886535368,
+          "normalized": 0.24845915034608448
+        },
+        {
+          "carrier_Hz": 55.0,
+          "mean_lockin_mV": 0.12692990705684898,
+          "normalized": 0.2817754491590324
+        },
+        {
+          "carrier_Hz": 56.0,
+          "mean_lockin_mV": 0.1511419594463839,
+          "normalized": 0.3355244992868927
+        },
+        {
+          "carrier_Hz": 57.0,
+          "mean_lockin_mV": 0.158357061079461,
+          "normalized": 0.3515415164779461
+        },
+        {
+          "carrier_Hz": 58.0,
+          "mean_lockin_mV": 0.2204260432808632,
+          "normalized": 0.48933028308289567
+        },
+        {
+          "carrier_Hz": 59.0,
+          "mean_lockin_mV": 0.25496112832188256,
+          "normalized": 0.565995738252734
+        },
+        {
+          "carrier_Hz": 60.0,
+          "mean_lockin_mV": 0.21941994489116248,
+          "normalized": 0.48709681555558443
+        },
+        {
+          "carrier_Hz": 61.0,
+          "mean_lockin_mV": 0.2084324415435106,
+          "normalized": 0.4627053323920905
+        },
+        {
+          "carrier_Hz": 62.0,
+          "mean_lockin_mV": 0.1978068217226108,
+          "normalized": 0.43911720515674796
+        },
+        {
+          "carrier_Hz": 63.0,
+          "mean_lockin_mV": 0.17294720485483484,
+          "normalized": 0.38393060751981967
+        },
+        {
+          "carrier_Hz": 64.0,
+          "mean_lockin_mV": 0.17144465236463646,
+          "normalized": 0.3805950468735722
+        },
+        {
+          "carrier_Hz": 65.0,
+          "mean_lockin_mV": 0.1624800317058592,
+          "normalized": 0.3606942207307156
+        },
+        {
+          "carrier_Hz": 66.0,
+          "mean_lockin_mV": 0.15757380303955948,
+          "normalized": 0.34980273882405705
+        },
+        {
+          "carrier_Hz": 67.0,
+          "mean_lockin_mV": 0.16326360367822276,
+          "normalized": 0.36243369529254826
+        },
+        {
+          "carrier_Hz": 68.0,
+          "mean_lockin_mV": 0.17401428637787056,
+          "normalized": 0.3862994533057701
+        },
+        {
+          "carrier_Hz": 69.0,
+          "mean_lockin_mV": 0.17414814494875158,
+          "normalized": 0.38659660990036915
+        },
+        {
+          "carrier_Hz": 70.0,
+          "mean_lockin_mV": 0.18363901258538695,
+          "normalized": 0.4076656672504553
+        },
+        {
+          "carrier_Hz": 71.0,
+          "mean_lockin_mV": 0.17167070320301847,
+          "normalized": 0.38109686380541113
+        },
+        {
+          "carrier_Hz": 72.0,
+          "mean_lockin_mV": 0.1697924058565646,
+          "normalized": 0.37692717605629605
+        },
+        {
+          "carrier_Hz": 73.0,
+          "mean_lockin_mV": 0.15979126964748427,
+          "normalized": 0.35472535843303005
+        },
+        {
+          "carrier_Hz": 74.0,
+          "mean_lockin_mV": 0.16722978342677233,
+          "normalized": 0.37123833484524627
+        },
+        {
+          "carrier_Hz": 75.0,
+          "mean_lockin_mV": 0.1652004884039487,
+          "normalized": 0.366733442895107
+        },
+        {
+          "carrier_Hz": 76.0,
+          "mean_lockin_mV": 0.16430286717223797,
+          "normalized": 0.36474078701435625
+        },
+        {
+          "carrier_Hz": 77.0,
+          "mean_lockin_mV": 0.16973356416280153,
+          "normalized": 0.3767965516426034
+        },
+        {
+          "carrier_Hz": 78.0,
+          "mean_lockin_mV": 0.16466997226030022,
+          "normalized": 0.3655557344406628
+        },
+        {
+          "carrier_Hz": 79.0,
+          "mean_lockin_mV": 0.16902422621215818,
+          "normalized": 0.37522187137786045
+        },
+        {
+          "carrier_Hz": 80.0,
+          "mean_lockin_mV": 0.17067044443907325,
+          "normalized": 0.37887635983576995
+        }
+      ]
+    },
+    {
+      "source": "lanmm_carrier_lockin_P1_twotone.npz",
+      "sha256": "e34be91572df7c45fbeb7e848aebd32c28991572bb3a4b2c714f303c0b2a3125",
+      "target": "P1",
+      "window_s": 3.0,
+      "settling_s": 2.0,
+      "dt_s": 0.0001,
+      "component_amplitude_mV": 0.5,
+      "field_free_dominant_alpha_Hz": 10.666666666666666,
+      "selected_beats_Hz": [
+        7.0,
+        7.25,
+        7.5,
+        7.75,
+        8.0,
+        8.25,
+        8.5,
+        8.75,
+        9.0,
+        12.25,
+        12.5,
+        12.75,
+        13.0,
+        13.25,
+        13.5,
+        13.75,
+        14.0
+      ],
+      "mean_lockin_min_mV": 0.03866813188932304,
+      "mean_lockin_max_mV": 0.09163115226620107,
+      "peak_carrier_Hz": 25.0,
+      "normalized_30_80_Hz": {
+        "min": 0.42199766054438353,
+        "max": 0.6777271555723565,
+        "median": 0.5280725157379303
+      },
+      "normalized_at_carrier_Hz": {
+        "25": 1.0,
+        "60": 0.5359602695804422,
+        "80": 0.5310596137675463
+      },
+      "background": {
+        "mean_mV": 0.004772556462998935,
+        "max_mV": 0.018172222231041164,
+        "max_at_beat_Hz": 8.0,
+        "mean_over_smallest_mean_response": 0.12342350741585018,
+        "max_pointwise_background_over_response": 1.1938981670996782,
+        "max_ratio_at_carrier_Hz": 33.0,
+        "max_ratio_at_beat_Hz": 7.75,
+        "points_response_at_or_below_background": 1,
+        "amplitude_per_selected_beat_mV": [
+          0.0006439011758963131,
+          0.0006782912229440784,
+          0.001974359472504406,
+          0.012208878155271628,
+          0.018172222231041164,
+          0.015041662249787284,
+          0.005532334262353054,
+          0.005250943606731839,
+          0.00738139255633597,
+          0.001815299594501285,
+          0.0021122010056282454,
+          0.002154599345274698,
+          0.004076660480811197,
+          0.0019641799479792016,
+          0.0005768750916544401,
+          0.0008865227960778209,
+          0.0006631366761892791
+        ]
+      },
+      "dominance_screen": {
+        "tolerance_Hz": 0.3,
+        "selected_points_passing": 0,
+        "selected_points_total": 952,
+        "ridge_fraction_passing": 1.0,
+        "ridge_beat_range_Hz": [
+          10.5,
+          10.5
+        ]
+      },
+      "retrospective_10_Hz_statistic": {
+        "median_over_carriers_divided_by_max": 0.25034329618404566,
+        "max_mV": 1.254358201231503,
+        "max_at_carrier_Hz": 25.0,
+        "max_point_output_frequency_Hz": 10.333333333333332,
+        "max_point_passes_dominance_screen": false,
+        "field_free_background_mV": 0.24809227921883453
+      },
+      "per_carrier": [
+        {
+          "carrier_Hz": 25.0,
+          "mean_lockin_mV": 0.09163115226620107,
+          "normalized": 1.0
+        },
+        {
+          "carrier_Hz": 26.0,
+          "mean_lockin_mV": 0.07103929063879104,
+          "normalized": 0.7752744441367729
+        },
+        {
+          "carrier_Hz": 27.0,
+          "mean_lockin_mV": 0.04699507754496459,
+          "normalized": 0.5128722752327445
+        },
+        {
+          "carrier_Hz": 28.0,
+          "mean_lockin_mV": 0.06653602929666833,
+          "normalized": 0.7261289163250074
+        },
+        {
+          "carrier_Hz": 29.0,
+          "mean_lockin_mV": 0.06779888491539629,
+          "normalized": 0.7399108626117811
+        },
+        {
+          "carrier_Hz": 30.0,
+          "mean_lockin_mV": 0.06210092018718994,
+          "normalized": 0.6777271555723565
+        },
+        {
+          "carrier_Hz": 31.0,
+          "mean_lockin_mV": 0.056964290491870316,
+          "normalized": 0.6216694768432164
+        },
+        {
+          "carrier_Hz": 32.0,
+          "mean_lockin_mV": 0.040981586496705545,
+          "normalized": 0.4472451287925357
+        },
+        {
+          "carrier_Hz": 33.0,
+          "mean_lockin_mV": 0.044362931291141765,
+          "normalized": 0.48414682336702874
+        },
+        {
+          "carrier_Hz": 34.0,
+          "mean_lockin_mV": 0.04262756746160741,
+          "normalized": 0.4652082442199186
+        },
+        {
+          "carrier_Hz": 35.0,
+          "mean_lockin_mV": 0.04109804318197677,
+          "normalized": 0.4485160577549141
+        },
+        {
+          "carrier_Hz": 36.0,
+          "mean_lockin_mV": 0.06082433339341233,
+          "normalized": 0.6637953565912748
+        },
+        {
+          "carrier_Hz": 37.0,
+          "mean_lockin_mV": 0.05550114615977999,
+          "normalized": 0.6057017159245313
+        },
+        {
+          "carrier_Hz": 38.0,
+          "mean_lockin_mV": 0.054666631349871625,
+          "normalized": 0.5965943895484099
+        },
+        {
+          "carrier_Hz": 39.0,
+          "mean_lockin_mV": 0.05514828605934422,
+          "normalized": 0.601850841066921
+        },
+        {
+          "carrier_Hz": 40.0,
+          "mean_lockin_mV": 0.05733346759403785,
+          "normalized": 0.625698424346736
+        },
+        {
+          "carrier_Hz": 41.0,
+          "mean_lockin_mV": 0.05765702384638526,
+          "normalized": 0.6292294969606373
+        },
+        {
+          "carrier_Hz": 42.0,
+          "mean_lockin_mV": 0.054058575512474144,
+          "normalized": 0.5899584821920232
+        },
+        {
+          "carrier_Hz": 43.0,
+          "mean_lockin_mV": 0.03866813188932304,
+          "normalized": 0.42199766054438353
+        },
+        {
+          "carrier_Hz": 44.0,
+          "mean_lockin_mV": 0.04016105137904313,
+          "normalized": 0.4382903672581762
+        },
+        {
+          "carrier_Hz": 45.0,
+          "mean_lockin_mV": 0.0394322115632087,
+          "normalized": 0.4303363058084516
+        },
+        {
+          "carrier_Hz": 46.0,
+          "mean_lockin_mV": 0.041087434296100386,
+          "normalized": 0.44840027959853385
+        },
+        {
+          "carrier_Hz": 47.0,
+          "mean_lockin_mV": 0.04441384461993524,
+          "normalized": 0.4847024567682717
+        },
+        {
+          "carrier_Hz": 48.0,
+          "mean_lockin_mV": 0.04519455779652587,
+          "normalized": 0.4932226287543507
+        },
+        {
+          "carrier_Hz": 49.0,
+          "mean_lockin_mV": 0.04568210829099308,
+          "normalized": 0.498543422855584
+        },
+        {
+          "carrier_Hz": 50.0,
+          "mean_lockin_mV": 0.04745839191737552,
+          "normalized": 0.517928572801337
+        },
+        {
+          "carrier_Hz": 51.0,
+          "mean_lockin_mV": 0.04726200834844845,
+          "normalized": 0.5157853762566014
+        },
+        {
+          "carrier_Hz": 52.0,
+          "mean_lockin_mV": 0.04784076731523279,
+          "normalized": 0.5221015575166925
+        },
+        {
+          "carrier_Hz": 53.0,
+          "mean_lockin_mV": 0.04736088914305974,
+          "normalized": 0.5168644939165433
+        },
+        {
+          "carrier_Hz": 54.0,
+          "mean_lockin_mV": 0.05305520784439127,
+          "normalized": 0.5790084107014022
+        },
+        {
+          "carrier_Hz": 55.0,
+          "mean_lockin_mV": 0.048422325843164526,
+          "normalized": 0.5284482912807975
+        },
+        {
+          "carrier_Hz": 56.0,
+          "mean_lockin_mV": 0.04854647763165546,
+          "normalized": 0.5298031993597688
+        },
+        {
+          "carrier_Hz": 57.0,
+          "mean_lockin_mV": 0.0476330455290961,
+          "normalized": 0.5198346233900406
+        },
+        {
+          "carrier_Hz": 58.0,
+          "mean_lockin_mV": 0.04579812260376498,
+          "normalized": 0.4998095240657364
+        },
+        {
+          "carrier_Hz": 59.0,
+          "mean_lockin_mV": 0.046963315772305184,
+          "normalized": 0.5125256488739802
+        },
+        {
+          "carrier_Hz": 60.0,
+          "mean_lockin_mV": 0.04911065707055967,
+          "normalized": 0.5359602695804422
+        },
+        {
+          "carrier_Hz": 61.0,
+          "mean_lockin_mV": 0.04922159829082711,
+          "normalized": 0.5371710065135011
+        },
+        {
+          "carrier_Hz": 62.0,
+          "mean_lockin_mV": 0.048387893097178156,
+          "normalized": 0.5280725157379303
+        },
+        {
+          "carrier_Hz": 63.0,
+          "mean_lockin_mV": 0.049233796237580486,
+          "normalized": 0.5373041265982289
+        },
+        {
+          "carrier_Hz": 64.0,
+          "mean_lockin_mV": 0.0488184371237,
+          "normalized": 0.5327711800663135
+        },
+        {
+          "carrier_Hz": 65.0,
+          "mean_lockin_mV": 0.047334021138852614,
+          "normalized": 0.516571274814277
+        },
+        {
+          "carrier_Hz": 66.0,
+          "mean_lockin_mV": 0.046862806113409004,
+          "normalized": 0.511428754898401
+        },
+        {
+          "carrier_Hz": 67.0,
+          "mean_lockin_mV": 0.0478242090890323,
+          "normalized": 0.5219208523111923
+        },
+        {
+          "carrier_Hz": 68.0,
+          "mean_lockin_mV": 0.048509862128196565,
+          "normalized": 0.5294036026881858
+        },
+        {
+          "carrier_Hz": 69.0,
+          "mean_lockin_mV": 0.049251498509219796,
+          "normalized": 0.5374973171366156
+        },
+        {
+          "carrier_Hz": 70.0,
+          "mean_lockin_mV": 0.04911840636073033,
+          "normalized": 0.5360448400565194
+        },
+        {
+          "carrier_Hz": 71.0,
+          "mean_lockin_mV": 0.048434232381368625,
+          "normalized": 0.5285782311310517
+        },
+        {
+          "carrier_Hz": 72.0,
+          "mean_lockin_mV": 0.04693475422030906,
+          "normalized": 0.5122139475443587
+        },
+        {
+          "carrier_Hz": 73.0,
+          "mean_lockin_mV": 0.04889579552292563,
+          "normalized": 0.5336154169585976
+        },
+        {
+          "carrier_Hz": 74.0,
+          "mean_lockin_mV": 0.049677399011987367,
+          "normalized": 0.5421453052087319
+        },
+        {
+          "carrier_Hz": 75.0,
+          "mean_lockin_mV": 0.049219499056583564,
+          "normalized": 0.5371480969004315
+        },
+        {
+          "carrier_Hz": 76.0,
+          "mean_lockin_mV": 0.04959114434259541,
+          "normalized": 0.5412039804817288
+        },
+        {
+          "carrier_Hz": 77.0,
+          "mean_lockin_mV": 0.047343350110808785,
+          "normalized": 0.516673084861684
+        },
+        {
+          "carrier_Hz": 78.0,
+          "mean_lockin_mV": 0.0479594840916665,
+          "normalized": 0.5233971515750191
+        },
+        {
+          "carrier_Hz": 79.0,
+          "mean_lockin_mV": 0.04814873262508834,
+          "normalized": 0.5254624812008221
+        },
+        {
+          "carrier_Hz": 80.0,
+          "mean_lockin_mV": 0.04866160433156396,
+          "normalized": 0.5310596137675463
+        }
+      ],
+      "original_band_power_cache": {
+        "source": "lanmm_field_P1_twotone.npz",
+        "relative_max_difference": {
+          "Pc1": 3.0718213675086505e-16,
+          "Pc2": 0.0
+        }
+      }
+    },
+    {
+      "source": "lanmm_carrier_lockin_P1_twotone_tmeas10.npz",
+      "sha256": "212eb5382959bb34cfb595e1180cc66e1aba3321b4508cc90fdff373f9141b4b",
+      "target": "P1",
+      "window_s": 10.0,
+      "settling_s": 2.0,
+      "dt_s": 0.0001,
+      "component_amplitude_mV": 0.5,
+      "field_free_dominant_alpha_Hz": 10.600000000000001,
+      "selected_beats_Hz": [
+        7.0,
+        7.25,
+        7.5,
+        7.75,
+        8.0,
+        8.25,
+        8.5,
+        8.75,
+        9.0,
+        12.25,
+        12.5,
+        12.75,
+        13.0,
+        13.25,
+        13.5,
+        13.75,
+        14.0
+      ],
+      "mean_lockin_min_mV": 0.037766993692277866,
+      "mean_lockin_max_mV": 0.0906771391093906,
+      "peak_carrier_Hz": 25.0,
+      "normalized_30_80_Hz": {
+        "min": 0.4164996168076799,
+        "max": 0.6658807284960934,
+        "median": 0.5241250881908391
+      },
+      "normalized_at_carrier_Hz": {
+        "25": 1.0,
+        "60": 0.5198366997969105,
+        "80": 0.5349362569505502
+      },
+      "background": {
+        "mean_mV": 0.0011950731543629446,
+        "max_mV": 0.017291544313262,
+        "max_at_beat_Hz": 8.0,
+        "mean_over_smallest_mean_response": 0.03164332231737308,
+        "max_pointwise_background_over_response": 0.5220728400887245,
+        "max_ratio_at_carrier_Hz": 43.0,
+        "max_ratio_at_beat_Hz": 8.0,
+        "points_response_at_or_below_background": 0,
+        "amplitude_per_selected_beat_mV": [
+          2.3143505839054906e-05,
+          3.123094713341741e-06,
+          7.404272039306093e-05,
+          9.793600460450285e-05,
+          0.017291544313262,
+          0.00029235483349944463,
+          3.800638586759195e-05,
+          1.381578018710693e-05,
+          0.0002109606392991364,
+          1.0330076476962557e-05,
+          0.00011373436904766061,
+          1.816127221814932e-05,
+          0.0020068433367501637,
+          8.527082633989332e-05,
+          1.711628753116764e-05,
+          1.0895169292707903e-06,
+          1.8770661211548996e-05
+        ]
+      },
+      "dominance_screen": {
+        "tolerance_Hz": 0.3,
+        "selected_points_passing": 0,
+        "selected_points_total": 952,
+        "ridge_fraction_passing": 1.0,
+        "ridge_beat_range_Hz": [
+          10.5,
+          10.75
+        ]
+      },
+      "retrospective_10_Hz_statistic": {
+        "median_over_carriers_divided_by_max": 0.44332826378999474,
+        "max_mV": 0.61409705239284,
+        "max_at_carrier_Hz": 25.0,
+        "max_point_output_frequency_Hz": 10.5,
+        "max_point_passes_dominance_screen": false,
+        "field_free_background_mV": 0.004975536654967827
+      },
+      "per_carrier": [
+        {
+          "carrier_Hz": 25.0,
+          "mean_lockin_mV": 0.0906771391093906,
+          "normalized": 1.0
+        },
+        {
+          "carrier_Hz": 26.0,
+          "mean_lockin_mV": 0.07048145428590603,
+          "normalized": 0.7772792015513303
+        },
+        {
+          "carrier_Hz": 27.0,
+          "mean_lockin_mV": 0.0425389207236372,
+          "normalized": 0.4691250864489596
+        },
+        {
+          "carrier_Hz": 28.0,
+          "mean_lockin_mV": 0.06318953042454996,
+          "normalized": 0.6968628592077626
+        },
+        {
+          "carrier_Hz": 29.0,
+          "mean_lockin_mV": 0.06476583151466017,
+          "normalized": 0.7142465250974483
+        },
+        {
+          "carrier_Hz": 30.0,
+          "mean_lockin_mV": 0.05274235071516683,
+          "normalized": 0.581649920070149
+        },
+        {
+          "carrier_Hz": 31.0,
+          "mean_lockin_mV": 0.04873287966429943,
+          "normalized": 0.5374329201708637
+        },
+        {
+          "carrier_Hz": 32.0,
+          "mean_lockin_mV": 0.04045002037964233,
+          "normalized": 0.4460884052687685
+        },
+        {
+          "carrier_Hz": 33.0,
+          "mean_lockin_mV": 0.04478768722059092,
+          "normalized": 0.49392479361926267
+        },
+        {
+          "carrier_Hz": 34.0,
+          "mean_lockin_mV": 0.03969727517216308,
+          "normalized": 0.43778702727126506
+        },
+        {
+          "carrier_Hz": 35.0,
+          "mean_lockin_mV": 0.04294574630717576,
+          "normalized": 0.47361161511025507
+        },
+        {
+          "carrier_Hz": 36.0,
+          "mean_lockin_mV": 0.06038015944810261,
+          "normalized": 0.6658807284960934
+        },
+        {
+          "carrier_Hz": 37.0,
+          "mean_lockin_mV": 0.05547959012763471,
+          "normalized": 0.6118365739429157
+        },
+        {
+          "carrier_Hz": 38.0,
+          "mean_lockin_mV": 0.05549992968763905,
+          "normalized": 0.612060881416708
+        },
+        {
+          "carrier_Hz": 39.0,
+          "mean_lockin_mV": 0.05545828871600912,
+          "normalized": 0.6116016590367463
+        },
+        {
+          "carrier_Hz": 40.0,
+          "mean_lockin_mV": 0.05458104294803984,
+          "normalized": 0.6019272716819468
+        },
+        {
+          "carrier_Hz": 41.0,
+          "mean_lockin_mV": 0.056034160486056236,
+          "normalized": 0.6179524523646257
+        },
+        {
+          "carrier_Hz": 42.0,
+          "mean_lockin_mV": 0.05380748201911715,
+          "normalized": 0.593396335036609
+        },
+        {
+          "carrier_Hz": 43.0,
+          "mean_lockin_mV": 0.03926745609771222,
+          "normalized": 0.43304692321998556
+        },
+        {
+          "carrier_Hz": 44.0,
+          "mean_lockin_mV": 0.04067842018892281,
+          "normalized": 0.4486072298757617
+        },
+        {
+          "carrier_Hz": 45.0,
+          "mean_lockin_mV": 0.037766993692277866,
+          "normalized": 0.4164996168076799
+        },
+        {
+          "carrier_Hz": 46.0,
+          "mean_lockin_mV": 0.04100488347250323,
+          "normalized": 0.4522075120062619
+        },
+        {
+          "carrier_Hz": 47.0,
+          "mean_lockin_mV": 0.04424877549366396,
+          "normalized": 0.48798160074595387
+        },
+        {
+          "carrier_Hz": 48.0,
+          "mean_lockin_mV": 0.045204034950744904,
+          "normalized": 0.49851633382711713
+        },
+        {
+          "carrier_Hz": 49.0,
+          "mean_lockin_mV": 0.044587768734755756,
+          "normalized": 0.491720064976534
+        },
+        {
+          "carrier_Hz": 50.0,
+          "mean_lockin_mV": 0.04595251475084511,
+          "normalized": 0.5067706723235849
+        },
+        {
+          "carrier_Hz": 51.0,
+          "mean_lockin_mV": 0.046577277374902665,
+          "normalized": 0.5136606407345188
+        },
+        {
+          "carrier_Hz": 52.0,
+          "mean_lockin_mV": 0.04649510838623365,
+          "normalized": 0.5127544697913675
+        },
+        {
+          "carrier_Hz": 53.0,
+          "mean_lockin_mV": 0.0481942826623115,
+          "normalized": 0.5314931981276024
+        },
+        {
+          "carrier_Hz": 54.0,
+          "mean_lockin_mV": 0.052645566539284885,
+          "normalized": 0.5805825708260889
+        },
+        {
+          "carrier_Hz": 55.0,
+          "mean_lockin_mV": 0.047397302921871325,
+          "normalized": 0.522703995597969
+        },
+        {
+          "carrier_Hz": 56.0,
+          "mean_lockin_mV": 0.04920912434778228,
+          "normalized": 0.542685012243468
+        },
+        {
+          "carrier_Hz": 57.0,
+          "mean_lockin_mV": 0.047305567347716786,
+          "normalized": 0.5216923230302685
+        },
+        {
+          "carrier_Hz": 58.0,
+          "mean_lockin_mV": 0.04703291631188472,
+          "normalized": 0.5186854897919243
+        },
+        {
+          "carrier_Hz": 59.0,
+          "mean_lockin_mV": 0.047843406882663045,
+          "normalized": 0.5276236916224935
+        },
+        {
+          "carrier_Hz": 60.0,
+          "mean_lockin_mV": 0.04713730474165097,
+          "normalized": 0.5198366997969105
+        },
+        {
+          "carrier_Hz": 61.0,
+          "mean_lockin_mV": 0.047239593202765794,
+          "normalized": 0.5209647510578951
+        },
+        {
+          "carrier_Hz": 62.0,
+          "mean_lockin_mV": 0.047577686645091384,
+          "normalized": 0.5246932921835444
+        },
+        {
+          "carrier_Hz": 63.0,
+          "mean_lockin_mV": 0.04638480292082942,
+          "normalized": 0.511538005901046
+        },
+        {
+          "carrier_Hz": 64.0,
+          "mean_lockin_mV": 0.047378858257423315,
+          "normalized": 0.5225005852937934
+        },
+        {
+          "carrier_Hz": 65.0,
+          "mean_lockin_mV": 0.04748131586005891,
+          "normalized": 0.5236305018708041
+        },
+        {
+          "carrier_Hz": 66.0,
+          "mean_lockin_mV": 0.04716018691337324,
+          "normalized": 0.5200890475435092
+        },
+        {
+          "carrier_Hz": 67.0,
+          "mean_lockin_mV": 0.04732734637851067,
+          "normalized": 0.5219325051865185
+        },
+        {
+          "carrier_Hz": 68.0,
+          "mean_lockin_mV": 0.04856216434780164,
+          "normalized": 0.5355502481084838
+        },
+        {
+          "carrier_Hz": 69.0,
+          "mean_lockin_mV": 0.04876455658549372,
+          "normalized": 0.5377822576279716
+        },
+        {
+          "carrier_Hz": 70.0,
+          "mean_lockin_mV": 0.04786339378946153,
+          "normalized": 0.5278441099880792
+        },
+        {
+          "carrier_Hz": 71.0,
+          "mean_lockin_mV": 0.047526163532602334,
+          "normalized": 0.5241250881908391
+        },
+        {
+          "carrier_Hz": 72.0,
+          "mean_lockin_mV": 0.0465441062650071,
+          "normalized": 0.5132948251582736
+        },
+        {
+          "carrier_Hz": 73.0,
+          "mean_lockin_mV": 0.04854591150651057,
+          "normalized": 0.535371009532469
+        },
+        {
+          "carrier_Hz": 74.0,
+          "mean_lockin_mV": 0.04817810614432434,
+          "normalized": 0.5313148012555127
+        },
+        {
+          "carrier_Hz": 75.0,
+          "mean_lockin_mV": 0.048214170377084316,
+          "normalized": 0.5317125225898445
+        },
+        {
+          "carrier_Hz": 76.0,
+          "mean_lockin_mV": 0.04905598250418274,
+          "normalized": 0.5409961428646624
+        },
+        {
+          "carrier_Hz": 77.0,
+          "mean_lockin_mV": 0.04792673212732798,
+          "normalized": 0.5285426139162859
+        },
+        {
+          "carrier_Hz": 78.0,
+          "mean_lockin_mV": 0.04829994607530269,
+          "normalized": 0.532658468823491
+        },
+        {
+          "carrier_Hz": 79.0,
+          "mean_lockin_mV": 0.048656775143524435,
+          "normalized": 0.5365936290163074
+        },
+        {
+          "carrier_Hz": 80.0,
+          "mean_lockin_mV": 0.048506489386161755,
+          "normalized": 0.5349362569505502
+        }
+      ]
+    }
+  ],
+  "window_differences": {
+    "P2": {
+      "max_abs_normalized_difference": 0.030720527885838733,
+      "max_normalized_difference_at_carrier_Hz": 71.0,
+      "max_abs_mean_lockin_difference_mV": 0.013583166860647977
+    },
+    "P1": {
+      "max_abs_normalized_difference": 0.09607723550220748,
+      "max_normalized_difference_at_carrier_Hz": 30.0,
+      "max_abs_mean_lockin_difference_mV": 0.009358569472023112
+    }
+  }
+}

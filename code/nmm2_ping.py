@@ -53,11 +53,29 @@ PI = np.pi
 FIGDIR = os.environ.get("TN_FIGDIR") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "figures")
 
 
+
+# --- applied-field waveform -------------------------------------------------
+# 'am'      : A(1 + cos Om t) cos(wc t)        -- the modulated-carrier surrogate
+# 'twotone' : A[cos(w1 t) + cos(w2 t)],  w2-w1 = Om  -- the physical TI waveform
+# At m = 1 the two share their peak amplitude (2A) and their leading quadratic
+# component at Omega; they differ in DC and in the second harmonic (the surrogate
+# emits a 2*Omega line at 25% of the fundamental, two tones emit none).
+WAVE = 'am'
+
+def _field(t, A, wO, wc):
+    if A == 0.0:
+        return 0.0
+    if WAVE == 'am':
+        return A*(1.0 + np.cos(wO*t))*np.cos(wc*t)
+    if WAVE == 'twotone':
+        return A*(np.cos((wc - wO/2.0)*t) + np.cos((wc + wO/2.0)*t))
+    raise ValueError(f"unknown WAVE {WAVE!r}")
+
 def _rhs(y, t, eta, A, wO, wc):
     """RHS of the 8-D system, vectorized over the last axis. eta is the common
     background drive (bifurcation parameter); F drives the E membrane current."""
     r_e, v_e, r_i, v_i, s_e, z_e, s_i, z_i = y
-    F = A*(1.0 + np.cos(wO*t))*np.cos(wc*t) if A != 0.0 else 0.0
+    F = _field(t, A, wO, wc)
     return np.array([
         (DEL/(PI*TAU_E) + 2*r_e*v_e)/TAU_E,
         (eta - (PI*TAU_E*r_e)**2 + v_e**2 + F)/TAU_E + C*(A_EE*s_e - A_EI*s_i),
@@ -116,8 +134,8 @@ def lockin_map(etagrid, dfgrid_Hz, A=8.0, fc_Hz=300.0, t_settle=800.0, t_meas=15
     With return_fout=True also returns the dominant (largest non-DC) output
     frequency of r_e in Hz, on the same grid. Lock-in amplitude cannot
     distinguish a forced response at Delta f from genuine frequency capture,
-    because both put power at Delta f; f_out can, and the 1:1 locked set
-    |f_out - Delta f| < 0.3 Hz is what defines an Arnold tongue."""
+    because both put power at Delta f. The screen
+    |f_out - Delta f| < 0.3 Hz identifies frequency dominance, not phase capture."""
     EE, DD = np.meshgrid(etagrid, dfgrid_Hz, indexing="ij")
     eta = EE.ravel().copy(); dfflat = DD.ravel().copy()
     n = eta.size; y = _init(n)
@@ -167,23 +185,23 @@ def make_figures(A=8.0, fc_Hz=300.0):
     print(f"gamma Hopf near eta={eta_hopf:.2f}, onset f0~{f_onset:.0f} Hz")
     # lock-in map
     M, FOUT = lockin_map(etagrid, dfgrid, A=A, fc_Hz=fc_Hz, return_fout=True)
-    # 1:1 frequency capture, the criterion the vocabulary section defines.
+    # Frequency-dominance screen; no phase-capture test is performed.
     # Only meaningful ABOVE the Hopf: below it there is no autonomous rhythm to
     # capture, so the dominant output frequency is trivially Delta f and the
     # criterion would relabel a plain forced response as entrainment.
     LOCKED = (np.abs(FOUT - dfgrid[None, :]) < 0.3)
     LOCKED &= (etagrid[:, None] > eta_hopf)
     LOCKED = LOCKED.astype(float)
-    print(f"  1:1 locked fraction of grid (above Hopf only): {LOCKED.mean():.2%}")
+    print(f"  frequency-dominance fraction of grid (above Hopf only): {LOCKED.mean():.2%}")
 
-    # ---- Fig.: resonance map (log scale: entrainment >> stable-focus forced response) ----
+    # ---- Fig.: resonance map in stable-focus and autonomous regimes --------------
     fig, ax = plt.subplots(figsize=(6.4, 4.6))
     im = ax.imshow(M, origin="lower", aspect="auto", cmap="viridis",
                    interpolation="bilinear",
                    norm=LogNorm(vmin=max(M.max()*1e-3, 1e-5), vmax=M.max()),
                    extent=[dfgrid[0], dfgrid[-1], etagrid[0], etagrid[-1]])
-    # 1:1 locked set outlined: the colour field is the forced/gated response,
-    # the contour is the actual Arnold tongue.
+    # The contour outlines frequency dominance in the autonomous regime.
+    # It does not identify an Arnold tongue without an additional phase test.
     ax.contour(dfgrid, etagrid, LOCKED, levels=[0.5], colors="w", linewidths=1.4)
     if np.isfinite(eta_hopf):
         ax.axhline(eta_hopf, color="w", ls="--", lw=1)

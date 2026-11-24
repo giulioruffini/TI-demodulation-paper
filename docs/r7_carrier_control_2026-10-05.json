@@ -1,0 +1,71 @@
+{
+ "eta": 0.85,
+ "fc_Hz": 300.0,
+ "df_Hz": 55.0,
+ "rows": [
+  {
+   "case": "two tones a=10",
+   "a": 10.0,
+   "rms": 10.0,
+   "delta_eta_E": 0.13251273575620628,
+   "averaged_point_growth_per_ms": -0.008968493905448,
+   "averaged_mode_Hz": 54.49137108240395,
+   "mean_rE": 0.052093898033248494,
+   "mean_rE_free": 0.05062684925208753,
+   "mean_shift_pct": 2.8977682846824004,
+   "beat55_depth": 0.12776758057618665,
+   "other_line_depth": 1.725033839270571e-06,
+   "other_line_Hz": 50.0,
+   "rE_min": 0.04460845370650778,
+   "rE_max": 0.06208468937222678
+  },
+  {
+   "case": "one carrier sqrt2*a=14.14",
+   "a": 10.0,
+   "rms": 10.0,
+   "delta_eta_E": 0.12895949637417764,
+   "averaged_point_growth_per_ms": -0.008842254854852195,
+   "averaged_mode_Hz": 54.47533662806191,
+   "mean_rE": 0.05204206262468033,
+   "mean_rE_free": 0.05062684925208753,
+   "mean_shift_pct": 2.7953810942213497,
+   "beat55_depth": 1.3628959790188486e-06,
+   "other_line_depth": 5.761108569099111e-07,
+   "other_line_Hz": 51.25,
+   "rE_min": 0.05016544544373593,
+   "rE_max": 0.05396249653546207
+  },
+  {
+   "case": "two tones a=35",
+   "a": 35.0,
+   "rms": 35.0,
+   "delta_eta_E": 1.652536299921834,
+   "averaged_point_growth_per_ms": 0.03212536131696289,
+   "averaged_mode_Hz": 54.314360248271385,
+   "mean_rE": 0.05658822270750011,
+   "mean_rE_free": 0.05062684925208753,
+   "mean_shift_pct": 11.77512237771101,
+   "beat55_depth": 0.2997220296285324,
+   "other_line_depth": 0.6054194392459974,
+   "other_line_Hz": 51.25,
+   "rE_min": 0.0207728109135487,
+   "rE_max": 0.1924096027836115
+  },
+  {
+   "case": "one carrier sqrt2*a=49.50",
+   "a": 35.0,
+   "rms": 35.0,
+   "delta_eta_E": 1.6057921999123665,
+   "averaged_point_growth_per_ms": 0.03147262081767205,
+   "averaged_mode_Hz": 54.23110202933719,
+   "mean_rE": 0.05670047202132378,
+   "mean_rE_free": 0.05062684925208753,
+   "mean_shift_pct": 11.996841318316509,
+   "beat55_depth": 0.010982570150864264,
+   "other_line_depth": 0.7092638798231597,
+   "other_line_Hz": 51.25,
+   "rE_min": 0.02330561271266015,
+   "rE_max": 0.14686244833383327
+  }
+ ]
+}

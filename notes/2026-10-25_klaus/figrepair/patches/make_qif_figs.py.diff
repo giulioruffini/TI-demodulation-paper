@@ -1,0 +1,40 @@
+--- a/code/make_qif_figs.py
++++ b/code/make_qif_figs.py
+@@ -105,12 +105,14 @@
+     iax.set_ylim(0, 2)
+     iax.set_yticks([0, 1, 2])
+     iax.tick_params(length=2, pad=1, labelsize=7.0, direction="in")
+-    # the inset's tick/axis labels fall on the busy raster; a white halo keeps
+-    # them legible without an opaque backing box
+-    halo = dict(fc="white", ec="none", alpha=0.85, pad=0.4)
++    # The inset's tick and axis labels fall on the busy raster, where the envelope
++    # trace crossed them. An opaque white panel behind the inset and its labels,
++    # drawn above the raster (zorder 5) and below the inset (6), keeps them legible.
++    from matplotlib.patches import Rectangle
++    ax.add_patch(Rectangle((0.50, 0.40), 0.50, 0.60, transform=ax.transAxes,
++                           fc="white", ec="none", zorder=5.5, clip_on=True))
+     for t in list(iax.get_xticklabels()) + list(iax.get_yticklabels()):
+-        t.set_fontweight("bold"); t.set_bbox(halo)
+-    iax.xaxis.label.set_bbox(halo); iax.yaxis.label.set_bbox(halo)
++        t.set_fontweight("bold")
+     iax.legend(fontsize=9.0, frameon=False, loc="upper right", ncol=2,
+                handlelength=0.9, columnspacing=0.8, handletextpad=0.4, borderpad=0.1)
+     iax.patch.set_alpha(1.0); iax.patch.set_facecolor("white")
+@@ -214,7 +216,7 @@
+     axA.plot(fy, Py / Py.max(), color=NERED, lw=1.4, ls="--", label="NMM2 mean field (exact)")
+     axA.set_xlim(0, 130); axA.set_xlabel("frequency (Hz)"); axA.set_ylabel("power (norm.)")
+     figstyle.panel(axA, "a")
+-    axA.legend(fontsize=9.0, frameon=False, loc="upper right")
++    axA.legend(fontsize=9.0, frameon=False, loc="center right")
+     axA.spines[["top", "right"]].set_visible(False)
+ 
+     # (b) intermodulation: oscillatory regime, TI off vs on. The nonlinearity mixes the
+@@ -236,7 +238,7 @@
+     axC.set_xlim(0, 120); axC.set_ylim(1e-4, 4)
+     axC.set_xlabel("frequency (Hz)"); axC.set_ylabel("power of $r_E$ (norm.)")
+     figstyle.panel(axC, "b")
+-    axC.legend(fontsize=9.0, frameon=False, loc="lower right")
++    axC.legend(fontsize=9.0, frameon=False, loc="upper left")
+     axC.spines[["top", "right"]].set_visible(False)
+ 
+     # (c) Df modulation depth = AC(Df)/<r_E> -- a STABLE off->on metric: the amplitude

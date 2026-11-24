@@ -1,7 +1,8 @@
 """Refined NMM2 J-curve (clean version). Fixed eta=0; sweep J(=C) toward the gamma
-Hopf. Fixed point solved ALGEBRAICALLY (exact -> smooth). Detection = exact v^2
-(quadratic coefficient =2, a hard constant, operating-point-independent), so no
-pinning is needed: only the network distance-to-Hopf gamma changes with J."""
+Hopf. The fixed point is solved algebraically. The local quadratic coefficient
+is fixed, but the carrier response, modal projections, and dominant mode can
+vary with J. See nmm2_jcurve_modes.py for continuous critical-mode tracking
+and the operating-state-dependent second-order source."""
 import numpy as np
 from scipy.optimize import brentq, fsolve
 TAU_E,TAU_A,TAU_I,TAU_G=15.0,10.0,7.5,2.5

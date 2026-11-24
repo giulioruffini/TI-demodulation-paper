@@ -1,0 +1,55 @@
+{
+  "TN0484_jne": {
+    "pages": 46,
+    "text_identical_to_local": true,
+    "diagnostics": {
+      "errors": 0,
+      "undefined": 0,
+      "overfull": 0,
+      "duplicate_labels": 0,
+      "rerun_needed": 0
+    },
+    "published_sha256": "7b4d67cd19fd0425db3562845cb674a5467122e50d49e16eed89dc2dfd7fa611"
+  },
+  "TN0484_jne_supplement": {
+    "pages": 21,
+    "text_identical_to_local": true,
+    "diagnostics": {
+      "errors": 0,
+      "undefined": 0,
+      "overfull": 0,
+      "duplicate_labels": 0,
+      "rerun_needed": 0
+    },
+    "published_sha256": "cac0408ae75c40d1641e248639740fa70598ef432340dffec76f92f84a39f695"
+  },
+  "source_commit": "1640b2b",
+  "contribution_commit": "d7790943ae8ed9186c7a6233cc7698f58efeb992",
+  "peer_fidelity_target": "23b515c",
+  "peer_fidelity_verdict": "pass",
+  "preserved_Overleaf_setting": "\\jnetrue",
+  "pdf_hashes": {
+    "TN0484_jne.pdf": "7b4d67cd19fd0425db3562845cb674a5467122e50d49e16eed89dc2dfd7fa611",
+    "TN0484_jne_supplement.pdf": "cac0408ae75c40d1641e248639740fa70598ef432340dffec76f92f84a39f695",
+    "docs/redline_last_read.pdf": "74a7a32ae3827a5af19ca918cc0c021e0fd010f7074c72d7c6c7e48a00b9bf40"
+  },
+  "date": "2026-10-19",
+  "private_repository": "https://github.com/giulioruffini/TN0484---Temporal-Interference-TI-NMM-demodulation",
+  "mirror_previous_commit": "aa18f100cbf0307334ba64d5c302bd2a5beb03a2",
+  "mirror_commit": "c386e542e476793f1dc7b013e894906079dc45de",
+  "remote_head_verified": true,
+  "article_remote_blob": "4db9f9cc28e670aa8b0a5b14bbc6382158cf40ec",
+  "article_blob_matches_local": true,
+  "contribution_history_preserved": true,
+  "repository_verified_private": true,
+  "authorization": "Giulio authorized private sharing and Ricardo collaboration on October 14; continued FEM integration on October 19.",
+  "public_release_performed": false,
+  "overleaf_website_sync_performed": false,
+  "pull_request": {
+    "number": 1,
+    "state": "closed",
+    "merged": true,
+    "merged_at": "2026-10-19T14:30:46Z",
+    "merge_commit_sha": "d7790943ae8ed9186c7a6233cc7698f58efeb992"
+  }
+}

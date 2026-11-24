@@ -1,0 +1,21 @@
+{
+  "source_preserved_except_two_citation_sentences_and_journal_date": true,
+  "protected_sha256": {
+    "TN0484_envelope_demodulation.pdf": "ef4c79ae246eacac711c5e11ce7960735ce67b1add15c80f492c10073b9425ac",
+    "TN0484_envelope_demodulation.bbl": "3efa9d688c30006a39bc5bec309dcfb593621d89de5ee70e0e90f6c19ff2e00c",
+    "TN0484_jne_supplement.pdf": "1c8fbee181ea6a119080886f093f7406a90fbed191e659e6232d770f98ae58dc"
+  },
+  "article_pages": 38,
+  "supplement_pages": 35,
+  "log_errors_undefined_multiply_overfull": 0,
+  "version_doi_printed": true,
+  "unpublished_TN0439_labeled_in_preparation": true,
+  "pages_for_visual_inspection": [
+    8,
+    10,
+    31
+  ],
+  "visual_inspection_passed": true,
+  "redline_build_passed": true,
+  "redline_baseline": "e20c047"
+}

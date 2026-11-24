@@ -1,0 +1,18 @@
+{
+  "TN0484_jne": {
+    "pages": 38,
+    "issues": []
+  },
+  "TN0484_jne_supplement": {
+    "pages": 36,
+    "issues": [],
+    "proof_pdf_pages": [
+      10
+    ],
+    "rendered_context_pdf_pages": [
+      9,
+      10,
+      11
+    ]
+  }
+}

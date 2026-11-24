@@ -1,0 +1,416 @@
+\section{Results}
+\subsection{The JR column generates and resonantly amplifies the beat}
+Driven only by the two tones $f_c\mp\Delta f/2$, the column oscillates at
+their $11.1$~Hz beat, near its alpha resonance (Fig.~\ref{fig:bif}),
+although the input spectrum has no alpha peak (Fig.~\ref{fig:demod}).
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{fig_demodulation_twotone.pdf}
+\caption{\textbf{The JR column generates a beat absent from the input.}
+\emph{(a)} Two equal tones at $94.45$ and $105.55$~Hz and their envelope,
+$2\varepsilon|\cos(\Omega t/2)|$. \emph{(b)} Input spectrum: only the two
+tones are present. The alpha-band floor is $1.6\times10^{-8}$ of their
+amplitude, from finite-window leakage. \emph{(c,d)} The synaptic voltage
+$v=y_1-y_2$ and its spectrum show the generated $11.1$~Hz beat.
+The field-free column is a stable focus near its alpha Hopf.}
+\label{fig:demod}
+\end{figure}
+
+In the stable-focus regime ($p>p_H$), the response is approximately
+Lorentzian, and its peak grows from $0.23$ to $0.43$ to $0.70$~mV toward the
+Hopf (Fig.~\ref{fig:res}), as expected from the $1/\gamma$ susceptibility.
+Without a drive the focus is silent at $\Omega$; the nonlinearity generates
+that component and recurrence amplifies it. The near-Hopf law gives the
+leading gain but not the exact peak frequency, which shifts with the driven
+operating state; the coupling sweep tests the law over a decade of damping.
+
+On the alpha branch below $p_H$, the column free-runs at $f_0$, so the
+lock-in can contain driven and autonomous activity. The dominant output
+frequency $f_{\rm out}$ then identifies a frequency-dominance region
+(Fig.~\ref{fig:entrain}) without establishing phase capture.
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{fig_resonance.pdf}
+\caption{\textbf{The JR beat resonance sharpens toward the Hopf.}
+Stable-focus response at $\varepsilon=0.3$~mV. \emph{(a)} Lock-in amplitude
+against beat frequency; the finite-amplitude peak moves from $11.08$ to
+$10.93$~Hz across the curves. \emph{(b)} Peak amplitude increases as $p$
+approaches the upper Hopf from above. These three points show sharpening
+and growth; the coupling sweep quantifies the $1/\gamma$ scaling and
+its saturation.}
+\label{fig:res}
+\end{figure}
+
+\subsection{Carrier independence and the kHz roll-off}
+At fixed post-access polarization, the open-loop detector and near-Hopf
+JR column are carrier-independent outside their natural band
+(Fig.~\ref{fig:carrier}). At fixed applied field, the point-membrane
+response instead falls as $1/f_c^2$ above its corner
+(Fig.~\ref{fig:khz}); the sealed-cable estimate is compared with the
+point-membrane cases in Fig.~\ref{fig:feasibility}a.
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{fig_carrier_independence.pdf}
+\caption{\textbf{JR carrier independence at fixed polarization.}
+\emph{(a)} Open- and closed-loop beat responses over $f_c=25$--$300$~Hz,
+with deviations near the natural band. Each is normalized by its own
+$300$~Hz response: $0.00670$~s$^{-1}$ open loop and $0.512$~mV closed
+loop, giving a rate-to-voltage transfer of $76.4$~mV\,s.
+\emph{(b)} Relative synaptic transfer $|H_s(\omega)|/|H_s(0)|$: about
+$0.7$ at $10$~Hz and $2.5\%$ at $100$~Hz. Dotted: synaptic corner
+$a/(2\pi)\approx16$~Hz; shaded: $8$--$13$~Hz beat band; dashed: carrier.}
+\label{fig:carrier}
+\end{figure}
+
+With an explicit first-order access state per modeled compartment before
+the sigmoid and an assumed $\tau=0.2$~ms, the full JR column demodulates and
+resonates (Fig.~\ref{fig:khz_direct}a). Genuine tones centered at $2$~kHz
+generate the $10.914$~Hz beat absent from the input, with analytic access
+factor $|H_m|^2=0.137$ (Fig.~\ref{fig:khz_twotone}). Both results follow
+from the assumed access time and coupling, which the simulation does not
+calibrate.
+
+Figure~\ref{fig:feasibility} converts this access assumption into a source
+budget. With $\varepsilon_j=\lambda_0 E_j|H_m(\omega_j)|$, the equivalent
+direct beat input before recurrent gain is $\varepsilon_{\rm eq}=Y_\Omega/\Sig'$.
+At $2$~kHz, $\tau_m=0.2$~ms, $\lambda_0=0.5$~mV per V/m, and $0.5$~V/m per
+tone, its magnitude is $1.36~\mu$V, and the steady equivalent is nearly
+identical. Reducing the assumed coupling to $0.15$ scales these sources by
+$0.09$. Thus the matched-polarization $2$--$5\%$ comparison does not
+carry over unchanged to matched applied fields.
+
+At equal fields, the $0.2$~ms point-membrane model predicts a narrowband
+$9/1$~kHz source ratio of $0.020$. The limit $1/81$ applies only
+when both bands lie above their access corners; a sealed long cable instead
+approaches $1/9$. These calculations locate conditional input
+budgets but do not calibrate the biological transfer.
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{fig_feasibility_khz.pdf}
+\caption{\textbf{Carrier access sets the source budget at fixed field.}
+\emph{(a)} Exact two-tone access factor for tones $10$~Hz apart; dotted,
+sealed-cable approximation at $0.2$~ms.
+\emph{(b)} Beat-equivalent direct polarization magnitude at the pinned JR state,
+$E=0.3$~V/m per tone and $\lambda_0=0.5$~mV per V/m. For $\lambda_0=0.15$,
+multiply by $0.09$.
+\emph{(c)} Field dependence at $0.2$~ms for both couplings; star marks
+the illustrative budget. All sources are leading-order, before recurrent
+gain; $\lambda_0$ and the access time are assumptions.}
+\label{fig:feasibility}
+\end{figure}
+
+\subsection{Sigmoid curvature predicts the JR beat source}\label{sec:results-curvature}
+The signed open-loop beat follows $\half\Sig''(v^*)\varepsilon^2m$, vanishing
+and reversing phase at the inflection (Fig.~\ref{fig:opp}). The
+closed-loop examples lie on the negative-curvature flank. At matched network
+susceptibility, either flank obeys the same gain law, with opposite source
+phase when the curvature changes sign.
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{fig_curvature_twotone.pdf}
+\caption{\textbf{Curvature determines the JR detector.}
+\emph{(a)} The signed open-loop beat follows
+$\Sig''(v^*)\varepsilon^2/2$ within $0.9\%$, vanishing and reversing sign
+at $v_0$. \emph{(b)} The recurrent response has amplitude slope $1.99$.
+\emph{(c)} Linearizing the receiving sigmoid reduces the beat $634$-fold.
+\emph{(d)} Open-loop two-tone/AM beat ratio at $v^*=8$~mV:
+$1.0000$ at $0.02$~mV and $0.988$ at $1$~mV. This checks the leading
+local source, not the nonlinear recurrent response near the Hopf.}
+\label{fig:opp}
+\end{figure}
+
+In the recurrent column, the response scales quadratically at small drive
+(log--log slope $1.99$, measured as in \S\ref{sec:transduction-methods}),
+and linearizing the field-receiving sigmoid reduces it
+from $1.34$ to $0.0021$~mV (Fig.~\ref{fig:opp}b,c). The open-loop surrogate
+comparison in panel~(d) supports its use for leading-order beat sweeps, with
+the waveform and near-Hopf limitations specified in \S\ref{sec:waveforms}.
+
+\subsection{Realistic-head comparison of envelope and quadratic maps}\label{sec:fem-results}
+In this single-subject geometric illustration, changing the current ratio
+moves the envelope and mean-square ROI centroids in opposite directions,
+while the quadratic beat map only rescales. Each centroid uses the top 10\%
+of hippocampal nodes; it is not a whole-brain maximum.
+Figure~\ref{fig:fem} compares the maps of Table~\ref{tab:transduction-maps}
+for the Violante montage in IXI002, using the same polarizations and fixed
+1:1 projection (\S\ref{sec:fem-methods}).
+
+\begin{table}[htbp]
+\centering\small
+\caption{\textbf{Hippocampal maps under current-ratio changes.}
+Contrasts divide the ROI p95 or raw mean by the reference p95; parentheses
+give square-root, degree-matched p95 contrasts. Focus shifts use the top
+10\% of ROI nodes, anterior positive. Indented rows restrict the contrasts
+to gray matter (GM); other entries use the gray- and white-matter ROI.}
+\label{tab:fem-summary}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrrrrrr@{}}
+\toprule
+Map & \shortstack{ROI mean\\1:1} & \shortstack{p95 contrast\\1:1} &
+\shortstack{p95 contrast\\1:3} & \shortstack{Mean contrast\\1:1 / 1:3} &
+\shortstack{Mean\\change} & \shortstack{Focus\\shift}\\
+\midrule
+Envelope & $0.16$ mV & $1.22$ & $0.95$ & $0.81\,/\,0.58$ & $-45\%$ & $+2.5$ mm\\
+\quad GM only & & $1.09$ & $0.84$ & $0.76\,/\,0.55$ & & \\
+Quadratic beat & $0.018$ mV$^2$ & $1.17$ ($1.08$) & $1.17$ ($1.08$) & $0.61\,/\,0.61$ & $-25\%$ & $0$ mm\\
+\quad GM only & & $0.94$ ($0.97$) & $0.94$ ($0.97$) & $0.51\,/\,0.51$ & & \\
+Mean square & $0.0094$ mV$^2$ & $0.92$ ($0.96$) & $0.90$ ($0.95$) & $0.47\,/\,0.54$ & $+24\%$ & $-4.5$ mm\\
+\quad GM only & & $0.71$ ($0.85$) & $0.76$ ($0.87$) & $0.40\,/\,0.46$ & & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{fig_fem.pdf}
+\caption{\textbf{Envelope and quadratic maps in IXI002.}
+Violante montage; left hippocampus outlined in gold, anterior to the left.
+\emph{(a--d)} Sagittal maps at $2+2$~mA (top) and $1+3$~mA (bottom):
+envelope excursion, quadratic excursion, mean-square polarization, and
+isotropic beat. The first three use the fixed 1:1 envelope-maximizing
+direction. Each color scale ends at its 1:1 gray-matter 99th percentile.
+Circles and triangles mark the projected centroids of the top 10\% of ROI
+nodes at 1:1 and 1:3, not whole-brain maxima.
+\emph{(e)} Target-to-reference contrast; dashed curves use square-root
+maps to match degree. \emph{(f)} Anterior focus displacement: top 10\%
+(line), range over 5--50\% (band), colors as in (e). \emph{(g)} Contrasts at 1:1, raw
+(solid) and degree-matched (hatched).
+The reference is gray matter outside the ROI. All maps precede detector
+gain: $\mathcal I$ weights $Y_{\rm DC}=\Sig''\mathcal I/2$, but does not set its sign.}
+\label{fig:fem}
+\end{figure}
+
+The pair-current product falls from $4$ to $3$~mA$^2$, so both beat maps fall to $75\%$ at every node, to machine precision, with unchanged normalized patterns, contrasts, and foci. The envelope focus moves toward the pair whose current falls; the mean-square focus moves toward the pair whose current rises. For the contrast comparison at balance, degree matching reduces the quadratic contrast to $1.08$, below the envelope's $1.22$; the isotropic beat gives $1.18$ ($1.08$ degree-matched). The envelope's anterolateral tail above the reference p95 is 52\% white matter, against 25\% in the ROI. Restricting the ROI to gray matter removes the beat preference: only the envelope exceeds one at 1:1, and no map does at 1:3 (Table~\ref{tab:fem-summary}). No mean-based contrast exceeds one. These geometric contrasts do not establish physiological deep selectivity, which also depends on detector and circuit weighting.
+
+The envelope contrast peaks at $1.24$ near balance. Once one carrier becomes
+weaker across most of the ROI, further imbalance changes amplitude more than
+focus; the mean-square focus moves continuously. Across all 32 combinations
+of montage, label, tissue definition, and focus fraction, the envelope shift
+remains anterior, the mean-square shift posterior, and the quadratic shift
+zero. Radial projections preserve these directions but change contrasts more
+than the atlas label does (supplement, \S\ref{supp:fem-sensitivities}).
+
+A laminar-aligned detector samples median fractions $0.29$, $0.11$, and $0.12$ of the envelope, quadratic, and mean-square maps' respective orientation maxima. Evaluated on 934 of 1,568 ROI nodes, these fractions quantify the anatomical access hypothesis (supplement, \S\ref{supp:fem-orientation}). The median ratios of projected maps across the tissue interfaces are $1.13$--$1.34$; mesh convergence remains untested (supplement, \S\ref{supp:fem-interfaces}).
+\ifjne\else
+\input{planning/parts/fem_sensitivities}
+\input{planning/parts/fem_orientation}
+\input{planning/parts/fem_interfaces}
+\fi
+
+\subsection{JR gain, mean shifts, and the tACS comparison}\label{sec:jcurve}
+For the AM surrogate, pinning $v^*=8.30$~mV through $p(C)$ fixes the curvature and open-loop
+beat $A_{\rm open}\simeq\half|\Sig''(v^*)|\varepsilon^2m$.
+As $C\to C^*\approx137$, damping tends to zero, the response grows about
+$30$-fold, and resonance sharpens (Fig.~\ref{fig:jcurve}a,b).
+This isolates a network effect: recurrent transfer changes at fixed detector curvature.
+The rate-to-voltage gain $A_\Omega/A_{\rm open}$ (mV\,s) follows
+$1/\gamma$ before saturating (panel~c). Approaching the Hopf through $p$
+gives similar leading scaling. Finite-distance gains can differ because
+modal frequencies and input--output projections vary along each path.
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{fig_jcurve.pdf}
+\caption{\textbf{JR coupling controls amplification at fixed detection.}
+AM surrogate, Eq.~\eqref{eq:amsur}, with $p(C)$ pinning the field-free state,
+curvature $\Sig''(v^*)=-0.151$~s$^{-1}$mV$^{-2}$, and source $A_{\rm open}$.
+\emph{(a,b)} The response grows and its resonance sharpens as $C$ approaches
+$C^*$ on the stable-focus side ($\gamma>0$). \emph{(c)} Rate-to-voltage gain
+$A_\Omega/A_{\rm open}$ (mV\,s) follows $1/\gamma$ (dashed) before saturating.}
+\label{fig:jcurve}
+\end{figure}
+
+\paragraph{Beat modulation and mean rate.}\label{sec:timing}
+With genuine two tones at $\Delta f=f_0$, the same pinned sweep
+increases modulation of $r_P=\Sig(v+s)$ by $13.2$-fold ($26$ to $339$~mHz),
+following $1/\gamma$ before saturation. The same rate's mean shift grows
+$4.4$-fold ($-1.8$ to $-7.7$~mHz), remaining below $0.2\%$ of its
+$3.9$~Hz baseline (Fig.~\ref{fig:timing}). Their magnitude ratio rises
+from $14.5$ to $58$ near $\gamma=1$~s$^{-1}$, then falls to $44$ as
+the amplified oscillation rectifies. In this weakly driven regime, a small
+mean change accompanies larger beat modulation, consistent with primate observations
+\cite{vieira2024}, with both compared in rate units. The surrogate
+comparison is supplementary (\S\ref{supp:waveform-checks}).
+
+The detector's steady and beat sources meet different transfers:
+$|G(\omega_0)|\propto1/(2\gamma\omega_0)$ grows toward the Hopf, while
+$|G(0)|\propto1/(\omega_0^2+\gamma^2)$ stays finite. The amplified beat
+also rectifies, adding a mean shift quadratic in its amplitude that can
+grow as $1/\gamma^2$ before saturation. A bounded zero-frequency transfer
+therefore does not bound the full mean shift.
+
+\paragraph{Comparison with tACS.}\label{sec:tacs-results}
+TI and tACS share the linear amplifier, so matching their generated in-band
+drives at a common state matches their linear outputs; resonance alone gives
+TI no efficiency advantage.
+For the AM surrogate with amplitude $\varepsilon_{\rm TI}$ and modulation depth
+$m$, and a tACS input of amplitude $\varepsilon_{\rm tACS}$, the ratio of voltage
+lock-in amplitudes in linear response is
+\[
+\mathcal R_{\rm lin}
+=\frac{|\Sig''(v^*)|\,\varepsilon_{\rm TI}^2m}
+{2\Sig'(v^*)\,\varepsilon_{\rm tACS}}.
+\]
+The common linear transfer cancels, giving a predicted ratio of $0.143$ for the original unequal-input comparison. Genuine two-tone responses depart from this prediction near the Hopf. When the leading sources are matched instead, the TI/tACS output ratios are $0.90$--$0.99$ at the three tested couplings. The larger direct input saturates earlier and shifts the operating state, which field-free pinning does not cancel. Numerical controls for these unequal-input comparisons are in the supplement (\S\ref{supp:tacs-saturation}). Equal-per-carrier, total-peak, and RMS matching are distinguished in \S\ref{sec:direct-comparison}.
+
+\ifjne\else
+\input{planning/parts/tacs_saturation}
+\fi
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{fig_nmm2_resonance_twotone.pdf}
+\caption{\textbf{Gamma resonance in the PING mean field.}
+Excitatory-rate lock-in under genuine two-tone input, carrier $300$~Hz.
+\emph{(a)} Below $\bar\eta_H=1.110$, forced-resonance peaks near
+$f_0\approx54$~Hz grow from $0.0014$ to $0.0030$ to $0.0055$~ms$^{-1}$
+toward the Hopf. \emph{(b)} Above it, peaks in the autonomous-gamma regime
+shift from $56$ to $65$ to $83$~Hz with increasing $\bar\eta$.
+The voltage nonlinearity $v^2$ generates the beat absent from the input.
+AM/two-tone comparisons are in the supplement (\S\ref{supp:waveform-checks}).}
+\label{fig:nmm2_res}
+\end{figure}
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{fig_mpr_crossover.pdf}
+\caption{\textbf{Static curvature at slow carriers, slope at fast ones.} \emph{(a)}
+Second-order DC rate shift of an uncoupled MPR population ($\Delta=1$) under a
+current carrier, Eq.~\eqref{eq:crossover}, for operating points below, at and above the
+inflection of $F(Q)$. Dotted: the static limit $\tfrac14F''$; dashed: the fast-carrier
+limit $F'/[2(\omega\tau_m)^2]$; circles: RK4 integrations at $I_{\rm ac}=0.05$ averaged over whole carrier
+periods (relative error below $10^{-3}$). Above the inflection the sign changes with carrier frequency. The horizontal coordinate is $\omega\tau_m$; the carrier markers
+use $\tau_m=\tau_E=15$~ms. \emph{(b)} PING of Eq.~\eqref{eq:nmm2-ping}: relative error of the
+fast-carrier difference-frequency source against the exact second-order response at four
+stable operating points ($\gamma$ the damping of the gamma mode), two tones centered at
+$300$, $1000$ and $2000$~Hz.}
+\label{fig:crossover}
+\end{figure}
+
+\subsection{PING amplifies the dynamic QIF beat source}\label{sec:nmm2-results}
+With genuine $300$~Hz tones entering E current, the PING rate $r_E$
+shows forced gamma resonance below the Hopf and a beat response superposed
+on autonomous gamma above it (Fig.~\ref{fig:nmm2_res}).
+The resonance grows through the Hopf and shifts with state, forming a diagonal
+ridge in the $(\Delta f,\bar\eta)$ plane of Fig.~\ref{fig:nmm2_map}, unlike
+the JR example \cite{clusella2023}.
+
+At $300$~Hz, voltage excursions mix through $v_E^2$ on the fast side of
+the detector's crossover (Fig.~\ref{fig:crossover}a). Each current tone
+produces a voltage phasor $I_j/(i\omega_j\tau_E)$, giving a beat source
+$I_1I_2/(\tau_E^2\omega_1\omega_2)$ in the equation for $\tau_E\dot v_E$.
+After division by $\tau_E$ and propagation through the network transfer at
+$\Omega$, it matches the full second-order response at four stable operating
+points within $1.1\%$ at $300$~Hz, $0.1\%$ at $1$~kHz, and $0.03\%$
+at $2$~kHz (Fig.~\ref{fig:crossover}b).
+
+The unpinned PING coupling sweep also approaches a gamma Hopf, but two
+modes compete for the response peak. Near the Hopf, the critical mode's
+linear gain has a fitted damping exponent of $1.02$, consistent with the
+$1/\gamma$ law; the full-sweep exponent is $0.71$. At finite amplitude the response departs from the linear
+reference and saturates, while the driven endpoint remains attracting.
+The mode tracking, amplitude checks, and their numerical ranges accompany
+the coupling curve in the supplement (\S\ref{supp:ping-coupling-results}).
+Thus JR and PING share the critical mode's $1/\gamma$ gain law despite
+their different detectors; the law does not describe every mode or the
+entire finite-amplitude sweep.
+
+\ifjne\else
+\input{planning/parts/ping_coupling_results}
+\fi
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{fig_qif_raster_twotone.pdf}
+\caption{\textbf{Beat-locked activity superposed on gamma.}
+QIF network, $N=8000$ per population, $A_f=35$ per tone, carrier $300$~Hz.
+Black ticks: 400 E neurons; blue: smoothed rate on its own scale; red:
+envelope in arbitrary units. The last $200$~ms are shown.
+\emph{(a,b)} Field off/on at $\bar\eta=0.85$, beat $55$~Hz: induced gamma
+near $52$~Hz dominates. \emph{(c,d)} Field off/on at $\bar\eta=1.5$,
+beat $42$~Hz: autonomous gamma remains dominant.
+Right-hand panels fold rate on beat phase over $44$ and $34$ cycles, respectively,
+normalized to each condition's mean (off gray, on blue; scale 0--2).
+Folding suppresses non-beat-locked gamma and exposes the smaller beat component;
+it does not establish gamma-amplitude gating or phase capture.}
+\label{fig:qif_raster}
+\end{figure}
+
+\subsection{QIF responses distinguish beat modulation from field-induced gamma}\label{sec:qif}
+The finite QIF network shows beat-locked modulation at the lower tested
+amplitude and field-induced gamma at the higher amplitude. Its $8000$-neuron populations test
+these regimes at the spike level
+\cite{montbrio2015,ruffini2025rosetta,clusella2023}
+(Figs.~\ref{fig:qif_raster},~\ref{fig:qif_regimes}).
+
+At $\bar\eta=0.85$ and $A_f=10$, the original finite-cutoff run gives
+beat depth $0.09$ and a $2.8\%$ mean-rate increase. Its quantitative depth
+remains unconverged because of cutoff and population sensitivity (supplement,
+\S\ref{app:qif-checks}--\ref{supp:theta-pilot}). The estimated rectified
+E-drive shift remains below $\delta\eta_E^*$, the shift in excitatory drive
+required to cross the Hopf while holding the inhibitory drive fixed.
+At $\bar\eta=1.5$, the original finite-cutoff run gives a $42$~Hz depth
+of about $0.02$ and a $1.6\%$ mean-rate increase, while ongoing gamma dominates.
+
+At $A_f=35$ and $\bar\eta=0.85$, a line near $52$~Hz dominates
+(depth $0.70$), alongside the $55$~Hz beat (depth $0.29$). This is a
+finite-amplitude example: carrier averaging predicts that the rectified
+E-drive shift exceeds $\delta\eta_E^*$ and destabilizes the averaged equilibrium.
+Direct mean-field integration reproduces the off-beat line, identifying the
+dominant response as field-induced gamma (Fig.~\ref{fig:qif_raster}b).
+The drive and stability estimates at both amplitudes are given in the
+supplement (\S\ref{app:qif-estimate}).
+
+At $\bar\eta=1.5$, autonomous gamma near $53$--$54$~Hz remains about
+four times larger than the $42$~Hz beat component (Fig.~\ref{fig:qif_raster}d).
+Their coexistence produces slower burst-height variations. Mixing produces
+sidebands near $95$ and $11$~Hz, as in endogenous amplitude modulation
+\cite{ruffini2025ham}; these establish nonlinear mixing without distinguishing
+gamma-amplitude gating from phase modulation (Fig.~\ref{fig:qif_timing}b).
+Field-free gamma frequencies agree between the finite network and mean field
+(Fig.~\ref{fig:qif_timing}a).
+
+To separate steady induction from beat-dependent activity, we compare TI
+with an unmodulated carrier matched in RMS input current, in model units
+(Fig.~\ref{fig:qif_regimes}c,d). In the mean field, their rectified E-drive
+shifts agree within $3\%$ and their mean-rate increases are similar.
+At $A_f=35$, both induce gamma near $51$~Hz; TI also produces the
+$55$~Hz beat. At $A_f=10$, neither induces gamma, and TI alone produces
+a resolved beat response. This control has been tested only in the mean
+field; its spectral-leakage check is in the supplement
+(\S\ref{supp:qif-protocol}).
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{fig_qif_regimes.pdf}
+\caption{\textbf{TI and an equal-RMS carrier across the gamma threshold.}
+Background $\bar\eta=0.85$, carrier $300$~Hz, beat $55$~Hz.
+\emph{(a,b)} Spiking network at $A_f=10$ and $35$ per tone.
+Black: 400 of 8000 E neurons; blue: population rate on a common scale;
+red: envelope. Panels below the rasters show mean-normalized phase folds
+(off gray, on blue).
+Beat depths at this cutoff are about $0.09$ and $0.3$, with mean-rate increases of $2.8\%$
+and $10.5\%$; the larger input also induces gamma.
+\emph{(c,d)} Mean-field spectra under TI (blue) and one carrier of peak
+amplitude $\sqrt2 A_f$ (red), normalized to mean rate. Both induce gamma
+at the larger input; TI adds the $55$~Hz beat (dashed).
+Hann windows span $800$~ms after $800$~ms settling.
+Spiking panels use $V_{\rm peak}=100$; weak-drive depth depends on cutoff and population size.
+RMS matching is of input current in model units, not physical power.}
+\label{fig:qif_regimes}
+\end{figure}
+
+At $A_f=35$, population beat modulation exceeds the relative mean-rate
+change by about threefold. Across the two conditions, mean rate rises
+$8$--$11\%$, while beat depth rises from below $0.003$ to $0.29$
+($\bar\eta=0.85$) and $0.23$ ($\bar\eta=1.5$) (Fig.~\ref{fig:qif_timing}c).
+Individual locking remains weak: median pairwise phase consistency rises from
+$-0.02$ in the field-free control to $0.003$--$0.005$, and pooled vector
+strength from below $0.02$ to $0.12$--$0.13$. Many weakly biased cells
+therefore produce a population beat component. These finite-amplitude
+results do not establish its size under weak physiological stimulation.

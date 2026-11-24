@@ -1,0 +1,202 @@
+{
+  "wp_number": "WP0185",
+  "title": "The cortical column as a tuned receiver: a network mechanism for temporal-interference stimulation",
+  "prior_versions": [
+    {
+      "id": "124a48fc-cbc8-494e-bc02-5327b1043cb2",
+      "semver": "v0.12.0",
+      "kind": "draft",
+      "git_sha": "cut-version",
+      "cut_at": "2026-07-21T10:07:59.491536+00:00",
+      "venue_name": null,
+      "doi": "10.5281/zenodo.21471311",
+      "arxiv_id": null,
+      "verification_status": null,
+      "verified_at": null
+    },
+    {
+      "id": "c900f6d6-ce46-4be5-82f5-2853d47b13b3",
+      "semver": "v0.11.0",
+      "kind": "revision",
+      "git_sha": "cut-version",
+      "cut_at": "2026-07-11T05:57:48.216832+00:00",
+      "venue_name": null,
+      "doi": "10.5281/zenodo.21305555",
+      "arxiv_id": null,
+      "verification_status": null,
+      "verified_at": null
+    },
+    {
+      "id": "dfa79ed6-77e8-43e9-ad79-22e5f6388302",
+      "semver": "v0.10.0",
+      "kind": "revision",
+      "git_sha": "cut-version",
+      "cut_at": "2026-07-10T20:32:30.170363+00:00",
+      "venue_name": null,
+      "doi": null,
+      "arxiv_id": null,
+      "verification_status": null,
+      "verified_at": null
+    },
+    {
+      "id": "cbe6e7b5-7e85-414c-af36-c3b7a52b0f7d",
+      "semver": "v0.9.0",
+      "kind": "preprint",
+      "git_sha": "external-source",
+      "cut_at": "2026-06-25T12:06:26.423183+00:00",
+      "venue_name": null,
+      "doi": "10.5281/zenodo.21009619",
+      "arxiv_id": null,
+      "verification_status": null,
+      "verified_at": null
+    },
+    {
+      "id": "20b57c33-e08e-474b-8d45-3038fbe0beb8",
+      "semver": "v0.2.0",
+      "kind": "revision",
+      "git_sha": "cut-version",
+      "cut_at": "2026-06-25T12:05:37.078728+00:00",
+      "venue_name": null,
+      "doi": null,
+      "arxiv_id": null,
+      "verification_status": null,
+      "verified_at": null
+    },
+    {
+      "id": "a6089132-e9ee-4e48-991a-4d85332a9a10",
+      "semver": "0.1.0",
+      "kind": "draft",
+      "git_sha": "auto-run-placeholder",
+      "cut_at": "2026-06-19T11:44:38.877211+00:00",
+      "venue_name": null,
+      "doi": null,
+      "arxiv_id": null,
+      "verification_status": null,
+      "verified_at": null
+    }
+  ],
+  "prior_authors": [
+    {
+      "full_name": "Giulio Ruffini",
+      "order": 0
+    },
+    {
+      "full_name": "Kaiti",
+      "order": 1
+    },
+    {
+      "full_name": "Klaus",
+      "order": 2
+    },
+    {
+      "full_name": "Borja Mercadal",
+      "order": 3
+    },
+    {
+      "full_name": "Alex Just",
+      "order": 4
+    },
+    {
+      "full_name": "Raul Palma",
+      "order": 5
+    },
+    {
+      "full_name": "Francesca Castaldo",
+      "order": 6
+    },
+    {
+      "full_name": "Santiago Canals",
+      "order": 7
+    },
+    {
+      "full_name": "Claudio Mirasso",
+      "order": 8
+    }
+  ],
+  "current_archive_version": "v0.13.0",
+  "manuscript_version": "0.15.0-draft29",
+  "source_commit": "47adb53",
+  "primary_source_path": "TN0484_v0.15.0-draft29_preprint.pdf",
+  "license": "CC-BY-4.0",
+  "upload_files": [
+    "LICENSE.txt",
+    "TN0484_envelope_demodulation.tex",
+    "build.sh",
+    "figures/fig_bifurcation_sigmoid.pdf",
+    "figures/fig_carrier_independence.pdf",
+    "figures/fig_concept.pdf",
+    "figures/fig_curvature_twotone.pdf",
+    "figures/fig_demodulation_twotone.pdf",
+    "figures/fig_entrainment.pdf",
+    "figures/fig_feasibility_khz.pdf",
+    "figures/fig_fem.pdf",
+    "figures/fig_jcurve.pdf",
+    "figures/fig_khz.pdf",
+    "figures/fig_khz_direct.pdf",
+    "figures/fig_khz_twotone.pdf",
+    "figures/fig_lanmm_field_p1_twotone.pdf",
+    "figures/fig_lanmm_field_p2_twotone.pdf",
+    "figures/fig_lanmm_setup.png",
+    "figures/fig_models_ti.pdf",
+    "figures/fig_mpr_crossover.pdf",
+    "figures/fig_nmm2_jcurve.pdf",
+    "figures/fig_nmm2_map.pdf",
+    "figures/fig_nmm2_resonance_twotone.pdf",
+    "figures/fig_qif_raster_twotone.pdf",
+    "figures/fig_qif_regimes.pdf",
+    "figures/fig_qif_timing_twotone.pdf",
+    "figures/fig_resonance.pdf",
+    "figures/fig_spatial_maps.pdf",
+    "figures/fig_tacs_jcurve.pdf",
+    "figures/fig_timing_not_rate.pdf",
+    "figures_src/fig_models_ti_caption.tex",
+    "planning/parts/access_evidence.tex",
+    "planning/parts/access_literature.tex",
+    "planning/parts/article_models.tex",
+    "planning/parts/envelope_proof.tex",
+    "planning/parts/fem_interfaces.tex",
+    "planning/parts/fem_orientation.tex",
+    "planning/parts/fem_protocol.tex",
+    "planning/parts/fem_sensitivities.tex",
+    "planning/parts/figure_entrain.tex",
+    "planning/parts/figure_khz.tex",
+    "planning/parts/figure_khz_direct.tex",
+    "planning/parts/figure_khz_twotone.tex",
+    "planning/parts/figure_lanmm_p1.tex",
+    "planning/parts/figure_lanmm_p2.tex",
+    "planning/parts/figure_lanmm_setup.tex",
+    "planning/parts/figure_nmm2_jcurve.tex",
+    "planning/parts/figure_nmm2_map.tex",
+    "planning/parts/figure_qif_timing.tex",
+    "planning/parts/figure_spatial_maps.tex",
+    "planning/parts/figure_tacs.tex",
+    "planning/parts/figure_timing.tex",
+    "planning/parts/harmonic_details.tex",
+    "planning/parts/jr_runs.tex",
+    "planning/parts/lockin_details.tex",
+    "planning/parts/orientation_average.tex",
+    "planning/parts/peix_definition.tex",
+    "planning/parts/ping_coupling_results.tex",
+    "planning/parts/ping_sweep_settings.tex",
+    "planning/parts/prediction_evidence.tex",
+    "planning/parts/qif_estimate.tex",
+    "planning/parts/qif_protocol.tex",
+    "planning/parts/slow_synapse.tex",
+    "planning/parts/steering_algebra.tex",
+    "planning/parts/supp_access.tex",
+    "planning/parts/supp_amplification.tex",
+    "planning/parts/supp_detection.tex",
+    "planning/parts/supp_efficiency.tex",
+    "planning/parts/supp_laminar.tex",
+    "planning/parts/supp_metrics.tex",
+    "planning/parts/supp_spatial.tex",
+    "planning/parts/tacs_saturation.tex",
+    "planning/parts/theta_pilot.tex",
+    "planning/parts/vieira_comparison.tex",
+    "planning/parts/waveform_checks.tex",
+    "planning/tn0484_abstract.tex",
+    "planning/tn0484_notation.tex",
+    "references.bib",
+    "ARCHIVE_README.txt"
+  ]
+}

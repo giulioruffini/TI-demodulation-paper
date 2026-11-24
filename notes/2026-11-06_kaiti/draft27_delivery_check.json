@@ -1,0 +1,36 @@
+{
+  "checked_at": "2026-11-06T16:07:21.492216+01:00",
+  "editing_baseline": "8b95e2f",
+  "independent_review": "e59a2de",
+  "words_before_abstract": 11273,
+  "abstract_words": 299,
+  "article_pages": 37,
+  "supplement_pages": 32,
+  "checks": [
+    "PASS: 135 baseline labels and 67 citations retained and resolved.",
+    "PASS: 32 labeled equation bodies unchanged apart from punctuation/spacing.",
+    "PASS: abstract, full PING system and original QIF/FEM inputs unchanged; all derivation equations preserved.",
+    "PASS: article/supplement logs, printed references, historical S1\u2013S13 labels and annotated draft20.",
+    "PASS: isolated full-TN routing build; canonical TN artifacts were not regenerated.",
+    "PASS: all figure sources/artifacts, recorded reading baseline and pre-existing canonical TN artifacts unchanged.",
+    "PASS: efficiency derivation retained verbatim; replacement ledger matches final text."
+  ],
+  "files": {
+    "TN0484_jne.pdf": {
+      "sha256": "446ebf84b1c5d23a27d425948ddf99ef2780da84855eaa51d80052180d1a4e7c",
+      "pages": 37
+    },
+    "TN0484_jne_supplement.pdf": {
+      "sha256": "6a506b88ce6e819630e009b7defd732b340c8f2f1040a2b589dafedddcb8c925",
+      "pages": 32
+    },
+    "docs/redline_last_read.pdf": {
+      "sha256": "471ef1b90d282be1c7723e1cafa8460f9362f9483ca81e472c5e52c69d77cf2b",
+      "pages": 53
+    },
+    "build/storyline/tn0484_storyline.pdf": {
+      "sha256": "ec07ea44e854989219797ac96e6a002837f7d54a9b4bbe18821ceede4ea04340",
+      "pages": 6
+    }
+  }
+}

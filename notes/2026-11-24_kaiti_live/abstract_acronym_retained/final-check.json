@@ -1,0 +1,15 @@
+{
+  "abstract_words": 298,
+  "tdcs_kept": true,
+  "RMS_acronym_present": false,
+  "source_hashes_before": {
+    "TN0484_envelope_demodulation.tex": "725d9490e95e102458c0cc6cd84b6118a460dc27614a8b2ebee272dbde0c8e45",
+    "planning/tn0484_abstract.tex": "85677c8e737aaeb5320d56ea6eb65e843bb833a716774e40c0681195532b2adc"
+  },
+  "source_hashes_after": {
+    "TN0484_envelope_demodulation.tex": "725d9490e95e102458c0cc6cd84b6118a460dc27614a8b2ebee272dbde0c8e45",
+    "planning/tn0484_abstract.tex": "85677c8e737aaeb5320d56ea6eb65e843bb833a716774e40c0681195532b2adc"
+  },
+  "source_unchanged": true,
+  "issues": []
+}

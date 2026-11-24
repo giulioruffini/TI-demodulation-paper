@@ -1,0 +1,17 @@
+\subsection{PING coupling-sweep settings}\label{supp:ping-runs}
+We compute the linear reference's
+second-order source from the PING quadratic terms at the central carrier,
+$300$~Hz, and apply the full linearized network response over $15$--$90$~Hz
+in $0.025$~Hz steps. Using the distinct AM sidebands changes the peak gain by
+less than $0.1\%$ across this sweep.
+
+The simulated coupling sweep uses the AM surrogate, $A_f=8$, with $5$~s
+settling and a $4$~s window. We search around each linear resonance, extending
+the frequency grid until each sampled maximum is bracketed, and compare
+amplitudes $A_f=2,4,8$ at nine couplings. Local parabolic interpolation changes
+the sampled peaks by less than $1.3\%$. The figure scales the linear reference
+to the median measured gain over $14.5<J<16$; the amplitude check instead
+normalizes peak response divided by $A_f^2$ and linear gain to its value at
+$A_f=2$, $J=15.53$. These normalizations compare gain variation with the detector coefficient
+allowed to vary along this unpinned sweep.
+

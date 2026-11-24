@@ -1,0 +1,46 @@
+[
+  {
+    "path": "TN0484_envelope_demodulation.tex",
+    "sha256": "7125984718382b8201025fef42590da83342cd34cd9f36a6471fd458cecb1c94"
+  },
+  {
+    "path": "planning/parts/fem_interfaces.tex",
+    "sha256": "ada1ea626fcd0b5ff2b956197a1ad457bc21a6d16f54c85e57e5f5b1ca524f17"
+  },
+  {
+    "path": "planning/parts/fem_orientation.tex",
+    "sha256": "22fe6853c5d97904e8509538201b741de0d9c915f6dc9c3ab92f5b796ec9981c"
+  },
+  {
+    "path": "planning/parts/supp_amplification.tex",
+    "sha256": "3a319c7e88c83ed5cb9fb60bbe740bdfe2d92413abdd7954d184997b9970c8c0"
+  },
+  {
+    "path": "planning/parts/supp_efficiency.tex",
+    "sha256": "a08c17f3273cf910635258f3a913e045099c23d2418caa75b6b081c339839995"
+  },
+  {
+    "path": "planning/parts/supp_laminar.tex",
+    "sha256": "2d00f0ec8adf1deed936f8580205988df3019e237caf8de8c427c4f4da4e8ccc"
+  },
+  {
+    "path": "planning/tn0484_abstract.tex",
+    "sha256": "91f4240e79ed17860a4b228e2b56c91b2bdf2ce8b69154e6d79a655b7a7a86bd"
+  },
+  {
+    "path": "references.bib",
+    "sha256": "c5461393a7f85561f58ea4c38280327e5cdf4ce81f081af485447f4f938c257a"
+  },
+  {
+    "path": "planning/parts/envelope_proof.tex",
+    "sha256": "80c20fbe270e21ca5bcdfacac54f30389848ad43bb29016c13df3e90a39ac00c"
+  },
+  {
+    "path": "TN0484_envelope_demodulation.pdf",
+    "sha256": "6bd6b11fc927768440868f50265c1352eabbeab98a6ae8af531ef51b976b2089"
+  },
+  {
+    "path": "TN0484_envelope_demodulation.bbl",
+    "sha256": "3efa9d688c30006a39bc5bec309dcfb593621d89de5ee70e0e90f6c19ff2e00c"
+  }
+]

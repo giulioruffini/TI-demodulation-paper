@@ -1,0 +1,4 @@
+forced   off: Af=0 T=1600.0 window=800.0 ms (44 cycles) <r_e>=0.0509 AC@55Hz=0.0001 depth=0.0015 VS=0.001 PPC=-0.0000 PPC/neuron median=-0.0206 spikes(rec)=16444  [0.7 min]
+forced   on : Af=10 T=1600.0 window=800.0 ms (44 cycles) <r_e>=0.0524 AC@55Hz=0.0073 depth=0.1393 VS=0.069 PPC=0.0048 PPC/neuron median=-0.0147 spikes(rec)=16911  [0.7 min]
+saved /Users/giulio/Claude/NE TNs and Blogs/TN0484-r7-followups/code/qif_raster_twotone_a10_vp400.npz
+done

@@ -1,6 +1,767 @@
 # current_state — NMM envelope-demodulation / resonance demo
 
-## v1.59 — Address Raul's Overleaf review comments (round 1, six comments) (latest)
+## JNE submission review — November 24, 2026
+
+The repaired revision has an independent fidelity check against `864121f`.
+Klaus's repairs preserve the scientific content; the final pass restored the
+QIF comparison's beyond-perturbation scope and the distinction between membrane
+access and additional carrier-frequency filtering after mixing. The harmonic
+example now states its positive-amplitude condition, and the measured harmonic
+ratio fits on the page. See
+`notes/2026-11-24_kaiti_live/repaired_9f_fidelity.md`.
+
+The 12-point article runs to 44 pages and the supplement to 42, including the
+live notation-table page break. The article and its integral appendices contain
+11,848 words; the 298-word abstract brings the combined count to 12,146.
+Equation (B6) defines `u` as the postsynaptic potential divided by its pathway's
+steady voltage gain. For the single JR excitatory synapse, the physical voltage
+is `A tau_s u` in mV. Equation (B9) gives the scalar log-rate dynamics.
+Figure 12(b) labels the complex excitatory-rate response error, independently
+verified against all 12 stored cases. Both journal builds have no errors,
+undefined references, multiply defined labels, or overfull boxes.
+
+At Giulio's request, the GitHub repository URL now appears explicitly in data
+availability (`bcd13b3` through `e8d108e`). The duplicate Methods AI-use sentence
+was removed in `7a79865`; the end-of-paper declaration remains. The remaining
+data-availability and licensing questions, the new ethics sentence,
+the de Palma study description, and the placement of `salvador2025`
+remain author decisions. They are retained as draft wording, not approved by
+the fidelity check. Public release and synchronization remain held.
+
+The clean reading copies are `TN0484_jne.pdf` and `TN0484_jne_supplement.pdf`.
+The earlier article comparison against `864121f` is in
+`review/jne_submission_2026-11-24/TN0484_jne_changes.pdf`; it predates these repairs.
+The authors still need to confirm the outstanding affiliations, funding,
+declarations, AI tool versions, and final manuscript.
+
+## Shared working source — November 24, 2026
+
+The November 24 prose pass across Theory through Conclusion has an independent
+fidelity check with no unresolved prose-content finding; source and journal PDFs
+are checked together. See `notes/2026-11-24_kaiti_live/prose_pass_fidelity.md`.
+The slow-limit explanation now follows fixed-input relaxation, dynamic synapses,
+and first-order recurrent feedback. Rate `r` and synaptic potential `u` remain
+distinct, with the NMM2 gain normalization and physical-voltage conversion
+stated explicitly. See `notes/2026-11-24_kaiti_live/slow_limit_revision.md`.
+
+Giulio approved applying the content-checked Prosai revisions to the existing root
+`TN0484_envelope_demodulation.tex`, which remains the shared TeXShop editing file.
+The abstract in that pass started with its scientific Objective and contained 298 words;
+conditional input budgets and Significance are preserved. The newer authorized
+abstract edit combines the tACS/tDCS linearity and TI source-comparison sentences. The Introduction now follows the approved order: conventional stimulation and its
+spatial restriction, TI envelope features, then the two-tone construction. It defines
+subharmonicity and the analytic envelope, with the fixed-coupling and uniform-tissue
+conditions retained. Klaus’s harmonic-potential construction
+is appended to Supplement S3.1, with a direct Introduction reference to its paragraph;
+no earlier supplementary text was removed.
+
+The feasibility caption now distinguishes panel (b), 0.3 V/m per tone, from
+the panel (c) budget star, 0.5 V/m per tone at 2 kHz (1.36 microvolts
+equivalent input); see `notes/2026-11-24_kaiti_live/feasibility_caption.md`.
+Before the submission review, the article ran to 39 pages and the supplement
+to 36 pages. The article and its appendices contained 12,000 words plus the 298-word
+abstract (12,298 combined, excluding references and declarations). Equation (1)
+now separates the two-tone identity from its envelope and defines the phase
+explicitly. Its midpoint frequency is defined directly in hertz as
+`f_c=(f_1+f_2)/2=f_1+Delta f/2`; the applied tone frequencies remain distinct.
+Giulio has commented out the equal-tone example during live editing.
+The approved Introduction ending now includes the access budgets and direct-input
+comparison, with the weak-QIF, stronger-drive gamma, fixed-state spatial-map,
+and field-free JR pinning conditions checked against the body. The fidelity record
+is `notes/2026-11-24_kaiti_live/intro_ending_fidelity.md`.
+The synaptic voltage is now `u`; the supplement uses `U=rho epsilon` for
+its reduced amplitude. The theta-neuron check uses `mathcal U_X` for total
+synaptic and field drive, distinct from the applied-field input `I_E`.
+Both notation tables and journal editions are checked;
+see `notes/2026-11-24_kaiti_live/plain_synaptic_voltage.md`. See `notes/2026-11-24_kaiti_live/intro_equations.md`. Builds and independent fidelity checks pass. The preexisting full-TN
+PDF and BBL are preserved. The draft29 label remains in place during shared editing;
+review worktree PDFs are records, not alternate working sources. See
+`notes/2026-11-24_kaiti_live/README.md`. Public release and synchronization remain held.
+
+## Journal edition — draft29, November 10, 2026
+
+November 11 citation update: the article now cites TN0439 for operating-point
+dependence in multitone sigmoid mixing and TN0486 v0.4.1 for the tested
+noise-free Stuart--Landau networks with negligible infraslow BOLD power.
+The version-specific DOI prints in the bibliography. These two sentences add
+38 counted words, bringing the article to 11,443 plus the unchanged 299-word
+abstract; it remains 38 pages. Article and draft20 redline rebuilds pass, and
+the supplement and pre-existing full-TN artifacts are unchanged. The draft
+number remains draft29; see `revision_2026-11-11_draft29_citations.md`.
+
+Theory 2.9 now traces the field input through the slow-synapse reduction and
+gives the steady recurrent gain. It distinguishes the model's current input
+from cellular voltage polarization, and the bare transfer curve from one
+measured after internal recurrence has settled. The full dimensional derivation,
+local JR-coordinate comparison, and proposed Zhao-model study are in the
+11-page note for Raul, `output/pdf/TN0484_field_coupling_note.pdf`.
+The reduction and gain are attributed to the earlier Ruffini and Clusella work.
+
+The November 10 article had 38 pages, with 11,405 counted words before the unchanged
+299-word abstract; the addition is 136 words. No earlier article sentence,
+equation, result, figure, or qualification was removed. The supplement remains
+35 pages. Article, supplement, note, and storyline builds have no undefined
+references or overfull boxes. The new gain formula passes 15 equilibrium
+finite-difference checks and dimensional/normalized-coordinate comparisons.
+Independent scientific review found no blocker. The revision record is
+`revision_2026-11-10_draft29_slow_limit.md`.
+
+Draft20 remains the reading baseline; its redline has been refreshed. The
+canonical full-TN artifacts are preserved. The six-slide overview and detailed
+presentation remain available in `output/pdf/`. Public push, Overleaf,
+Calliope, data release, and coauthor circulation remain held. Raul's simulation
+protocol is proposed; no new neuronal simulations or field calibration were run.
+
+## Previous journal edition — draft28, November 7, 2026
+
+Ricardo's verified November 6 FEM additions are integrated locally from PR #2
+head `6ade413`. Table 3 adds GM-only contrasts; S3 holds the orientation estimates,
+mean-change and node-fraction checks, and corrected interface bounds and
+numerical diagnostics. The +24% BOLD comparison retains its baseline and
+hypothesis status. Existing results, figures, model equations, abstract, and
+full PING system are preserved.
+
+The article remains 37 pages: 11,269 words before the unchanged 299-word
+abstract, four fewer than draft27 under the same counting convention. The
+supplement is 35 pages. Article, supplement, and isolated TN builds pass, with
+no undefined references or overfull boxes. Preservation checks and the 44-array
+FEM cache comparison pass. Klaus’s independent fidelity review (`81630ee`)
+finds no lost science or numerical error; its two wording clarifications are
+applied. The private producers and field solve were not rerun;
+the new per-node export and exact private-library revision remain pending.
+
+The short presentation contains eleven main slides and two backups, with source
+in `presentations/` and its PDF in `output/pdf/`. The revision record is
+`revision_2026-11-07_draft28_fem.md`.
+
+Draft20 remains the reading baseline. Canonical full-TN artifacts and annotated
+draft20 are preserved. Remote PR merging, public push, Overleaf, Calliope, data
+release, and coauthor circulation remain held.
+
+## Previous journal edition — draft27, November 6, 2026
+
+The approved reader-flow pass is implemented. The Introduction states findings,
+paragraphs connect state changes and detector assumptions to their consequences,
+and QIF Results separates response interpretation from numerical diagnostics.
+The shortened 0.348 paragraph retains its full scope; S5 retains the derivation
+and protocol qualifications. Abstract, equations, figures, numerical inputs,
+protected passages, and the full PING system are unchanged.
+
+The article contains 11,273 words before the unchanged 299-word abstract, 38
+more than draft26. It remains 37 pages; the supplement remains 32 pages. This is a
+flow revision, not a further word reduction. Fonts, margins, and figure sizes
+are unchanged. Article/supplement and isolated-TN preservation checks pass, as do the
+rendered-page checks. Klaus’s independent fidelity review (`e59a2de`) found
+no lost content or scientific blocker.
+The revision record is `revision_2026-11-06_draft27_reader_flow.md`.
+
+The reading baseline remains draft20. The canonical full-TN artifacts and
+annotated draft20 are preserved. PR #2, public push, Overleaf, Calliope, data
+release, and coauthor circulation remain held; pending Ricardo inputs remain
+in the project TODO.
+
+## Previous journal edition — draft26, November 4, 2026
+
+The approved consolidation and Ricardo's November 4 corrections are implemented.
+The article is 37 pages (previously 39), with a 32-page supplement. It contains
+11,235 words before the unchanged 299-word abstract, 62 fewer than draft25;
+including the expanded declarations, the reduction is 31 words. Fonts, margins,
+figure sizes, equations, and numerical inputs are unchanged.
+
+Operating-state interpretation now follows the steady-source formula; JR gain,
+mean response, and tACS comparisons form one continuous block. The MPR coefficient
+and derivation share one appendix subsection. Table 3 adds raw mean contrasts
+and the missing degree-matched value. The text describes the envelope tail,
+identifies Figure 9(f)'s colors, and credits IXI with the planned export license.
+The revision record is `revision_2026-11-04_draft26_consolidation.md`.
+
+Article, supplement, and isolated full-TN preservation checks pass. The canonical
+article/supplement and draft20 redline are updated; the reading baseline remains
+draft20. Canonical TN PDF/bibliography and the annotated draft20 are preserved.
+Rendered-page checks pass. Klaus's independent fidelity review (`79e06a8`)
+finds no lost science or broken references; its explanatory restorations are applied.
+Ricardo's GM-only contrasts and wider mean-change/node-fraction checks remain
+pending. PR #2, public push, Overleaf, Calliope, and coauthor circulation remain held.
+
+## Previous journal edition — draft25, October 30, 2026
+
+The readability pass requested before team sharing is implemented. The article
+has 11,297 words before its unchanged 299-word abstract, down from 11,958 under
+the same convention. The main narrative is 696 words shorter; article appendices
+grow by 35 words. The article is 39 pages with a 32-page supplement.
+
+QIF Results now presents the lower-amplitude response, induced gamma, the
+mean-field carrier control, and individual locking in sequence. Supporting
+PEIX identities move to Appendix B. Numerical protocols, detailed spatial
+sweeps, and finite-amplitude gain checks have explicit supplementary homes.
+The full PING system, access-evidence table, figures, equations, numerical
+results, and scientific qualifications remain. The abstract is unchanged.
+The revision record is `revision_2026-10-30_draft25_readability.md`.
+
+Article, supplement, isolated TN, and both redline builds pass. Preservation
+and rendered-page checks are complete. Klaus's independent review (`0a5ad3b`)
+finds the science preserved; his requested corrections are applied. The reading
+bundle is `build/review_draft25/reading/`. The editing baseline
+is draft24 (`8ecc70a`); the recorded reading baseline remains draft20.
+Canonical TN artifacts and the annotated draft20 are preserved. Ricardo's
+PR #2 remains a separate unresolved integration. Public release and automatic
+push remain held; no coauthor message is sent by this revision.
+
+## Previous journal edition — draft24, October 25, 2026
+
+The approved compression and figure repairs are integrated. The article has
+11,958 words before its unchanged 299-word abstract, down from 13,471 under the
+same counting convention; ordinary table bodies are included. It is 40 pages
+with a 31-page supplement. The full PING system, all equations and numerical
+results, worked examples, physiological qualifications, and article notation
+remain. Six supplement-only notation rows appear in the supplement and full TN.
+
+Klaus's prose fidelity review (`6d44ae6`) found the science preserved; his
+local corrections and explanatory restorations are applied. Thirteen plotted
+figures and the schematic lettering are repaired. Raster phase folds occupy
+separate axes. The only numerical change is twelve-second settling in Figure
+S9, removing a residual startup oscillation; the fast-access result changes
+by less than 0.1%. See `revision_2026-10-25_draft24_compression.md`.
+
+The reading baseline remains draft20, with a separate draft23 redline.
+Canonical TN artifacts and the annotated draft20 are preserved. Final integrated
+verification passed, including Klaus’s check at `322f396`; the verified reading
+bundle was delivered to `~/Downloads/TN0484_draft24_2026-10-25/`. The public-release hold and push
+guard remain active; Ricardo's per-node FEM export is still pending.
+
+## Previous journal edition — draft23, October 24, 2026
+
+The approved referee revision is implemented. The article has a conditional kHz
+source-budget figure, static/dynamic sign scope, bilinear multicompartment
+scaling, and explicit single-subject geometry. The theta-neuron pilot fails its
+population-size criterion (11.9% versus 5%); finite-network conclusions remain
+qualitative and the equal-RMS carrier control remains mean-field only.
+The full PING system and Table 2 remain in the article. The article is 41 pages
+and the supplement 31. The original TeXcount comparison was 13,038 words versus
+14,522 in draft22. An October 25 check found 433 additional words in ordinary
+table bodies omitted by that counting convention: draft23 therefore has 13,471
+words across narrative, headings, captions, tables, and article appendices,
+excluding mathematical tokens, references, and front/back matter. The abstract
+is counted separately at 299 TeXcount words.
+The revision record is `revision_2026-10-24_draft23_referee.md`; redlines compare
+with draft22 and the unchanged draft20 reading baseline.
+
+The journal, supplement, and isolated TN validation builds pass reference and
+overflow checks. A NumPy-only FEM consumer and exporter with consistency checks
+are prepared, but the original per-node fields and labels were not found locally:
+real-data export and comparison remain pending. Public release, submission tags,
+and further coauthor circulation remain held. Klaus's fidelity review passed at `482d3d1`; its precision, figure-label, and
+retention suggestions are applied in the final cut.
+Klaus's subsequent visual audit (`e9fab55`,
+`../notes/2026-10-25_klaus/figure_check.md`) found remaining legend/inset
+overlaps, joined colorbar labels, small supplementary type, and wording issues.
+These repairs remain pending; the scientific fidelity pass is separate from
+figure legibility. Giulio has requested a compression assessment; the proposed
+additional saving of 1,500–1,800 words is an estimate, not an implemented cut.
+
+The existing Stop hook pushed the reviewed branch to the public origin despite
+the hold. The remote-tracking reflog confirms that the October 24 morning pushes
+published 180 commits since `e64b837`, including the work through draft22;
+the evening pushes added the referee-revision commits. A local
+`branch.two-tone-validation.pushRemote` guard now blocks
+unqualified automatic pushes; final corrections remain local. Restore it only
+when release is authorized (see the revision record).
+
+## Previous journal edition — draft22, October 21, 2026
+
+The approved prose/placement pass is implemented, with the full PING system
+unchanged in Methods. The article is 43 pages and the topic-organized supplement
+27 pages. Main narrative count falls from 14,977 to 13,019 words including
+headings/captions; article appendices add 1,503. The complete article still
+exceeds the normal journal length. The revision and checks are recorded in
+`revision_2026-10-21_draft22_prose.md`. Klaus's fidelity/reference check passed (`f3baf98`); his vocabulary-placement
+suggestion is applied verbatim at the opening of Methods.
+The 0.348 bound remains in its existing Discussion/supplement locations pending
+Giulio's placement decision. The approved abstract, author order, numerical
+results, and draft20 reading baseline are unchanged.
+
+### Earlier October 21 abstract and amplitude-comparison update
+
+Before the prose pass, `../TN0484_jne.pdf` had 44 pages. The abstract and
+body quantify TI steady and beat sources relative to tDCS and tACS at matched
+effective sigmoid-input amplitudes (2960dec). Section 2.2 explains AIS coupling
+as effective threshold modulation, with calibration of the anatomical input
+required (3772fc2). The installed abstract is 300 words by TeXcount (296
+whitespace-separated tokens), with the reader repairs applied in 62772c7.
+
+Ricardo Salvador is second author. Alex Just was removed by Klaus at Giulio's
+instruction in aad1ac2; the journal PDF and author records now contain eight
+authors. That commit was already present in the shared working tree when this
+handoff was received; no pull or merge was needed. The revision record is
+`revision_2026-10-21_dc_direct_comparison.md`.
+
+Giulio authorized Klaus's abstract repairs, applied in 62772c7 with Kaiti's
+restorations of "resonant" gain and "approximately" 2–5%. Kaiti's fidelity
+check passes: the rendered abstract matches the four source macros, the steady
+source is named consistently, and the amplitude convention and scientific scope
+are retained. No body equations, parameters, or numerical data changed.
+Klaus's IOP-guidance check is closed and independently verified against the
+[JNE author guidance](https://publishingsupport.iopscience.iop.org/journals/journal-of-neural-engineering/)
+on October 21. The publisher normally limits abstracts to 300 words and may
+return longer abstracts for rewriting; 300 remains the working cap. Acronyms
+must be defined. The first use of "DC-like" precedes the expansion of direct
+current in the next sentence; that wording remains unchanged pending Giulio's
+decision. No table, figure, equation, or reference citations occur in the abstract.
+
+The review baseline stays draft20 at e20c047. Public GitHub, Calliope, Zenodo,
+and further circulation remain held. Earlier entries below are historical.
+
+### Prose and placement review, October 21
+
+Klaus's review is in `../notes/2026-10-21_klaus/prose_structure_review.md`
+(`6c0e23a`). Kaiti's independent response to all R/P/C items is in
+`../notes/2026-10-21_kaiti/prose_structure_review.md`, with a reproducible count:
+13,332 text words, 227 heading words, and 1,418 caption/other words from
+Introduction through Conclusion, excluding mathematical tokens. The review
+proposes de-duplication and relocation while retaining local qualifications and
+the theoretical model bridge. Reconciliation with Klaus is complete; the joint
+decision summary is `revision_2026-10-21_prose_plan.md`. The remaining reviewer
+difference concerns article-appendix versus supplement placement of the compact
+efficiency-bound argument. Giulio approved the first pass and layout, retaining PING in Methods
+(`24d34c1`). Implementation is recorded above; the bound-placement decision
+remains pending. No manuscript changed during the preceding review itself.
+
+## v0.15.0-draft13 — The shared abstract is 297 words (2026-10-06)
+
+The four macros now contain Klaus's supplied 297-word abstract, within the
+300-word budget. The scope conditions on DC focality and independent control
+of gain remain. The manuscript body and storyline map are unchanged from
+`cc0bab9`; only the shared abstract and version metadata changed. All formats
+were rebuilt, with the reading baseline still fixed at `8016065`. See
+`revision_2026-10-06_v0150draft13_abstract.md`. Release holds remain.
+
+## v0.15.0-draft12 — Access, detection, and amplification in series (2026-10-06)
+
+Giulio's approved abstract now identifies the paper as a mesoscale model with
+three stages in series and a test for each stage. The Introduction's closing
+paragraph and storyline follow the same framing. The abstract's DC claim is
+scoped to a homogeneous tissue compartment with uniform access and detection;
+independent adjustment of gain is scoped to the Jansen--Rit column at a fixed
+field-free operating point. The approved wording is otherwise unchanged.
+Theory onward is byte-identical to draft11: the membrane-once point, coupling
+sweeps, and near-Hopf response-ratio detail remain. Titles, numerical code,
+caches, figures, and bibliography are unchanged. See
+`revision_2026-10-06_v0150draft12_abstract.md` for the checks and build record.
+All release holds remain.
+
+## v0.15.0-draft11 — Landau text and numerical corrections (2026-10-05)
+
+The text pass (`dc96c25`) and Klaus's numerical follow-ups (`139dd74`, `9190b9c`,
+`c91879f`) are integrated. NMM2's critical eigenpair is tracked continuously; a
+second mode dominates the middle of the coupling sweep. The near-Hopf linear
+gain exponent is 1.02, with finite-amplitude departures stated separately. Every
+simulated peak is now bracketed. Figure S10 is updated; S11 uses genuine two-tone
+data, whose complete timing sweep was reproduced exactly. TI/tACS ratios change
+by at most 2.2% between the waveforms, and the two-tone endpoint remains attracting.
+The abstract and prediction table now distinguish the initial growth of modulation
+from the later rectification of the amplified oscillation into a mean shift.
+
+Klaus's independent fidelity check of `b436a9c` passes: his reserved numerical
+passages, the abstract, and the S10/S11 captions match the producer outputs.
+The Landau correction cycle is closed; the review freeze is lifted.
+
+The published PEIX check is closed. Giulio supplied the Neural Computation
+supplement; Klaus and Kaiti checked Appendix A, pp. 1–2. The definition and four
+properties agree with bioRxiv v3 and draft11. A reference copy is filed at
+`_private/references/neco.a.1537-supp.pdf`, with its hash in the validation record.
+Author review, declarations, and the length review remain. The fixed reading
+baseline stays draft9 `8016065`.
+See `revision_2026-10-05_v0150draft11_numerics.md` and the earlier text record.
+All release holds remain.
+
+## Draft8 integration — one abstract and one working edition (2026-10-05)
+
+Klaus's source changes from `089e00a` are integrated with draft8's corrected
+attribution. The JNE article is the working edition. All formats load the same
+abstract macros, so neither the TN nor the storyline keeps a separate copy.
+Tables 1 and 2 are explained in place; the Table 1 text distinguishes frequency
+powers, gains, and the zero-beat coefficient from finite-beat susceptibility.
+`./build.sh` now builds JNE by default. One current redline uses the recorded
+baseline; TN and supplement publication wait for an authorized archive cut.
+Record: `revision_2026-10-05_single_abstract_tables.md`. Holds remain.
+
+## v0.15.0-draft8 — attribution of axonal TI mechanisms (2026-10-05)
+
+The abstracts, Introduction, and Conclusion credit existing single-neuron TI
+models for axonal rectification. Our contribution is the effective population
+representation linking access, mixing, and recurrent gain. Mirzakhalili supports
+subthreshold nodal mixing; Wang supports axonal excitation and block; Kole
+supports AIS sodium-channel density, not localization of a TI detector. The
+positive access hypothesis and quantitative calibration gap remain. No equations,
+figures, results, or section order change. Record:
+`revision_2026-10-05_v0150draft8.md`. Release holds remain.
+
+## v0.15.0-draft7 — access, detection, amplification (2026-10-05)
+
+K's requested physical sequence now organizes the abstract and Introduction,
+with Cohen and AIS references placed at access and Table 2 distinguishing
+measured responses from assumed model times. The Discussion follows access
+before detection; section and figure order are retained. The linear TI/tACS
+ratio is derived and the finite-amplitude cache comparison is independently
+verified. Klaus's matched-source and longer-settling controls are integrated as
+`f0bba54`: TI/matched-tACS amplitudes are 0.99, 0.94, and 0.92 at three tested
+couplings. The larger direct response saturates earlier and develops larger mean
+shifts; field-free pinning does not cancel them. The 19 portable cache arrays and
+the diagnostic arithmetic are verified. Record: `revision_2026-10-05_v0150draft7.md`.
+Author approval, declarations, optional placement choices, and release holds remain.
+
+
+## v0.15.0-draft6 — half-step cutoff checks complete (2026-10-05)
+
+Klaus's `f1831cd` is integrated as `5ecc5ac`. All six cutoff/time-step cache
+summaries are independently verified. At half step, the depths are 0.121 and
+0.141 for cutoffs 200 and 400. The overshoot survives refinement, so the earlier
+Euler-step attribution is withdrawn in Klaus's note; the manuscript reports
+persistent cutoff dependence without assigning its residual solely to one cause.
+No more R7 simulations are requested for the retained claims. Record:
+`revision_2026-10-05_v0150draft6.md`. Author review, declarations, and the optional
+placement decisions remain; release and circulation are held.
+
+
+## v0.15.0-draft5 — spike cutoff and spectral leakage (2026-10-05)
+
+Klaus's `b1a1c4c` is integrated as `8f03544`. Three cutoff summaries and four
+carrier-window spectra are independently verified. Raising the cutoff from
+100 to 200 changes the spiking depth from 0.093 to 0.127 (mean field 0.128);
+400 gives 0.139. The rasters retain 100, with sensitivity reported beside them.
+Joint cutoff/time-step refinement is requested from Klaus. A 3.2 s carrier
+window reduces the apparent 55 Hz depth to 0.000092 while TI retains 0.314.
+Record: `revision_2026-10-05_v0150draft5.md`. Release holds remain.
+
+
+## v0.15.0-draft4 — lower-amplitude QIF response and carrier controls (2026-10-05)
+
+Klaus's R7 follow-ups are integrated from `5e5921d` and `cecb707` as `0b46d91`
+and `6f6d5bf`. Five QIF cache summaries and four mean-field controls are independently
+reproduced. Figure S13 complements the preserved Figure 10 and S12: amplitude 10
+stays forced, while amplitude 35 induces gamma under either TI or an equal-RMS
+carrier. The unresolved spiking–mean-field depth difference is stated. A full-period
+variational check confirms the S10 endpoint is stable, with multiplier 0.034.
+Record: `revision_2026-10-05_v0150draft4.md`. Author approval, declarations, and
+optional placement decisions remain open; release and circulation remain held.
+
+
+## v1.74 — v0.14.6: review of Kaiti's v0.14.5, four corrections (2026-10-04)
+Giulio asked whether v0.14.5 needed revision. Kaiti's weak-field effective-response
+framing (authorized by K) is kept; its chi^(2) definition, F(Q) derivation, R10 fix,
+Plovie scoping (checked against the published abstract), and Cifra entry are correct.
+Corrected: the shared-amplifier consequence ("resonance alone gives TI no efficiency
+advantage") restored in both abstracts; the 2.6 gate-filter sentence now states both
+halves of K's position (no duplication, and its own model where the detector lacks the
+kinetics); the Cifra clause says what it is for (polarization route, not direct
+field-protein action; 10 kV/m to GV/m; below 0.1 kV/m outside the review's scope);
+the "not competing explanations" sentence restored in the Discussion; chi^(2) added to
+Table 4; planning abstract regenerated from the manuscript with its header. Builds
+47/31/18, clean. Record: `docs/revision_2026-10-04_v0146.md`; redline:
+`docs/redline_v0145_to_v0146.pdf`. Holds unchanged; Kaiti's open R-items and the three
+placement decisions wait for Giulio.
+
+## v1.73 — v0.14.5: effective weak-field mixing (2026-10-03)
+At Giulio's instruction, the paper now leads with a smooth weak-input response whose
+nonzero second-order term combines cellular contributions to mixing. QIF supplies a
+derived realization; identifying individual channel contributions is not a prerequisite.
+The theory defines a complex mixing coefficient and its static-curvature limit, explains
+the single-cell content of F, and keeps weak amplitude separate from fast relaxation.
+The scope is modulation of ongoing activity; direct carrier-evoked spiking and block are
+outside it. The abstract, Discussion, Conclusion, and storyline carry this interpretation.
+
+The Cifra citation now states the review's scope below 0.1 kV/m without asserting a
+universal threshold. The reversed efficiency-trend sentence is corrected (R10). The
+other audit items retain their recorded status. All 22 figure identities and their
+order, section order, simulation code, data, and parameters are unchanged. The three
+structural decisions remain Giulio's. Record: `docs/revision_2026-10-03_v0145.md`;
+redline against v0.14.4: `docs/redline_v0144_to_v0145.pdf`.
+
+The draft remains local. GitHub push, Calliope/Zenodo release, Overleaf sync, and
+coauthor email remain held. Calliope/Zenodo remain at v0.12.0.
+
+## v1.72 — storyline and R1–R13 audit; manuscript unchanged (2026-10-03)
+Reviewed v0.14.4 at `2ccea30` / `095cb9b`, including the storyline, redline,
+relevant manuscript figures, and code supporting the original review items.
+Recommendations and the item-by-item audit are in
+`docs/review_2026-10-03_storyline_r1_r13.md`. Proposed: keep access before Results,
+move detailed transduction tests after the model results, place LaNMM methods in
+Appendix E, promote S11, and retain the new abstract with local scope corrections.
+All decisions remain Giulio's; nothing was cut or reordered.
+
+R1/R8/R11/R13 are closed at their stated scope; R2/R3/R4/R5/R6/R9/R10/R12 are
+partial; R7 remains open. Remaining issues include claims that exceed the
+surrogate and four-point PING controls, phase/capture interpretations, the
+canonical-oscillator approximation, a reversed efficiency-trend sentence, and
+reproduction gaps. The Cifra TODO now distinguishes the review's exclusion of
+fields below 0.1 kV/m from a universal biological threshold. No manuscript,
+bibliography, planning source, PDF, simulation, figure, or parameter changed.
+Release, push, Calliope cut, Overleaf sync, and coauthor email remain held.
+
+## v1.71 — v0.14.4: readability revision and the storyline document (2026-10-03)
+Giulio asked for a revision of the TI note with readability as a focus. Per the
+practice he endorsed the same day, the abstract-plus-storyline document came first:
+`planning/tn0484_abstract.tex` (238 words, proposed) and `planning/tn0484_storyline.tex`,
+compiled to `build/storyline/tn0484_storyline.pdf`, mapping every section of the
+v0.14.3 organization and ending with four decisions for him (Theory order, LaNMM methods
+placement, promotion of Figures S3/S10/S11, the abstract). Nothing is cut or reordered.
+
+The manuscript revision is content-preserving: the TN abstract rewritten result-first,
+one factual slip in Results 4.1 corrected (the two-tone input has two lines, not the
+surrogate's three), the eigenvalue pair renamed mu_pm and the NMM1 indices X<-Y (both
+todo items), PING/RK4/FFT/PSP/PWM-TI expanded at first use, a grammar slip fixed,
+emphasis words and one defensive clause removed, and nine long paragraphs split at
+their seams. Builds: 46/30/18 pages, no errors, undefined references, or overfull
+boxes; tells.py clean. Record: `docs/revision_2026-10-03_v0144.md`; redline against
+v0.14.3 (`dd7122d`): `docs/redline_v0143_to_v0144.pdf`. Release, push, Overleaf sync,
+Calliope cut, and circulation remain held for Giulio's review.
+
+## v1.70 — v0.14.3: fast-membrane argument, shorter paper, Nir Grossman added (2026-10-02)
+Revised the manuscript at Giulio's request. The theory connects the static QIF
+population curve to the NMM2 slow-synapse limit and distinguishes fast relaxation
+relative to synapses from the stronger condition needed to track a kHz carrier.
+The argument separates carrier access, cellular/population mixing, and recurrent
+amplification, counting each physical filter once. Cohen, Luff, and Raul remain
+cited for their distinct contributions; the shorter effective access time remains
+a modeling hypothesis. The plotted simulations retain their finite membrane times.
+
+Nir Grossman is listed after Francesca Castaldo, with Imperial affiliation, ORCID,
+and a draft conceptualization contribution. All previous authors retain their
+relative order. Author declarations and manuscript approval remain pending.
+
+The main-body LaTeX word count, including headings and captions, is about 30% lower
+(15,041 to approximately 10,592). All 22 figures are preserved. Builds now have
+46 pages (TN), 30 pages (article), and 18 pages (supplement), with no errors,
+undefined references/citations, or overfull boxes. The prose pass, rendered-page
+review, physical-rate equilibrium check, static mixing check, and existing PING
+fast-carrier check are complete. Existing month-macro and shared citation-label
+warnings remain in the TODO.
+
+The full change and validation record is
+`docs/revision_2026-10-02_v0143.md`; the review copy is
+`docs/redline_v0142_to_v0143.pdf`, compared with v0.14.2 at `538930d`.
+Release, push, Overleaf synchronization, and circulation remain held for Giulio's
+review. No simulation code, parameters, datasets, or figure assets changed.
+
+## v1.69 — shorter-tau literature check and QIF analysis; manuscript unchanged (2026-10-02)
+K clarified that the task is to use existing periaxonal work and test a shorter effective
+QIF membrane time scale, without implementing a new double cable. Removed that proposed
+implementation from the TODO. Findings and derivation are in
+`docs/qif_short_tau_2026-10-02.md`, with a reproducible script and JSON results.
+
+Cohen's methods report a minimum fitted axonal decay time near 1 ms. Luff/Grossman's
+PWM-TI paper uses a 1-ms passive RC example and explores 1–100 ms; it does not use
+Cohen's model. No use or citation of Cohen's nanocircuit was found in the seven
+Grossman coauthored articles inspected from 2023–2026. Semenov's approximately 0.7-us
+external-field charging measurement is a different response mode.
+
+In an uncoupled QIF/MPR comparison with matched baseline rate and voltage, reducing
+tau from 15 ms to 1.5, 1, and 0.15 ms increases the v-squared beat-source magnitude
+by 97.8, 214, and 3,073 at 980/1020 Hz. Drive and heterogeneity are recalibrated to
+match the baseline; normalized stimulation amplitudes are fixed. Exact second-order
+rate responses agree with direct nonlinear integrations after amplitude extrapolation
+(largest relative error 1.3e-5). A literal global tau reduction in the existing PING
+also changes rates and modes; a physiologically calibrated network comparison remains
+open. No manuscript, figure, PDF, or release version changed.
+
+## v1.68 — v0.14.2: periaxonal access and cellular TI references (2026-10-02)
+Added Cohen et al. (Cell, 2020, doi:10.1016/j.cell.2019.11.039), identified from
+K's submyelin clue and the earlier `TI_mechanisms_NMM_revised.pdf` note. The Discussion
+distinguishes the established conducting periaxonal space from its as-yet uncomputed
+transfer under an extracellular kHz field. K's proposed 10–100× shorter effective QIF
+access time scale remains a hypothesis; changing it requires recomputing the operating
+point and resonance and counting each physical filter once. This is the nanostructure
+reference; Semenov et al. (2025) is a separate field-induced charging study.
+
+Added Luff et al., *The neuron mixer and its impact on human brain dynamics* (Cell
+Reports, 2024, doi:10.1016/j.celrep.2024.114274), distinct from the existing PWM-TI
+reference. The Introduction records subthreshold cellular mixing near 5 kHz and the
+synaptic/TTX blockade evidence. The Discussion distinguishes a calibrated dynamic
+population functional from a static firing-rate curve.
+
+Added de Palma Aristides et al., *Frequency-Selective Responses to Temporal Interference
+Stimulation in Hippocampal Neurons*, as an unpublished September 29, 2026 manuscript
+(WP0242), using the received PDF's full byline. Cited for cellular frequency selectivity
+and conductance/state dependence, alongside the paper's recurrent-amplification account.
+No simulation parameters or results changed. Release, push, Overleaf sync, and co-author
+email remain held for Giulio's review.
+
+Validation: `./build.sh all` twice; TN 52 pp, JNE 36 pp, supplement 18 pp, no errors
+or undefined references/citations. New passages and bibliography entries checked in
+rendered TN/JNE pages. Logs retain warnings from unchanged bibliography month macros,
+shared citation labels imported across JNE files, and the long repository URL.
+
+## v1.67 — v0.14.1: one membrane, counted once (2026-09-23)
+After the discussion of Kaiti's note on "access + detector dynamics": the QIF's 1/w^2 at fixed
+current is the membrane term tau*dv integrating the injected current, i.e. the somatic door of
+Eq. doors computed by the model, not a second carrier penalty. New Eq. kfixed in sec:dynamic:
+the coefficient at fixed voltage excursion K(w)=C/|H_v|^2=(F'/2)(w^2+3d^2-nu^2)/(w^2+d^2) is
+bounded and flat above the population's rates; F''=4r*(3d^2-nu^2)/(d^2+nu^2)^3 so the inflection
+is nu^2=3d^2; relative to a static curve on the same membrane the dynamics multiply the
+fast-carrier coefficient by d^2/(3d^2-nu^2) (0.35/0.66/-0.03 at r*=10/17/37 Hz). New Eq. receiver
+in sec:carrier: R = G(Omega;gamma) D lambda_f(w1)E1 lambda_f(w2)E2, carrier only through
+lambda_f, beat only through G, operating point through D and gamma. PING methods: the field is
+a current-like forcing I_E(t)=P E(t) (was mislabeled delta V "polarization"); the E membrane is
+the door. Abstracts: matched access gives both detectors the same roll-off. sec:coupling: the door coupling is grounded in the compartment equation C dV/dt + A V = I0 - p E (NMM2 SI), lambda_0 its w->0 value and H_c its frequency dependence; prescribing lambda_0 E in a static sigmoid and injecting p E into a membrane equation are the two ends of one chain, and a detector comparison needs the field inserted at the same point (after Kaiti's reading of Francesca's slide 16, 2026-09-23). Two-tone single-population run at 995/1005 Hz (code/mpr_twotone_lines_check.py): carrier line in
+the rate 0.02 of NMM1-on-the-same-membrane (rate integration), beat line 0.32 (constant), all
+lines equal to the chain prediction to four digits; chi^(2)(w1,-w2) ~ 1/(w1 w2), chi^(1) ~ 1/w^2. Table exponents (sec:dynamic): current->voltage w^-1 both;
+voltage->rate carrier 1 vs w^-1; current->rate carrier w^-1 vs w^-2; beat (w1 w2)^-1 both, NMM2 times a
+constant of the operating point; v^2 mixes at w^-2, rv at w^-3, r^2 at w^-4 (Kaiti's four-line summary).
+Check script
+code/static_vs_dynamic_check.py and figure docs/static_vs_dynamic_2026-09-23.png. Still held
+for Giulio: push, Calliope cut, Overleaf, co-author email.
+
+## v1.66 — v0.14.0: the revision after Kaiti's v2 brief and Giulio's decisions (2026-09-22)
+Manuscript, code and figures revised in five passes; disposition of every review item in
+`docs/revision_2026-09-22_disposition.md`. Science: new \S dynamic (MPR crossover
+C(Q,w) from F''/4 at slow carriers to F'/(2w^2) at fast ones, sign change at
+w_z=sqrt(nu^2-3d^2); PING fast-carrier source within 1.1/0.1/0.03% of the exact second-order
+response at 300/1000/2000 Hz; Fig. crossover). Two-tone field is primary (Intro Eq. am,
+sec:coupling derivation), AM surrogate separate (eq:amsur). Sign-flip prediction is
+JR-specific; Prediction 2 is now state- and carrier-dependent response. 0.3479 bound moved to
+App. bound as a memoryless comparator with the step-detector correction (harmonic ratio 0.151).
+LaNMM results moved to App. lanmm as a low-carrier extension; maps signed (95/97% of the
+P1-driven grids are suppression). Numerics: JR rate read-out includes the field (modulation
+26->346 mHz vs mean shift -1.3->-7.7 mHz, ratio 19-66); QIF rerun with 800 ms settle and
+integer-cycle windows (modulation depth 0.29/0.23 from ~0, mean rate +8-10%, per-neuron PPC
+median 0.003-0.005; dt/2 and VPEAK checks); Hopf at eta=1.110 (no finite-size offset).
+Abstracts, Introduction, Discussion (shortened: criticality, TMS, budget metaphors,
+retrospective fit removed) and Conclusion (Giulio's three paragraphs) rewritten. Builds: TN
+50 pp, JNE 34 pp, supplement 18 pp, 0 undefined after two passes. Deck corrected (eight
+frames) and committed in Slide Maker/GALVANI2026. JNE main text ~18.8k words by pdftotext
+(captions and math included): over the 12,000 guideline; cutting is Giulio's call.
+Not done: em-dash sweep of untouched paragraphs; lambda/m notation collisions; phase-based
+capture test; kHz PING time-domain runs; co-author confirmations. Calliope cut, Overleaf
+re-sync and GitHub push held for Giulio's review (a cut on a public paper deposits).
+
+## v1.65 — Kaiti's revision brief v2 received; its code claims verified; Hopf located (no manuscript edits)
+Brief `WP0185_review_notes_v2_for_Klaus.md` (Kaiti, 2026-09-22; filed with the sigmoid/QIF note,
+crossover.py and mpr_crossover.png under `_private/reviews/2026-09-22_kaiti_v2/`, gitignored).
+Central point R13: the JR sigmoid curvature σ'' and the QIF/MPR fast-carrier mixing are different
+detectors; the uncoupled MPR DC response crosses from a²F''/4 (slow carrier) to a²F'/(2ω²) (fast),
+so NMM2 does not validate the σ'' law, the sign-flip prediction is JR-specific, and the 0.3479
+ceiling is a memoryless comparator only. Verified in our code today: timing_not_rate.py:87 reads
+Sigm(v) without the field; qif_raster.py vector strength is pooled; make_lanmm_field_figs.py:30
+clips at zero and lanmm_field_tongues.py uses FFT band power (Methods says Hilbert); QIF runs are
+420 ms/150 ms Euler; jr_twotone_figs.spec is amplitude not power; run_all.py lacks all 8 two-tone
+figures. Mean-field PING Hopf by Jacobian bisection on nmm2_ping._rhs: η̄_H = 1.11045, f = 53.97 Hz
+— the paper's "≈1, QIF 1.1 is finite-size" paragraph is wrong. Companion check scripts/JSON and
+the v1 notes did not arrive (only the md, note tex/pdf, crossover.py, png). Plan in todo.md.
+
+## v1.64 — Readability and notation review written (no manuscript edits)
+Full read of v0.13.0 for prose and notation only; findings in
+`docs/review_2026-09-22_readability_notation.md` with line numbers against commit 072d2dc.
+Headline items: φ vs r in eq:coupling/eq:lanmm_drive (the v1.63 φ→r fix missed the equations);
+λ₀ is both the DC coupling (477) and the DC space constant (eq:lambda 790); "ω_c and ω_c+Ω"
+at 552 contradicts f_{1,2}=f_c∓Δf/2; δ (threshold offset, 1761) never defined; η is both
+excitability and TI/tACS efficiency; bare H at 479/1469 ambiguous between synaptic and access
+filters; LaNMM Methods use A for the field amplitude (972–975) where the table says ε.
+Abbreviations undefined at first use: AM, LFP, tACS (used at 620, defined 1054), SNIC, RF,
+PAC, PLV. Methods vocabulary paragraph and App. D duplicate each other. 43 paragraphs with
+≥2 em-dashes (nine with four; Conclusion para 1 worst). Defensive cluster in the Discussion
+(650, 1698, 1777, 1785, 1820). kHz two-tone beat quoted as 10.9 Hz for tones 11.0 Hz apart
+(1174, 2196). "Colour" at 2212. tells.py: 52 hits, 5 false positives (wrapped "rather than").
+Arithmetic, references, theorem: not checked (landau).
+
+## v1.63 — Integrate the August "doors" edit; abstract and conclusion brought up to date 
+Giulio's 2026-08-07 snapshot (501ee97, undocumented until now) rewrote the coupling section
+around parallel, compartment-specific entry points ("doors", Eq. doors, Table doors, AC space
+constant Eq. lambda, Na_v gate ceiling), added the NMM1 transfer-function form (Eq. nmm1), and
+moved the JR equations + parameter table to a new App. B. It left a note asking whether the
+abstract still reflected the content. This pass (v0.13.0, 2026-09-12):
+- Abstracts (TN prose + JNE structured) and Conclusion now carry the entry-point result
+  (carrier selects the door; soma shut at kHz, AIS open). JNE abstract trimmed back to the
+  300-word cap (301 by pdftotext including the four run-in headings).
+- Table doors reconciled with the Discussion's R_m C_m argument: the "presynaptic terminal,
+  1-3 kHz" row contradicted "a terminal tracks a kHz carrier no better than a soma"; replaced
+  by the Na_v activation-gate row (~1 kHz), caption says terminals are sensitive, not fast.
+  "terminal" dropped from the two fast-door lists (sec:nmm, sec:coupling). Rate symbol in the
+  table phi -> r (paper's symbol).
+- "Two roll-offs (800 Hz and 1-3 kHz)" -> a single kHz-range roll-off where access (~800 Hz)
+  and gate (~1 kHz) corners combine; the two corners are too close to resolve as two. FLAG
+  for Giulio: this rewords his sentence.
+- Entry-point test added to Prediction 1 and Table predictions (kHz-range, not 10 Hz, roll-off
+  at fixed field). eps_eff tied to lambda^soma_f E_0. Notation table: duplicate s(t) row
+  removed; Lambda[E], H_c, H_gate added. App. B opens with pointers to where LaNMM/NMM2/QIF
+  equations live. Intro: sentence duplicated by the Aug edit merged; "weakly-damped stable
+  focus" twice in a row fixed; "Most tellingly" / "keeps this honest" / "worth being precise" /
+  "worth stating" removed (self-grading). Version block + CITATION.cff -> 0.13.0.
+- Builds: TN 46 pp (was 34: App. B + doors material), JNE 34 pp, supplement 14 pp, 0 undefined
+  after two passes of ./build.sh all (xr-hyper needs the second pass). README page counts fixed.
+- Not done: co-author approval request (still unsent); SC/CM funding lines; AI-tool versions.
+  JNE main text has grown by the doors material; re-measure with texcount before submission
+  (texcount returns 0 on this file because of the \ifjne switches; measure on a jne-expanded copy).
+
+## v1.62 — Cut the redundant LaNMM resonance claim; correct the figure-script table
+`fig_lanmm_resonance` NOT restored (Kaiti's call): it repeats the beat resonance JR (Fig 3) and
+NMM2 (Fig 9) establish more cleanly, while Fig 7 carries LaNMM's unique content (alpha-gamma
+architecture, tongues, double resonance). The orphaned paragraph is cut from 8 lines to 1,
+explicitly a consistency check pointing at the repo -- a Results paragraph must not lean on
+evidence it does not display. `fig_lanmm_resonance` + `fig_lanmm_map` -> `figures/archive/`
+with a README giving the reason for each. Neither is a submission asset.
+FOUND WHILE CHECKING: the README figure-script table predated the two-tone conversion --
+claimed 24 figures vs the manuscript's 21, named 8 that no longer exist (fig_demodulation,
+fig_verification, fig_operating_point, fig_resonance_map, fig_sl_dissociation, both
+lanmm_arnold, fig_nmm2_resonance), and was missing every *_twotone figure. Code-and-data
+availability promises this table regenerates every figure, so it was a broken reproducibility
+claim. Regenerated against \includegraphics + each generator's savefig/.npz deps, verified
+script by script; all 21 confirmed on disk. fig_lanmm_setup stays a **gap** (hand-drawn).
+Repo-only figures now listed with reasons. Commit a93232a.
+
+## v1.61 — Consistency and precision pass (Kaiti round 2, ten items)
+No new theory or simulations. Scoped the absolute-drive claim to eps ~ 0.1 mV (it is
+field-dependent; disparity GROWS as eps falls, smooth sigmoid ~ eps^2 vs a repositioned
+threshold). Softened the microvolt reading: far below any realistic population transfer, NOT a
+measured single-cell property. Eq (22) maximises the RATIO not the response -- both drives
+vanish in the saturated tails. Square law "sets a floor" -> generic leading perturbative form
+(the quadratic coefficient vanishes at the inflection). "Any smooth cellular nonlinearity" ->
+smooth *memoryless* transfer, or nonzero second-order Volterra kernel (channels with memory are
+outside the S2.3 cycle-average). "What the population contributes is tuning, not detection" ->
+tuning and amplification established, detection may be microscopic or population. Carrier
+independence now conditional on an inert carrier (the LaNMM double resonance is the
+counterexample). Fig 1 radio analogy was literally wrong -- an AM tank PRECEDES the detector and
+selects the carrier; ours follows it at baseband. Attribution fix: "which this work does not
+distinguish" -> the cited network studies do not. Stale: e(t), I_0 dropped from notation; Fig S1
+"slow envelope transferred" -> generated beat component; terminals removed from the fast-element
+list in the Conclusion (contradicted the Discussion's own R_m C_m argument). Two one-line
+limitations: cascading NMM transfers cannot solve carrier access (the synaptic filter kills the
+kHz carrier before a second sigmoid, |H| = 6.3e-5 at 2 kHz); a population of microscopic
+rectifiers would have its aggregate transfer broadened by threshold heterogeneity. Commit e303603.
+
+## v1.60 — Scan window artifact found; Vieira demoted from calibration to existence proof
+**BUG.** `sigmoid_family_scan.py` searched v* over V0 +- 6/rho, i.e. reduced x in [-6,6]. The
+optimising x runs as ~1.046*u (u = rho*eps), so it leaves the window once u > ~5.7. Everything
+past that boundary was artifact: the "maximum near rho ~ 40-80 /mV", the "falls again for
+steeper transfers", and the ~0.32 ceiling whose proximity to 1/pi was read as the half-wave
+rectifier constant. Timestep refinement cannot expose this; only the x-window can.
+**Corrected.** Exact scale invariance: eta = eta(u, x) with 2e0 cancelling, so the family
+supremum is INDEPENDENT of field strength (verified to 4 dp over a 160x range of rho). With the
+window scaled to u, eta is numerically monotone over the explored range and converges to the
+hard-threshold limit sup eta = 0.34793 at delta/(2 eps) = 0.523 -- that is 1.093/pi, not 1/pi.
+NO finite optimal width; 95% of ceiling needs u >~ 6, i.e. 1/rho <~ eps/6 (17 uV at Vieira's
+fields, 3.3 uV at human). Also recorded because it cuts against us: such a detector is NOT weak
+-- ~3 orders more absolute open-loop drive than the JR sigmoid at eps = 0.1 mV.
+**Vieira recalibrated.** Fetched PMC11137077 and verified: 20 neurons, 10 responsive, 7 both;
+PLV 0.043 -> 0.20 [0.043, 0.64] (tACS) and -> 0.10 [0.023, 0.38] (AM), p = 0.01; single AM
+carrier through ONE electrode pair, not two tones; depth matched on the EXTRACELLULAR field at
+1.14-1.17x; Deming 0.34 [0.04, 0.65]; 12%/current assumes linearity in I (the point at issue);
+2 monkeys; 234 units, 65 significant; 0.5-0.62 V/m vs 60-383 V/m rodent. Removed "the data
+select the rectifying limit", "an efficiency a population-width transfer cannot deliver", "the
+family can reach the measured efficiency", and the 0.36 anchor. Kept and credited the design
+strengths. Added the retrospective reanalysis: fit dPLV = Psi(a I^p) per modality with baseline
+PLV and state as covariates, test p ~ 1 vs p ~ 2. Prediction 1 now notes that matching
+polarization rather than extracellular field is the correction existing comparisons lack.
+Also fixed from a full read-through: TN abstract contradicted itself in one paragraph (recovery
+is a population property / detection is inherited from the single neuron) because the previous
+revision rewrote only the structured abstract; Conclusion asserted "Because the transduced
+quantity is A^2 and not A" while the Discussion called it open; J-curve 27x -> 30x (the dataset
+has said 30.4x since it was regenerated in 81deb54, after the sentence was written); orphaned
+period left when fig_lanmm_resonance was dropped in 9dd5c1b; Appendix B never cited; the
+300x/10^6x comparison uses two powers of |H_m| and is now marked matched-applied-field.
+Commit a46a81c.
+**STABLE POSITION: detector class unresolved; network amplification established.**
+
+## v1.59 — Address Raul's Overleaf review comments (round 1, six comments)
 Giulio relayed Raul de Palma's Overleaf comments; applied all six in one pass:
 1+5+6 (focus, not Hopf): the resonance is the property of a weakly-damped STABLE FOCUS, not the Hopf
   specifically; the column resonates near BOTH the SNIC (slower) and the Hopf (alpha). Reworded the

@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-10",
+  "pages": 6,
+  "pdf_sha256": "e6293f1187e2201f0ebc3ea26ed6c14ef14d2fe5fed43ba0775889b2863dfd28",
+  "checks": [
+    "clean two-pass Beamer build",
+    "all six slides rendered and visually inspected",
+    "independent scientific check; gain/amplitude labels, strong-input control and access-factor definitions retained",
+    "manuscript and detailed presentation unchanged"
+  ],
+  "source": "presentations/tn0484_short_results.tex"
+}

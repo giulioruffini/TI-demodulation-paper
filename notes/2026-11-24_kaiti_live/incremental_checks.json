@@ -1,0 +1,14 @@
+{
+  "planning/parts/fem_interfaces.tex_unchanged": true,
+  "planning/parts/fem_orientation.tex_unchanged": true,
+  "planning/parts/supp_amplification.tex_unchanged": true,
+  "planning/parts/supp_efficiency.tex_unchanged": true,
+  "planning/parts/supp_laminar.tex_unchanged": true,
+  "references.bib_unchanged": true,
+  "only_intended_Introduction_change": true,
+  "Results_match_baseline_except_QIF": true,
+  "Significance_matches_baseline": true,
+  "Objective_starts_with_aim": true,
+  "three_stages_in_series_retained": true,
+  "budget_and_conditions_retained": true
+}

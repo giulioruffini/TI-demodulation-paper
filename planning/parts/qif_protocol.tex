@@ -1,0 +1,23 @@
+\subsection{QIF integration and matched-carrier protocol}\label{supp:qif-protocol}
+The finite network uses the PING model and observables defined in
+\S\ref{sec:qif-methods}. The following settings support the weak-drive and
+field-induced gamma comparisons.
+
+Euler integration uses $0.0025$~ms steps and $800$~ms settling, exceeding
+four field-free relaxation times at $\bar\eta=0.85$ ($176$~ms).
+Measurements cover whole beat cycles to avoid phase-coverage bias:
+$44$ at $55$~Hz and $34$ at $42$~Hz ($800$ and $810$~ms).
+
+We also run both conditions at $A_f=10$ per tone with the same measurement
+settings. For $\bar\eta=0.85$, separate checks double the population size,
+double the measurement window, or halve the integration step; further runs raise
+$V_{\rm peak}$ to $200$ and $400$ at both time steps. An equal-RMS
+mean-field control replaces the two tones by one $300$~Hz carrier with peak
+amplitude $\sqrt{2}A_f$, using the same duration: both inputs have mean-square
+amplitude $A_f^2$ over these windows. The carrier comparison starts from the
+field-free equilibrium and uses $800$~ms settling and $800$~ms measurement,
+with a $3200$~ms window to check spectral leakage at the larger amplitude.
+
+A longer window reduces the single carrier's apparent $55$~Hz
+depth from $0.011$ to $9.2\times10^{-5}$, while TI's stays at $0.30$--$0.31$;
+the former is spectral leakage.

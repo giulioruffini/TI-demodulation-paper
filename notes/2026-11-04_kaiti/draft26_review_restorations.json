@@ -1,0 +1,37 @@
+[
+  {
+    "id": "harmonic_purpose",
+    "before": "harmonic across an amplitude sweep.",
+    "after": "harmonic across an amplitude sweep to distinguish linear from quadratic scaling."
+  },
+  {
+    "id": "jr_sweep_purpose",
+    "before": "For each connectivity $C$, we solve for the external drive $p(C)$ that holds the\nfield-free voltage",
+    "after": "The coupling sweep holds detection fixed: for each $C$, we solve for the external\ndrive $p(C)$ that holds the field-free voltage"
+  },
+  {
+    "id": "jr_rate_comparison_name",
+    "before": "The gain sweep uses the AM surrogate; the timing comparison uses genuine\ntwo tones and measures modulation and mean of the same pyramidal rate",
+    "after": "We use the AM surrogate for the gain sweep and genuine two tones to compare\nmodulation and mean of the same pyramidal rate"
+  },
+  {
+    "id": "tacs_shared_amplifier",
+    "before": "At a common state, matching the generated in-band TI and tACS drives matches\ntheir linear outputs; resonance alone gives TI no efficiency advantage.",
+    "after": "TI and tACS share the linear amplifier, so matching their generated in-band\ndrives at a common state matches their linear outputs; resonance alone gives\nTI no efficiency advantage."
+  },
+  {
+    "id": "caption_coupling_and_saturation",
+    "before": "\\emph{(a,b)} The response grows and its resonance sharpens on the stable-focus side\nof $C^*$ ($\\gamma>0$). \\emph{(c)} Rate-to-voltage gain\n$A_\\Omega/A_{\\rm open}$ (mV\\,s); dashed: $1/\\gamma$.}",
+    "after": "\\emph{(a,b)} The response grows and its resonance sharpens as $C$ approaches\n$C^*$ on the stable-focus side ($\\gamma>0$). \\emph{(c)} Rate-to-voltage gain\n$A_\\Omega/A_{\\rm open}$ (mV\\,s) follows $1/\\gamma$ (dashed) before saturating.}"
+  },
+  {
+    "id": "dynamic_state_dependence",
+    "before": "Dynamic detectors have their own coefficients and susceptibilities, without",
+    "after": "Dynamic detectors have their own state-dependent coefficients and susceptibilities, without"
+  },
+  {
+    "id": "tail_roi_scope",
+    "before": "The envelope nodes above the reference 95th percentile have an anterolateral",
+    "after": "Within the ROI, envelope nodes above the reference 95th percentile have an anterolateral"
+  }
+]

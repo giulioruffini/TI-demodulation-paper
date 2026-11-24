@@ -1,0 +1,47 @@
+{
+  "TN0484_jne": {
+    "pages": 43,
+    "text_identical_to_local": true,
+    "diagnostics": {
+      "errors": 0,
+      "undefined": 0,
+      "overfull": 0,
+      "duplicate_labels": 0,
+      "rerun_needed": 0
+    }
+  },
+  "TN0484_jne_supplement": {
+    "pages": 21,
+    "text_identical_to_local": true,
+    "diagnostics": {
+      "errors": 0,
+      "undefined": 0,
+      "overfull": 0,
+      "duplicate_labels": 0,
+      "rerun_needed": 0
+    }
+  },
+  "source_commit": "afa5e44",
+  "mirror_previous_commit": "7006e903213820b9a8c797b9094990210d0769e5",
+  "preserved_Overleaf_setting": "\\jnetrue",
+  "pdf_hashes": {
+    "TN0484_jne.pdf": "a0939ead64f2111be5d55becc3aeffbd43041a9c010fe5f2fee8b3586f7a60d7",
+    "TN0484_jne_supplement.pdf": "b251b6158a601d4c15a6e1d2fd532e69a89a0a2057879061ef80732fa5675b1b",
+    "docs/redline_last_read.pdf": "279be3ee08f1598cdf00359afefc9b213f48904320ffd2266f297d773b6393a5"
+  },
+  "date": "2026-10-14",
+  "private_repository": "https://github.com/giulioruffini/TN0484---Temporal-Interference-TI-NMM-demodulation",
+  "mirror_commit": "aa18f100cbf0307334ba64d5c302bd2a5beb03a2",
+  "remote_head_verified": true,
+  "article_remote_blob": "a40ff06a037e8948940c81b0036e7f543a2ffb44",
+  "article_blob_matches_local": true,
+  "invitation": {
+    "id": 337729706,
+    "login": "ricardosalvador123",
+    "permission": "write",
+    "status": "pending acceptance"
+  },
+  "authorization": "Giulio: yes, please, Ricardo will help",
+  "public_release_performed": false,
+  "overleaf_website_sync_performed": false
+}

@@ -1,0 +1,112 @@
+[
+  {
+    "id": "edition",
+    "before": "\\newcommand{\\paperver}{0.15.0-draft26}",
+    "after": "\\newcommand{\\paperver}{0.15.0-draft27}"
+  },
+  {
+    "id": "intro_findings",
+    "before": "Here we derive steady and beat sources together, separate detector curvature\nfrom recurrent gain at a pinned Jansen--Rit (JR) operating point, and derive\nthe static-to-dynamic crossover in an exact QIF mean field. A head-model\nillustration compares the resulting spatial maps, while equal-RMS carrier\ncontrols distinguish beat-dependent modulation from induced oscillations.",
+    "after": "For weak static detection, beat and steady sources follow the carrier product\nand summed squares, respectively. At a pinned Jansen--Rit (JR) operating point,\nrecurrent gain varies independently of detector curvature; fast-carrier steady\nrectification in the QIF mean field follows the rate curve's slope even where curvature predicts\nthe opposite sign. In one head model, current-ratio changes move the envelope\nand mean-square centroids oppositely while preserving the quadratic beat pattern.\nEqual-RMS mean-field carrier controls show that the steady shift alone can\ninduce oscillations without a beat."
+  },
+  {
+    "id": "lpf_definition",
+    "before": "At each location, carrier averaging gives",
+    "after": "At each location, low-pass filtering (LPF) removes the carrier terms and gives"
+  },
+  {
+    "id": "spatial_progression",
+    "before": "The steady map instead weights $\\mathcal P_1^2$ and $\\mathcal P_2^2$ by\nthe squared currents. Its ratio-dependent source can shift operating points\nand thereby reshape the beat response. Threshold effects also depart from\nthe weak quadratic regime; the $2\\min$ steering law requires envelope\nfollowing. The product law itself permits an interior beat maximum.\nLocal detector and network factors weight this product\n(Eq.~\\eqref{eq:receiver}); resonance can compensate for an unfavorable\nproduct only where the source is nonzero.",
+    "after": "The steady source provides a way for current-ratio changes to reshape the\nbeat response: it weights $\\mathcal P_1^2$ and $\\mathcal P_2^2$ by the squared\ncurrents and can thereby shift the operating points. Such state changes fall\noutside the fixed-state argument above. Threshold effects also depart from\nthe weak quadratic regime; the $2\\min$ steering law requires envelope following.\n\nThe product law permits an interior beat maximum. Its spatial weighting also\ndepends on local detector and network factors (Eq.~\\eqref{eq:receiver}), so\nresonance can compensate for an unfavorable product only where the source\nis nonzero."
+  },
+  {
+    "id": "bilinear_purpose",
+    "before": "when either projection changes sign. More generally, let $a_j^k$ be the\ncomplex polarization of carrier $j$ in compartment $k$.",
+    "after": "when either projection changes sign. The current-product scaling also holds\nwhen a detector combines input from several compartments. Let $a_j^k$ be the\ncomplex polarization of carrier $j$ in compartment $k$."
+  },
+  {
+    "id": "carrier_control_bridge",
+    "before": "TI carriers. For a dynamic detector, that coefficient must vary negligibly\nover the carrier interval.",
+    "after": "TI carriers. This motivates the equal-RMS carrier control in\n\\S\\ref{sec:qif-methods}. For a dynamic detector, the coefficient must vary\nnegligibly over the carrier interval."
+  },
+  {
+    "id": "mpr_payoff",
+    "before": "The exact mean field of all-to-all quadratic integrate-and-fire (QIF) neurons\nwith Lorentzian excitabilities supplies both a static rate curve and its\ndynamic extension.",
+    "after": "The exact mean field of all-to-all quadratic integrate-and-fire (QIF) neurons\nwith Lorentzian excitabilities supplies both a static rate curve and its\ndynamic extension. For weak carriers at fixed synaptic input, steady\nrectification follows the curve's curvature at low frequency and its slope\nat high frequency."
+  },
+  {
+    "id": "terminology_heading",
+    "before": "\\label{sec:vocab-methods}\nA \\emph{forced response}",
+    "after": "\\paragraph{Response terminology.}\\label{sec:vocab-methods}\nA \\emph{forced response}"
+  },
+  {
+    "id": "fem_repeated_calibration",
+    "before": "for uniform curvature. The head model supplies neither operating states nor\na calibrated AIS transfer.",
+    "after": "for uniform curvature. The head model does not specify the operating states."
+  },
+  {
+    "id": "coupling_name",
+    "before": "J-curve varies $J$ at fixed $\\bar\\eta$ toward $J^*$",
+    "after": "coupling sweep varies $J$ at fixed $\\bar\\eta$ toward $J^*$"
+  },
+  {
+    "id": "coupling_name_second",
+    "before": "Unlike JR, the PING J-curve does not pin the operating point.",
+    "after": "Unlike JR, the PING coupling sweep does not pin the operating point."
+  },
+  {
+    "id": "qif_duplicate_pointer",
+    "before": "both inputs have mean-square amplitude $A_f^2$. The protocol and leakage\ncheck are specified in the supplement (\\S\\ref{supp:qif-protocol}).",
+    "after": "both inputs have mean-square amplitude $A_f^2$."
+  },
+  {
+    "id": "qif_protocol_pointer",
+    "before": "Euler integration uses $0.0025$~ms steps. Settling times, whole-cycle windows,\nand convergence checks are specified in the supplement\n(\\S\\ref{supp:qif-protocol}).",
+    "after": "Euler integration uses $0.0025$~ms steps. Settling times, whole-cycle windows,\nleakage checks, and sensitivity protocols are specified in the supplement\n(\\S\\ref{supp:qif-protocol})."
+  },
+  {
+    "id": "ridge_context",
+    "before": "on autonomous gamma above it (Figs.~\\ref{fig:nmm2_res},~\\ref{fig:nmm2_map}).\nThe ridge intensifies through the Hopf and shifts with state, making it\ndiagonal, unlike the JR example \\cite{clusella2023}.",
+    "after": "on autonomous gamma above it (Fig.~\\ref{fig:nmm2_res}).\nThe resonance grows through the Hopf and shifts with state, forming a diagonal\nridge in the $(\\Delta f,\\bar\\eta)$ plane of Fig.~\\ref{fig:nmm2_map}, unlike\nthe JR example \\cite{clusella2023}."
+  },
+  {
+    "id": "damping_link",
+    "before": "linear gain has a fitted damping exponent of $1.02$; the full-sweep exponent\nis $0.71$.",
+    "after": "linear gain has a fitted damping exponent of $1.02$, consistent with the\n$1/\\gamma$ law; the full-sweep exponent is $0.71$."
+  },
+  {
+    "id": "qif_weak_narrative",
+    "before": "At $\\bar\\eta=0.85$ and $A_f=10$, the estimated rectified E-drive shift\nis $0.12$, below the E-only Hopf threshold $\\delta\\eta_E^*\\approx0.286$.\nBeat depths span $0.09$--$0.16$ across cutoff and population choices,\ncompared with $0.13$ in the mean field. Population doubling changes the\ncutoff-free depth by $12\\%$, so its quantitative size remains unconverged\n(supplement, \\S\\ref{supp:theta-pilot}); the baseline mean-rate increase is\n$2.8\\%$. At $\\bar\\eta=1.5$, the original finite-cutoff run gives a\n$42$~Hz depth of about $0.02$ and a $1.6\\%$ mean-rate increase, while\nongoing gamma dominates.",
+    "after": "At $\\bar\\eta=0.85$ and $A_f=10$, the original finite-cutoff run gives\nbeat depth $0.09$ and a $2.8\\%$ mean-rate increase. Its quantitative depth\nremains unconverged because of cutoff and population sensitivity (supplement,\n\\S\\ref{app:qif-checks}--\\ref{supp:theta-pilot}). The estimated rectified\nE-drive shift remains below $\\delta\\eta_E^*$, the shift in excitatory drive\nrequired to cross the Hopf while holding the inhibitory drive fixed.\nAt $\\bar\\eta=1.5$, the original finite-cutoff run gives a $42$~Hz depth\nof about $0.02$ and a $1.6\\%$ mean-rate increase, while ongoing gamma dominates."
+  },
+  {
+    "id": "qif_strong_narrative",
+    "before": "finite-amplitude example: the fast-carrier voltage excursion is about\n$1.2$ per tone in model units. Carrier averaging predicts a drive shift\n$\\delta\\eta_E\\approx1.65$, beyond the E-only Hopf threshold, and a\nleading eigenvalue with real part $+0.032$~ms$^{-1}$. Direct mean-field\nintegration reproduces the off-beat line, identifying the dominant\nresponse as field-induced gamma (Fig.~\\ref{fig:qif_raster}b).",
+    "after": "finite-amplitude example: carrier averaging predicts that the rectified\nE-drive shift exceeds $\\delta\\eta_E^*$ and destabilizes the averaged equilibrium.\nDirect mean-field integration reproduces the off-beat line, identifying the\ndominant response as field-induced gamma (Fig.~\\ref{fig:qif_raster}b).\nThe drive and stability estimates at both amplitudes are given in the\nsupplement (\\S\\ref{app:qif-estimate})."
+  },
+  {
+    "id": "access_calibration_dedup",
+    "before": "The JR and QIF models demonstrate local mixing followed by recurrent\namplification. Applying these mechanisms to physiological kHz stimulation\nrequires calibration of membrane access and the generated source. The short-time\ncases in Table~\\ref{tab:doors} are access assumptions; varying the effective\nmembrane time quantifies their consequences. Cellular mixing \\cite{mirzakhalili2020,luff2024mixer} and network\namplification \\cite{caldas2024,karimi2024,esmaeilpour2021} have complementary\nexperimental and modeling support; their combined transfer remains unmeasured.",
+    "after": "The JR and QIF models demonstrate local mixing followed by recurrent\namplification. Cellular mixing \\cite{mirzakhalili2020,luff2024mixer} and network\namplification \\cite{caldas2024,karimi2024,esmaeilpour2021} have complementary\nexperimental and modeling support, but their combined transfer at physiological\nkHz fields remains unmeasured. The short-time cases in Table~\\ref{tab:doors}\nare access assumptions; varying the effective membrane time quantifies their\nconsequences."
+  },
+  {
+    "id": "spatial_scope_reason",
+    "before": "change the finite-amplitude ratio. Near-Hopf temporal slowing does not by itself\nestablish a diverging spatial correlation length.",
+    "after": "change the finite-amplitude ratio. These models describe a single column,\nso their near-Hopf temporal slowing does not establish a diverging spatial\ncorrelation length."
+  },
+  {
+    "id": "efficiency_summary",
+    "before": "For comparison, the carrier-averaged, matched-peak, open-loop ratio has a\nnumerically estimated supremum of $0.348$ over bounded nondecreasing memoryless\ntransfers (supplement, \\S\\ref{app:bound}, Eq.~\\eqref{eq:etasup}). A positive\nmixture of step responses extends the logistic calculation to this class.\nApproaching the bound requires a transition sharp relative to the input:\nmicrovolt logistic widths at the illustrative polarizations. Its step-like\nlimit has a second-harmonic ratio near $0.15$, differing from weak square-law\nand linear envelope detection. The bound excludes dynamic QIF and general\ncellular mechanisms. Increasing a common matched polarization cannot exceed\nit; unequal polarizations invalidate the matching. Unequal-current TI and\nmatched-depth AM-tACS comparisons do not measure this open-loop ratio.",
+    "after": "For balanced TI and a direct sinusoid matched in peak polarization at the\nsame operating point, the carrier-averaged open-loop fundamental-amplitude\nratio has a numerically estimated supremum of $0.348$ over bounded,\nnondecreasing memoryless transfers (supplement, \\S\\ref{app:bound},\nEq.~\\eqref{eq:etasup}). Dynamic QIF is outside this detector class."
+  },
+  {
+    "id": "lanmm_definition",
+    "before": "The two-tone kHz example and both LaNMM carrier-measurement windows have\ncached outputs and reproduction scripts.",
+    "after": "The two-tone kHz example and both carrier-measurement windows in the laminar\nneural mass model (LaNMM) have cached outputs and reproduction scripts."
+  },
+  {
+    "id": "introduction_budget_link",
+    "before": "The resulting input budget is conditional on the field-to-detector transfer,",
+    "after": "The input budget implied by these sources is conditional on the field-to-detector transfer,"
+  }
+]

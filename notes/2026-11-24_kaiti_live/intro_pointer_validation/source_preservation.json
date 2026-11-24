@@ -1,0 +1,12 @@
+{
+  "build_exit_code": 0,
+  "source_files_checked": 52,
+  "changed_source_paths": [],
+  "abstract_expected_commit": "2530543",
+  "abstract_matches_commit_before": true,
+  "abstract_matches_commit_after": true,
+  "protected_tn_artifacts_unchanged": {
+    "TN0484_envelope_demodulation.pdf": true,
+    "TN0484_envelope_demodulation.bbl": true
+  }
+}

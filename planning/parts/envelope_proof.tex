@@ -1,0 +1,36 @@
+\subsection{Envelope-mean subharmonicity}\label{supp:envelope-proof}
+The envelope mean is
+\[
+\overline{\mathcal A}(\mathbf x)=\frac{1}{2\pi}\int_0^{2\pi}
+\sqrt{\varepsilon_1(\mathbf x)^2+\varepsilon_2(\mathbf x)^2
++2\varepsilon_1(\mathbf x)\varepsilon_2(\mathbf x)\cos\vartheta}\,\mathrm d\vartheta,
+\]
+where $\vartheta$ is beat phase.
+
+For fixed scalar coupling in homogeneous, isotropic, source-free tissue,
+the envelope mean is subharmonic. At each beat phase $\vartheta$,
+$\mathcal A$ is the Euclidean norm of
+$(\varepsilon_1+\varepsilon_2\cos\vartheta,\,\varepsilon_2\sin\vartheta)$,
+a vector of harmonic functions. A norm is convex, so this envelope is subharmonic;
+averaging over $\vartheta$ preserves that property. Thus both idealized mean maps
+lack a strict interior maximum under these conditions (Fig.~\ref{fig:spatial_maps}b).
+
+\paragraph{Interior maxima of the excursion and the beat amplitude.}\label{supp:interior-maxima}
+The product of the polarizations obeys
+$\nabla^2(\varepsilon_1\varepsilon_2)=2\nabla\varepsilon_1\cdot\nabla\varepsilon_2$,
+whose sign is unrestricted, and an excursion, a temporal maximum minus a temporal
+minimum, need not be subharmonic. A local example shows that both can have a strict
+three-dimensional interior maximum under the conditions above. In dimensionless
+coordinates $\mathbf x=(x,y,z)$, take $0<c<1/2$, $q=x^2-\tfrac12(y^2+z^2)$, and the harmonic potentials
+\[
+\phi_{1,2}=-x\mp\tfrac12(x^2-y^2)-c\left[\tfrac13x^3-\tfrac12x(y^2+z^2)\right].
+\]
+With unit coupling along the fixed $x$ direction,
+$\varepsilon_{1,2}=-\partial_x\phi_{1,2}=1\pm x+cq$, positive near the origin. Then
+\[
+\varepsilon_1\varepsilon_2=1+(2c-1)x^2-c(y^2+z^2)+O(|\mathbf x|^4),
+\]
+with a negative-definite Hessian at the origin, and the envelope excursion
+$2\min(\varepsilon_1,\varepsilon_2)=2(1+cq-|x|)$ is also strictly maximal there.
+This is an existence example, not a prediction for a montage. The subharmonic maps
+above can still have interior minima; the restriction concerns maxima only.

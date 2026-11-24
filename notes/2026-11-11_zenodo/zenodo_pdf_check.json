@@ -1,0 +1,24 @@
+{
+  "pages": 73,
+  "article_pages": 38,
+  "supplement_pages": 35,
+  "local_links_verified": 591,
+  "pixel_differences": [
+    {
+      "page": 1,
+      "difference_bbox": [
+        11,
+        313,
+        20,
+        529
+      ],
+      "dimensions": [
+        596,
+        842
+      ]
+    }
+  ],
+  "zenodo_pdf_sha256": "35580158de6d44cf6c3c1f608a352e6198543b5e23b894f6f37c0d1a76b6b08e",
+  "486_doi_present": true,
+  "unresolved_reference_markers": 0
+}

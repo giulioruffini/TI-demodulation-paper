@@ -1,0 +1,18 @@
+{
+  "reason": "Recover the modified TN artifacts present at the start of the prose pass after peer validation restored HEAD; these were verification outputs, not canonical manuscript work.",
+  "provenance_correction": "Klaus's October 21 15:23 peer report identifies these files as his 09:45 build.sh both verification build from e2e5415 (62 pages). No Kaiti manuscript work was lost. The committed canonical TN remains the October 9 version; the recovered working copies remain uncommitted verification outputs.",
+  "snapshot_repository": "/private/tmp/claude-501/bash-edit-diff/4307729508299667462-8977172285830420383-eaa9460717fb6866",
+  "matching_snapshot": "0db69c171ef954b08b2eb9a878bb5669269ef5c8",
+  "files": {
+    "TN0484_envelope_demodulation.pdf": {
+      "git_blob": "0e28b27fbd000c38ce7488af42b1244e873bd926",
+      "sha256": "ef4c79ae246eacac711c5e11ce7960735ce67b1add15c80f492c10073b9425ac",
+      "bytes": 2276808
+    },
+    "TN0484_envelope_demodulation.bbl": {
+      "git_blob": "422a6ae94958887d89a08df6cee17f0d665a5cbc",
+      "sha256": "3efa9d688c30006a39bc5bec309dcfb593621d89de5ee70e0e90f6c19ff2e00c",
+      "bytes": 19701
+    }
+  }
+}

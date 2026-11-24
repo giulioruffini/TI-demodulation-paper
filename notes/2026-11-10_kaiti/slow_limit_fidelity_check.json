@@ -1,0 +1,51 @@
+{
+  "baseline": "9915f13",
+  "prior_manuscript_text_preserved": true,
+  "new_label": "eq:slow-field-gain",
+  "unchanged_sources": [
+    "planning/parts/slow_synapse.tex",
+    "planning/tn0484_abstract.tex",
+    "planning/tn0484_notation.tex",
+    "planning/review_baseline.json",
+    "references.bib"
+  ],
+  "protected_artifacts": {
+    "TN0484_envelope_demodulation.pdf": "ef4c79ae246eacac711c5e11ce7960735ce67b1add15c80f492c10073b9425ac",
+    "TN0484_envelope_demodulation.bbl": "3efa9d688c30006a39bc5bec309dcfb593621d89de5ee70e0e90f6c19ff2e00c",
+    "planning/review_baseline.json": "cb70fb69b0fb1391d7cf62a8ec8a4f253c18c5bb61c024769bceff2bf3e2a282",
+    "LICENSE": "01a89ae6fe408d07ee22735020529794bc40b8434f5fafa187516b9a01dce060"
+  },
+  "outputs": {
+    "TN0484_jne.pdf": {
+      "pages": 38,
+      "sha256": "972261f9d415b597ea7774f56c3f575e67f17c4394493b0438a9e71d32cf8da0"
+    },
+    "TN0484_jne_supplement.pdf": {
+      "pages": 35,
+      "sha256": "1c8fbee181ea6a119080886f093f7406a90fbed191e659e6232d770f98ae58dc"
+    },
+    "output/pdf/TN0484_field_coupling_note.pdf": {
+      "pages": 11,
+      "sha256": "d575ac7c7d5b09b71672f6f704ec49a81e7dec9785b99dc1a23b2f8577dd9e01"
+    },
+    "build/storyline/tn0484_storyline.pdf": {
+      "pages": 6,
+      "sha256": "927f30e2efa016db18a18155be15e72889f05362b8fcc509132e85d4fde25dee"
+    },
+    "docs/redline_last_read.pdf": {
+      "pages": 54,
+      "sha256": "a1586270f7c724586577e9b5cf01299eaa6bdc19ac9d672e0082017c50e5c35a"
+    }
+  },
+  "log_issues": {
+    "TN0484_jne.log": [],
+    "TN0484_jne_supplement.log": [],
+    "build/field_coupling_note/field_coupling_note.log": [],
+    "build/storyline/tn0484_storyline.log": []
+  },
+  "scientific_review": "Independent review: no blockers. Fifteen slow-limit gain cases pass; no time-domain simulation.",
+  "metadata_changes": [
+    "draft28 to draft29",
+    "draft date to 2026-11-10"
+  ]
+}
