@@ -326,17 +326,30 @@ pip install -r requirements.txt          # numpy, scipy, matplotlib (+ deps)
 
 ## Build the paper
 
-From the repo root (the `.tex` is at the root; `\graphicspath{{figures/}}`):
+From the repository root, rebuild the journal article and supplement together
+so their cross-references settle:
 
 ```bash
-./build.sh all
+./build.sh journal
 ```
 
-Current build: **50 pp (TN), 32 pp (JNE article) + 20 pp (supplement); 0 errors,
-0 undefined references or citations, and no overfull boxes.** Bibliography month
-macros and shared citation-label warnings are repaired. A float-only page notice
-and an underfull bibliography line remain. Builds settle the article/supplement
-cross-references and publish complete PDFs by rename. The `.bbl` is committed.
+The November 24 journal builds are **40 pages (article) and 43 pages
+(supplement)**, with no errors, undefined references, or overfull boxes.
+The build publishes complete PDFs by rename. `./build.sh all` also regenerates
+the full Technical Note and is reserved for a coordinated archive cut.
+
+For the supplement in Overleaf, select `TN0484_jne_supplement.tex` as the main
+document. Select `TN0484_envelope_demodulation.tex` for the article. The
+supplement root defines the build switch and includes the shared manuscript;
+keep it in future mirrors rather than copying or forking the supplement text.
+
+After a journal build, refresh both `TN0484_jne.aux` and
+`TN0484_jne_supplement.aux` in the Overleaf mirror. They carry references in
+both directions. These files are normally ignored build products in the
+research repository; include them explicitly in the compilation mirror.
+A fresh public checkout generates them by running `./build.sh journal` before
+compiling the supplement alone. The local build does not rewrite or delete
+the tracked supplement root.
 
 ## Reproduce the figures
 

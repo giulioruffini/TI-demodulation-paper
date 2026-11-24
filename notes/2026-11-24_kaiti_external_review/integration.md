@@ -119,3 +119,27 @@ main text supplies those conditions and retains finite-amplitude departures.
 The Approach shortening has no material loss: it no longer explicitly calls
 the budgets frequency-dependent, but does not assert frequency independence.
 No further abstract edit was made.
+
+## Standalone supplement root, 18:56 CET
+
+Commit `543a938` adds `TN0484_jne_supplement.tex`, which defines `\suppbuild`
+and includes the shared manuscript. The local build uses staged command-line
+roots and does not overwrite or remove this tracked file. Public main/tag
+now point to `cfda15acc128366cdc58f63b6457eb6329f1d266`, and the mirror to
+`36e6733f54a9a8686ebd058b454d6961678ac75a`. Both contain the exact wrapper.
+The mirror’s 41,772-byte `TN0484_jne.aux` matches the local file (SHA-256
+`73cd163623f2a06f57f9c6c3af7617ae9a7af138170d9bd9e188f384fef36efa`).
+The public checkout generates the AUX files locally through `build.sh journal`.
+Klaus reports a clean standalone 43-page supplement build from the mirror.
+No additional scientific calculation or canonical-PDF build was needed.
+
+The README now gives the two Overleaf root choices and requires future mirror
+updates to preserve the supplement wrapper and refresh both AUX files after
+a joint journal build. The default AUX ignore rule is retained in the research
+repository; the mirror deliberately includes these reference files.
+
+An independent build/mirror audit found no reusable sync script or copy manifest
+to patch. It confirmed that `build.sh` leaves the wrapper untouched and that
+mirror `36e6733` already tracks both AUX files. The required change is therefore
+documentation: a future export of canonical tracked files alone would omit the
+ignored AUX files, so they must be copied explicitly from the settled build.

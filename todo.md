@@ -8,9 +8,10 @@
 - [ ] obtain the mesh, potentials, and solver inputs for the offered one-refinement interface check; retain the unresolved convergence qualification
 - [ ] Giulio: decide the seven retained CUT? passages and the biological-rectifier sentence in docs/revision_2026-10-06_v0150draft16_readability.md
 - [ ] confirm the remaining availability/license questions, ethics sentence, de Palma description, salvador2025 placement, tool versions, and author approval
-- [ ] Giulio: re-pull mirror 1e338fb into Overleaf, recompile, and send the coauthor email
+- [ ] Giulio: re-pull mirror 36e6733 into Overleaf, compile the article and supplement roots, and send the coauthor email
 - [ ] migrate the folder at a coordinated version boundary with no concurrent editors; run the layout checker before and after
 - [ ] correct Nir Grossman’s lowercase ORCID-derived display name and complete Canals/Mirasso affiliations on the latest Zenodo record without rewriting historical bylines
+- [x] preserve the standalone supplement root and document refreshing both AUX files in future Overleaf mirror updates
 - [x] verify the clarified 300-word abstract, public release 03af462 and tag jne-submission, and Overleaf mirror 1e338fb against 184e525
 - [x] integrate the approved external submission-review corrections, relocate notation, verify figure arrays and labels, and rebuild the 40-page article and 43-page supplement
 - [x] independently check the repaired revision against 864121f, restore remaining scope conditions, and verify notation, Figure 12(b), word count, and 12-point PDFs

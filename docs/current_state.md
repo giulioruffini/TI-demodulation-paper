@@ -31,12 +31,19 @@ it does not assert equal TI and tACS source amplitudes. The Approach is shorter,
 with assumed field coupling and membrane times retained. The abstract remains
 300 words and the article remains 40 pages, with a clean build.
 
-Public GitHub main and the annotated tag `jne-submission` now resolve to
-`03af462c2a9c9bfda5749b0cda326cd5d73c192e`. The Overleaf GitHub mirror is updated
-to `1e338fb9cbe55cedd3684b1e4a68d8650b11ed04`. Both remote versions’ main source
-and abstract match `184e525` byte for byte. These replace the earlier public
-`ed0fb39` and mirror `8b75fe4` cuts, whose repaired generators and PDFs were
-already checked against `bc4a7dd`.
+The standalone supplement root is committed in `543a938`. It defines
+`\suppbuild` and includes the shared manuscript. The local build preserves
+this file. The Overleaf mirror includes `TN0484_jne.aux`, byte-identical to
+the current article labels; future mirror updates must refresh both article
+and supplement AUX files after `./build.sh journal`.
+
+Public main and the annotated tag `jne-submission` now resolve to
+`cfda15acc128366cdc58f63b6457eb6329f1d266`. The Overleaf mirror is
+`36e6733f54a9a8686ebd058b454d6961678ac75a`. The supplement root in both cuts
+matches the local source. Klaus reports a 43-page standalone supplement build
+from the mirror with no errors or undefined references. The previous release
+checks verified the abstract and main source against `184e525`, and the
+repaired figure arrays and PDFs against `bc4a7dd`.
 
 Giulio must re-pull the mirror changes into the Overleaf project, recompile,
 and send the coauthor email. Neither Kaiti nor Klaus sends that email. Zenodo
