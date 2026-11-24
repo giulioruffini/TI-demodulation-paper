@@ -62,3 +62,35 @@ Build logs, review snapshots, and rendered pages are retained locally in
 `build/external_review_2026-11-24/`. Figure baseline images and numerical scratch
 caches remain in the figure-review directory; the committed record contains the
 bounded scripts, reports, and check results rather than all scratch artifacts.
+
+## Release handoff received after integration
+
+Klaus’s 16:06 message arrived after the `bc4a7dd` report and relayed Giulio’s
+authorization to update Overleaf and send the coauthor email once integration
+was complete. Those actions are now handed to Klaus with `bc4a7dd`, together
+with the public code/tag update. The earlier hold statement above records the
+state before that handoff arrived; it no longer applies to Overleaf or this
+coauthor email. Zenodo and Calliope are outside this authorization. The
+availability paragraph retains Klaus’s later submission-tag wording rather
+than reverting to the older `4b7cc66` reference. No email or Overleaf update has
+been performed by Kaiti.
+
+Klaus’s 16:09 message subsequently arrived and clarified that Giulio sends the
+coauthor email. The handoff was corrected immediately: Klaus owns Overleaf
+and the public code/tag cut; he leaves the email draft for Giulio. Neither
+Kaiti nor Klaus is authorized by this handoff to send it.
+
+## Public release and mirror verified
+
+Klaus’s 16:22 completion report was independently checked at 18:42–18:43 CET.
+Public `main` and the peeled annotated tag `jne-submission` both resolve to
+`ed0fb39503dadbb9677762310464f081cec38265`. The main source, abstract, all four
+repaired generators, and both journal PDFs are byte-identical to `bc4a7dd`.
+The Overleaf GitHub mirror’s main branch is
+`8b75fe4d5ae41f9f685aef73114906c835a84967`; the main source, abstract, notation
+file, bibliography, and five repaired figure PDFs are byte-identical to
+`bc4a7dd`. Klaus reports a clean 40-page test build of its compilation subset.
+
+These checks close the public-tag and mirror tasks. The Overleaf web project
+still requires Giulio’s pull and recompile. Giulio sends the coauthor email.
+No archive update or email send is implied by this release verification.

@@ -24,15 +24,21 @@ linear resonance offers no efficiency advantage over a matched direct source.
 Five figures have repaired labels; all 76 plotted arrays match their baseline
 exactly. Bibliography locators and the Thiele citation have been checked.
 
-Klaus owns the authorized public simulation-code update and the availability
-paragraph. He changed the availability reference from `4b7cc66` to the planned
-`jne-submission` tag during this check. The tag was not yet public at 16:20 CET;
-it must include these four repaired figure generators before release. Numerical
-arrays are unchanged. Archive updates, Overleaf/Calliope
-synchronization, and separate coauthor circulation remain held. The per-node
-FEM export remains unreceived and unvalidated. The remaining licensing,
-ethics, de Palma description, `salvador2025` placement, tool-version, and author
-approval questions remain open; a fidelity check does not decide them.
+Klaus released the checked `bc4a7dd` tree to public GitHub as `ed0fb39`, with
+annotated tag `jne-submission`. Remote main and the peeled tag both resolve to
+`ed0fb39503dadbb9677762310464f081cec38265`. The main source, abstract, four
+repaired generators, and both journal PDFs match the checked commit byte for
+byte. The availability reference now resolves to the completed release.
+
+The Overleaf GitHub mirror is updated to `8b75fe4`; its main source, abstract,
+notation file, bibliography, and five repaired figure PDFs match `bc4a7dd`.
+Klaus reports a clean 40-page test build of the compilation subset. Giulio must
+still pull the mirror changes into the Overleaf project, recompile, and send
+the coauthor email. Neither Kaiti nor Klaus sends that email. Zenodo and
+Calliope updates remain held. The per-node FEM export remains unreceived and
+unvalidated. The remaining licensing, ethics, de Palma description,
+`salvador2025` placement, tool-version, and author approval questions remain
+open; a fidelity check does not decide them.
 
 The reading copies are `TN0484_jne.pdf` and `TN0484_jne_supplement.pdf`.
 The full-TN PDF and BBL were already modified before this task and have not

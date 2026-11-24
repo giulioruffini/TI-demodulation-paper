@@ -3,14 +3,15 @@
 - [ ] freeze the shared manuscript after author review and cut the submission version
 - [ ] agree on Raul’s first Zhao-model calibration conditions using the dimensional field-coupling note before launching the proposed simulations
 - [ ] obtain Ricardo’s FreeSurfer-only NPZ and SHA-256; adapt the portable reader for optional atlas labels and verify the published spatial statistics
-- [ ] align the public repository, data-availability links, Zenodo record, submission tag, and data deposit when release is authorized
+- [ ] align Zenodo and the FEM data deposit with the checked GitHub release when those updates are authorized
 - [ ] obtain the exact private TI-library revision used by Ricardo’s imported FEM producers
 - [ ] obtain the mesh, potentials, and solver inputs for the offered one-refinement interface check; retain the unresolved convergence qualification
 - [ ] Giulio: decide the seven retained CUT? passages and the biological-rectifier sentence in docs/revision_2026-10-06_v0150draft16_readability.md
 - [ ] confirm the remaining availability/license questions, ethics sentence, de Palma description, salvador2025 placement, tool versions, and author approval
-- [ ] Klaus: include the four repaired figure generators in the authorized public code cut and align its availability reference; retain the hold on archives and coauthor circulation
+- [ ] Giulio: pull mirror 8b75fe4 into Overleaf, recompile, and send the coauthor email
 - [ ] migrate the folder at a coordinated version boundary with no concurrent editors; run the layout checker before and after
 - [ ] correct Nir Grossman’s lowercase ORCID-derived display name and complete Canals/Mirasso affiliations on the latest Zenodo record without rewriting historical bylines
+- [x] verify public release ed0fb39 with tag jne-submission and Overleaf mirror 8b75fe4 against checked commit bc4a7dd
 - [x] integrate the approved external submission-review corrections, relocate notation, verify figure arrays and labels, and rebuild the 40-page article and 43-page supplement
 - [x] independently check the repaired revision against 864121f, restore remaining scope conditions, and verify notation, Figure 12(b), word count, and 12-point PDFs
 - [x] clarify the slow-synapse reduction, stationary feedback gain, and rate–potential normalization with Klaus; verify algebra, prose, builds, and length
